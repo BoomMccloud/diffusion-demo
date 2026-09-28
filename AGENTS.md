@@ -3,164 +3,116 @@
 ## Start here
 
 This file is the single source of truth for the repository's current work. Read
-it before choosing a task. Use the linked documents for detail, but do not infer
-the active task from older findings, proposal history, or runbooks. Update this
-section when the active objective or its verified status changes.
+it before choosing a task. Update this section when the active objective or its
+verified status changes. Do not infer the active task from findings documents or
+git history.
 
 ## Current work
 
-The dependency-density boundary investigation is complete enough to choose a
-practical DiffusionGemma screen size. Under the pinned A100 harness,
-DiffusionGemma produced exactly correct 48-value responses in 6 of 6 cases over
-two fixture seeds. At 56 values it passed 4 of 6 cases, while chained cases
-passed 0 of 2 despite returning complete canonical JSON and normal EOG stops.
-Treat 48 output decisions as the current tested screen size, not as a universal
-model or architecture limit.
+The objective is a realistic workload comparison between autoregressive (AR) and
+diffusion decoding. The earlier screens used synthetic tasks: copy a code, apply
+a threshold, look up a category, and business problems given as clean JSON with
+exact rules. Code would solve those without a model, so they could only show
+that speculative decoding is faster on predictable output at batch 1. They
+could not show where diffusion helps on work people actually send to a model.
 
-The active objective is to compare the two pinned model-runtime systems on 12
-recognizable business problems:
+That synthetic workload code was removed on 2026-09-28. Its raw rows, fixtures,
+and harnesses remain in git history at commit `545c985`. The findings documents
+in `docs/` stay as the record of how the models and runners behave.
 
-- Gemma 4 26B A4B autoregressive through `llama-cpp-python`.
-- DiffusionGemma 26B A4B through the instrumented protocol-v2
-  `llama-diffusion-cli`.
-- Three direct, three mixed-dependency, three chained, and three global-constraint
-  problems.
-- Exactly 48 scored output decisions per case, using frozen inputs and a
-  deterministic validator.
-- Run both models on the same fixtures. Retain exact validity, per-decision
-  accuracy, first error, constraint violations, request-to-final latency, raw
-  output, reasoning, stop reason, token counts, model and runner identities, and
-  fixture hashes.
+### Systems
 
-The 12 problem definitions live in
-`docs/business_dependency_benchmark_cases.md`. The active set is:
+- **Nemotron-Labs-Diffusion-3B**, one set of weights in three modes: `ar`,
+  `linear_spec` (diffusion draft, AR verify), and `diffusion`. This isolates the
+  decoding method from the model. Runner: `bench/nemotron_runner.py`. Fits an L4.
+- **Gemma 4 26B A4B** AR through `llama-cpp-python` against **DiffusionGemma 26B
+  A4B** through the instrumented protocol-v2 `llama-diffusion-cli`. Runners:
+  `bench/gemma_runtimes.py` and `bench/diffusion_runtime.py`. Needs an A100.
 
-- Direct: accounts-payable classification, support-ticket routing, and
-  purchase-order compliance screening.
-- Mixed: invoice/subtotal validation, expense-policy review, and bundle-aware
-  order fulfillment.
-- Chained: cash-balance ledger, inventory-movement ledger, and loan
-  amortization.
-- Global: employee shift assignment, warehouse-to-order allocation, and
-  conference seating.
+### The four workloads
 
-The first implementation slice is complete in `bench/business_fixtures.py`.
-It reproducibly generates three seeded fixtures for each problem, keeps exactly
-48 scored string values in one canonical answer envelope, recomputes exact
-answers for direct, mixed, and chained cases, and validates global cases by hard
-constraints and a registered objective so multiple valid solutions are allowed.
-`tests/bench/test_business_fixtures.py` guards the 36-fixture contract. This is offline
-fixture evidence only; the staged token counts and context fit are now registered,
-but both model systems remain untested on these business cases.
+1. **Unstructured text to JSON.** Pull fields from messy emails, invoices,
+   contracts, or support chats into a fixed schema. Output is long, structured,
+   and fairly predictable, but the values need reading, not copying. This tests
+   whether the diffusion speedup survives once values stop being trivial. Score
+   per field against a hand-labelled reference.
+2. **Code or document edits.** Rewrite a file or contract with a few requested
+   changes. Most output copies the input, which is the best case for diffusion
+   and also for AR with prompt-lookup speculation, so it is the fairest
+   head-to-head. Score by applying the result (tests pass, or the diff touches
+   only the requested regions).
+3. **Short free-form answers.** Chat replies, summaries, and emails of 50 to 300
+   tokens. This is most real traffic. Tokens are less predictable, so fewer drafts
+   are accepted. If the speedup mostly disappears here, that bounds where
+   diffusion is worth deploying. Score quality with a fixed rubric and a pinned
+   judge, or pairwise preference, and report it next to latency.
+4. **Agent tool-call loops.** Many short structured calls in sequence, where
+   end-to-end latency is the sum of the steps. Diffusion's per-call gain is
+   small but compounds. Score task completion and total wall time.
 
-The DiffusionGemma launch path is implemented in `bench/business_benchmark.py`.
-Its offline self-test and fake protocol-v2 integration cover immutable 36-case
-registration, deterministic shuffled order and request IDs, strict native-channel
-and canonical JSON scoring, complete terminal artifacts, context refusal, and
-no-repeat resume. `prepare` performs the remaining staged-environment gate: it
-measures every prompt and expected answer with both pinned model tokenizers,
-hashes the actual model, runner, tokenizer, and harness artifacts, and sends no
-generation request. `run-diffusion` is the explicit generation boundary.
-The first-run hardening requires a real GPU identity, an exact completed native
-warmup, and a complete 36-row summary before the launch command exits zero. The
-documented commands use the explicit repository path and do not depend on the
-shell working directory.
+### Controls every workload needs
 
-The staged A100 preparation gate passed on 2026-09-08. The immutable registration
-contains all 36 fixtures, both pinned model hashes, exact dual-tokenizer counts,
-an A100-SXM4-40GB identity, and reports `launch_ready` with zero generation RPCs.
-The documented 9,216-token allowance was first refused because the 2,345-token
-`business-m1-000` prompt exceeded the 11,264-token context; the registered shared
-allowance is therefore 8,919 tokens, the measured maximum that fits every prompt.
-Google Drive credential propagation failed, so the exact models were downloaded
-to local NVMe and the protocol-v2 runner was rebuilt from the pinned source and
-passed the native stopping and CUDA softcap checks. Its fresh binary hash differs
-from the older format-v4 cache artifact and is recorded as a new staged identity.
-The registration and preparation evidence are in
-`bench/results/business/prepare-2026-09-08/`. No generation request has been sent.
+- **Concurrency sweep.** Run at 1, 8, and 32 concurrent requests and report
+  throughput next to single-request latency. Batch 1 is where parallel decoding
+  helps most, and the gap usually narrows as AR batching fills the GPU.
+- **Strong AR baseline.** Add AR with prompt-lookup or n-gram speculative
+  decoding on the same weights. Without it, a copy-heavy speedup cannot be
+  credited to diffusion.
+- **Matched budgets.** Give every arm the same output-token allowance, context,
+  prompts, and hardware.
+- **Record** raw output, reasoning, stop reason, prompt and output tokens,
+  forward passes, request-to-final latency, model revision or hash, runner
+  identity, and GPU. Copy every row off the accelerator as it completes.
+- Use realistic inputs rather than generated JSON. Where inputs are sampled from
+  public data, record the source and license.
 
-The first `run-diffusion` attempt exposed a launch-safety defect and was stopped
-after three terminal rows, before any M1 fixture ran. Although the worker was
-registered with an 8,919-token maximum, the native runner rounded the exhausted
-G1 response to 8,960 tokens, the next 256-token canvas boundary. That invalidates
-the context-fit proof for the largest prompts. The retained partial run contains
-zero valid outputs: one budget exhaustion, one incorrect response, and the
-operator-cancelled active case. Its artifacts are in
-`bench/results/business/diffusion-screen-v1-partial-2026-09-08/`.
+### Next step
 
-Do not resume the unsafe registration. A corrected immutable registration with an
-8,704-token shared allowance, the largest 256-token-aligned value below the measured
-8,919-token context limit, passed `prepare` with zero generation RPCs and launched.
-The corrected runner held the boundary exactly, including on `business-m1-000`, but
-Colab terminated the Drive-less VM before completion. Only 21 terminal rows were
-downloaded durably: six exact-valid, eight budget-exhausted canonical failures, and
-seven complete but incorrect responses. The monitor observed progress through row
-30, but rows 22-30 and their raw artifacts were lost with the VM and are not
-evidence. The durable corrected registration and partial rows are in
-`bench/results/business/prepare-v2-8704-2026-09-08/`.
-The analysis, interpretation limits, confirmed accelerator shutdown, and
-required follow-up are documented in
-`docs/business_diffusion_partial_screen_findings.md`.
+Start a `proposal-pipeline` run for this comparison. The first decisions are the
+input sources for each workload, the quality scoring for workload 3, and which
+system pair goes first. Nemotron-3B on an L4 is the cheapest way to shake out
+the harness.
 
-Exploratory A100 work on 2026-09-28 changed the next run's configuration. The
-runner now prefills incrementally (34% less wall time on a three-case A/B, prefill
-down 94%) and decouples its batch from context. At 32,768 context and a
-30,208-token allowance, all nine cases that were tested stopped at native EOG,
-including eight that had exhausted 8,704 tokens. Six business prompts (D2, D3, M1,
-M2, M3, C2) did not name their exact output format; they now do, and five of six
-previously invalid cases returned 48/48. These are screens, not registered
-evidence. Details and limits are in
-`docs/diffusion_runtime_budget_prompt_findings.md`.
+## What earlier work established
 
-No usable accelerator session remains; the 2026-09-28 A100 was shut down. The next
-run is a fresh immutable 36-case registration with the patched runner, the fixed
-prompts, `DIFFUSION_UBATCH=2048`, context 32,768, and a 30,208-token allowance,
-with every terminal row copied off the VM as it completes. Expect roughly 1 to 1.5
-hours. Do not combine its rows with the retained partial run or the 2026-09-28
-exploratory rows. The AR arm must get the same allowance before any comparison.
-Do not start a larger confirmation set until the business screen identifies a
-useful and valid separation.
+These are screens with small samples, not registered evidence. See the named
+findings for limits.
 
-A separate exploratory pilot on 2026-09-28 tested Nemotron-Labs-Diffusion-3B
-against public AR endpoints. It found that the frozen business prompts never
-state their exact value formats, which also affects the registered DiffusionGemma
-screen, and that Nemotron's linear self-speculation matched its own AR accuracy
-at 6.1x lower latency on a small keyed-output ladder. Findings and limits are in
-`docs/nemotron_diffusion_pilot_findings.md`. A 330-row follow-up on the same
-3B weights found linear speculation matched AR exactly at 4.9x to 7.3x lower
-latency, shrinking with output length; plain diffusion fails on adjacent-token
-duplication, not JSON syntax; and thinking-on never engaged. See
-`docs/nemotron_3b_candidates_findings.md`. The pilot does not change the active
-objective. Use Colab CLI 0.7.4 or later: 0.6.0 drops sessions when their proxy
-token expires after 60 minutes.
+- On the pinned A100 harness, DiffusionGemma returned exactly correct 48-value
+  outputs on 6 of 6 synthetic cases and passed 4 of 6 at 56. The run summaries
+  are in `bench/results/dependency-density/` at commit `545c985`; 64 values is in
+  `docs/diffusion_density64_findings.md`.
+- The protocol-v2 runner needed fixes for native stopping, 64-bit softcap
+  indexing, and incremental prefill. Incremental prefill cut wall time 34% on a
+  three-case A/B. With 32,768 context and a 30,208-token allowance, nine cases
+  that had exhausted 8,704 tokens stopped at native EOG
+  (`docs/diffusion_runtime_budget_prompt_findings.md`,
+  `docs/diffusion_softcap_repair_findings.md`,
+  `docs/diffusion_stop_repair_findings.md`).
+- Nemotron-3B linear speculation matched its own AR output exactly at 4.9x to
+  7.3x lower batch-1 latency on L4, with the gain shrinking as output grew. Plain
+  diffusion failed exact output through adjacent-token duplication. Thinking-on
+  never engaged (`docs/nemotron_3b_candidates_findings.md`,
+  `docs/nemotron_diffusion_pilot_findings.md`).
+- Prompts must state the exact output format. Without it, small models without
+  reasoning scored 0 on every business case.
 
-For a human takeover, start with the [operator handoff](docs/operator_handoff.md).
-It enumerates the prior Colab and Drive state, the exact format-v4 runner cache,
-the setup order, success and refusal signals, resume behavior, and the point at
-which the unimplemented business AR phase becomes the next development task.
+Do not carry these numbers over to the realistic workloads. They are the
+hypotheses the new comparison tests.
 
 ## Authoritative working files
 
 - `AGENTS.md`: active objective, verified status, and immediate next task.
-- `docs/business_dependency_benchmark_cases.md`: the 12 business problems and
-  their validation intent.
-- `docs/workload_hypotheses.md`: evidence labels, comparison rules, workflow-fit
-  versus mechanism interpretation, and promotion criteria.
-- `bench/business_benchmark.py`, `bench/diffusion_runtime.py`, and
-  `bench/dependency_density_bench.py`: business controller and reusable
-  diffusion worker, instrumentation, artifact, tokenizer, and exact-scoring
-  contracts.
-- `bench/README.md`: durable harness constraints and current Colab execution
-  requirements.
-- `docs/operator_handoff.md`: human pickup checklist, required staged state, and
-  the ordered path from local verification through the next unimplemented phase.
-- `bench/DEPENDENCY_DENSITY_RUNBOOK.md`: historical restart details. Consult it
-  for operations, but do not use its older status section as the active task.
-- `docs/proposals/`: decision and implementation history. Proposal ledgers do not
-  replace the current-work section in this file.
-
-Do not claim that the synthetic 48-value result proves performance on these
-business problems. The paired business screen is required for that conclusion.
+- `bench/README.md`: how to stage and run each model runtime on Colab, and the
+  durable runner constraints.
+- `bench/gemma_runtimes.py`: AR `llama-cpp-python` calls and the native
+  DiffusionGemma session, tokenizer helper, transcript parsing, and GPU identity.
+- `bench/diffusion_runtime.py`: resident DiffusionGemma worker behind a loopback
+  API.
+- `bench/nemotron_runner.py`: Nemotron three-mode runner and OpenRouter AR arm.
+- `bench/native/`: pinned `llama.cpp` patch, build, and CUDA probes.
+- `cells/`: Colab model staging and prior runner setup.
+- `docs/*_findings.md`: what each earlier run established and its limits.
 
 ## Accelerator sessions
 
@@ -170,6 +122,8 @@ business problems. The paired business screen is required for that conclusion.
   not assume Colab requires browser automation. Use `colab url` and the regular
   Colab UI only when interactive authentication is required or CLI Drive
   credential propagation fails.
+- Use Colab CLI 0.7.4 or later: 0.6.0 drops sessions when their proxy token
+  expires after 60 minutes.
 - Treat a running Colab or other accelerator session with a loaded model, compiled binary, or populated local cache as expensive state.
 - Before stopping or closing such a session, ask the user whether they want to keep it running for additional tests. Explain what would need to be downloaded, compiled, or loaded again if the session is closed.
 - Stop the session without asking only when the user has already explicitly instructed you to close it after the current work, or when leaving it running is not possible.
