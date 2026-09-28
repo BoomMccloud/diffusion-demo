@@ -205,6 +205,19 @@ and final channel transitions observed at block commit, not token-arrival latenc
 causal prefill chunks. Its value is reported in registration. This is an explicit
 experimental execution setting, not proof of equivalence for every workload.
 
+The runner prefills incrementally by default: the prefix-KV store persists across
+blocks and only new tokens are encoded. `DIFFUSION_INCREMENTAL_PREFILL=0` restores
+full re-prefill for A/B checks. With incremental prefill and the KV cache on,
+`DIFFUSION_UBATCH` sets `-b` and `-ub` independently of context; use 2048 for
+contexts above 11,264. `DIFFUSION_MAX_TIMEOUT` raises the 600-second request cap.
+The prefix store is F32 without flash attention, about 450 KB per token, so an
+A100 40GB fits 32,768 context but not 65,536.
+**Why:** The 2026-09-28 A/B cut wall time 34%, and the decoupled batch removed a
+logits buffer that grew with context. An `output_tokens` buffer sized by ubatch
+overflowed until it was sized by context.
+**Guarded by:** `tests/native/test_incremental_prefill.py` for prefix reuse; the
+decoupled-batch path has no automated witness.
+
 Results preserve the raw runner transcript separately from extracted model output.
 The batch summary includes failed request time and the measured allocation window,
 including warmup, divided by correct answers. It does not include earlier build or

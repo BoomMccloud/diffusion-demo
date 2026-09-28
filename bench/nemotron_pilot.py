@@ -43,16 +43,17 @@ GROUPED = {"M1", "M2", "M3"}
 KEY_FIELDS = {"C3": "period"}  # v4 keyed output: field that names each item; M3 has no per-value id
 
 # Easier ladder rungs below the business problems, pilot-only.
-def _generate_l0(rng):
+# Longer inputs extend the same random sequence, so a shorter case is a prefix of a longer one.
+def _generate_l0(rng, count=fixtures.DECISION_COUNT):
     alphabet = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"
     return {"items": [{"id": f"K{i + 1:02d}", "code": "".join(rng.choice(alphabet) for _ in range(6))}
-                      for i in range(fixtures.DECISION_COUNT)]}
+                      for i in range(count)]}
 
 
-def _generate_l1(rng):
+def _generate_l1(rng, count=fixtures.DECISION_COUNT):
     return {"threshold_cents": 50_000,
             "items": [{"id": f"A{i + 1:02d}", "amount_cents": rng.randrange(1_000, 100_001)}
-                      for i in range(fixtures.DECISION_COUNT)]}
+                      for i in range(count)]}
 
 
 LADDER = {
@@ -121,7 +122,9 @@ V2_RULES = {
            'attendee {needs_accessible:true,language:EN} -> an accessible EN table'),
 }
 PILOT_FIXTURE_INDEX = 0
+LONG_GENERATORS = {"D1": fixtures._generate_d1}  # business problems that may exceed 48 decisions
 DEFAULT_MAX_NEW_TOKENS = 2048
+DEFAULT_REVISION = "0d51902da1f8869f83413ce642fab402fa5641e0"  # Nemotron-Labs-Diffusion-3B used by the first pilot
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 
@@ -154,6 +157,31 @@ def strip_thinking(text):
     return text.strip()
 
 
+def thinking_text(text):
+    return text.split("</think>")[0].replace("<think>", "").strip() if "</think>" in text else None
+
+
+def parse_lines(text, lenient=False):
+    """v5: one ID=VALUE line per item -> ordered {id: value}; None if any line is malformed."""
+    answer = {}
+    for line in text.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        key, sep, value = line.partition("=")
+        if not sep:
+            if lenient:
+                continue
+            return None
+        key, value = key.strip(), value.strip()
+        if lenient:
+            key, value = key.strip('"'), value.strip().strip('"').strip()
+        if key in answer:
+            return None
+        answer[key] = value
+    return answer
+
+
 def truncate_input(problem_id, data, decisions):
     data = json.loads(json.dumps(data))
     key = ITEM_LISTS[problem_id]
@@ -179,6 +207,17 @@ def v4_prompt(problem_id, data, keys):
     )
 
 
+def v5_prompt(problem_id, data, keys):
+    rule, example = V2_RULES[problem_id]
+    rule = rule.replace("one value per", "the value for each").replace('"', "")
+    return (
+        f"Return only plain text lines, one line per input item, in source order from {keys[0]} to {keys[-1]}. "
+        f"Each line is the item id, an equals sign, and the value, like {keys[0]}=VALUE. "
+        "No quotes, no JSON, no markdown, no code fences, no explanation. "
+        f"Produce {rule} Example: {example.replace(chr(34), '')}. Input:" + fixtures.compact_json(data)
+    )
+
+
 def v2_prompt(problem_id, data, decisions, version="v2"):
     rule, example = V2_RULES[problem_id]
     quoting = (
@@ -193,30 +232,48 @@ def v2_prompt(problem_id, data, decisions, version="v2"):
     )
 
 
-def ladder_base(problem_id):
+def ladder_base(problem_id, index=PILOT_FIXTURE_INDEX, count=fixtures.DECISION_COUNT):
     dependency_class, name, generate, solve = LADDER[problem_id]
-    seed = fixtures.BASE_SEED + 7_000_001 + list(LADDER).index(problem_id) * 100_003
-    data = generate(random.Random(seed))
+    seed = fixtures.BASE_SEED + 7_000_001 + list(LADDER).index(problem_id) * 100_003 + index * 9_973
+    data = generate(random.Random(seed), count)
     return {"problem_id": problem_id, "problem_name": name, "dependency_class": dependency_class,
-            "fixture_index": PILOT_FIXTURE_INDEX, "seed": seed, "scoring_mode": "exact",
-            "case_id": f"ladder-{problem_id.lower()}-000", "input": data,
+            "fixture_index": index, "seed": seed, "scoring_mode": "exact",
+            "case_id": f"ladder-{problem_id.lower()}-{index:03d}", "input": data,
             "fixture_hash": fixtures.stable_hash(data), "prompt": None}
 
 
-def pilot_fixture(problem_id, decisions, prompt_version):
+def long_base(problem_id, index, count):
+    """A business fixture with more than 48 items, from the same seed as make_fixture."""
+    seed = fixtures._seed(problem_id, index, fixtures.BASE_SEED)
+    data = LONG_GENERATORS[problem_id](random.Random(seed), count)
+    dependency_class, name = fixtures.PROBLEMS[problem_id]
+    return {"problem_id": problem_id, "problem_name": name, "dependency_class": dependency_class,
+            "fixture_index": index, "seed": seed, "scoring_mode": "exact",
+            "case_id": f"business-{problem_id.lower()}-{index:03d}", "input": data,
+            "fixture_hash": fixtures.stable_hash(data), "prompt": None}
+
+
+def pilot_fixture(problem_id, decisions, prompt_version, index=PILOT_FIXTURE_INDEX):
+    count = max(decisions, fixtures.DECISION_COUNT)
     if problem_id in LADDER:
-        base = ladder_base(problem_id)
+        base = ladder_base(problem_id, index, count)
+    elif decisions > fixtures.DECISION_COUNT:
+        if problem_id not in LONG_GENERATORS:
+            raise SystemExit(f"{problem_id} supports at most {fixtures.DECISION_COUNT} decisions")
+        base = long_base(problem_id, index, count)
     else:
-        base = fixtures.make_fixture(problem_id, PILOT_FIXTURE_INDEX)
+        base = fixtures.make_fixture(problem_id, index)
         assert fixtures.validate_fixture(base)
     if problem_id in GROUPED and decisions % 4:
         raise SystemExit("--decisions must be a multiple of 4")
     data = truncate_input(problem_id, base["input"], decisions)
-    keys = output_keys(problem_id, data) if prompt_version == "v4" else None
+    keys = output_keys(problem_id, data) if prompt_version in ("v4", "v5") else None
     if prompt_version == "v1":
         prompt = base["prompt"]
     elif prompt_version == "v4":
         prompt = v4_prompt(problem_id, data, keys)
+    elif prompt_version == "v5":
+        prompt = v5_prompt(problem_id, data, keys)
     else:
         prompt = v2_prompt(problem_id, data, decisions, prompt_version)
     if prompt_version == "v1" and decisions != fixtures.DECISION_COUNT:
@@ -239,7 +296,8 @@ def pilot_fixture(problem_id, decisions, prompt_version):
 
 def cmd_fixtures(args):
     pilot = [
-        pilot_fixture(pid, n, args.prompt_version)
+        pilot_fixture(pid, n, args.prompt_version, index)
+        for index in args.fixture_indices
         for n in args.decisions
         for pid in (args.problems or fixtures.PROBLEM_IDS)
     ]
@@ -252,8 +310,11 @@ def cmd_nemotron(args):
     from transformers import AutoModel, AutoTokenizer
 
     fixture_list = json.loads(Path(args.fixtures).read_text())["fixtures"]
-    tokenizer = AutoTokenizer.from_pretrained(args.model, trust_remote_code=True)
-    model = AutoModel.from_pretrained(args.model, trust_remote_code=True, dtype=torch.bfloat16).cuda().eval()
+    import transformers
+    tokenizer = AutoTokenizer.from_pretrained(args.model, revision=args.revision, trust_remote_code=True)
+    model = AutoModel.from_pretrained(
+        args.model, revision=args.revision, trust_remote_code=True, dtype=torch.bfloat16,
+    ).cuda().eval()
     stop_ids = {tokenizer.eos_token_id, tokenizer.convert_tokens_to_ids("<|im_end|>")} - {None}
     gpu = torch.cuda.get_device_name(0)
     revision = getattr(model.config, "_commit_hash", None)
@@ -261,7 +322,7 @@ def cmd_nemotron(args):
     def encode(prompt):
         text = tokenizer.apply_chat_template(
             [{"role": "user", "content": prompt}], tokenize=False,
-            add_generation_prompt=True, enable_thinking=False,
+            add_generation_prompt=True, enable_thinking=args.thinking,
         )
         return tokenizer(text, return_tensors="pt").input_ids.cuda()
 
@@ -310,7 +371,9 @@ def cmd_nemotron(args):
                 "model": args.model,
                 "model_revision": revision,
                 "gpu": gpu,
-                "thinking": False,
+                "torch_version": torch.__version__,
+                "transformers_version": transformers.__version__,
+                "thinking": args.thinking,
                 "case_id": fixture["case_id"],
                 "fixture_hash": fixture["fixture_hash"],
                 "prompt_hash": fixture["prompt_hash"],
@@ -325,6 +388,7 @@ def cmd_nemotron(args):
                 "started_at": started_at,
                 "completed_at": utc_now(),
                 "raw_output": raw,
+                "reasoning": thinking_text(raw),
                 "final_output": strip_thinking(raw),
                 "error": error,
             }
@@ -458,12 +522,17 @@ def _coerce(answer):
 
 
 def score_row(fixture, row):
-    try:
-        parsed = json.loads(row["final_output"])
-    except json.JSONDecodeError:
-        parsed = None
+    if fixture["prompt_version"] == "v5":
+        parsed = parse_lines(row["final_output"])
+        lenient_answer = parse_lines(row["final_output"], lenient=True)
+    else:
+        try:
+            parsed = json.loads(row["final_output"])
+        except json.JSONDecodeError:
+            parsed = None
+        lenient_answer = _coerce(_lenient_answer(row["final_output"]))
     semantic = evaluate(fixture, parsed if isinstance(parsed, dict) else {})
-    lenient = evaluate(fixture, _coerce(_lenient_answer(row["final_output"])) or {})
+    lenient = evaluate(fixture, lenient_answer or {})
     contract_ok = semantic["constraint_violations"] != ["canonical_answer_contract"]
     if row.get("error"):
         outcome = "error"
@@ -527,8 +596,9 @@ def main(argv=None):
 
     p = sub.add_parser("fixtures")
     p.add_argument("--out", required=True)
-    p.add_argument("--prompt-version", choices=("v1", "v2", "v3", "v4"), default="v4")
+    p.add_argument("--prompt-version", choices=("v1", "v2", "v3", "v4", "v5"), default="v4")
     p.add_argument("--decisions", type=int, nargs="+", default=[fixtures.DECISION_COUNT])
+    p.add_argument("--fixture-indices", type=int, nargs="+", default=[PILOT_FIXTURE_INDEX])
     p.add_argument("--problems", nargs="+")
     p.set_defaults(func=cmd_fixtures)
 
@@ -536,6 +606,8 @@ def main(argv=None):
     p.add_argument("--fixtures", required=True)
     p.add_argument("--out", required=True)
     p.add_argument("--model", default="nvidia/Nemotron-Labs-Diffusion-3B")
+    p.add_argument("--revision", default=DEFAULT_REVISION)
+    p.add_argument("--thinking", action="store_true", help="render the chat template with enable_thinking=True")
     p.add_argument("--arm-prefix", default="nemotron-3b")
     p.add_argument("--modes", default="diffusion,ar")
     p.add_argument("--max-new-tokens", type=int, default=DEFAULT_MAX_NEW_TOKENS)

@@ -1,0 +1,4331 @@
+{
+ "schema": "nemotron-pilot-v1",
+ "fixtures": [
+  {
+   "problem_id": "L0",
+   "problem_name": "copy-code",
+   "dependency_class": "copy",
+   "fixture_index": 0,
+   "seed": 27260908,
+   "scoring_mode": "exact",
+   "case_id": "ladder-l0-000-n48-v5",
+   "base_fixture_hash": "f33c144ee18975bee8cb6223cc7e4224c5799ac98df237619fa3d9e51edb4441",
+   "decision_count": 48,
+   "prompt_version": "v5",
+   "input": {
+    "items": [
+     {
+      "id": "K01",
+      "code": "BL9EFW"
+     },
+     {
+      "id": "K02",
+      "code": "ZYWXHC"
+     },
+     {
+      "id": "K03",
+      "code": "M3S68B"
+     },
+     {
+      "id": "K04",
+      "code": "K8WPCS"
+     },
+     {
+      "id": "K05",
+      "code": "GFVN9Y"
+     },
+     {
+      "id": "K06",
+      "code": "YCDS8E"
+     },
+     {
+      "id": "K07",
+      "code": "5LNS74"
+     },
+     {
+      "id": "K08",
+      "code": "Y24FUY"
+     },
+     {
+      "id": "K09",
+      "code": "VHQQDP"
+     },
+     {
+      "id": "K10",
+      "code": "HRE9SY"
+     },
+     {
+      "id": "K11",
+      "code": "TUK8CA"
+     },
+     {
+      "id": "K12",
+      "code": "RFVK4Z"
+     },
+     {
+      "id": "K13",
+      "code": "7B4TF9"
+     },
+     {
+      "id": "K14",
+      "code": "GLGRXM"
+     },
+     {
+      "id": "K15",
+      "code": "SYVL4K"
+     },
+     {
+      "id": "K16",
+      "code": "VKGHLU"
+     },
+     {
+      "id": "K17",
+      "code": "M77RCZ"
+     },
+     {
+      "id": "K18",
+      "code": "NNMCE8"
+     },
+     {
+      "id": "K19",
+      "code": "M2X8Y8"
+     },
+     {
+      "id": "K20",
+      "code": "R75FQU"
+     },
+     {
+      "id": "K21",
+      "code": "98PC7R"
+     },
+     {
+      "id": "K22",
+      "code": "A4WD3N"
+     },
+     {
+      "id": "K23",
+      "code": "2G2EE3"
+     },
+     {
+      "id": "K24",
+      "code": "8XYJ25"
+     },
+     {
+      "id": "K25",
+      "code": "7MAQUH"
+     },
+     {
+      "id": "K26",
+      "code": "7EWS3B"
+     },
+     {
+      "id": "K27",
+      "code": "WAGZKK"
+     },
+     {
+      "id": "K28",
+      "code": "HR27EE"
+     },
+     {
+      "id": "K29",
+      "code": "GZ6RCR"
+     },
+     {
+      "id": "K30",
+      "code": "E86G44"
+     },
+     {
+      "id": "K31",
+      "code": "RFKNHX"
+     },
+     {
+      "id": "K32",
+      "code": "ZYB2KV"
+     },
+     {
+      "id": "K33",
+      "code": "DKUG55"
+     },
+     {
+      "id": "K34",
+      "code": "YEMUJM"
+     },
+     {
+      "id": "K35",
+      "code": "2MLFK2"
+     },
+     {
+      "id": "K36",
+      "code": "LBWCCG"
+     },
+     {
+      "id": "K37",
+      "code": "NW3HPN"
+     },
+     {
+      "id": "K38",
+      "code": "7F6TE7"
+     },
+     {
+      "id": "K39",
+      "code": "CLM59F"
+     },
+     {
+      "id": "K40",
+      "code": "CGZVFN"
+     },
+     {
+      "id": "K41",
+      "code": "MVVVWU"
+     },
+     {
+      "id": "K42",
+      "code": "P4YWJA"
+     },
+     {
+      "id": "K43",
+      "code": "MT8N2Z"
+     },
+     {
+      "id": "K44",
+      "code": "ANE23R"
+     },
+     {
+      "id": "K45",
+      "code": "6APEKF"
+     },
+     {
+      "id": "K46",
+      "code": "F3NLPQ"
+     },
+     {
+      "id": "K47",
+      "code": "ZH56VQ"
+     },
+     {
+      "id": "K48",
+      "code": "9JLZCJ"
+     }
+    ]
+   },
+   "prompt": "Return only plain text lines, one line per input item, in source order from K01 to K48. Each line is the item id, an equals sign, and the value, like K01=VALUE. No quotes, no JSON, no markdown, no code fences, no explanation. Produce the value for each item: the item's code, copied exactly. Example: item {id:K99,code:Q7XR2M} -> Q7XR2M. Input:{\"items\":[{\"code\":\"BL9EFW\",\"id\":\"K01\"},{\"code\":\"ZYWXHC\",\"id\":\"K02\"},{\"code\":\"M3S68B\",\"id\":\"K03\"},{\"code\":\"K8WPCS\",\"id\":\"K04\"},{\"code\":\"GFVN9Y\",\"id\":\"K05\"},{\"code\":\"YCDS8E\",\"id\":\"K06\"},{\"code\":\"5LNS74\",\"id\":\"K07\"},{\"code\":\"Y24FUY\",\"id\":\"K08\"},{\"code\":\"VHQQDP\",\"id\":\"K09\"},{\"code\":\"HRE9SY\",\"id\":\"K10\"},{\"code\":\"TUK8CA\",\"id\":\"K11\"},{\"code\":\"RFVK4Z\",\"id\":\"K12\"},{\"code\":\"7B4TF9\",\"id\":\"K13\"},{\"code\":\"GLGRXM\",\"id\":\"K14\"},{\"code\":\"SYVL4K\",\"id\":\"K15\"},{\"code\":\"VKGHLU\",\"id\":\"K16\"},{\"code\":\"M77RCZ\",\"id\":\"K17\"},{\"code\":\"NNMCE8\",\"id\":\"K18\"},{\"code\":\"M2X8Y8\",\"id\":\"K19\"},{\"code\":\"R75FQU\",\"id\":\"K20\"},{\"code\":\"98PC7R\",\"id\":\"K21\"},{\"code\":\"A4WD3N\",\"id\":\"K22\"},{\"code\":\"2G2EE3\",\"id\":\"K23\"},{\"code\":\"8XYJ25\",\"id\":\"K24\"},{\"code\":\"7MAQUH\",\"id\":\"K25\"},{\"code\":\"7EWS3B\",\"id\":\"K26\"},{\"code\":\"WAGZKK\",\"id\":\"K27\"},{\"code\":\"HR27EE\",\"id\":\"K28\"},{\"code\":\"GZ6RCR\",\"id\":\"K29\"},{\"code\":\"E86G44\",\"id\":\"K30\"},{\"code\":\"RFKNHX\",\"id\":\"K31\"},{\"code\":\"ZYB2KV\",\"id\":\"K32\"},{\"code\":\"DKUG55\",\"id\":\"K33\"},{\"code\":\"YEMUJM\",\"id\":\"K34\"},{\"code\":\"2MLFK2\",\"id\":\"K35\"},{\"code\":\"LBWCCG\",\"id\":\"K36\"},{\"code\":\"NW3HPN\",\"id\":\"K37\"},{\"code\":\"7F6TE7\",\"id\":\"K38\"},{\"code\":\"CLM59F\",\"id\":\"K39\"},{\"code\":\"CGZVFN\",\"id\":\"K40\"},{\"code\":\"MVVVWU\",\"id\":\"K41\"},{\"code\":\"P4YWJA\",\"id\":\"K42\"},{\"code\":\"MT8N2Z\",\"id\":\"K43\"},{\"code\":\"ANE23R\",\"id\":\"K44\"},{\"code\":\"6APEKF\",\"id\":\"K45\"},{\"code\":\"F3NLPQ\",\"id\":\"K46\"},{\"code\":\"ZH56VQ\",\"id\":\"K47\"},{\"code\":\"9JLZCJ\",\"id\":\"K48\"}]}",
+   "prompt_hash": "7ef2452f9999f369423fb9793144ad0333201e543dc6053582c5cf18004d5127",
+   "output_keys": [
+    "K01",
+    "K02",
+    "K03",
+    "K04",
+    "K05",
+    "K06",
+    "K07",
+    "K08",
+    "K09",
+    "K10",
+    "K11",
+    "K12",
+    "K13",
+    "K14",
+    "K15",
+    "K16",
+    "K17",
+    "K18",
+    "K19",
+    "K20",
+    "K21",
+    "K22",
+    "K23",
+    "K24",
+    "K25",
+    "K26",
+    "K27",
+    "K28",
+    "K29",
+    "K30",
+    "K31",
+    "K32",
+    "K33",
+    "K34",
+    "K35",
+    "K36",
+    "K37",
+    "K38",
+    "K39",
+    "K40",
+    "K41",
+    "K42",
+    "K43",
+    "K44",
+    "K45",
+    "K46",
+    "K47",
+    "K48"
+   ],
+   "fixture_hash": "6a729e5fb7caa50f15648c2c615d0cb39a68cd17aedffed426077f3ca2564272"
+  },
+  {
+   "problem_id": "L1",
+   "problem_name": "amount-threshold",
+   "dependency_class": "threshold",
+   "fixture_index": 0,
+   "seed": 27360911,
+   "scoring_mode": "exact",
+   "case_id": "ladder-l1-000-n48-v5",
+   "base_fixture_hash": "be8657462554f67a9a1db931a2670f323360387ead7d0efbbbdf1850b4e81016",
+   "decision_count": 48,
+   "prompt_version": "v5",
+   "input": {
+    "threshold_cents": 50000,
+    "items": [
+     {
+      "id": "A01",
+      "amount_cents": 78332
+     },
+     {
+      "id": "A02",
+      "amount_cents": 55836
+     },
+     {
+      "id": "A03",
+      "amount_cents": 1190
+     },
+     {
+      "id": "A04",
+      "amount_cents": 12291
+     },
+     {
+      "id": "A05",
+      "amount_cents": 75733
+     },
+     {
+      "id": "A06",
+      "amount_cents": 9993
+     },
+     {
+      "id": "A07",
+      "amount_cents": 47275
+     },
+     {
+      "id": "A08",
+      "amount_cents": 57353
+     },
+     {
+      "id": "A09",
+      "amount_cents": 28947
+     },
+     {
+      "id": "A10",
+      "amount_cents": 76982
+     },
+     {
+      "id": "A11",
+      "amount_cents": 58039
+     },
+     {
+      "id": "A12",
+      "amount_cents": 48539
+     },
+     {
+      "id": "A13",
+      "amount_cents": 19366
+     },
+     {
+      "id": "A14",
+      "amount_cents": 64938
+     },
+     {
+      "id": "A15",
+      "amount_cents": 56745
+     },
+     {
+      "id": "A16",
+      "amount_cents": 69294
+     },
+     {
+      "id": "A17",
+      "amount_cents": 7427
+     },
+     {
+      "id": "A18",
+      "amount_cents": 75542
+     },
+     {
+      "id": "A19",
+      "amount_cents": 66623
+     },
+     {
+      "id": "A20",
+      "amount_cents": 40972
+     },
+     {
+      "id": "A21",
+      "amount_cents": 5167
+     },
+     {
+      "id": "A22",
+      "amount_cents": 44549
+     },
+     {
+      "id": "A23",
+      "amount_cents": 43045
+     },
+     {
+      "id": "A24",
+      "amount_cents": 93853
+     },
+     {
+      "id": "A25",
+      "amount_cents": 73891
+     },
+     {
+      "id": "A26",
+      "amount_cents": 72627
+     },
+     {
+      "id": "A27",
+      "amount_cents": 67704
+     },
+     {
+      "id": "A28",
+      "amount_cents": 57630
+     },
+     {
+      "id": "A29",
+      "amount_cents": 49901
+     },
+     {
+      "id": "A30",
+      "amount_cents": 64431
+     },
+     {
+      "id": "A31",
+      "amount_cents": 41211
+     },
+     {
+      "id": "A32",
+      "amount_cents": 12480
+     },
+     {
+      "id": "A33",
+      "amount_cents": 44830
+     },
+     {
+      "id": "A34",
+      "amount_cents": 35992
+     },
+     {
+      "id": "A35",
+      "amount_cents": 78292
+     },
+     {
+      "id": "A36",
+      "amount_cents": 52596
+     },
+     {
+      "id": "A37",
+      "amount_cents": 31133
+     },
+     {
+      "id": "A38",
+      "amount_cents": 92308
+     },
+     {
+      "id": "A39",
+      "amount_cents": 18726
+     },
+     {
+      "id": "A40",
+      "amount_cents": 68174
+     },
+     {
+      "id": "A41",
+      "amount_cents": 24861
+     },
+     {
+      "id": "A42",
+      "amount_cents": 91178
+     },
+     {
+      "id": "A43",
+      "amount_cents": 99013
+     },
+     {
+      "id": "A44",
+      "amount_cents": 78997
+     },
+     {
+      "id": "A45",
+      "amount_cents": 36571
+     },
+     {
+      "id": "A46",
+      "amount_cents": 60055
+     },
+     {
+      "id": "A47",
+      "amount_cents": 60529
+     },
+     {
+      "id": "A48",
+      "amount_cents": 21010
+     }
+    ]
+   },
+   "prompt": "Return only plain text lines, one line per input item, in source order from A01 to A48. Each line is the item id, an equals sign, and the value, like A01=VALUE. No quotes, no JSON, no markdown, no code fences, no explanation. Produce the value for each item: HIGH if amount_cents >= threshold_cents, otherwise LOW. Example: threshold 50000: amount 50000 -> HIGH; amount 49999 -> LOW. Input:{\"items\":[{\"amount_cents\":78332,\"id\":\"A01\"},{\"amount_cents\":55836,\"id\":\"A02\"},{\"amount_cents\":1190,\"id\":\"A03\"},{\"amount_cents\":12291,\"id\":\"A04\"},{\"amount_cents\":75733,\"id\":\"A05\"},{\"amount_cents\":9993,\"id\":\"A06\"},{\"amount_cents\":47275,\"id\":\"A07\"},{\"amount_cents\":57353,\"id\":\"A08\"},{\"amount_cents\":28947,\"id\":\"A09\"},{\"amount_cents\":76982,\"id\":\"A10\"},{\"amount_cents\":58039,\"id\":\"A11\"},{\"amount_cents\":48539,\"id\":\"A12\"},{\"amount_cents\":19366,\"id\":\"A13\"},{\"amount_cents\":64938,\"id\":\"A14\"},{\"amount_cents\":56745,\"id\":\"A15\"},{\"amount_cents\":69294,\"id\":\"A16\"},{\"amount_cents\":7427,\"id\":\"A17\"},{\"amount_cents\":75542,\"id\":\"A18\"},{\"amount_cents\":66623,\"id\":\"A19\"},{\"amount_cents\":40972,\"id\":\"A20\"},{\"amount_cents\":5167,\"id\":\"A21\"},{\"amount_cents\":44549,\"id\":\"A22\"},{\"amount_cents\":43045,\"id\":\"A23\"},{\"amount_cents\":93853,\"id\":\"A24\"},{\"amount_cents\":73891,\"id\":\"A25\"},{\"amount_cents\":72627,\"id\":\"A26\"},{\"amount_cents\":67704,\"id\":\"A27\"},{\"amount_cents\":57630,\"id\":\"A28\"},{\"amount_cents\":49901,\"id\":\"A29\"},{\"amount_cents\":64431,\"id\":\"A30\"},{\"amount_cents\":41211,\"id\":\"A31\"},{\"amount_cents\":12480,\"id\":\"A32\"},{\"amount_cents\":44830,\"id\":\"A33\"},{\"amount_cents\":35992,\"id\":\"A34\"},{\"amount_cents\":78292,\"id\":\"A35\"},{\"amount_cents\":52596,\"id\":\"A36\"},{\"amount_cents\":31133,\"id\":\"A37\"},{\"amount_cents\":92308,\"id\":\"A38\"},{\"amount_cents\":18726,\"id\":\"A39\"},{\"amount_cents\":68174,\"id\":\"A40\"},{\"amount_cents\":24861,\"id\":\"A41\"},{\"amount_cents\":91178,\"id\":\"A42\"},{\"amount_cents\":99013,\"id\":\"A43\"},{\"amount_cents\":78997,\"id\":\"A44\"},{\"amount_cents\":36571,\"id\":\"A45\"},{\"amount_cents\":60055,\"id\":\"A46\"},{\"amount_cents\":60529,\"id\":\"A47\"},{\"amount_cents\":21010,\"id\":\"A48\"}],\"threshold_cents\":50000}",
+   "prompt_hash": "2f683f549a7a5dc071823d050b42391353df1fd5a0244a5c17ab2c072c747bb0",
+   "output_keys": [
+    "A01",
+    "A02",
+    "A03",
+    "A04",
+    "A05",
+    "A06",
+    "A07",
+    "A08",
+    "A09",
+    "A10",
+    "A11",
+    "A12",
+    "A13",
+    "A14",
+    "A15",
+    "A16",
+    "A17",
+    "A18",
+    "A19",
+    "A20",
+    "A21",
+    "A22",
+    "A23",
+    "A24",
+    "A25",
+    "A26",
+    "A27",
+    "A28",
+    "A29",
+    "A30",
+    "A31",
+    "A32",
+    "A33",
+    "A34",
+    "A35",
+    "A36",
+    "A37",
+    "A38",
+    "A39",
+    "A40",
+    "A41",
+    "A42",
+    "A43",
+    "A44",
+    "A45",
+    "A46",
+    "A47",
+    "A48"
+   ],
+   "fixture_hash": "301540f4292d6f19f68a0275dccb70093b7f707928d6b0b4d8430c983ba52299"
+  },
+  {
+   "problem_id": "D1",
+   "problem_name": "accounts-payable-classification",
+   "dependency_class": "direct",
+   "fixture_index": 0,
+   "seed": 20260907,
+   "scoring_mode": "exact",
+   "case_id": "business-d1-000-n48-v5",
+   "base_fixture_hash": "f609875ae58922005090ec0ef12cf75dfe2c72f2a2c53f0b5813ffbe86bc441e",
+   "decision_count": 48,
+   "prompt_version": "v5",
+   "input": {
+    "account_rules": {
+     "airfare": "TRAVEL_AIR",
+     "lodging": "TRAVEL_LODGING",
+     "cloud": "SOFTWARE_INFRASTRUCTURE",
+     "paper": "OFFICE_SUPPLIES",
+     "legal": "PROFESSIONAL_LEGAL",
+     "courier": "SHIPPING_COURIER"
+    },
+    "transactions": [
+     {
+      "id": "TX01",
+      "merchant": "Beacon",
+      "description": "approved lodging purchase",
+      "category": "lodging",
+      "amount_cents": 108581,
+      "currency": "USD"
+     },
+     {
+      "id": "TX02",
+      "merchant": "Elm",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 241284,
+      "currency": "USD"
+     },
+     {
+      "id": "TX03",
+      "merchant": "Cobalt",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 224757,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX04",
+      "merchant": "Beacon",
+      "description": "approved airfare purchase",
+      "category": "airfare",
+      "amount_cents": 247325,
+      "currency": "USD"
+     },
+     {
+      "id": "TX05",
+      "merchant": "Elm",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 211447,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX06",
+      "merchant": "Cobalt",
+      "description": "approved legal purchase",
+      "category": "legal",
+      "amount_cents": 4695,
+      "currency": "USD"
+     },
+     {
+      "id": "TX07",
+      "merchant": "Fjord",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 222129,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX08",
+      "merchant": "Aster",
+      "description": "approved airfare purchase",
+      "category": "airfare",
+      "amount_cents": 9770,
+      "currency": "USD"
+     },
+     {
+      "id": "TX09",
+      "merchant": "Aster",
+      "description": "approved legal purchase",
+      "category": "legal",
+      "amount_cents": 47240,
+      "currency": "USD"
+     },
+     {
+      "id": "TX10",
+      "merchant": "Delta",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 30889,
+      "currency": "USD"
+     },
+     {
+      "id": "TX11",
+      "merchant": "Cobalt",
+      "description": "approved legal purchase",
+      "category": "legal",
+      "amount_cents": 208126,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX12",
+      "merchant": "Elm",
+      "description": "approved airfare purchase",
+      "category": "airfare",
+      "amount_cents": 27493,
+      "currency": "USD"
+     },
+     {
+      "id": "TX13",
+      "merchant": "Fjord",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 42958,
+      "currency": "USD"
+     },
+     {
+      "id": "TX14",
+      "merchant": "Aster",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 140751,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX15",
+      "merchant": "Aster",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 76714,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX16",
+      "merchant": "Beacon",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 193743,
+      "currency": "USD"
+     },
+     {
+      "id": "TX17",
+      "merchant": "Cobalt",
+      "description": "approved lodging purchase",
+      "category": "lodging",
+      "amount_cents": 2041,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX18",
+      "merchant": "Elm",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 92111,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX19",
+      "merchant": "Aster",
+      "description": "approved legal purchase",
+      "category": "legal",
+      "amount_cents": 97854,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX20",
+      "merchant": "Fjord",
+      "description": "approved airfare purchase",
+      "category": "airfare",
+      "amount_cents": 24294,
+      "currency": "USD"
+     },
+     {
+      "id": "TX21",
+      "merchant": "Aster",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 248405,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX22",
+      "merchant": "Fjord",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 152576,
+      "currency": "USD"
+     },
+     {
+      "id": "TX23",
+      "merchant": "Beacon",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 31918,
+      "currency": "USD"
+     },
+     {
+      "id": "TX24",
+      "merchant": "Cobalt",
+      "description": "approved legal purchase",
+      "category": "legal",
+      "amount_cents": 144945,
+      "currency": "USD"
+     },
+     {
+      "id": "TX25",
+      "merchant": "Aster",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 159611,
+      "currency": "USD"
+     },
+     {
+      "id": "TX26",
+      "merchant": "Beacon",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 166357,
+      "currency": "USD"
+     },
+     {
+      "id": "TX27",
+      "merchant": "Cobalt",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 216521,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX28",
+      "merchant": "Beacon",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 242872,
+      "currency": "USD"
+     },
+     {
+      "id": "TX29",
+      "merchant": "Cobalt",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 92255,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX30",
+      "merchant": "Cobalt",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 13276,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX31",
+      "merchant": "Cobalt",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 112676,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX32",
+      "merchant": "Delta",
+      "description": "approved airfare purchase",
+      "category": "airfare",
+      "amount_cents": 96992,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX33",
+      "merchant": "Beacon",
+      "description": "approved airfare purchase",
+      "category": "airfare",
+      "amount_cents": 92205,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX34",
+      "merchant": "Elm",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 25448,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX35",
+      "merchant": "Delta",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 162695,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX36",
+      "merchant": "Aster",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 154762,
+      "currency": "USD"
+     },
+     {
+      "id": "TX37",
+      "merchant": "Elm",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 22057,
+      "currency": "USD"
+     },
+     {
+      "id": "TX38",
+      "merchant": "Aster",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 44642,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX39",
+      "merchant": "Fjord",
+      "description": "approved airfare purchase",
+      "category": "airfare",
+      "amount_cents": 227767,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX40",
+      "merchant": "Fjord",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 137896,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX41",
+      "merchant": "Fjord",
+      "description": "approved airfare purchase",
+      "category": "airfare",
+      "amount_cents": 245828,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX42",
+      "merchant": "Elm",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 210809,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX43",
+      "merchant": "Fjord",
+      "description": "approved airfare purchase",
+      "category": "airfare",
+      "amount_cents": 207059,
+      "currency": "USD"
+     },
+     {
+      "id": "TX44",
+      "merchant": "Cobalt",
+      "description": "approved airfare purchase",
+      "category": "airfare",
+      "amount_cents": 10347,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX45",
+      "merchant": "Beacon",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 129035,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX46",
+      "merchant": "Cobalt",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 153644,
+      "currency": "USD"
+     },
+     {
+      "id": "TX47",
+      "merchant": "Fjord",
+      "description": "approved legal purchase",
+      "category": "legal",
+      "amount_cents": 188181,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX48",
+      "merchant": "Elm",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 233944,
+      "currency": "JPY"
+     }
+    ]
+   },
+   "prompt": "Return only plain text lines, one line per input item, in source order from TX01 to TX48. Each line is the item id, an equals sign, and the value, like TX01=VALUE. No quotes, no JSON, no markdown, no code fences, no explanation. Produce the value for each transaction: account_rules[transaction.category]. Example: category legal -> PROFESSIONAL_LEGAL. Input:{\"account_rules\":{\"airfare\":\"TRAVEL_AIR\",\"cloud\":\"SOFTWARE_INFRASTRUCTURE\",\"courier\":\"SHIPPING_COURIER\",\"legal\":\"PROFESSIONAL_LEGAL\",\"lodging\":\"TRAVEL_LODGING\",\"paper\":\"OFFICE_SUPPLIES\"},\"transactions\":[{\"amount_cents\":108581,\"category\":\"lodging\",\"currency\":\"USD\",\"description\":\"approved lodging purchase\",\"id\":\"TX01\",\"merchant\":\"Beacon\"},{\"amount_cents\":241284,\"category\":\"courier\",\"currency\":\"USD\",\"description\":\"approved courier purchase\",\"id\":\"TX02\",\"merchant\":\"Elm\"},{\"amount_cents\":224757,\"category\":\"paper\",\"currency\":\"JPY\",\"description\":\"approved paper purchase\",\"id\":\"TX03\",\"merchant\":\"Cobalt\"},{\"amount_cents\":247325,\"category\":\"airfare\",\"currency\":\"USD\",\"description\":\"approved airfare purchase\",\"id\":\"TX04\",\"merchant\":\"Beacon\"},{\"amount_cents\":211447,\"category\":\"cloud\",\"currency\":\"EUR\",\"description\":\"approved cloud purchase\",\"id\":\"TX05\",\"merchant\":\"Elm\"},{\"amount_cents\":4695,\"category\":\"legal\",\"currency\":\"USD\",\"description\":\"approved legal purchase\",\"id\":\"TX06\",\"merchant\":\"Cobalt\"},{\"amount_cents\":222129,\"category\":\"cloud\",\"currency\":\"JPY\",\"description\":\"approved cloud purchase\",\"id\":\"TX07\",\"merchant\":\"Fjord\"},{\"amount_cents\":9770,\"category\":\"airfare\",\"currency\":\"USD\",\"description\":\"approved airfare purchase\",\"id\":\"TX08\",\"merchant\":\"Aster\"},{\"amount_cents\":47240,\"category\":\"legal\",\"currency\":\"USD\",\"description\":\"approved legal purchase\",\"id\":\"TX09\",\"merchant\":\"Aster\"},{\"amount_cents\":30889,\"category\":\"paper\",\"currency\":\"USD\",\"description\":\"approved paper purchase\",\"id\":\"TX10\",\"merchant\":\"Delta\"},{\"amount_cents\":208126,\"category\":\"legal\",\"currency\":\"JPY\",\"description\":\"approved legal purchase\",\"id\":\"TX11\",\"merchant\":\"Cobalt\"},{\"amount_cents\":27493,\"category\":\"airfare\",\"currency\":\"USD\",\"description\":\"approved airfare purchase\",\"id\":\"TX12\",\"merchant\":\"Elm\"},{\"amount_cents\":42958,\"category\":\"cloud\",\"currency\":\"USD\",\"description\":\"approved cloud purchase\",\"id\":\"TX13\",\"merchant\":\"Fjord\"},{\"amount_cents\":140751,\"category\":\"cloud\",\"currency\":\"EUR\",\"description\":\"approved cloud purchase\",\"id\":\"TX14\",\"merchant\":\"Aster\"},{\"amount_cents\":76714,\"category\":\"cloud\",\"currency\":\"EUR\",\"description\":\"approved cloud purchase\",\"id\":\"TX15\",\"merchant\":\"Aster\"},{\"amount_cents\":193743,\"category\":\"paper\",\"currency\":\"USD\",\"description\":\"approved paper purchase\",\"id\":\"TX16\",\"merchant\":\"Beacon\"},{\"amount_cents\":2041,\"category\":\"lodging\",\"currency\":\"JPY\",\"description\":\"approved lodging purchase\",\"id\":\"TX17\",\"merchant\":\"Cobalt\"},{\"amount_cents\":92111,\"category\":\"cloud\",\"currency\":\"JPY\",\"description\":\"approved cloud purchase\",\"id\":\"TX18\",\"merchant\":\"Elm\"},{\"amount_cents\":97854,\"category\":\"legal\",\"currency\":\"EUR\",\"description\":\"approved legal purchase\",\"id\":\"TX19\",\"merchant\":\"Aster\"},{\"amount_cents\":24294,\"category\":\"airfare\",\"currency\":\"USD\",\"description\":\"approved airfare purchase\",\"id\":\"TX20\",\"merchant\":\"Fjord\"},{\"amount_cents\":248405,\"category\":\"paper\",\"currency\":\"EUR\",\"description\":\"approved paper purchase\",\"id\":\"TX21\",\"merchant\":\"Aster\"},{\"amount_cents\":152576,\"category\":\"cloud\",\"currency\":\"USD\",\"description\":\"approved cloud purchase\",\"id\":\"TX22\",\"merchant\":\"Fjord\"},{\"amount_cents\":31918,\"category\":\"courier\",\"currency\":\"USD\",\"description\":\"approved courier purchase\",\"id\":\"TX23\",\"merchant\":\"Beacon\"},{\"amount_cents\":144945,\"category\":\"legal\",\"currency\":\"USD\",\"description\":\"approved legal purchase\",\"id\":\"TX24\",\"merchant\":\"Cobalt\"},{\"amount_cents\":159611,\"category\":\"courier\",\"currency\":\"USD\",\"description\":\"approved courier purchase\",\"id\":\"TX25\",\"merchant\":\"Aster\"},{\"amount_cents\":166357,\"category\":\"paper\",\"currency\":\"USD\",\"description\":\"approved paper purchase\",\"id\":\"TX26\",\"merchant\":\"Beacon\"},{\"amount_cents\":216521,\"category\":\"courier\",\"currency\":\"JPY\",\"description\":\"approved courier purchase\",\"id\":\"TX27\",\"merchant\":\"Cobalt\"},{\"amount_cents\":242872,\"category\":\"cloud\",\"currency\":\"USD\",\"description\":\"approved cloud purchase\",\"id\":\"TX28\",\"merchant\":\"Beacon\"},{\"amount_cents\":92255,\"category\":\"paper\",\"currency\":\"JPY\",\"description\":\"approved paper purchase\",\"id\":\"TX29\",\"merchant\":\"Cobalt\"},{\"amount_cents\":13276,\"category\":\"courier\",\"currency\":\"EUR\",\"description\":\"approved courier purchase\",\"id\":\"TX30\",\"merchant\":\"Cobalt\"},{\"amount_cents\":112676,\"category\":\"courier\",\"currency\":\"JPY\",\"description\":\"approved courier purchase\",\"id\":\"TX31\",\"merchant\":\"Cobalt\"},{\"amount_cents\":96992,\"category\":\"airfare\",\"currency\":\"JPY\",\"description\":\"approved airfare purchase\",\"id\":\"TX32\",\"merchant\":\"Delta\"},{\"amount_cents\":92205,\"category\":\"airfare\",\"currency\":\"EUR\",\"description\":\"approved airfare purchase\",\"id\":\"TX33\",\"merchant\":\"Beacon\"},{\"amount_cents\":25448,\"category\":\"cloud\",\"currency\":\"EUR\",\"description\":\"approved cloud purchase\",\"id\":\"TX34\",\"merchant\":\"Elm\"},{\"amount_cents\":162695,\"category\":\"courier\",\"currency\":\"EUR\",\"description\":\"approved courier purchase\",\"id\":\"TX35\",\"merchant\":\"Delta\"},{\"amount_cents\":154762,\"category\":\"courier\",\"currency\":\"USD\",\"description\":\"approved courier purchase\",\"id\":\"TX36\",\"merchant\":\"Aster\"},{\"amount_cents\":22057,\"category\":\"cloud\",\"currency\":\"USD\",\"description\":\"approved cloud purchase\",\"id\":\"TX37\",\"merchant\":\"Elm\"},{\"amount_cents\":44642,\"category\":\"paper\",\"currency\":\"EUR\",\"description\":\"approved paper purchase\",\"id\":\"TX38\",\"merchant\":\"Aster\"},{\"amount_cents\":227767,\"category\":\"airfare\",\"currency\":\"EUR\",\"description\":\"approved airfare purchase\",\"id\":\"TX39\",\"merchant\":\"Fjord\"},{\"amount_cents\":137896,\"category\":\"courier\",\"currency\":\"JPY\",\"description\":\"approved courier purchase\",\"id\":\"TX40\",\"merchant\":\"Fjord\"},{\"amount_cents\":245828,\"category\":\"airfare\",\"currency\":\"JPY\",\"description\":\"approved airfare purchase\",\"id\":\"TX41\",\"merchant\":\"Fjord\"},{\"amount_cents\":210809,\"category\":\"courier\",\"currency\":\"JPY\",\"description\":\"approved courier purchase\",\"id\":\"TX42\",\"merchant\":\"Elm\"},{\"amount_cents\":207059,\"category\":\"airfare\",\"currency\":\"USD\",\"description\":\"approved airfare purchase\",\"id\":\"TX43\",\"merchant\":\"Fjord\"},{\"amount_cents\":10347,\"category\":\"airfare\",\"currency\":\"EUR\",\"description\":\"approved airfare purchase\",\"id\":\"TX44\",\"merchant\":\"Cobalt\"},{\"amount_cents\":129035,\"category\":\"courier\",\"currency\":\"JPY\",\"description\":\"approved courier purchase\",\"id\":\"TX45\",\"merchant\":\"Beacon\"},{\"amount_cents\":153644,\"category\":\"cloud\",\"currency\":\"USD\",\"description\":\"approved cloud purchase\",\"id\":\"TX46\",\"merchant\":\"Cobalt\"},{\"amount_cents\":188181,\"category\":\"legal\",\"currency\":\"EUR\",\"description\":\"approved legal purchase\",\"id\":\"TX47\",\"merchant\":\"Fjord\"},{\"amount_cents\":233944,\"category\":\"paper\",\"currency\":\"JPY\",\"description\":\"approved paper purchase\",\"id\":\"TX48\",\"merchant\":\"Elm\"}]}",
+   "prompt_hash": "64c103075ce670f40512f3df994bff6e51081b3bedf1607030d1916d8e08b8a0",
+   "output_keys": [
+    "TX01",
+    "TX02",
+    "TX03",
+    "TX04",
+    "TX05",
+    "TX06",
+    "TX07",
+    "TX08",
+    "TX09",
+    "TX10",
+    "TX11",
+    "TX12",
+    "TX13",
+    "TX14",
+    "TX15",
+    "TX16",
+    "TX17",
+    "TX18",
+    "TX19",
+    "TX20",
+    "TX21",
+    "TX22",
+    "TX23",
+    "TX24",
+    "TX25",
+    "TX26",
+    "TX27",
+    "TX28",
+    "TX29",
+    "TX30",
+    "TX31",
+    "TX32",
+    "TX33",
+    "TX34",
+    "TX35",
+    "TX36",
+    "TX37",
+    "TX38",
+    "TX39",
+    "TX40",
+    "TX41",
+    "TX42",
+    "TX43",
+    "TX44",
+    "TX45",
+    "TX46",
+    "TX47",
+    "TX48"
+   ],
+   "fixture_hash": "014c386f1a510b92b288c981dd39cdefcf0773de808fb33ac1438a9f705c423b"
+  },
+  {
+   "problem_id": "D3",
+   "problem_name": "purchase-order-compliance",
+   "dependency_class": "direct",
+   "fixture_index": 0,
+   "seed": 20460913,
+   "scoring_mode": "exact",
+   "case_id": "business-d3-000-n48-v5",
+   "base_fixture_hash": "a399318f0d0275a9dd441253301541763b0a2d7ab8a0f78f6c89e800c5629569",
+   "decision_count": 48,
+   "prompt_version": "v5",
+   "input": {
+    "review_threshold_cents": {
+     "GENERAL": 75000,
+     "IT": 125000,
+     "CONSTRUCTION": 200000
+    },
+    "orders": [
+     {
+      "id": "PO01",
+      "supplier_status": "SANCTIONED",
+      "amount_cents": 50341,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO02",
+      "supplier_status": "APPROVED",
+      "amount_cents": 280958,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO03",
+      "supplier_status": "APPROVED",
+      "amount_cents": 94543,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO04",
+      "supplier_status": "APPROVED",
+      "amount_cents": 103446,
+      "category": "IT",
+      "contract": false,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO05",
+      "supplier_status": "APPROVED",
+      "amount_cents": 42828,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO06",
+      "supplier_status": "PENDING",
+      "amount_cents": 171613,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO07",
+      "supplier_status": "APPROVED",
+      "amount_cents": 268818,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO08",
+      "supplier_status": "APPROVED",
+      "amount_cents": 278787,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO09",
+      "supplier_status": "PENDING",
+      "amount_cents": 63384,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO10",
+      "supplier_status": "SANCTIONED",
+      "amount_cents": 220555,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO11",
+      "supplier_status": "PENDING",
+      "amount_cents": 49916,
+      "category": "IT",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO12",
+      "supplier_status": "PENDING",
+      "amount_cents": 295823,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO13",
+      "supplier_status": "APPROVED",
+      "amount_cents": 146662,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO14",
+      "supplier_status": "APPROVED",
+      "amount_cents": 289287,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO15",
+      "supplier_status": "PENDING",
+      "amount_cents": 151165,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO16",
+      "supplier_status": "PENDING",
+      "amount_cents": 11465,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO17",
+      "supplier_status": "APPROVED",
+      "amount_cents": 287347,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO18",
+      "supplier_status": "APPROVED",
+      "amount_cents": 72746,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO19",
+      "supplier_status": "APPROVED",
+      "amount_cents": 274083,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO20",
+      "supplier_status": "APPROVED",
+      "amount_cents": 240115,
+      "category": "IT",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO21",
+      "supplier_status": "APPROVED",
+      "amount_cents": 230035,
+      "category": "IT",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO22",
+      "supplier_status": "APPROVED",
+      "amount_cents": 164787,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO23",
+      "supplier_status": "APPROVED",
+      "amount_cents": 262026,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO24",
+      "supplier_status": "APPROVED",
+      "amount_cents": 193062,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO25",
+      "supplier_status": "SANCTIONED",
+      "amount_cents": 26611,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO26",
+      "supplier_status": "APPROVED",
+      "amount_cents": 241863,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO27",
+      "supplier_status": "PENDING",
+      "amount_cents": 48415,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO28",
+      "supplier_status": "APPROVED",
+      "amount_cents": 218599,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO29",
+      "supplier_status": "APPROVED",
+      "amount_cents": 143610,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO30",
+      "supplier_status": "SANCTIONED",
+      "amount_cents": 89619,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO31",
+      "supplier_status": "PENDING",
+      "amount_cents": 37262,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO32",
+      "supplier_status": "APPROVED",
+      "amount_cents": 141037,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO33",
+      "supplier_status": "APPROVED",
+      "amount_cents": 239835,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO34",
+      "supplier_status": "PENDING",
+      "amount_cents": 220669,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO35",
+      "supplier_status": "APPROVED",
+      "amount_cents": 229069,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO36",
+      "supplier_status": "APPROVED",
+      "amount_cents": 70442,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO37",
+      "supplier_status": "APPROVED",
+      "amount_cents": 262099,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO38",
+      "supplier_status": "APPROVED",
+      "amount_cents": 135415,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO39",
+      "supplier_status": "SANCTIONED",
+      "amount_cents": 64549,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO40",
+      "supplier_status": "APPROVED",
+      "amount_cents": 218684,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO41",
+      "supplier_status": "SANCTIONED",
+      "amount_cents": 116517,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO42",
+      "supplier_status": "APPROVED",
+      "amount_cents": 45394,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO43",
+      "supplier_status": "APPROVED",
+      "amount_cents": 48742,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO44",
+      "supplier_status": "PENDING",
+      "amount_cents": 116033,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO45",
+      "supplier_status": "PENDING",
+      "amount_cents": 207731,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO46",
+      "supplier_status": "PENDING",
+      "amount_cents": 32714,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO47",
+      "supplier_status": "PENDING",
+      "amount_cents": 188276,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO48",
+      "supplier_status": "APPROVED",
+      "amount_cents": 153549,
+      "category": "IT",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     }
+    ]
+   },
+   "prompt": "Return only plain text lines, one line per input item, in source order from PO01 to PO48. Each line is the item id, an equals sign, and the value, like PO01=VALUE. No quotes, no JSON, no markdown, no code fences, no explanation. Produce the value for each order, exactly REJECT, REVIEW, or APPROVE, checked in this order: REJECT if supplier_status is SANCTIONED or jurisdiction is RESTRICTED; REVIEW if supplier_status is not APPROVED; REVIEW if contract is false and amount_cents > review_threshold_cents[category]; otherwise APPROVE. Example: {supplier_status:APPROVED,jurisdiction:DOMESTIC,contract:false,category:IT,amount_cents:130000} -> REVIEW. Input:{\"orders\":[{\"amount_cents\":50341,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO01\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"SANCTIONED\"},{\"amount_cents\":280958,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO02\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":94543,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO03\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":103446,\"category\":\"IT\",\"contract\":false,\"id\":\"PO04\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":42828,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO05\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":171613,\"category\":\"IT\",\"contract\":true,\"id\":\"PO06\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":268818,\"category\":\"IT\",\"contract\":true,\"id\":\"PO07\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":278787,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO08\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":63384,\"category\":\"IT\",\"contract\":true,\"id\":\"PO09\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":220555,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO10\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"SANCTIONED\"},{\"amount_cents\":49916,\"category\":\"IT\",\"contract\":false,\"id\":\"PO11\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":295823,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO12\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":146662,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO13\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":289287,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO14\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":151165,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO15\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":11465,\"category\":\"IT\",\"contract\":true,\"id\":\"PO16\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":287347,\"category\":\"IT\",\"contract\":true,\"id\":\"PO17\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":72746,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO18\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":274083,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO19\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":240115,\"category\":\"IT\",\"contract\":false,\"id\":\"PO20\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":230035,\"category\":\"IT\",\"contract\":false,\"id\":\"PO21\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":164787,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO22\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":262026,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO23\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":193062,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO24\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":26611,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO25\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"SANCTIONED\"},{\"amount_cents\":241863,\"category\":\"IT\",\"contract\":true,\"id\":\"PO26\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":48415,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO27\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":218599,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO28\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":143610,\"category\":\"IT\",\"contract\":true,\"id\":\"PO29\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":89619,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO30\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"SANCTIONED\"},{\"amount_cents\":37262,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO31\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":141037,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO32\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":239835,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO33\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":220669,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO34\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":229069,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO35\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":70442,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO36\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":262099,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO37\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":135415,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO38\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":64549,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO39\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"SANCTIONED\"},{\"amount_cents\":218684,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO40\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":116517,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO41\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"SANCTIONED\"},{\"amount_cents\":45394,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO42\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":48742,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO43\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":116033,\"category\":\"IT\",\"contract\":true,\"id\":\"PO44\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":207731,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO45\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":32714,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO46\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":188276,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO47\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":153549,\"category\":\"IT\",\"contract\":false,\"id\":\"PO48\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"}],\"review_threshold_cents\":{\"CONSTRUCTION\":200000,\"GENERAL\":75000,\"IT\":125000}}",
+   "prompt_hash": "753f20867e7bd92d62475844b05cc7536555873192e663ad1cd744bbb8762912",
+   "output_keys": [
+    "PO01",
+    "PO02",
+    "PO03",
+    "PO04",
+    "PO05",
+    "PO06",
+    "PO07",
+    "PO08",
+    "PO09",
+    "PO10",
+    "PO11",
+    "PO12",
+    "PO13",
+    "PO14",
+    "PO15",
+    "PO16",
+    "PO17",
+    "PO18",
+    "PO19",
+    "PO20",
+    "PO21",
+    "PO22",
+    "PO23",
+    "PO24",
+    "PO25",
+    "PO26",
+    "PO27",
+    "PO28",
+    "PO29",
+    "PO30",
+    "PO31",
+    "PO32",
+    "PO33",
+    "PO34",
+    "PO35",
+    "PO36",
+    "PO37",
+    "PO38",
+    "PO39",
+    "PO40",
+    "PO41",
+    "PO42",
+    "PO43",
+    "PO44",
+    "PO45",
+    "PO46",
+    "PO47",
+    "PO48"
+   ],
+   "fixture_hash": "614aad54fa1ce0d5df856cdd30aaf989e17c6d2a98dd7b0b1862bfabe41ce698"
+  },
+  {
+   "problem_id": "L0",
+   "problem_name": "copy-code",
+   "dependency_class": "copy",
+   "fixture_index": 1,
+   "seed": 27270881,
+   "scoring_mode": "exact",
+   "case_id": "ladder-l0-001-n48-v5",
+   "base_fixture_hash": "076c9fc842e04df8175e50cd7b701180f66361a9c58ad31eecb7a8821d858fb2",
+   "decision_count": 48,
+   "prompt_version": "v5",
+   "input": {
+    "items": [
+     {
+      "id": "K01",
+      "code": "E3GD2Y"
+     },
+     {
+      "id": "K02",
+      "code": "WLMDXH"
+     },
+     {
+      "id": "K03",
+      "code": "MEE4RF"
+     },
+     {
+      "id": "K04",
+      "code": "YDJ3FH"
+     },
+     {
+      "id": "K05",
+      "code": "TFVXU5"
+     },
+     {
+      "id": "K06",
+      "code": "T68FSH"
+     },
+     {
+      "id": "K07",
+      "code": "2QPWQ2"
+     },
+     {
+      "id": "K08",
+      "code": "2Z5BUU"
+     },
+     {
+      "id": "K09",
+      "code": "Y3G2X4"
+     },
+     {
+      "id": "K10",
+      "code": "RBS42D"
+     },
+     {
+      "id": "K11",
+      "code": "DGNCXR"
+     },
+     {
+      "id": "K12",
+      "code": "MW7QZK"
+     },
+     {
+      "id": "K13",
+      "code": "8EPZAW"
+     },
+     {
+      "id": "K14",
+      "code": "JMUFMA"
+     },
+     {
+      "id": "K15",
+      "code": "24T2CJ"
+     },
+     {
+      "id": "K16",
+      "code": "XGDB83"
+     },
+     {
+      "id": "K17",
+      "code": "T6YGSH"
+     },
+     {
+      "id": "K18",
+      "code": "QHPPMK"
+     },
+     {
+      "id": "K19",
+      "code": "4KBECF"
+     },
+     {
+      "id": "K20",
+      "code": "BHA2LU"
+     },
+     {
+      "id": "K21",
+      "code": "D5JHAC"
+     },
+     {
+      "id": "K22",
+      "code": "4D7WWM"
+     },
+     {
+      "id": "K23",
+      "code": "L5XHAN"
+     },
+     {
+      "id": "K24",
+      "code": "R2DAK7"
+     },
+     {
+      "id": "K25",
+      "code": "VKFVTF"
+     },
+     {
+      "id": "K26",
+      "code": "DG3FL6"
+     },
+     {
+      "id": "K27",
+      "code": "FTY23G"
+     },
+     {
+      "id": "K28",
+      "code": "TBT7KZ"
+     },
+     {
+      "id": "K29",
+      "code": "MA44DX"
+     },
+     {
+      "id": "K30",
+      "code": "2B6GBJ"
+     },
+     {
+      "id": "K31",
+      "code": "UJLXAV"
+     },
+     {
+      "id": "K32",
+      "code": "8N4TDA"
+     },
+     {
+      "id": "K33",
+      "code": "YSUQP6"
+     },
+     {
+      "id": "K34",
+      "code": "TV8FK3"
+     },
+     {
+      "id": "K35",
+      "code": "4BA5J6"
+     },
+     {
+      "id": "K36",
+      "code": "V8JKF3"
+     },
+     {
+      "id": "K37",
+      "code": "XEB6KY"
+     },
+     {
+      "id": "K38",
+      "code": "38V75P"
+     },
+     {
+      "id": "K39",
+      "code": "DK7RZC"
+     },
+     {
+      "id": "K40",
+      "code": "ZG97ML"
+     },
+     {
+      "id": "K41",
+      "code": "7BVAL7"
+     },
+     {
+      "id": "K42",
+      "code": "6XT8UQ"
+     },
+     {
+      "id": "K43",
+      "code": "MVQ7MD"
+     },
+     {
+      "id": "K44",
+      "code": "JCCKPA"
+     },
+     {
+      "id": "K45",
+      "code": "SDEUY3"
+     },
+     {
+      "id": "K46",
+      "code": "CWUWGD"
+     },
+     {
+      "id": "K47",
+      "code": "XF3MYZ"
+     },
+     {
+      "id": "K48",
+      "code": "B2MJYD"
+     }
+    ]
+   },
+   "prompt": "Return only plain text lines, one line per input item, in source order from K01 to K48. Each line is the item id, an equals sign, and the value, like K01=VALUE. No quotes, no JSON, no markdown, no code fences, no explanation. Produce the value for each item: the item's code, copied exactly. Example: item {id:K99,code:Q7XR2M} -> Q7XR2M. Input:{\"items\":[{\"code\":\"E3GD2Y\",\"id\":\"K01\"},{\"code\":\"WLMDXH\",\"id\":\"K02\"},{\"code\":\"MEE4RF\",\"id\":\"K03\"},{\"code\":\"YDJ3FH\",\"id\":\"K04\"},{\"code\":\"TFVXU5\",\"id\":\"K05\"},{\"code\":\"T68FSH\",\"id\":\"K06\"},{\"code\":\"2QPWQ2\",\"id\":\"K07\"},{\"code\":\"2Z5BUU\",\"id\":\"K08\"},{\"code\":\"Y3G2X4\",\"id\":\"K09\"},{\"code\":\"RBS42D\",\"id\":\"K10\"},{\"code\":\"DGNCXR\",\"id\":\"K11\"},{\"code\":\"MW7QZK\",\"id\":\"K12\"},{\"code\":\"8EPZAW\",\"id\":\"K13\"},{\"code\":\"JMUFMA\",\"id\":\"K14\"},{\"code\":\"24T2CJ\",\"id\":\"K15\"},{\"code\":\"XGDB83\",\"id\":\"K16\"},{\"code\":\"T6YGSH\",\"id\":\"K17\"},{\"code\":\"QHPPMK\",\"id\":\"K18\"},{\"code\":\"4KBECF\",\"id\":\"K19\"},{\"code\":\"BHA2LU\",\"id\":\"K20\"},{\"code\":\"D5JHAC\",\"id\":\"K21\"},{\"code\":\"4D7WWM\",\"id\":\"K22\"},{\"code\":\"L5XHAN\",\"id\":\"K23\"},{\"code\":\"R2DAK7\",\"id\":\"K24\"},{\"code\":\"VKFVTF\",\"id\":\"K25\"},{\"code\":\"DG3FL6\",\"id\":\"K26\"},{\"code\":\"FTY23G\",\"id\":\"K27\"},{\"code\":\"TBT7KZ\",\"id\":\"K28\"},{\"code\":\"MA44DX\",\"id\":\"K29\"},{\"code\":\"2B6GBJ\",\"id\":\"K30\"},{\"code\":\"UJLXAV\",\"id\":\"K31\"},{\"code\":\"8N4TDA\",\"id\":\"K32\"},{\"code\":\"YSUQP6\",\"id\":\"K33\"},{\"code\":\"TV8FK3\",\"id\":\"K34\"},{\"code\":\"4BA5J6\",\"id\":\"K35\"},{\"code\":\"V8JKF3\",\"id\":\"K36\"},{\"code\":\"XEB6KY\",\"id\":\"K37\"},{\"code\":\"38V75P\",\"id\":\"K38\"},{\"code\":\"DK7RZC\",\"id\":\"K39\"},{\"code\":\"ZG97ML\",\"id\":\"K40\"},{\"code\":\"7BVAL7\",\"id\":\"K41\"},{\"code\":\"6XT8UQ\",\"id\":\"K42\"},{\"code\":\"MVQ7MD\",\"id\":\"K43\"},{\"code\":\"JCCKPA\",\"id\":\"K44\"},{\"code\":\"SDEUY3\",\"id\":\"K45\"},{\"code\":\"CWUWGD\",\"id\":\"K46\"},{\"code\":\"XF3MYZ\",\"id\":\"K47\"},{\"code\":\"B2MJYD\",\"id\":\"K48\"}]}",
+   "prompt_hash": "053d5ad8e2646784fc9753ffff9d823bf8fc26148f20137c39c241da83319be4",
+   "output_keys": [
+    "K01",
+    "K02",
+    "K03",
+    "K04",
+    "K05",
+    "K06",
+    "K07",
+    "K08",
+    "K09",
+    "K10",
+    "K11",
+    "K12",
+    "K13",
+    "K14",
+    "K15",
+    "K16",
+    "K17",
+    "K18",
+    "K19",
+    "K20",
+    "K21",
+    "K22",
+    "K23",
+    "K24",
+    "K25",
+    "K26",
+    "K27",
+    "K28",
+    "K29",
+    "K30",
+    "K31",
+    "K32",
+    "K33",
+    "K34",
+    "K35",
+    "K36",
+    "K37",
+    "K38",
+    "K39",
+    "K40",
+    "K41",
+    "K42",
+    "K43",
+    "K44",
+    "K45",
+    "K46",
+    "K47",
+    "K48"
+   ],
+   "fixture_hash": "3fb842b76479d18f69df58b6082680044db8faec80125a22c23736d221b053a2"
+  },
+  {
+   "problem_id": "L1",
+   "problem_name": "amount-threshold",
+   "dependency_class": "threshold",
+   "fixture_index": 1,
+   "seed": 27370884,
+   "scoring_mode": "exact",
+   "case_id": "ladder-l1-001-n48-v5",
+   "base_fixture_hash": "994754a4d6b3d34b8c3fda59bac416e6aeb56b482063454ebfe40d02f931042a",
+   "decision_count": 48,
+   "prompt_version": "v5",
+   "input": {
+    "threshold_cents": 50000,
+    "items": [
+     {
+      "id": "A01",
+      "amount_cents": 98466
+     },
+     {
+      "id": "A02",
+      "amount_cents": 19139
+     },
+     {
+      "id": "A03",
+      "amount_cents": 35052
+     },
+     {
+      "id": "A04",
+      "amount_cents": 39455
+     },
+     {
+      "id": "A05",
+      "amount_cents": 83072
+     },
+     {
+      "id": "A06",
+      "amount_cents": 34341
+     },
+     {
+      "id": "A07",
+      "amount_cents": 71145
+     },
+     {
+      "id": "A08",
+      "amount_cents": 95059
+     },
+     {
+      "id": "A09",
+      "amount_cents": 53549
+     },
+     {
+      "id": "A10",
+      "amount_cents": 42525
+     },
+     {
+      "id": "A11",
+      "amount_cents": 81906
+     },
+     {
+      "id": "A12",
+      "amount_cents": 7389
+     },
+     {
+      "id": "A13",
+      "amount_cents": 76895
+     },
+     {
+      "id": "A14",
+      "amount_cents": 10671
+     },
+     {
+      "id": "A15",
+      "amount_cents": 40394
+     },
+     {
+      "id": "A16",
+      "amount_cents": 72569
+     },
+     {
+      "id": "A17",
+      "amount_cents": 1145
+     },
+     {
+      "id": "A18",
+      "amount_cents": 68523
+     },
+     {
+      "id": "A19",
+      "amount_cents": 44751
+     },
+     {
+      "id": "A20",
+      "amount_cents": 32012
+     },
+     {
+      "id": "A21",
+      "amount_cents": 71445
+     },
+     {
+      "id": "A22",
+      "amount_cents": 33384
+     },
+     {
+      "id": "A23",
+      "amount_cents": 78249
+     },
+     {
+      "id": "A24",
+      "amount_cents": 12175
+     },
+     {
+      "id": "A25",
+      "amount_cents": 69284
+     },
+     {
+      "id": "A26",
+      "amount_cents": 97998
+     },
+     {
+      "id": "A27",
+      "amount_cents": 4531
+     },
+     {
+      "id": "A28",
+      "amount_cents": 62326
+     },
+     {
+      "id": "A29",
+      "amount_cents": 27309
+     },
+     {
+      "id": "A30",
+      "amount_cents": 50339
+     },
+     {
+      "id": "A31",
+      "amount_cents": 62203
+     },
+     {
+      "id": "A32",
+      "amount_cents": 64348
+     },
+     {
+      "id": "A33",
+      "amount_cents": 78195
+     },
+     {
+      "id": "A34",
+      "amount_cents": 68942
+     },
+     {
+      "id": "A35",
+      "amount_cents": 39658
+     },
+     {
+      "id": "A36",
+      "amount_cents": 54387
+     },
+     {
+      "id": "A37",
+      "amount_cents": 50674
+     },
+     {
+      "id": "A38",
+      "amount_cents": 87965
+     },
+     {
+      "id": "A39",
+      "amount_cents": 33892
+     },
+     {
+      "id": "A40",
+      "amount_cents": 15747
+     },
+     {
+      "id": "A41",
+      "amount_cents": 58709
+     },
+     {
+      "id": "A42",
+      "amount_cents": 77095
+     },
+     {
+      "id": "A43",
+      "amount_cents": 61839
+     },
+     {
+      "id": "A44",
+      "amount_cents": 56758
+     },
+     {
+      "id": "A45",
+      "amount_cents": 42794
+     },
+     {
+      "id": "A46",
+      "amount_cents": 43780
+     },
+     {
+      "id": "A47",
+      "amount_cents": 52506
+     },
+     {
+      "id": "A48",
+      "amount_cents": 5584
+     }
+    ]
+   },
+   "prompt": "Return only plain text lines, one line per input item, in source order from A01 to A48. Each line is the item id, an equals sign, and the value, like A01=VALUE. No quotes, no JSON, no markdown, no code fences, no explanation. Produce the value for each item: HIGH if amount_cents >= threshold_cents, otherwise LOW. Example: threshold 50000: amount 50000 -> HIGH; amount 49999 -> LOW. Input:{\"items\":[{\"amount_cents\":98466,\"id\":\"A01\"},{\"amount_cents\":19139,\"id\":\"A02\"},{\"amount_cents\":35052,\"id\":\"A03\"},{\"amount_cents\":39455,\"id\":\"A04\"},{\"amount_cents\":83072,\"id\":\"A05\"},{\"amount_cents\":34341,\"id\":\"A06\"},{\"amount_cents\":71145,\"id\":\"A07\"},{\"amount_cents\":95059,\"id\":\"A08\"},{\"amount_cents\":53549,\"id\":\"A09\"},{\"amount_cents\":42525,\"id\":\"A10\"},{\"amount_cents\":81906,\"id\":\"A11\"},{\"amount_cents\":7389,\"id\":\"A12\"},{\"amount_cents\":76895,\"id\":\"A13\"},{\"amount_cents\":10671,\"id\":\"A14\"},{\"amount_cents\":40394,\"id\":\"A15\"},{\"amount_cents\":72569,\"id\":\"A16\"},{\"amount_cents\":1145,\"id\":\"A17\"},{\"amount_cents\":68523,\"id\":\"A18\"},{\"amount_cents\":44751,\"id\":\"A19\"},{\"amount_cents\":32012,\"id\":\"A20\"},{\"amount_cents\":71445,\"id\":\"A21\"},{\"amount_cents\":33384,\"id\":\"A22\"},{\"amount_cents\":78249,\"id\":\"A23\"},{\"amount_cents\":12175,\"id\":\"A24\"},{\"amount_cents\":69284,\"id\":\"A25\"},{\"amount_cents\":97998,\"id\":\"A26\"},{\"amount_cents\":4531,\"id\":\"A27\"},{\"amount_cents\":62326,\"id\":\"A28\"},{\"amount_cents\":27309,\"id\":\"A29\"},{\"amount_cents\":50339,\"id\":\"A30\"},{\"amount_cents\":62203,\"id\":\"A31\"},{\"amount_cents\":64348,\"id\":\"A32\"},{\"amount_cents\":78195,\"id\":\"A33\"},{\"amount_cents\":68942,\"id\":\"A34\"},{\"amount_cents\":39658,\"id\":\"A35\"},{\"amount_cents\":54387,\"id\":\"A36\"},{\"amount_cents\":50674,\"id\":\"A37\"},{\"amount_cents\":87965,\"id\":\"A38\"},{\"amount_cents\":33892,\"id\":\"A39\"},{\"amount_cents\":15747,\"id\":\"A40\"},{\"amount_cents\":58709,\"id\":\"A41\"},{\"amount_cents\":77095,\"id\":\"A42\"},{\"amount_cents\":61839,\"id\":\"A43\"},{\"amount_cents\":56758,\"id\":\"A44\"},{\"amount_cents\":42794,\"id\":\"A45\"},{\"amount_cents\":43780,\"id\":\"A46\"},{\"amount_cents\":52506,\"id\":\"A47\"},{\"amount_cents\":5584,\"id\":\"A48\"}],\"threshold_cents\":50000}",
+   "prompt_hash": "cd25c1b61e9bf0c7a5c3cf3a3068aad8ddfa7f238c33b794f2d5038c7befb6ad",
+   "output_keys": [
+    "A01",
+    "A02",
+    "A03",
+    "A04",
+    "A05",
+    "A06",
+    "A07",
+    "A08",
+    "A09",
+    "A10",
+    "A11",
+    "A12",
+    "A13",
+    "A14",
+    "A15",
+    "A16",
+    "A17",
+    "A18",
+    "A19",
+    "A20",
+    "A21",
+    "A22",
+    "A23",
+    "A24",
+    "A25",
+    "A26",
+    "A27",
+    "A28",
+    "A29",
+    "A30",
+    "A31",
+    "A32",
+    "A33",
+    "A34",
+    "A35",
+    "A36",
+    "A37",
+    "A38",
+    "A39",
+    "A40",
+    "A41",
+    "A42",
+    "A43",
+    "A44",
+    "A45",
+    "A46",
+    "A47",
+    "A48"
+   ],
+   "fixture_hash": "daa24fa1e508ed92561013f2fa4d3941145df75d0b5cda6c9d5612df4e474392"
+  },
+  {
+   "problem_id": "D1",
+   "problem_name": "accounts-payable-classification",
+   "dependency_class": "direct",
+   "fixture_index": 1,
+   "seed": 20270880,
+   "scoring_mode": "exact",
+   "case_id": "business-d1-001-n48-v5",
+   "base_fixture_hash": "675f934470446c74a8229820710542978831cd1e9c830f27590f54b93cc9be3e",
+   "decision_count": 48,
+   "prompt_version": "v5",
+   "input": {
+    "account_rules": {
+     "airfare": "TRAVEL_AIR",
+     "lodging": "TRAVEL_LODGING",
+     "cloud": "SOFTWARE_INFRASTRUCTURE",
+     "paper": "OFFICE_SUPPLIES",
+     "legal": "PROFESSIONAL_LEGAL",
+     "courier": "SHIPPING_COURIER"
+    },
+    "transactions": [
+     {
+      "id": "TX01",
+      "merchant": "Fjord",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 71720,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX02",
+      "merchant": "Delta",
+      "description": "approved airfare purchase",
+      "category": "airfare",
+      "amount_cents": 141017,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX03",
+      "merchant": "Cobalt",
+      "description": "approved airfare purchase",
+      "category": "airfare",
+      "amount_cents": 197267,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX04",
+      "merchant": "Beacon",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 173164,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX05",
+      "merchant": "Beacon",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 246193,
+      "currency": "USD"
+     },
+     {
+      "id": "TX06",
+      "merchant": "Fjord",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 16087,
+      "currency": "USD"
+     },
+     {
+      "id": "TX07",
+      "merchant": "Elm",
+      "description": "approved airfare purchase",
+      "category": "airfare",
+      "amount_cents": 118345,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX08",
+      "merchant": "Delta",
+      "description": "approved airfare purchase",
+      "category": "airfare",
+      "amount_cents": 132368,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX09",
+      "merchant": "Fjord",
+      "description": "approved lodging purchase",
+      "category": "lodging",
+      "amount_cents": 6545,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX10",
+      "merchant": "Delta",
+      "description": "approved lodging purchase",
+      "category": "lodging",
+      "amount_cents": 61412,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX11",
+      "merchant": "Elm",
+      "description": "approved airfare purchase",
+      "category": "airfare",
+      "amount_cents": 123163,
+      "currency": "USD"
+     },
+     {
+      "id": "TX12",
+      "merchant": "Fjord",
+      "description": "approved legal purchase",
+      "category": "legal",
+      "amount_cents": 102118,
+      "currency": "USD"
+     },
+     {
+      "id": "TX13",
+      "merchant": "Beacon",
+      "description": "approved airfare purchase",
+      "category": "airfare",
+      "amount_cents": 50057,
+      "currency": "USD"
+     },
+     {
+      "id": "TX14",
+      "merchant": "Cobalt",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 131303,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX15",
+      "merchant": "Aster",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 190860,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX16",
+      "merchant": "Fjord",
+      "description": "approved lodging purchase",
+      "category": "lodging",
+      "amount_cents": 125314,
+      "currency": "USD"
+     },
+     {
+      "id": "TX17",
+      "merchant": "Beacon",
+      "description": "approved legal purchase",
+      "category": "legal",
+      "amount_cents": 101327,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX18",
+      "merchant": "Cobalt",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 6019,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX19",
+      "merchant": "Cobalt",
+      "description": "approved airfare purchase",
+      "category": "airfare",
+      "amount_cents": 32784,
+      "currency": "USD"
+     },
+     {
+      "id": "TX20",
+      "merchant": "Elm",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 106370,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX21",
+      "merchant": "Aster",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 104138,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX22",
+      "merchant": "Delta",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 40313,
+      "currency": "USD"
+     },
+     {
+      "id": "TX23",
+      "merchant": "Beacon",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 110568,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX24",
+      "merchant": "Fjord",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 239757,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX25",
+      "merchant": "Elm",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 221974,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX26",
+      "merchant": "Fjord",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 25168,
+      "currency": "USD"
+     },
+     {
+      "id": "TX27",
+      "merchant": "Cobalt",
+      "description": "approved lodging purchase",
+      "category": "lodging",
+      "amount_cents": 118921,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX28",
+      "merchant": "Delta",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 107756,
+      "currency": "USD"
+     },
+     {
+      "id": "TX29",
+      "merchant": "Beacon",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 113971,
+      "currency": "USD"
+     },
+     {
+      "id": "TX30",
+      "merchant": "Beacon",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 213941,
+      "currency": "USD"
+     },
+     {
+      "id": "TX31",
+      "merchant": "Beacon",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 11913,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX32",
+      "merchant": "Cobalt",
+      "description": "approved airfare purchase",
+      "category": "airfare",
+      "amount_cents": 110693,
+      "currency": "USD"
+     },
+     {
+      "id": "TX33",
+      "merchant": "Cobalt",
+      "description": "approved lodging purchase",
+      "category": "lodging",
+      "amount_cents": 51773,
+      "currency": "USD"
+     },
+     {
+      "id": "TX34",
+      "merchant": "Elm",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 242454,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX35",
+      "merchant": "Beacon",
+      "description": "approved legal purchase",
+      "category": "legal",
+      "amount_cents": 90862,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX36",
+      "merchant": "Cobalt",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 186631,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX37",
+      "merchant": "Beacon",
+      "description": "approved lodging purchase",
+      "category": "lodging",
+      "amount_cents": 215196,
+      "currency": "USD"
+     },
+     {
+      "id": "TX38",
+      "merchant": "Fjord",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 228062,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX39",
+      "merchant": "Elm",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 80929,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX40",
+      "merchant": "Elm",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 104920,
+      "currency": "USD"
+     },
+     {
+      "id": "TX41",
+      "merchant": "Elm",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 44658,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX42",
+      "merchant": "Delta",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 67065,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX43",
+      "merchant": "Aster",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 225287,
+      "currency": "USD"
+     },
+     {
+      "id": "TX44",
+      "merchant": "Aster",
+      "description": "approved legal purchase",
+      "category": "legal",
+      "amount_cents": 220074,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX45",
+      "merchant": "Beacon",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 204217,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX46",
+      "merchant": "Fjord",
+      "description": "approved lodging purchase",
+      "category": "lodging",
+      "amount_cents": 108417,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX47",
+      "merchant": "Fjord",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 148140,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX48",
+      "merchant": "Delta",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 47446,
+      "currency": "USD"
+     }
+    ]
+   },
+   "prompt": "Return only plain text lines, one line per input item, in source order from TX01 to TX48. Each line is the item id, an equals sign, and the value, like TX01=VALUE. No quotes, no JSON, no markdown, no code fences, no explanation. Produce the value for each transaction: account_rules[transaction.category]. Example: category legal -> PROFESSIONAL_LEGAL. Input:{\"account_rules\":{\"airfare\":\"TRAVEL_AIR\",\"cloud\":\"SOFTWARE_INFRASTRUCTURE\",\"courier\":\"SHIPPING_COURIER\",\"legal\":\"PROFESSIONAL_LEGAL\",\"lodging\":\"TRAVEL_LODGING\",\"paper\":\"OFFICE_SUPPLIES\"},\"transactions\":[{\"amount_cents\":71720,\"category\":\"courier\",\"currency\":\"EUR\",\"description\":\"approved courier purchase\",\"id\":\"TX01\",\"merchant\":\"Fjord\"},{\"amount_cents\":141017,\"category\":\"airfare\",\"currency\":\"EUR\",\"description\":\"approved airfare purchase\",\"id\":\"TX02\",\"merchant\":\"Delta\"},{\"amount_cents\":197267,\"category\":\"airfare\",\"currency\":\"EUR\",\"description\":\"approved airfare purchase\",\"id\":\"TX03\",\"merchant\":\"Cobalt\"},{\"amount_cents\":173164,\"category\":\"courier\",\"currency\":\"EUR\",\"description\":\"approved courier purchase\",\"id\":\"TX04\",\"merchant\":\"Beacon\"},{\"amount_cents\":246193,\"category\":\"courier\",\"currency\":\"USD\",\"description\":\"approved courier purchase\",\"id\":\"TX05\",\"merchant\":\"Beacon\"},{\"amount_cents\":16087,\"category\":\"courier\",\"currency\":\"USD\",\"description\":\"approved courier purchase\",\"id\":\"TX06\",\"merchant\":\"Fjord\"},{\"amount_cents\":118345,\"category\":\"airfare\",\"currency\":\"EUR\",\"description\":\"approved airfare purchase\",\"id\":\"TX07\",\"merchant\":\"Elm\"},{\"amount_cents\":132368,\"category\":\"airfare\",\"currency\":\"JPY\",\"description\":\"approved airfare purchase\",\"id\":\"TX08\",\"merchant\":\"Delta\"},{\"amount_cents\":6545,\"category\":\"lodging\",\"currency\":\"EUR\",\"description\":\"approved lodging purchase\",\"id\":\"TX09\",\"merchant\":\"Fjord\"},{\"amount_cents\":61412,\"category\":\"lodging\",\"currency\":\"EUR\",\"description\":\"approved lodging purchase\",\"id\":\"TX10\",\"merchant\":\"Delta\"},{\"amount_cents\":123163,\"category\":\"airfare\",\"currency\":\"USD\",\"description\":\"approved airfare purchase\",\"id\":\"TX11\",\"merchant\":\"Elm\"},{\"amount_cents\":102118,\"category\":\"legal\",\"currency\":\"USD\",\"description\":\"approved legal purchase\",\"id\":\"TX12\",\"merchant\":\"Fjord\"},{\"amount_cents\":50057,\"category\":\"airfare\",\"currency\":\"USD\",\"description\":\"approved airfare purchase\",\"id\":\"TX13\",\"merchant\":\"Beacon\"},{\"amount_cents\":131303,\"category\":\"cloud\",\"currency\":\"JPY\",\"description\":\"approved cloud purchase\",\"id\":\"TX14\",\"merchant\":\"Cobalt\"},{\"amount_cents\":190860,\"category\":\"paper\",\"currency\":\"EUR\",\"description\":\"approved paper purchase\",\"id\":\"TX15\",\"merchant\":\"Aster\"},{\"amount_cents\":125314,\"category\":\"lodging\",\"currency\":\"USD\",\"description\":\"approved lodging purchase\",\"id\":\"TX16\",\"merchant\":\"Fjord\"},{\"amount_cents\":101327,\"category\":\"legal\",\"currency\":\"EUR\",\"description\":\"approved legal purchase\",\"id\":\"TX17\",\"merchant\":\"Beacon\"},{\"amount_cents\":6019,\"category\":\"paper\",\"currency\":\"EUR\",\"description\":\"approved paper purchase\",\"id\":\"TX18\",\"merchant\":\"Cobalt\"},{\"amount_cents\":32784,\"category\":\"airfare\",\"currency\":\"USD\",\"description\":\"approved airfare purchase\",\"id\":\"TX19\",\"merchant\":\"Cobalt\"},{\"amount_cents\":106370,\"category\":\"cloud\",\"currency\":\"JPY\",\"description\":\"approved cloud purchase\",\"id\":\"TX20\",\"merchant\":\"Elm\"},{\"amount_cents\":104138,\"category\":\"cloud\",\"currency\":\"EUR\",\"description\":\"approved cloud purchase\",\"id\":\"TX21\",\"merchant\":\"Aster\"},{\"amount_cents\":40313,\"category\":\"courier\",\"currency\":\"USD\",\"description\":\"approved courier purchase\",\"id\":\"TX22\",\"merchant\":\"Delta\"},{\"amount_cents\":110568,\"category\":\"cloud\",\"currency\":\"EUR\",\"description\":\"approved cloud purchase\",\"id\":\"TX23\",\"merchant\":\"Beacon\"},{\"amount_cents\":239757,\"category\":\"paper\",\"currency\":\"JPY\",\"description\":\"approved paper purchase\",\"id\":\"TX24\",\"merchant\":\"Fjord\"},{\"amount_cents\":221974,\"category\":\"cloud\",\"currency\":\"JPY\",\"description\":\"approved cloud purchase\",\"id\":\"TX25\",\"merchant\":\"Elm\"},{\"amount_cents\":25168,\"category\":\"cloud\",\"currency\":\"USD\",\"description\":\"approved cloud purchase\",\"id\":\"TX26\",\"merchant\":\"Fjord\"},{\"amount_cents\":118921,\"category\":\"lodging\",\"currency\":\"EUR\",\"description\":\"approved lodging purchase\",\"id\":\"TX27\",\"merchant\":\"Cobalt\"},{\"amount_cents\":107756,\"category\":\"paper\",\"currency\":\"USD\",\"description\":\"approved paper purchase\",\"id\":\"TX28\",\"merchant\":\"Delta\"},{\"amount_cents\":113971,\"category\":\"paper\",\"currency\":\"USD\",\"description\":\"approved paper purchase\",\"id\":\"TX29\",\"merchant\":\"Beacon\"},{\"amount_cents\":213941,\"category\":\"paper\",\"currency\":\"USD\",\"description\":\"approved paper purchase\",\"id\":\"TX30\",\"merchant\":\"Beacon\"},{\"amount_cents\":11913,\"category\":\"paper\",\"currency\":\"JPY\",\"description\":\"approved paper purchase\",\"id\":\"TX31\",\"merchant\":\"Beacon\"},{\"amount_cents\":110693,\"category\":\"airfare\",\"currency\":\"USD\",\"description\":\"approved airfare purchase\",\"id\":\"TX32\",\"merchant\":\"Cobalt\"},{\"amount_cents\":51773,\"category\":\"lodging\",\"currency\":\"USD\",\"description\":\"approved lodging purchase\",\"id\":\"TX33\",\"merchant\":\"Cobalt\"},{\"amount_cents\":242454,\"category\":\"cloud\",\"currency\":\"JPY\",\"description\":\"approved cloud purchase\",\"id\":\"TX34\",\"merchant\":\"Elm\"},{\"amount_cents\":90862,\"category\":\"legal\",\"currency\":\"EUR\",\"description\":\"approved legal purchase\",\"id\":\"TX35\",\"merchant\":\"Beacon\"},{\"amount_cents\":186631,\"category\":\"paper\",\"currency\":\"EUR\",\"description\":\"approved paper purchase\",\"id\":\"TX36\",\"merchant\":\"Cobalt\"},{\"amount_cents\":215196,\"category\":\"lodging\",\"currency\":\"USD\",\"description\":\"approved lodging purchase\",\"id\":\"TX37\",\"merchant\":\"Beacon\"},{\"amount_cents\":228062,\"category\":\"courier\",\"currency\":\"JPY\",\"description\":\"approved courier purchase\",\"id\":\"TX38\",\"merchant\":\"Fjord\"},{\"amount_cents\":80929,\"category\":\"cloud\",\"currency\":\"EUR\",\"description\":\"approved cloud purchase\",\"id\":\"TX39\",\"merchant\":\"Elm\"},{\"amount_cents\":104920,\"category\":\"courier\",\"currency\":\"USD\",\"description\":\"approved courier purchase\",\"id\":\"TX40\",\"merchant\":\"Elm\"},{\"amount_cents\":44658,\"category\":\"cloud\",\"currency\":\"EUR\",\"description\":\"approved cloud purchase\",\"id\":\"TX41\",\"merchant\":\"Elm\"},{\"amount_cents\":67065,\"category\":\"courier\",\"currency\":\"JPY\",\"description\":\"approved courier purchase\",\"id\":\"TX42\",\"merchant\":\"Delta\"},{\"amount_cents\":225287,\"category\":\"cloud\",\"currency\":\"USD\",\"description\":\"approved cloud purchase\",\"id\":\"TX43\",\"merchant\":\"Aster\"},{\"amount_cents\":220074,\"category\":\"legal\",\"currency\":\"EUR\",\"description\":\"approved legal purchase\",\"id\":\"TX44\",\"merchant\":\"Aster\"},{\"amount_cents\":204217,\"category\":\"cloud\",\"currency\":\"JPY\",\"description\":\"approved cloud purchase\",\"id\":\"TX45\",\"merchant\":\"Beacon\"},{\"amount_cents\":108417,\"category\":\"lodging\",\"currency\":\"EUR\",\"description\":\"approved lodging purchase\",\"id\":\"TX46\",\"merchant\":\"Fjord\"},{\"amount_cents\":148140,\"category\":\"cloud\",\"currency\":\"EUR\",\"description\":\"approved cloud purchase\",\"id\":\"TX47\",\"merchant\":\"Fjord\"},{\"amount_cents\":47446,\"category\":\"courier\",\"currency\":\"USD\",\"description\":\"approved courier purchase\",\"id\":\"TX48\",\"merchant\":\"Delta\"}]}",
+   "prompt_hash": "d0ee75a39d1f30cd2ee770ce8738a6af84bd8656672a3c8c646ce4683ea6c1eb",
+   "output_keys": [
+    "TX01",
+    "TX02",
+    "TX03",
+    "TX04",
+    "TX05",
+    "TX06",
+    "TX07",
+    "TX08",
+    "TX09",
+    "TX10",
+    "TX11",
+    "TX12",
+    "TX13",
+    "TX14",
+    "TX15",
+    "TX16",
+    "TX17",
+    "TX18",
+    "TX19",
+    "TX20",
+    "TX21",
+    "TX22",
+    "TX23",
+    "TX24",
+    "TX25",
+    "TX26",
+    "TX27",
+    "TX28",
+    "TX29",
+    "TX30",
+    "TX31",
+    "TX32",
+    "TX33",
+    "TX34",
+    "TX35",
+    "TX36",
+    "TX37",
+    "TX38",
+    "TX39",
+    "TX40",
+    "TX41",
+    "TX42",
+    "TX43",
+    "TX44",
+    "TX45",
+    "TX46",
+    "TX47",
+    "TX48"
+   ],
+   "fixture_hash": "6a95b6322d6aa2550c95c902be91a37781b0ededb21be915f4b9f0f17c474a77"
+  },
+  {
+   "problem_id": "D3",
+   "problem_name": "purchase-order-compliance",
+   "dependency_class": "direct",
+   "fixture_index": 1,
+   "seed": 20470886,
+   "scoring_mode": "exact",
+   "case_id": "business-d3-001-n48-v5",
+   "base_fixture_hash": "ba93b84abbdbea431b5f1079ae8f9a1e0f8fd4828cc9dd9463e5fabeb7d725b6",
+   "decision_count": 48,
+   "prompt_version": "v5",
+   "input": {
+    "review_threshold_cents": {
+     "GENERAL": 75000,
+     "IT": 125000,
+     "CONSTRUCTION": 200000
+    },
+    "orders": [
+     {
+      "id": "PO01",
+      "supplier_status": "APPROVED",
+      "amount_cents": 243345,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO02",
+      "supplier_status": "SANCTIONED",
+      "amount_cents": 289875,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO03",
+      "supplier_status": "APPROVED",
+      "amount_cents": 173952,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO04",
+      "supplier_status": "APPROVED",
+      "amount_cents": 245039,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO05",
+      "supplier_status": "APPROVED",
+      "amount_cents": 222505,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO06",
+      "supplier_status": "APPROVED",
+      "amount_cents": 246754,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO07",
+      "supplier_status": "PENDING",
+      "amount_cents": 275006,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO08",
+      "supplier_status": "APPROVED",
+      "amount_cents": 76880,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO09",
+      "supplier_status": "APPROVED",
+      "amount_cents": 116670,
+      "category": "IT",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO10",
+      "supplier_status": "APPROVED",
+      "amount_cents": 173554,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO11",
+      "supplier_status": "APPROVED",
+      "amount_cents": 185756,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO12",
+      "supplier_status": "APPROVED",
+      "amount_cents": 259240,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO13",
+      "supplier_status": "APPROVED",
+      "amount_cents": 193452,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO14",
+      "supplier_status": "APPROVED",
+      "amount_cents": 203612,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO15",
+      "supplier_status": "APPROVED",
+      "amount_cents": 225651,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO16",
+      "supplier_status": "APPROVED",
+      "amount_cents": 295825,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO17",
+      "supplier_status": "APPROVED",
+      "amount_cents": 248512,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO18",
+      "supplier_status": "APPROVED",
+      "amount_cents": 166734,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO19",
+      "supplier_status": "SANCTIONED",
+      "amount_cents": 58571,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO20",
+      "supplier_status": "PENDING",
+      "amount_cents": 103580,
+      "category": "IT",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO21",
+      "supplier_status": "APPROVED",
+      "amount_cents": 185213,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO22",
+      "supplier_status": "APPROVED",
+      "amount_cents": 70852,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO23",
+      "supplier_status": "APPROVED",
+      "amount_cents": 229793,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO24",
+      "supplier_status": "APPROVED",
+      "amount_cents": 258133,
+      "category": "IT",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO25",
+      "supplier_status": "APPROVED",
+      "amount_cents": 112847,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO26",
+      "supplier_status": "APPROVED",
+      "amount_cents": 12611,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO27",
+      "supplier_status": "APPROVED",
+      "amount_cents": 66558,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO28",
+      "supplier_status": "APPROVED",
+      "amount_cents": 155681,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO29",
+      "supplier_status": "PENDING",
+      "amount_cents": 277137,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO30",
+      "supplier_status": "PENDING",
+      "amount_cents": 293287,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO31",
+      "supplier_status": "APPROVED",
+      "amount_cents": 230338,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO32",
+      "supplier_status": "APPROVED",
+      "amount_cents": 180186,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO33",
+      "supplier_status": "APPROVED",
+      "amount_cents": 216031,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO34",
+      "supplier_status": "APPROVED",
+      "amount_cents": 126417,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO35",
+      "supplier_status": "APPROVED",
+      "amount_cents": 128900,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO36",
+      "supplier_status": "APPROVED",
+      "amount_cents": 172573,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO37",
+      "supplier_status": "PENDING",
+      "amount_cents": 195642,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO38",
+      "supplier_status": "APPROVED",
+      "amount_cents": 100293,
+      "category": "IT",
+      "contract": false,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO39",
+      "supplier_status": "APPROVED",
+      "amount_cents": 35549,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO40",
+      "supplier_status": "APPROVED",
+      "amount_cents": 38554,
+      "category": "IT",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO41",
+      "supplier_status": "PENDING",
+      "amount_cents": 139528,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO42",
+      "supplier_status": "APPROVED",
+      "amount_cents": 49667,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO43",
+      "supplier_status": "PENDING",
+      "amount_cents": 237342,
+      "category": "IT",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO44",
+      "supplier_status": "PENDING",
+      "amount_cents": 24106,
+      "category": "IT",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO45",
+      "supplier_status": "PENDING",
+      "amount_cents": 109950,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO46",
+      "supplier_status": "APPROVED",
+      "amount_cents": 255810,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO47",
+      "supplier_status": "APPROVED",
+      "amount_cents": 243915,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO48",
+      "supplier_status": "APPROVED",
+      "amount_cents": 59645,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "RESTRICTED"
+     }
+    ]
+   },
+   "prompt": "Return only plain text lines, one line per input item, in source order from PO01 to PO48. Each line is the item id, an equals sign, and the value, like PO01=VALUE. No quotes, no JSON, no markdown, no code fences, no explanation. Produce the value for each order, exactly REJECT, REVIEW, or APPROVE, checked in this order: REJECT if supplier_status is SANCTIONED or jurisdiction is RESTRICTED; REVIEW if supplier_status is not APPROVED; REVIEW if contract is false and amount_cents > review_threshold_cents[category]; otherwise APPROVE. Example: {supplier_status:APPROVED,jurisdiction:DOMESTIC,contract:false,category:IT,amount_cents:130000} -> REVIEW. Input:{\"orders\":[{\"amount_cents\":243345,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO01\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":289875,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO02\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"SANCTIONED\"},{\"amount_cents\":173952,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO03\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":245039,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO04\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":222505,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO05\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":246754,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO06\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":275006,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO07\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":76880,\"category\":\"IT\",\"contract\":true,\"id\":\"PO08\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":116670,\"category\":\"IT\",\"contract\":false,\"id\":\"PO09\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":173554,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO10\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":185756,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO11\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":259240,\"category\":\"IT\",\"contract\":true,\"id\":\"PO12\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":193452,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO13\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":203612,\"category\":\"IT\",\"contract\":true,\"id\":\"PO14\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":225651,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO15\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":295825,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO16\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":248512,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO17\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":166734,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO18\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":58571,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO19\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"SANCTIONED\"},{\"amount_cents\":103580,\"category\":\"IT\",\"contract\":false,\"id\":\"PO20\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":185213,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO21\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":70852,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO22\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":229793,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO23\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":258133,\"category\":\"IT\",\"contract\":false,\"id\":\"PO24\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":112847,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO25\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":12611,\"category\":\"IT\",\"contract\":true,\"id\":\"PO26\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":66558,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO27\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":155681,\"category\":\"IT\",\"contract\":true,\"id\":\"PO28\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":277137,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO29\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":293287,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO30\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":230338,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO31\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":180186,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO32\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":216031,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO33\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":126417,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO34\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":128900,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO35\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":172573,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO36\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":195642,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO37\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":100293,\"category\":\"IT\",\"contract\":false,\"id\":\"PO38\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":35549,\"category\":\"IT\",\"contract\":true,\"id\":\"PO39\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":38554,\"category\":\"IT\",\"contract\":false,\"id\":\"PO40\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":139528,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO41\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":49667,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO42\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":237342,\"category\":\"IT\",\"contract\":false,\"id\":\"PO43\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":24106,\"category\":\"IT\",\"contract\":false,\"id\":\"PO44\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":109950,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO45\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":255810,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO46\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":243915,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO47\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":59645,\"category\":\"IT\",\"contract\":true,\"id\":\"PO48\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"}],\"review_threshold_cents\":{\"CONSTRUCTION\":200000,\"GENERAL\":75000,\"IT\":125000}}",
+   "prompt_hash": "df5aa4266969cf42ad76d33f4af7eb0cf1b1c31f98f8ae80c4d1cb2d683ea816",
+   "output_keys": [
+    "PO01",
+    "PO02",
+    "PO03",
+    "PO04",
+    "PO05",
+    "PO06",
+    "PO07",
+    "PO08",
+    "PO09",
+    "PO10",
+    "PO11",
+    "PO12",
+    "PO13",
+    "PO14",
+    "PO15",
+    "PO16",
+    "PO17",
+    "PO18",
+    "PO19",
+    "PO20",
+    "PO21",
+    "PO22",
+    "PO23",
+    "PO24",
+    "PO25",
+    "PO26",
+    "PO27",
+    "PO28",
+    "PO29",
+    "PO30",
+    "PO31",
+    "PO32",
+    "PO33",
+    "PO34",
+    "PO35",
+    "PO36",
+    "PO37",
+    "PO38",
+    "PO39",
+    "PO40",
+    "PO41",
+    "PO42",
+    "PO43",
+    "PO44",
+    "PO45",
+    "PO46",
+    "PO47",
+    "PO48"
+   ],
+   "fixture_hash": "ad3c27db79afbe7d8e1660ae04f592fd4e503e49bf8b85956935a9d99081f919"
+  },
+  {
+   "problem_id": "L0",
+   "problem_name": "copy-code",
+   "dependency_class": "copy",
+   "fixture_index": 2,
+   "seed": 27280854,
+   "scoring_mode": "exact",
+   "case_id": "ladder-l0-002-n48-v5",
+   "base_fixture_hash": "635f5c36ea6a4235050ec951fb04bf68fdc85d9282128092a8c9e5ac31d129a6",
+   "decision_count": 48,
+   "prompt_version": "v5",
+   "input": {
+    "items": [
+     {
+      "id": "K01",
+      "code": "KCLJZN"
+     },
+     {
+      "id": "K02",
+      "code": "JVKDC6"
+     },
+     {
+      "id": "K03",
+      "code": "RNAXPE"
+     },
+     {
+      "id": "K04",
+      "code": "4L27KZ"
+     },
+     {
+      "id": "K05",
+      "code": "2KJTUE"
+     },
+     {
+      "id": "K06",
+      "code": "XW9385"
+     },
+     {
+      "id": "K07",
+      "code": "E6BCB3"
+     },
+     {
+      "id": "K08",
+      "code": "SUBLGH"
+     },
+     {
+      "id": "K09",
+      "code": "HGB6MQ"
+     },
+     {
+      "id": "K10",
+      "code": "M6B3ZX"
+     },
+     {
+      "id": "K11",
+      "code": "KWGHH7"
+     },
+     {
+      "id": "K12",
+      "code": "DBD7LE"
+     },
+     {
+      "id": "K13",
+      "code": "YAQD38"
+     },
+     {
+      "id": "K14",
+      "code": "7AL9K5"
+     },
+     {
+      "id": "K15",
+      "code": "V9NDVQ"
+     },
+     {
+      "id": "K16",
+      "code": "288X2G"
+     },
+     {
+      "id": "K17",
+      "code": "66TA4A"
+     },
+     {
+      "id": "K18",
+      "code": "Y7MFYM"
+     },
+     {
+      "id": "K19",
+      "code": "UHC3PS"
+     },
+     {
+      "id": "K20",
+      "code": "H228NQ"
+     },
+     {
+      "id": "K21",
+      "code": "VKRJQ4"
+     },
+     {
+      "id": "K22",
+      "code": "9UTCAV"
+     },
+     {
+      "id": "K23",
+      "code": "PLR9EP"
+     },
+     {
+      "id": "K24",
+      "code": "UC6G4N"
+     },
+     {
+      "id": "K25",
+      "code": "VLHX38"
+     },
+     {
+      "id": "K26",
+      "code": "D7Z63R"
+     },
+     {
+      "id": "K27",
+      "code": "3UFY97"
+     },
+     {
+      "id": "K28",
+      "code": "A8UWAW"
+     },
+     {
+      "id": "K29",
+      "code": "SZTJMM"
+     },
+     {
+      "id": "K30",
+      "code": "5784GY"
+     },
+     {
+      "id": "K31",
+      "code": "RN5R5Q"
+     },
+     {
+      "id": "K32",
+      "code": "UTNAK7"
+     },
+     {
+      "id": "K33",
+      "code": "EY8WH2"
+     },
+     {
+      "id": "K34",
+      "code": "2EP2AJ"
+     },
+     {
+      "id": "K35",
+      "code": "SBQB4V"
+     },
+     {
+      "id": "K36",
+      "code": "L8PSM8"
+     },
+     {
+      "id": "K37",
+      "code": "TWLLEB"
+     },
+     {
+      "id": "K38",
+      "code": "QZ76DS"
+     },
+     {
+      "id": "K39",
+      "code": "4LKBF4"
+     },
+     {
+      "id": "K40",
+      "code": "P3UEYU"
+     },
+     {
+      "id": "K41",
+      "code": "PJQN25"
+     },
+     {
+      "id": "K42",
+      "code": "8XYWNF"
+     },
+     {
+      "id": "K43",
+      "code": "LKARMR"
+     },
+     {
+      "id": "K44",
+      "code": "FYWD63"
+     },
+     {
+      "id": "K45",
+      "code": "LEG95U"
+     },
+     {
+      "id": "K46",
+      "code": "Q7D9GN"
+     },
+     {
+      "id": "K47",
+      "code": "KYXEQX"
+     },
+     {
+      "id": "K48",
+      "code": "657UD4"
+     }
+    ]
+   },
+   "prompt": "Return only plain text lines, one line per input item, in source order from K01 to K48. Each line is the item id, an equals sign, and the value, like K01=VALUE. No quotes, no JSON, no markdown, no code fences, no explanation. Produce the value for each item: the item's code, copied exactly. Example: item {id:K99,code:Q7XR2M} -> Q7XR2M. Input:{\"items\":[{\"code\":\"KCLJZN\",\"id\":\"K01\"},{\"code\":\"JVKDC6\",\"id\":\"K02\"},{\"code\":\"RNAXPE\",\"id\":\"K03\"},{\"code\":\"4L27KZ\",\"id\":\"K04\"},{\"code\":\"2KJTUE\",\"id\":\"K05\"},{\"code\":\"XW9385\",\"id\":\"K06\"},{\"code\":\"E6BCB3\",\"id\":\"K07\"},{\"code\":\"SUBLGH\",\"id\":\"K08\"},{\"code\":\"HGB6MQ\",\"id\":\"K09\"},{\"code\":\"M6B3ZX\",\"id\":\"K10\"},{\"code\":\"KWGHH7\",\"id\":\"K11\"},{\"code\":\"DBD7LE\",\"id\":\"K12\"},{\"code\":\"YAQD38\",\"id\":\"K13\"},{\"code\":\"7AL9K5\",\"id\":\"K14\"},{\"code\":\"V9NDVQ\",\"id\":\"K15\"},{\"code\":\"288X2G\",\"id\":\"K16\"},{\"code\":\"66TA4A\",\"id\":\"K17\"},{\"code\":\"Y7MFYM\",\"id\":\"K18\"},{\"code\":\"UHC3PS\",\"id\":\"K19\"},{\"code\":\"H228NQ\",\"id\":\"K20\"},{\"code\":\"VKRJQ4\",\"id\":\"K21\"},{\"code\":\"9UTCAV\",\"id\":\"K22\"},{\"code\":\"PLR9EP\",\"id\":\"K23\"},{\"code\":\"UC6G4N\",\"id\":\"K24\"},{\"code\":\"VLHX38\",\"id\":\"K25\"},{\"code\":\"D7Z63R\",\"id\":\"K26\"},{\"code\":\"3UFY97\",\"id\":\"K27\"},{\"code\":\"A8UWAW\",\"id\":\"K28\"},{\"code\":\"SZTJMM\",\"id\":\"K29\"},{\"code\":\"5784GY\",\"id\":\"K30\"},{\"code\":\"RN5R5Q\",\"id\":\"K31\"},{\"code\":\"UTNAK7\",\"id\":\"K32\"},{\"code\":\"EY8WH2\",\"id\":\"K33\"},{\"code\":\"2EP2AJ\",\"id\":\"K34\"},{\"code\":\"SBQB4V\",\"id\":\"K35\"},{\"code\":\"L8PSM8\",\"id\":\"K36\"},{\"code\":\"TWLLEB\",\"id\":\"K37\"},{\"code\":\"QZ76DS\",\"id\":\"K38\"},{\"code\":\"4LKBF4\",\"id\":\"K39\"},{\"code\":\"P3UEYU\",\"id\":\"K40\"},{\"code\":\"PJQN25\",\"id\":\"K41\"},{\"code\":\"8XYWNF\",\"id\":\"K42\"},{\"code\":\"LKARMR\",\"id\":\"K43\"},{\"code\":\"FYWD63\",\"id\":\"K44\"},{\"code\":\"LEG95U\",\"id\":\"K45\"},{\"code\":\"Q7D9GN\",\"id\":\"K46\"},{\"code\":\"KYXEQX\",\"id\":\"K47\"},{\"code\":\"657UD4\",\"id\":\"K48\"}]}",
+   "prompt_hash": "46f49ac1bacdf61ed3e3d6a5f988e6a805a2a4715812d1c386e1fbabf7b905cd",
+   "output_keys": [
+    "K01",
+    "K02",
+    "K03",
+    "K04",
+    "K05",
+    "K06",
+    "K07",
+    "K08",
+    "K09",
+    "K10",
+    "K11",
+    "K12",
+    "K13",
+    "K14",
+    "K15",
+    "K16",
+    "K17",
+    "K18",
+    "K19",
+    "K20",
+    "K21",
+    "K22",
+    "K23",
+    "K24",
+    "K25",
+    "K26",
+    "K27",
+    "K28",
+    "K29",
+    "K30",
+    "K31",
+    "K32",
+    "K33",
+    "K34",
+    "K35",
+    "K36",
+    "K37",
+    "K38",
+    "K39",
+    "K40",
+    "K41",
+    "K42",
+    "K43",
+    "K44",
+    "K45",
+    "K46",
+    "K47",
+    "K48"
+   ],
+   "fixture_hash": "d4a81e47d4891ee65ac5ce0eed809ccd4272c75119d8a64b3f4905e71347e1e5"
+  },
+  {
+   "problem_id": "L1",
+   "problem_name": "amount-threshold",
+   "dependency_class": "threshold",
+   "fixture_index": 2,
+   "seed": 27380857,
+   "scoring_mode": "exact",
+   "case_id": "ladder-l1-002-n48-v5",
+   "base_fixture_hash": "e4c9dd4c0bc48d34c27c1bc716fc88868e3bed39348725f578629d1d903c6264",
+   "decision_count": 48,
+   "prompt_version": "v5",
+   "input": {
+    "threshold_cents": 50000,
+    "items": [
+     {
+      "id": "A01",
+      "amount_cents": 28599
+     },
+     {
+      "id": "A02",
+      "amount_cents": 75688
+     },
+     {
+      "id": "A03",
+      "amount_cents": 88311
+     },
+     {
+      "id": "A04",
+      "amount_cents": 77101
+     },
+     {
+      "id": "A05",
+      "amount_cents": 26219
+     },
+     {
+      "id": "A06",
+      "amount_cents": 95873
+     },
+     {
+      "id": "A07",
+      "amount_cents": 80548
+     },
+     {
+      "id": "A08",
+      "amount_cents": 89603
+     },
+     {
+      "id": "A09",
+      "amount_cents": 19415
+     },
+     {
+      "id": "A10",
+      "amount_cents": 24344
+     },
+     {
+      "id": "A11",
+      "amount_cents": 13261
+     },
+     {
+      "id": "A12",
+      "amount_cents": 83526
+     },
+     {
+      "id": "A13",
+      "amount_cents": 83245
+     },
+     {
+      "id": "A14",
+      "amount_cents": 32644
+     },
+     {
+      "id": "A15",
+      "amount_cents": 17910
+     },
+     {
+      "id": "A16",
+      "amount_cents": 83572
+     },
+     {
+      "id": "A17",
+      "amount_cents": 99515
+     },
+     {
+      "id": "A18",
+      "amount_cents": 55355
+     },
+     {
+      "id": "A19",
+      "amount_cents": 21290
+     },
+     {
+      "id": "A20",
+      "amount_cents": 26285
+     },
+     {
+      "id": "A21",
+      "amount_cents": 89448
+     },
+     {
+      "id": "A22",
+      "amount_cents": 17587
+     },
+     {
+      "id": "A23",
+      "amount_cents": 60110
+     },
+     {
+      "id": "A24",
+      "amount_cents": 42028
+     },
+     {
+      "id": "A25",
+      "amount_cents": 80528
+     },
+     {
+      "id": "A26",
+      "amount_cents": 68464
+     },
+     {
+      "id": "A27",
+      "amount_cents": 58917
+     },
+     {
+      "id": "A28",
+      "amount_cents": 82244
+     },
+     {
+      "id": "A29",
+      "amount_cents": 23581
+     },
+     {
+      "id": "A30",
+      "amount_cents": 92167
+     },
+     {
+      "id": "A31",
+      "amount_cents": 7622
+     },
+     {
+      "id": "A32",
+      "amount_cents": 93119
+     },
+     {
+      "id": "A33",
+      "amount_cents": 61153
+     },
+     {
+      "id": "A34",
+      "amount_cents": 38463
+     },
+     {
+      "id": "A35",
+      "amount_cents": 60079
+     },
+     {
+      "id": "A36",
+      "amount_cents": 21231
+     },
+     {
+      "id": "A37",
+      "amount_cents": 45018
+     },
+     {
+      "id": "A38",
+      "amount_cents": 55182
+     },
+     {
+      "id": "A39",
+      "amount_cents": 88960
+     },
+     {
+      "id": "A40",
+      "amount_cents": 32118
+     },
+     {
+      "id": "A41",
+      "amount_cents": 57968
+     },
+     {
+      "id": "A42",
+      "amount_cents": 46530
+     },
+     {
+      "id": "A43",
+      "amount_cents": 38072
+     },
+     {
+      "id": "A44",
+      "amount_cents": 29297
+     },
+     {
+      "id": "A45",
+      "amount_cents": 16527
+     },
+     {
+      "id": "A46",
+      "amount_cents": 46965
+     },
+     {
+      "id": "A47",
+      "amount_cents": 42036
+     },
+     {
+      "id": "A48",
+      "amount_cents": 78092
+     }
+    ]
+   },
+   "prompt": "Return only plain text lines, one line per input item, in source order from A01 to A48. Each line is the item id, an equals sign, and the value, like A01=VALUE. No quotes, no JSON, no markdown, no code fences, no explanation. Produce the value for each item: HIGH if amount_cents >= threshold_cents, otherwise LOW. Example: threshold 50000: amount 50000 -> HIGH; amount 49999 -> LOW. Input:{\"items\":[{\"amount_cents\":28599,\"id\":\"A01\"},{\"amount_cents\":75688,\"id\":\"A02\"},{\"amount_cents\":88311,\"id\":\"A03\"},{\"amount_cents\":77101,\"id\":\"A04\"},{\"amount_cents\":26219,\"id\":\"A05\"},{\"amount_cents\":95873,\"id\":\"A06\"},{\"amount_cents\":80548,\"id\":\"A07\"},{\"amount_cents\":89603,\"id\":\"A08\"},{\"amount_cents\":19415,\"id\":\"A09\"},{\"amount_cents\":24344,\"id\":\"A10\"},{\"amount_cents\":13261,\"id\":\"A11\"},{\"amount_cents\":83526,\"id\":\"A12\"},{\"amount_cents\":83245,\"id\":\"A13\"},{\"amount_cents\":32644,\"id\":\"A14\"},{\"amount_cents\":17910,\"id\":\"A15\"},{\"amount_cents\":83572,\"id\":\"A16\"},{\"amount_cents\":99515,\"id\":\"A17\"},{\"amount_cents\":55355,\"id\":\"A18\"},{\"amount_cents\":21290,\"id\":\"A19\"},{\"amount_cents\":26285,\"id\":\"A20\"},{\"amount_cents\":89448,\"id\":\"A21\"},{\"amount_cents\":17587,\"id\":\"A22\"},{\"amount_cents\":60110,\"id\":\"A23\"},{\"amount_cents\":42028,\"id\":\"A24\"},{\"amount_cents\":80528,\"id\":\"A25\"},{\"amount_cents\":68464,\"id\":\"A26\"},{\"amount_cents\":58917,\"id\":\"A27\"},{\"amount_cents\":82244,\"id\":\"A28\"},{\"amount_cents\":23581,\"id\":\"A29\"},{\"amount_cents\":92167,\"id\":\"A30\"},{\"amount_cents\":7622,\"id\":\"A31\"},{\"amount_cents\":93119,\"id\":\"A32\"},{\"amount_cents\":61153,\"id\":\"A33\"},{\"amount_cents\":38463,\"id\":\"A34\"},{\"amount_cents\":60079,\"id\":\"A35\"},{\"amount_cents\":21231,\"id\":\"A36\"},{\"amount_cents\":45018,\"id\":\"A37\"},{\"amount_cents\":55182,\"id\":\"A38\"},{\"amount_cents\":88960,\"id\":\"A39\"},{\"amount_cents\":32118,\"id\":\"A40\"},{\"amount_cents\":57968,\"id\":\"A41\"},{\"amount_cents\":46530,\"id\":\"A42\"},{\"amount_cents\":38072,\"id\":\"A43\"},{\"amount_cents\":29297,\"id\":\"A44\"},{\"amount_cents\":16527,\"id\":\"A45\"},{\"amount_cents\":46965,\"id\":\"A46\"},{\"amount_cents\":42036,\"id\":\"A47\"},{\"amount_cents\":78092,\"id\":\"A48\"}],\"threshold_cents\":50000}",
+   "prompt_hash": "60804c1a4155aa139ac7132d0b7f6442591a236c02e0f89e29c755a9fe72624e",
+   "output_keys": [
+    "A01",
+    "A02",
+    "A03",
+    "A04",
+    "A05",
+    "A06",
+    "A07",
+    "A08",
+    "A09",
+    "A10",
+    "A11",
+    "A12",
+    "A13",
+    "A14",
+    "A15",
+    "A16",
+    "A17",
+    "A18",
+    "A19",
+    "A20",
+    "A21",
+    "A22",
+    "A23",
+    "A24",
+    "A25",
+    "A26",
+    "A27",
+    "A28",
+    "A29",
+    "A30",
+    "A31",
+    "A32",
+    "A33",
+    "A34",
+    "A35",
+    "A36",
+    "A37",
+    "A38",
+    "A39",
+    "A40",
+    "A41",
+    "A42",
+    "A43",
+    "A44",
+    "A45",
+    "A46",
+    "A47",
+    "A48"
+   ],
+   "fixture_hash": "a89cef80df37949eceabbb2cfc4fc1ea42c8465d1e260d3d07f60147e9c81a4f"
+  },
+  {
+   "problem_id": "D1",
+   "problem_name": "accounts-payable-classification",
+   "dependency_class": "direct",
+   "fixture_index": 2,
+   "seed": 20280853,
+   "scoring_mode": "exact",
+   "case_id": "business-d1-002-n48-v5",
+   "base_fixture_hash": "dd6d196073c7995bc2a5421c2a9b98540c19dd3242814e28faf08b6d228f2341",
+   "decision_count": 48,
+   "prompt_version": "v5",
+   "input": {
+    "account_rules": {
+     "airfare": "TRAVEL_AIR",
+     "lodging": "TRAVEL_LODGING",
+     "cloud": "SOFTWARE_INFRASTRUCTURE",
+     "paper": "OFFICE_SUPPLIES",
+     "legal": "PROFESSIONAL_LEGAL",
+     "courier": "SHIPPING_COURIER"
+    },
+    "transactions": [
+     {
+      "id": "TX01",
+      "merchant": "Aster",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 100476,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX02",
+      "merchant": "Beacon",
+      "description": "approved lodging purchase",
+      "category": "lodging",
+      "amount_cents": 112977,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX03",
+      "merchant": "Cobalt",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 197540,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX04",
+      "merchant": "Cobalt",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 207427,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX05",
+      "merchant": "Elm",
+      "description": "approved legal purchase",
+      "category": "legal",
+      "amount_cents": 95615,
+      "currency": "USD"
+     },
+     {
+      "id": "TX06",
+      "merchant": "Fjord",
+      "description": "approved legal purchase",
+      "category": "legal",
+      "amount_cents": 47683,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX07",
+      "merchant": "Aster",
+      "description": "approved legal purchase",
+      "category": "legal",
+      "amount_cents": 197041,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX08",
+      "merchant": "Beacon",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 77423,
+      "currency": "USD"
+     },
+     {
+      "id": "TX09",
+      "merchant": "Delta",
+      "description": "approved legal purchase",
+      "category": "legal",
+      "amount_cents": 105349,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX10",
+      "merchant": "Fjord",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 182464,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX11",
+      "merchant": "Elm",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 59235,
+      "currency": "USD"
+     },
+     {
+      "id": "TX12",
+      "merchant": "Cobalt",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 11770,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX13",
+      "merchant": "Delta",
+      "description": "approved airfare purchase",
+      "category": "airfare",
+      "amount_cents": 146750,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX14",
+      "merchant": "Beacon",
+      "description": "approved legal purchase",
+      "category": "legal",
+      "amount_cents": 107117,
+      "currency": "USD"
+     },
+     {
+      "id": "TX15",
+      "merchant": "Beacon",
+      "description": "approved lodging purchase",
+      "category": "lodging",
+      "amount_cents": 76116,
+      "currency": "USD"
+     },
+     {
+      "id": "TX16",
+      "merchant": "Delta",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 18669,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX17",
+      "merchant": "Cobalt",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 64638,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX18",
+      "merchant": "Cobalt",
+      "description": "approved legal purchase",
+      "category": "legal",
+      "amount_cents": 155245,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX19",
+      "merchant": "Cobalt",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 93346,
+      "currency": "USD"
+     },
+     {
+      "id": "TX20",
+      "merchant": "Beacon",
+      "description": "approved airfare purchase",
+      "category": "airfare",
+      "amount_cents": 42471,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX21",
+      "merchant": "Beacon",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 61650,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX22",
+      "merchant": "Aster",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 154281,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX23",
+      "merchant": "Fjord",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 90377,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX24",
+      "merchant": "Elm",
+      "description": "approved lodging purchase",
+      "category": "lodging",
+      "amount_cents": 109637,
+      "currency": "USD"
+     },
+     {
+      "id": "TX25",
+      "merchant": "Cobalt",
+      "description": "approved lodging purchase",
+      "category": "lodging",
+      "amount_cents": 190739,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX26",
+      "merchant": "Cobalt",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 217608,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX27",
+      "merchant": "Beacon",
+      "description": "approved lodging purchase",
+      "category": "lodging",
+      "amount_cents": 105597,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX28",
+      "merchant": "Delta",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 184963,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX29",
+      "merchant": "Delta",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 98902,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX30",
+      "merchant": "Beacon",
+      "description": "approved airfare purchase",
+      "category": "airfare",
+      "amount_cents": 31133,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX31",
+      "merchant": "Cobalt",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 161994,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX32",
+      "merchant": "Aster",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 117621,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX33",
+      "merchant": "Delta",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 235739,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX34",
+      "merchant": "Cobalt",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 244051,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX35",
+      "merchant": "Fjord",
+      "description": "approved paper purchase",
+      "category": "paper",
+      "amount_cents": 3486,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX36",
+      "merchant": "Fjord",
+      "description": "approved legal purchase",
+      "category": "legal",
+      "amount_cents": 3276,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX37",
+      "merchant": "Beacon",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 198046,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX38",
+      "merchant": "Beacon",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 17825,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX39",
+      "merchant": "Aster",
+      "description": "approved legal purchase",
+      "category": "legal",
+      "amount_cents": 248481,
+      "currency": "USD"
+     },
+     {
+      "id": "TX40",
+      "merchant": "Fjord",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 47512,
+      "currency": "USD"
+     },
+     {
+      "id": "TX41",
+      "merchant": "Aster",
+      "description": "approved legal purchase",
+      "category": "legal",
+      "amount_cents": 138746,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX42",
+      "merchant": "Fjord",
+      "description": "approved cloud purchase",
+      "category": "cloud",
+      "amount_cents": 157133,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX43",
+      "merchant": "Delta",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 39474,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX44",
+      "merchant": "Elm",
+      "description": "approved airfare purchase",
+      "category": "airfare",
+      "amount_cents": 209963,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX45",
+      "merchant": "Elm",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 65792,
+      "currency": "USD"
+     },
+     {
+      "id": "TX46",
+      "merchant": "Delta",
+      "description": "approved legal purchase",
+      "category": "legal",
+      "amount_cents": 60726,
+      "currency": "JPY"
+     },
+     {
+      "id": "TX47",
+      "merchant": "Elm",
+      "description": "approved legal purchase",
+      "category": "legal",
+      "amount_cents": 25474,
+      "currency": "EUR"
+     },
+     {
+      "id": "TX48",
+      "merchant": "Beacon",
+      "description": "approved courier purchase",
+      "category": "courier",
+      "amount_cents": 45025,
+      "currency": "USD"
+     }
+    ]
+   },
+   "prompt": "Return only plain text lines, one line per input item, in source order from TX01 to TX48. Each line is the item id, an equals sign, and the value, like TX01=VALUE. No quotes, no JSON, no markdown, no code fences, no explanation. Produce the value for each transaction: account_rules[transaction.category]. Example: category legal -> PROFESSIONAL_LEGAL. Input:{\"account_rules\":{\"airfare\":\"TRAVEL_AIR\",\"cloud\":\"SOFTWARE_INFRASTRUCTURE\",\"courier\":\"SHIPPING_COURIER\",\"legal\":\"PROFESSIONAL_LEGAL\",\"lodging\":\"TRAVEL_LODGING\",\"paper\":\"OFFICE_SUPPLIES\"},\"transactions\":[{\"amount_cents\":100476,\"category\":\"paper\",\"currency\":\"EUR\",\"description\":\"approved paper purchase\",\"id\":\"TX01\",\"merchant\":\"Aster\"},{\"amount_cents\":112977,\"category\":\"lodging\",\"currency\":\"EUR\",\"description\":\"approved lodging purchase\",\"id\":\"TX02\",\"merchant\":\"Beacon\"},{\"amount_cents\":197540,\"category\":\"cloud\",\"currency\":\"JPY\",\"description\":\"approved cloud purchase\",\"id\":\"TX03\",\"merchant\":\"Cobalt\"},{\"amount_cents\":207427,\"category\":\"paper\",\"currency\":\"JPY\",\"description\":\"approved paper purchase\",\"id\":\"TX04\",\"merchant\":\"Cobalt\"},{\"amount_cents\":95615,\"category\":\"legal\",\"currency\":\"USD\",\"description\":\"approved legal purchase\",\"id\":\"TX05\",\"merchant\":\"Elm\"},{\"amount_cents\":47683,\"category\":\"legal\",\"currency\":\"EUR\",\"description\":\"approved legal purchase\",\"id\":\"TX06\",\"merchant\":\"Fjord\"},{\"amount_cents\":197041,\"category\":\"legal\",\"currency\":\"JPY\",\"description\":\"approved legal purchase\",\"id\":\"TX07\",\"merchant\":\"Aster\"},{\"amount_cents\":77423,\"category\":\"courier\",\"currency\":\"USD\",\"description\":\"approved courier purchase\",\"id\":\"TX08\",\"merchant\":\"Beacon\"},{\"amount_cents\":105349,\"category\":\"legal\",\"currency\":\"EUR\",\"description\":\"approved legal purchase\",\"id\":\"TX09\",\"merchant\":\"Delta\"},{\"amount_cents\":182464,\"category\":\"courier\",\"currency\":\"EUR\",\"description\":\"approved courier purchase\",\"id\":\"TX10\",\"merchant\":\"Fjord\"},{\"amount_cents\":59235,\"category\":\"courier\",\"currency\":\"USD\",\"description\":\"approved courier purchase\",\"id\":\"TX11\",\"merchant\":\"Elm\"},{\"amount_cents\":11770,\"category\":\"paper\",\"currency\":\"EUR\",\"description\":\"approved paper purchase\",\"id\":\"TX12\",\"merchant\":\"Cobalt\"},{\"amount_cents\":146750,\"category\":\"airfare\",\"currency\":\"JPY\",\"description\":\"approved airfare purchase\",\"id\":\"TX13\",\"merchant\":\"Delta\"},{\"amount_cents\":107117,\"category\":\"legal\",\"currency\":\"USD\",\"description\":\"approved legal purchase\",\"id\":\"TX14\",\"merchant\":\"Beacon\"},{\"amount_cents\":76116,\"category\":\"lodging\",\"currency\":\"USD\",\"description\":\"approved lodging purchase\",\"id\":\"TX15\",\"merchant\":\"Beacon\"},{\"amount_cents\":18669,\"category\":\"paper\",\"currency\":\"JPY\",\"description\":\"approved paper purchase\",\"id\":\"TX16\",\"merchant\":\"Delta\"},{\"amount_cents\":64638,\"category\":\"courier\",\"currency\":\"EUR\",\"description\":\"approved courier purchase\",\"id\":\"TX17\",\"merchant\":\"Cobalt\"},{\"amount_cents\":155245,\"category\":\"legal\",\"currency\":\"EUR\",\"description\":\"approved legal purchase\",\"id\":\"TX18\",\"merchant\":\"Cobalt\"},{\"amount_cents\":93346,\"category\":\"cloud\",\"currency\":\"USD\",\"description\":\"approved cloud purchase\",\"id\":\"TX19\",\"merchant\":\"Cobalt\"},{\"amount_cents\":42471,\"category\":\"airfare\",\"currency\":\"EUR\",\"description\":\"approved airfare purchase\",\"id\":\"TX20\",\"merchant\":\"Beacon\"},{\"amount_cents\":61650,\"category\":\"paper\",\"currency\":\"JPY\",\"description\":\"approved paper purchase\",\"id\":\"TX21\",\"merchant\":\"Beacon\"},{\"amount_cents\":154281,\"category\":\"paper\",\"currency\":\"EUR\",\"description\":\"approved paper purchase\",\"id\":\"TX22\",\"merchant\":\"Aster\"},{\"amount_cents\":90377,\"category\":\"paper\",\"currency\":\"JPY\",\"description\":\"approved paper purchase\",\"id\":\"TX23\",\"merchant\":\"Fjord\"},{\"amount_cents\":109637,\"category\":\"lodging\",\"currency\":\"USD\",\"description\":\"approved lodging purchase\",\"id\":\"TX24\",\"merchant\":\"Elm\"},{\"amount_cents\":190739,\"category\":\"lodging\",\"currency\":\"JPY\",\"description\":\"approved lodging purchase\",\"id\":\"TX25\",\"merchant\":\"Cobalt\"},{\"amount_cents\":217608,\"category\":\"cloud\",\"currency\":\"EUR\",\"description\":\"approved cloud purchase\",\"id\":\"TX26\",\"merchant\":\"Cobalt\"},{\"amount_cents\":105597,\"category\":\"lodging\",\"currency\":\"JPY\",\"description\":\"approved lodging purchase\",\"id\":\"TX27\",\"merchant\":\"Beacon\"},{\"amount_cents\":184963,\"category\":\"paper\",\"currency\":\"EUR\",\"description\":\"approved paper purchase\",\"id\":\"TX28\",\"merchant\":\"Delta\"},{\"amount_cents\":98902,\"category\":\"courier\",\"currency\":\"JPY\",\"description\":\"approved courier purchase\",\"id\":\"TX29\",\"merchant\":\"Delta\"},{\"amount_cents\":31133,\"category\":\"airfare\",\"currency\":\"EUR\",\"description\":\"approved airfare purchase\",\"id\":\"TX30\",\"merchant\":\"Beacon\"},{\"amount_cents\":161994,\"category\":\"cloud\",\"currency\":\"JPY\",\"description\":\"approved cloud purchase\",\"id\":\"TX31\",\"merchant\":\"Cobalt\"},{\"amount_cents\":117621,\"category\":\"paper\",\"currency\":\"EUR\",\"description\":\"approved paper purchase\",\"id\":\"TX32\",\"merchant\":\"Aster\"},{\"amount_cents\":235739,\"category\":\"paper\",\"currency\":\"EUR\",\"description\":\"approved paper purchase\",\"id\":\"TX33\",\"merchant\":\"Delta\"},{\"amount_cents\":244051,\"category\":\"cloud\",\"currency\":\"EUR\",\"description\":\"approved cloud purchase\",\"id\":\"TX34\",\"merchant\":\"Cobalt\"},{\"amount_cents\":3486,\"category\":\"paper\",\"currency\":\"EUR\",\"description\":\"approved paper purchase\",\"id\":\"TX35\",\"merchant\":\"Fjord\"},{\"amount_cents\":3276,\"category\":\"legal\",\"currency\":\"EUR\",\"description\":\"approved legal purchase\",\"id\":\"TX36\",\"merchant\":\"Fjord\"},{\"amount_cents\":198046,\"category\":\"cloud\",\"currency\":\"JPY\",\"description\":\"approved cloud purchase\",\"id\":\"TX37\",\"merchant\":\"Beacon\"},{\"amount_cents\":17825,\"category\":\"cloud\",\"currency\":\"EUR\",\"description\":\"approved cloud purchase\",\"id\":\"TX38\",\"merchant\":\"Beacon\"},{\"amount_cents\":248481,\"category\":\"legal\",\"currency\":\"USD\",\"description\":\"approved legal purchase\",\"id\":\"TX39\",\"merchant\":\"Aster\"},{\"amount_cents\":47512,\"category\":\"cloud\",\"currency\":\"USD\",\"description\":\"approved cloud purchase\",\"id\":\"TX40\",\"merchant\":\"Fjord\"},{\"amount_cents\":138746,\"category\":\"legal\",\"currency\":\"EUR\",\"description\":\"approved legal purchase\",\"id\":\"TX41\",\"merchant\":\"Aster\"},{\"amount_cents\":157133,\"category\":\"cloud\",\"currency\":\"JPY\",\"description\":\"approved cloud purchase\",\"id\":\"TX42\",\"merchant\":\"Fjord\"},{\"amount_cents\":39474,\"category\":\"courier\",\"currency\":\"JPY\",\"description\":\"approved courier purchase\",\"id\":\"TX43\",\"merchant\":\"Delta\"},{\"amount_cents\":209963,\"category\":\"airfare\",\"currency\":\"EUR\",\"description\":\"approved airfare purchase\",\"id\":\"TX44\",\"merchant\":\"Elm\"},{\"amount_cents\":65792,\"category\":\"courier\",\"currency\":\"USD\",\"description\":\"approved courier purchase\",\"id\":\"TX45\",\"merchant\":\"Elm\"},{\"amount_cents\":60726,\"category\":\"legal\",\"currency\":\"JPY\",\"description\":\"approved legal purchase\",\"id\":\"TX46\",\"merchant\":\"Delta\"},{\"amount_cents\":25474,\"category\":\"legal\",\"currency\":\"EUR\",\"description\":\"approved legal purchase\",\"id\":\"TX47\",\"merchant\":\"Elm\"},{\"amount_cents\":45025,\"category\":\"courier\",\"currency\":\"USD\",\"description\":\"approved courier purchase\",\"id\":\"TX48\",\"merchant\":\"Beacon\"}]}",
+   "prompt_hash": "091fb1fb15834974ea5d07a81089a867886d061333e0a4f8ae164c934d7830a5",
+   "output_keys": [
+    "TX01",
+    "TX02",
+    "TX03",
+    "TX04",
+    "TX05",
+    "TX06",
+    "TX07",
+    "TX08",
+    "TX09",
+    "TX10",
+    "TX11",
+    "TX12",
+    "TX13",
+    "TX14",
+    "TX15",
+    "TX16",
+    "TX17",
+    "TX18",
+    "TX19",
+    "TX20",
+    "TX21",
+    "TX22",
+    "TX23",
+    "TX24",
+    "TX25",
+    "TX26",
+    "TX27",
+    "TX28",
+    "TX29",
+    "TX30",
+    "TX31",
+    "TX32",
+    "TX33",
+    "TX34",
+    "TX35",
+    "TX36",
+    "TX37",
+    "TX38",
+    "TX39",
+    "TX40",
+    "TX41",
+    "TX42",
+    "TX43",
+    "TX44",
+    "TX45",
+    "TX46",
+    "TX47",
+    "TX48"
+   ],
+   "fixture_hash": "e32b49567d6ebf4d1d630380403a94a675ad0c07e5c81d011f2b160845a7cdb9"
+  },
+  {
+   "problem_id": "D3",
+   "problem_name": "purchase-order-compliance",
+   "dependency_class": "direct",
+   "fixture_index": 2,
+   "seed": 20480859,
+   "scoring_mode": "exact",
+   "case_id": "business-d3-002-n48-v5",
+   "base_fixture_hash": "4fedfe4d5f6854dd81aa195b40239b3fe0538c1f24bed91afaea4c305efe9ef9",
+   "decision_count": 48,
+   "prompt_version": "v5",
+   "input": {
+    "review_threshold_cents": {
+     "GENERAL": 75000,
+     "IT": 125000,
+     "CONSTRUCTION": 200000
+    },
+    "orders": [
+     {
+      "id": "PO01",
+      "supplier_status": "APPROVED",
+      "amount_cents": 234156,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO02",
+      "supplier_status": "PENDING",
+      "amount_cents": 218652,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO03",
+      "supplier_status": "PENDING",
+      "amount_cents": 147494,
+      "category": "IT",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO04",
+      "supplier_status": "PENDING",
+      "amount_cents": 161850,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO05",
+      "supplier_status": "APPROVED",
+      "amount_cents": 298480,
+      "category": "IT",
+      "contract": false,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO06",
+      "supplier_status": "APPROVED",
+      "amount_cents": 135163,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO07",
+      "supplier_status": "APPROVED",
+      "amount_cents": 27310,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO08",
+      "supplier_status": "APPROVED",
+      "amount_cents": 287297,
+      "category": "IT",
+      "contract": false,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO09",
+      "supplier_status": "APPROVED",
+      "amount_cents": 206702,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO10",
+      "supplier_status": "APPROVED",
+      "amount_cents": 114838,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO11",
+      "supplier_status": "PENDING",
+      "amount_cents": 79014,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO12",
+      "supplier_status": "SANCTIONED",
+      "amount_cents": 172254,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO13",
+      "supplier_status": "APPROVED",
+      "amount_cents": 59909,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO14",
+      "supplier_status": "APPROVED",
+      "amount_cents": 133314,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO15",
+      "supplier_status": "APPROVED",
+      "amount_cents": 225980,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO16",
+      "supplier_status": "APPROVED",
+      "amount_cents": 277663,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO17",
+      "supplier_status": "APPROVED",
+      "amount_cents": 16754,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO18",
+      "supplier_status": "SANCTIONED",
+      "amount_cents": 176814,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO19",
+      "supplier_status": "APPROVED",
+      "amount_cents": 20758,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO20",
+      "supplier_status": "SANCTIONED",
+      "amount_cents": 145999,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO21",
+      "supplier_status": "APPROVED",
+      "amount_cents": 219776,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO22",
+      "supplier_status": "PENDING",
+      "amount_cents": 139597,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO23",
+      "supplier_status": "PENDING",
+      "amount_cents": 180062,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO24",
+      "supplier_status": "APPROVED",
+      "amount_cents": 186747,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO25",
+      "supplier_status": "APPROVED",
+      "amount_cents": 205099,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO26",
+      "supplier_status": "APPROVED",
+      "amount_cents": 281457,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO27",
+      "supplier_status": "APPROVED",
+      "amount_cents": 125959,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO28",
+      "supplier_status": "APPROVED",
+      "amount_cents": 112671,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO29",
+      "supplier_status": "APPROVED",
+      "amount_cents": 235389,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO30",
+      "supplier_status": "SANCTIONED",
+      "amount_cents": 21928,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO31",
+      "supplier_status": "APPROVED",
+      "amount_cents": 247983,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO32",
+      "supplier_status": "APPROVED",
+      "amount_cents": 203188,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO33",
+      "supplier_status": "APPROVED",
+      "amount_cents": 215607,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO34",
+      "supplier_status": "APPROVED",
+      "amount_cents": 167491,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO35",
+      "supplier_status": "PENDING",
+      "amount_cents": 128985,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO36",
+      "supplier_status": "APPROVED",
+      "amount_cents": 132179,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO37",
+      "supplier_status": "PENDING",
+      "amount_cents": 139133,
+      "category": "IT",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO38",
+      "supplier_status": "APPROVED",
+      "amount_cents": 45354,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO39",
+      "supplier_status": "APPROVED",
+      "amount_cents": 102554,
+      "category": "IT",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO40",
+      "supplier_status": "APPROVED",
+      "amount_cents": 180037,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO41",
+      "supplier_status": "APPROVED",
+      "amount_cents": 247601,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO42",
+      "supplier_status": "APPROVED",
+      "amount_cents": 76019,
+      "category": "CONSTRUCTION",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO43",
+      "supplier_status": "PENDING",
+      "amount_cents": 11628,
+      "category": "GENERAL",
+      "contract": true,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO44",
+      "supplier_status": "APPROVED",
+      "amount_cents": 262902,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     },
+     {
+      "id": "PO45",
+      "supplier_status": "APPROVED",
+      "amount_cents": 88514,
+      "category": "CONSTRUCTION",
+      "contract": true,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO46",
+      "supplier_status": "APPROVED",
+      "amount_cents": 149719,
+      "category": "IT",
+      "contract": false,
+      "jurisdiction": "ALLIED"
+     },
+     {
+      "id": "PO47",
+      "supplier_status": "APPROVED",
+      "amount_cents": 119735,
+      "category": "GENERAL",
+      "contract": false,
+      "jurisdiction": "RESTRICTED"
+     },
+     {
+      "id": "PO48",
+      "supplier_status": "PENDING",
+      "amount_cents": 59475,
+      "category": "IT",
+      "contract": true,
+      "jurisdiction": "DOMESTIC"
+     }
+    ]
+   },
+   "prompt": "Return only plain text lines, one line per input item, in source order from PO01 to PO48. Each line is the item id, an equals sign, and the value, like PO01=VALUE. No quotes, no JSON, no markdown, no code fences, no explanation. Produce the value for each order, exactly REJECT, REVIEW, or APPROVE, checked in this order: REJECT if supplier_status is SANCTIONED or jurisdiction is RESTRICTED; REVIEW if supplier_status is not APPROVED; REVIEW if contract is false and amount_cents > review_threshold_cents[category]; otherwise APPROVE. Example: {supplier_status:APPROVED,jurisdiction:DOMESTIC,contract:false,category:IT,amount_cents:130000} -> REVIEW. Input:{\"orders\":[{\"amount_cents\":234156,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO01\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":218652,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO02\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":147494,\"category\":\"IT\",\"contract\":false,\"id\":\"PO03\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":161850,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO04\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":298480,\"category\":\"IT\",\"contract\":false,\"id\":\"PO05\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":135163,\"category\":\"IT\",\"contract\":true,\"id\":\"PO06\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":27310,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO07\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":287297,\"category\":\"IT\",\"contract\":false,\"id\":\"PO08\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":206702,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO09\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":114838,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO10\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":79014,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO11\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":172254,\"category\":\"IT\",\"contract\":true,\"id\":\"PO12\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"SANCTIONED\"},{\"amount_cents\":59909,\"category\":\"IT\",\"contract\":true,\"id\":\"PO13\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":133314,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO14\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":225980,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO15\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":277663,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO16\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":16754,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO17\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":176814,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO18\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"SANCTIONED\"},{\"amount_cents\":20758,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO19\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":145999,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO20\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"SANCTIONED\"},{\"amount_cents\":219776,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO21\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":139597,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO22\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":180062,\"category\":\"IT\",\"contract\":true,\"id\":\"PO23\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":186747,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO24\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":205099,\"category\":\"IT\",\"contract\":true,\"id\":\"PO25\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":281457,\"category\":\"IT\",\"contract\":true,\"id\":\"PO26\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":125959,\"category\":\"IT\",\"contract\":true,\"id\":\"PO27\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":112671,\"category\":\"IT\",\"contract\":true,\"id\":\"PO28\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":235389,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO29\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":21928,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO30\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"SANCTIONED\"},{\"amount_cents\":247983,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO31\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":203188,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO32\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":215607,\"category\":\"IT\",\"contract\":true,\"id\":\"PO33\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":167491,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO34\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":128985,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO35\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":132179,\"category\":\"IT\",\"contract\":true,\"id\":\"PO36\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":139133,\"category\":\"IT\",\"contract\":false,\"id\":\"PO37\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":45354,\"category\":\"IT\",\"contract\":true,\"id\":\"PO38\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":102554,\"category\":\"IT\",\"contract\":false,\"id\":\"PO39\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":180037,\"category\":\"IT\",\"contract\":true,\"id\":\"PO40\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":247601,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO41\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":76019,\"category\":\"CONSTRUCTION\",\"contract\":false,\"id\":\"PO42\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":11628,\"category\":\"GENERAL\",\"contract\":true,\"id\":\"PO43\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"PENDING\"},{\"amount_cents\":262902,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO44\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":88514,\"category\":\"CONSTRUCTION\",\"contract\":true,\"id\":\"PO45\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":149719,\"category\":\"IT\",\"contract\":false,\"id\":\"PO46\",\"jurisdiction\":\"ALLIED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":119735,\"category\":\"GENERAL\",\"contract\":false,\"id\":\"PO47\",\"jurisdiction\":\"RESTRICTED\",\"supplier_status\":\"APPROVED\"},{\"amount_cents\":59475,\"category\":\"IT\",\"contract\":true,\"id\":\"PO48\",\"jurisdiction\":\"DOMESTIC\",\"supplier_status\":\"PENDING\"}],\"review_threshold_cents\":{\"CONSTRUCTION\":200000,\"GENERAL\":75000,\"IT\":125000}}",
+   "prompt_hash": "f067ad89e99f0504c8e604d16012d921ec833c4433c9a358eb0a0d0daf5c9b97",
+   "output_keys": [
+    "PO01",
+    "PO02",
+    "PO03",
+    "PO04",
+    "PO05",
+    "PO06",
+    "PO07",
+    "PO08",
+    "PO09",
+    "PO10",
+    "PO11",
+    "PO12",
+    "PO13",
+    "PO14",
+    "PO15",
+    "PO16",
+    "PO17",
+    "PO18",
+    "PO19",
+    "PO20",
+    "PO21",
+    "PO22",
+    "PO23",
+    "PO24",
+    "PO25",
+    "PO26",
+    "PO27",
+    "PO28",
+    "PO29",
+    "PO30",
+    "PO31",
+    "PO32",
+    "PO33",
+    "PO34",
+    "PO35",
+    "PO36",
+    "PO37",
+    "PO38",
+    "PO39",
+    "PO40",
+    "PO41",
+    "PO42",
+    "PO43",
+    "PO44",
+    "PO45",
+    "PO46",
+    "PO47",
+    "PO48"
+   ],
+   "fixture_hash": "cbbe7c1bd344d8df0ecab9ae19cd552a1e1873d050bd9a009186fa32555e595c"
+  }
+ ]
+}

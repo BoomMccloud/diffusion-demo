@@ -209,6 +209,15 @@ produce an incomplete nonzero result that must be inspected before resuming.
   for follow-up probes. Closing it can require remounting Drive, restaging large
   models, and reloading or rebuilding the native runner.
 
+## 2026-09-28 configuration change
+
+The next business run uses a runner rebuilt from the pinned source with the
+current `bench/native/prepare.py` (incremental prefill and decoupled batch), not
+the format-v4 cache above, plus the fixed prompts in `bench/business_fixtures.py`.
+Set `DIFFUSION_UBATCH=2048` and start the worker with `--context 32768 --max-tokens
+30208`. The registration must be new. See
+`docs/diffusion_runtime_budget_prompt_findings.md`.
+
 ## Where development resumes
 
 Use this decision order:

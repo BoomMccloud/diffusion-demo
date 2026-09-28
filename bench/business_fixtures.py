@@ -65,7 +65,7 @@ def _seed(problem_id, fixture_index, base_seed):
     return int(base_seed) + PROBLEM_IDS.index(problem_id) * 100_003 + int(fixture_index) * 9_973
 
 
-def _generate_d1(rng):
+def _generate_d1(rng, count=DECISION_COUNT):
     categories = [
         ("airfare", "TRAVEL_AIR"),
         ("lodging", "TRAVEL_LODGING"),
@@ -76,7 +76,7 @@ def _generate_d1(rng):
     ]
     merchants = ["Aster", "Beacon", "Cobalt", "Delta", "Elm", "Fjord"]
     transactions = []
-    for index in range(DECISION_COUNT):
+    for index in range(count):
         category, _ = rng.choice(categories)
         transactions.append({
             "id": f"TX{index + 1:02d}",

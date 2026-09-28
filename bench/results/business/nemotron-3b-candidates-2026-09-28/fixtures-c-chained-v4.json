@@ -1,0 +1,2417 @@
+{
+ "schema": "nemotron-pilot-v1",
+ "fixtures": [
+  {
+   "problem_id": "C1",
+   "problem_name": "cash-balance-ledger",
+   "dependency_class": "chained",
+   "fixture_index": 0,
+   "seed": 20860925,
+   "scoring_mode": "exact",
+   "case_id": "business-c1-000-n8-v4",
+   "base_fixture_hash": "372b0cdc9263478601916db7777fc1326daa4400531d5e7fc865b4eee3348c4f",
+   "decision_count": 8,
+   "prompt_version": "v4",
+   "input": {
+    "opening_balance_cents": 253953,
+    "events": [
+     {
+      "id": "C01",
+      "kind": "FEE",
+      "amount_cents": 13992
+     },
+     {
+      "id": "C02",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 2473
+     },
+     {
+      "id": "C03",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 17849
+     },
+     {
+      "id": "C04",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 4265
+     },
+     {
+      "id": "C05",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 11833
+     },
+     {
+      "id": "C06",
+      "kind": "DEPOSIT",
+      "amount_cents": 17325
+     },
+     {
+      "id": "C07",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 2306
+     },
+     {
+      "id": "C08",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 13754
+     }
+    ]
+   },
+   "prompt": "Return only one JSON object that maps each input id to its value, like {\"C01\":\"...\",\"C02\":\"...\"}, with exactly one key per input item, in source order, from C01 to C08. Each value is a plain JSON string such as \"HIGH\" or \"123\". No markdown, no code fences, no explanation. Produce the value for each event: the running balance in cents after the event, as a decimal string. DEPOSIT adds amount_cents; WITHDRAWAL and FEE subtract amount_cents; INTEREST adds round_half_up(balance*rate_bps/10000). Start from opening_balance_cents. Example: balance 100000, INTEREST rate_bps 5 -> \"100050\". Input:{\"events\":[{\"amount_cents\":13992,\"id\":\"C01\",\"kind\":\"FEE\"},{\"amount_cents\":2473,\"id\":\"C02\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":17849,\"id\":\"C03\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":4265,\"id\":\"C04\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":11833,\"id\":\"C05\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":17325,\"id\":\"C06\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":2306,\"id\":\"C07\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":13754,\"id\":\"C08\",\"kind\":\"WITHDRAWAL\"}],\"opening_balance_cents\":253953}",
+   "prompt_hash": "5a8f5351c220e0f5292753e36eff6a29e6b3510e8754b51cd5800c5fd8996cda",
+   "output_keys": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07",
+    "C08"
+   ],
+   "fixture_hash": "911f9560581a7dd3096109b0a33be3e746693323b6a482b9469d8e098f946d5d"
+  },
+  {
+   "problem_id": "C2",
+   "problem_name": "inventory-movement-ledger",
+   "dependency_class": "chained",
+   "fixture_index": 0,
+   "seed": 20960928,
+   "scoring_mode": "exact",
+   "case_id": "business-c2-000-n8-v4",
+   "base_fixture_hash": "4c4669ae1f71e8f6ebbd725323362b891e19748f7c47f4415a0a85bd87c7ac23",
+   "decision_count": 8,
+   "prompt_version": "v4",
+   "input": {
+    "opening_stock": 90,
+    "movements": [
+     {
+      "id": "M01",
+      "kind": "TRANSFER_OUT",
+      "quantity": 19
+     },
+     {
+      "id": "M02",
+      "kind": "TRANSFER_OUT",
+      "quantity": 5
+     },
+     {
+      "id": "M03",
+      "kind": "RECEIPT",
+      "quantity": 7
+     },
+     {
+      "id": "M04",
+      "kind": "SALE",
+      "quantity": 6
+     },
+     {
+      "id": "M05",
+      "kind": "TRANSFER_OUT",
+      "quantity": 6
+     },
+     {
+      "id": "M06",
+      "kind": "RETURN",
+      "quantity": 9
+     },
+     {
+      "id": "M07",
+      "kind": "TRANSFER_OUT",
+      "quantity": 6
+     },
+     {
+      "id": "M08",
+      "kind": "RECEIPT",
+      "quantity": 6
+     }
+    ]
+   },
+   "prompt": "Return only one JSON object that maps each input id to its value, like {\"M01\":\"...\",\"M02\":\"...\"}, with exactly one key per input item, in source order, from M01 to M08. Each value is a plain JSON string such as \"HIGH\" or \"123\". No markdown, no code fences, no explanation. Produce the value for each movement, formatted STOCK:STATUS. RECEIPT and RETURN add quantity and are ACCEPT. SALE, DAMAGE, and TRANSFER_OUT subtract quantity and are ACCEPT if quantity <= current stock; otherwise stock is unchanged and the status is REJECT. STOCK is the stock after the movement. Start from opening_stock. Example: stock 10, SALE 4 -> \"6:ACCEPT\"; then DAMAGE 9 -> \"6:REJECT\". Input:{\"movements\":[{\"id\":\"M01\",\"kind\":\"TRANSFER_OUT\",\"quantity\":19},{\"id\":\"M02\",\"kind\":\"TRANSFER_OUT\",\"quantity\":5},{\"id\":\"M03\",\"kind\":\"RECEIPT\",\"quantity\":7},{\"id\":\"M04\",\"kind\":\"SALE\",\"quantity\":6},{\"id\":\"M05\",\"kind\":\"TRANSFER_OUT\",\"quantity\":6},{\"id\":\"M06\",\"kind\":\"RETURN\",\"quantity\":9},{\"id\":\"M07\",\"kind\":\"TRANSFER_OUT\",\"quantity\":6},{\"id\":\"M08\",\"kind\":\"RECEIPT\",\"quantity\":6}],\"opening_stock\":90}",
+   "prompt_hash": "fb23b2104d5a2f3120b725e87bb756675bbc8bd3b1db5524dfffcdf37eeca760",
+   "output_keys": [
+    "M01",
+    "M02",
+    "M03",
+    "M04",
+    "M05",
+    "M06",
+    "M07",
+    "M08"
+   ],
+   "fixture_hash": "29818df25e069c46494677a257b1727d456344f8d25f1611f6c6554a873de951"
+  },
+  {
+   "problem_id": "C1",
+   "problem_name": "cash-balance-ledger",
+   "dependency_class": "chained",
+   "fixture_index": 0,
+   "seed": 20860925,
+   "scoring_mode": "exact",
+   "case_id": "business-c1-000-n16-v4",
+   "base_fixture_hash": "372b0cdc9263478601916db7777fc1326daa4400531d5e7fc865b4eee3348c4f",
+   "decision_count": 16,
+   "prompt_version": "v4",
+   "input": {
+    "opening_balance_cents": 253953,
+    "events": [
+     {
+      "id": "C01",
+      "kind": "FEE",
+      "amount_cents": 13992
+     },
+     {
+      "id": "C02",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 2473
+     },
+     {
+      "id": "C03",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 17849
+     },
+     {
+      "id": "C04",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 4265
+     },
+     {
+      "id": "C05",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 11833
+     },
+     {
+      "id": "C06",
+      "kind": "DEPOSIT",
+      "amount_cents": 17325
+     },
+     {
+      "id": "C07",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 2306
+     },
+     {
+      "id": "C08",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 13754
+     },
+     {
+      "id": "C09",
+      "kind": "INTEREST",
+      "rate_bps": 20
+     },
+     {
+      "id": "C10",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 14276
+     },
+     {
+      "id": "C11",
+      "kind": "DEPOSIT",
+      "amount_cents": 10984
+     },
+     {
+      "id": "C12",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 2600
+     },
+     {
+      "id": "C13",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 4925
+     },
+     {
+      "id": "C14",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 19427
+     },
+     {
+      "id": "C15",
+      "kind": "DEPOSIT",
+      "amount_cents": 17763
+     },
+     {
+      "id": "C16",
+      "kind": "DEPOSIT",
+      "amount_cents": 7841
+     }
+    ]
+   },
+   "prompt": "Return only one JSON object that maps each input id to its value, like {\"C01\":\"...\",\"C02\":\"...\"}, with exactly one key per input item, in source order, from C01 to C16. Each value is a plain JSON string such as \"HIGH\" or \"123\". No markdown, no code fences, no explanation. Produce the value for each event: the running balance in cents after the event, as a decimal string. DEPOSIT adds amount_cents; WITHDRAWAL and FEE subtract amount_cents; INTEREST adds round_half_up(balance*rate_bps/10000). Start from opening_balance_cents. Example: balance 100000, INTEREST rate_bps 5 -> \"100050\". Input:{\"events\":[{\"amount_cents\":13992,\"id\":\"C01\",\"kind\":\"FEE\"},{\"amount_cents\":2473,\"id\":\"C02\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":17849,\"id\":\"C03\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":4265,\"id\":\"C04\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":11833,\"id\":\"C05\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":17325,\"id\":\"C06\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":2306,\"id\":\"C07\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":13754,\"id\":\"C08\",\"kind\":\"WITHDRAWAL\"},{\"id\":\"C09\",\"kind\":\"INTEREST\",\"rate_bps\":20},{\"amount_cents\":14276,\"id\":\"C10\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":10984,\"id\":\"C11\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":2600,\"id\":\"C12\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":4925,\"id\":\"C13\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":19427,\"id\":\"C14\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":17763,\"id\":\"C15\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":7841,\"id\":\"C16\",\"kind\":\"DEPOSIT\"}],\"opening_balance_cents\":253953}",
+   "prompt_hash": "3ff7a40e4a89c81141ffca146a9c0c8b01f65195dc74858ad641661f6baa2819",
+   "output_keys": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07",
+    "C08",
+    "C09",
+    "C10",
+    "C11",
+    "C12",
+    "C13",
+    "C14",
+    "C15",
+    "C16"
+   ],
+   "fixture_hash": "aeebe61d96e6f5fe96112a7502b73a453b4fa6594e48057c0252fa0f5ea92b49"
+  },
+  {
+   "problem_id": "C2",
+   "problem_name": "inventory-movement-ledger",
+   "dependency_class": "chained",
+   "fixture_index": 0,
+   "seed": 20960928,
+   "scoring_mode": "exact",
+   "case_id": "business-c2-000-n16-v4",
+   "base_fixture_hash": "4c4669ae1f71e8f6ebbd725323362b891e19748f7c47f4415a0a85bd87c7ac23",
+   "decision_count": 16,
+   "prompt_version": "v4",
+   "input": {
+    "opening_stock": 90,
+    "movements": [
+     {
+      "id": "M01",
+      "kind": "TRANSFER_OUT",
+      "quantity": 19
+     },
+     {
+      "id": "M02",
+      "kind": "TRANSFER_OUT",
+      "quantity": 5
+     },
+     {
+      "id": "M03",
+      "kind": "RECEIPT",
+      "quantity": 7
+     },
+     {
+      "id": "M04",
+      "kind": "SALE",
+      "quantity": 6
+     },
+     {
+      "id": "M05",
+      "kind": "TRANSFER_OUT",
+      "quantity": 6
+     },
+     {
+      "id": "M06",
+      "kind": "RETURN",
+      "quantity": 9
+     },
+     {
+      "id": "M07",
+      "kind": "TRANSFER_OUT",
+      "quantity": 6
+     },
+     {
+      "id": "M08",
+      "kind": "RECEIPT",
+      "quantity": 6
+     },
+     {
+      "id": "M09",
+      "kind": "SALE",
+      "quantity": 20
+     },
+     {
+      "id": "M10",
+      "kind": "RETURN",
+      "quantity": 14
+     },
+     {
+      "id": "M11",
+      "kind": "DAMAGE",
+      "quantity": 16
+     },
+     {
+      "id": "M12",
+      "kind": "RETURN",
+      "quantity": 11
+     },
+     {
+      "id": "M13",
+      "kind": "RETURN",
+      "quantity": 5
+     },
+     {
+      "id": "M14",
+      "kind": "RETURN",
+      "quantity": 6
+     },
+     {
+      "id": "M15",
+      "kind": "RECEIPT",
+      "quantity": 11
+     },
+     {
+      "id": "M16",
+      "kind": "TRANSFER_OUT",
+      "quantity": 8
+     }
+    ]
+   },
+   "prompt": "Return only one JSON object that maps each input id to its value, like {\"M01\":\"...\",\"M02\":\"...\"}, with exactly one key per input item, in source order, from M01 to M16. Each value is a plain JSON string such as \"HIGH\" or \"123\". No markdown, no code fences, no explanation. Produce the value for each movement, formatted STOCK:STATUS. RECEIPT and RETURN add quantity and are ACCEPT. SALE, DAMAGE, and TRANSFER_OUT subtract quantity and are ACCEPT if quantity <= current stock; otherwise stock is unchanged and the status is REJECT. STOCK is the stock after the movement. Start from opening_stock. Example: stock 10, SALE 4 -> \"6:ACCEPT\"; then DAMAGE 9 -> \"6:REJECT\". Input:{\"movements\":[{\"id\":\"M01\",\"kind\":\"TRANSFER_OUT\",\"quantity\":19},{\"id\":\"M02\",\"kind\":\"TRANSFER_OUT\",\"quantity\":5},{\"id\":\"M03\",\"kind\":\"RECEIPT\",\"quantity\":7},{\"id\":\"M04\",\"kind\":\"SALE\",\"quantity\":6},{\"id\":\"M05\",\"kind\":\"TRANSFER_OUT\",\"quantity\":6},{\"id\":\"M06\",\"kind\":\"RETURN\",\"quantity\":9},{\"id\":\"M07\",\"kind\":\"TRANSFER_OUT\",\"quantity\":6},{\"id\":\"M08\",\"kind\":\"RECEIPT\",\"quantity\":6},{\"id\":\"M09\",\"kind\":\"SALE\",\"quantity\":20},{\"id\":\"M10\",\"kind\":\"RETURN\",\"quantity\":14},{\"id\":\"M11\",\"kind\":\"DAMAGE\",\"quantity\":16},{\"id\":\"M12\",\"kind\":\"RETURN\",\"quantity\":11},{\"id\":\"M13\",\"kind\":\"RETURN\",\"quantity\":5},{\"id\":\"M14\",\"kind\":\"RETURN\",\"quantity\":6},{\"id\":\"M15\",\"kind\":\"RECEIPT\",\"quantity\":11},{\"id\":\"M16\",\"kind\":\"TRANSFER_OUT\",\"quantity\":8}],\"opening_stock\":90}",
+   "prompt_hash": "c596628f22ef398b76b265322e19f7d2af054ab0f2d26d04e6f688a8bfbd9872",
+   "output_keys": [
+    "M01",
+    "M02",
+    "M03",
+    "M04",
+    "M05",
+    "M06",
+    "M07",
+    "M08",
+    "M09",
+    "M10",
+    "M11",
+    "M12",
+    "M13",
+    "M14",
+    "M15",
+    "M16"
+   ],
+   "fixture_hash": "547045687421d399b2761266f172a52fdd5d3b589ec2a7484064d93bb2481990"
+  },
+  {
+   "problem_id": "C1",
+   "problem_name": "cash-balance-ledger",
+   "dependency_class": "chained",
+   "fixture_index": 0,
+   "seed": 20860925,
+   "scoring_mode": "exact",
+   "case_id": "business-c1-000-n32-v4",
+   "base_fixture_hash": "372b0cdc9263478601916db7777fc1326daa4400531d5e7fc865b4eee3348c4f",
+   "decision_count": 32,
+   "prompt_version": "v4",
+   "input": {
+    "opening_balance_cents": 253953,
+    "events": [
+     {
+      "id": "C01",
+      "kind": "FEE",
+      "amount_cents": 13992
+     },
+     {
+      "id": "C02",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 2473
+     },
+     {
+      "id": "C03",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 17849
+     },
+     {
+      "id": "C04",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 4265
+     },
+     {
+      "id": "C05",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 11833
+     },
+     {
+      "id": "C06",
+      "kind": "DEPOSIT",
+      "amount_cents": 17325
+     },
+     {
+      "id": "C07",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 2306
+     },
+     {
+      "id": "C08",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 13754
+     },
+     {
+      "id": "C09",
+      "kind": "INTEREST",
+      "rate_bps": 20
+     },
+     {
+      "id": "C10",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 14276
+     },
+     {
+      "id": "C11",
+      "kind": "DEPOSIT",
+      "amount_cents": 10984
+     },
+     {
+      "id": "C12",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 2600
+     },
+     {
+      "id": "C13",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 4925
+     },
+     {
+      "id": "C14",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 19427
+     },
+     {
+      "id": "C15",
+      "kind": "DEPOSIT",
+      "amount_cents": 17763
+     },
+     {
+      "id": "C16",
+      "kind": "DEPOSIT",
+      "amount_cents": 7841
+     },
+     {
+      "id": "C17",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 9748
+     },
+     {
+      "id": "C18",
+      "kind": "FEE",
+      "amount_cents": 8846
+     },
+     {
+      "id": "C19",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 18569
+     },
+     {
+      "id": "C20",
+      "kind": "DEPOSIT",
+      "amount_cents": 1682
+     },
+     {
+      "id": "C21",
+      "kind": "DEPOSIT",
+      "amount_cents": 4985
+     },
+     {
+      "id": "C22",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 13339
+     },
+     {
+      "id": "C23",
+      "kind": "DEPOSIT",
+      "amount_cents": 7064
+     },
+     {
+      "id": "C24",
+      "kind": "INTEREST",
+      "rate_bps": 20
+     },
+     {
+      "id": "C25",
+      "kind": "INTEREST",
+      "rate_bps": 5
+     },
+     {
+      "id": "C26",
+      "kind": "DEPOSIT",
+      "amount_cents": 4774
+     },
+     {
+      "id": "C27",
+      "kind": "INTEREST",
+      "rate_bps": 5
+     },
+     {
+      "id": "C28",
+      "kind": "DEPOSIT",
+      "amount_cents": 4790
+     },
+     {
+      "id": "C29",
+      "kind": "DEPOSIT",
+      "amount_cents": 19595
+     },
+     {
+      "id": "C30",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 10225
+     },
+     {
+      "id": "C31",
+      "kind": "DEPOSIT",
+      "amount_cents": 12082
+     },
+     {
+      "id": "C32",
+      "kind": "FEE",
+      "amount_cents": 12991
+     }
+    ]
+   },
+   "prompt": "Return only one JSON object that maps each input id to its value, like {\"C01\":\"...\",\"C02\":\"...\"}, with exactly one key per input item, in source order, from C01 to C32. Each value is a plain JSON string such as \"HIGH\" or \"123\". No markdown, no code fences, no explanation. Produce the value for each event: the running balance in cents after the event, as a decimal string. DEPOSIT adds amount_cents; WITHDRAWAL and FEE subtract amount_cents; INTEREST adds round_half_up(balance*rate_bps/10000). Start from opening_balance_cents. Example: balance 100000, INTEREST rate_bps 5 -> \"100050\". Input:{\"events\":[{\"amount_cents\":13992,\"id\":\"C01\",\"kind\":\"FEE\"},{\"amount_cents\":2473,\"id\":\"C02\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":17849,\"id\":\"C03\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":4265,\"id\":\"C04\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":11833,\"id\":\"C05\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":17325,\"id\":\"C06\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":2306,\"id\":\"C07\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":13754,\"id\":\"C08\",\"kind\":\"WITHDRAWAL\"},{\"id\":\"C09\",\"kind\":\"INTEREST\",\"rate_bps\":20},{\"amount_cents\":14276,\"id\":\"C10\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":10984,\"id\":\"C11\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":2600,\"id\":\"C12\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":4925,\"id\":\"C13\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":19427,\"id\":\"C14\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":17763,\"id\":\"C15\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":7841,\"id\":\"C16\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":9748,\"id\":\"C17\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":8846,\"id\":\"C18\",\"kind\":\"FEE\"},{\"amount_cents\":18569,\"id\":\"C19\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":1682,\"id\":\"C20\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":4985,\"id\":\"C21\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":13339,\"id\":\"C22\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":7064,\"id\":\"C23\",\"kind\":\"DEPOSIT\"},{\"id\":\"C24\",\"kind\":\"INTEREST\",\"rate_bps\":20},{\"id\":\"C25\",\"kind\":\"INTEREST\",\"rate_bps\":5},{\"amount_cents\":4774,\"id\":\"C26\",\"kind\":\"DEPOSIT\"},{\"id\":\"C27\",\"kind\":\"INTEREST\",\"rate_bps\":5},{\"amount_cents\":4790,\"id\":\"C28\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":19595,\"id\":\"C29\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":10225,\"id\":\"C30\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":12082,\"id\":\"C31\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":12991,\"id\":\"C32\",\"kind\":\"FEE\"}],\"opening_balance_cents\":253953}",
+   "prompt_hash": "7f119b1f93faacc4aa150bcd6757132d5470d1ae0b36704eee01ee2e91b142d0",
+   "output_keys": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07",
+    "C08",
+    "C09",
+    "C10",
+    "C11",
+    "C12",
+    "C13",
+    "C14",
+    "C15",
+    "C16",
+    "C17",
+    "C18",
+    "C19",
+    "C20",
+    "C21",
+    "C22",
+    "C23",
+    "C24",
+    "C25",
+    "C26",
+    "C27",
+    "C28",
+    "C29",
+    "C30",
+    "C31",
+    "C32"
+   ],
+   "fixture_hash": "e8f6c81a21663a84bd9a37d67afa3f72e1a50fe08522e02a06572b207ac2be43"
+  },
+  {
+   "problem_id": "C2",
+   "problem_name": "inventory-movement-ledger",
+   "dependency_class": "chained",
+   "fixture_index": 0,
+   "seed": 20960928,
+   "scoring_mode": "exact",
+   "case_id": "business-c2-000-n32-v4",
+   "base_fixture_hash": "4c4669ae1f71e8f6ebbd725323362b891e19748f7c47f4415a0a85bd87c7ac23",
+   "decision_count": 32,
+   "prompt_version": "v4",
+   "input": {
+    "opening_stock": 90,
+    "movements": [
+     {
+      "id": "M01",
+      "kind": "TRANSFER_OUT",
+      "quantity": 19
+     },
+     {
+      "id": "M02",
+      "kind": "TRANSFER_OUT",
+      "quantity": 5
+     },
+     {
+      "id": "M03",
+      "kind": "RECEIPT",
+      "quantity": 7
+     },
+     {
+      "id": "M04",
+      "kind": "SALE",
+      "quantity": 6
+     },
+     {
+      "id": "M05",
+      "kind": "TRANSFER_OUT",
+      "quantity": 6
+     },
+     {
+      "id": "M06",
+      "kind": "RETURN",
+      "quantity": 9
+     },
+     {
+      "id": "M07",
+      "kind": "TRANSFER_OUT",
+      "quantity": 6
+     },
+     {
+      "id": "M08",
+      "kind": "RECEIPT",
+      "quantity": 6
+     },
+     {
+      "id": "M09",
+      "kind": "SALE",
+      "quantity": 20
+     },
+     {
+      "id": "M10",
+      "kind": "RETURN",
+      "quantity": 14
+     },
+     {
+      "id": "M11",
+      "kind": "DAMAGE",
+      "quantity": 16
+     },
+     {
+      "id": "M12",
+      "kind": "RETURN",
+      "quantity": 11
+     },
+     {
+      "id": "M13",
+      "kind": "RETURN",
+      "quantity": 5
+     },
+     {
+      "id": "M14",
+      "kind": "RETURN",
+      "quantity": 6
+     },
+     {
+      "id": "M15",
+      "kind": "RECEIPT",
+      "quantity": 11
+     },
+     {
+      "id": "M16",
+      "kind": "TRANSFER_OUT",
+      "quantity": 8
+     },
+     {
+      "id": "M17",
+      "kind": "RECEIPT",
+      "quantity": 3
+     },
+     {
+      "id": "M18",
+      "kind": "DAMAGE",
+      "quantity": 16
+     },
+     {
+      "id": "M19",
+      "kind": "RECEIPT",
+      "quantity": 16
+     },
+     {
+      "id": "M20",
+      "kind": "DAMAGE",
+      "quantity": 4
+     },
+     {
+      "id": "M21",
+      "kind": "TRANSFER_OUT",
+      "quantity": 1
+     },
+     {
+      "id": "M22",
+      "kind": "DAMAGE",
+      "quantity": 12
+     },
+     {
+      "id": "M23",
+      "kind": "TRANSFER_OUT",
+      "quantity": 20
+     },
+     {
+      "id": "M24",
+      "kind": "RECEIPT",
+      "quantity": 17
+     },
+     {
+      "id": "M25",
+      "kind": "RETURN",
+      "quantity": 10
+     },
+     {
+      "id": "M26",
+      "kind": "TRANSFER_OUT",
+      "quantity": 1
+     },
+     {
+      "id": "M27",
+      "kind": "DAMAGE",
+      "quantity": 7
+     },
+     {
+      "id": "M28",
+      "kind": "DAMAGE",
+      "quantity": 4
+     },
+     {
+      "id": "M29",
+      "kind": "RECEIPT",
+      "quantity": 4
+     },
+     {
+      "id": "M30",
+      "kind": "RECEIPT",
+      "quantity": 2
+     },
+     {
+      "id": "M31",
+      "kind": "SALE",
+      "quantity": 14
+     },
+     {
+      "id": "M32",
+      "kind": "TRANSFER_OUT",
+      "quantity": 14
+     }
+    ]
+   },
+   "prompt": "Return only one JSON object that maps each input id to its value, like {\"M01\":\"...\",\"M02\":\"...\"}, with exactly one key per input item, in source order, from M01 to M32. Each value is a plain JSON string such as \"HIGH\" or \"123\". No markdown, no code fences, no explanation. Produce the value for each movement, formatted STOCK:STATUS. RECEIPT and RETURN add quantity and are ACCEPT. SALE, DAMAGE, and TRANSFER_OUT subtract quantity and are ACCEPT if quantity <= current stock; otherwise stock is unchanged and the status is REJECT. STOCK is the stock after the movement. Start from opening_stock. Example: stock 10, SALE 4 -> \"6:ACCEPT\"; then DAMAGE 9 -> \"6:REJECT\". Input:{\"movements\":[{\"id\":\"M01\",\"kind\":\"TRANSFER_OUT\",\"quantity\":19},{\"id\":\"M02\",\"kind\":\"TRANSFER_OUT\",\"quantity\":5},{\"id\":\"M03\",\"kind\":\"RECEIPT\",\"quantity\":7},{\"id\":\"M04\",\"kind\":\"SALE\",\"quantity\":6},{\"id\":\"M05\",\"kind\":\"TRANSFER_OUT\",\"quantity\":6},{\"id\":\"M06\",\"kind\":\"RETURN\",\"quantity\":9},{\"id\":\"M07\",\"kind\":\"TRANSFER_OUT\",\"quantity\":6},{\"id\":\"M08\",\"kind\":\"RECEIPT\",\"quantity\":6},{\"id\":\"M09\",\"kind\":\"SALE\",\"quantity\":20},{\"id\":\"M10\",\"kind\":\"RETURN\",\"quantity\":14},{\"id\":\"M11\",\"kind\":\"DAMAGE\",\"quantity\":16},{\"id\":\"M12\",\"kind\":\"RETURN\",\"quantity\":11},{\"id\":\"M13\",\"kind\":\"RETURN\",\"quantity\":5},{\"id\":\"M14\",\"kind\":\"RETURN\",\"quantity\":6},{\"id\":\"M15\",\"kind\":\"RECEIPT\",\"quantity\":11},{\"id\":\"M16\",\"kind\":\"TRANSFER_OUT\",\"quantity\":8},{\"id\":\"M17\",\"kind\":\"RECEIPT\",\"quantity\":3},{\"id\":\"M18\",\"kind\":\"DAMAGE\",\"quantity\":16},{\"id\":\"M19\",\"kind\":\"RECEIPT\",\"quantity\":16},{\"id\":\"M20\",\"kind\":\"DAMAGE\",\"quantity\":4},{\"id\":\"M21\",\"kind\":\"TRANSFER_OUT\",\"quantity\":1},{\"id\":\"M22\",\"kind\":\"DAMAGE\",\"quantity\":12},{\"id\":\"M23\",\"kind\":\"TRANSFER_OUT\",\"quantity\":20},{\"id\":\"M24\",\"kind\":\"RECEIPT\",\"quantity\":17},{\"id\":\"M25\",\"kind\":\"RETURN\",\"quantity\":10},{\"id\":\"M26\",\"kind\":\"TRANSFER_OUT\",\"quantity\":1},{\"id\":\"M27\",\"kind\":\"DAMAGE\",\"quantity\":7},{\"id\":\"M28\",\"kind\":\"DAMAGE\",\"quantity\":4},{\"id\":\"M29\",\"kind\":\"RECEIPT\",\"quantity\":4},{\"id\":\"M30\",\"kind\":\"RECEIPT\",\"quantity\":2},{\"id\":\"M31\",\"kind\":\"SALE\",\"quantity\":14},{\"id\":\"M32\",\"kind\":\"TRANSFER_OUT\",\"quantity\":14}],\"opening_stock\":90}",
+   "prompt_hash": "9b60cd6e304d9c03179256ad9584c087f874109136ed60dbd03e3860eb75a011",
+   "output_keys": [
+    "M01",
+    "M02",
+    "M03",
+    "M04",
+    "M05",
+    "M06",
+    "M07",
+    "M08",
+    "M09",
+    "M10",
+    "M11",
+    "M12",
+    "M13",
+    "M14",
+    "M15",
+    "M16",
+    "M17",
+    "M18",
+    "M19",
+    "M20",
+    "M21",
+    "M22",
+    "M23",
+    "M24",
+    "M25",
+    "M26",
+    "M27",
+    "M28",
+    "M29",
+    "M30",
+    "M31",
+    "M32"
+   ],
+   "fixture_hash": "1e76692c0d6bca7bd8f71a27adba035136d53d924534b5dce6218ed4b6ca1e0e"
+  },
+  {
+   "problem_id": "C1",
+   "problem_name": "cash-balance-ledger",
+   "dependency_class": "chained",
+   "fixture_index": 1,
+   "seed": 20870898,
+   "scoring_mode": "exact",
+   "case_id": "business-c1-001-n8-v4",
+   "base_fixture_hash": "864aace3e54d0486612dd61cc93f6b90c98fddf77337e3b5bcf9afe279ed2f53",
+   "decision_count": 8,
+   "prompt_version": "v4",
+   "input": {
+    "opening_balance_cents": 276406,
+    "events": [
+     {
+      "id": "C01",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 2396
+     },
+     {
+      "id": "C02",
+      "kind": "INTEREST",
+      "rate_bps": 5
+     },
+     {
+      "id": "C03",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 19809
+     },
+     {
+      "id": "C04",
+      "kind": "DEPOSIT",
+      "amount_cents": 5285
+     },
+     {
+      "id": "C05",
+      "kind": "DEPOSIT",
+      "amount_cents": 14419
+     },
+     {
+      "id": "C06",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 15707
+     },
+     {
+      "id": "C07",
+      "kind": "DEPOSIT",
+      "amount_cents": 16700
+     },
+     {
+      "id": "C08",
+      "kind": "DEPOSIT",
+      "amount_cents": 19028
+     }
+    ]
+   },
+   "prompt": "Return only one JSON object that maps each input id to its value, like {\"C01\":\"...\",\"C02\":\"...\"}, with exactly one key per input item, in source order, from C01 to C08. Each value is a plain JSON string such as \"HIGH\" or \"123\". No markdown, no code fences, no explanation. Produce the value for each event: the running balance in cents after the event, as a decimal string. DEPOSIT adds amount_cents; WITHDRAWAL and FEE subtract amount_cents; INTEREST adds round_half_up(balance*rate_bps/10000). Start from opening_balance_cents. Example: balance 100000, INTEREST rate_bps 5 -> \"100050\". Input:{\"events\":[{\"amount_cents\":2396,\"id\":\"C01\",\"kind\":\"WITHDRAWAL\"},{\"id\":\"C02\",\"kind\":\"INTEREST\",\"rate_bps\":5},{\"amount_cents\":19809,\"id\":\"C03\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":5285,\"id\":\"C04\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":14419,\"id\":\"C05\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":15707,\"id\":\"C06\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":16700,\"id\":\"C07\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":19028,\"id\":\"C08\",\"kind\":\"DEPOSIT\"}],\"opening_balance_cents\":276406}",
+   "prompt_hash": "f67c2aae94db70022e01ebb4dc0ba9d80435fb568b887f2585bc57034f12344b",
+   "output_keys": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07",
+    "C08"
+   ],
+   "fixture_hash": "7f3f83f4f3d8445132a6229b740722b9f49226b05f76eb6d9000335b26943fcd"
+  },
+  {
+   "problem_id": "C2",
+   "problem_name": "inventory-movement-ledger",
+   "dependency_class": "chained",
+   "fixture_index": 1,
+   "seed": 20970901,
+   "scoring_mode": "exact",
+   "case_id": "business-c2-001-n8-v4",
+   "base_fixture_hash": "e4e6b492718477b118d2b3b2501eba8b12ecad5d0df00b2daa83c839d6e32c91",
+   "decision_count": 8,
+   "prompt_version": "v4",
+   "input": {
+    "opening_stock": 85,
+    "movements": [
+     {
+      "id": "M01",
+      "kind": "RETURN",
+      "quantity": 20
+     },
+     {
+      "id": "M02",
+      "kind": "TRANSFER_OUT",
+      "quantity": 8
+     },
+     {
+      "id": "M03",
+      "kind": "TRANSFER_OUT",
+      "quantity": 1
+     },
+     {
+      "id": "M04",
+      "kind": "RECEIPT",
+      "quantity": 6
+     },
+     {
+      "id": "M05",
+      "kind": "DAMAGE",
+      "quantity": 10
+     },
+     {
+      "id": "M06",
+      "kind": "TRANSFER_OUT",
+      "quantity": 17
+     },
+     {
+      "id": "M07",
+      "kind": "TRANSFER_OUT",
+      "quantity": 2
+     },
+     {
+      "id": "M08",
+      "kind": "SALE",
+      "quantity": 14
+     }
+    ]
+   },
+   "prompt": "Return only one JSON object that maps each input id to its value, like {\"M01\":\"...\",\"M02\":\"...\"}, with exactly one key per input item, in source order, from M01 to M08. Each value is a plain JSON string such as \"HIGH\" or \"123\". No markdown, no code fences, no explanation. Produce the value for each movement, formatted STOCK:STATUS. RECEIPT and RETURN add quantity and are ACCEPT. SALE, DAMAGE, and TRANSFER_OUT subtract quantity and are ACCEPT if quantity <= current stock; otherwise stock is unchanged and the status is REJECT. STOCK is the stock after the movement. Start from opening_stock. Example: stock 10, SALE 4 -> \"6:ACCEPT\"; then DAMAGE 9 -> \"6:REJECT\". Input:{\"movements\":[{\"id\":\"M01\",\"kind\":\"RETURN\",\"quantity\":20},{\"id\":\"M02\",\"kind\":\"TRANSFER_OUT\",\"quantity\":8},{\"id\":\"M03\",\"kind\":\"TRANSFER_OUT\",\"quantity\":1},{\"id\":\"M04\",\"kind\":\"RECEIPT\",\"quantity\":6},{\"id\":\"M05\",\"kind\":\"DAMAGE\",\"quantity\":10},{\"id\":\"M06\",\"kind\":\"TRANSFER_OUT\",\"quantity\":17},{\"id\":\"M07\",\"kind\":\"TRANSFER_OUT\",\"quantity\":2},{\"id\":\"M08\",\"kind\":\"SALE\",\"quantity\":14}],\"opening_stock\":85}",
+   "prompt_hash": "77234eb3fd4d36388410b7f209395c63575475bbd7203874763bd6049430dde5",
+   "output_keys": [
+    "M01",
+    "M02",
+    "M03",
+    "M04",
+    "M05",
+    "M06",
+    "M07",
+    "M08"
+   ],
+   "fixture_hash": "2f196d8bc7ae12bb6396df0e5c57969e3a2fdf83e0c7781e559f98b7c2efff14"
+  },
+  {
+   "problem_id": "C1",
+   "problem_name": "cash-balance-ledger",
+   "dependency_class": "chained",
+   "fixture_index": 1,
+   "seed": 20870898,
+   "scoring_mode": "exact",
+   "case_id": "business-c1-001-n16-v4",
+   "base_fixture_hash": "864aace3e54d0486612dd61cc93f6b90c98fddf77337e3b5bcf9afe279ed2f53",
+   "decision_count": 16,
+   "prompt_version": "v4",
+   "input": {
+    "opening_balance_cents": 276406,
+    "events": [
+     {
+      "id": "C01",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 2396
+     },
+     {
+      "id": "C02",
+      "kind": "INTEREST",
+      "rate_bps": 5
+     },
+     {
+      "id": "C03",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 19809
+     },
+     {
+      "id": "C04",
+      "kind": "DEPOSIT",
+      "amount_cents": 5285
+     },
+     {
+      "id": "C05",
+      "kind": "DEPOSIT",
+      "amount_cents": 14419
+     },
+     {
+      "id": "C06",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 15707
+     },
+     {
+      "id": "C07",
+      "kind": "DEPOSIT",
+      "amount_cents": 16700
+     },
+     {
+      "id": "C08",
+      "kind": "DEPOSIT",
+      "amount_cents": 19028
+     },
+     {
+      "id": "C09",
+      "kind": "DEPOSIT",
+      "amount_cents": 1932
+     },
+     {
+      "id": "C10",
+      "kind": "FEE",
+      "amount_cents": 13176
+     },
+     {
+      "id": "C11",
+      "kind": "DEPOSIT",
+      "amount_cents": 10246
+     },
+     {
+      "id": "C12",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 2913
+     },
+     {
+      "id": "C13",
+      "kind": "DEPOSIT",
+      "amount_cents": 11523
+     },
+     {
+      "id": "C14",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 14203
+     },
+     {
+      "id": "C15",
+      "kind": "DEPOSIT",
+      "amount_cents": 18817
+     },
+     {
+      "id": "C16",
+      "kind": "FEE",
+      "amount_cents": 4925
+     }
+    ]
+   },
+   "prompt": "Return only one JSON object that maps each input id to its value, like {\"C01\":\"...\",\"C02\":\"...\"}, with exactly one key per input item, in source order, from C01 to C16. Each value is a plain JSON string such as \"HIGH\" or \"123\". No markdown, no code fences, no explanation. Produce the value for each event: the running balance in cents after the event, as a decimal string. DEPOSIT adds amount_cents; WITHDRAWAL and FEE subtract amount_cents; INTEREST adds round_half_up(balance*rate_bps/10000). Start from opening_balance_cents. Example: balance 100000, INTEREST rate_bps 5 -> \"100050\". Input:{\"events\":[{\"amount_cents\":2396,\"id\":\"C01\",\"kind\":\"WITHDRAWAL\"},{\"id\":\"C02\",\"kind\":\"INTEREST\",\"rate_bps\":5},{\"amount_cents\":19809,\"id\":\"C03\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":5285,\"id\":\"C04\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":14419,\"id\":\"C05\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":15707,\"id\":\"C06\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":16700,\"id\":\"C07\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":19028,\"id\":\"C08\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":1932,\"id\":\"C09\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":13176,\"id\":\"C10\",\"kind\":\"FEE\"},{\"amount_cents\":10246,\"id\":\"C11\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":2913,\"id\":\"C12\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":11523,\"id\":\"C13\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":14203,\"id\":\"C14\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":18817,\"id\":\"C15\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":4925,\"id\":\"C16\",\"kind\":\"FEE\"}],\"opening_balance_cents\":276406}",
+   "prompt_hash": "fd972c2f6055be9ec7d78fabd4cf4b02b00d882b1a642522c80319be73518c41",
+   "output_keys": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07",
+    "C08",
+    "C09",
+    "C10",
+    "C11",
+    "C12",
+    "C13",
+    "C14",
+    "C15",
+    "C16"
+   ],
+   "fixture_hash": "1d42e6bbcf9dbdcfaf2c11703d72e4d7c1113304a61c728b7eb6c8b17bf406c1"
+  },
+  {
+   "problem_id": "C2",
+   "problem_name": "inventory-movement-ledger",
+   "dependency_class": "chained",
+   "fixture_index": 1,
+   "seed": 20970901,
+   "scoring_mode": "exact",
+   "case_id": "business-c2-001-n16-v4",
+   "base_fixture_hash": "e4e6b492718477b118d2b3b2501eba8b12ecad5d0df00b2daa83c839d6e32c91",
+   "decision_count": 16,
+   "prompt_version": "v4",
+   "input": {
+    "opening_stock": 85,
+    "movements": [
+     {
+      "id": "M01",
+      "kind": "RETURN",
+      "quantity": 20
+     },
+     {
+      "id": "M02",
+      "kind": "TRANSFER_OUT",
+      "quantity": 8
+     },
+     {
+      "id": "M03",
+      "kind": "TRANSFER_OUT",
+      "quantity": 1
+     },
+     {
+      "id": "M04",
+      "kind": "RECEIPT",
+      "quantity": 6
+     },
+     {
+      "id": "M05",
+      "kind": "DAMAGE",
+      "quantity": 10
+     },
+     {
+      "id": "M06",
+      "kind": "TRANSFER_OUT",
+      "quantity": 17
+     },
+     {
+      "id": "M07",
+      "kind": "TRANSFER_OUT",
+      "quantity": 2
+     },
+     {
+      "id": "M08",
+      "kind": "SALE",
+      "quantity": 14
+     },
+     {
+      "id": "M09",
+      "kind": "DAMAGE",
+      "quantity": 9
+     },
+     {
+      "id": "M10",
+      "kind": "RECEIPT",
+      "quantity": 2
+     },
+     {
+      "id": "M11",
+      "kind": "DAMAGE",
+      "quantity": 3
+     },
+     {
+      "id": "M12",
+      "kind": "DAMAGE",
+      "quantity": 4
+     },
+     {
+      "id": "M13",
+      "kind": "SALE",
+      "quantity": 5
+     },
+     {
+      "id": "M14",
+      "kind": "RECEIPT",
+      "quantity": 12
+     },
+     {
+      "id": "M15",
+      "kind": "DAMAGE",
+      "quantity": 16
+     },
+     {
+      "id": "M16",
+      "kind": "SALE",
+      "quantity": 12
+     }
+    ]
+   },
+   "prompt": "Return only one JSON object that maps each input id to its value, like {\"M01\":\"...\",\"M02\":\"...\"}, with exactly one key per input item, in source order, from M01 to M16. Each value is a plain JSON string such as \"HIGH\" or \"123\". No markdown, no code fences, no explanation. Produce the value for each movement, formatted STOCK:STATUS. RECEIPT and RETURN add quantity and are ACCEPT. SALE, DAMAGE, and TRANSFER_OUT subtract quantity and are ACCEPT if quantity <= current stock; otherwise stock is unchanged and the status is REJECT. STOCK is the stock after the movement. Start from opening_stock. Example: stock 10, SALE 4 -> \"6:ACCEPT\"; then DAMAGE 9 -> \"6:REJECT\". Input:{\"movements\":[{\"id\":\"M01\",\"kind\":\"RETURN\",\"quantity\":20},{\"id\":\"M02\",\"kind\":\"TRANSFER_OUT\",\"quantity\":8},{\"id\":\"M03\",\"kind\":\"TRANSFER_OUT\",\"quantity\":1},{\"id\":\"M04\",\"kind\":\"RECEIPT\",\"quantity\":6},{\"id\":\"M05\",\"kind\":\"DAMAGE\",\"quantity\":10},{\"id\":\"M06\",\"kind\":\"TRANSFER_OUT\",\"quantity\":17},{\"id\":\"M07\",\"kind\":\"TRANSFER_OUT\",\"quantity\":2},{\"id\":\"M08\",\"kind\":\"SALE\",\"quantity\":14},{\"id\":\"M09\",\"kind\":\"DAMAGE\",\"quantity\":9},{\"id\":\"M10\",\"kind\":\"RECEIPT\",\"quantity\":2},{\"id\":\"M11\",\"kind\":\"DAMAGE\",\"quantity\":3},{\"id\":\"M12\",\"kind\":\"DAMAGE\",\"quantity\":4},{\"id\":\"M13\",\"kind\":\"SALE\",\"quantity\":5},{\"id\":\"M14\",\"kind\":\"RECEIPT\",\"quantity\":12},{\"id\":\"M15\",\"kind\":\"DAMAGE\",\"quantity\":16},{\"id\":\"M16\",\"kind\":\"SALE\",\"quantity\":12}],\"opening_stock\":85}",
+   "prompt_hash": "cbbe7a2d3a0e68ac9f09d7ae5ea440e6bd7717d195849735aa6c76bdc5889556",
+   "output_keys": [
+    "M01",
+    "M02",
+    "M03",
+    "M04",
+    "M05",
+    "M06",
+    "M07",
+    "M08",
+    "M09",
+    "M10",
+    "M11",
+    "M12",
+    "M13",
+    "M14",
+    "M15",
+    "M16"
+   ],
+   "fixture_hash": "f9e20890b2d7a2bec7541a697c978e921b072e58f3ae752ba8c2fcdc94c0ccbb"
+  },
+  {
+   "problem_id": "C1",
+   "problem_name": "cash-balance-ledger",
+   "dependency_class": "chained",
+   "fixture_index": 1,
+   "seed": 20870898,
+   "scoring_mode": "exact",
+   "case_id": "business-c1-001-n32-v4",
+   "base_fixture_hash": "864aace3e54d0486612dd61cc93f6b90c98fddf77337e3b5bcf9afe279ed2f53",
+   "decision_count": 32,
+   "prompt_version": "v4",
+   "input": {
+    "opening_balance_cents": 276406,
+    "events": [
+     {
+      "id": "C01",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 2396
+     },
+     {
+      "id": "C02",
+      "kind": "INTEREST",
+      "rate_bps": 5
+     },
+     {
+      "id": "C03",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 19809
+     },
+     {
+      "id": "C04",
+      "kind": "DEPOSIT",
+      "amount_cents": 5285
+     },
+     {
+      "id": "C05",
+      "kind": "DEPOSIT",
+      "amount_cents": 14419
+     },
+     {
+      "id": "C06",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 15707
+     },
+     {
+      "id": "C07",
+      "kind": "DEPOSIT",
+      "amount_cents": 16700
+     },
+     {
+      "id": "C08",
+      "kind": "DEPOSIT",
+      "amount_cents": 19028
+     },
+     {
+      "id": "C09",
+      "kind": "DEPOSIT",
+      "amount_cents": 1932
+     },
+     {
+      "id": "C10",
+      "kind": "FEE",
+      "amount_cents": 13176
+     },
+     {
+      "id": "C11",
+      "kind": "DEPOSIT",
+      "amount_cents": 10246
+     },
+     {
+      "id": "C12",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 2913
+     },
+     {
+      "id": "C13",
+      "kind": "DEPOSIT",
+      "amount_cents": 11523
+     },
+     {
+      "id": "C14",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 14203
+     },
+     {
+      "id": "C15",
+      "kind": "DEPOSIT",
+      "amount_cents": 18817
+     },
+     {
+      "id": "C16",
+      "kind": "FEE",
+      "amount_cents": 4925
+     },
+     {
+      "id": "C17",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 1044
+     },
+     {
+      "id": "C18",
+      "kind": "FEE",
+      "amount_cents": 5825
+     },
+     {
+      "id": "C19",
+      "kind": "DEPOSIT",
+      "amount_cents": 19449
+     },
+     {
+      "id": "C20",
+      "kind": "INTEREST",
+      "rate_bps": 5
+     },
+     {
+      "id": "C21",
+      "kind": "FEE",
+      "amount_cents": 504
+     },
+     {
+      "id": "C22",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 6269
+     },
+     {
+      "id": "C23",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 977
+     },
+     {
+      "id": "C24",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 11402
+     },
+     {
+      "id": "C25",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 4615
+     },
+     {
+      "id": "C26",
+      "kind": "DEPOSIT",
+      "amount_cents": 16163
+     },
+     {
+      "id": "C27",
+      "kind": "INTEREST",
+      "rate_bps": 10
+     },
+     {
+      "id": "C28",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 3728
+     },
+     {
+      "id": "C29",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 5984
+     },
+     {
+      "id": "C30",
+      "kind": "DEPOSIT",
+      "amount_cents": 7475
+     },
+     {
+      "id": "C31",
+      "kind": "DEPOSIT",
+      "amount_cents": 7154
+     },
+     {
+      "id": "C32",
+      "kind": "FEE",
+      "amount_cents": 7178
+     }
+    ]
+   },
+   "prompt": "Return only one JSON object that maps each input id to its value, like {\"C01\":\"...\",\"C02\":\"...\"}, with exactly one key per input item, in source order, from C01 to C32. Each value is a plain JSON string such as \"HIGH\" or \"123\". No markdown, no code fences, no explanation. Produce the value for each event: the running balance in cents after the event, as a decimal string. DEPOSIT adds amount_cents; WITHDRAWAL and FEE subtract amount_cents; INTEREST adds round_half_up(balance*rate_bps/10000). Start from opening_balance_cents. Example: balance 100000, INTEREST rate_bps 5 -> \"100050\". Input:{\"events\":[{\"amount_cents\":2396,\"id\":\"C01\",\"kind\":\"WITHDRAWAL\"},{\"id\":\"C02\",\"kind\":\"INTEREST\",\"rate_bps\":5},{\"amount_cents\":19809,\"id\":\"C03\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":5285,\"id\":\"C04\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":14419,\"id\":\"C05\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":15707,\"id\":\"C06\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":16700,\"id\":\"C07\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":19028,\"id\":\"C08\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":1932,\"id\":\"C09\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":13176,\"id\":\"C10\",\"kind\":\"FEE\"},{\"amount_cents\":10246,\"id\":\"C11\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":2913,\"id\":\"C12\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":11523,\"id\":\"C13\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":14203,\"id\":\"C14\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":18817,\"id\":\"C15\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":4925,\"id\":\"C16\",\"kind\":\"FEE\"},{\"amount_cents\":1044,\"id\":\"C17\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":5825,\"id\":\"C18\",\"kind\":\"FEE\"},{\"amount_cents\":19449,\"id\":\"C19\",\"kind\":\"DEPOSIT\"},{\"id\":\"C20\",\"kind\":\"INTEREST\",\"rate_bps\":5},{\"amount_cents\":504,\"id\":\"C21\",\"kind\":\"FEE\"},{\"amount_cents\":6269,\"id\":\"C22\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":977,\"id\":\"C23\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":11402,\"id\":\"C24\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":4615,\"id\":\"C25\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":16163,\"id\":\"C26\",\"kind\":\"DEPOSIT\"},{\"id\":\"C27\",\"kind\":\"INTEREST\",\"rate_bps\":10},{\"amount_cents\":3728,\"id\":\"C28\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":5984,\"id\":\"C29\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":7475,\"id\":\"C30\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":7154,\"id\":\"C31\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":7178,\"id\":\"C32\",\"kind\":\"FEE\"}],\"opening_balance_cents\":276406}",
+   "prompt_hash": "7c1ec315db59e9d09cbde5e359a39a4efe6c6b9aa012378eeb2b5e4b4b936391",
+   "output_keys": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07",
+    "C08",
+    "C09",
+    "C10",
+    "C11",
+    "C12",
+    "C13",
+    "C14",
+    "C15",
+    "C16",
+    "C17",
+    "C18",
+    "C19",
+    "C20",
+    "C21",
+    "C22",
+    "C23",
+    "C24",
+    "C25",
+    "C26",
+    "C27",
+    "C28",
+    "C29",
+    "C30",
+    "C31",
+    "C32"
+   ],
+   "fixture_hash": "186f533a5f4f7352d0d942306114cc02eb21b0d41d47c25d75bf3cb65eb8245b"
+  },
+  {
+   "problem_id": "C2",
+   "problem_name": "inventory-movement-ledger",
+   "dependency_class": "chained",
+   "fixture_index": 1,
+   "seed": 20970901,
+   "scoring_mode": "exact",
+   "case_id": "business-c2-001-n32-v4",
+   "base_fixture_hash": "e4e6b492718477b118d2b3b2501eba8b12ecad5d0df00b2daa83c839d6e32c91",
+   "decision_count": 32,
+   "prompt_version": "v4",
+   "input": {
+    "opening_stock": 85,
+    "movements": [
+     {
+      "id": "M01",
+      "kind": "RETURN",
+      "quantity": 20
+     },
+     {
+      "id": "M02",
+      "kind": "TRANSFER_OUT",
+      "quantity": 8
+     },
+     {
+      "id": "M03",
+      "kind": "TRANSFER_OUT",
+      "quantity": 1
+     },
+     {
+      "id": "M04",
+      "kind": "RECEIPT",
+      "quantity": 6
+     },
+     {
+      "id": "M05",
+      "kind": "DAMAGE",
+      "quantity": 10
+     },
+     {
+      "id": "M06",
+      "kind": "TRANSFER_OUT",
+      "quantity": 17
+     },
+     {
+      "id": "M07",
+      "kind": "TRANSFER_OUT",
+      "quantity": 2
+     },
+     {
+      "id": "M08",
+      "kind": "SALE",
+      "quantity": 14
+     },
+     {
+      "id": "M09",
+      "kind": "DAMAGE",
+      "quantity": 9
+     },
+     {
+      "id": "M10",
+      "kind": "RECEIPT",
+      "quantity": 2
+     },
+     {
+      "id": "M11",
+      "kind": "DAMAGE",
+      "quantity": 3
+     },
+     {
+      "id": "M12",
+      "kind": "DAMAGE",
+      "quantity": 4
+     },
+     {
+      "id": "M13",
+      "kind": "SALE",
+      "quantity": 5
+     },
+     {
+      "id": "M14",
+      "kind": "RECEIPT",
+      "quantity": 12
+     },
+     {
+      "id": "M15",
+      "kind": "DAMAGE",
+      "quantity": 16
+     },
+     {
+      "id": "M16",
+      "kind": "SALE",
+      "quantity": 12
+     },
+     {
+      "id": "M17",
+      "kind": "SALE",
+      "quantity": 10
+     },
+     {
+      "id": "M18",
+      "kind": "DAMAGE",
+      "quantity": 4
+     },
+     {
+      "id": "M19",
+      "kind": "SALE",
+      "quantity": 3
+     },
+     {
+      "id": "M20",
+      "kind": "SALE",
+      "quantity": 10
+     },
+     {
+      "id": "M21",
+      "kind": "DAMAGE",
+      "quantity": 16
+     },
+     {
+      "id": "M22",
+      "kind": "SALE",
+      "quantity": 3
+     },
+     {
+      "id": "M23",
+      "kind": "TRANSFER_OUT",
+      "quantity": 17
+     },
+     {
+      "id": "M24",
+      "kind": "RECEIPT",
+      "quantity": 17
+     },
+     {
+      "id": "M25",
+      "kind": "RECEIPT",
+      "quantity": 13
+     },
+     {
+      "id": "M26",
+      "kind": "TRANSFER_OUT",
+      "quantity": 1
+     },
+     {
+      "id": "M27",
+      "kind": "RETURN",
+      "quantity": 19
+     },
+     {
+      "id": "M28",
+      "kind": "TRANSFER_OUT",
+      "quantity": 13
+     },
+     {
+      "id": "M29",
+      "kind": "RETURN",
+      "quantity": 9
+     },
+     {
+      "id": "M30",
+      "kind": "RECEIPT",
+      "quantity": 15
+     },
+     {
+      "id": "M31",
+      "kind": "RETURN",
+      "quantity": 9
+     },
+     {
+      "id": "M32",
+      "kind": "RECEIPT",
+      "quantity": 18
+     }
+    ]
+   },
+   "prompt": "Return only one JSON object that maps each input id to its value, like {\"M01\":\"...\",\"M02\":\"...\"}, with exactly one key per input item, in source order, from M01 to M32. Each value is a plain JSON string such as \"HIGH\" or \"123\". No markdown, no code fences, no explanation. Produce the value for each movement, formatted STOCK:STATUS. RECEIPT and RETURN add quantity and are ACCEPT. SALE, DAMAGE, and TRANSFER_OUT subtract quantity and are ACCEPT if quantity <= current stock; otherwise stock is unchanged and the status is REJECT. STOCK is the stock after the movement. Start from opening_stock. Example: stock 10, SALE 4 -> \"6:ACCEPT\"; then DAMAGE 9 -> \"6:REJECT\". Input:{\"movements\":[{\"id\":\"M01\",\"kind\":\"RETURN\",\"quantity\":20},{\"id\":\"M02\",\"kind\":\"TRANSFER_OUT\",\"quantity\":8},{\"id\":\"M03\",\"kind\":\"TRANSFER_OUT\",\"quantity\":1},{\"id\":\"M04\",\"kind\":\"RECEIPT\",\"quantity\":6},{\"id\":\"M05\",\"kind\":\"DAMAGE\",\"quantity\":10},{\"id\":\"M06\",\"kind\":\"TRANSFER_OUT\",\"quantity\":17},{\"id\":\"M07\",\"kind\":\"TRANSFER_OUT\",\"quantity\":2},{\"id\":\"M08\",\"kind\":\"SALE\",\"quantity\":14},{\"id\":\"M09\",\"kind\":\"DAMAGE\",\"quantity\":9},{\"id\":\"M10\",\"kind\":\"RECEIPT\",\"quantity\":2},{\"id\":\"M11\",\"kind\":\"DAMAGE\",\"quantity\":3},{\"id\":\"M12\",\"kind\":\"DAMAGE\",\"quantity\":4},{\"id\":\"M13\",\"kind\":\"SALE\",\"quantity\":5},{\"id\":\"M14\",\"kind\":\"RECEIPT\",\"quantity\":12},{\"id\":\"M15\",\"kind\":\"DAMAGE\",\"quantity\":16},{\"id\":\"M16\",\"kind\":\"SALE\",\"quantity\":12},{\"id\":\"M17\",\"kind\":\"SALE\",\"quantity\":10},{\"id\":\"M18\",\"kind\":\"DAMAGE\",\"quantity\":4},{\"id\":\"M19\",\"kind\":\"SALE\",\"quantity\":3},{\"id\":\"M20\",\"kind\":\"SALE\",\"quantity\":10},{\"id\":\"M21\",\"kind\":\"DAMAGE\",\"quantity\":16},{\"id\":\"M22\",\"kind\":\"SALE\",\"quantity\":3},{\"id\":\"M23\",\"kind\":\"TRANSFER_OUT\",\"quantity\":17},{\"id\":\"M24\",\"kind\":\"RECEIPT\",\"quantity\":17},{\"id\":\"M25\",\"kind\":\"RECEIPT\",\"quantity\":13},{\"id\":\"M26\",\"kind\":\"TRANSFER_OUT\",\"quantity\":1},{\"id\":\"M27\",\"kind\":\"RETURN\",\"quantity\":19},{\"id\":\"M28\",\"kind\":\"TRANSFER_OUT\",\"quantity\":13},{\"id\":\"M29\",\"kind\":\"RETURN\",\"quantity\":9},{\"id\":\"M30\",\"kind\":\"RECEIPT\",\"quantity\":15},{\"id\":\"M31\",\"kind\":\"RETURN\",\"quantity\":9},{\"id\":\"M32\",\"kind\":\"RECEIPT\",\"quantity\":18}],\"opening_stock\":85}",
+   "prompt_hash": "1b08171b6a73ecee8a8163b12dbcce1c01df119f858b50a5aff92c51e64c7cd9",
+   "output_keys": [
+    "M01",
+    "M02",
+    "M03",
+    "M04",
+    "M05",
+    "M06",
+    "M07",
+    "M08",
+    "M09",
+    "M10",
+    "M11",
+    "M12",
+    "M13",
+    "M14",
+    "M15",
+    "M16",
+    "M17",
+    "M18",
+    "M19",
+    "M20",
+    "M21",
+    "M22",
+    "M23",
+    "M24",
+    "M25",
+    "M26",
+    "M27",
+    "M28",
+    "M29",
+    "M30",
+    "M31",
+    "M32"
+   ],
+   "fixture_hash": "e549cfb53930a45388f42ce3a978f5b25e25b500b361fc6a647b5cc94a41cbf1"
+  },
+  {
+   "problem_id": "C1",
+   "problem_name": "cash-balance-ledger",
+   "dependency_class": "chained",
+   "fixture_index": 2,
+   "seed": 20880871,
+   "scoring_mode": "exact",
+   "case_id": "business-c1-002-n8-v4",
+   "base_fixture_hash": "0c22eab72e736c2a5ed92c804db568cf64b3794d85b8b17038667f6bae0c1735",
+   "decision_count": 8,
+   "prompt_version": "v4",
+   "input": {
+    "opening_balance_cents": 289490,
+    "events": [
+     {
+      "id": "C01",
+      "kind": "FEE",
+      "amount_cents": 5560
+     },
+     {
+      "id": "C02",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 11336
+     },
+     {
+      "id": "C03",
+      "kind": "FEE",
+      "amount_cents": 19614
+     },
+     {
+      "id": "C04",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 18087
+     },
+     {
+      "id": "C05",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 16007
+     },
+     {
+      "id": "C06",
+      "kind": "DEPOSIT",
+      "amount_cents": 6012
+     },
+     {
+      "id": "C07",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 419
+     },
+     {
+      "id": "C08",
+      "kind": "DEPOSIT",
+      "amount_cents": 1251
+     }
+    ]
+   },
+   "prompt": "Return only one JSON object that maps each input id to its value, like {\"C01\":\"...\",\"C02\":\"...\"}, with exactly one key per input item, in source order, from C01 to C08. Each value is a plain JSON string such as \"HIGH\" or \"123\". No markdown, no code fences, no explanation. Produce the value for each event: the running balance in cents after the event, as a decimal string. DEPOSIT adds amount_cents; WITHDRAWAL and FEE subtract amount_cents; INTEREST adds round_half_up(balance*rate_bps/10000). Start from opening_balance_cents. Example: balance 100000, INTEREST rate_bps 5 -> \"100050\". Input:{\"events\":[{\"amount_cents\":5560,\"id\":\"C01\",\"kind\":\"FEE\"},{\"amount_cents\":11336,\"id\":\"C02\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":19614,\"id\":\"C03\",\"kind\":\"FEE\"},{\"amount_cents\":18087,\"id\":\"C04\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":16007,\"id\":\"C05\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":6012,\"id\":\"C06\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":419,\"id\":\"C07\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":1251,\"id\":\"C08\",\"kind\":\"DEPOSIT\"}],\"opening_balance_cents\":289490}",
+   "prompt_hash": "1b4690c1e4789962f185165a45460f526745ac1a7f1cc14d8b3e37215f7011c8",
+   "output_keys": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07",
+    "C08"
+   ],
+   "fixture_hash": "aebe7b5f8c97256295dc92784b95fb683d15c01842be9b3231896da575504d19"
+  },
+  {
+   "problem_id": "C2",
+   "problem_name": "inventory-movement-ledger",
+   "dependency_class": "chained",
+   "fixture_index": 2,
+   "seed": 20980874,
+   "scoring_mode": "exact",
+   "case_id": "business-c2-002-n8-v4",
+   "base_fixture_hash": "7a3a2078b8d1768bfd3b0bf83124c456fc777a286033b251cb6749d36472e737",
+   "decision_count": 8,
+   "prompt_version": "v4",
+   "input": {
+    "opening_stock": 90,
+    "movements": [
+     {
+      "id": "M01",
+      "kind": "TRANSFER_OUT",
+      "quantity": 14
+     },
+     {
+      "id": "M02",
+      "kind": "SALE",
+      "quantity": 14
+     },
+     {
+      "id": "M03",
+      "kind": "RETURN",
+      "quantity": 7
+     },
+     {
+      "id": "M04",
+      "kind": "TRANSFER_OUT",
+      "quantity": 7
+     },
+     {
+      "id": "M05",
+      "kind": "TRANSFER_OUT",
+      "quantity": 9
+     },
+     {
+      "id": "M06",
+      "kind": "RETURN",
+      "quantity": 20
+     },
+     {
+      "id": "M07",
+      "kind": "RETURN",
+      "quantity": 17
+     },
+     {
+      "id": "M08",
+      "kind": "SALE",
+      "quantity": 8
+     }
+    ]
+   },
+   "prompt": "Return only one JSON object that maps each input id to its value, like {\"M01\":\"...\",\"M02\":\"...\"}, with exactly one key per input item, in source order, from M01 to M08. Each value is a plain JSON string such as \"HIGH\" or \"123\". No markdown, no code fences, no explanation. Produce the value for each movement, formatted STOCK:STATUS. RECEIPT and RETURN add quantity and are ACCEPT. SALE, DAMAGE, and TRANSFER_OUT subtract quantity and are ACCEPT if quantity <= current stock; otherwise stock is unchanged and the status is REJECT. STOCK is the stock after the movement. Start from opening_stock. Example: stock 10, SALE 4 -> \"6:ACCEPT\"; then DAMAGE 9 -> \"6:REJECT\". Input:{\"movements\":[{\"id\":\"M01\",\"kind\":\"TRANSFER_OUT\",\"quantity\":14},{\"id\":\"M02\",\"kind\":\"SALE\",\"quantity\":14},{\"id\":\"M03\",\"kind\":\"RETURN\",\"quantity\":7},{\"id\":\"M04\",\"kind\":\"TRANSFER_OUT\",\"quantity\":7},{\"id\":\"M05\",\"kind\":\"TRANSFER_OUT\",\"quantity\":9},{\"id\":\"M06\",\"kind\":\"RETURN\",\"quantity\":20},{\"id\":\"M07\",\"kind\":\"RETURN\",\"quantity\":17},{\"id\":\"M08\",\"kind\":\"SALE\",\"quantity\":8}],\"opening_stock\":90}",
+   "prompt_hash": "d713ffd442eb621b8b66727b8c6dda9302ea1bc45e63fcf76513008ce3cf2f91",
+   "output_keys": [
+    "M01",
+    "M02",
+    "M03",
+    "M04",
+    "M05",
+    "M06",
+    "M07",
+    "M08"
+   ],
+   "fixture_hash": "c5e6376d792a8c210773700e6bf6a271cdde45b358d55c24a8aeb4b0199b4b95"
+  },
+  {
+   "problem_id": "C1",
+   "problem_name": "cash-balance-ledger",
+   "dependency_class": "chained",
+   "fixture_index": 2,
+   "seed": 20880871,
+   "scoring_mode": "exact",
+   "case_id": "business-c1-002-n16-v4",
+   "base_fixture_hash": "0c22eab72e736c2a5ed92c804db568cf64b3794d85b8b17038667f6bae0c1735",
+   "decision_count": 16,
+   "prompt_version": "v4",
+   "input": {
+    "opening_balance_cents": 289490,
+    "events": [
+     {
+      "id": "C01",
+      "kind": "FEE",
+      "amount_cents": 5560
+     },
+     {
+      "id": "C02",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 11336
+     },
+     {
+      "id": "C03",
+      "kind": "FEE",
+      "amount_cents": 19614
+     },
+     {
+      "id": "C04",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 18087
+     },
+     {
+      "id": "C05",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 16007
+     },
+     {
+      "id": "C06",
+      "kind": "DEPOSIT",
+      "amount_cents": 6012
+     },
+     {
+      "id": "C07",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 419
+     },
+     {
+      "id": "C08",
+      "kind": "DEPOSIT",
+      "amount_cents": 1251
+     },
+     {
+      "id": "C09",
+      "kind": "FEE",
+      "amount_cents": 10860
+     },
+     {
+      "id": "C10",
+      "kind": "DEPOSIT",
+      "amount_cents": 4540
+     },
+     {
+      "id": "C11",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 18098
+     },
+     {
+      "id": "C12",
+      "kind": "DEPOSIT",
+      "amount_cents": 822
+     },
+     {
+      "id": "C13",
+      "kind": "DEPOSIT",
+      "amount_cents": 13422
+     },
+     {
+      "id": "C14",
+      "kind": "DEPOSIT",
+      "amount_cents": 3687
+     },
+     {
+      "id": "C15",
+      "kind": "DEPOSIT",
+      "amount_cents": 14508
+     },
+     {
+      "id": "C16",
+      "kind": "DEPOSIT",
+      "amount_cents": 14017
+     }
+    ]
+   },
+   "prompt": "Return only one JSON object that maps each input id to its value, like {\"C01\":\"...\",\"C02\":\"...\"}, with exactly one key per input item, in source order, from C01 to C16. Each value is a plain JSON string such as \"HIGH\" or \"123\". No markdown, no code fences, no explanation. Produce the value for each event: the running balance in cents after the event, as a decimal string. DEPOSIT adds amount_cents; WITHDRAWAL and FEE subtract amount_cents; INTEREST adds round_half_up(balance*rate_bps/10000). Start from opening_balance_cents. Example: balance 100000, INTEREST rate_bps 5 -> \"100050\". Input:{\"events\":[{\"amount_cents\":5560,\"id\":\"C01\",\"kind\":\"FEE\"},{\"amount_cents\":11336,\"id\":\"C02\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":19614,\"id\":\"C03\",\"kind\":\"FEE\"},{\"amount_cents\":18087,\"id\":\"C04\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":16007,\"id\":\"C05\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":6012,\"id\":\"C06\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":419,\"id\":\"C07\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":1251,\"id\":\"C08\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":10860,\"id\":\"C09\",\"kind\":\"FEE\"},{\"amount_cents\":4540,\"id\":\"C10\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":18098,\"id\":\"C11\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":822,\"id\":\"C12\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":13422,\"id\":\"C13\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":3687,\"id\":\"C14\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":14508,\"id\":\"C15\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":14017,\"id\":\"C16\",\"kind\":\"DEPOSIT\"}],\"opening_balance_cents\":289490}",
+   "prompt_hash": "f6ad5ca06af733be1e96644cc87490aa2d54bc552bf669a40b6eee0ee97c660e",
+   "output_keys": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07",
+    "C08",
+    "C09",
+    "C10",
+    "C11",
+    "C12",
+    "C13",
+    "C14",
+    "C15",
+    "C16"
+   ],
+   "fixture_hash": "70e7d835e6a0859c074cc8a1523db25696445e7433341c54c82282a4cacdab1b"
+  },
+  {
+   "problem_id": "C2",
+   "problem_name": "inventory-movement-ledger",
+   "dependency_class": "chained",
+   "fixture_index": 2,
+   "seed": 20980874,
+   "scoring_mode": "exact",
+   "case_id": "business-c2-002-n16-v4",
+   "base_fixture_hash": "7a3a2078b8d1768bfd3b0bf83124c456fc777a286033b251cb6749d36472e737",
+   "decision_count": 16,
+   "prompt_version": "v4",
+   "input": {
+    "opening_stock": 90,
+    "movements": [
+     {
+      "id": "M01",
+      "kind": "TRANSFER_OUT",
+      "quantity": 14
+     },
+     {
+      "id": "M02",
+      "kind": "SALE",
+      "quantity": 14
+     },
+     {
+      "id": "M03",
+      "kind": "RETURN",
+      "quantity": 7
+     },
+     {
+      "id": "M04",
+      "kind": "TRANSFER_OUT",
+      "quantity": 7
+     },
+     {
+      "id": "M05",
+      "kind": "TRANSFER_OUT",
+      "quantity": 9
+     },
+     {
+      "id": "M06",
+      "kind": "RETURN",
+      "quantity": 20
+     },
+     {
+      "id": "M07",
+      "kind": "RETURN",
+      "quantity": 17
+     },
+     {
+      "id": "M08",
+      "kind": "SALE",
+      "quantity": 8
+     },
+     {
+      "id": "M09",
+      "kind": "RETURN",
+      "quantity": 17
+     },
+     {
+      "id": "M10",
+      "kind": "SALE",
+      "quantity": 15
+     },
+     {
+      "id": "M11",
+      "kind": "RETURN",
+      "quantity": 9
+     },
+     {
+      "id": "M12",
+      "kind": "DAMAGE",
+      "quantity": 2
+     },
+     {
+      "id": "M13",
+      "kind": "TRANSFER_OUT",
+      "quantity": 14
+     },
+     {
+      "id": "M14",
+      "kind": "RECEIPT",
+      "quantity": 14
+     },
+     {
+      "id": "M15",
+      "kind": "RECEIPT",
+      "quantity": 1
+     },
+     {
+      "id": "M16",
+      "kind": "RETURN",
+      "quantity": 13
+     }
+    ]
+   },
+   "prompt": "Return only one JSON object that maps each input id to its value, like {\"M01\":\"...\",\"M02\":\"...\"}, with exactly one key per input item, in source order, from M01 to M16. Each value is a plain JSON string such as \"HIGH\" or \"123\". No markdown, no code fences, no explanation. Produce the value for each movement, formatted STOCK:STATUS. RECEIPT and RETURN add quantity and are ACCEPT. SALE, DAMAGE, and TRANSFER_OUT subtract quantity and are ACCEPT if quantity <= current stock; otherwise stock is unchanged and the status is REJECT. STOCK is the stock after the movement. Start from opening_stock. Example: stock 10, SALE 4 -> \"6:ACCEPT\"; then DAMAGE 9 -> \"6:REJECT\". Input:{\"movements\":[{\"id\":\"M01\",\"kind\":\"TRANSFER_OUT\",\"quantity\":14},{\"id\":\"M02\",\"kind\":\"SALE\",\"quantity\":14},{\"id\":\"M03\",\"kind\":\"RETURN\",\"quantity\":7},{\"id\":\"M04\",\"kind\":\"TRANSFER_OUT\",\"quantity\":7},{\"id\":\"M05\",\"kind\":\"TRANSFER_OUT\",\"quantity\":9},{\"id\":\"M06\",\"kind\":\"RETURN\",\"quantity\":20},{\"id\":\"M07\",\"kind\":\"RETURN\",\"quantity\":17},{\"id\":\"M08\",\"kind\":\"SALE\",\"quantity\":8},{\"id\":\"M09\",\"kind\":\"RETURN\",\"quantity\":17},{\"id\":\"M10\",\"kind\":\"SALE\",\"quantity\":15},{\"id\":\"M11\",\"kind\":\"RETURN\",\"quantity\":9},{\"id\":\"M12\",\"kind\":\"DAMAGE\",\"quantity\":2},{\"id\":\"M13\",\"kind\":\"TRANSFER_OUT\",\"quantity\":14},{\"id\":\"M14\",\"kind\":\"RECEIPT\",\"quantity\":14},{\"id\":\"M15\",\"kind\":\"RECEIPT\",\"quantity\":1},{\"id\":\"M16\",\"kind\":\"RETURN\",\"quantity\":13}],\"opening_stock\":90}",
+   "prompt_hash": "190925b32ee2d2f83f7a6035fc4d5f1d76d1292acd82e675799308594cd2fd9b",
+   "output_keys": [
+    "M01",
+    "M02",
+    "M03",
+    "M04",
+    "M05",
+    "M06",
+    "M07",
+    "M08",
+    "M09",
+    "M10",
+    "M11",
+    "M12",
+    "M13",
+    "M14",
+    "M15",
+    "M16"
+   ],
+   "fixture_hash": "81bbd393916315d46d96c4dd22abe705f500c6aa1780eca248d79ddbbf49fca9"
+  },
+  {
+   "problem_id": "C1",
+   "problem_name": "cash-balance-ledger",
+   "dependency_class": "chained",
+   "fixture_index": 2,
+   "seed": 20880871,
+   "scoring_mode": "exact",
+   "case_id": "business-c1-002-n32-v4",
+   "base_fixture_hash": "0c22eab72e736c2a5ed92c804db568cf64b3794d85b8b17038667f6bae0c1735",
+   "decision_count": 32,
+   "prompt_version": "v4",
+   "input": {
+    "opening_balance_cents": 289490,
+    "events": [
+     {
+      "id": "C01",
+      "kind": "FEE",
+      "amount_cents": 5560
+     },
+     {
+      "id": "C02",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 11336
+     },
+     {
+      "id": "C03",
+      "kind": "FEE",
+      "amount_cents": 19614
+     },
+     {
+      "id": "C04",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 18087
+     },
+     {
+      "id": "C05",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 16007
+     },
+     {
+      "id": "C06",
+      "kind": "DEPOSIT",
+      "amount_cents": 6012
+     },
+     {
+      "id": "C07",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 419
+     },
+     {
+      "id": "C08",
+      "kind": "DEPOSIT",
+      "amount_cents": 1251
+     },
+     {
+      "id": "C09",
+      "kind": "FEE",
+      "amount_cents": 10860
+     },
+     {
+      "id": "C10",
+      "kind": "DEPOSIT",
+      "amount_cents": 4540
+     },
+     {
+      "id": "C11",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 18098
+     },
+     {
+      "id": "C12",
+      "kind": "DEPOSIT",
+      "amount_cents": 822
+     },
+     {
+      "id": "C13",
+      "kind": "DEPOSIT",
+      "amount_cents": 13422
+     },
+     {
+      "id": "C14",
+      "kind": "DEPOSIT",
+      "amount_cents": 3687
+     },
+     {
+      "id": "C15",
+      "kind": "DEPOSIT",
+      "amount_cents": 14508
+     },
+     {
+      "id": "C16",
+      "kind": "DEPOSIT",
+      "amount_cents": 14017
+     },
+     {
+      "id": "C17",
+      "kind": "DEPOSIT",
+      "amount_cents": 10484
+     },
+     {
+      "id": "C18",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 14145
+     },
+     {
+      "id": "C19",
+      "kind": "DEPOSIT",
+      "amount_cents": 4020
+     },
+     {
+      "id": "C20",
+      "kind": "DEPOSIT",
+      "amount_cents": 19395
+     },
+     {
+      "id": "C21",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 19791
+     },
+     {
+      "id": "C22",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 6873
+     },
+     {
+      "id": "C23",
+      "kind": "FEE",
+      "amount_cents": 3251
+     },
+     {
+      "id": "C24",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 14460
+     },
+     {
+      "id": "C25",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 11940
+     },
+     {
+      "id": "C26",
+      "kind": "DEPOSIT",
+      "amount_cents": 10777
+     },
+     {
+      "id": "C27",
+      "kind": "DEPOSIT",
+      "amount_cents": 4188
+     },
+     {
+      "id": "C28",
+      "kind": "DEPOSIT",
+      "amount_cents": 9427
+     },
+     {
+      "id": "C29",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 10488
+     },
+     {
+      "id": "C30",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 17144
+     },
+     {
+      "id": "C31",
+      "kind": "FEE",
+      "amount_cents": 3418
+     },
+     {
+      "id": "C32",
+      "kind": "WITHDRAWAL",
+      "amount_cents": 15220
+     }
+    ]
+   },
+   "prompt": "Return only one JSON object that maps each input id to its value, like {\"C01\":\"...\",\"C02\":\"...\"}, with exactly one key per input item, in source order, from C01 to C32. Each value is a plain JSON string such as \"HIGH\" or \"123\". No markdown, no code fences, no explanation. Produce the value for each event: the running balance in cents after the event, as a decimal string. DEPOSIT adds amount_cents; WITHDRAWAL and FEE subtract amount_cents; INTEREST adds round_half_up(balance*rate_bps/10000). Start from opening_balance_cents. Example: balance 100000, INTEREST rate_bps 5 -> \"100050\". Input:{\"events\":[{\"amount_cents\":5560,\"id\":\"C01\",\"kind\":\"FEE\"},{\"amount_cents\":11336,\"id\":\"C02\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":19614,\"id\":\"C03\",\"kind\":\"FEE\"},{\"amount_cents\":18087,\"id\":\"C04\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":16007,\"id\":\"C05\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":6012,\"id\":\"C06\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":419,\"id\":\"C07\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":1251,\"id\":\"C08\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":10860,\"id\":\"C09\",\"kind\":\"FEE\"},{\"amount_cents\":4540,\"id\":\"C10\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":18098,\"id\":\"C11\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":822,\"id\":\"C12\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":13422,\"id\":\"C13\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":3687,\"id\":\"C14\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":14508,\"id\":\"C15\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":14017,\"id\":\"C16\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":10484,\"id\":\"C17\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":14145,\"id\":\"C18\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":4020,\"id\":\"C19\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":19395,\"id\":\"C20\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":19791,\"id\":\"C21\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":6873,\"id\":\"C22\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":3251,\"id\":\"C23\",\"kind\":\"FEE\"},{\"amount_cents\":14460,\"id\":\"C24\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":11940,\"id\":\"C25\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":10777,\"id\":\"C26\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":4188,\"id\":\"C27\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":9427,\"id\":\"C28\",\"kind\":\"DEPOSIT\"},{\"amount_cents\":10488,\"id\":\"C29\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":17144,\"id\":\"C30\",\"kind\":\"WITHDRAWAL\"},{\"amount_cents\":3418,\"id\":\"C31\",\"kind\":\"FEE\"},{\"amount_cents\":15220,\"id\":\"C32\",\"kind\":\"WITHDRAWAL\"}],\"opening_balance_cents\":289490}",
+   "prompt_hash": "244c42492d2ed92b0e3b709efa0f2477e169721fd4fe1d6de125cd585ada6d78",
+   "output_keys": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07",
+    "C08",
+    "C09",
+    "C10",
+    "C11",
+    "C12",
+    "C13",
+    "C14",
+    "C15",
+    "C16",
+    "C17",
+    "C18",
+    "C19",
+    "C20",
+    "C21",
+    "C22",
+    "C23",
+    "C24",
+    "C25",
+    "C26",
+    "C27",
+    "C28",
+    "C29",
+    "C30",
+    "C31",
+    "C32"
+   ],
+   "fixture_hash": "0d03baf54f7044596c0a7ca78e3c0cb849aa31b329e695b9e0185cff84c0a5f6"
+  },
+  {
+   "problem_id": "C2",
+   "problem_name": "inventory-movement-ledger",
+   "dependency_class": "chained",
+   "fixture_index": 2,
+   "seed": 20980874,
+   "scoring_mode": "exact",
+   "case_id": "business-c2-002-n32-v4",
+   "base_fixture_hash": "7a3a2078b8d1768bfd3b0bf83124c456fc777a286033b251cb6749d36472e737",
+   "decision_count": 32,
+   "prompt_version": "v4",
+   "input": {
+    "opening_stock": 90,
+    "movements": [
+     {
+      "id": "M01",
+      "kind": "TRANSFER_OUT",
+      "quantity": 14
+     },
+     {
+      "id": "M02",
+      "kind": "SALE",
+      "quantity": 14
+     },
+     {
+      "id": "M03",
+      "kind": "RETURN",
+      "quantity": 7
+     },
+     {
+      "id": "M04",
+      "kind": "TRANSFER_OUT",
+      "quantity": 7
+     },
+     {
+      "id": "M05",
+      "kind": "TRANSFER_OUT",
+      "quantity": 9
+     },
+     {
+      "id": "M06",
+      "kind": "RETURN",
+      "quantity": 20
+     },
+     {
+      "id": "M07",
+      "kind": "RETURN",
+      "quantity": 17
+     },
+     {
+      "id": "M08",
+      "kind": "SALE",
+      "quantity": 8
+     },
+     {
+      "id": "M09",
+      "kind": "RETURN",
+      "quantity": 17
+     },
+     {
+      "id": "M10",
+      "kind": "SALE",
+      "quantity": 15
+     },
+     {
+      "id": "M11",
+      "kind": "RETURN",
+      "quantity": 9
+     },
+     {
+      "id": "M12",
+      "kind": "DAMAGE",
+      "quantity": 2
+     },
+     {
+      "id": "M13",
+      "kind": "TRANSFER_OUT",
+      "quantity": 14
+     },
+     {
+      "id": "M14",
+      "kind": "RECEIPT",
+      "quantity": 14
+     },
+     {
+      "id": "M15",
+      "kind": "RECEIPT",
+      "quantity": 1
+     },
+     {
+      "id": "M16",
+      "kind": "RETURN",
+      "quantity": 13
+     },
+     {
+      "id": "M17",
+      "kind": "TRANSFER_OUT",
+      "quantity": 11
+     },
+     {
+      "id": "M18",
+      "kind": "DAMAGE",
+      "quantity": 18
+     },
+     {
+      "id": "M19",
+      "kind": "SALE",
+      "quantity": 10
+     },
+     {
+      "id": "M20",
+      "kind": "RECEIPT",
+      "quantity": 7
+     },
+     {
+      "id": "M21",
+      "kind": "DAMAGE",
+      "quantity": 9
+     },
+     {
+      "id": "M22",
+      "kind": "RECEIPT",
+      "quantity": 7
+     },
+     {
+      "id": "M23",
+      "kind": "SALE",
+      "quantity": 20
+     },
+     {
+      "id": "M24",
+      "kind": "TRANSFER_OUT",
+      "quantity": 2
+     },
+     {
+      "id": "M25",
+      "kind": "TRANSFER_OUT",
+      "quantity": 10
+     },
+     {
+      "id": "M26",
+      "kind": "RETURN",
+      "quantity": 10
+     },
+     {
+      "id": "M27",
+      "kind": "SALE",
+      "quantity": 18
+     },
+     {
+      "id": "M28",
+      "kind": "RETURN",
+      "quantity": 2
+     },
+     {
+      "id": "M29",
+      "kind": "SALE",
+      "quantity": 20
+     },
+     {
+      "id": "M30",
+      "kind": "RETURN",
+      "quantity": 8
+     },
+     {
+      "id": "M31",
+      "kind": "TRANSFER_OUT",
+      "quantity": 6
+     },
+     {
+      "id": "M32",
+      "kind": "SALE",
+      "quantity": 3
+     }
+    ]
+   },
+   "prompt": "Return only one JSON object that maps each input id to its value, like {\"M01\":\"...\",\"M02\":\"...\"}, with exactly one key per input item, in source order, from M01 to M32. Each value is a plain JSON string such as \"HIGH\" or \"123\". No markdown, no code fences, no explanation. Produce the value for each movement, formatted STOCK:STATUS. RECEIPT and RETURN add quantity and are ACCEPT. SALE, DAMAGE, and TRANSFER_OUT subtract quantity and are ACCEPT if quantity <= current stock; otherwise stock is unchanged and the status is REJECT. STOCK is the stock after the movement. Start from opening_stock. Example: stock 10, SALE 4 -> \"6:ACCEPT\"; then DAMAGE 9 -> \"6:REJECT\". Input:{\"movements\":[{\"id\":\"M01\",\"kind\":\"TRANSFER_OUT\",\"quantity\":14},{\"id\":\"M02\",\"kind\":\"SALE\",\"quantity\":14},{\"id\":\"M03\",\"kind\":\"RETURN\",\"quantity\":7},{\"id\":\"M04\",\"kind\":\"TRANSFER_OUT\",\"quantity\":7},{\"id\":\"M05\",\"kind\":\"TRANSFER_OUT\",\"quantity\":9},{\"id\":\"M06\",\"kind\":\"RETURN\",\"quantity\":20},{\"id\":\"M07\",\"kind\":\"RETURN\",\"quantity\":17},{\"id\":\"M08\",\"kind\":\"SALE\",\"quantity\":8},{\"id\":\"M09\",\"kind\":\"RETURN\",\"quantity\":17},{\"id\":\"M10\",\"kind\":\"SALE\",\"quantity\":15},{\"id\":\"M11\",\"kind\":\"RETURN\",\"quantity\":9},{\"id\":\"M12\",\"kind\":\"DAMAGE\",\"quantity\":2},{\"id\":\"M13\",\"kind\":\"TRANSFER_OUT\",\"quantity\":14},{\"id\":\"M14\",\"kind\":\"RECEIPT\",\"quantity\":14},{\"id\":\"M15\",\"kind\":\"RECEIPT\",\"quantity\":1},{\"id\":\"M16\",\"kind\":\"RETURN\",\"quantity\":13},{\"id\":\"M17\",\"kind\":\"TRANSFER_OUT\",\"quantity\":11},{\"id\":\"M18\",\"kind\":\"DAMAGE\",\"quantity\":18},{\"id\":\"M19\",\"kind\":\"SALE\",\"quantity\":10},{\"id\":\"M20\",\"kind\":\"RECEIPT\",\"quantity\":7},{\"id\":\"M21\",\"kind\":\"DAMAGE\",\"quantity\":9},{\"id\":\"M22\",\"kind\":\"RECEIPT\",\"quantity\":7},{\"id\":\"M23\",\"kind\":\"SALE\",\"quantity\":20},{\"id\":\"M24\",\"kind\":\"TRANSFER_OUT\",\"quantity\":2},{\"id\":\"M25\",\"kind\":\"TRANSFER_OUT\",\"quantity\":10},{\"id\":\"M26\",\"kind\":\"RETURN\",\"quantity\":10},{\"id\":\"M27\",\"kind\":\"SALE\",\"quantity\":18},{\"id\":\"M28\",\"kind\":\"RETURN\",\"quantity\":2},{\"id\":\"M29\",\"kind\":\"SALE\",\"quantity\":20},{\"id\":\"M30\",\"kind\":\"RETURN\",\"quantity\":8},{\"id\":\"M31\",\"kind\":\"TRANSFER_OUT\",\"quantity\":6},{\"id\":\"M32\",\"kind\":\"SALE\",\"quantity\":3}],\"opening_stock\":90}",
+   "prompt_hash": "24541f19c6ab36b3c34d708631d677fef4b6f2365659038c88978b9d72e1122d",
+   "output_keys": [
+    "M01",
+    "M02",
+    "M03",
+    "M04",
+    "M05",
+    "M06",
+    "M07",
+    "M08",
+    "M09",
+    "M10",
+    "M11",
+    "M12",
+    "M13",
+    "M14",
+    "M15",
+    "M16",
+    "M17",
+    "M18",
+    "M19",
+    "M20",
+    "M21",
+    "M22",
+    "M23",
+    "M24",
+    "M25",
+    "M26",
+    "M27",
+    "M28",
+    "M29",
+    "M30",
+    "M31",
+    "M32"
+   ],
+   "fixture_hash": "aecbd204a34408bf34fb35981ab9dba039bc9289b18722756f9f1b72d227889a"
+  }
+ ]
+}

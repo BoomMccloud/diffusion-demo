@@ -1,0 +1,268 @@
+{
+ "schema": "nemotron-pilot-v1",
+ "summary": {
+  "nemotron-3b-ar": {
+   "attempts": 3,
+   "valid": 0,
+   "lenient_valid": 0,
+   "outcomes": {
+    "incorrect": 3
+   },
+   "exact_case_decisions_correct": "91/144",
+   "lenient_exact_decisions_correct": "91/144",
+   "by_class": {
+    "direct": "0/3",
+    "mixed": "0/0",
+    "chained": "0/0",
+    "global": "0/0"
+   },
+   "median_seconds": 13.0129,
+   "median_output_tokens": 359,
+   "median_nfe": 360
+  },
+  "nemotron-3b-diffusion": {
+   "attempts": 3,
+   "valid": 0,
+   "lenient_valid": 0,
+   "outcomes": {
+    "incorrect": 1,
+    "invalid_format": 2
+   },
+   "exact_case_decisions_correct": "29/144",
+   "lenient_exact_decisions_correct": "29/144",
+   "by_class": {
+    "direct": "0/3",
+    "mixed": "0/0",
+    "chained": "0/0",
+    "global": "0/0"
+   },
+   "median_seconds": 3.8262,
+   "median_output_tokens": 376,
+   "median_nfe": 76
+  },
+  "nemotron-3b-linear_spec": {
+   "attempts": 3,
+   "valid": 0,
+   "lenient_valid": 0,
+   "outcomes": {
+    "incorrect": 3
+   },
+   "exact_case_decisions_correct": "87/144",
+   "lenient_exact_decisions_correct": "87/144",
+   "by_class": {
+    "direct": "0/3",
+    "mixed": "0/0",
+    "chained": "0/0",
+    "global": "0/0"
+   },
+   "median_seconds": 2.652,
+   "median_output_tokens": 359,
+   "median_nfe": 49
+  },
+  "nemotron-3b-t0.99-b8-diffusion": {
+   "attempts": 3,
+   "valid": 0,
+   "lenient_valid": 0,
+   "outcomes": {
+    "incorrect": 3
+   },
+   "exact_case_decisions_correct": "107/144",
+   "lenient_exact_decisions_correct": "107/144",
+   "by_class": {
+    "direct": "0/3",
+    "mixed": "0/0",
+    "chained": "0/0",
+    "global": "0/0"
+   },
+   "median_seconds": 6.4036,
+   "median_output_tokens": 365,
+   "median_nfe": 146
+  }
+ },
+ "rows": [
+  {
+   "arm": "nemotron-3b-ar",
+   "case_id": "business-d3-000-n48-v4",
+   "outcome": "incorrect",
+   "valid": false,
+   "per_decision_correct": 36,
+   "first_error": 1,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "eos",
+   "output_tokens": 359,
+   "nfe": 360,
+   "elapsed_seconds": 13.0129
+  },
+  {
+   "arm": "nemotron-3b-ar",
+   "case_id": "business-d3-001-n48-v4",
+   "outcome": "incorrect",
+   "valid": false,
+   "per_decision_correct": 34,
+   "first_error": 0,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "eos",
+   "output_tokens": 362,
+   "nfe": 363,
+   "elapsed_seconds": 13.1617
+  },
+  {
+   "arm": "nemotron-3b-ar",
+   "case_id": "business-d3-002-n48-v4",
+   "outcome": "incorrect",
+   "valid": false,
+   "per_decision_correct": 21,
+   "first_error": 0,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "eos",
+   "output_tokens": 338,
+   "nfe": 339,
+   "elapsed_seconds": 12.2767
+  },
+  {
+   "arm": "nemotron-3b-linear_spec",
+   "case_id": "business-d3-000-n48-v4",
+   "outcome": "incorrect",
+   "valid": false,
+   "per_decision_correct": 32,
+   "first_error": 1,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "eos",
+   "output_tokens": 359,
+   "nfe": 49,
+   "elapsed_seconds": 2.652
+  },
+  {
+   "arm": "nemotron-3b-linear_spec",
+   "case_id": "business-d3-001-n48-v4",
+   "outcome": "incorrect",
+   "valid": false,
+   "per_decision_correct": 34,
+   "first_error": 0,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "eos",
+   "output_tokens": 362,
+   "nfe": 55,
+   "elapsed_seconds": 2.9611
+  },
+  {
+   "arm": "nemotron-3b-linear_spec",
+   "case_id": "business-d3-002-n48-v4",
+   "outcome": "incorrect",
+   "valid": false,
+   "per_decision_correct": 21,
+   "first_error": 0,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "eos",
+   "output_tokens": 338,
+   "nfe": 45,
+   "elapsed_seconds": 2.4782
+  },
+  {
+   "arm": "nemotron-3b-diffusion",
+   "case_id": "business-d3-000-n48-v4",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "eos",
+   "output_tokens": 362,
+   "nfe": 71,
+   "elapsed_seconds": 3.5947
+  },
+  {
+   "arm": "nemotron-3b-diffusion",
+   "case_id": "business-d3-001-n48-v4",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "eos",
+   "output_tokens": 411,
+   "nfe": 76,
+   "elapsed_seconds": 3.8262
+  },
+  {
+   "arm": "nemotron-3b-diffusion",
+   "case_id": "business-d3-002-n48-v4",
+   "outcome": "incorrect",
+   "valid": false,
+   "per_decision_correct": 29,
+   "first_error": 4,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "eos",
+   "output_tokens": 376,
+   "nfe": 96,
+   "elapsed_seconds": 4.713
+  },
+  {
+   "arm": "nemotron-3b-t0.99-b8-diffusion",
+   "case_id": "business-d3-000-n48-v4",
+   "outcome": "incorrect",
+   "valid": false,
+   "per_decision_correct": 37,
+   "first_error": 2,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "eos",
+   "output_tokens": 359,
+   "nfe": 146,
+   "elapsed_seconds": 6.4036
+  },
+  {
+   "arm": "nemotron-3b-t0.99-b8-diffusion",
+   "case_id": "business-d3-001-n48-v4",
+   "outcome": "incorrect",
+   "valid": false,
+   "per_decision_correct": 38,
+   "first_error": 5,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "eos",
+   "output_tokens": 365,
+   "nfe": 139,
+   "elapsed_seconds": 6.1781
+  },
+  {
+   "arm": "nemotron-3b-t0.99-b8-diffusion",
+   "case_id": "business-d3-002-n48-v4",
+   "outcome": "incorrect",
+   "valid": false,
+   "per_decision_correct": 32,
+   "first_error": 4,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "eos",
+   "output_tokens": 368,
+   "nfe": 147,
+   "elapsed_seconds": 6.5395
+  }
+ ]
+}

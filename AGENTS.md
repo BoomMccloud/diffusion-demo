@@ -102,11 +102,22 @@ The analysis, interpretation limits, confirmed accelerator shutdown, and
 required follow-up are documented in
 `docs/business_diffusion_partial_screen_findings.md`.
 
-No usable accelerator session remains. Before another restart, establish durable
-per-case persistence outside the VM and a reliable session keepalive path; do not
-repeat another Drive-less long batch that can lose terminal rows. Because the
-exact staged runner binary was not preserved, start a fresh immutable 36-case
-registration and do not combine its rows with the retained partial run.
+Exploratory A100 work on 2026-09-28 changed the next run's configuration. The
+runner now prefills incrementally (34% less wall time on a three-case A/B, prefill
+down 94%) and decouples its batch from context. At 32,768 context and a
+30,208-token allowance, all nine cases that were tested stopped at native EOG,
+including eight that had exhausted 8,704 tokens. Six business prompts (D2, D3, M1,
+M2, M3, C2) did not name their exact output format; they now do, and five of six
+previously invalid cases returned 48/48. These are screens, not registered
+evidence. Details and limits are in
+`docs/diffusion_runtime_budget_prompt_findings.md`.
+
+No usable accelerator session remains; the 2026-09-28 A100 was shut down. The next
+run is a fresh immutable 36-case registration with the patched runner, the fixed
+prompts, `DIFFUSION_UBATCH=2048`, context 32,768, and a 30,208-token allowance,
+with every terminal row copied off the VM as it completes. Expect roughly 1 to 1.5
+hours. Do not combine its rows with the retained partial run or the 2026-09-28
+exploratory rows. The AR arm must get the same allowance before any comparison.
 Do not start a larger confirmation set until the business screen identifies a
 useful and valid separation.
 
@@ -115,7 +126,11 @@ against public AR endpoints. It found that the frozen business prompts never
 state their exact value formats, which also affects the registered DiffusionGemma
 screen, and that Nemotron's linear self-speculation matched its own AR accuracy
 at 6.1x lower latency on a small keyed-output ladder. Findings and limits are in
-`docs/nemotron_diffusion_pilot_findings.md`. The pilot does not change the active
+`docs/nemotron_diffusion_pilot_findings.md`. A 330-row follow-up on the same
+3B weights found linear speculation matched AR exactly at 4.9x to 7.3x lower
+latency, shrinking with output length; plain diffusion fails on adjacent-token
+duplication, not JSON syntax; and thinking-on never engaged. See
+`docs/nemotron_3b_candidates_findings.md`. The pilot does not change the active
 objective. Use Colab CLI 0.7.4 or later: 0.6.0 drops sessions when their proxy
 token expires after 60 minutes.
 
