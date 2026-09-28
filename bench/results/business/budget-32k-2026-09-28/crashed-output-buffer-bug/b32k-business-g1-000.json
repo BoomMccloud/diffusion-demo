@@ -1,0 +1,180 @@
+{
+  "arm": "b32k",
+  "case_id": "business-g1-000",
+  "client_wall_seconds": 19.628239507000217,
+  "prefill_seconds": 1.51648,
+  "denoise_seconds": 2.707405,
+  "blocks": 2,
+  "reused_tokens": [
+    0,
+    1655
+  ],
+  "native_stop": null,
+  "valid": false,
+  "score": {
+    "valid": false,
+    "exact_match": false,
+    "per_decision_correct": 0,
+    "first_error": 0,
+    "constraint_violations": [
+      "canonical_answer_contract"
+    ],
+    "objective_value": null
+  },
+  "result": {
+    "request_id": "ab-b32k-business-g1-000",
+    "request_state": "failed",
+    "process_generation": "4b47247db883469dbb866e7b317969cb",
+    "native_turn": 1,
+    "trace_path": "/content/worker-b32k/native/4b47247db883469dbb866e7b317969cb.jsonl",
+    "elapsed_seconds": 4.707521984000323,
+    "error": {
+      "type": "RuntimeError",
+      "message": "diffusion runner exited with -6"
+    },
+    "exit_code": -6,
+    "native_events": [
+      {
+        "version": 2,
+        "event": "begin",
+        "monotonic_seconds": 3648.217846697,
+        "turn": 1,
+        "block": -1,
+        "repetition_policy": "off"
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 3648.217869422,
+        "turn": 1,
+        "block": 0,
+        "prefix_tokens": 1655,
+        "max_length": 1911
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 3648.217987773,
+        "turn": 1,
+        "block": 0,
+        "prefix_tokens": 1655,
+        "reused_tokens": 0,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 3649.681620777,
+        "turn": 1,
+        "block": 0,
+        "duration_seconds": 1.463624
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 3649.68165306,
+        "turn": 1,
+        "block": 0
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 3651.794779748,
+        "turn": 1,
+        "block": 0,
+        "duration_seconds": 2.113121
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 3651.79487259,
+        "turn": 1,
+        "block": 0,
+        "duration_seconds": 3.576998
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 3651.79488161,
+        "turn": 1,
+        "block": 0,
+        "tokens": 256,
+        "committed_tokens": 256
+      },
+      {
+        "version": 2,
+        "event": "channel",
+        "monotonic_seconds": 3651.794911149,
+        "turn": 1,
+        "block": 0,
+        "channel": "thought",
+        "observed_at_commit": true
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 3651.794915976,
+        "turn": 1,
+        "block": 1,
+        "prefix_tokens": 1911,
+        "max_length": 2167
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 3651.795184977,
+        "turn": 1,
+        "block": 1,
+        "prefix_tokens": 1911,
+        "reused_tokens": 1655,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 3651.848052957,
+        "turn": 1,
+        "block": 1,
+        "duration_seconds": 0.052856
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 3651.848081255,
+        "turn": 1,
+        "block": 1
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 3652.442371213,
+        "turn": 1,
+        "block": 1,
+        "duration_seconds": 0.594284
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 3652.442553936,
+        "turn": 1,
+        "block": 1,
+        "duration_seconds": 0.647633
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 3652.442609,
+        "turn": 1,
+        "block": 1,
+        "tokens": 256,
+        "committed_tokens": 512
+      }
+    ],
+    "cancellation_ack": null,
+    "runtime_ready": false,
+    "runner_transcript": "0.14.681.091 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.18.258.262 W init: embeddings required but some input tokens were not marked as outputs -> overriding\nterminate called after throwing an instance of 'std::out_of_range'\n  what():  vector::_M_range_check: __n (which is 1702240891) >= this->size() (which is 262144)\n",
+    "raw_output": "terminate called after throwing an instance of 'std::out_of_range'\n  what():  vector::_M_range_check: __n (which is 1702240891) >= this->size() (which is 262144)",
+    "wall_seconds": null,
+    "worker_elapsed_seconds": 19.45471804099998
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "request_id": "ab-fixed-warmup",
+  "request_state": "completed",
+  "process_generation": "51364110836e439fadd1acc9b240f418",
+  "native_turn": 1,
+  "trace_path": "/content/worker-fixed/native/51364110836e439fadd1acc9b240f418.jsonl",
+  "elapsed_seconds": 1.7222693199983041,
+  "native_events": [
+    {
+      "version": 2,
+      "event": "begin",
+      "monotonic_seconds": 9935.500033241,
+      "turn": 1,
+      "block": -1,
+      "repetition_policy": "off"
+    },
+    {
+      "version": 2,
+      "event": "block_start",
+      "monotonic_seconds": 9935.500052486,
+      "turn": 1,
+      "block": 0,
+      "prefix_tokens": 28,
+      "max_length": 284
+    },
+    {
+      "version": 2,
+      "event": "prefill_start",
+      "monotonic_seconds": 9935.500111589,
+      "turn": 1,
+      "block": 0,
+      "prefix_tokens": 28,
+      "reused_tokens": 0,
+      "chunk_limit": 2048
+    },
+    {
+      "version": 2,
+      "event": "prefill_end",
+      "monotonic_seconds": 9935.682083245,
+      "turn": 1,
+      "block": 0,
+      "duration_seconds": 0.181964
+    },
+    {
+      "version": 2,
+      "event": "denoise_start",
+      "monotonic_seconds": 9935.682112037,
+      "turn": 1,
+      "block": 0
+    },
+    {
+      "version": 2,
+      "event": "denoise_end",
+      "monotonic_seconds": 9937.220183215,
+      "turn": 1,
+      "block": 0,
+      "duration_seconds": 1.538065
+    },
+    {
+      "version": 2,
+      "event": "block_end",
+      "monotonic_seconds": 9937.220241001,
+      "turn": 1,
+      "block": 0,
+      "duration_seconds": 1.720184
+    },
+    {
+      "version": 2,
+      "event": "commit",
+      "monotonic_seconds": 9937.220248737,
+      "turn": 1,
+      "block": 0,
+      "tokens": 52,
+      "committed_tokens": 52
+    },
+    {
+      "version": 2,
+      "event": "channel",
+      "monotonic_seconds": 9937.220261746,
+      "turn": 1,
+      "block": 0,
+      "channel": "thought",
+      "observed_at_commit": true
+    },
+    {
+      "version": 2,
+      "event": "channel",
+      "monotonic_seconds": 9937.220264416,
+      "turn": 1,
+      "block": 0,
+      "channel": "final",
+      "observed_at_commit": true
+    },
+    {
+      "version": 2,
+      "event": "stop",
+      "monotonic_seconds": 9937.220270455,
+      "turn": 1,
+      "block": 0,
+      "reason": "eog"
+    },
+    {
+      "version": 2,
+      "event": "ready",
+      "monotonic_seconds": 9937.220445778,
+      "turn": 1,
+      "block": 0
+    }
+  ],
+  "native_stop_reason": "eog",
+  "exit_code": null,
+  "error": null,
+  "trace_mode": "summary",
+  "runner_transcript": "0.14.768.886 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n\n<|channel>thought\nThe user wants a very specific JSON-like string: `{\"values\":[\"READY\"]}`.\nThere should be no other text.\n\nPlan:\n1. Return exactly `{\"values\":[\"READY\"]}`.<channel|>{\"values\":[\"READY\"]}\ntotal time: 1720.43ms, time per step: 156.40ms (11 steps over 1 blocks, entropy-bound)\nthroughput: 148.8 tok/s (256 tok in 1720.43ms), in-step parallel 1637 tok/s (256-tok canvas x 11.0 steps/block)\n\n> ",
+  "raw_output": "<|channel>thought\nThe user wants a very specific JSON-like string: `{\"values\":[\"READY\"]}`.\nThere should be no other text.\n\nPlan:\n1. Return exactly `{\"values\":[\"READY\"]}`.<channel|>{\"values\":[\"READY\"]}",
+  "wall_seconds": 1.7222693199983041,
+  "internal_compute_seconds": 1.7204300000000001,
+  "canvas_work_tokens": 256,
+  "worker_elapsed_seconds": 16.560445487000834,
+  "runtime_ready": true
+}

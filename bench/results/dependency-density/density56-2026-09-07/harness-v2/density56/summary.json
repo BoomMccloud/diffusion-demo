@@ -1,0 +1,31 @@
+{
+  "attempts": 1,
+  "correct": 0,
+  "success_rate": 0.0,
+  "request_seconds_per_correct": null,
+  "allocation_seconds_per_correct": null,
+  "batch_allocation_window_seconds": 71.7790297800002,
+  "groups": {
+    "direct": {
+      "attempts": 0,
+      "correct": 0,
+      "median_valid_seconds": null
+    },
+    "mixed": {
+      "attempts": 0,
+      "correct": 0,
+      "median_valid_seconds": null
+    },
+    "chained": {
+      "attempts": 1,
+      "correct": 0,
+      "median_valid_seconds": null
+    }
+  },
+  "planned_order": [
+    "chained",
+    "direct",
+    "mixed"
+  ],
+  "stop_reason": "canary_failed"
+}

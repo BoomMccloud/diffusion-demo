@@ -1,0 +1,7 @@
+{"arm": "off", "case_id": "business-g1-001", "client_wall_seconds": 138.4789116940001, "prefill_seconds": 60.880026, "denoise_seconds": 77.372248, "blocks": 34, "native_stop": "block_budget", "valid": false}
+{"arm": "off", "case_id": "business-m1-000", "client_wall_seconds": 111.30056977599997, "prefill_seconds": 66.005425, "denoise_seconds": 45.209843, "blocks": 34, "native_stop": "block_budget", "valid": false}
+{"arm": "off", "case_id": "business-c1-001", "client_wall_seconds": 58.36719930299978, "prefill_seconds": 30.723254, "denoise_seconds": 27.461481, "blocks": 27, "native_stop": "eog", "valid": true}
+{"arm": "on", "case_id": "business-g1-001", "client_wall_seconds": 112.3124623220001, "prefill_seconds": 3.354957, "denoise_seconds": 108.875647, "blocks": 34, "native_stop": "block_budget", "valid": false}
+{"arm": "on", "case_id": "business-m1-000", "client_wall_seconds": 66.21890407500041, "prefill_seconds": 4.399891, "denoise_seconds": 61.617373, "blocks": 34, "native_stop": "block_budget", "valid": false}
+{"arm": "on", "case_id": "business-c1-001", "client_wall_seconds": 23.554753477000304, "prefill_seconds": 1.410911, "denoise_seconds": 22.069327, "blocks": 26, "native_stop": "eog", "valid": true}
+AB_DONE

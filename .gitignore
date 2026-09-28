@@ -1,0 +1,77 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Jupyter / Colab
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Model weights & binaries (keep repo lightweight)
+*.gguf
+*.bin
+*.safetensors
+*.pt
+*.pth
+llama-diffusion-cli
+
+# Experiment runs and measurement logs
+runs/
+optimization-lab/
+*.jsonl
+*.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Local secrets
+.env.local
+.env.*
+
+# Large artifact bundles stay local (over GitHub's file size limit)
+archive/artifact-bundles/
+
+# Keep benchmark evidence cited by docs
+!bench/results/**/*.jsonl
+!bench/results/**/*.log
+
+# Dependency-density raw run artifacts stay local; only summaries are tracked.
+/bench/results/dependency-density/**
+!/bench/results/dependency-density/**/
+!/bench/results/dependency-density/README.md
+!/bench/results/dependency-density/**/summary.json
+!/bench/results/dependency-density/**/*-summary.json

@@ -1,0 +1,45 @@
+{
+  "fixture_seeds": [
+    20260910,
+    20260911
+  ],
+  "configuration": {
+    "inference_seed": 20260909,
+    "max_tokens": 9216,
+    "context_size": 11264,
+    "prefill_chunk": 2048,
+    "native_protocol": 2,
+    "repetition_policy": "off"
+  },
+  "results": {
+    "48": {
+      "attempts": 6,
+      "correct": 6,
+      "success_rate": 1.0,
+      "by_density": {
+        "direct": {"attempts": 2, "correct": 2},
+        "mixed": {"attempts": 2, "correct": 2},
+        "chained": {"attempts": 2, "correct": 2}
+      },
+      "wall_seconds": [44.378703616000166, 12.402539154999886, 27.966908433999834, 24.70715482200012, 24.003922631999558, 29.949050725000234]
+    },
+    "56": {
+      "attempts": 6,
+      "correct": 4,
+      "success_rate": 0.6666666666666666,
+      "by_density": {
+        "direct": {"attempts": 2, "correct": 2},
+        "mixed": {"attempts": 2, "correct": 2},
+        "chained": {"attempts": 2, "correct": 0}
+      },
+      "wall_seconds": [29.82900735400017, 56.88164912400043, 49.64650141200036, 42.46519810799964, 52.22773950999999, 86.08380634800051]
+    }
+  },
+  "finding": "48 values is the highest reliable tested operating point. It passed all six cases across two fixture seeds. At 56 values, both chained cases completed normally but were incorrect.",
+  "evidence": {
+    "seed_20260910_48": "../density48-2026-09-07/evidence.tar.gz",
+    "seed_20260910_56": "../density56-recheck-2026-09-07/evidence.tar.gz",
+    "seed_20260911": "colab-session-log.jsonl"
+  },
+  "limitation": "Colab released the VM after seed 20260911 completed and before its remote result directories were archived. The complete controller output is retained in the exported Colab session log. A planned third fixture seed was not started."
+}

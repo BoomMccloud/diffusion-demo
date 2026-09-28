@@ -1,0 +1,1642 @@
+{
+  "arm": "b32k",
+  "case_id": "business-c1-001",
+  "client_wall_seconds": 23.348945730000196,
+  "prefill_seconds": 2.04428,
+  "denoise_seconds": 21.119145,
+  "blocks": 26,
+  "reused_tokens": [
+    13,
+    1076,
+    1332,
+    1588,
+    1844,
+    2100,
+    2356,
+    2612,
+    2868,
+    3124,
+    3380,
+    3636,
+    3892,
+    4148,
+    4404,
+    4660,
+    4916,
+    5172,
+    5428,
+    5684,
+    5940,
+    6196,
+    6452,
+    6708,
+    6964,
+    7220
+  ],
+  "native_stop": "eog",
+  "valid": true,
+  "score": {
+    "valid": true,
+    "exact_match": true,
+    "per_decision_correct": 48,
+    "first_error": null,
+    "constraint_violations": [],
+    "objective_value": null
+  },
+  "result": {
+    "request_id": "ab-b32k-business-c1-001",
+    "request_state": "completed",
+    "process_generation": "e0fcbb45c3c943989300413e1b7bcd1f",
+    "native_turn": 2,
+    "trace_path": "/content/worker-b32k/native/e0fcbb45c3c943989300413e1b7bcd1f.jsonl",
+    "elapsed_seconds": 23.186269710000488,
+    "native_events": [
+      {
+        "version": 2,
+        "event": "begin",
+        "monotonic_seconds": 4545.798165032,
+        "turn": 2,
+        "block": -1,
+        "repetition_policy": "off"
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4545.798184974,
+        "turn": 2,
+        "block": 0,
+        "prefix_tokens": 1076,
+        "max_length": 1332
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4545.798371886,
+        "turn": 2,
+        "block": 0,
+        "prefix_tokens": 1076,
+        "reused_tokens": 13,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4546.530474766,
+        "turn": 2,
+        "block": 0,
+        "duration_seconds": 0.732093
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4546.530506371,
+        "turn": 2,
+        "block": 0
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4548.381283448,
+        "turn": 2,
+        "block": 0,
+        "duration_seconds": 1.850772
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4548.381454672,
+        "turn": 2,
+        "block": 0,
+        "duration_seconds": 2.583265
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4548.381463823,
+        "turn": 2,
+        "block": 0,
+        "tokens": 256,
+        "committed_tokens": 256
+      },
+      {
+        "version": 2,
+        "event": "channel",
+        "monotonic_seconds": 4548.381493724,
+        "turn": 2,
+        "block": 0,
+        "channel": "thought",
+        "observed_at_commit": true
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4548.381498689,
+        "turn": 2,
+        "block": 1,
+        "prefix_tokens": 1332,
+        "max_length": 1588
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4548.381630267,
+        "turn": 2,
+        "block": 1,
+        "prefix_tokens": 1332,
+        "reused_tokens": 1076,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4548.428577691,
+        "turn": 2,
+        "block": 1,
+        "duration_seconds": 0.046937
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4548.428604187,
+        "turn": 2,
+        "block": 1
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4548.975772468,
+        "turn": 2,
+        "block": 1,
+        "duration_seconds": 0.547162
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4548.975949314,
+        "turn": 2,
+        "block": 1,
+        "duration_seconds": 0.594446
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4548.976011985,
+        "turn": 2,
+        "block": 1,
+        "tokens": 256,
+        "committed_tokens": 512
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4548.976055661,
+        "turn": 2,
+        "block": 2,
+        "prefix_tokens": 1588,
+        "max_length": 1844
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4548.976159924,
+        "turn": 2,
+        "block": 2,
+        "prefix_tokens": 1588,
+        "reused_tokens": 1332,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4549.0206518,
+        "turn": 2,
+        "block": 2,
+        "duration_seconds": 0.044482
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4549.020670807,
+        "turn": 2,
+        "block": 2
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4549.570477859,
+        "turn": 2,
+        "block": 2,
+        "duration_seconds": 0.549801
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4549.570674741,
+        "turn": 2,
+        "block": 2,
+        "duration_seconds": 0.594613
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4549.570731788,
+        "turn": 2,
+        "block": 2,
+        "tokens": 256,
+        "committed_tokens": 768
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4549.570783512,
+        "turn": 2,
+        "block": 3,
+        "prefix_tokens": 1844,
+        "max_length": 2100
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4549.570902349,
+        "turn": 2,
+        "block": 3,
+        "prefix_tokens": 1844,
+        "reused_tokens": 1588,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4549.616707922,
+        "turn": 2,
+        "block": 3,
+        "duration_seconds": 0.045797
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4549.616736627,
+        "turn": 2,
+        "block": 3
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4550.17168451,
+        "turn": 2,
+        "block": 3,
+        "duration_seconds": 0.554943
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4550.171866998,
+        "turn": 2,
+        "block": 3,
+        "duration_seconds": 0.601079
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4550.171875222,
+        "turn": 2,
+        "block": 3,
+        "tokens": 256,
+        "committed_tokens": 1024
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4550.171981366,
+        "turn": 2,
+        "block": 4,
+        "prefix_tokens": 2100,
+        "max_length": 2356
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4550.172110989,
+        "turn": 2,
+        "block": 4,
+        "prefix_tokens": 2100,
+        "reused_tokens": 1844,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4550.21825402,
+        "turn": 2,
+        "block": 4,
+        "duration_seconds": 0.046131
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4550.218276287,
+        "turn": 2,
+        "block": 4
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4550.904271145,
+        "turn": 2,
+        "block": 4,
+        "duration_seconds": 0.685989
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4550.904494948,
+        "turn": 2,
+        "block": 4,
+        "duration_seconds": 0.732509
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4550.904516696,
+        "turn": 2,
+        "block": 4,
+        "tokens": 256,
+        "committed_tokens": 1280
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4550.904585317,
+        "turn": 2,
+        "block": 5,
+        "prefix_tokens": 2356,
+        "max_length": 2612
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4550.904707728,
+        "turn": 2,
+        "block": 5,
+        "prefix_tokens": 2356,
+        "reused_tokens": 2100,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4550.9519675,
+        "turn": 2,
+        "block": 5,
+        "duration_seconds": 0.047251
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4550.951996959,
+        "turn": 2,
+        "block": 5
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4551.646728361,
+        "turn": 2,
+        "block": 5,
+        "duration_seconds": 0.694726
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4551.646967276,
+        "turn": 2,
+        "block": 5,
+        "duration_seconds": 0.742377
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4551.646976265,
+        "turn": 2,
+        "block": 5,
+        "tokens": 256,
+        "committed_tokens": 1536
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4551.647076162,
+        "turn": 2,
+        "block": 6,
+        "prefix_tokens": 2612,
+        "max_length": 2868
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4551.647224053,
+        "turn": 2,
+        "block": 6,
+        "prefix_tokens": 2612,
+        "reused_tokens": 2356,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4551.694845563,
+        "turn": 2,
+        "block": 6,
+        "duration_seconds": 0.047612
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4551.694871321,
+        "turn": 2,
+        "block": 6
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4552.390873175,
+        "turn": 2,
+        "block": 6,
+        "duration_seconds": 0.695995
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4552.391076858,
+        "turn": 2,
+        "block": 6,
+        "duration_seconds": 0.743992
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4552.391087256,
+        "turn": 2,
+        "block": 6,
+        "tokens": 256,
+        "committed_tokens": 1792
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4552.391235934,
+        "turn": 2,
+        "block": 7,
+        "prefix_tokens": 2868,
+        "max_length": 3124
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4552.391390404,
+        "turn": 2,
+        "block": 7,
+        "prefix_tokens": 2868,
+        "reused_tokens": 2612,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4552.439189599,
+        "turn": 2,
+        "block": 7,
+        "duration_seconds": 0.047789
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4552.439214361,
+        "turn": 2,
+        "block": 7
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4553.142259084,
+        "turn": 2,
+        "block": 7,
+        "duration_seconds": 0.703038
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4553.142511093,
+        "turn": 2,
+        "block": 7,
+        "duration_seconds": 0.751268
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4553.14252006,
+        "turn": 2,
+        "block": 7,
+        "tokens": 256,
+        "committed_tokens": 2048
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4553.142631307,
+        "turn": 2,
+        "block": 8,
+        "prefix_tokens": 3124,
+        "max_length": 3380
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4553.142786983,
+        "turn": 2,
+        "block": 8,
+        "prefix_tokens": 3124,
+        "reused_tokens": 2868,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4553.191439498,
+        "turn": 2,
+        "block": 8,
+        "duration_seconds": 0.048643
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4553.191467351,
+        "turn": 2,
+        "block": 8
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4553.903935719,
+        "turn": 2,
+        "block": 8,
+        "duration_seconds": 0.712462
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4553.904150595,
+        "turn": 2,
+        "block": 8,
+        "duration_seconds": 0.761514
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4553.90422296,
+        "turn": 2,
+        "block": 8,
+        "tokens": 256,
+        "committed_tokens": 2304
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4553.904327216,
+        "turn": 2,
+        "block": 9,
+        "prefix_tokens": 3380,
+        "max_length": 3636
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4553.904493315,
+        "turn": 2,
+        "block": 9,
+        "prefix_tokens": 3380,
+        "reused_tokens": 3124,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4553.953970523,
+        "turn": 2,
+        "block": 9,
+        "duration_seconds": 0.049466
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4553.953994946,
+        "turn": 2,
+        "block": 9
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4555.075146026,
+        "turn": 2,
+        "block": 9,
+        "duration_seconds": 1.121146
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4555.075411834,
+        "turn": 2,
+        "block": 9,
+        "duration_seconds": 1.171079
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4555.075420936,
+        "turn": 2,
+        "block": 9,
+        "tokens": 256,
+        "committed_tokens": 2560
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4555.075544689,
+        "turn": 2,
+        "block": 10,
+        "prefix_tokens": 3636,
+        "max_length": 3892
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4555.075714006,
+        "turn": 2,
+        "block": 10,
+        "prefix_tokens": 3636,
+        "reused_tokens": 3380,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4555.125738117,
+        "turn": 2,
+        "block": 10,
+        "duration_seconds": 0.050014
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4555.125769925,
+        "turn": 2,
+        "block": 10
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4555.970275957,
+        "turn": 2,
+        "block": 10,
+        "duration_seconds": 0.8445
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4555.970494042,
+        "turn": 2,
+        "block": 10,
+        "duration_seconds": 0.894944
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4555.970502972,
+        "turn": 2,
+        "block": 10,
+        "tokens": 256,
+        "committed_tokens": 2816
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4555.970687374,
+        "turn": 2,
+        "block": 11,
+        "prefix_tokens": 3892,
+        "max_length": 4148
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4555.970864971,
+        "turn": 2,
+        "block": 11,
+        "prefix_tokens": 3892,
+        "reused_tokens": 3636,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4556.020642238,
+        "turn": 2,
+        "block": 11,
+        "duration_seconds": 0.049766
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4556.020664156,
+        "turn": 2,
+        "block": 11
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4556.617273072,
+        "turn": 2,
+        "block": 11,
+        "duration_seconds": 0.596602
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4556.617565271,
+        "turn": 2,
+        "block": 11,
+        "duration_seconds": 0.646872
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4556.617574369,
+        "turn": 2,
+        "block": 11,
+        "tokens": 256,
+        "committed_tokens": 3072
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4556.617713813,
+        "turn": 2,
+        "block": 12,
+        "prefix_tokens": 4148,
+        "max_length": 4404
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4556.617906289,
+        "turn": 2,
+        "block": 12,
+        "prefix_tokens": 4148,
+        "reused_tokens": 3892,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4556.669207911,
+        "turn": 2,
+        "block": 12,
+        "duration_seconds": 0.051292
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4556.669248455,
+        "turn": 2,
+        "block": 12
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4557.277629285,
+        "turn": 2,
+        "block": 12,
+        "duration_seconds": 0.608374
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4557.277911447,
+        "turn": 2,
+        "block": 12,
+        "duration_seconds": 0.660192
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4557.277919867,
+        "turn": 2,
+        "block": 12,
+        "tokens": 256,
+        "committed_tokens": 3328
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4557.278077938,
+        "turn": 2,
+        "block": 13,
+        "prefix_tokens": 4404,
+        "max_length": 4660
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4557.278282895,
+        "turn": 2,
+        "block": 13,
+        "prefix_tokens": 4404,
+        "reused_tokens": 4148,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4557.330356081,
+        "turn": 2,
+        "block": 13,
+        "duration_seconds": 0.052062
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4557.330390034,
+        "turn": 2,
+        "block": 13
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4557.937634549,
+        "turn": 2,
+        "block": 13,
+        "duration_seconds": 0.607238
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4557.937873582,
+        "turn": 2,
+        "block": 13,
+        "duration_seconds": 0.659788
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4557.937883551,
+        "turn": 2,
+        "block": 13,
+        "tokens": 256,
+        "committed_tokens": 3584
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4557.938110842,
+        "turn": 2,
+        "block": 14,
+        "prefix_tokens": 4660,
+        "max_length": 4916
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4557.938327487,
+        "turn": 2,
+        "block": 14,
+        "prefix_tokens": 4660,
+        "reused_tokens": 4404,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4557.990604449,
+        "turn": 2,
+        "block": 14,
+        "duration_seconds": 0.052265
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4557.990633356,
+        "turn": 2,
+        "block": 14
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4558.472127184,
+        "turn": 2,
+        "block": 14,
+        "duration_seconds": 0.481488
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4558.472366705,
+        "turn": 2,
+        "block": 14,
+        "duration_seconds": 0.534247
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4558.472376653,
+        "turn": 2,
+        "block": 14,
+        "tokens": 256,
+        "committed_tokens": 3840
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4558.472606082,
+        "turn": 2,
+        "block": 15,
+        "prefix_tokens": 4916,
+        "max_length": 5172
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4558.472829571,
+        "turn": 2,
+        "block": 15,
+        "prefix_tokens": 4916,
+        "reused_tokens": 4660,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4558.525828165,
+        "turn": 2,
+        "block": 15,
+        "duration_seconds": 0.052988
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4558.525857776,
+        "turn": 2,
+        "block": 15
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4560.334438714,
+        "turn": 2,
+        "block": 15,
+        "duration_seconds": 1.808576
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4560.334748004,
+        "turn": 2,
+        "block": 15,
+        "duration_seconds": 1.862135
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4560.334758487,
+        "turn": 2,
+        "block": 15,
+        "tokens": 256,
+        "committed_tokens": 4096
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4560.33493198,
+        "turn": 2,
+        "block": 16,
+        "prefix_tokens": 5172,
+        "max_length": 5428
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4560.33518181,
+        "turn": 2,
+        "block": 16,
+        "prefix_tokens": 5172,
+        "reused_tokens": 4916,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4560.392112233,
+        "turn": 2,
+        "block": 16,
+        "duration_seconds": 0.056917
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4560.392141553,
+        "turn": 2,
+        "block": 16
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4561.178823168,
+        "turn": 2,
+        "block": 16,
+        "duration_seconds": 0.786676
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4561.179131785,
+        "turn": 2,
+        "block": 16,
+        "duration_seconds": 0.844192
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4561.179160359,
+        "turn": 2,
+        "block": 16,
+        "tokens": 256,
+        "committed_tokens": 4352
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4561.179335015,
+        "turn": 2,
+        "block": 17,
+        "prefix_tokens": 5428,
+        "max_length": 5684
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4561.179600826,
+        "turn": 2,
+        "block": 17,
+        "prefix_tokens": 5428,
+        "reused_tokens": 5172,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4561.235402975,
+        "turn": 2,
+        "block": 17,
+        "duration_seconds": 0.055793
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4561.235426848,
+        "turn": 2,
+        "block": 17
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4561.872219691,
+        "turn": 2,
+        "block": 17,
+        "duration_seconds": 0.636787
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4561.872539885,
+        "turn": 2,
+        "block": 17,
+        "duration_seconds": 0.69318
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4561.872549749,
+        "turn": 2,
+        "block": 17,
+        "tokens": 256,
+        "committed_tokens": 4608
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4561.872741772,
+        "turn": 2,
+        "block": 18,
+        "prefix_tokens": 5684,
+        "max_length": 5940
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4561.872980911,
+        "turn": 2,
+        "block": 18,
+        "prefix_tokens": 5684,
+        "reused_tokens": 5428,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4561.928551831,
+        "turn": 2,
+        "block": 18,
+        "duration_seconds": 0.055562
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4561.928575394,
+        "turn": 2,
+        "block": 18
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4562.574813533,
+        "turn": 2,
+        "block": 18,
+        "duration_seconds": 0.646232
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4562.575142265,
+        "turn": 2,
+        "block": 18,
+        "duration_seconds": 0.702395
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4562.575154885,
+        "turn": 2,
+        "block": 18,
+        "tokens": 256,
+        "committed_tokens": 4864
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4562.575367618,
+        "turn": 2,
+        "block": 19,
+        "prefix_tokens": 5940,
+        "max_length": 6196
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4562.575622259,
+        "turn": 2,
+        "block": 19,
+        "prefix_tokens": 5940,
+        "reused_tokens": 5684,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4562.63165067,
+        "turn": 2,
+        "block": 19,
+        "duration_seconds": 0.056017
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4562.631682605,
+        "turn": 2,
+        "block": 19
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4563.283424806,
+        "turn": 2,
+        "block": 19,
+        "duration_seconds": 0.651736
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4563.28375395,
+        "turn": 2,
+        "block": 19,
+        "duration_seconds": 0.70838
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4563.283764244,
+        "turn": 2,
+        "block": 19,
+        "tokens": 256,
+        "committed_tokens": 5120
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4563.283973502,
+        "turn": 2,
+        "block": 20,
+        "prefix_tokens": 6196,
+        "max_length": 6452
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4563.2842539,
+        "turn": 2,
+        "block": 20,
+        "prefix_tokens": 6196,
+        "reused_tokens": 5940,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4563.341656779,
+        "turn": 2,
+        "block": 20,
+        "duration_seconds": 0.05739
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4563.341683609,
+        "turn": 2,
+        "block": 20
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4564.001347388,
+        "turn": 2,
+        "block": 20,
+        "duration_seconds": 0.659653
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4564.001674572,
+        "turn": 2,
+        "block": 20,
+        "duration_seconds": 0.717695
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4564.00168517,
+        "turn": 2,
+        "block": 20,
+        "tokens": 256,
+        "committed_tokens": 5376
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4564.001896958,
+        "turn": 2,
+        "block": 21,
+        "prefix_tokens": 6452,
+        "max_length": 6708
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4564.00217127,
+        "turn": 2,
+        "block": 21,
+        "prefix_tokens": 6452,
+        "reused_tokens": 6196,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4564.059745917,
+        "turn": 2,
+        "block": 21,
+        "duration_seconds": 0.057563
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4564.059769832,
+        "turn": 2,
+        "block": 21
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4565.354591072,
+        "turn": 2,
+        "block": 21,
+        "duration_seconds": 1.294816
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4565.354950595,
+        "turn": 2,
+        "block": 21,
+        "duration_seconds": 1.353046
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4565.354963554,
+        "turn": 2,
+        "block": 21,
+        "tokens": 256,
+        "committed_tokens": 5632
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4565.355219578,
+        "turn": 2,
+        "block": 22,
+        "prefix_tokens": 6708,
+        "max_length": 6964
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4565.355501987,
+        "turn": 2,
+        "block": 22,
+        "prefix_tokens": 6708,
+        "reused_tokens": 6452,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4565.41620029,
+        "turn": 2,
+        "block": 22,
+        "duration_seconds": 0.060689
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4565.416226125,
+        "turn": 2,
+        "block": 22
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4565.941504831,
+        "turn": 2,
+        "block": 22,
+        "duration_seconds": 0.525273
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4565.941853849,
+        "turn": 2,
+        "block": 22,
+        "duration_seconds": 0.586625
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4565.941863832,
+        "turn": 2,
+        "block": 22,
+        "tokens": 256,
+        "committed_tokens": 5888
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4565.942112868,
+        "turn": 2,
+        "block": 23,
+        "prefix_tokens": 6964,
+        "max_length": 7220
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4565.942406629,
+        "turn": 2,
+        "block": 23,
+        "prefix_tokens": 6964,
+        "reused_tokens": 6708,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4566.000132181,
+        "turn": 2,
+        "block": 23,
+        "duration_seconds": 0.057716
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4566.000156155,
+        "turn": 2,
+        "block": 23
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4566.670048985,
+        "turn": 2,
+        "block": 23,
+        "duration_seconds": 0.669886
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4566.67040234,
+        "turn": 2,
+        "block": 23,
+        "duration_seconds": 0.72828
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4566.670412274,
+        "turn": 2,
+        "block": 23,
+        "tokens": 256,
+        "committed_tokens": 6144
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4566.670657276,
+        "turn": 2,
+        "block": 24,
+        "prefix_tokens": 7220,
+        "max_length": 7476
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4566.670966104,
+        "turn": 2,
+        "block": 24,
+        "prefix_tokens": 7220,
+        "reused_tokens": 6964,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4566.729853045,
+        "turn": 2,
+        "block": 24,
+        "duration_seconds": 0.058876
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4566.729876718,
+        "turn": 2,
+        "block": 24
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4568.376016271,
+        "turn": 2,
+        "block": 24,
+        "duration_seconds": 1.646134
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4568.376372204,
+        "turn": 2,
+        "block": 24,
+        "duration_seconds": 1.705708
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4568.376382579,
+        "turn": 2,
+        "block": 24,
+        "tokens": 256,
+        "committed_tokens": 6400
+      },
+      {
+        "version": 2,
+        "event": "channel",
+        "monotonic_seconds": 4568.376635748,
+        "turn": 2,
+        "block": 24,
+        "channel": "final",
+        "observed_at_commit": true
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 4568.376640815,
+        "turn": 2,
+        "block": 25,
+        "prefix_tokens": 7476,
+        "max_length": 7732
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 4568.37696026,
+        "turn": 2,
+        "block": 25,
+        "prefix_tokens": 7476,
+        "reused_tokens": 7220,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 4568.440140287,
+        "turn": 2,
+        "block": 25,
+        "duration_seconds": 0.063169
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 4568.440168131,
+        "turn": 2,
+        "block": 25
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 4568.979314498,
+        "turn": 2,
+        "block": 25,
+        "duration_seconds": 0.53914
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 4568.979683928,
+        "turn": 2,
+        "block": 25,
+        "duration_seconds": 0.603038
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 4568.979694724,
+        "turn": 2,
+        "block": 25,
+        "tokens": 134,
+        "committed_tokens": 6534
+      },
+      {
+        "version": 2,
+        "event": "stop",
+        "monotonic_seconds": 4568.980184885,
+        "turn": 2,
+        "block": 25,
+        "reason": "eog"
+      },
+      {
+        "version": 2,
+        "event": "ready",
+        "monotonic_seconds": 4568.980389918,
+        "turn": 2,
+        "block": 25
+      }
+    ],
+    "native_stop_reason": "eog",
+    "exit_code": null,
+    "error": null,
+    "trace_mode": "summary",
+    "runner_transcript": "0.16.533.470 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.19.116.724 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.19.711.252 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.20.305.995 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.20.907.208 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.21.639.800 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.22.382.317 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.23.126.486 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.23.877.878 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.24.639.585 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.25.810.804 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.26.705.958 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.27.352.999 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.28.013.375 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.28.673.429 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.29.207.924 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.31.070.278 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.31.914.694 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.32.608.090 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.33.310.716 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.34.019.351 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.34.737.269 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.36.090.593 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.36.677.498 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.37.406.076 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.39.112.056 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n\n<|channel>thought\n*   Input: A list of cash events (WITHDRAWAL, DEPOSIT, FEE, INTEREST) and an opening balance.\n    *   Goal: Replay events in order, calculating the balance after each event.\n    *   Interest: Rounded half up to cents.\n    *   Output: Return exactly one compact JSON object `{\"values\":[\"...]}` with 48 string values representing the balances.\n\n    *   `opening_balance_cents`: 276406\n\n    1.  C01 (WITHDRAWAL, 2396):\n        *   Balance: 276406 - 2396 = 274010\n    2.  C02 (INTEREST, 5 bps):\n        *   Interest: 274010 * 5 / 10000 = 137.005 -> 137 (rounded half up)\n        *   Balance: 274010 + 137 = 274147\n    3.  C03 (WITHDRAWAL, 19809):\n        *   Balance: 274147 - 19809 = 254338\n    4.  C04 (DEPOSIT, 5285):\n        *   Balance: 254338 + 5285 = 259623\n    5.  C05 (DEPOSIT, 14419):\n        *   Balance: 259623 + 14419 = 274042\n    6.  C06 (WITHDRAWAL, 15707):\n        *   Balance: 274042 - 15707 = 258335\n    7.  C07 (DEPOSIT, 16700):\n        *   Balance: 258335 + 16700 = 275035\n    8.  C08 (DEPOSIT, 19028):\n        *   Balance: 275035 + 19028 = 294063\n    9.  C09 (DEPOSIT, 1932):\n        *   Balance: 294063 + 1932 = 295995\n    10. C10 (FEE, 13176):\n        *   Balance: 295995 - 13176 = 282819\n    11. C11 (DEPOSIT, 10246):\n        *   Balance: 282819 + 10246 = 293065\n    12. C12 (WITHDRAWAL, 2913):\n        *   Balance: 293065 - 2913 = 290152\n    13. C13 (DEPOSIT, 11523):\n        *   Balance: 290152 + 11523 = 301675\n    14. C14 (WITHDRAWAL, 14203):\n        *   Balance: 301675 - 14203 = 287472\n    15. C15 (DEPOSIT, 18817):\n        *   Balance: 287472 + 18817 = 306289\n    16. C16 (FEE, 4925):\n        *   Balance: 306289 - 4925 = 301364\n    17. C17 (WITHDRAWAL, 1044):\n        *   Balance: 301364 - 1044 = 300320\n    18. C18 (FEE, 5825):\n        *   Balance: 300320 - 5825 = 294495\n    19. C19 (DEPOSIT, 19449):\n        *   Balance: 294495 + 19449 = 313944\n    20. C20 (INTEREST, 5 bps):\n        *   Interest: 313944 * 5 / 10000 = 156.972 -> 157\n        *   Balance: 313944 + 157 = 314101\n    21. C21 (FEE, 504):\n        *   Balance: 314101 - 504 = 313597\n    22. C22 (WITHDRAWAL, 6269):\n        *   Balance: 313597 - 6269 = 307328\n    23. C23 (WITHDRAWAL, 977):\n        *   Balance: 307328 - 977 = 306351\n    24. C24 (WITHDRAWAL, 11402):\n        *   Balance: 306351 - 11402 = 294949\n    25. C25 (WITHDRAWAL, 4615):\n        *   Balance: 294949 - 4615 = 290334\n    26. C26 (DEPOSIT, 16163):\n        *   Balance: 290334 + 16163 = 306497\n    27. C27 (INTEREST, 10 bps):\n        *   Interest: 306497 * 10 / 10000 = 306.497 -> 306\n        *   Balance: 306497 + 306 = 306803\n    28. C28 (WITHDRAWAL, 3728):\n        *   Balance: 306803 - 3728 = 303075\n    29. C29 (WITHDRAWAL, 5984):\n        *   Balance: 303075 - 5984 = 297091\n    30. C30 (DEPOSIT, 7475):\n        *   Balance: 297091 + 7475 = 304566\n    31. C31 (DEPOSIT, 7154):\n        *   Balance: 304566 + 7154 = 311720\n    32. C32 (FEE, 7178):\n        *   Balance: 311720 - 7178 = 304542\n    33. C33 (WITHDRAWAL, 107):\n        *   Balance: 304542 - 107 = 304435\n    34. C34 (DEPOSIT, 4134):\n        *   Balance: 304435 + 4134 = 308569\n    35. C35 (DEPOSIT, 17298):\n        *   Balance: 308569 + 17298 = 325867\n    36. C36 (DEPOSIT, 11903):\n        *   Balance: 325867 + 11903 = 337770\n    37. C37 (DEPOSIT, 1612):\n        *   Balance: 337770 + 1612 = 339382\n    38. C38 (WITHDRAWAL, 17699):\n        *   Balance: 339382 - 17699 = 321683\n    39. C39 (DEPOSIT, 7643):\n        *   Balance: 321683 + 7643 = 329326\n    40. C40 (WITHDRAWAL, 267):\n        *   Balance: 329326 - 267 = 329059\n    41. C41 (WITHDRAWAL, 8740):\n        *   Balance: 329059 - 8740 = 320319\n    42. C42 (DEPOSIT, 17946):\n        *   Balance: 320319 + 17946 = 338265\n    43. C43 (WITHDRAWAL, 17299):\n        *   Balance: 338265 - 17299 = 320966\n    44. C44 (DEPOSIT, 3621):\n        *   Balance: 320966 + 3621 = 324587\n    45. C45 (WITHDRAWAL, 6633):\n        *   Balance: 324587 - 6633 = 317954\n    46. C46 (WITHDRAWAL, 4009):\n        *   Balance: 317954 - 4009 = 313945\n    47. C47 (DEPOSIT, 9074):\n        *   Balance: 313945 + 9074 = 323019\n    48. C48 (DEPOSIT, 17425):\n        *   Balance: 323019 + 17425 = 340444\n\n    1. C01: 276406 - 2396 = 274010\n    2. C02: 274010 + round(274010 * 0.0005) = 274010 + 137 = 274147\n    3. C03: 274147 - 19809 = 254338\n    4. C04: 254338 + 5285 = 259623\n    5. C05: 259623 + 14419 = 274042\n    6. C06: 274042 - 15707 = 258335\n    7. C07: 258335 + 16700 = 275035\n    8. C08: 275035 + 19028 = 294063\n    9. C09: 294063 + 1932 = 295995\n    10. C10: 295995 - 13176 = 282819\n    11. C11: 282819 + 10246 = 293065\n    12. C12: 293065 - 2913 = 290152\n    13. C13: 290152 + 11523 = 301675\n    14. C14: 301675 - 14203 = 287472\n    15. C15: 287472 + 18817 = 306289\n    16. C16: 306289 - 4925 = 301364\n    17. C17: 301364 - 1044 = 300320\n    18. C18: 300320 - 5825 = 294495\n    19. C19: 294495 + 19449 = 313944\n    20. C20: 313944 + round(313944 * 0.0005) = 313944 + 157 = 314101\n    21. C21: 314101 - 504 = 313597\n    22. C22: 313597 - 6269 = 307328\n    23. C23: 307328 - 977 = 306351\n    24. C24: 306351 - 11402 = 294949\n    25. C25: 294949 - 4615 = 290334\n    26. C26: 290334 + 16163 = 306497\n    27. C27: 306497 + round(306497 * 0.001) = 306497 + 306 = 306803\n    28. C28: 306803 - 3728 = 303075\n    29. C29: 303075 - 5984 = 297091\n    30. C30: 297091 + 7475 = 304566\n    31. C31: 304566 + 7154 = 311720\n    32. C32: 311720 - 7178 = 304542\n    33. C33: 304542 - 107 = 304435\n    34. C34: 304435 + 4134 = 308569\n    35. C35: 308569 + 17298 = 325867\n    36. C36: 325867 + 11903 = 337770\n    37. C37: 337770 + 1612 = 339382\n    38. C38: 339382 - 17699 = 321683\n    39. C39: 321683 + 7643 = 329326\n    40. C40: 329326 - 267 = 329059\n    41. C41: 329059 - 8740 = 320319\n    42. C42: 320319 + 17946 = 338265\n    43. C43: 338265 - 17299 = 320966\n    44. C44: 320966 + 3621 = 324587\n    45. C45: 324587 - 6633 = 317954\n    46. C46: 317954 - 4009 = 313945\n    47. C47: 313945 + 9074 = 323019\n    48. C48: 323019 + 17425 = 340444\n\n    Wait, let me double-check the interest calculations again.\n    C02: 274010 * 0.0005 = 137.005. Rounding half up gives 137. Correct.\n    C20: 313944 * 0.0005 = 156.972. Rounding half up gives 157. Correct.\n    C27: 306497 * 0.001 = 306.497. Rounding half up gives 306. Correct.\n\n    Let me re-check the subtractions/additions.\n    C01: 276406 - 2396 = 274010 (Correct)\n    C02: 274010 + 137 = 274147 (Correct)\n    C03: 274147 - 19809 = 254338 (Correct)\n    C04: 254338 + 5285 = 259623 (Correct)\n    C05: 259623 + 14419 = 274042 (Correct)\n    C06: 274042 - 15707 = 258335 (Correct)\n    C07: 258335 + 16700 = 275035 (Correct)\n    C08: 275035 + 19028 = 294063 (Correct)\n    C09: 294063 + 1932 = 295995 (Correct)\n    C10: 295995 - 13176 = 282819 (Correct)\n    C11: 282819 + 10246 = 293065 (Correct)\n    C12: 293065 - 2913 = 290152 (Correct)\n    C13: 290152 + 11523 = 301675 (Correct)\n    C14: 301675 - 14203 = 287472 (Correct)\n    C15: 287472 + 18817 = 306289 (Correct)\n    C16: 306289 - 4925 = 301364 (Correct)\n    C17: 301364 - 1044 = 300320 (Correct)\n    C18: 300320 - 5825 = 294495 (Correct)\n    C19: 294495 + 19449 = 313944 (Correct)\n    C20: 313944 + 157 = 314101 (Correct)\n    C21: 314101 - 504 = 313597 (Correct)\n    C22: 313597 - 6269 = 307328 (Correct)\n    C23: 307328 - 977 = 306351 (Correct)\n    C24: 306351 - 11402 = 294949 (Correct)\n    C25: 294949 - 4615 = 290334 (Correct)\n    C26: 290334 + 16163 = 306497 (Correct)\n    C27: 306497 + 306 = 306803 (Correct)\n    C28: 306803 - 3728 = 303075 (Correct)\n    C29: 303075 - 5984 = 297091 (Correct)\n    C30: 297091 + 7475 = 304566 (Correct)\n    C31: 304566 + 7154 = 311720 (Correct)\n    C32: 311720 - 7178 = 304542 (Correct)\n    C33: 304542 - 107 = 304435 (Correct)\n    C34: 304435 + 4134 = 308569 (Correct)\n    C35: 308569 + 17298 = 325867 (Correct)\n    C36: 325867 + 11903 = 337770 (Correct)\n    C37: 337770 + 1612 = 339382 (Correct)\n    C38: 339382 - 17699 = 321683 (Correct)\n    C39: 321683 + 7643 = 329326 (Correct)\n    C40: 329326 - 267 = 329059 (Correct)\n    C41: 329059 - 8740 = 320319 (Correct)\n    C42: 320319 + 17946 = 338265 (Correct)\n    C43: 338265 - 17299 = 320966 (Correct)\n    C44: 320966 + 3621 = 324587 (Correct)\n    C45: 324587 - 6633 = 317954 (Correct)\n    C46: 317954 - 4009 = 313945 (Correct)\n    C47: 313945 + 9074 = 323019 (Correct)\n    C48: 323019 + 17425 = 340444 (Correct)\n\n    List the balances as strings in order:\n    1. \"274010\"\n    2. \"274147\"\n    3. \"254338\"\n    4. \"259623\"\n    5. \"274042\"\n    6. \"258335\"\n    7. \"275035\"\n    8. \"294063\"\n    9. \"295995\"\n    10. \"282819\"\n    11. \"293065\"\n    12. \"290152\"\n    13. \"301675\"\n    14. \"287472\"\n    15. \"306289\"\n    16. \"301364\"\n    17. \"300320\"\n    18. \"294495\"\n    19. \"313944\"\n    20. \"314101\"\n    21. \"313597\"\n    22. \"307328\"\n    23. \"306351\"\n    24. \"294949\"\n    25. \"290334\"\n    26. \"306497\"\n    27. \"306803\"\n    28. \"303075\"\n    29. \"297091\"\n    30. \"304566\"\n    31. \"311720\"\n    32. \"304542\"\n    33. \"304435\"\n    34. \"308569\"\n    35. \"325867\"\n    36. \"337770\"\n    37. \"339382\"\n    38. \"321683\"\n    39. \"329326\"\n    40. \"329059\"\n    41. \"320319\"\n    42. \"338265\"\n    43. \"320966\"\n    44. \"324587\"\n    45. \"317954\"\n    46. \"313945\"\n    47. \"323019\"\n    48. \"340444\"\n\n    Ensure there are exactly 48 values and the format is correct JSON.<channel|>{\"values\":[\"274010\",\"274147\",\"254338\",\"259623\",\"274042\",\"258335\",\"275035\",\"294063\",\"295995\",\"282819\",\"293065\",\"290152\",\"301675\",\"287472\",\"306289\",\"301364\",\"300320\",\"294495\",\"313944\",\"314101\",\"313597\",\"307328\",\"306351\",\"294949\",\"290334\",\"306497\",\"306803\",\"303075\",\"297091\",\"304566\",\"311720\",\"304542\",\"304435\",\"308569\",\"325867\",\"337770\",\"339382\",\"321683\",\"329326\",\"329059\",\"320319\",\"338265\",\"320966\",\"324587\",\"317954\",\"313945\",\"323019\",\"340444\"]}\ntotal time: 23184.28ms, time per step: 165.60ms (140 steps over 26 blocks, entropy-bound)\nthroughput: 287.1 tok/s (6656 tok in 23184.28ms), in-step parallel 1546 tok/s (256-tok canvas x 5.4 steps/block)\n\n> ",
+    "raw_output": "<|channel>thought\n*   Input: A list of cash events (WITHDRAWAL, DEPOSIT, FEE, INTEREST) and an opening balance.\n    *   Goal: Replay events in order, calculating the balance after each event.\n    *   Interest: Rounded half up to cents.\n    *   Output: Return exactly one compact JSON object `{\"values\":[\"...]}` with 48 string values representing the balances.\n\n    *   `opening_balance_cents`: 276406\n\n    1.  C01 (WITHDRAWAL, 2396):\n        *   Balance: 276406 - 2396 = 274010\n    2.  C02 (INTEREST, 5 bps):\n        *   Interest: 274010 * 5 / 10000 = 137.005 -> 137 (rounded half up)\n        *   Balance: 274010 + 137 = 274147\n    3.  C03 (WITHDRAWAL, 19809):\n        *   Balance: 274147 - 19809 = 254338\n    4.  C04 (DEPOSIT, 5285):\n        *   Balance: 254338 + 5285 = 259623\n    5.  C05 (DEPOSIT, 14419):\n        *   Balance: 259623 + 14419 = 274042\n    6.  C06 (WITHDRAWAL, 15707):\n        *   Balance: 274042 - 15707 = 258335\n    7.  C07 (DEPOSIT, 16700):\n        *   Balance: 258335 + 16700 = 275035\n    8.  C08 (DEPOSIT, 19028):\n        *   Balance: 275035 + 19028 = 294063\n    9.  C09 (DEPOSIT, 1932):\n        *   Balance: 294063 + 1932 = 295995\n    10. C10 (FEE, 13176):\n        *   Balance: 295995 - 13176 = 282819\n    11. C11 (DEPOSIT, 10246):\n        *   Balance: 282819 + 10246 = 293065\n    12. C12 (WITHDRAWAL, 2913):\n        *   Balance: 293065 - 2913 = 290152\n    13. C13 (DEPOSIT, 11523):\n        *   Balance: 290152 + 11523 = 301675\n    14. C14 (WITHDRAWAL, 14203):\n        *   Balance: 301675 - 14203 = 287472\n    15. C15 (DEPOSIT, 18817):\n        *   Balance: 287472 + 18817 = 306289\n    16. C16 (FEE, 4925):\n        *   Balance: 306289 - 4925 = 301364\n    17. C17 (WITHDRAWAL, 1044):\n        *   Balance: 301364 - 1044 = 300320\n    18. C18 (FEE, 5825):\n        *   Balance: 300320 - 5825 = 294495\n    19. C19 (DEPOSIT, 19449):\n        *   Balance: 294495 + 19449 = 313944\n    20. C20 (INTEREST, 5 bps):\n        *   Interest: 313944 * 5 / 10000 = 156.972 -> 157\n        *   Balance: 313944 + 157 = 314101\n    21. C21 (FEE, 504):\n        *   Balance: 314101 - 504 = 313597\n    22. C22 (WITHDRAWAL, 6269):\n        *   Balance: 313597 - 6269 = 307328\n    23. C23 (WITHDRAWAL, 977):\n        *   Balance: 307328 - 977 = 306351\n    24. C24 (WITHDRAWAL, 11402):\n        *   Balance: 306351 - 11402 = 294949\n    25. C25 (WITHDRAWAL, 4615):\n        *   Balance: 294949 - 4615 = 290334\n    26. C26 (DEPOSIT, 16163):\n        *   Balance: 290334 + 16163 = 306497\n    27. C27 (INTEREST, 10 bps):\n        *   Interest: 306497 * 10 / 10000 = 306.497 -> 306\n        *   Balance: 306497 + 306 = 306803\n    28. C28 (WITHDRAWAL, 3728):\n        *   Balance: 306803 - 3728 = 303075\n    29. C29 (WITHDRAWAL, 5984):\n        *   Balance: 303075 - 5984 = 297091\n    30. C30 (DEPOSIT, 7475):\n        *   Balance: 297091 + 7475 = 304566\n    31. C31 (DEPOSIT, 7154):\n        *   Balance: 304566 + 7154 = 311720\n    32. C32 (FEE, 7178):\n        *   Balance: 311720 - 7178 = 304542\n    33. C33 (WITHDRAWAL, 107):\n        *   Balance: 304542 - 107 = 304435\n    34. C34 (DEPOSIT, 4134):\n        *   Balance: 304435 + 4134 = 308569\n    35. C35 (DEPOSIT, 17298):\n        *   Balance: 308569 + 17298 = 325867\n    36. C36 (DEPOSIT, 11903):\n        *   Balance: 325867 + 11903 = 337770\n    37. C37 (DEPOSIT, 1612):\n        *   Balance: 337770 + 1612 = 339382\n    38. C38 (WITHDRAWAL, 17699):\n        *   Balance: 339382 - 17699 = 321683\n    39. C39 (DEPOSIT, 7643):\n        *   Balance: 321683 + 7643 = 329326\n    40. C40 (WITHDRAWAL, 267):\n        *   Balance: 329326 - 267 = 329059\n    41. C41 (WITHDRAWAL, 8740):\n        *   Balance: 329059 - 8740 = 320319\n    42. C42 (DEPOSIT, 17946):\n        *   Balance: 320319 + 17946 = 338265\n    43. C43 (WITHDRAWAL, 17299):\n        *   Balance: 338265 - 17299 = 320966\n    44. C44 (DEPOSIT, 3621):\n        *   Balance: 320966 + 3621 = 324587\n    45. C45 (WITHDRAWAL, 6633):\n        *   Balance: 324587 - 6633 = 317954\n    46. C46 (WITHDRAWAL, 4009):\n        *   Balance: 317954 - 4009 = 313945\n    47. C47 (DEPOSIT, 9074):\n        *   Balance: 313945 + 9074 = 323019\n    48. C48 (DEPOSIT, 17425):\n        *   Balance: 323019 + 17425 = 340444\n\n    1. C01: 276406 - 2396 = 274010\n    2. C02: 274010 + round(274010 * 0.0005) = 274010 + 137 = 274147\n    3. C03: 274147 - 19809 = 254338\n    4. C04: 254338 + 5285 = 259623\n    5. C05: 259623 + 14419 = 274042\n    6. C06: 274042 - 15707 = 258335\n    7. C07: 258335 + 16700 = 275035\n    8. C08: 275035 + 19028 = 294063\n    9. C09: 294063 + 1932 = 295995\n    10. C10: 295995 - 13176 = 282819\n    11. C11: 282819 + 10246 = 293065\n    12. C12: 293065 - 2913 = 290152\n    13. C13: 290152 + 11523 = 301675\n    14. C14: 301675 - 14203 = 287472\n    15. C15: 287472 + 18817 = 306289\n    16. C16: 306289 - 4925 = 301364\n    17. C17: 301364 - 1044 = 300320\n    18. C18: 300320 - 5825 = 294495\n    19. C19: 294495 + 19449 = 313944\n    20. C20: 313944 + round(313944 * 0.0005) = 313944 + 157 = 314101\n    21. C21: 314101 - 504 = 313597\n    22. C22: 313597 - 6269 = 307328\n    23. C23: 307328 - 977 = 306351\n    24. C24: 306351 - 11402 = 294949\n    25. C25: 294949 - 4615 = 290334\n    26. C26: 290334 + 16163 = 306497\n    27. C27: 306497 + round(306497 * 0.001) = 306497 + 306 = 306803\n    28. C28: 306803 - 3728 = 303075\n    29. C29: 303075 - 5984 = 297091\n    30. C30: 297091 + 7475 = 304566\n    31. C31: 304566 + 7154 = 311720\n    32. C32: 311720 - 7178 = 304542\n    33. C33: 304542 - 107 = 304435\n    34. C34: 304435 + 4134 = 308569\n    35. C35: 308569 + 17298 = 325867\n    36. C36: 325867 + 11903 = 337770\n    37. C37: 337770 + 1612 = 339382\n    38. C38: 339382 - 17699 = 321683\n    39. C39: 321683 + 7643 = 329326\n    40. C40: 329326 - 267 = 329059\n    41. C41: 329059 - 8740 = 320319\n    42. C42: 320319 + 17946 = 338265\n    43. C43: 338265 - 17299 = 320966\n    44. C44: 320966 + 3621 = 324587\n    45. C45: 324587 - 6633 = 317954\n    46. C46: 317954 - 4009 = 313945\n    47. C47: 313945 + 9074 = 323019\n    48. C48: 323019 + 17425 = 340444\n\n    Wait, let me double-check the interest calculations again.\n    C02: 274010 * 0.0005 = 137.005. Rounding half up gives 137. Correct.\n    C20: 313944 * 0.0005 = 156.972. Rounding half up gives 157. Correct.\n    C27: 306497 * 0.001 = 306.497. Rounding half up gives 306. Correct.\n\n    Let me re-check the subtractions/additions.\n    C01: 276406 - 2396 = 274010 (Correct)\n    C02: 274010 + 137 = 274147 (Correct)\n    C03: 274147 - 19809 = 254338 (Correct)\n    C04: 254338 + 5285 = 259623 (Correct)\n    C05: 259623 + 14419 = 274042 (Correct)\n    C06: 274042 - 15707 = 258335 (Correct)\n    C07: 258335 + 16700 = 275035 (Correct)\n    C08: 275035 + 19028 = 294063 (Correct)\n    C09: 294063 + 1932 = 295995 (Correct)\n    C10: 295995 - 13176 = 282819 (Correct)\n    C11: 282819 + 10246 = 293065 (Correct)\n    C12: 293065 - 2913 = 290152 (Correct)\n    C13: 290152 + 11523 = 301675 (Correct)\n    C14: 301675 - 14203 = 287472 (Correct)\n    C15: 287472 + 18817 = 306289 (Correct)\n    C16: 306289 - 4925 = 301364 (Correct)\n    C17: 301364 - 1044 = 300320 (Correct)\n    C18: 300320 - 5825 = 294495 (Correct)\n    C19: 294495 + 19449 = 313944 (Correct)\n    C20: 313944 + 157 = 314101 (Correct)\n    C21: 314101 - 504 = 313597 (Correct)\n    C22: 313597 - 6269 = 307328 (Correct)\n    C23: 307328 - 977 = 306351 (Correct)\n    C24: 306351 - 11402 = 294949 (Correct)\n    C25: 294949 - 4615 = 290334 (Correct)\n    C26: 290334 + 16163 = 306497 (Correct)\n    C27: 306497 + 306 = 306803 (Correct)\n    C28: 306803 - 3728 = 303075 (Correct)\n    C29: 303075 - 5984 = 297091 (Correct)\n    C30: 297091 + 7475 = 304566 (Correct)\n    C31: 304566 + 7154 = 311720 (Correct)\n    C32: 311720 - 7178 = 304542 (Correct)\n    C33: 304542 - 107 = 304435 (Correct)\n    C34: 304435 + 4134 = 308569 (Correct)\n    C35: 308569 + 17298 = 325867 (Correct)\n    C36: 325867 + 11903 = 337770 (Correct)\n    C37: 337770 + 1612 = 339382 (Correct)\n    C38: 339382 - 17699 = 321683 (Correct)\n    C39: 321683 + 7643 = 329326 (Correct)\n    C40: 329326 - 267 = 329059 (Correct)\n    C41: 329059 - 8740 = 320319 (Correct)\n    C42: 320319 + 17946 = 338265 (Correct)\n    C43: 338265 - 17299 = 320966 (Correct)\n    C44: 320966 + 3621 = 324587 (Correct)\n    C45: 324587 - 6633 = 317954 (Correct)\n    C46: 317954 - 4009 = 313945 (Correct)\n    C47: 313945 + 9074 = 323019 (Correct)\n    C48: 323019 + 17425 = 340444 (Correct)\n\n    List the balances as strings in order:\n    1. \"274010\"\n    2. \"274147\"\n    3. \"254338\"\n    4. \"259623\"\n    5. \"274042\"\n    6. \"258335\"\n    7. \"275035\"\n    8. \"294063\"\n    9. \"295995\"\n    10. \"282819\"\n    11. \"293065\"\n    12. \"290152\"\n    13. \"301675\"\n    14. \"287472\"\n    15. \"306289\"\n    16. \"301364\"\n    17. \"300320\"\n    18. \"294495\"\n    19. \"313944\"\n    20. \"314101\"\n    21. \"313597\"\n    22. \"307328\"\n    23. \"306351\"\n    24. \"294949\"\n    25. \"290334\"\n    26. \"306497\"\n    27. \"306803\"\n    28. \"303075\"\n    29. \"297091\"\n    30. \"304566\"\n    31. \"311720\"\n    32. \"304542\"\n    33. \"304435\"\n    34. \"308569\"\n    35. \"325867\"\n    36. \"337770\"\n    37. \"339382\"\n    38. \"321683\"\n    39. \"329326\"\n    40. \"329059\"\n    41. \"320319\"\n    42. \"338265\"\n    43. \"320966\"\n    44. \"324587\"\n    45. \"317954\"\n    46. \"313945\"\n    47. \"323019\"\n    48. \"340444\"\n\n    Ensure there are exactly 48 values and the format is correct JSON.<channel|>{\"values\":[\"274010\",\"274147\",\"254338\",\"259623\",\"274042\",\"258335\",\"275035\",\"294063\",\"295995\",\"282819\",\"293065\",\"290152\",\"301675\",\"287472\",\"306289\",\"301364\",\"300320\",\"294495\",\"313944\",\"314101\",\"313597\",\"307328\",\"306351\",\"294949\",\"290334\",\"306497\",\"306803\",\"303075\",\"297091\",\"304566\",\"311720\",\"304542\",\"304435\",\"308569\",\"325867\",\"337770\",\"339382\",\"321683\",\"329326\",\"329059\",\"320319\",\"338265\",\"320966\",\"324587\",\"317954\",\"313945\",\"323019\",\"340444\"]}",
+    "wall_seconds": 23.186269710000488,
+    "internal_compute_seconds": 23.184279999999998,
+    "canvas_work_tokens": 6656,
+    "worker_elapsed_seconds": 23.187817736999932,
+    "runtime_ready": true
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "attempts": 3,
+  "correct": 3,
+  "success_rate": 1.0,
+  "request_seconds_per_correct": 18.811287843666758,
+  "allocation_seconds_per_correct": 24.249651634666634,
+  "batch_allocation_window_seconds": 72.7489549039999,
+  "groups": {
+    "direct": {
+      "attempts": 1,
+      "correct": 1,
+      "median_valid_seconds": 21.86644850000016
+    },
+    "mixed": {
+      "attempts": 1,
+      "correct": 1,
+      "median_valid_seconds": 9.609169965000092
+    },
+    "chained": {
+      "attempts": 1,
+      "correct": 1,
+      "median_valid_seconds": 24.958245066000018
+    }
+  },
+  "planned_order": [
+    "chained",
+    "direct",
+    "mixed"
+  ],
+  "stop_reason": "controls_completed"
+}

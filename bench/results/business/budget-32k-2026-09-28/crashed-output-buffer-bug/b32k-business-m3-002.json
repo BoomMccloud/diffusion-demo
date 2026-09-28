@@ -1,0 +1,455 @@
+{
+  "arm": "b32k",
+  "case_id": "business-m3-002",
+  "client_wall_seconds": 29.67661243900011,
+  "prefill_seconds": 1.645489,
+  "denoise_seconds": 12.61174,
+  "blocks": 7,
+  "reused_tokens": [
+    0,
+    1498,
+    1754,
+    2010,
+    2266,
+    2522,
+    2778
+  ],
+  "native_stop": null,
+  "valid": false,
+  "score": {
+    "valid": false,
+    "exact_match": false,
+    "per_decision_correct": 0,
+    "first_error": 0,
+    "constraint_violations": [
+      "canonical_answer_contract"
+    ],
+    "objective_value": null
+  },
+  "result": {
+    "request_id": "ab-b32k-business-m3-002",
+    "request_state": "failed",
+    "process_generation": "cbe40210a68d4f52bb7106db227a8384",
+    "native_turn": 1,
+    "trace_path": "/content/worker-b32k/native/cbe40210a68d4f52bb7106db227a8384.jsonl",
+    "elapsed_seconds": 14.976305293000223,
+    "error": {
+      "type": "RuntimeError",
+      "message": "diffusion runner exited with -11"
+    },
+    "exit_code": -11,
+    "native_events": [
+      {
+        "version": 2,
+        "event": "begin",
+        "monotonic_seconds": 3618.326786572,
+        "turn": 1,
+        "block": -1,
+        "repetition_policy": "off"
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 3618.326808852,
+        "turn": 1,
+        "block": 0,
+        "prefix_tokens": 1498,
+        "max_length": 1754
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 3618.326922621,
+        "turn": 1,
+        "block": 0,
+        "prefix_tokens": 1498,
+        "reused_tokens": 0,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 3619.656498142,
+        "turn": 1,
+        "block": 0,
+        "duration_seconds": 1.329558
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 3619.656523726,
+        "turn": 1,
+        "block": 0
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 3623.363725848,
+        "turn": 1,
+        "block": 0,
+        "duration_seconds": 3.707196
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 3623.363832807,
+        "turn": 1,
+        "block": 0,
+        "duration_seconds": 5.037019
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 3623.363969973,
+        "turn": 1,
+        "block": 0,
+        "tokens": 256,
+        "committed_tokens": 256
+      },
+      {
+        "version": 2,
+        "event": "channel",
+        "monotonic_seconds": 3623.364040155,
+        "turn": 1,
+        "block": 0,
+        "channel": "thought",
+        "observed_at_commit": true
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 3623.364048034,
+        "turn": 1,
+        "block": 1,
+        "prefix_tokens": 1754,
+        "max_length": 2010
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 3623.36434516,
+        "turn": 1,
+        "block": 1,
+        "prefix_tokens": 1754,
+        "reused_tokens": 1498,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 3623.41642781,
+        "turn": 1,
+        "block": 1,
+        "duration_seconds": 0.052067
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 3623.416452594,
+        "turn": 1,
+        "block": 1
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 3624.553881244,
+        "turn": 1,
+        "block": 1,
+        "duration_seconds": 1.137423
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 3624.554069864,
+        "turn": 1,
+        "block": 1,
+        "duration_seconds": 1.190017
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 3624.554126101,
+        "turn": 1,
+        "block": 1,
+        "tokens": 256,
+        "committed_tokens": 512
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 3624.554172115,
+        "turn": 1,
+        "block": 2,
+        "prefix_tokens": 2010,
+        "max_length": 2266
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 3624.554297414,
+        "turn": 1,
+        "block": 2,
+        "prefix_tokens": 2010,
+        "reused_tokens": 1754,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 3624.604373602,
+        "turn": 1,
+        "block": 2,
+        "duration_seconds": 0.050065
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 3624.604403924,
+        "turn": 1,
+        "block": 2
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 3625.35558624,
+        "turn": 1,
+        "block": 2,
+        "duration_seconds": 0.751175
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 3625.355775529,
+        "turn": 1,
+        "block": 2,
+        "duration_seconds": 0.801599
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 3625.355837615,
+        "turn": 1,
+        "block": 2,
+        "tokens": 256,
+        "committed_tokens": 768
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 3625.355893104,
+        "turn": 1,
+        "block": 3,
+        "prefix_tokens": 2266,
+        "max_length": 2522
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 3625.356040582,
+        "turn": 1,
+        "block": 3,
+        "prefix_tokens": 2266,
+        "reused_tokens": 2010,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 3625.40802345,
+        "turn": 1,
+        "block": 3,
+        "duration_seconds": 0.05197
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 3625.408052288,
+        "turn": 1,
+        "block": 3
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 3626.168940503,
+        "turn": 1,
+        "block": 3,
+        "duration_seconds": 0.760882
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 3626.16917546,
+        "turn": 1,
+        "block": 3,
+        "duration_seconds": 0.813277
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 3626.169186582,
+        "turn": 1,
+        "block": 3,
+        "tokens": 256,
+        "committed_tokens": 1024
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 3626.169265006,
+        "turn": 1,
+        "block": 4,
+        "prefix_tokens": 2522,
+        "max_length": 2778
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 3626.169401097,
+        "turn": 1,
+        "block": 4,
+        "prefix_tokens": 2522,
+        "reused_tokens": 2266,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 3626.222654191,
+        "turn": 1,
+        "block": 4,
+        "duration_seconds": 0.053243
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 3626.222692054,
+        "turn": 1,
+        "block": 4
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 3627.127724065,
+        "turn": 1,
+        "block": 4,
+        "duration_seconds": 0.905025
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 3627.127927011,
+        "turn": 1,
+        "block": 4,
+        "duration_seconds": 0.958657
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 3627.127992143,
+        "turn": 1,
+        "block": 4,
+        "tokens": 256,
+        "committed_tokens": 1280
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 3627.128075589,
+        "turn": 1,
+        "block": 5,
+        "prefix_tokens": 2778,
+        "max_length": 3034
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 3627.128236567,
+        "turn": 1,
+        "block": 5,
+        "prefix_tokens": 2778,
+        "reused_tokens": 2522,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 3627.182253198,
+        "turn": 1,
+        "block": 5,
+        "duration_seconds": 0.054007
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 3627.182282703,
+        "turn": 1,
+        "block": 5
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 3632.532327376,
+        "turn": 1,
+        "block": 5,
+        "duration_seconds": 5.350039
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 3632.532568027,
+        "turn": 1,
+        "block": 5,
+        "duration_seconds": 5.404485
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 3632.532578052,
+        "turn": 1,
+        "block": 5,
+        "tokens": 256,
+        "committed_tokens": 1536
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 3632.532674053,
+        "turn": 1,
+        "block": 6,
+        "prefix_tokens": 3034,
+        "max_length": 3290
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 3632.532827439,
+        "turn": 1,
+        "block": 6,
+        "prefix_tokens": 3034,
+        "reused_tokens": 2778,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 3632.58741809,
+        "turn": 1,
+        "block": 6,
+        "duration_seconds": 0.054579
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 3632.587449688,
+        "turn": 1,
+        "block": 6
+      }
+    ],
+    "cancellation_ack": null,
+    "runtime_ready": false,
+    "runner_transcript": "0.14.470.995 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.19.508.444 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.20.698.375 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.21.500.122 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.22.313.475 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.23.272.313 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.28.676.905 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n",
+    "raw_output": "",
+    "wall_seconds": null,
+    "worker_elapsed_seconds": 29.510484619999716
+  }
+}

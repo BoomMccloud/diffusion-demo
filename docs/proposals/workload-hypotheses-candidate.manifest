@@ -1,0 +1,7 @@
+# Candidate identity covers the native replacement files below. BACKLOG.md must be absent.
+# Reproduce from the repository root with:
+# test ! -e BACKLOG.md && shasum -a 256 README.md docs/workload_hypotheses.md cells/colab_bootstrap.py | shasum -a 256
+README.md
+docs/workload_hypotheses.md
+cells/colab_bootstrap.py
+expected_sha256=6395e721f93ef8548188a93b615547b537680a99f8e16a58fb0829a8f94ee089

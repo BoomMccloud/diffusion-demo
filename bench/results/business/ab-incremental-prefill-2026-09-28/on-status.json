@@ -1,0 +1,20 @@
+{
+  "protocol_version": 2,
+  "active_request": null,
+  "state": "unloaded",
+  "ready": false,
+  "loaded": false,
+  "runner_pid": null,
+  "configuration": {
+    "max_tokens": 8704,
+    "context_size": 11264,
+    "seed": 20260909,
+    "native_protocol": true,
+    "trace_mode": "summary",
+    "runner_path": "/content/llama.cpp-diffusion/build/bin/llama-diffusion-cli",
+    "model_path": "/content/gguf_models/diffusiongemma-26B-A4B-it-Q4_K_M.gguf",
+    "prefill_chunk": 2048,
+    "incremental_prefill": true,
+    "repetition_policy": "off"
+  }
+}

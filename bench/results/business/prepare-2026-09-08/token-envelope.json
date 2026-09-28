@@ -1,0 +1,76 @@
+{
+  "max_prompt": {
+    "case_id": "business-m1-000",
+    "model": "autoregressive",
+    "prompt": 2345,
+    "expected_answer": 151,
+    "max_safe_allowance": 8919
+  },
+  "max_expected_answer": {
+    "case_id": "business-d2-001",
+    "model": "autoregressive",
+    "prompt": 1414,
+    "expected_answer": 379,
+    "max_safe_allowance": 9850
+  },
+  "minimum_safe_allowance": 379,
+  "maximum_context_safe_allowance": 8919,
+  "limiting_rows": [
+    {
+      "case_id": "business-m1-000",
+      "model": "autoregressive",
+      "prompt": 2345,
+      "expected_answer": 151,
+      "max_safe_allowance": 8919
+    },
+    {
+      "case_id": "business-m1-000",
+      "model": "diffusion",
+      "prompt": 2345,
+      "expected_answer": 151,
+      "max_safe_allowance": 8919
+    },
+    {
+      "case_id": "business-m1-001",
+      "model": "autoregressive",
+      "prompt": 2339,
+      "expected_answer": 144,
+      "max_safe_allowance": 8925
+    },
+    {
+      "case_id": "business-m1-001",
+      "model": "diffusion",
+      "prompt": 2339,
+      "expected_answer": 144,
+      "max_safe_allowance": 8925
+    },
+    {
+      "case_id": "business-m1-002",
+      "model": "autoregressive",
+      "prompt": 2334,
+      "expected_answer": 155,
+      "max_safe_allowance": 8930
+    },
+    {
+      "case_id": "business-m1-002",
+      "model": "diffusion",
+      "prompt": 2334,
+      "expected_answer": 155,
+      "max_safe_allowance": 8930
+    },
+    {
+      "case_id": "business-d3-000",
+      "model": "autoregressive",
+      "prompt": 1927,
+      "expected_answer": 133,
+      "max_safe_allowance": 9337
+    },
+    {
+      "case_id": "business-d3-000",
+      "model": "diffusion",
+      "prompt": 1927,
+      "expected_answer": 133,
+      "max_safe_allowance": 9337
+    }
+  ]
+}

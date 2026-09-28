@@ -1,0 +1,1162 @@
+{
+  "arm": "b32k",
+  "case_id": "business-d3-001",
+  "client_wall_seconds": 25.583047867999994,
+  "prefill_seconds": 1.199041,
+  "denoise_seconds": 24.322694,
+  "blocks": 18,
+  "reused_tokens": [
+    41,
+    1917,
+    2173,
+    2429,
+    2685,
+    2941,
+    3197,
+    3453,
+    3709,
+    3965,
+    4221,
+    4477,
+    4733,
+    4989,
+    5245,
+    5501,
+    5757,
+    6013
+  ],
+  "native_stop": "eog",
+  "valid": false,
+  "score": {
+    "valid": false,
+    "exact_match": false,
+    "per_decision_correct": 0,
+    "first_error": 0,
+    "constraint_violations": [],
+    "objective_value": null
+  },
+  "result": {
+    "request_id": "ab-b32k-business-d3-001",
+    "request_state": "completed",
+    "process_generation": "e0fcbb45c3c943989300413e1b7bcd1f",
+    "native_turn": 8,
+    "trace_path": "/content/worker-b32k/native/e0fcbb45c3c943989300413e1b7bcd1f.jsonl",
+    "elapsed_seconds": 25.544299936000243,
+    "native_events": [
+      {
+        "version": 2,
+        "event": "begin",
+        "monotonic_seconds": 5196.704889183,
+        "turn": 8,
+        "block": -1,
+        "repetition_policy": "off"
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 5196.704922355,
+        "turn": 8,
+        "block": 0,
+        "prefix_tokens": 1917,
+        "max_length": 2173
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 5196.70518374,
+        "turn": 8,
+        "block": 0,
+        "prefix_tokens": 1917,
+        "reused_tokens": 41,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 5196.887328836,
+        "turn": 8,
+        "block": 0,
+        "duration_seconds": 0.182132
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 5196.887355844,
+        "turn": 8,
+        "block": 0
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 5199.804747497,
+        "turn": 8,
+        "block": 0,
+        "duration_seconds": 2.917386
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 5199.804958825,
+        "turn": 8,
+        "block": 0,
+        "duration_seconds": 3.100031
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 5199.80496668,
+        "turn": 8,
+        "block": 0,
+        "tokens": 256,
+        "committed_tokens": 256
+      },
+      {
+        "version": 2,
+        "event": "channel",
+        "monotonic_seconds": 5199.80501091,
+        "turn": 8,
+        "block": 0,
+        "channel": "thought",
+        "observed_at_commit": true
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 5199.805018468,
+        "turn": 8,
+        "block": 1,
+        "prefix_tokens": 2173,
+        "max_length": 2429
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 5199.805212642,
+        "turn": 8,
+        "block": 1,
+        "prefix_tokens": 2173,
+        "reused_tokens": 1917,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 5199.859466739,
+        "turn": 8,
+        "block": 1,
+        "duration_seconds": 0.054244
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 5199.859496248,
+        "turn": 8,
+        "block": 1
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 5200.62645226,
+        "turn": 8,
+        "block": 1,
+        "duration_seconds": 0.76695
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 5200.626671551,
+        "turn": 8,
+        "block": 1,
+        "duration_seconds": 0.821649
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 5200.626742645,
+        "turn": 8,
+        "block": 1,
+        "tokens": 256,
+        "committed_tokens": 512
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 5200.626795965,
+        "turn": 8,
+        "block": 2,
+        "prefix_tokens": 2429,
+        "max_length": 2685
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 5200.626961399,
+        "turn": 8,
+        "block": 2,
+        "prefix_tokens": 2429,
+        "reused_tokens": 2173,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 5200.679587843,
+        "turn": 8,
+        "block": 2,
+        "duration_seconds": 0.052615
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 5200.679619588,
+        "turn": 8,
+        "block": 2
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 5201.580325025,
+        "turn": 8,
+        "block": 2,
+        "duration_seconds": 0.9007
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 5201.580660363,
+        "turn": 8,
+        "block": 2,
+        "duration_seconds": 0.953857
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 5201.580693129,
+        "turn": 8,
+        "block": 2,
+        "tokens": 256,
+        "committed_tokens": 768
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 5201.580753836,
+        "turn": 8,
+        "block": 3,
+        "prefix_tokens": 2685,
+        "max_length": 2941
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 5201.580914929,
+        "turn": 8,
+        "block": 3,
+        "prefix_tokens": 2685,
+        "reused_tokens": 2429,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 5201.634709129,
+        "turn": 8,
+        "block": 3,
+        "duration_seconds": 0.053784
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 5201.634741794,
+        "turn": 8,
+        "block": 3
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 5202.411653188,
+        "turn": 8,
+        "block": 3,
+        "duration_seconds": 0.776905
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 5202.411952748,
+        "turn": 8,
+        "block": 3,
+        "duration_seconds": 0.831193
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 5202.411962887,
+        "turn": 8,
+        "block": 3,
+        "tokens": 256,
+        "committed_tokens": 1024
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 5202.41205776,
+        "turn": 8,
+        "block": 4,
+        "prefix_tokens": 2941,
+        "max_length": 3197
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 5202.41222638,
+        "turn": 8,
+        "block": 4,
+        "prefix_tokens": 2941,
+        "reused_tokens": 2685,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 5202.46706936,
+        "turn": 8,
+        "block": 4,
+        "duration_seconds": 0.054833
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 5202.467097885,
+        "turn": 8,
+        "block": 4
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 5203.257334651,
+        "turn": 8,
+        "block": 4,
+        "duration_seconds": 0.790231
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 5203.257639383,
+        "turn": 8,
+        "block": 4,
+        "duration_seconds": 0.845573
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 5203.257664598,
+        "turn": 8,
+        "block": 4,
+        "tokens": 256,
+        "committed_tokens": 1280
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 5203.25774567,
+        "turn": 8,
+        "block": 5,
+        "prefix_tokens": 3197,
+        "max_length": 3453
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 5203.257916204,
+        "turn": 8,
+        "block": 5,
+        "prefix_tokens": 3197,
+        "reused_tokens": 2941,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 5203.313699623,
+        "turn": 8,
+        "block": 5,
+        "duration_seconds": 0.055773
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 5203.313722619,
+        "turn": 8,
+        "block": 5
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 5204.262266514,
+        "turn": 8,
+        "block": 5,
+        "duration_seconds": 0.948538
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 5204.26257235,
+        "turn": 8,
+        "block": 5,
+        "duration_seconds": 1.004822
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 5204.262581829,
+        "turn": 8,
+        "block": 5,
+        "tokens": 256,
+        "committed_tokens": 1536
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 5204.26268978,
+        "turn": 8,
+        "block": 6,
+        "prefix_tokens": 3453,
+        "max_length": 3709
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 5204.262869842,
+        "turn": 8,
+        "block": 6,
+        "prefix_tokens": 3453,
+        "reused_tokens": 3197,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 5204.319943557,
+        "turn": 8,
+        "block": 6,
+        "duration_seconds": 0.057063
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 5204.319969646,
+        "turn": 8,
+        "block": 6
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 5205.868145705,
+        "turn": 8,
+        "block": 6,
+        "duration_seconds": 1.54817
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 5205.868452184,
+        "turn": 8,
+        "block": 6,
+        "duration_seconds": 1.605756
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 5205.868461943,
+        "turn": 8,
+        "block": 6,
+        "tokens": 256,
+        "committed_tokens": 1792
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 5205.868577388,
+        "turn": 8,
+        "block": 7,
+        "prefix_tokens": 3709,
+        "max_length": 3965
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 5205.868763739,
+        "turn": 8,
+        "block": 7,
+        "prefix_tokens": 3709,
+        "reused_tokens": 3453,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 5205.926680767,
+        "turn": 8,
+        "block": 7,
+        "duration_seconds": 0.057907
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 5205.926705463,
+        "turn": 8,
+        "block": 7
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 5206.751086817,
+        "turn": 8,
+        "block": 7,
+        "duration_seconds": 0.824375
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 5206.751493628,
+        "turn": 8,
+        "block": 7,
+        "duration_seconds": 0.882907
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 5206.751509453,
+        "turn": 8,
+        "block": 7,
+        "tokens": 256,
+        "committed_tokens": 2048
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 5206.751640196,
+        "turn": 8,
+        "block": 8,
+        "prefix_tokens": 3965,
+        "max_length": 4221
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 5206.751850988,
+        "turn": 8,
+        "block": 8,
+        "prefix_tokens": 3965,
+        "reused_tokens": 3709,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 5206.810367908,
+        "turn": 8,
+        "block": 8,
+        "duration_seconds": 0.058508
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 5206.810390757,
+        "turn": 8,
+        "block": 8
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 5207.790386317,
+        "turn": 8,
+        "block": 8,
+        "duration_seconds": 0.97999
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 5207.790706733,
+        "turn": 8,
+        "block": 8,
+        "duration_seconds": 1.039061
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 5207.790736947,
+        "turn": 8,
+        "block": 8,
+        "tokens": 256,
+        "committed_tokens": 2304
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 5207.790862411,
+        "turn": 8,
+        "block": 9,
+        "prefix_tokens": 4221,
+        "max_length": 4477
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 5207.791097879,
+        "turn": 8,
+        "block": 9,
+        "prefix_tokens": 4221,
+        "reused_tokens": 3965,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 5207.849799556,
+        "turn": 8,
+        "block": 9,
+        "duration_seconds": 0.058688
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 5207.849844215,
+        "turn": 8,
+        "block": 9
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 5208.530643144,
+        "turn": 8,
+        "block": 9,
+        "duration_seconds": 0.680794
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 5208.53101047,
+        "turn": 8,
+        "block": 9,
+        "duration_seconds": 0.740132
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 5208.531024042,
+        "turn": 8,
+        "block": 9,
+        "tokens": 256,
+        "committed_tokens": 2560
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 5208.531177681,
+        "turn": 8,
+        "block": 10,
+        "prefix_tokens": 4477,
+        "max_length": 4733
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 5208.531393902,
+        "turn": 8,
+        "block": 10,
+        "prefix_tokens": 4477,
+        "reused_tokens": 4221,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 5208.589042537,
+        "turn": 8,
+        "block": 10,
+        "duration_seconds": 0.05764
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 5208.589066794,
+        "turn": 8,
+        "block": 10
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 5209.717406098,
+        "turn": 8,
+        "block": 10,
+        "duration_seconds": 1.128334
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 5209.717756377,
+        "turn": 8,
+        "block": 10,
+        "duration_seconds": 1.186573
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 5209.717768093,
+        "turn": 8,
+        "block": 10,
+        "tokens": 256,
+        "committed_tokens": 2816
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 5209.717923574,
+        "turn": 8,
+        "block": 11,
+        "prefix_tokens": 4733,
+        "max_length": 4989
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 5209.718193646,
+        "turn": 8,
+        "block": 11,
+        "prefix_tokens": 4733,
+        "reused_tokens": 4477,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 5209.778126355,
+        "turn": 8,
+        "block": 11,
+        "duration_seconds": 0.059918
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 5209.778150722,
+        "turn": 8,
+        "block": 11
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 5211.956880508,
+        "turn": 8,
+        "block": 11,
+        "duration_seconds": 2.178724
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 5211.957252691,
+        "turn": 8,
+        "block": 11,
+        "duration_seconds": 2.23932
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 5211.957267397,
+        "turn": 8,
+        "block": 11,
+        "tokens": 256,
+        "committed_tokens": 3072
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 5211.957443975,
+        "turn": 8,
+        "block": 12,
+        "prefix_tokens": 4989,
+        "max_length": 5245
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 5211.957676558,
+        "turn": 8,
+        "block": 12,
+        "prefix_tokens": 4989,
+        "reused_tokens": 4733,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 5212.022783304,
+        "turn": 8,
+        "block": 12,
+        "duration_seconds": 0.065096
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 5212.02280454,
+        "turn": 8,
+        "block": 12
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 5213.078189888,
+        "turn": 8,
+        "block": 12,
+        "duration_seconds": 1.05538
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 5213.078548377,
+        "turn": 8,
+        "block": 12,
+        "duration_seconds": 1.121097
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 5213.078560678,
+        "turn": 8,
+        "block": 12,
+        "tokens": 256,
+        "committed_tokens": 3328
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 5213.078738317,
+        "turn": 8,
+        "block": 13,
+        "prefix_tokens": 5245,
+        "max_length": 5501
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 5213.078994438,
+        "turn": 8,
+        "block": 13,
+        "prefix_tokens": 5245,
+        "reused_tokens": 4989,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 5213.142680346,
+        "turn": 8,
+        "block": 13,
+        "duration_seconds": 0.063655
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 5213.142706159,
+        "turn": 8,
+        "block": 13
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 5214.717287493,
+        "turn": 8,
+        "block": 13,
+        "duration_seconds": 1.574575
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 5214.717665675,
+        "turn": 8,
+        "block": 13,
+        "duration_seconds": 1.638919
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 5214.717676981,
+        "turn": 8,
+        "block": 13,
+        "tokens": 256,
+        "committed_tokens": 3584
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 5214.717876186,
+        "turn": 8,
+        "block": 14,
+        "prefix_tokens": 5501,
+        "max_length": 5757
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 5214.718179022,
+        "turn": 8,
+        "block": 14,
+        "prefix_tokens": 5501,
+        "reused_tokens": 5245,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 5214.784076401,
+        "turn": 8,
+        "block": 14,
+        "duration_seconds": 0.06587
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 5214.784106332,
+        "turn": 8,
+        "block": 14
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 5216.882883504,
+        "turn": 8,
+        "block": 14,
+        "duration_seconds": 2.098763
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 5216.88330822,
+        "turn": 8,
+        "block": 14,
+        "duration_seconds": 2.16542
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 5216.883332292,
+        "turn": 8,
+        "block": 14,
+        "tokens": 256,
+        "committed_tokens": 3840
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 5216.883544614,
+        "turn": 8,
+        "block": 15,
+        "prefix_tokens": 5757,
+        "max_length": 6013
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 5216.883842423,
+        "turn": 8,
+        "block": 15,
+        "prefix_tokens": 5757,
+        "reused_tokens": 5501,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 5216.950407607,
+        "turn": 8,
+        "block": 15,
+        "duration_seconds": 0.066556
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 5216.950430758,
+        "turn": 8,
+        "block": 15
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 5219.083904193,
+        "turn": 8,
+        "block": 15,
+        "duration_seconds": 2.133469
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 5219.084290505,
+        "turn": 8,
+        "block": 15,
+        "duration_seconds": 2.200738
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 5219.084305819,
+        "turn": 8,
+        "block": 15,
+        "tokens": 256,
+        "committed_tokens": 4096
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 5219.084514079,
+        "turn": 8,
+        "block": 16,
+        "prefix_tokens": 6013,
+        "max_length": 6269
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 5219.084779415,
+        "turn": 8,
+        "block": 16,
+        "prefix_tokens": 6013,
+        "reused_tokens": 5757,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 5219.152617465,
+        "turn": 8,
+        "block": 16,
+        "duration_seconds": 0.067829
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 5219.15264068,
+        "turn": 8,
+        "block": 16
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 5220.588695892,
+        "turn": 8,
+        "block": 16,
+        "duration_seconds": 1.436049
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 5220.589100499,
+        "turn": 8,
+        "block": 16,
+        "duration_seconds": 1.50458
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 5220.589147985,
+        "turn": 8,
+        "block": 16,
+        "tokens": 256,
+        "committed_tokens": 4352
+      },
+      {
+        "version": 2,
+        "event": "channel",
+        "monotonic_seconds": 5220.589348928,
+        "turn": 8,
+        "block": 16,
+        "channel": "final",
+        "observed_at_commit": true
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 5220.589353274,
+        "turn": 8,
+        "block": 17,
+        "prefix_tokens": 6269,
+        "max_length": 6525
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 5220.589646431,
+        "turn": 8,
+        "block": 17,
+        "prefix_tokens": 6269,
+        "reused_tokens": 6013,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 5220.656587966,
+        "turn": 8,
+        "block": 17,
+        "duration_seconds": 0.06693
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 5220.656627121,
+        "turn": 8,
+        "block": 17
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 5222.239994229,
+        "turn": 8,
+        "block": 17,
+        "duration_seconds": 1.583361
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 5222.240391184,
+        "turn": 8,
+        "block": 17,
+        "duration_seconds": 1.651031
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 5222.240400729,
+        "turn": 8,
+        "block": 17,
+        "tokens": 99,
+        "committed_tokens": 4451
+      },
+      {
+        "version": 2,
+        "event": "stop",
+        "monotonic_seconds": 5222.240792865,
+        "turn": 8,
+        "block": 17,
+        "reason": "eog"
+      },
+      {
+        "version": 2,
+        "event": "ready",
+        "monotonic_seconds": 5222.241014388,
+        "turn": 8,
+        "block": 17
+      }
+    ],
+    "native_stop_reason": "eog",
+    "exit_code": null,
+    "error": null,
+    "trace_mode": "summary",
+    "runner_transcript": "11.07.440.301 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n11.10.540.309 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n11.11.362.059 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n11.12.316.011 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n11.13.147.323 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n11.13.993.014 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n11.14.997.967 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n11.16.603.860 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n11.17.486.950 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n11.18.526.201 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n11.19.266.493 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n11.20.453.296 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n11.22.692.774 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n11.23.814.116 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n11.25.453.296 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n11.27.618.939 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n11.29.819.875 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n11.31.324.743 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n\n<|channel>thought\n*   Task: Return a compact JSON object `{\"values\":[\"...\"]}`.\n    *   Content: Exactly 48 string values in source order.\n    *   Logic:\n        1.  Reject sanctioned suppliers (`supplier_status == \"SANCTIONED\"`).\n        2.  Reject restricted jurisdictions (`jurisdiction == \"RESTRICTED\"`).\n        3.  Review nonapproved suppliers or uncontracted orders (`contract == false`) above the category threshold.\n        4.  Otherwise, approve.\n    *   Thresholds:\n        *   CONSTRUCTION: 200,000\n        *   GENERAL: 75,000\n        *   IT: 125,000\n\n    *   PO01: amount 243345, cat GENERAL, contract true, jur DOMESTIC, status APPROVED. -> **Approve**\n    *   PO02: amount 289875, cat GENERAL, contract true, jur RESTRICTED, status SANCTIONED. -> **Reject** (Sanctioned & Restricted)\n    *   PO03: amount 173952, cat CONSTRUCTION, contract true, jur DOMESTIC, status APPROVED. -> **Approve**\n    *   PO04: amount 245039, cat GENERAL, contract false, jur ALLIED, status APPROVED. -> **Review** (Uncontracted & > 75000)\n    *   PO05: amount 222505, cat GENERAL, contract true, jur RESTRICTED, status APPROVED. -> **Reject** (Restricted)\n    *   PO06: amount 246754, cat GENERAL, contract false, jur RESTRICTED, status APPROVED. -> **Reject** (Restricted)\n    *   PO07: amount 275006, cat CONSTRUCTION, contract false, jur ALLIED, status PENDING. -> **Review** (Uncontracted & > 200000)\n    *   PO08: amount 76880, cat IT, contract true, jur ALLIED, status APPROVED. -> **Approve**\n    *   PO09: amount 116670, cat IT, contract false, jur RESTRICTED, status APPROVED. -> **Reject** (Restricted)\n    *   PO10: amount 173554, cat GENERAL, contract false, jur ALLIED, status APPROVED. -> **Review** (Uncontracted & > 75000)\n    *   PO11: amount 185756, cat GENERAL, contract true, jur DOMESTIC, status APPROVED. -> **Approve**\n    *   PO12: amount 259240, cat IT, contract true, jur DOMESTIC, status APPROVED. -> **Approve**\n    *   PO13: amount 193452, cat GENERAL, contract true, jur DOMESTIC, status APPROVED. -> **Approve**\n    *   PO14: amount 203612, cat IT, contract true, jur RESTRICTED, status APPROVED. -> **Reject** (Restricted)\n    *   PO15: amount 225651, cat CONSTRUCTION, contract true, jur RESTRICTED, status APPROVED. -> **Reject** (Restricted)\n    *   PO16: amount 295825, cat CONSTRUCTION, contract false, jur ALLIED, status APPROVED. -> **Review** (Uncontracted & > 200000)\n    *   PO17: amount 248512, cat CONSTRUCTION, contract true, jur DOMESTIC, status APPROVED. -> **Approve**\n    *   PO18: amount 166734, cat GENERAL, contract false, jur ALLIED, status APPROVED. -> **Review** (Uncontracted & > 75000)\n    *   PO19: amount 58571, cat CONSTRUCTION, contract true, jur DOMESTIC, status SANCTIONED. -> **Reject** (Sanctioned)\n    *   PO20: amount 103580, cat IT, contract false, jur RESTRICTED, status PENDING. -> **Reject** (Restricted)\n    *   PO21: amount 185213, cat GENERAL, contract false, jur ALLIED, status APPROVED. -> **Review** (Uncontracted & > 75000)\n    *   PO22: amount 70852, cat CONSTRUCTION, contract false, jur ALLIED, status APPROVED. -> **Approve** (Uncontracted & < 200000)\n    *   PO23: amount 229793, cat GENERAL, contract true, jur ALLIED, status APPROVED. -> **Approve**\n    *   PO24: amount 258133, cat IT, contract false, jur RESTRICTED, status APPROVED. -> **Reject** (Restricted)\n    *   PO25: amount 112847, cat GENERAL, contract true, jur DOMESTIC, status APPROVED. -> **Approve**\n    *   PO26: amount 12611, cat IT, contract true, jur DOMESTIC, status APPROVED. -> **Approve**\n    *   PO27: amount 66558, cat GENERAL, contract true, jur RESTRICTED, status APPROVED. -> **Reject** (Restricted)\n    *   PO28: amount 155681, cat IT, contract true, jur ALLIED, status APPROVED. -> **Approve**\n    *   PO29: amount 277137, cat GENERAL, contract false, jur RESTRICTED, status PENDING. -> **Reject** (Restricted)\n    *   PO30: amount 293287, cat CONSTRUCTION, contract false, jur DOMESTIC, status PENDING. -> **Review** (Uncontracted & > 200000)\n    *   PO31: amount 230338, cat GENERAL, contract true, jur ALLIED, status APPROVED. -> **Approve**\n    *   PO32: amount 180186, cat CONSTRUCTION, contract true, jur ALLIED, status APPROVED. -> **Approve**\n    *   PO33: amount 216031, cat CONSTRUCTION, contract false, jur DOMESTIC, status APPROVED. -> **Review** (Uncontracted & > 200000)\n    *   PO34: amount 126417, cat GENERAL, contract true, jur RESTRICTED, status APPROVED. -> **Reject** (Restricted)\n    *   PO35: amount 128900, cat GENERAL, contract true, jur DOMESTIC, status APPROVED. -> **Approve**\n    *   PO36: amount 172573, cat GENERAL, contract true, jur ALLIED, status APPROVED. -> **Approve**\n    *   PO37: amount 195642, cat GENERAL, contract true, jur DOMESTIC, status PENDING. -> **Approve**\n    *   PO38: amount 100293, cat IT, contract false, jur DOMESTIC, status APPROVED. -> **Approve** (Uncontracted & < 125000)\n    *   PO39: amount 35549, cat IT, contract true, jur DOMESTIC, status APPROVED. -> **Approve**\n    *   PO40: amount 38554, cat IT, contract false, jur ALLIED, status APPROVED. -> **Approve** (Uncontracted & < 125000)\n    *   PO41: amount 139528, cat CONSTRUCTION, contract true, jur RESTRICTED, status PENDING. -> **Reject** (Restricted)\n    *   PO42: amount 49667, cat GENERAL, contract false, jur ALLIED, status APPROVED. -> **Approve** (Uncontracted & < 75000)\n    *   PO43: amount 237342, cat IT, contract false, jur RESTRICTED, status PENDING. -> **Reject** (Restricted)\n    *   PO44: amount 24106, cat IT, contract false, jur ALLIED, status PENDING. -> **Approve** (Uncontracted & < 125000)\n    *   PO45: amount 109950, cat GENERAL, contract true, jur RESTRICTED, status PENDING. -> **Reject** (Restricted)\n    *   PO46: amount 255810, cat CONSTRUCTION, contract true, jur RESTRICTED, status APPROVED. -> **Reject** (Restricted)\n    *   PO47: amount 243915, cat CONSTRUCTION, contract true, jur ALLIED, status APPROVED. -> **Approve**\n    *   PO48: amount 59645, cat IT, contract true, jur RESTRICTED, status APPROVED. -> **Reject** (Restricted)\n\n    1.  PO01: Approve\n    2.  PO02: Reject\n    3.  PO03: Approve\n    4.  PO04: Review\n    5.  PO05: Reject\n    6.  PO06: Reject\n    7.  PO07: Review\n    8.  PO08: Approve\n    9.  PO09: Reject\n    10. PO10: Review\n    11. PO11: Approve\n    12. PO12: Approve\n    13. PO13: Approve\n    14. PO14: Reject\n    15. PO15: Reject\n    16. PO16: Review\n    17. PO17: Approve\n    18. PO18: Review\n    19. PO19: Reject\n    20. PO20: Reject\n    21. PO21: Review\n    22. PO22: Approve\n    23. PO23: Approve\n    24. PO24: Reject\n    25. PO25: Approve\n    26. PO26: Approve\n    27. PO27: Reject\n    28. PO28: Approve\n    29. PO29: Reject\n    30. PO30: Review\n    31. PO31: Approve\n    32. PO32: Approve\n    33. PO33: Review\n    34. PO34: Reject\n    35. PO35: Approve\n    36. PO36: Approve\n    37. PO37: Approve\n    38. PO38: Approve\n    39. PO39: Approve\n    40. PO40: Approve\n    41. PO41: Reject\n    42. PO42: Approve\n    43. PO43: Reject\n    44. PO44: Approve\n    45. PO45: Reject\n    46. PO46: Reject\n    47. PO47: Approve\n    48. PO48: Reject\n\n    1. \"Approve\"\n    2. \"Reject\"\n    3. \"Approve\"\n    4. \"Review\"\n    5. \"Reject\"\n    6. \"Reject\"\n    7. \"Review\"\n    8. \"Approve\"\n    9. \"Reject\"\n    10. \"Review\"\n    11. \"Approve\"\n    12. \"Approve\"\n    13. \"Approve\"\n    14. \"Reject\"\n    15. \"Reject\"\n    16. \"Review\"\n    17. \"Approve\"\n    18. \"Review\"\n    19. \"Reject\"\n    20. \"Reject\"\n    21. \"Review\"\n    22. \"Approve\"\n    23. \"Approve\"\n    24. \"Reject\"\n    25. \"Approve\"\n    26. \"Approve\"\n    27. \"Reject\"\n    28. \"Approve\"\n    29. \"Reject\"\n    30. \"Review\"\n    31. \"Approve\"\n    32. \"Approve\"\n    33. \"Review\"\n    34. \"Reject\"\n    35. \"Approve\"\n    36. \"Approve\"\n    37. \"Approve\"\n    38. \"Approve\"\n    39. \"Approve\"\n    40. \"Approve\"\n    41. \"Reject\"\n    42. \"Approve\"\n    43. \"Reject\"\n    44. \"Approve\"\n    45. \"Reject\"\n    46. \"Reject\"\n    47. \"Approve\"\n    48. \"Reject\"\n\n    Wait, let me double-check the logic for \"Review\".\n    \"Review nonapproved suppliers or uncontracted orders above the category threshold\"\n    - PO04: GENERAL, contract false, 245039 > 75000. Review. (Correct)\n    - PO07: CONSTRUCTION, contract false, 275006 > 200000. Review. (Correct)\n    - PO10: GENERAL, contract false, 173554 > 75000. Review. (Correct)\n    - PO16: CONSTRUCTION, contract false, 295825 > 200000. Review. (Correct)\n    - PO18: GENERAL, contract false, 166734 > 75000. Review. (Correct)\n    - PO21: GENERAL, contract false, 185213 > 75000. Review. (Correct)\n    - PO22: CONSTRUCTION, contract false, 70852 < 200000. Approve. (Correct)\n    - PO30: CONSTRUCTION, contract false, 293287 > 200000. Review. (Correct)\n    - PO33: CONSTRUCTION, contract false, 216031 > 200000. Review. (Correct)\n    - PO38: IT, contract false, 100293 < 125000. Approve. (Correct)\n    - PO40: IT, contract false, 38554 < 125000. Approve. (Correct)\n    - PO42: GENERAL, contract false, 49667 < 75000. Approve. (Correct)\n    - PO44: IT, contract false, 24106 < 125000. Approve. (Correct)\n\n    Double-check \"Reject\" (Sanctioned or Restricted):\n    - PO02: SANCTIONED/RESTRICTED. (Reject)\n    - PO05: RESTRICTED. (Reject)\n    - PO06: RESTRICTED. (Reject)\n    - PO09: RESTRICTED. (Reject)\n    - PO14: RESTRICTED. (Reject)\n    - PO15: RESTRICTED. (Reject)\n    - PO19: SANCTIONED. (Reject)\n    - PO20: RESTRICTED. (Reject)\n    - PO24: RESTRICTED. (Reject)\n    - PO27: RESTRICTED. (Reject)\n    - PO29: RESTRICTED. (Reject)\n    - PO34: RESTRICTED. (Reject)\n    - PO41: RESTRICTED. (Reject)\n    - PO43: RESTRICTED. (Reject)\n    - PO45: RESTRICTED. (Reject)\n    - PO46: RESTRICTED. (Reject)\n    - PO48: RESTRICTED. (Reject)\n\n    Double-check \"Approve\":\n    - PO01: DOMESTIC/APPROVED/Contract.\n    - PO03: DOMESTIC/APPROVED/Contract.\n    - PO08: ALLIED/APPROVED/Contract.\n    - PO11: DOMESTIC/APPROVED/Contract.\n    - PO12: DOMESTIC/APPROVED/Contract.\n    - PO13: DOMESTIC/APPROVED/Contract.\n    - PO17: DOMESTIC/APPROVED/Contract.\n    - PO22: ALLIED/APPROVED/Uncontracted (below threshold).\n    - PO23: ALLIED/APPROVED/Contract.\n    - PO25: DOMESTIC/APPROVED/Contract.\n    - PO26: DOMESTIC/APPROVED/Contract.\n    - PO28: ALLIED/APPROVED/Contract.\n    - PO31: ALLIED/APPROVED/Contract.\n    - PO32: ALLIED/APPROVED/Contract.\n    - PO35: DOMESTIC/APPROVED/Contract.\n    - PO36: ALLIED/APPROVED/Contract.\n    - PO37: DOMESTIC/PENDING/Contract.\n    - PO38: DOMESTIC/APPROVED/Uncontracted (below threshold).\n    - PO39: DOMESTIC/APPROVED/Contract.\n    - PO40: ALLIED/APPROVED/Uncontracted (below threshold).\n    - PO42: ALLIED/APPROVED/Uncontracted (below threshold).\n    - PO44: ALLIED/PENDING/Uncontracted (below threshold).\n    - PO47: ALLIED/APPROVED/Contract.\n\n    Wait, let me re-verify the count.\n    1. Approve\n    2. Reject\n    3. Approve\n    4. Review\n    5. Reject\n    6. Reject\n    7. Review\n    8. Approve\n    9. Reject\n    10. Review\n    11. Approve\n    12. Approve\n    13. Approve\n    14. Reject\n    15. Reject\n    16. Review\n    17. Approve\n    18. Review\n    19. Reject\n    20. Reject\n    21. Review\n    22. Approve\n    23. Approve\n    24. Reject\n    25. Approve\n    26. Approve\n    27. Reject\n    28. Approve\n    29. Reject\n    30. Review\n    31. Approve\n    32. Approve\n    33. Review\n    34. Reject\n    35. Approve\n    36. Approve\n    37. Approve\n    38. Approve\n    39. Approve\n    40. Approve\n    41. Reject\n    42. Approve\n    43. Reject\n    44. Approve\n    45. Reject\n    46. Reject\n    47. Approve\n    48. Reject\n\n    Total: 48.<channel|>{\"values\":[\"Approve\",\"Reject\",\"Approve\",\"Review\",\"Reject\",\"Reject\",\"Review\",\"Approve\",\"Reject\",\"Review\",\"Approve\",\"Approve\",\"Approve\",\"Reject\",\"Reject\",\"Review\",\"Approve\",\"Review\",\"Reject\",\"Reject\",\"Review\",\"Approve\",\"Approve\",\"Reject\",\"Approve\",\"Approve\",\"Reject\",\"Approve\",\"Reject\",\"Review\",\"Approve\",\"Approve\",\"Review\",\"Reject\",\"Approve\",\"Approve\",\"Approve\",\"Approve\",\"Approve\",\"Approve\",\"Reject\",\"Approve\",\"Reject\",\"Approve\",\"Reject\",\"Reject\",\"Approve\",\"Reject\"]}\ntotal time: 25541.56ms, time per step: 174.94ms (146 steps over 18 blocks, entropy-bound)\nthroughput: 180.4 tok/s (4608 tok in 25541.56ms), in-step parallel 1463 tok/s (256-tok canvas x 8.1 steps/block)\n\n> ",
+    "raw_output": "<|channel>thought\n*   Task: Return a compact JSON object `{\"values\":[\"...\"]}`.\n    *   Content: Exactly 48 string values in source order.\n    *   Logic:\n        1.  Reject sanctioned suppliers (`supplier_status == \"SANCTIONED\"`).\n        2.  Reject restricted jurisdictions (`jurisdiction == \"RESTRICTED\"`).\n        3.  Review nonapproved suppliers or uncontracted orders (`contract == false`) above the category threshold.\n        4.  Otherwise, approve.\n    *   Thresholds:\n        *   CONSTRUCTION: 200,000\n        *   GENERAL: 75,000\n        *   IT: 125,000\n\n    *   PO01: amount 243345, cat GENERAL, contract true, jur DOMESTIC, status APPROVED. -> **Approve**\n    *   PO02: amount 289875, cat GENERAL, contract true, jur RESTRICTED, status SANCTIONED. -> **Reject** (Sanctioned & Restricted)\n    *   PO03: amount 173952, cat CONSTRUCTION, contract true, jur DOMESTIC, status APPROVED. -> **Approve**\n    *   PO04: amount 245039, cat GENERAL, contract false, jur ALLIED, status APPROVED. -> **Review** (Uncontracted & > 75000)\n    *   PO05: amount 222505, cat GENERAL, contract true, jur RESTRICTED, status APPROVED. -> **Reject** (Restricted)\n    *   PO06: amount 246754, cat GENERAL, contract false, jur RESTRICTED, status APPROVED. -> **Reject** (Restricted)\n    *   PO07: amount 275006, cat CONSTRUCTION, contract false, jur ALLIED, status PENDING. -> **Review** (Uncontracted & > 200000)\n    *   PO08: amount 76880, cat IT, contract true, jur ALLIED, status APPROVED. -> **Approve**\n    *   PO09: amount 116670, cat IT, contract false, jur RESTRICTED, status APPROVED. -> **Reject** (Restricted)\n    *   PO10: amount 173554, cat GENERAL, contract false, jur ALLIED, status APPROVED. -> **Review** (Uncontracted & > 75000)\n    *   PO11: amount 185756, cat GENERAL, contract true, jur DOMESTIC, status APPROVED. -> **Approve**\n    *   PO12: amount 259240, cat IT, contract true, jur DOMESTIC, status APPROVED. -> **Approve**\n    *   PO13: amount 193452, cat GENERAL, contract true, jur DOMESTIC, status APPROVED. -> **Approve**\n    *   PO14: amount 203612, cat IT, contract true, jur RESTRICTED, status APPROVED. -> **Reject** (Restricted)\n    *   PO15: amount 225651, cat CONSTRUCTION, contract true, jur RESTRICTED, status APPROVED. -> **Reject** (Restricted)\n    *   PO16: amount 295825, cat CONSTRUCTION, contract false, jur ALLIED, status APPROVED. -> **Review** (Uncontracted & > 200000)\n    *   PO17: amount 248512, cat CONSTRUCTION, contract true, jur DOMESTIC, status APPROVED. -> **Approve**\n    *   PO18: amount 166734, cat GENERAL, contract false, jur ALLIED, status APPROVED. -> **Review** (Uncontracted & > 75000)\n    *   PO19: amount 58571, cat CONSTRUCTION, contract true, jur DOMESTIC, status SANCTIONED. -> **Reject** (Sanctioned)\n    *   PO20: amount 103580, cat IT, contract false, jur RESTRICTED, status PENDING. -> **Reject** (Restricted)\n    *   PO21: amount 185213, cat GENERAL, contract false, jur ALLIED, status APPROVED. -> **Review** (Uncontracted & > 75000)\n    *   PO22: amount 70852, cat CONSTRUCTION, contract false, jur ALLIED, status APPROVED. -> **Approve** (Uncontracted & < 200000)\n    *   PO23: amount 229793, cat GENERAL, contract true, jur ALLIED, status APPROVED. -> **Approve**\n    *   PO24: amount 258133, cat IT, contract false, jur RESTRICTED, status APPROVED. -> **Reject** (Restricted)\n    *   PO25: amount 112847, cat GENERAL, contract true, jur DOMESTIC, status APPROVED. -> **Approve**\n    *   PO26: amount 12611, cat IT, contract true, jur DOMESTIC, status APPROVED. -> **Approve**\n    *   PO27: amount 66558, cat GENERAL, contract true, jur RESTRICTED, status APPROVED. -> **Reject** (Restricted)\n    *   PO28: amount 155681, cat IT, contract true, jur ALLIED, status APPROVED. -> **Approve**\n    *   PO29: amount 277137, cat GENERAL, contract false, jur RESTRICTED, status PENDING. -> **Reject** (Restricted)\n    *   PO30: amount 293287, cat CONSTRUCTION, contract false, jur DOMESTIC, status PENDING. -> **Review** (Uncontracted & > 200000)\n    *   PO31: amount 230338, cat GENERAL, contract true, jur ALLIED, status APPROVED. -> **Approve**\n    *   PO32: amount 180186, cat CONSTRUCTION, contract true, jur ALLIED, status APPROVED. -> **Approve**\n    *   PO33: amount 216031, cat CONSTRUCTION, contract false, jur DOMESTIC, status APPROVED. -> **Review** (Uncontracted & > 200000)\n    *   PO34: amount 126417, cat GENERAL, contract true, jur RESTRICTED, status APPROVED. -> **Reject** (Restricted)\n    *   PO35: amount 128900, cat GENERAL, contract true, jur DOMESTIC, status APPROVED. -> **Approve**\n    *   PO36: amount 172573, cat GENERAL, contract true, jur ALLIED, status APPROVED. -> **Approve**\n    *   PO37: amount 195642, cat GENERAL, contract true, jur DOMESTIC, status PENDING. -> **Approve**\n    *   PO38: amount 100293, cat IT, contract false, jur DOMESTIC, status APPROVED. -> **Approve** (Uncontracted & < 125000)\n    *   PO39: amount 35549, cat IT, contract true, jur DOMESTIC, status APPROVED. -> **Approve**\n    *   PO40: amount 38554, cat IT, contract false, jur ALLIED, status APPROVED. -> **Approve** (Uncontracted & < 125000)\n    *   PO41: amount 139528, cat CONSTRUCTION, contract true, jur RESTRICTED, status PENDING. -> **Reject** (Restricted)\n    *   PO42: amount 49667, cat GENERAL, contract false, jur ALLIED, status APPROVED. -> **Approve** (Uncontracted & < 75000)\n    *   PO43: amount 237342, cat IT, contract false, jur RESTRICTED, status PENDING. -> **Reject** (Restricted)\n    *   PO44: amount 24106, cat IT, contract false, jur ALLIED, status PENDING. -> **Approve** (Uncontracted & < 125000)\n    *   PO45: amount 109950, cat GENERAL, contract true, jur RESTRICTED, status PENDING. -> **Reject** (Restricted)\n    *   PO46: amount 255810, cat CONSTRUCTION, contract true, jur RESTRICTED, status APPROVED. -> **Reject** (Restricted)\n    *   PO47: amount 243915, cat CONSTRUCTION, contract true, jur ALLIED, status APPROVED. -> **Approve**\n    *   PO48: amount 59645, cat IT, contract true, jur RESTRICTED, status APPROVED. -> **Reject** (Restricted)\n\n    1.  PO01: Approve\n    2.  PO02: Reject\n    3.  PO03: Approve\n    4.  PO04: Review\n    5.  PO05: Reject\n    6.  PO06: Reject\n    7.  PO07: Review\n    8.  PO08: Approve\n    9.  PO09: Reject\n    10. PO10: Review\n    11. PO11: Approve\n    12. PO12: Approve\n    13. PO13: Approve\n    14. PO14: Reject\n    15. PO15: Reject\n    16. PO16: Review\n    17. PO17: Approve\n    18. PO18: Review\n    19. PO19: Reject\n    20. PO20: Reject\n    21. PO21: Review\n    22. PO22: Approve\n    23. PO23: Approve\n    24. PO24: Reject\n    25. PO25: Approve\n    26. PO26: Approve\n    27. PO27: Reject\n    28. PO28: Approve\n    29. PO29: Reject\n    30. PO30: Review\n    31. PO31: Approve\n    32. PO32: Approve\n    33. PO33: Review\n    34. PO34: Reject\n    35. PO35: Approve\n    36. PO36: Approve\n    37. PO37: Approve\n    38. PO38: Approve\n    39. PO39: Approve\n    40. PO40: Approve\n    41. PO41: Reject\n    42. PO42: Approve\n    43. PO43: Reject\n    44. PO44: Approve\n    45. PO45: Reject\n    46. PO46: Reject\n    47. PO47: Approve\n    48. PO48: Reject\n\n    1. \"Approve\"\n    2. \"Reject\"\n    3. \"Approve\"\n    4. \"Review\"\n    5. \"Reject\"\n    6. \"Reject\"\n    7. \"Review\"\n    8. \"Approve\"\n    9. \"Reject\"\n    10. \"Review\"\n    11. \"Approve\"\n    12. \"Approve\"\n    13. \"Approve\"\n    14. \"Reject\"\n    15. \"Reject\"\n    16. \"Review\"\n    17. \"Approve\"\n    18. \"Review\"\n    19. \"Reject\"\n    20. \"Reject\"\n    21. \"Review\"\n    22. \"Approve\"\n    23. \"Approve\"\n    24. \"Reject\"\n    25. \"Approve\"\n    26. \"Approve\"\n    27. \"Reject\"\n    28. \"Approve\"\n    29. \"Reject\"\n    30. \"Review\"\n    31. \"Approve\"\n    32. \"Approve\"\n    33. \"Review\"\n    34. \"Reject\"\n    35. \"Approve\"\n    36. \"Approve\"\n    37. \"Approve\"\n    38. \"Approve\"\n    39. \"Approve\"\n    40. \"Approve\"\n    41. \"Reject\"\n    42. \"Approve\"\n    43. \"Reject\"\n    44. \"Approve\"\n    45. \"Reject\"\n    46. \"Reject\"\n    47. \"Approve\"\n    48. \"Reject\"\n\n    Wait, let me double-check the logic for \"Review\".\n    \"Review nonapproved suppliers or uncontracted orders above the category threshold\"\n    - PO04: GENERAL, contract false, 245039 > 75000. Review. (Correct)\n    - PO07: CONSTRUCTION, contract false, 275006 > 200000. Review. (Correct)\n    - PO10: GENERAL, contract false, 173554 > 75000. Review. (Correct)\n    - PO16: CONSTRUCTION, contract false, 295825 > 200000. Review. (Correct)\n    - PO18: GENERAL, contract false, 166734 > 75000. Review. (Correct)\n    - PO21: GENERAL, contract false, 185213 > 75000. Review. (Correct)\n    - PO22: CONSTRUCTION, contract false, 70852 < 200000. Approve. (Correct)\n    - PO30: CONSTRUCTION, contract false, 293287 > 200000. Review. (Correct)\n    - PO33: CONSTRUCTION, contract false, 216031 > 200000. Review. (Correct)\n    - PO38: IT, contract false, 100293 < 125000. Approve. (Correct)\n    - PO40: IT, contract false, 38554 < 125000. Approve. (Correct)\n    - PO42: GENERAL, contract false, 49667 < 75000. Approve. (Correct)\n    - PO44: IT, contract false, 24106 < 125000. Approve. (Correct)\n\n    Double-check \"Reject\" (Sanctioned or Restricted):\n    - PO02: SANCTIONED/RESTRICTED. (Reject)\n    - PO05: RESTRICTED. (Reject)\n    - PO06: RESTRICTED. (Reject)\n    - PO09: RESTRICTED. (Reject)\n    - PO14: RESTRICTED. (Reject)\n    - PO15: RESTRICTED. (Reject)\n    - PO19: SANCTIONED. (Reject)\n    - PO20: RESTRICTED. (Reject)\n    - PO24: RESTRICTED. (Reject)\n    - PO27: RESTRICTED. (Reject)\n    - PO29: RESTRICTED. (Reject)\n    - PO34: RESTRICTED. (Reject)\n    - PO41: RESTRICTED. (Reject)\n    - PO43: RESTRICTED. (Reject)\n    - PO45: RESTRICTED. (Reject)\n    - PO46: RESTRICTED. (Reject)\n    - PO48: RESTRICTED. (Reject)\n\n    Double-check \"Approve\":\n    - PO01: DOMESTIC/APPROVED/Contract.\n    - PO03: DOMESTIC/APPROVED/Contract.\n    - PO08: ALLIED/APPROVED/Contract.\n    - PO11: DOMESTIC/APPROVED/Contract.\n    - PO12: DOMESTIC/APPROVED/Contract.\n    - PO13: DOMESTIC/APPROVED/Contract.\n    - PO17: DOMESTIC/APPROVED/Contract.\n    - PO22: ALLIED/APPROVED/Uncontracted (below threshold).\n    - PO23: ALLIED/APPROVED/Contract.\n    - PO25: DOMESTIC/APPROVED/Contract.\n    - PO26: DOMESTIC/APPROVED/Contract.\n    - PO28: ALLIED/APPROVED/Contract.\n    - PO31: ALLIED/APPROVED/Contract.\n    - PO32: ALLIED/APPROVED/Contract.\n    - PO35: DOMESTIC/APPROVED/Contract.\n    - PO36: ALLIED/APPROVED/Contract.\n    - PO37: DOMESTIC/PENDING/Contract.\n    - PO38: DOMESTIC/APPROVED/Uncontracted (below threshold).\n    - PO39: DOMESTIC/APPROVED/Contract.\n    - PO40: ALLIED/APPROVED/Uncontracted (below threshold).\n    - PO42: ALLIED/APPROVED/Uncontracted (below threshold).\n    - PO44: ALLIED/PENDING/Uncontracted (below threshold).\n    - PO47: ALLIED/APPROVED/Contract.\n\n    Wait, let me re-verify the count.\n    1. Approve\n    2. Reject\n    3. Approve\n    4. Review\n    5. Reject\n    6. Reject\n    7. Review\n    8. Approve\n    9. Reject\n    10. Review\n    11. Approve\n    12. Approve\n    13. Approve\n    14. Reject\n    15. Reject\n    16. Review\n    17. Approve\n    18. Review\n    19. Reject\n    20. Reject\n    21. Review\n    22. Approve\n    23. Approve\n    24. Reject\n    25. Approve\n    26. Approve\n    27. Reject\n    28. Approve\n    29. Reject\n    30. Review\n    31. Approve\n    32. Approve\n    33. Review\n    34. Reject\n    35. Approve\n    36. Approve\n    37. Approve\n    38. Approve\n    39. Approve\n    40. Approve\n    41. Reject\n    42. Approve\n    43. Reject\n    44. Approve\n    45. Reject\n    46. Reject\n    47. Approve\n    48. Reject\n\n    Total: 48.<channel|>{\"values\":[\"Approve\",\"Reject\",\"Approve\",\"Review\",\"Reject\",\"Reject\",\"Review\",\"Approve\",\"Reject\",\"Review\",\"Approve\",\"Approve\",\"Approve\",\"Reject\",\"Reject\",\"Review\",\"Approve\",\"Review\",\"Reject\",\"Reject\",\"Review\",\"Approve\",\"Approve\",\"Reject\",\"Approve\",\"Approve\",\"Reject\",\"Approve\",\"Reject\",\"Review\",\"Approve\",\"Approve\",\"Review\",\"Reject\",\"Approve\",\"Approve\",\"Approve\",\"Approve\",\"Approve\",\"Approve\",\"Reject\",\"Approve\",\"Reject\",\"Approve\",\"Reject\",\"Reject\",\"Approve\",\"Reject\"]}",
+    "wall_seconds": 25.544299936000243,
+    "internal_compute_seconds": 25.54156,
+    "canvas_work_tokens": 4608,
+    "worker_elapsed_seconds": 25.545638753000276,
+    "runtime_ready": true
+  }
+}

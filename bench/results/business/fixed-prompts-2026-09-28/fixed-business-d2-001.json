@@ -1,0 +1,1522 @@
+{
+  "arm": "fixed",
+  "case_id": "business-d2-001",
+  "client_wall_seconds": 34.21950060800009,
+  "prefill_seconds": 2.378811,
+  "denoise_seconds": 31.738223,
+  "blocks": 24,
+  "reused_tokens": [
+    13,
+    1437,
+    1693,
+    1949,
+    2205,
+    2461,
+    2717,
+    2973,
+    3229,
+    3485,
+    3741,
+    3997,
+    4253,
+    4509,
+    4765,
+    5021,
+    5277,
+    5533,
+    5789,
+    6045,
+    6301,
+    6557,
+    6813,
+    7069
+  ],
+  "native_stop": "eog",
+  "valid": true,
+  "score": {
+    "valid": true,
+    "exact_match": true,
+    "per_decision_correct": 48,
+    "first_error": null,
+    "constraint_violations": [],
+    "objective_value": null
+  },
+  "result": {
+    "request_id": "ab-fixed-business-d2-001",
+    "request_state": "completed",
+    "process_generation": "51364110836e439fadd1acc9b240f418",
+    "native_turn": 2,
+    "trace_path": "/content/worker-fixed/native/51364110836e439fadd1acc9b240f418.jsonl",
+    "elapsed_seconds": 34.1409969489996,
+    "native_events": [
+      {
+        "version": 2,
+        "event": "begin",
+        "monotonic_seconds": 9937.258475898,
+        "turn": 2,
+        "block": -1,
+        "repetition_policy": "off"
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9937.258497141,
+        "turn": 2,
+        "block": 0,
+        "prefix_tokens": 1437,
+        "max_length": 1693
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9937.258707558,
+        "turn": 2,
+        "block": 0,
+        "prefix_tokens": 1437,
+        "reused_tokens": 13,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9938.234200652,
+        "turn": 2,
+        "block": 0,
+        "duration_seconds": 0.975483
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9938.234232415,
+        "turn": 2,
+        "block": 0
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9940.95030806,
+        "turn": 2,
+        "block": 0,
+        "duration_seconds": 2.716071
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9940.95048429,
+        "turn": 2,
+        "block": 0,
+        "duration_seconds": 3.691982
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9940.950491883,
+        "turn": 2,
+        "block": 0,
+        "tokens": 256,
+        "committed_tokens": 256
+      },
+      {
+        "version": 2,
+        "event": "channel",
+        "monotonic_seconds": 9940.95052461,
+        "turn": 2,
+        "block": 0,
+        "channel": "thought",
+        "observed_at_commit": true
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9940.950528954,
+        "turn": 2,
+        "block": 1,
+        "prefix_tokens": 1693,
+        "max_length": 1949
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9940.950678436,
+        "turn": 2,
+        "block": 1,
+        "prefix_tokens": 1693,
+        "reused_tokens": 1437,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9941.001591985,
+        "turn": 2,
+        "block": 1,
+        "duration_seconds": 0.050902
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9941.001620338,
+        "turn": 2,
+        "block": 1
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9942.370200848,
+        "turn": 2,
+        "block": 1,
+        "duration_seconds": 1.368575
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9942.370376789,
+        "turn": 2,
+        "block": 1,
+        "duration_seconds": 1.419844
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9942.37043368,
+        "turn": 2,
+        "block": 1,
+        "tokens": 256,
+        "committed_tokens": 512
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9942.370484068,
+        "turn": 2,
+        "block": 2,
+        "prefix_tokens": 1949,
+        "max_length": 2205
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9942.370601131,
+        "turn": 2,
+        "block": 2,
+        "prefix_tokens": 1949,
+        "reused_tokens": 1693,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9942.421352777,
+        "turn": 2,
+        "block": 2,
+        "duration_seconds": 0.050742
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9942.421380716,
+        "turn": 2,
+        "block": 2
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9943.028326117,
+        "turn": 2,
+        "block": 2,
+        "duration_seconds": 0.606939
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9943.028518511,
+        "turn": 2,
+        "block": 2,
+        "duration_seconds": 0.65803
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9943.028585201,
+        "turn": 2,
+        "block": 2,
+        "tokens": 256,
+        "committed_tokens": 768
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9943.028645223,
+        "turn": 2,
+        "block": 3,
+        "prefix_tokens": 2205,
+        "max_length": 2461
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9943.028770733,
+        "turn": 2,
+        "block": 3,
+        "prefix_tokens": 2205,
+        "reused_tokens": 1949,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9943.080764837,
+        "turn": 2,
+        "block": 3,
+        "duration_seconds": 0.051986
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9943.080791776,
+        "turn": 2,
+        "block": 3
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9943.694761355,
+        "turn": 2,
+        "block": 3,
+        "duration_seconds": 0.613963
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9943.694988094,
+        "turn": 2,
+        "block": 3,
+        "duration_seconds": 0.666338
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9943.694996542,
+        "turn": 2,
+        "block": 3,
+        "tokens": 256,
+        "committed_tokens": 1024
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9943.695086239,
+        "turn": 2,
+        "block": 4,
+        "prefix_tokens": 2461,
+        "max_length": 2717
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9943.695214395,
+        "turn": 2,
+        "block": 4,
+        "prefix_tokens": 2461,
+        "reused_tokens": 2205,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9943.747643904,
+        "turn": 2,
+        "block": 4,
+        "duration_seconds": 0.052419
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9943.747669427,
+        "turn": 2,
+        "block": 4
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9944.513448873,
+        "turn": 2,
+        "block": 4,
+        "duration_seconds": 0.765773
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9944.513678924,
+        "turn": 2,
+        "block": 4,
+        "duration_seconds": 0.818585
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9944.513700908,
+        "turn": 2,
+        "block": 4,
+        "tokens": 256,
+        "committed_tokens": 1280
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9944.513785615,
+        "turn": 2,
+        "block": 5,
+        "prefix_tokens": 2717,
+        "max_length": 2973
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9944.513923922,
+        "turn": 2,
+        "block": 5,
+        "prefix_tokens": 2717,
+        "reused_tokens": 2461,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9944.567862828,
+        "turn": 2,
+        "block": 5,
+        "duration_seconds": 0.05393
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9944.567886667,
+        "turn": 2,
+        "block": 5
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9945.343269235,
+        "turn": 2,
+        "block": 5,
+        "duration_seconds": 0.775376
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9945.3435102,
+        "turn": 2,
+        "block": 5,
+        "duration_seconds": 0.829719
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9945.343518389,
+        "turn": 2,
+        "block": 5,
+        "tokens": 256,
+        "committed_tokens": 1536
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9945.343617713,
+        "turn": 2,
+        "block": 6,
+        "prefix_tokens": 2973,
+        "max_length": 3229
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9945.343757861,
+        "turn": 2,
+        "block": 6,
+        "prefix_tokens": 2973,
+        "reused_tokens": 2717,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9945.398485467,
+        "turn": 2,
+        "block": 6,
+        "duration_seconds": 0.054718
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9945.398509034,
+        "turn": 2,
+        "block": 6
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9946.184711113,
+        "turn": 2,
+        "block": 6,
+        "duration_seconds": 0.786195
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9946.184911562,
+        "turn": 2,
+        "block": 6,
+        "duration_seconds": 0.841288
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9946.184920274,
+        "turn": 2,
+        "block": 6,
+        "tokens": 256,
+        "committed_tokens": 1792
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9946.185088299,
+        "turn": 2,
+        "block": 7,
+        "prefix_tokens": 3229,
+        "max_length": 3485
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9946.185252432,
+        "turn": 2,
+        "block": 7,
+        "prefix_tokens": 3229,
+        "reused_tokens": 2973,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9946.24047878,
+        "turn": 2,
+        "block": 7,
+        "duration_seconds": 0.055216
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9946.240501809,
+        "turn": 2,
+        "block": 7
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9947.043726123,
+        "turn": 2,
+        "block": 7,
+        "duration_seconds": 0.803219
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9947.043973106,
+        "turn": 2,
+        "block": 7,
+        "duration_seconds": 0.858875
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9947.043982014,
+        "turn": 2,
+        "block": 7,
+        "tokens": 256,
+        "committed_tokens": 2048
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9947.044110731,
+        "turn": 2,
+        "block": 8,
+        "prefix_tokens": 3485,
+        "max_length": 3741
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9947.044290781,
+        "turn": 2,
+        "block": 8,
+        "prefix_tokens": 3485,
+        "reused_tokens": 3229,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9947.100994376,
+        "turn": 2,
+        "block": 8,
+        "duration_seconds": 0.056694
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9947.101026677,
+        "turn": 2,
+        "block": 8
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9947.911656322,
+        "turn": 2,
+        "block": 8,
+        "duration_seconds": 0.81061
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9947.911953378,
+        "turn": 2,
+        "block": 8,
+        "duration_seconds": 0.867828
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9947.911989566,
+        "turn": 2,
+        "block": 8,
+        "tokens": 256,
+        "committed_tokens": 2304
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9947.91213843,
+        "turn": 2,
+        "block": 9,
+        "prefix_tokens": 3741,
+        "max_length": 3997
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9947.912334537,
+        "turn": 2,
+        "block": 9,
+        "prefix_tokens": 3741,
+        "reused_tokens": 3485,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9947.969790287,
+        "turn": 2,
+        "block": 9,
+        "duration_seconds": 0.057447
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9947.969812728,
+        "turn": 2,
+        "block": 9
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9948.794573697,
+        "turn": 2,
+        "block": 9,
+        "duration_seconds": 0.824755
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9948.7948401,
+        "turn": 2,
+        "block": 9,
+        "duration_seconds": 0.882692
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9948.794849676,
+        "turn": 2,
+        "block": 9,
+        "tokens": 256,
+        "committed_tokens": 2560
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9948.794983822,
+        "turn": 2,
+        "block": 10,
+        "prefix_tokens": 3997,
+        "max_length": 4253
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9948.795186695,
+        "turn": 2,
+        "block": 10,
+        "prefix_tokens": 3997,
+        "reused_tokens": 3741,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9948.853573235,
+        "turn": 2,
+        "block": 10,
+        "duration_seconds": 0.058373
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9948.85359616,
+        "turn": 2,
+        "block": 10
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9949.537892318,
+        "turn": 2,
+        "block": 10,
+        "duration_seconds": 0.68429
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9949.538169914,
+        "turn": 2,
+        "block": 10,
+        "duration_seconds": 0.74318
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9949.538182252,
+        "turn": 2,
+        "block": 10,
+        "tokens": 256,
+        "committed_tokens": 2816
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9949.538330192,
+        "turn": 2,
+        "block": 11,
+        "prefix_tokens": 4253,
+        "max_length": 4509
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9949.538525615,
+        "turn": 2,
+        "block": 11,
+        "prefix_tokens": 4253,
+        "reused_tokens": 3997,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9949.59803172,
+        "turn": 2,
+        "block": 11,
+        "duration_seconds": 0.059497
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9949.598054632,
+        "turn": 2,
+        "block": 11
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9950.448190579,
+        "turn": 2,
+        "block": 11,
+        "duration_seconds": 0.850129
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9950.448565386,
+        "turn": 2,
+        "block": 11,
+        "duration_seconds": 0.910227
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9950.448581745,
+        "turn": 2,
+        "block": 11,
+        "tokens": 256,
+        "committed_tokens": 3072
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9950.448737187,
+        "turn": 2,
+        "block": 12,
+        "prefix_tokens": 4509,
+        "max_length": 4765
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9950.448959189,
+        "turn": 2,
+        "block": 12,
+        "prefix_tokens": 4509,
+        "reused_tokens": 4253,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9950.509744982,
+        "turn": 2,
+        "block": 12,
+        "duration_seconds": 0.060775
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9950.50978872,
+        "turn": 2,
+        "block": 12
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9951.20806312,
+        "turn": 2,
+        "block": 12,
+        "duration_seconds": 0.698268
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9951.208346502,
+        "turn": 2,
+        "block": 12,
+        "duration_seconds": 0.759604
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9951.20835552,
+        "turn": 2,
+        "block": 12,
+        "tokens": 256,
+        "committed_tokens": 3328
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9951.208517105,
+        "turn": 2,
+        "block": 13,
+        "prefix_tokens": 4765,
+        "max_length": 5021
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9951.208730869,
+        "turn": 2,
+        "block": 13,
+        "prefix_tokens": 4765,
+        "reused_tokens": 4509,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9951.269270401,
+        "turn": 2,
+        "block": 13,
+        "duration_seconds": 0.06053
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9951.269296913,
+        "turn": 2,
+        "block": 13
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9951.972567211,
+        "turn": 2,
+        "block": 13,
+        "duration_seconds": 0.703265
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9951.97286213,
+        "turn": 2,
+        "block": 13,
+        "duration_seconds": 0.76434
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9951.972871554,
+        "turn": 2,
+        "block": 13,
+        "tokens": 256,
+        "committed_tokens": 3584
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9951.973046702,
+        "turn": 2,
+        "block": 14,
+        "prefix_tokens": 5021,
+        "max_length": 5277
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9951.973273069,
+        "turn": 2,
+        "block": 14,
+        "prefix_tokens": 5021,
+        "reused_tokens": 4765,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9952.034857969,
+        "turn": 2,
+        "block": 14,
+        "duration_seconds": 0.061575
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9952.034878798,
+        "turn": 2,
+        "block": 14
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9954.292036958,
+        "turn": 2,
+        "block": 14,
+        "duration_seconds": 2.257152
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9954.292275561,
+        "turn": 2,
+        "block": 14,
+        "duration_seconds": 2.31922
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9954.29228402,
+        "turn": 2,
+        "block": 14,
+        "tokens": 256,
+        "committed_tokens": 3840
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9954.292528667,
+        "turn": 2,
+        "block": 15,
+        "prefix_tokens": 5277,
+        "max_length": 5533
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9954.292763069,
+        "turn": 2,
+        "block": 15,
+        "prefix_tokens": 5277,
+        "reused_tokens": 5021,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9954.360148143,
+        "turn": 2,
+        "block": 15,
+        "duration_seconds": 0.067374
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9954.360179809,
+        "turn": 2,
+        "block": 15
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9961.779732431,
+        "turn": 2,
+        "block": 15,
+        "duration_seconds": 7.419547
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9961.779971404,
+        "turn": 2,
+        "block": 15,
+        "duration_seconds": 7.487437
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9961.779980221,
+        "turn": 2,
+        "block": 15,
+        "tokens": 256,
+        "committed_tokens": 4096
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9961.780259625,
+        "turn": 2,
+        "block": 16,
+        "prefix_tokens": 5533,
+        "max_length": 5789
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9961.780506017,
+        "turn": 2,
+        "block": 16,
+        "prefix_tokens": 5533,
+        "reused_tokens": 5277,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9961.846627884,
+        "turn": 2,
+        "block": 16,
+        "duration_seconds": 0.066113
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9961.846649535,
+        "turn": 2,
+        "block": 16
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9962.759569576,
+        "turn": 2,
+        "block": 16,
+        "duration_seconds": 0.912914
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9962.75982041,
+        "turn": 2,
+        "block": 16,
+        "duration_seconds": 0.979551
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9962.759916106,
+        "turn": 2,
+        "block": 16,
+        "tokens": 256,
+        "committed_tokens": 4352
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9962.760114432,
+        "turn": 2,
+        "block": 17,
+        "prefix_tokens": 5789,
+        "max_length": 6045
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9962.76039187,
+        "turn": 2,
+        "block": 17,
+        "prefix_tokens": 5789,
+        "reused_tokens": 5533,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9962.826819497,
+        "turn": 2,
+        "block": 17,
+        "duration_seconds": 0.066419
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9962.826842354,
+        "turn": 2,
+        "block": 17
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9963.584421011,
+        "turn": 2,
+        "block": 17,
+        "duration_seconds": 0.757573
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9963.584658182,
+        "turn": 2,
+        "block": 17,
+        "duration_seconds": 0.824523
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9963.584666928,
+        "turn": 2,
+        "block": 17,
+        "tokens": 256,
+        "committed_tokens": 4608
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9963.584957857,
+        "turn": 2,
+        "block": 18,
+        "prefix_tokens": 6045,
+        "max_length": 6301
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9963.585231273,
+        "turn": 2,
+        "block": 18,
+        "prefix_tokens": 6045,
+        "reused_tokens": 5789,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9963.652500896,
+        "turn": 2,
+        "block": 18,
+        "duration_seconds": 0.067254
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9963.652524639,
+        "turn": 2,
+        "block": 18
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9964.586997698,
+        "turn": 2,
+        "block": 18,
+        "duration_seconds": 0.934468
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9964.587316513,
+        "turn": 2,
+        "block": 18,
+        "duration_seconds": 1.002352
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9964.587325476,
+        "turn": 2,
+        "block": 18,
+        "tokens": 256,
+        "committed_tokens": 4864
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9964.587554993,
+        "turn": 2,
+        "block": 19,
+        "prefix_tokens": 6301,
+        "max_length": 6557
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9964.58782961,
+        "turn": 2,
+        "block": 19,
+        "prefix_tokens": 6301,
+        "reused_tokens": 6045,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9964.656304352,
+        "turn": 2,
+        "block": 19,
+        "duration_seconds": 0.068464
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9964.656331429,
+        "turn": 2,
+        "block": 19
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9966.845830971,
+        "turn": 2,
+        "block": 19,
+        "duration_seconds": 2.189494
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9966.846089436,
+        "turn": 2,
+        "block": 19,
+        "duration_seconds": 2.258528
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9966.8461009,
+        "turn": 2,
+        "block": 19,
+        "tokens": 256,
+        "committed_tokens": 5120
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9966.846419125,
+        "turn": 2,
+        "block": 20,
+        "prefix_tokens": 6557,
+        "max_length": 6813
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9966.846694115,
+        "turn": 2,
+        "block": 20,
+        "prefix_tokens": 6557,
+        "reused_tokens": 6301,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9966.916811724,
+        "turn": 2,
+        "block": 20,
+        "duration_seconds": 0.070102
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9966.916835839,
+        "turn": 2,
+        "block": 20
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9967.697569573,
+        "turn": 2,
+        "block": 20,
+        "duration_seconds": 0.780728
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9967.697909118,
+        "turn": 2,
+        "block": 20,
+        "duration_seconds": 0.851483
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9967.69791888,
+        "turn": 2,
+        "block": 20,
+        "tokens": 256,
+        "committed_tokens": 5376
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9967.698164929,
+        "turn": 2,
+        "block": 21,
+        "prefix_tokens": 6813,
+        "max_length": 7069
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9967.698455568,
+        "turn": 2,
+        "block": 21,
+        "prefix_tokens": 6813,
+        "reused_tokens": 6557,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9967.767507043,
+        "turn": 2,
+        "block": 21,
+        "duration_seconds": 0.069043
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9967.767537795,
+        "turn": 2,
+        "block": 21
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9968.7267716,
+        "turn": 2,
+        "block": 21,
+        "duration_seconds": 0.959227
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9968.727128036,
+        "turn": 2,
+        "block": 21,
+        "duration_seconds": 1.028952
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9968.727141223,
+        "turn": 2,
+        "block": 21,
+        "tokens": 256,
+        "committed_tokens": 5632
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9968.727398147,
+        "turn": 2,
+        "block": 22,
+        "prefix_tokens": 7069,
+        "max_length": 7325
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9968.727699937,
+        "turn": 2,
+        "block": 22,
+        "prefix_tokens": 7069,
+        "reused_tokens": 6813,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9968.798063932,
+        "turn": 2,
+        "block": 22,
+        "duration_seconds": 0.070352
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9968.798086674,
+        "turn": 2,
+        "block": 22
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9970.159633179,
+        "turn": 2,
+        "block": 22,
+        "duration_seconds": 1.36154
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9970.159992633,
+        "turn": 2,
+        "block": 22,
+        "duration_seconds": 1.432588
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9970.160014953,
+        "turn": 2,
+        "block": 22,
+        "tokens": 256,
+        "committed_tokens": 5888
+      },
+      {
+        "version": 2,
+        "event": "channel",
+        "monotonic_seconds": 9970.16027543,
+        "turn": 2,
+        "block": 22,
+        "channel": "final",
+        "observed_at_commit": true
+      },
+      {
+        "version": 2,
+        "event": "block_start",
+        "monotonic_seconds": 9970.160281582,
+        "turn": 2,
+        "block": 23,
+        "prefix_tokens": 7325,
+        "max_length": 7581
+      },
+      {
+        "version": 2,
+        "event": "prefill_start",
+        "monotonic_seconds": 9970.160586157,
+        "turn": 2,
+        "block": 23,
+        "prefix_tokens": 7325,
+        "reused_tokens": 7069,
+        "chunk_limit": 2048
+      },
+      {
+        "version": 2,
+        "event": "prefill_end",
+        "monotonic_seconds": 9970.233999109,
+        "turn": 2,
+        "block": 23,
+        "duration_seconds": 0.073403
+      },
+      {
+        "version": 2,
+        "event": "denoise_start",
+        "monotonic_seconds": 9970.234030003,
+        "turn": 2,
+        "block": 23
+      },
+      {
+        "version": 2,
+        "event": "denoise_end",
+        "monotonic_seconds": 9971.392188507,
+        "turn": 2,
+        "block": 23,
+        "duration_seconds": 1.158152
+      },
+      {
+        "version": 2,
+        "event": "block_end",
+        "monotonic_seconds": 9971.392548098,
+        "turn": 2,
+        "block": 23,
+        "duration_seconds": 1.232261
+      },
+      {
+        "version": 2,
+        "event": "commit",
+        "monotonic_seconds": 9971.392559948,
+        "turn": 2,
+        "block": 23,
+        "tokens": 208,
+        "committed_tokens": 6096
+      },
+      {
+        "version": 2,
+        "event": "stop",
+        "monotonic_seconds": 9971.393054405,
+        "turn": 2,
+        "block": 23,
+        "reason": "eog"
+      },
+      {
+        "version": 2,
+        "event": "ready",
+        "monotonic_seconds": 9971.393241951,
+        "turn": 2,
+        "block": 23
+      }
+    ],
+    "native_stop_reason": "eog",
+    "exit_code": null,
+    "error": null,
+    "trace_mode": "summary",
+    "runner_transcript": "0.16.527.508 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.20.219.470 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.21.639.394 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.22.297.573 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.22.964.006 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.23.782.716 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.24.612.548 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.25.454.052 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.26.313.086 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.27.181.127 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.28.063.986 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.28.807.317 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.29.717.754 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.30.477.524 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.31.242.066 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.33.561.561 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.41.049.298 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.42.029.184 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.42.854.030 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.43.856.624 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.46.115.487 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.46.967.248 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.47.996.494 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n0.49.429.380 W init: embeddings required but some input tokens were not marked as outputs -> overriding\n\n<|channel>thought\n*   Output: Exactly one compact JSON object `{\"values\":[\"...\"]}`.\n    *   Content: Exactly 48 string values in source order.\n    *   Routing Logic:\n        *   If `tier == \"ENTERPRISE\"`: `region` + `_ENT_` + `product` + `_` + `issue`.\n        *   Else: `non-EN language` (if available) OR `region`, then `_` + `product` + `_` + `issue`.\n        *   Wait, let me re-read: \"Route ENTERPRISE by region plus ENT; otherwise use a non-EN language or the region, then append product and issue.\"\n        *   Refined Logic:\n            1.  If `tier == \"ENTERPRISE\"`: `region` + `_ENT_` + `product` + `_` + `issue`.\n            2.  If `tier!= \"ENTERPRISE\"`:\n                *   If `language!= \"EN\"`: `language` + `_` + `product` + `_` + `issue`.\n                *   If `language == \"EN\"`: `region` + `_` + `product` + `_` + `issue`.\n\n    *   T01: {\"id\":\"T01\",\"issue\":\"ACCESS\",\"language\":\"JA\",\"product\":\"PAY\",\"region\":\"US\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> US_ENT_PAY_ACCESS\n    *   T02: {\"id\":\"T02\",\"issue\":\"OUTAGE\",\"language\":\"JA\",\"product\":\"PAY\",\"region\":\"JP\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is JA. -> JA_PAY_OUTAGE\n    *   T03: {\"id\":\"T03\",\"issue\":\"ACCESS\",\"language\":\"DE\",\"product\":\"CORE\",\"region\":\"JP\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is DE. -> DE_CORE_ACCESS\n    *   T04: {\"id\":\"T04\",\"issue\":\"BILLING\",\"language\":\"EN\",\"product\":\"PAY\",\"region\":\"EU\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> EU_ENT_PAY_BILLING\n    *   T05: {\"id\":\"T05\",\"issue\":\"OUTAGE\",\"language\":\"DE\",\"product\":\"CORE\",\"region\":\"US\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> US_ENT_CORE_OUTAGE\n    *   T06: {\"id\":\"T06\",\"issue\":\"BILLING\",\"language\":\"JA\",\"product\":\"DATA\",\"region\":\"JP\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is JA. -> JA_DATA_BILLING\n    *   T07: {\"id\":\"T07\",\"issue\":\"ACCESS\",\"language\":\"EN\",\"product\":\"CORE\",\"region\":\"JP\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is EN. -> JP_CORE_ACCESS\n    *   T08: {\"id\":\"T08\",\"issue\":\"OUTAGE\",\"language\":\"EN\",\"product\":\"DATA\",\"region\":\"US\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> US_ENT_DATA_OUTAGE\n    *   T09: {\"id\":\"T09\",\"issue\":\"OUTAGE\",\"language\":\"JA\",\"product\":\"DATA\",\"region\":\"EU\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is JA. -> JA_DATA_OUTAGE\n    *   T10: {\"id\":\"T10\",\"issue\":\"OUTAGE\",\"language\":\"JA\",\"product\":\"CORE\",\"region\":\"JP\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> JP_ENT_CORE_OUTAGE\n    *   T11: {\"id\":\"T11\",\"issue\":\"BILLING\",\"language\":\"JA\",\"product\":\"PAY\",\"region\":\"EU\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is JA. -> JA_PAY_BILLING\n    *   T12: {\"id\":\"T12\",\"issue\":\"ACCESS\",\"language\":\"EN\",\"product\":\"PAY\",\"region\":\"JP\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is EN. -> JP_PAY_ACCESS\n    *   T13: {\"id\":\"T13\",\"issue\":\"BILLING\",\"language\":\"JA\",\"product\":\"CORE\",\"region\":\"US\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> US_ENT_CORE_BILLING\n    *   T14: {\"id\":\"T14\",\"issue\":\"OUTAGE\",\"language\":\"JA\",\"product\":\"CORE\",\"region\":\"JP\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> JP_ENT_CORE_OUTAGE\n    *   T15: {\"id\":\"T15\",\"issue\":\"BILLING\",\"language\":\"DE\",\"product\":\"DATA\",\"region\":\"EU\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is DE. -> DE_DATA_BILLING\n    *   T16: {\"id\":\"T16\",\"issue\":\"BILLING\",\"language\":\"DE\",\"product\":\"DATA\",\"region\":\"JP\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is DE. -> DE_DATA_BILLING\n    *   T17: {\"id\":\"T17\",\"issue\":\"BILLING\",\"language\":\"JA\",\"product\":\"PAY\",\"region\":\"US\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> US_ENT_PAY_BILLING\n    *   T18: {\"id\":\"T18\",\"issue\":\"OUTAGE\",\"language\":\"EN\",\"product\":\"PAY\",\"region\":\"US\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is EN. -> US_PAY_OUTAGE\n    *   T19: {\"id\":\"T19\",\"issue\":\"BILLING\",\"language\":\"EN\",\"product\":\"DATA\",\"region\":\"US\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is EN. -> US_DATA_BILLING\n    *   T20: {\"id\":\"T20\",\"issue\":\"ACCESS\",\"language\":\"DE\",\"product\":\"CORE\",\"region\":\"JP\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> JP_ENT_CORE_ACCESS\n    *   T21: {\"id\":\"T21\",\"issue\":\"BILLING\",\"language\":\"EN\",\"product\":\"PAY\",\"region\":\"EU\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> EU_ENT_PAY_BILLING\n    *   T22: {\"id\":\"T22\",\"issue\":\"ACCESS\",\"language\":\"EN\",\"product\":\"DATA\",\"region\":\"EU\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is EN. -> EU_DATA_ACCESS\n    *   T23: {\"id\":\"T23\",\"issue\":\"OUTAGE\",\"language\":\"DE\",\"product\":\"CORE\",\"region\":\"JP\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is DE. -> DE_CORE_OUTAGE\n    *   T24: {\"id\":\"T24\",\"issue\":\"BILLING\",\"language\":\"DE\",\"product\":\"DATA\",\"region\":\"EU\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> EU_ENT_DATA_BILLING\n    *   T25: {\"id\":\"T25\",\"issue\":\"OUTAGE\",\"language\":\"EN\",\"product\":\"CORE\",\"region\":\"JP\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> JP_ENT_CORE_OUTAGE\n    *   T26: {\"id\":\"T26\",\"issue\":\"BILLING\",\"language\":\"DE\",\"product\":\"PAY\",\"region\":\"EU\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> EU_ENT_PAY_BILLING\n    *   T27: {\"id\":\"T27\",\"issue\":\"OUTAGE\",\"language\":\"DE\",\"product\":\"PAY\",\"region\":\"JP\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> JP_ENT_PAY_OUTAGE\n    *   T28: {\"id\":\"T28\",\"issue\":\"BILLING\",\"language\":\"EN\",\"product\":\"CORE\",\"region\":\"JP\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is EN. -> JP_CORE_BILLING\n    *   T29: {\"id\":\"T29\",\"issue\":\"OUTAGE\",\"language\":\"JA\",\"product\":\"PAY\",\"region\":\"JP\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> JP_ENT_PAY_OUTAGE\n    *   T30: {\"id\":\"T30\",\"issue\":\"OUTAGE\",\"language\":\"JA\",\"product\":\"DATA\",\"region\":\"US\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is JA. -> JA_DATA_OUTAGE\n    *   T31: {\"id\":\"T31\",\"issue\":\"ACCESS\",\"language\":\"DE\",\"product\":\"PAY\",\"region\":\"EU\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is DE. -> DE_PAY_ACCESS\n    *   T32: {\"id\":\"T32\",\"issue\":\"ACCESS\",\"language\":\"EN\",\"product\":\"DATA\",\"region\":\"EU\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> EU_ENT_DATA_ACCESS\n    *   T33: {\"id\":\"T33\",\"issue\":\"ACCESS\",\"language\":\"DE\",\"product\":\"DATA\",\"region\":\"US\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> US_ENT_DATA_ACCESS\n    *   T34: {\"id\":\"T34\",\"issue\":\"ACCESS\",\"language\":\"JA\",\"product\":\"PAY\",\"region\":\"EU\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is JA. -> JA_PAY_ACCESS\n    *   T35: {\"id\":\"T35\",\"issue\":\"BILLING\",\"language\":\"JA\",\"product\":\"PAY\",\"region\":\"JP\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> JP_ENT_PAY_BILLING\n    *   T36: {\"id\":\"T36\",\"issue\":\"ACCESS\",\"language\":\"JA\",\"product\":\"PAY\",\"region\":\"EU\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is JA. -> JA_PAY_ACCESS\n    *   T37: {\"id\":\"T37\",\"issue\":\"BILLING\",\"language\":\"EN\",\"product\":\"DATA\",\"region\":\"JP\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> JP_ENT_DATA_BILLING\n    *   T38: {\"id\":\"T38\",\"issue\":\"ACCESS\",\"language\":\"EN\",\"product\":\"DATA\",\"region\":\"EU\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is EN. -> EU_DATA_ACCESS\n    *   T39: {\"id\":\"T39\",\"issue\":\"BILLING\",\"language\":\"EN\",\"product\":\"CORE\",\"region\":\"JP\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> JP_ENT_CORE_BILLING\n    *   T40: {\"id\":\"T40\",\"issue\":\"BILLING\",\"language\":\"DE\",\"product\":\"PAY\",\"region\":\"US\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> US_ENT_PAY_BILLING\n    *   T41: {\"id\":\"T41\",\"issue\":\"ACCESS\",\"language\":\"JA\",\"product\":\"CORE\",\"region\":\"EU\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> EU_ENT_CORE_ACCESS\n    *   T42: {\"id\":\"T42\",\"issue\":\"BILLING\",\"language\":\"EN\",\"product\":\"CORE\",\"region\":\"EU\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is EN. -> EU_CORE_BILLING\n    *   T43: {\"id\":\"T43\",\"issue\":\"BILLING\",\"language\":\"EN\",\"product\":\"CORE\",\"region\":\"EU\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> EU_ENT_CORE_BILLING\n    *   T44: {\"id\":\"T44\",\"issue\":\"BILLING\",\"language\":\"DE\",\"product\":\"DATA\",\"region\":\"US\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> US_ENT_DATA_BILLING\n    *   T45: {\"id\":\"T45\",\"issue\":\"ACCESS\",\"language\":\"DE\",\"product\":\"CORE\",\"region\":\"EU\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> EU_ENT_CORE_ACCESS\n    *   T46: {\"id\":\"T46\",\"issue\":\"OUTAGE\",\"language\":\"DE\",\"product\":\"CORE\",\"region\":\"EU\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> EU_ENT_CORE_OUTAGE\n    *   T47: {\"id\":\"T47\",\"issue\":\"ACCESS\",\"language\":\"JA\",\"product\":\"PAY\",\"region\":\"US\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> US_ENT_PAY_ACCESS\n    *   T48: {\"id\":\"T48\",\"issue\":\"ACCESS\",\"language\":\"DE\",\"product\":\"CORE\",\"region\":\"JP\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> JP_ENT_CORE_ACCESS\n\n    1.  T01: US_ENT_PAY_ACCESS\n    2.  T02: JA_PAY_OUTAGE\n    3.  T03: DE_CORE_ACCESS\n    4.  T04: EU_ENT_PAY_BILLING\n    5.  T05: US_ENT_CORE_OUTAGE\n    6.  T06: JA_DATA_BILLING\n    7.  T07: JP_CORE_ACCESS\n    8.  T08: US_ENT_DATA_OUTAGE\n    9.  T09: JA_DATA_OUTAGE\n    10. T10: JP_ENT_CORE_OUTAGE\n    11. T11: JA_PAY_BILLING\n    12. T12: JP_PAY_ACCESS\n    13. T13: US_ENT_CORE_BILLING\n    14. T14: JP_ENT_CORE_OUTAGE\n    15. T15: DE_DATA_BILLING\n    16. T16: DE_DATA_BILLING\n    17. T17: US_ENT_PAY_BILLING\n    18. T18: US_PAY_OUTAGE\n    19. T19: US_DATA_BILLING\n    20. T20: JP_ENT_CORE_ACCESS\n    21. T21: EU_ENT_PAY_BILLING\n    22. T22: EU_DATA_ACCESS\n    23. T23: DE_CORE_OUTAGE\n    24. T24: EU_ENT_DATA_BILLING\n    25. T25: JP_ENT_CORE_OUTAGE\n    26. T26: EU_ENT_PAY_BILLING\n    27. T27: JP_ENT_PAY_OUTAGE\n    28. T28: JP_CORE_BILLING\n    29. T29: JP_ENT_PAY_OUTAGE\n    30. T30: JA_DATA_OUTAGE\n    31. T31: DE_PAY_ACCESS\n    32. T32: EU_ENT_DATA_ACCESS\n    33. T33: US_ENT_DATA_ACCESS\n    34. T34: JA_PAY_ACCESS\n    35. T35: JP_ENT_PAY_BILLING\n    36. T36: JA_PAY_ACCESS\n    37. T37: JP_ENT_DATA_BILLING\n    38. T38: EU_DATA_ACCESS\n    39. T39: JP_ENT_CORE_BILLING\n    40. T40: US_ENT_PAY_BILLING\n    41. T41: EU_ENT_CORE_ACCESS\n    42. T42: EU_CORE_BILLING\n    43. T43: EU_ENT_CORE_BILLING\n    44. T44: US_ENT_DATA_BILLING\n    45. T45: EU_ENT_CORE_ACCESS\n    46. T46: EU_ENT_CORE_OUTAGE\n    47. T47: US_ENT_PAY_ACCESS\n    48. T48: JP_ENT_CORE_ACCESS\n\n    Wait, let me double-check the logic one more time.\n    \"Route ENTERPRISE by region plus ENT; otherwise use a non-EN language or the region, then append product and issue.\"\n    - If tier == \"ENTERPRISE\": `region` + `_ENT_` + `product` + `_` + `issue`\n    - Else:\n        - If language!= \"EN\": `language` + `_` + `product` + `_` + `issue`\n        - If language == \"EN\": `region` + `_` + `product` + `_` + `issue`\n\n    Let's re-verify:\n    T01: US_ENT_, PAY, ACCESS -> US_ENT_PAY_ACCESS (Correct)\n    T02: STANDARD, JA, PAY, OUTAGE -> JA_PAY_OUTAGE (Correct)\n    T03: STANDARD, DE, CORE, ACCESS -> DE_CORE_Access (Correct)\n    T04: EU_ENT_, PAY, BILLING -> EU_ENT_PAY_BILLING (Correct)\n    T05: US_ENT_, DE, CORE, OUTAGE -> US_ENT_CORE_OUTAGE (Correct)\n    T06: STANDARD, JA, DATA, BILLING -> JA_DATA_BILLING (Correct)\n    T07: STANDARD, EN, CORE, ACCESS -> JP_CORE_ACCESS (Correct)\n    T08: US_ENT_, EN, DATA, OUTAGE -> US_ENT_DATA_OUTAGE (Correct)\n    T09: STANDARD, JA, DATA, OUTAGE -> JA_DATA_OUTAGE (Correct)\n    T10: JP_ENT_, JA, CORE, OUTAGE -> JP_ENT_CORE_OUTAGE (Correct)\n    T11: STANDARD, JA, PAY, BILLING -> JA_PAY_BILLING (Correct)\n    T12: STANDARD, EN, PAY, ACCESS -> JP_PAY_ACCESS (Correct)\n    T13: US_ENT_, JA, CORE, BILLING -> US_ENT_CORE_BILLING (Correct)\n    T14: JP_ENT_, JA, CORE, OUTAGE -> JP_ENT_CORE_OUTAGE (Correct)\n    T15: STANDARD, DE, DATA, BILLING -> DE_DATA_BILLING (Correct)\n    T16: STANDARD, DE, DATA, BILLING -> DE_DATA_BILLING (Correct)\n    T17: US_ENT_, JA, PAY, BILLING -> US_ENT_PAY_BILLING (Correct)\n    T18: STANDARD, EN, PAY, OUTAGE -> US_PAY_OUTAGE (Correct)\n    T19: STANDARD, EN, DATA, BILLING -> US_DATA_BILLING (Correct)\n    T20: JP_ENT_, DE, CORE, ACCESS -> JP_ENT_CORE_ACCESS (Correct)\n    T21: EU_ENT_, EN, PAY, BILLING -> EU_ENT_PAY_BILLING (Correct)\n    T22: STANDARD, EN, DATA, ACCESS -> EU_DATA_ACCESS (Correct)\n    T23: STANDARD, DE, CORE, OUTAGE -> DE_CORE_OUTAGE (Correct)\n    T24: EU_ENT_, DE, DATA, BILLING -> EU_ENT_DATA_BILLING (Correct)\n    T25: JP_ENT_, EN, CORE, OUTAGE -> JP_ENT_CORE_OUTAGE (Correct)\n    T26: EU_ENT_, DE, PAY, BILLING -> EU_ENT_PAY_BILLING (Correct)\n    T27: JP_ENT_, DE, PAY, OUTAGE -> JP_ENT_PAY_OUTAGE (Correct)\n    T28: STANDARD, EN, CORE, BILLING -> JP_CORE_BILLING (Correct)\n    T29: JP_ENT_, JA, PAY, OUTAGE -> JP_ENT_PAY_OUTAGE (Correct)\n    T30: STANDARD, JA, DATA, OUTAGE -> JA_DATA_OUTAGE (Correct)\n    T31: STANDARD, DE, PAY, ACCESS -> DE_PAY_ACCESS (Correct)\n    T32: EU_ENT_, EN, DATA, ACCESS -> EU_ENT_DATA_ACCESS (Correct)\n    T33: US_ENT_, DE, DATA, ACCESS -> US_ENT_DATA_ACCESS (Correct)\n    T34: STANDARD, JA, PAY, ACCESS -> JA_PAY_ACCESS (Correct)\n    T35: JP_ENT_, JA, PAY, BILLING -> JP_ENT_PAY_BILLING (Correct)\n    T36: STANDARD, JA, PAY, ACCESS -> JA_PAY_ACCESS (Correct)\n    T37: JP_ENT_, EN, DATA, BILLING -> JP_ENT_DATA_BILLING (Correct)\n    T38: STANDARD, EN, DATA, ACCESS -> EU_DATA_ACCESS (Correct)\n    T39: JP_ENT_, EN, CORE, BILLING -> JP_ENT_CORE_BILLING (Correct)\n    T40: US_ENT_, DE, PAY, BILLING -> US_ENT_PAY_BILLING (Correct)\n    T41: EU_ENT_, JA, CORE, ACCESS -> EU_ENT_CORE_ACCESS (Correct)\n    T42: STANDARD, EN, CORE, BILLING -> EU_CORE_BILLING (Correct)\n    T43: EU_ENT_, EN, CORE, BILLING -> EU_ENT_CORE_BILLING (Correct)\n    T44: US_ENT_, DE, DATA, BILLING -> US_ENT_DATA_BILLING (Correct)\n    T45: EU_ENT_, DE, CORE, ACCESS -> EU_ENT_CORE_ACCESS (Correct)\n    T46: EU_ENT_, DE, CORE, OUTAGE -> EU_ENT_CORE_OUTAGE (Correct)\n    T47: US_ENT_, JA, PAY, ACCESS -> US_ENT_PAY_ACCESS (Correct)\n    T48: JP_ENT_, DE, CORE, ACCESS -> JP_ENT_CORE_ACCESS (Correct)\n\n    *Checking the count:*\n    1. US_ENT_PAY_ACCESS\n    2. JA_PAY_OUTAGE\n    3. DE_CORE_ACCESS\n    4. EU_ENT_PAY_BILLING\n    5. US_ENT_CORE_OUTAGE\n    6. JA_DATA_BILLING\n    7. JP_CORE_ACCESS\n    8. US_ENT_DATA_OUTAGE\n    9. JA_DATA_OUTAGE\n    10. JP_ENT_CORE_OUTAGE\n    11. JA_PAY_BILLING\n    12. JP_PAY_ACCESS\n    13. US_ENT_CORE_BILLING\n    14. JP_ENT_CORE_OUTAGE\n    15. DE_DATA_BILLING\n    16. DE_DATA_BILLING\n    17. US_ENT_PAY_BILLING\n    18. US_PAY_OUTAGE\n    19. US_DATA_BILLING\n    20. JP_ENT_CORE_ACCESS\n    21. EU_ENT_PAY_BILLING\n    22. EU_DATA_ACCESS\n    23. DE_CORE_OUTAGE\n    24. EU_ENT_DATA_BILLING\n    25. JP_ENT_CORE_OUTAGE\n    26. EU_ENT_PAY_BILLING\n    27. JP_ENT_PAY_OUTAGE\n    28. JP_CORE_BILLING\n    29. JP_ENT_PAY_OUTAGE\n    30. JA_DATA_OUTAGE\n    31. DE_PAY_ACCESS\n    32. EU_ENT_DATA_ACCESS\n    33. US_ENT_DATA_ACCESS\n    34. JA_PAY_ACCESS\n    35. JP_ENT_PAY_BILLING\n    36. JA_PAY_ACCESS\n    37. JP_ENT_DATA_BILLING\n    38. EU_DATA_ACCESS\n    39. JP_ENT_CORE_BILLING\n    40. US_ENT_PAY_BILLING\n    41. EU_ENT_CORE_ACCESS\n    42. EU_CORE_BILLING\n    43. EU_ENT_CORE_BILLING\n    44. US_ENT_DATA_BILLING\n    45. EU_ENT_CORE_ACCESS\n    46. EU_ENT_CORE_OUTAGE\n    47. US_ENT_PAY_ACCESS\n    48. JP_ENT_CORE_ACCESS\n\n    Count is 48.\n\n    Now construct the JSON object.<channel|>{\"values\": [\"US_ENT_PAY_ACCESS\", \"JA_PAY_OUTAGE\", \"DE_CORE_ACCESS\", \"EU_ENT_PAY_BILLING\", \"US_ENT_CORE_OUTAGE\", \"JA_DATA_BILLING\", \"JP_CORE_ACCESS\", \"US_ENT_DATA_OUTAGE\", \"JA_DATA_OUTAGE\", \"JP_ENT_CORE_OUTAGE\", \"JA_PAY_BILLING\", \"JP_PAY_ACCESS\", \"US_ENT_CORE_BILLING\", \"JP_ENT_CORE_OUTAGE\", \"DE_DATA_BILLING\", \"DE_DATA_BILLING\", \"US_ENT_PAY_BILLING\", \"US_PAY_OUTAGE\", \"US_DATA_BILLING\", \"JP_ENT_CORE_ACCESS\", \"EU_ENT_PAY_BILLING\", \"EU_DATA_ACCESS\", \"DE_CORE_OUTAGE\", \"EU_ENT_DATA_BILLING\", \"JP_ENT_CORE_OUTAGE\", \"EU_ENT_PAY_BILLING\", \"JP_ENT_PAY_OUTAGE\", \"JP_CORE_BILLING\", \"JP_ENT_PAY_OUTAGE\", \"JA_DATA_OUTAGE\", \"DE_PAY_ACCESS\", \"EU_ENT_DATA_ACCESS\", \"US_ENT_DATA_ACCESS\", \"JA_PAY_ACCESS\", \"JP_ENT_PAY_BILLING\", \"JA_PAY_ACCESS\", \"JP_ENT_DATA_BILLING\", \"EU_DATA_ACCESS\", \"JP_ENT_CORE_BILLING\", \"US_ENT_PAY_BILLING\", \"EU_ENT_CORE_ACCESS\", \"EU_CORE_BILLING\", \"EU_ENT_CORE_BILLING\", \"US_ENT_DATA_BILLING\", \"EU_ENT_CORE_ACCESS\", \"EU_ENT_CORE_OUTAGE\", \"US_ENT_PAY_ACCESS\", \"JP_ENT_CORE_ACCESS\"]}\ntotal time: 34138.72ms, time per step: 181.59ms (188 steps over 24 blocks, entropy-bound)\nthroughput: 180.0 tok/s (6144 tok in 34138.72ms), in-step parallel 1410 tok/s (256-tok canvas x 7.8 steps/block)\n\n> ",
+    "raw_output": "<|channel>thought\n*   Output: Exactly one compact JSON object `{\"values\":[\"...\"]}`.\n    *   Content: Exactly 48 string values in source order.\n    *   Routing Logic:\n        *   If `tier == \"ENTERPRISE\"`: `region` + `_ENT_` + `product` + `_` + `issue`.\n        *   Else: `non-EN language` (if available) OR `region`, then `_` + `product` + `_` + `issue`.\n        *   Wait, let me re-read: \"Route ENTERPRISE by region plus ENT; otherwise use a non-EN language or the region, then append product and issue.\"\n        *   Refined Logic:\n            1.  If `tier == \"ENTERPRISE\"`: `region` + `_ENT_` + `product` + `_` + `issue`.\n            2.  If `tier!= \"ENTERPRISE\"`:\n                *   If `language!= \"EN\"`: `language` + `_` + `product` + `_` + `issue`.\n                *   If `language == \"EN\"`: `region` + `_` + `product` + `_` + `issue`.\n\n    *   T01: {\"id\":\"T01\",\"issue\":\"ACCESS\",\"language\":\"JA\",\"product\":\"PAY\",\"region\":\"US\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> US_ENT_PAY_ACCESS\n    *   T02: {\"id\":\"T02\",\"issue\":\"OUTAGE\",\"language\":\"JA\",\"product\":\"PAY\",\"region\":\"JP\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is JA. -> JA_PAY_OUTAGE\n    *   T03: {\"id\":\"T03\",\"issue\":\"ACCESS\",\"language\":\"DE\",\"product\":\"CORE\",\"region\":\"JP\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is DE. -> DE_CORE_ACCESS\n    *   T04: {\"id\":\"T04\",\"issue\":\"BILLING\",\"language\":\"EN\",\"product\":\"PAY\",\"region\":\"EU\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> EU_ENT_PAY_BILLING\n    *   T05: {\"id\":\"T05\",\"issue\":\"OUTAGE\",\"language\":\"DE\",\"product\":\"CORE\",\"region\":\"US\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> US_ENT_CORE_OUTAGE\n    *   T06: {\"id\":\"T06\",\"issue\":\"BILLING\",\"language\":\"JA\",\"product\":\"DATA\",\"region\":\"JP\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is JA. -> JA_DATA_BILLING\n    *   T07: {\"id\":\"T07\",\"issue\":\"ACCESS\",\"language\":\"EN\",\"product\":\"CORE\",\"region\":\"JP\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is EN. -> JP_CORE_ACCESS\n    *   T08: {\"id\":\"T08\",\"issue\":\"OUTAGE\",\"language\":\"EN\",\"product\":\"DATA\",\"region\":\"US\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> US_ENT_DATA_OUTAGE\n    *   T09: {\"id\":\"T09\",\"issue\":\"OUTAGE\",\"language\":\"JA\",\"product\":\"DATA\",\"region\":\"EU\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is JA. -> JA_DATA_OUTAGE\n    *   T10: {\"id\":\"T10\",\"issue\":\"OUTAGE\",\"language\":\"JA\",\"product\":\"CORE\",\"region\":\"JP\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> JP_ENT_CORE_OUTAGE\n    *   T11: {\"id\":\"T11\",\"issue\":\"BILLING\",\"language\":\"JA\",\"product\":\"PAY\",\"region\":\"EU\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is JA. -> JA_PAY_BILLING\n    *   T12: {\"id\":\"T12\",\"issue\":\"ACCESS\",\"language\":\"EN\",\"product\":\"PAY\",\"region\":\"JP\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is EN. -> JP_PAY_ACCESS\n    *   T13: {\"id\":\"T13\",\"issue\":\"BILLING\",\"language\":\"JA\",\"product\":\"CORE\",\"region\":\"US\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> US_ENT_CORE_BILLING\n    *   T14: {\"id\":\"T14\",\"issue\":\"OUTAGE\",\"language\":\"JA\",\"product\":\"CORE\",\"region\":\"JP\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> JP_ENT_CORE_OUTAGE\n    *   T15: {\"id\":\"T15\",\"issue\":\"BILLING\",\"language\":\"DE\",\"product\":\"DATA\",\"region\":\"EU\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is DE. -> DE_DATA_BILLING\n    *   T16: {\"id\":\"T16\",\"issue\":\"BILLING\",\"language\":\"DE\",\"product\":\"DATA\",\"region\":\"JP\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is DE. -> DE_DATA_BILLING\n    *   T17: {\"id\":\"T17\",\"issue\":\"BILLING\",\"language\":\"JA\",\"product\":\"PAY\",\"region\":\"US\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> US_ENT_PAY_BILLING\n    *   T18: {\"id\":\"T18\",\"issue\":\"OUTAGE\",\"language\":\"EN\",\"product\":\"PAY\",\"region\":\"US\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is EN. -> US_PAY_OUTAGE\n    *   T19: {\"id\":\"T19\",\"issue\":\"BILLING\",\"language\":\"EN\",\"product\":\"DATA\",\"region\":\"US\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is EN. -> US_DATA_BILLING\n    *   T20: {\"id\":\"T20\",\"issue\":\"ACCESS\",\"language\":\"DE\",\"product\":\"CORE\",\"region\":\"JP\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> JP_ENT_CORE_ACCESS\n    *   T21: {\"id\":\"T21\",\"issue\":\"BILLING\",\"language\":\"EN\",\"product\":\"PAY\",\"region\":\"EU\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> EU_ENT_PAY_BILLING\n    *   T22: {\"id\":\"T22\",\"issue\":\"ACCESS\",\"language\":\"EN\",\"product\":\"DATA\",\"region\":\"EU\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is EN. -> EU_DATA_ACCESS\n    *   T23: {\"id\":\"T23\",\"issue\":\"OUTAGE\",\"language\":\"DE\",\"product\":\"CORE\",\"region\":\"JP\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is DE. -> DE_CORE_OUTAGE\n    *   T24: {\"id\":\"T24\",\"issue\":\"BILLING\",\"language\":\"DE\",\"product\":\"DATA\",\"region\":\"EU\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> EU_ENT_DATA_BILLING\n    *   T25: {\"id\":\"T25\",\"issue\":\"OUTAGE\",\"language\":\"EN\",\"product\":\"CORE\",\"region\":\"JP\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> JP_ENT_CORE_OUTAGE\n    *   T26: {\"id\":\"T26\",\"issue\":\"BILLING\",\"language\":\"DE\",\"product\":\"PAY\",\"region\":\"EU\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> EU_ENT_PAY_BILLING\n    *   T27: {\"id\":\"T27\",\"issue\":\"OUTAGE\",\"language\":\"DE\",\"product\":\"PAY\",\"region\":\"JP\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> JP_ENT_PAY_OUTAGE\n    *   T28: {\"id\":\"T28\",\"issue\":\"BILLING\",\"language\":\"EN\",\"product\":\"CORE\",\"region\":\"JP\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is EN. -> JP_CORE_BILLING\n    *   T29: {\"id\":\"T29\",\"issue\":\"OUTAGE\",\"language\":\"JA\",\"product\":\"PAY\",\"region\":\"JP\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> JP_ENT_PAY_OUTAGE\n    *   T30: {\"id\":\"T30\",\"issue\":\"OUTAGE\",\"language\":\"JA\",\"product\":\"DATA\",\"region\":\"US\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is JA. -> JA_DATA_OUTAGE\n    *   T31: {\"id\":\"T31\",\"issue\":\"ACCESS\",\"language\":\"DE\",\"product\":\"PAY\",\"region\":\"EU\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is DE. -> DE_PAY_ACCESS\n    *   T32: {\"id\":\"T32\",\"issue\":\"ACCESS\",\"language\":\"EN\",\"product\":\"DATA\",\"region\":\"EU\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> EU_ENT_DATA_ACCESS\n    *   T33: {\"id\":\"T33\",\"issue\":\"ACCESS\",\"language\":\"DE\",\"product\":\"DATA\",\"region\":\"US\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> US_ENT_DATA_ACCESS\n    *   T34: {\"id\":\"T34\",\"issue\":\"ACCESS\",\"language\":\"JA\",\"product\":\"PAY\",\"region\":\"EU\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is JA. -> JA_PAY_ACCESS\n    *   T35: {\"id\":\"T35\",\"issue\":\"BILLING\",\"language\":\"JA\",\"product\":\"PAY\",\"region\":\"JP\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> JP_ENT_PAY_BILLING\n    *   T36: {\"id\":\"T36\",\"issue\":\"ACCESS\",\"language\":\"JA\",\"product\":\"PAY\",\"region\":\"EU\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is JA. -> JA_PAY_ACCESS\n    *   T37: {\"id\":\"T37\",\"issue\":\"BILLING\",\"language\":\"EN\",\"product\":\"DATA\",\"region\":\"JP\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> JP_ENT_DATA_BILLING\n    *   T38: {\"id\":\"T38\",\"issue\":\"ACCESS\",\"language\":\"EN\",\"product\":\"DATA\",\"region\":\"EU\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is EN. -> EU_DATA_ACCESS\n    *   T39: {\"id\":\"T39\",\"issue\":\"BILLING\",\"language\":\"EN\",\"product\":\"CORE\",\"region\":\"JP\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> JP_ENT_CORE_BILLING\n    *   T40: {\"id\":\"T40\",\"issue\":\"BILLING\",\"language\":\"DE\",\"product\":\"PAY\",\"region\":\"US\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> US_ENT_PAY_BILLING\n    *   T41: {\"id\":\"T41\",\"issue\":\"ACCESS\",\"language\":\"JA\",\"product\":\"CORE\",\"region\":\"EU\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> EU_ENT_CORE_ACCESS\n    *   T42: {\"id\":\"T42\",\"issue\":\"BILLING\",\"language\":\"EN\",\"product\":\"CORE\",\"region\":\"EU\",\"tier\":\"STANDARD\"}\n        *   Tier not ENTERPRISE. Lang is EN. -> EU_CORE_BILLING\n    *   T43: {\"id\":\"T43\",\"issue\":\"BILLING\",\"language\":\"EN\",\"product\":\"CORE\",\"region\":\"EU\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> EU_ENT_CORE_BILLING\n    *   T44: {\"id\":\"T44\",\"issue\":\"BILLING\",\"language\":\"DE\",\"product\":\"DATA\",\"region\":\"US\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> US_ENT_DATA_BILLING\n    *   T45: {\"id\":\"T45\",\"issue\":\"ACCESS\",\"language\":\"DE\",\"product\":\"CORE\",\"region\":\"EU\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> EU_ENT_CORE_ACCESS\n    *   T46: {\"id\":\"T46\",\"issue\":\"OUTAGE\",\"language\":\"DE\",\"product\":\"CORE\",\"region\":\"EU\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> EU_ENT_CORE_OUTAGE\n    *   T47: {\"id\":\"T47\",\"issue\":\"ACCESS\",\"language\":\"JA\",\"product\":\"PAY\",\"region\":\"US\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> US_ENT_PAY_ACCESS\n    *   T48: {\"id\":\"T48\",\"issue\":\"ACCESS\",\"language\":\"DE\",\"product\":\"CORE\",\"region\":\"JP\",\"tier\":\"ENTERPRISE\"}\n        *   Tier ENTERPRISE. -> JP_ENT_CORE_ACCESS\n\n    1.  T01: US_ENT_PAY_ACCESS\n    2.  T02: JA_PAY_OUTAGE\n    3.  T03: DE_CORE_ACCESS\n    4.  T04: EU_ENT_PAY_BILLING\n    5.  T05: US_ENT_CORE_OUTAGE\n    6.  T06: JA_DATA_BILLING\n    7.  T07: JP_CORE_ACCESS\n    8.  T08: US_ENT_DATA_OUTAGE\n    9.  T09: JA_DATA_OUTAGE\n    10. T10: JP_ENT_CORE_OUTAGE\n    11. T11: JA_PAY_BILLING\n    12. T12: JP_PAY_ACCESS\n    13. T13: US_ENT_CORE_BILLING\n    14. T14: JP_ENT_CORE_OUTAGE\n    15. T15: DE_DATA_BILLING\n    16. T16: DE_DATA_BILLING\n    17. T17: US_ENT_PAY_BILLING\n    18. T18: US_PAY_OUTAGE\n    19. T19: US_DATA_BILLING\n    20. T20: JP_ENT_CORE_ACCESS\n    21. T21: EU_ENT_PAY_BILLING\n    22. T22: EU_DATA_ACCESS\n    23. T23: DE_CORE_OUTAGE\n    24. T24: EU_ENT_DATA_BILLING\n    25. T25: JP_ENT_CORE_OUTAGE\n    26. T26: EU_ENT_PAY_BILLING\n    27. T27: JP_ENT_PAY_OUTAGE\n    28. T28: JP_CORE_BILLING\n    29. T29: JP_ENT_PAY_OUTAGE\n    30. T30: JA_DATA_OUTAGE\n    31. T31: DE_PAY_ACCESS\n    32. T32: EU_ENT_DATA_ACCESS\n    33. T33: US_ENT_DATA_ACCESS\n    34. T34: JA_PAY_ACCESS\n    35. T35: JP_ENT_PAY_BILLING\n    36. T36: JA_PAY_ACCESS\n    37. T37: JP_ENT_DATA_BILLING\n    38. T38: EU_DATA_ACCESS\n    39. T39: JP_ENT_CORE_BILLING\n    40. T40: US_ENT_PAY_BILLING\n    41. T41: EU_ENT_CORE_ACCESS\n    42. T42: EU_CORE_BILLING\n    43. T43: EU_ENT_CORE_BILLING\n    44. T44: US_ENT_DATA_BILLING\n    45. T45: EU_ENT_CORE_ACCESS\n    46. T46: EU_ENT_CORE_OUTAGE\n    47. T47: US_ENT_PAY_ACCESS\n    48. T48: JP_ENT_CORE_ACCESS\n\n    Wait, let me double-check the logic one more time.\n    \"Route ENTERPRISE by region plus ENT; otherwise use a non-EN language or the region, then append product and issue.\"\n    - If tier == \"ENTERPRISE\": `region` + `_ENT_` + `product` + `_` + `issue`\n    - Else:\n        - If language!= \"EN\": `language` + `_` + `product` + `_` + `issue`\n        - If language == \"EN\": `region` + `_` + `product` + `_` + `issue`\n\n    Let's re-verify:\n    T01: US_ENT_, PAY, ACCESS -> US_ENT_PAY_ACCESS (Correct)\n    T02: STANDARD, JA, PAY, OUTAGE -> JA_PAY_OUTAGE (Correct)\n    T03: STANDARD, DE, CORE, ACCESS -> DE_CORE_Access (Correct)\n    T04: EU_ENT_, PAY, BILLING -> EU_ENT_PAY_BILLING (Correct)\n    T05: US_ENT_, DE, CORE, OUTAGE -> US_ENT_CORE_OUTAGE (Correct)\n    T06: STANDARD, JA, DATA, BILLING -> JA_DATA_BILLING (Correct)\n    T07: STANDARD, EN, CORE, ACCESS -> JP_CORE_ACCESS (Correct)\n    T08: US_ENT_, EN, DATA, OUTAGE -> US_ENT_DATA_OUTAGE (Correct)\n    T09: STANDARD, JA, DATA, OUTAGE -> JA_DATA_OUTAGE (Correct)\n    T10: JP_ENT_, JA, CORE, OUTAGE -> JP_ENT_CORE_OUTAGE (Correct)\n    T11: STANDARD, JA, PAY, BILLING -> JA_PAY_BILLING (Correct)\n    T12: STANDARD, EN, PAY, ACCESS -> JP_PAY_ACCESS (Correct)\n    T13: US_ENT_, JA, CORE, BILLING -> US_ENT_CORE_BILLING (Correct)\n    T14: JP_ENT_, JA, CORE, OUTAGE -> JP_ENT_CORE_OUTAGE (Correct)\n    T15: STANDARD, DE, DATA, BILLING -> DE_DATA_BILLING (Correct)\n    T16: STANDARD, DE, DATA, BILLING -> DE_DATA_BILLING (Correct)\n    T17: US_ENT_, JA, PAY, BILLING -> US_ENT_PAY_BILLING (Correct)\n    T18: STANDARD, EN, PAY, OUTAGE -> US_PAY_OUTAGE (Correct)\n    T19: STANDARD, EN, DATA, BILLING -> US_DATA_BILLING (Correct)\n    T20: JP_ENT_, DE, CORE, ACCESS -> JP_ENT_CORE_ACCESS (Correct)\n    T21: EU_ENT_, EN, PAY, BILLING -> EU_ENT_PAY_BILLING (Correct)\n    T22: STANDARD, EN, DATA, ACCESS -> EU_DATA_ACCESS (Correct)\n    T23: STANDARD, DE, CORE, OUTAGE -> DE_CORE_OUTAGE (Correct)\n    T24: EU_ENT_, DE, DATA, BILLING -> EU_ENT_DATA_BILLING (Correct)\n    T25: JP_ENT_, EN, CORE, OUTAGE -> JP_ENT_CORE_OUTAGE (Correct)\n    T26: EU_ENT_, DE, PAY, BILLING -> EU_ENT_PAY_BILLING (Correct)\n    T27: JP_ENT_, DE, PAY, OUTAGE -> JP_ENT_PAY_OUTAGE (Correct)\n    T28: STANDARD, EN, CORE, BILLING -> JP_CORE_BILLING (Correct)\n    T29: JP_ENT_, JA, PAY, OUTAGE -> JP_ENT_PAY_OUTAGE (Correct)\n    T30: STANDARD, JA, DATA, OUTAGE -> JA_DATA_OUTAGE (Correct)\n    T31: STANDARD, DE, PAY, ACCESS -> DE_PAY_ACCESS (Correct)\n    T32: EU_ENT_, EN, DATA, ACCESS -> EU_ENT_DATA_ACCESS (Correct)\n    T33: US_ENT_, DE, DATA, ACCESS -> US_ENT_DATA_ACCESS (Correct)\n    T34: STANDARD, JA, PAY, ACCESS -> JA_PAY_ACCESS (Correct)\n    T35: JP_ENT_, JA, PAY, BILLING -> JP_ENT_PAY_BILLING (Correct)\n    T36: STANDARD, JA, PAY, ACCESS -> JA_PAY_ACCESS (Correct)\n    T37: JP_ENT_, EN, DATA, BILLING -> JP_ENT_DATA_BILLING (Correct)\n    T38: STANDARD, EN, DATA, ACCESS -> EU_DATA_ACCESS (Correct)\n    T39: JP_ENT_, EN, CORE, BILLING -> JP_ENT_CORE_BILLING (Correct)\n    T40: US_ENT_, DE, PAY, BILLING -> US_ENT_PAY_BILLING (Correct)\n    T41: EU_ENT_, JA, CORE, ACCESS -> EU_ENT_CORE_ACCESS (Correct)\n    T42: STANDARD, EN, CORE, BILLING -> EU_CORE_BILLING (Correct)\n    T43: EU_ENT_, EN, CORE, BILLING -> EU_ENT_CORE_BILLING (Correct)\n    T44: US_ENT_, DE, DATA, BILLING -> US_ENT_DATA_BILLING (Correct)\n    T45: EU_ENT_, DE, CORE, ACCESS -> EU_ENT_CORE_ACCESS (Correct)\n    T46: EU_ENT_, DE, CORE, OUTAGE -> EU_ENT_CORE_OUTAGE (Correct)\n    T47: US_ENT_, JA, PAY, ACCESS -> US_ENT_PAY_ACCESS (Correct)\n    T48: JP_ENT_, DE, CORE, ACCESS -> JP_ENT_CORE_ACCESS (Correct)\n\n    *Checking the count:*\n    1. US_ENT_PAY_ACCESS\n    2. JA_PAY_OUTAGE\n    3. DE_CORE_ACCESS\n    4. EU_ENT_PAY_BILLING\n    5. US_ENT_CORE_OUTAGE\n    6. JA_DATA_BILLING\n    7. JP_CORE_ACCESS\n    8. US_ENT_DATA_OUTAGE\n    9. JA_DATA_OUTAGE\n    10. JP_ENT_CORE_OUTAGE\n    11. JA_PAY_BILLING\n    12. JP_PAY_ACCESS\n    13. US_ENT_CORE_BILLING\n    14. JP_ENT_CORE_OUTAGE\n    15. DE_DATA_BILLING\n    16. DE_DATA_BILLING\n    17. US_ENT_PAY_BILLING\n    18. US_PAY_OUTAGE\n    19. US_DATA_BILLING\n    20. JP_ENT_CORE_ACCESS\n    21. EU_ENT_PAY_BILLING\n    22. EU_DATA_ACCESS\n    23. DE_CORE_OUTAGE\n    24. EU_ENT_DATA_BILLING\n    25. JP_ENT_CORE_OUTAGE\n    26. EU_ENT_PAY_BILLING\n    27. JP_ENT_PAY_OUTAGE\n    28. JP_CORE_BILLING\n    29. JP_ENT_PAY_OUTAGE\n    30. JA_DATA_OUTAGE\n    31. DE_PAY_ACCESS\n    32. EU_ENT_DATA_ACCESS\n    33. US_ENT_DATA_ACCESS\n    34. JA_PAY_ACCESS\n    35. JP_ENT_PAY_BILLING\n    36. JA_PAY_ACCESS\n    37. JP_ENT_DATA_BILLING\n    38. EU_DATA_ACCESS\n    39. JP_ENT_CORE_BILLING\n    40. US_ENT_PAY_BILLING\n    41. EU_ENT_CORE_ACCESS\n    42. EU_CORE_BILLING\n    43. EU_ENT_CORE_BILLING\n    44. US_ENT_DATA_BILLING\n    45. EU_ENT_CORE_ACCESS\n    46. EU_ENT_CORE_OUTAGE\n    47. US_ENT_PAY_ACCESS\n    48. JP_ENT_CORE_ACCESS\n\n    Count is 48.\n\n    Now construct the JSON object.<channel|>{\"values\": [\"US_ENT_PAY_ACCESS\", \"JA_PAY_OUTAGE\", \"DE_CORE_ACCESS\", \"EU_ENT_PAY_BILLING\", \"US_ENT_CORE_OUTAGE\", \"JA_DATA_BILLING\", \"JP_CORE_ACCESS\", \"US_ENT_DATA_OUTAGE\", \"JA_DATA_OUTAGE\", \"JP_ENT_CORE_OUTAGE\", \"JA_PAY_BILLING\", \"JP_PAY_ACCESS\", \"US_ENT_CORE_BILLING\", \"JP_ENT_CORE_OUTAGE\", \"DE_DATA_BILLING\", \"DE_DATA_BILLING\", \"US_ENT_PAY_BILLING\", \"US_PAY_OUTAGE\", \"US_DATA_BILLING\", \"JP_ENT_CORE_ACCESS\", \"EU_ENT_PAY_BILLING\", \"EU_DATA_ACCESS\", \"DE_CORE_OUTAGE\", \"EU_ENT_DATA_BILLING\", \"JP_ENT_CORE_OUTAGE\", \"EU_ENT_PAY_BILLING\", \"JP_ENT_PAY_OUTAGE\", \"JP_CORE_BILLING\", \"JP_ENT_PAY_OUTAGE\", \"JA_DATA_OUTAGE\", \"DE_PAY_ACCESS\", \"EU_ENT_DATA_ACCESS\", \"US_ENT_DATA_ACCESS\", \"JA_PAY_ACCESS\", \"JP_ENT_PAY_BILLING\", \"JA_PAY_ACCESS\", \"JP_ENT_DATA_BILLING\", \"EU_DATA_ACCESS\", \"JP_ENT_CORE_BILLING\", \"US_ENT_PAY_BILLING\", \"EU_ENT_CORE_ACCESS\", \"EU_CORE_BILLING\", \"EU_ENT_CORE_BILLING\", \"US_ENT_DATA_BILLING\", \"EU_ENT_CORE_ACCESS\", \"EU_ENT_CORE_OUTAGE\", \"US_ENT_PAY_ACCESS\", \"JP_ENT_CORE_ACCESS\"]}",
+    "wall_seconds": 34.1409969489996,
+    "internal_compute_seconds": 34.13872,
+    "canvas_work_tokens": 6144,
+    "worker_elapsed_seconds": 34.14334214200062,
+    "runtime_ready": true
+  }
+}

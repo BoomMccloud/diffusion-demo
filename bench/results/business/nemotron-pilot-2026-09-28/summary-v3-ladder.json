@@ -1,0 +1,1059 @@
+{
+ "schema": "nemotron-pilot-v1",
+ "summary": {
+  "openrouter-ministral-14b-2512": {
+   "attempts": 20,
+   "valid": 0,
+   "lenient_valid": 8,
+   "outcomes": {
+    "invalid_format": 20
+   },
+   "exact_case_decisions_correct": "0/520",
+   "lenient_exact_decisions_correct": "196/520",
+   "by_class": {
+    "direct": "0/8",
+    "mixed": "0/0",
+    "chained": "0/4",
+    "global": "0/0"
+   },
+   "median_seconds": 2.38195,
+   "median_output_tokens": 114.5,
+   "median_nfe": null
+  },
+  "openrouter-ministral-3b-2512": {
+   "attempts": 20,
+   "valid": 0,
+   "lenient_valid": 5,
+   "outcomes": {
+    "invalid_format": 20
+   },
+   "exact_case_decisions_correct": "0/520",
+   "lenient_exact_decisions_correct": "176/520",
+   "by_class": {
+    "direct": "0/8",
+    "mixed": "0/0",
+    "chained": "0/4",
+    "global": "0/0"
+   },
+   "median_seconds": 1.4487,
+   "median_output_tokens": 117.0,
+   "median_nfe": null
+  },
+  "openrouter-qwen3.5-9b": {
+   "attempts": 20,
+   "valid": 9,
+   "lenient_valid": 9,
+   "outcomes": {
+    "correct": 9,
+    "incorrect": 5,
+    "invalid_format": 5,
+    "truncated": 1
+   },
+   "exact_case_decisions_correct": "210/520",
+   "lenient_exact_decisions_correct": "210/520",
+   "by_class": {
+    "direct": "3/8",
+    "mixed": "0/0",
+    "chained": "0/4",
+    "global": "0/0"
+   },
+   "median_seconds": 1.85,
+   "median_output_tokens": 89.5,
+   "median_nfe": null
+  }
+ },
+ "rows": [
+  {
+   "arm": "openrouter-ministral-14b-2512",
+   "case_id": "ladder-l0-000-n8-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": true,
+   "stop_reason": "stop",
+   "output_tokens": 58,
+   "nfe": null,
+   "elapsed_seconds": 2.501
+  },
+  {
+   "arm": "openrouter-ministral-14b-2512",
+   "case_id": "ladder-l1-000-n8-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": true,
+   "stop_reason": "stop",
+   "output_tokens": 30,
+   "nfe": null,
+   "elapsed_seconds": 2.2629
+  },
+  {
+   "arm": "openrouter-ministral-14b-2512",
+   "case_id": "business-d1-000-n8-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": true,
+   "stop_reason": "stop",
+   "output_tokens": 68,
+   "nfe": null,
+   "elapsed_seconds": 1.5078
+  },
+  {
+   "arm": "openrouter-ministral-14b-2512",
+   "case_id": "business-d3-000-n8-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 38,
+   "nfe": null,
+   "elapsed_seconds": 1.2165
+  },
+  {
+   "arm": "openrouter-ministral-14b-2512",
+   "case_id": "business-c2-000-n8-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 58,
+   "nfe": null,
+   "elapsed_seconds": 1.4157
+  },
+  {
+   "arm": "openrouter-ministral-14b-2512",
+   "case_id": "ladder-l0-000-n16-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": true,
+   "stop_reason": "stop",
+   "output_tokens": 102,
+   "nfe": null,
+   "elapsed_seconds": 1.8691
+  },
+  {
+   "arm": "openrouter-ministral-14b-2512",
+   "case_id": "ladder-l1-000-n16-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": true,
+   "stop_reason": "stop",
+   "output_tokens": 51,
+   "nfe": null,
+   "elapsed_seconds": 1.4063
+  },
+  {
+   "arm": "openrouter-ministral-14b-2512",
+   "case_id": "business-d1-000-n16-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": true,
+   "stop_reason": "stop",
+   "output_tokens": 130,
+   "nfe": null,
+   "elapsed_seconds": 2.7735
+  },
+  {
+   "arm": "openrouter-ministral-14b-2512",
+   "case_id": "business-d3-000-n16-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 64,
+   "nfe": null,
+   "elapsed_seconds": 1.4894
+  },
+  {
+   "arm": "openrouter-ministral-14b-2512",
+   "case_id": "business-c2-000-n16-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 114,
+   "nfe": null,
+   "elapsed_seconds": 2.0534
+  },
+  {
+   "arm": "openrouter-ministral-14b-2512",
+   "case_id": "ladder-l0-000-n32-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": true,
+   "stop_reason": "stop",
+   "output_tokens": 197,
+   "nfe": null,
+   "elapsed_seconds": 2.8873
+  },
+  {
+   "arm": "openrouter-ministral-14b-2512",
+   "case_id": "ladder-l1-000-n32-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 95,
+   "nfe": null,
+   "elapsed_seconds": 1.7979
+  },
+  {
+   "arm": "openrouter-ministral-14b-2512",
+   "case_id": "business-d1-000-n32-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 244,
+   "nfe": null,
+   "elapsed_seconds": 3.6675
+  },
+  {
+   "arm": "openrouter-ministral-14b-2512",
+   "case_id": "business-d3-000-n32-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 115,
+   "nfe": null,
+   "elapsed_seconds": 2.0969
+  },
+  {
+   "arm": "openrouter-ministral-14b-2512",
+   "case_id": "business-c2-000-n32-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 234,
+   "nfe": null,
+   "elapsed_seconds": 3.5423
+  },
+  {
+   "arm": "openrouter-ministral-14b-2512",
+   "case_id": "ladder-l0-000-n48-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": true,
+   "stop_reason": "stop",
+   "output_tokens": 290,
+   "nfe": null,
+   "elapsed_seconds": 3.6881
+  },
+  {
+   "arm": "openrouter-ministral-14b-2512",
+   "case_id": "ladder-l1-000-n48-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 137,
+   "nfe": null,
+   "elapsed_seconds": 2.8191
+  },
+  {
+   "arm": "openrouter-ministral-14b-2512",
+   "case_id": "business-d1-000-n48-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 348,
+   "nfe": null,
+   "elapsed_seconds": 4.3473
+  },
+  {
+   "arm": "openrouter-ministral-14b-2512",
+   "case_id": "business-d3-000-n48-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 158,
+   "nfe": null,
+   "elapsed_seconds": 2.5809
+  },
+  {
+   "arm": "openrouter-ministral-14b-2512",
+   "case_id": "business-c2-000-n48-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 323,
+   "nfe": null,
+   "elapsed_seconds": 4.9
+  },
+  {
+   "arm": "openrouter-ministral-3b-2512",
+   "case_id": "ladder-l0-000-n8-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": true,
+   "stop_reason": "stop",
+   "output_tokens": 58,
+   "nfe": null,
+   "elapsed_seconds": 2.2042
+  },
+  {
+   "arm": "openrouter-ministral-3b-2512",
+   "case_id": "ladder-l1-000-n8-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 31,
+   "nfe": null,
+   "elapsed_seconds": 1.0131
+  },
+  {
+   "arm": "openrouter-ministral-3b-2512",
+   "case_id": "business-d1-000-n8-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": true,
+   "stop_reason": "stop",
+   "output_tokens": 68,
+   "nfe": null,
+   "elapsed_seconds": 1.2101
+  },
+  {
+   "arm": "openrouter-ministral-3b-2512",
+   "case_id": "business-d3-000-n8-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 39,
+   "nfe": null,
+   "elapsed_seconds": 1.0493
+  },
+  {
+   "arm": "openrouter-ministral-3b-2512",
+   "case_id": "business-c2-000-n8-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 58,
+   "nfe": null,
+   "elapsed_seconds": 1.1802
+  },
+  {
+   "arm": "openrouter-ministral-3b-2512",
+   "case_id": "ladder-l0-000-n16-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": true,
+   "stop_reason": "stop",
+   "output_tokens": 102,
+   "nfe": null,
+   "elapsed_seconds": 1.2354
+  },
+  {
+   "arm": "openrouter-ministral-3b-2512",
+   "case_id": "ladder-l1-000-n16-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 53,
+   "nfe": null,
+   "elapsed_seconds": 1.0754
+  },
+  {
+   "arm": "openrouter-ministral-3b-2512",
+   "case_id": "business-d1-000-n16-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": true,
+   "stop_reason": "stop",
+   "output_tokens": 130,
+   "nfe": null,
+   "elapsed_seconds": 1.475
+  },
+  {
+   "arm": "openrouter-ministral-3b-2512",
+   "case_id": "business-d3-000-n16-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 66,
+   "nfe": null,
+   "elapsed_seconds": 1.072
+  },
+  {
+   "arm": "openrouter-ministral-3b-2512",
+   "case_id": "business-c2-000-n16-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 106,
+   "nfe": null,
+   "elapsed_seconds": 1.3871
+  },
+  {
+   "arm": "openrouter-ministral-3b-2512",
+   "case_id": "ladder-l0-000-n32-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": true,
+   "stop_reason": "stop",
+   "output_tokens": 197,
+   "nfe": null,
+   "elapsed_seconds": 2.0651
+  },
+  {
+   "arm": "openrouter-ministral-3b-2512",
+   "case_id": "ladder-l1-000-n32-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 94,
+   "nfe": null,
+   "elapsed_seconds": 1.4224
+  },
+  {
+   "arm": "openrouter-ministral-3b-2512",
+   "case_id": "business-d1-000-n32-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 254,
+   "nfe": null,
+   "elapsed_seconds": 1.9271
+  },
+  {
+   "arm": "openrouter-ministral-3b-2512",
+   "case_id": "business-d3-000-n32-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 133,
+   "nfe": null,
+   "elapsed_seconds": 1.4008
+  },
+  {
+   "arm": "openrouter-ministral-3b-2512",
+   "case_id": "business-c2-000-n32-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 201,
+   "nfe": null,
+   "elapsed_seconds": 2.1433
+  },
+  {
+   "arm": "openrouter-ministral-3b-2512",
+   "case_id": "ladder-l0-000-n48-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 283,
+   "nfe": null,
+   "elapsed_seconds": 2.0532
+  },
+  {
+   "arm": "openrouter-ministral-3b-2512",
+   "case_id": "ladder-l1-000-n48-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 128,
+   "nfe": null,
+   "elapsed_seconds": 1.7998
+  },
+  {
+   "arm": "openrouter-ministral-3b-2512",
+   "case_id": "business-d1-000-n48-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 386,
+   "nfe": null,
+   "elapsed_seconds": 3.0532
+  },
+  {
+   "arm": "openrouter-ministral-3b-2512",
+   "case_id": "business-d3-000-n48-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 204,
+   "nfe": null,
+   "elapsed_seconds": 2.1296
+  },
+  {
+   "arm": "openrouter-ministral-3b-2512",
+   "case_id": "business-c2-000-n48-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 283,
+   "nfe": null,
+   "elapsed_seconds": 2.0506
+  },
+  {
+   "arm": "openrouter-qwen3.5-9b",
+   "case_id": "ladder-l0-000-n8-v3",
+   "outcome": "correct",
+   "valid": true,
+   "per_decision_correct": 8,
+   "first_error": null,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": true,
+   "stop_reason": "stop",
+   "output_tokens": 47,
+   "nfe": null,
+   "elapsed_seconds": 2.4547
+  },
+  {
+   "arm": "openrouter-qwen3.5-9b",
+   "case_id": "ladder-l1-000-n8-v3",
+   "outcome": "correct",
+   "valid": true,
+   "per_decision_correct": 8,
+   "first_error": null,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": true,
+   "stop_reason": "stop",
+   "output_tokens": 20,
+   "nfe": null,
+   "elapsed_seconds": 0.9145
+  },
+  {
+   "arm": "openrouter-qwen3.5-9b",
+   "case_id": "business-d1-000-n8-v3",
+   "outcome": "correct",
+   "valid": true,
+   "per_decision_correct": 8,
+   "first_error": null,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": true,
+   "stop_reason": "stop",
+   "output_tokens": 54,
+   "nfe": null,
+   "elapsed_seconds": 2.1497
+  },
+  {
+   "arm": "openrouter-qwen3.5-9b",
+   "case_id": "business-d3-000-n8-v3",
+   "outcome": "incorrect",
+   "valid": false,
+   "per_decision_correct": 4,
+   "first_error": 1,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 30,
+   "nfe": null,
+   "elapsed_seconds": 1.019
+  },
+  {
+   "arm": "openrouter-qwen3.5-9b",
+   "case_id": "business-c2-000-n8-v3",
+   "outcome": "incorrect",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 46,
+   "nfe": null,
+   "elapsed_seconds": 1.4649
+  },
+  {
+   "arm": "openrouter-qwen3.5-9b",
+   "case_id": "ladder-l0-000-n16-v3",
+   "outcome": "correct",
+   "valid": true,
+   "per_decision_correct": 16,
+   "first_error": null,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": true,
+   "stop_reason": "stop",
+   "output_tokens": 86,
+   "nfe": null,
+   "elapsed_seconds": 2.9582
+  },
+  {
+   "arm": "openrouter-qwen3.5-9b",
+   "case_id": "ladder-l1-000-n16-v3",
+   "outcome": "correct",
+   "valid": true,
+   "per_decision_correct": 16,
+   "first_error": null,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": true,
+   "stop_reason": "stop",
+   "output_tokens": 36,
+   "nfe": null,
+   "elapsed_seconds": 1.6323
+  },
+  {
+   "arm": "openrouter-qwen3.5-9b",
+   "case_id": "business-d1-000-n16-v3",
+   "outcome": "correct",
+   "valid": true,
+   "per_decision_correct": 16,
+   "first_error": null,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": true,
+   "stop_reason": "stop",
+   "output_tokens": 104,
+   "nfe": null,
+   "elapsed_seconds": 1.657
+  },
+  {
+   "arm": "openrouter-qwen3.5-9b",
+   "case_id": "business-d3-000-n16-v3",
+   "outcome": "incorrect",
+   "valid": false,
+   "per_decision_correct": 10,
+   "first_error": 1,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 55,
+   "nfe": null,
+   "elapsed_seconds": 1.5098
+  },
+  {
+   "arm": "openrouter-qwen3.5-9b",
+   "case_id": "business-c2-000-n16-v3",
+   "outcome": "incorrect",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 87,
+   "nfe": null,
+   "elapsed_seconds": 1.7148
+  },
+  {
+   "arm": "openrouter-qwen3.5-9b",
+   "case_id": "ladder-l0-000-n32-v3",
+   "outcome": "correct",
+   "valid": true,
+   "per_decision_correct": 32,
+   "first_error": null,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": true,
+   "stop_reason": "stop",
+   "output_tokens": 178,
+   "nfe": null,
+   "elapsed_seconds": 3.2364
+  },
+  {
+   "arm": "openrouter-qwen3.5-9b",
+   "case_id": "ladder-l1-000-n32-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 66,
+   "nfe": null,
+   "elapsed_seconds": 1.4452
+  },
+  {
+   "arm": "openrouter-qwen3.5-9b",
+   "case_id": "business-d1-000-n32-v3",
+   "outcome": "correct",
+   "valid": true,
+   "per_decision_correct": 32,
+   "first_error": null,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": true,
+   "stop_reason": "stop",
+   "output_tokens": 203,
+   "nfe": null,
+   "elapsed_seconds": 2.1718
+  },
+  {
+   "arm": "openrouter-qwen3.5-9b",
+   "case_id": "business-d3-000-n32-v3",
+   "outcome": "incorrect",
+   "valid": false,
+   "per_decision_correct": 12,
+   "first_error": 1,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 100,
+   "nfe": null,
+   "elapsed_seconds": 1.8504
+  },
+  {
+   "arm": "openrouter-qwen3.5-9b",
+   "case_id": "business-c2-000-n32-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 173,
+   "nfe": null,
+   "elapsed_seconds": 1.9093
+  },
+  {
+   "arm": "openrouter-qwen3.5-9b",
+   "case_id": "ladder-l0-000-n48-v3",
+   "outcome": "correct",
+   "valid": true,
+   "per_decision_correct": 48,
+   "first_error": null,
+   "constraint_violations": [],
+   "objective_value": null,
+   "lenient_valid": true,
+   "stop_reason": "stop",
+   "output_tokens": 263,
+   "nfe": null,
+   "elapsed_seconds": 3.4208
+  },
+  {
+   "arm": "openrouter-qwen3.5-9b",
+   "case_id": "ladder-l1-000-n48-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 92,
+   "nfe": null,
+   "elapsed_seconds": 1.4124
+  },
+  {
+   "arm": "openrouter-qwen3.5-9b",
+   "case_id": "business-d1-000-n48-v3",
+   "outcome": "truncated",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "length",
+   "output_tokens": 2048,
+   "nfe": null,
+   "elapsed_seconds": 30.1927
+  },
+  {
+   "arm": "openrouter-qwen3.5-9b",
+   "case_id": "business-d3-000-n48-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 151,
+   "nfe": null,
+   "elapsed_seconds": 1.8496
+  },
+  {
+   "arm": "openrouter-qwen3.5-9b",
+   "case_id": "business-c2-000-n48-v3",
+   "outcome": "invalid_format",
+   "valid": false,
+   "per_decision_correct": 0,
+   "first_error": 0,
+   "constraint_violations": [
+    "canonical_answer_contract"
+   ],
+   "objective_value": null,
+   "lenient_valid": false,
+   "stop_reason": "stop",
+   "output_tokens": 557,
+   "nfe": null,
+   "elapsed_seconds": 8.5667
+  }
+ ]
+}
