@@ -7,13 +7,14 @@ business problems with exactly 48 scored output decisions per case:
 - DiffusionGemma 26B A4B through the instrumented protocol-v2
   `llama-diffusion-cli`.
 
-The current operational step is to stage the pinned artifacts on an A100, start
-the unloaded protocol-v2 worker, and run the no-generation `prepare` gate. See
-the [Operator handoff](docs/operator_handoff.md) first. It records the required
-prior state, exact pickup point, success gates, resume behavior, and the boundary
-between the ready DiffusionGemma path and the unimplemented business AR phase.
-`AGENTS.md` remains the authoritative status record, and `bench/README.md` owns
-the detailed harness constraints.
+`AGENTS.md` is the authoritative status record: read it first for the current
+step. The `prepare` gate passed on 2026-09-08, and a partial DiffusionGemma
+screen followed (`docs/business_diffusion_partial_screen_findings.md`). A
+separate 2026-09-28 pilot compared Nemotron-Labs-Diffusion-3B against public AR
+endpoints (`docs/nemotron_diffusion_pilot_findings.md`).
+
+For a human pickup, start with the [Operator handoff](docs/operator_handoff.md).
+`bench/README.md` owns the detailed harness constraints.
 
 ## Active layout
 
@@ -25,6 +26,7 @@ diffusion-demo/
 │   ├── business_fixtures.py
 │   ├── dependency_density_bench.py
 │   ├── diffusion_runtime.py
+│   ├── nemotron_pilot.py      # Exploratory Nemotron vs public AR pilot
 │   ├── native/                # Native build and probe helpers
 │   └── results/               # Extracted, reviewable benchmark evidence
 ├── cells/                     # Model staging plus prior format-v3 runner setup
@@ -34,7 +36,7 @@ diffusion-demo/
 │   ├── workload_hypotheses.md
 │   └── proposals/             # Decision and implementation history
 ├── tests/                     # Maintained Python and native contract tests
-└── archive/                   # Superseded demos and duplicate artifact bundles
+└── archive/                   # Superseded demos; artifact bundles stay local
 ```
 
 ## Local checks

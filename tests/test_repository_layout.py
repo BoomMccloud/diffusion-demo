@@ -52,10 +52,14 @@ class RepositoryLayoutTest(unittest.TestCase):
         self.assertFalse(
             (REPO_ROOT / "bench/results/dependency-density/2026-09-07/evidence/dependency-tokenizer").exists()
         )
-        self.assertTrue(list((REPO_ROOT / "archive" / "artifact-bundles").rglob("*.tar.gz")))
-        self.assertTrue(
-            (REPO_ROOT / "archive/artifact-bundles/bench/results/dependency-density/2026-09-07/evidence/dependency-tokenizer").is_file()
-        )
+        # Artifact bundles are local-only (one exceeds GitHub's file size
+        # limit), so a fresh clone has none. Check their layout only when present.
+        bundles = REPO_ROOT / "archive" / "artifact-bundles"
+        if bundles.exists():
+            self.assertTrue(list(bundles.rglob("*.tar.gz")))
+            self.assertTrue(
+                (bundles / "bench/results/dependency-density/2026-09-07/evidence/dependency-tokenizer").is_file()
+            )
 
 
 if __name__ == "__main__":
