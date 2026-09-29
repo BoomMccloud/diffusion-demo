@@ -1,0 +1,66 @@
+/usr/local/lib/python3.13/dist-packages/transformers/modeling_rope_utils.py:1080: FutureWarning: `rope_config_validation` is deprecated and has been removed. Its functionality has been moved to RotaryEmbeddingConfigMixin.validate_rope method. PreTrainedConfig inherits this class, so please call self.validate_rope() instead. Also, make sure to use the new rope_parameters syntax. You can call self.standardize_rope_params() in the meantime.
+  warnings.warn(
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='yarn': {'llama_4_scaling_beta'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='yarn': {'llama_4_scaling_beta'}
+[transformers] Model config: mask_token_id must be `None` or an integer within the vocabulary (between 0 and 131071), got -1. This may result in unexpected behavior.
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='yarn': {'llama_4_scaling_beta'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='yarn': {'llama_4_scaling_beta'}
+[transformers] The `check_model_inputs` decorator is deprecated in favor of `merge_with_config_defaults`.
+[ERROR] `cache_position` is part of Ministral3Model.forward's signature, but not documented. Make sure to add it to the docstring of the function in /root/.cache/huggingface/modules/transformers_modules/nvidia/Nemotron_hyphen_Labs_hyphen_Diffusion_hyphen_3B/0d51902da1f8869f83413ce642fab402fa5641e0/modeling_ministral.py.
+Loading weights:   0%|          | 0/237 [00:00<?, ?it/s]Loading weights: 100%|██████████| 237/237 [00:00<00:00, 4791.90it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"arm": "nemotron-3b-ar", "case_id": "sheet10-0", "stop_reason": "eos", "output_tokens": 83, "nfe": 84, "elapsed_seconds": 3.489}
+{"arm": "nemotron-3b-ar", "case_id": "sheet10-1", "stop_reason": "eos", "output_tokens": 87, "nfe": 88, "elapsed_seconds": 3.5391}
+{"arm": "nemotron-3b-ar", "case_id": "sheet10-2", "stop_reason": "eos", "output_tokens": 83, "nfe": 84, "elapsed_seconds": 3.3294}
+{"arm": "nemotron-3b-ar", "case_id": "sheet10-3", "stop_reason": "eos", "output_tokens": 85, "nfe": 86, "elapsed_seconds": 3.4881}
+{"arm": "nemotron-3b-ar", "case_id": "sheet10-4", "stop_reason": "eos", "output_tokens": 87, "nfe": 88, "elapsed_seconds": 3.5489}
+{"arm": "nemotron-3b-ar", "case_id": "sheet10-5", "stop_reason": "eos", "output_tokens": 86, "nfe": 87, "elapsed_seconds": 3.4976}
+{"arm": "nemotron-3b-ar", "case_id": "sheet25-0", "stop_reason": "eos", "output_tokens": 214, "nfe": 215, "elapsed_seconds": 8.7793}
+{"arm": "nemotron-3b-ar", "case_id": "sheet25-1", "stop_reason": "eos", "output_tokens": 214, "nfe": 215, "elapsed_seconds": 8.7358}
+{"arm": "nemotron-3b-ar", "case_id": "sheet25-2", "stop_reason": "eos", "output_tokens": 213, "nfe": 214, "elapsed_seconds": 8.7931}
+{"arm": "nemotron-3b-ar", "case_id": "sheet25-3", "stop_reason": "eos", "output_tokens": 210, "nfe": 211, "elapsed_seconds": 8.7878}
+{"arm": "nemotron-3b-ar", "case_id": "sheet25-4", "stop_reason": "eos", "output_tokens": 216, "nfe": 217, "elapsed_seconds": 8.9344}
+{"arm": "nemotron-3b-ar", "case_id": "sheet25-5", "stop_reason": "eos", "output_tokens": 214, "nfe": 215, "elapsed_seconds": 8.6394}
+{"arm": "nemotron-3b-ar", "case_id": "sheet50-0", "stop_reason": "eos", "output_tokens": 423, "nfe": 424, "elapsed_seconds": 20.3062}
+{"arm": "nemotron-3b-ar", "case_id": "sheet50-1", "stop_reason": "eos", "output_tokens": 419, "nfe": 420, "elapsed_seconds": 21.0919}
+{"arm": "nemotron-3b-ar", "case_id": "sheet50-2", "stop_reason": "eos", "output_tokens": 441, "nfe": 442, "elapsed_seconds": 21.2936}
+{"arm": "nemotron-3b-ar", "case_id": "sheet50-3", "stop_reason": "eos", "output_tokens": 428, "nfe": 429, "elapsed_seconds": 20.8991}
+{"arm": "nemotron-3b-ar", "case_id": "sheet50-4", "stop_reason": "eos", "output_tokens": 436, "nfe": 437, "elapsed_seconds": 21.6882}
+{"arm": "nemotron-3b-ar", "case_id": "sheet50-5", "stop_reason": "eos", "output_tokens": 431, "nfe": 432, "elapsed_seconds": 21.4484}
+[transformers] Calling `crop` with a positive value is deprecated and will be removed in version 5.18. Please use a negative integer to remove that number of tokens from the cache instead.
+{"arm": "nemotron-3b-linear_spec", "case_id": "sheet10-0", "stop_reason": "eos", "output_tokens": 83, "nfe": 13, "elapsed_seconds": 1.0131}
+{"arm": "nemotron-3b-linear_spec", "case_id": "sheet10-1", "stop_reason": "eos", "output_tokens": 87, "nfe": 13, "elapsed_seconds": 0.9499}
+{"arm": "nemotron-3b-linear_spec", "case_id": "sheet10-2", "stop_reason": "eos", "output_tokens": 83, "nfe": 15, "elapsed_seconds": 0.9513}
+{"arm": "nemotron-3b-linear_spec", "case_id": "sheet10-3", "stop_reason": "eos", "output_tokens": 86, "nfe": 17, "elapsed_seconds": 1.1485}
+{"arm": "nemotron-3b-linear_spec", "case_id": "sheet10-4", "stop_reason": "eos", "output_tokens": 87, "nfe": 15, "elapsed_seconds": 1.0677}
+{"arm": "nemotron-3b-linear_spec", "case_id": "sheet10-5", "stop_reason": "eos", "output_tokens": 86, "nfe": 13, "elapsed_seconds": 0.9528}
+{"arm": "nemotron-3b-linear_spec", "case_id": "sheet25-0", "stop_reason": "eos", "output_tokens": 213, "nfe": 31, "elapsed_seconds": 2.5779}
+{"arm": "nemotron-3b-linear_spec", "case_id": "sheet25-1", "stop_reason": "eos", "output_tokens": 214, "nfe": 27, "elapsed_seconds": 2.3579}
+{"arm": "nemotron-3b-linear_spec", "case_id": "sheet25-2", "stop_reason": "eos", "output_tokens": 213, "nfe": 27, "elapsed_seconds": 2.4485}
+{"arm": "nemotron-3b-linear_spec", "case_id": "sheet25-3", "stop_reason": "eos", "output_tokens": 210, "nfe": 31, "elapsed_seconds": 2.7769}
+{"arm": "nemotron-3b-linear_spec", "case_id": "sheet25-4", "stop_reason": "eos", "output_tokens": 216, "nfe": 35, "elapsed_seconds": 2.9695}
+{"arm": "nemotron-3b-linear_spec", "case_id": "sheet25-5", "stop_reason": "eos", "output_tokens": 214, "nfe": 29, "elapsed_seconds": 2.4077}
+{"arm": "nemotron-3b-linear_spec", "case_id": "sheet50-0", "stop_reason": "eos", "output_tokens": 423, "nfe": 77, "elapsed_seconds": 7.7383}
+{"arm": "nemotron-3b-linear_spec", "case_id": "sheet50-1", "stop_reason": "eos", "output_tokens": 419, "nfe": 69, "elapsed_seconds": 7.616}
+{"arm": "nemotron-3b-linear_spec", "case_id": "sheet50-2", "stop_reason": "eos", "output_tokens": 441, "nfe": 69, "elapsed_seconds": 7.2094}
+{"arm": "nemotron-3b-linear_spec", "case_id": "sheet50-3", "stop_reason": "eos", "output_tokens": 428, "nfe": 77, "elapsed_seconds": 7.9216}
+{"arm": "nemotron-3b-linear_spec", "case_id": "sheet50-4", "stop_reason": "eos", "output_tokens": 436, "nfe": 59, "elapsed_seconds": 6.7451}
+{"arm": "nemotron-3b-linear_spec", "case_id": "sheet50-5", "stop_reason": "eos", "output_tokens": 431, "nfe": 59, "elapsed_seconds": 6.7458}
+{"arm": "nemotron-3b-diffusion", "case_id": "sheet10-0", "stop_reason": "eos", "output_tokens": 74, "nfe": 18, "elapsed_seconds": 1.2839}
+{"arm": "nemotron-3b-diffusion", "case_id": "sheet10-1", "stop_reason": "eos", "output_tokens": 77, "nfe": 20, "elapsed_seconds": 1.3136}
+{"arm": "nemotron-3b-diffusion", "case_id": "sheet10-2", "stop_reason": "eos", "output_tokens": 73, "nfe": 22, "elapsed_seconds": 1.307}
+{"arm": "nemotron-3b-diffusion", "case_id": "sheet10-3", "stop_reason": "eos", "output_tokens": 76, "nfe": 18, "elapsed_seconds": 1.2438}
+{"arm": "nemotron-3b-diffusion", "case_id": "sheet10-4", "stop_reason": "eos", "output_tokens": 86, "nfe": 19, "elapsed_seconds": 1.2873}
+{"arm": "nemotron-3b-diffusion", "case_id": "sheet10-5", "stop_reason": "eos", "output_tokens": 75, "nfe": 18, "elapsed_seconds": 1.2306}
+{"arm": "nemotron-3b-diffusion", "case_id": "sheet25-0", "stop_reason": "eos", "output_tokens": 212, "nfe": 43, "elapsed_seconds": 3.145}
+{"arm": "nemotron-3b-diffusion", "case_id": "sheet25-1", "stop_reason": "eos", "output_tokens": 210, "nfe": 45, "elapsed_seconds": 3.2183}
+{"arm": "nemotron-3b-diffusion", "case_id": "sheet25-2", "stop_reason": "eos", "output_tokens": 212, "nfe": 41, "elapsed_seconds": 3.1306}
+{"arm": "nemotron-3b-diffusion", "case_id": "sheet25-3", "stop_reason": "eos", "output_tokens": 210, "nfe": 38, "elapsed_seconds": 3.0975}
+{"arm": "nemotron-3b-diffusion", "case_id": "sheet25-4", "stop_reason": "eos", "output_tokens": 215, "nfe": 46, "elapsed_seconds": 3.4395}
+{"arm": "nemotron-3b-diffusion", "case_id": "sheet25-5", "stop_reason": "eos", "output_tokens": 214, "nfe": 40, "elapsed_seconds": 2.9452}
+{"arm": "nemotron-3b-diffusion", "case_id": "sheet50-0", "stop_reason": "eos", "output_tokens": 353, "nfe": 68, "elapsed_seconds": 6.4418}
+{"arm": "nemotron-3b-diffusion", "case_id": "sheet50-1", "stop_reason": "eos", "output_tokens": 7, "nfe": 18, "elapsed_seconds": 3.4715}
+{"arm": "nemotron-3b-diffusion", "case_id": "sheet50-2", "stop_reason": "max_new_tokens", "output_tokens": 512, "nfe": 89, "elapsed_seconds": 7.8649}
+{"arm": "nemotron-3b-diffusion", "case_id": "sheet50-3", "stop_reason": "eos", "output_tokens": 434, "nfe": 95, "elapsed_seconds": 8.2228}
+{"arm": "nemotron-3b-diffusion", "case_id": "sheet50-4", "stop_reason": "max_new_tokens", "output_tokens": 512, "nfe": 87, "elapsed_seconds": 8.0454}
+{"arm": "nemotron-3b-diffusion", "case_id": "sheet50-5", "stop_reason": "eos", "output_tokens": 434, "nfe": 85, "elapsed_seconds": 7.8372}

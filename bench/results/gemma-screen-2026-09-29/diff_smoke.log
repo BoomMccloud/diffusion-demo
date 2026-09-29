@@ -1,0 +1,8 @@
+{"arm": "gemma4-26b-a4b-diffusion", "case_id": "easy-00", "stop_reason": "eos", "output_tokens": 2304, "elapsed_seconds": 20.298}
+{"arm": "gemma4-26b-a4b-diffusion", "case_id": "easy-01", "stop_reason": "eos", "output_tokens": 4096, "elapsed_seconds": 43.88}
+{"arm": "gemma4-26b-a4b-diffusion", "case_id": "easy-02", "stop_reason": "eos", "output_tokens": 3584, "elapsed_seconds": 33.084}
+{"arm": "gemma4-26b-a4b-diffusion", "case_id": "pickup-00", "stop_reason": "max_new_tokens", "output_tokens": 8192, "elapsed_seconds": 114.438}
+{"arm": "gemma4-26b-a4b-diffusion", "case_id": "pickup-01", "stop_reason": "max_new_tokens", "output_tokens": 8192, "elapsed_seconds": 92.551}
+{"arm": "gemma4-26b-a4b-diffusion", "case_id": "sheet10-0", "stop_reason": "eos", "output_tokens": 2048, "elapsed_seconds": 16.856}
+{"arm": "gemma4-26b-a4b-diffusion", "case_id": "sheet25-0", "stop_reason": "eos", "output_tokens": 4608, "elapsed_seconds": 50.16}
+DIFF_SMOKE_DONE

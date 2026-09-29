@@ -1,0 +1,14 @@
+llama_kv_cache_iswa: using full-size SWA cache (ref: https://github.com/ggml-org/llama.cpp/pull/13194#issuecomment-2868343055)
+llama_kv_cache: the V embeddings have different sizes across layers and FA is not enabled - padding V cache to 2048
+llama_kv_cache: the V embeddings have different sizes across layers and FA is not enabled - padding V cache to 2048
+{"arm": "gemma4-26b-a4b-ar-think", "case_id": "easy-00", "stop_reason": "max_new_tokens", "output_tokens": 8192, "elapsed_seconds": 80.401}
+{"arm": "gemma4-26b-a4b-ar-think", "case_id": "easy-01", "stop_reason": "max_new_tokens", "output_tokens": 8192, "elapsed_seconds": 80.225}
+{"arm": "gemma4-26b-a4b-ar-think", "case_id": "easy-02", "stop_reason": "max_new_tokens", "output_tokens": 8192, "elapsed_seconds": 80.281}
+{"arm": "gemma4-26b-a4b-ar-think", "case_id": "pickup-00", "stop_reason": "max_new_tokens", "output_tokens": 8192, "elapsed_seconds": 80.449}
+{"arm": "gemma4-26b-a4b-ar-think", "case_id": "pickup-01", "stop_reason": "max_new_tokens", "output_tokens": 8192, "elapsed_seconds": 80.453}
+llama_kv_cache_iswa: using full-size SWA cache (ref: https://github.com/ggml-org/llama.cpp/pull/13194#issuecomment-2868343055)
+llama_kv_cache: the V embeddings have different sizes across layers and FA is not enabled - padding V cache to 2048
+llama_kv_cache: the V embeddings have different sizes across layers and FA is not enabled - padding V cache to 2048
+{"arm": "gemma4-26b-a4b-ar-think", "case_id": "sheet10-0", "stop_reason": "max_new_tokens", "output_tokens": 8192, "elapsed_seconds": 86.093}
+{"arm": "gemma4-26b-a4b-ar-think", "case_id": "sheet25-0", "stop_reason": "max_new_tokens", "output_tokens": 8192, "elapsed_seconds": 91.112}
+AR_THINK2_DONE
