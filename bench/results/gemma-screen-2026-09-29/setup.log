@@ -1,0 +1,19 @@
++ cd /content
++ rm -rf llama.cpp-diffusion
++ git init -q llama.cpp-diffusion
++ cd llama.cpp-diffusion
++ git remote add origin https://github.com/ggml-org/llama.cpp.git
++ git fetch -q --depth=1 origin daca8075d871483545dd85d58ce11970b304b541
++ git checkout -q --detach FETCH_HEAD
++ cmake -B build -DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=80 -DCMAKE_BUILD_TYPE=Release -DLLAMA_CURL=OFF
++ cd /content
++ python repo/bench/native/build.py /content/llama.cpp-diffusion
++ python repo/tests/native/test_native_stopping.py /content/llama.cpp-diffusion/examples/diffusion/diffusion-cli.cpp
++ CUDA_LAUNCH_BLOCKING=1
++ /content/llama.cpp-diffusion/build/bin/softcap-backend-probe 8192
++ echo BUILD_OK
+BUILD_OK
++ grep -q MODELS_OK models.log
++ grep -q WHEEL_OK wheel.log
++ echo SETUP_DONE
+SETUP_DONE

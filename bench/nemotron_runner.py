@@ -6,7 +6,7 @@ The same weights expose three generators through the model's remote code:
   linear_spec  ``model.linear_spec_generate``: diffusion drafts a block, AR verifies it
   diffusion    ``model.generate``: parallel block diffusion, confidence ``--threshold``
 
-Input is JSONL, one case per line: ``{"case_id", "prompt", "max_new_tokens"?}``.
+Input is JSONL, one case per line: ``{"case_id", "prompt", "system"?, "max_new_tokens"?}``.
 Output is JSONL rows with raw output, stop reason, token counts, forward passes
 (``nfe``) and wall time. Rows resume by (case_id, arm). Scoring belongs to the workload.
 
@@ -93,9 +93,10 @@ def cmd_nemotron(args):
     gpu = torch.cuda.get_device_name(0)
     revision = getattr(model.config, "_commit_hash", None)
 
-    def encode(prompt):
+    def encode(prompt, system=None):
+        messages = [{"role": "system", "content": system}] if system else []
         text = tokenizer.apply_chat_template(
-            [{"role": "user", "content": prompt}], tokenize=False,
+            messages + [{"role": "user", "content": prompt}], tokenize=False,
             add_generation_prompt=True, enable_thinking=args.thinking,
         )
         return tokenizer(text, return_tensors="pt").input_ids.cuda()
@@ -122,7 +123,7 @@ def cmd_nemotron(args):
         todo = pending(cases, args.out, arm)
         run(mode, encode("Reply with the single word READY."), 64)  # warmup, not recorded
         for case in todo:
-            ids = encode(case["prompt"])
+            ids = encode(case["prompt"], case.get("system"))
             started_at = utc_now()
             torch.cuda.synchronize()
             start = time.perf_counter()
@@ -148,7 +149,7 @@ def cmd_nemotron(args):
                 "transformers_version": transformers.__version__,
                 "thinking": args.thinking,
                 "case_id": case["case_id"],
-                "prompt_hash": prompt_hash(case["prompt"]),
+                "prompt_hash": prompt_hash((case.get("system") or "") + case["prompt"]),
                 "prompt_tokens": int(ids.shape[1]),
                 "output_tokens": len(kept),
                 "stop_reason": "error" if error else ("eos" if stop_at is not None else "max_new_tokens"),

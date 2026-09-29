@@ -96,6 +96,17 @@ findings for limits.
   `docs/nemotron_diffusion_pilot_findings.md`).
 - Prompts must state the exact output format. Without it, small models without
   reasoning scored 0 on every business case.
+- Realistic-workload screens on 2026-09-28 and 2026-09-29, batch 1 only. On
+  Nemotron 3B and 14B, plain diffusion was 2x to 3x faster than AR but never
+  more accurate, and it was never faster than linear speculation, which kept
+  AR's output at 2.3x to 3.6x lower latency. This held for BFCL live tool
+  calls, homework grading, and grid path planning
+  (`docs/nemotron_bfcl_screen_findings.md`,
+  `docs/nemotron_homework_planning_findings.md`).
+- A seven-case Gemma smoke test found Gemma 4 AR without thinking as accurate
+  as DiffusionGemma on easy items and 10x to 50x faster. DiffusionGemma always
+  reasons, so that gap is reasoning against none. The subset run it prepared
+  was not run (`docs/gemma_homework_planning_smoke_findings.md`).
 
 Do not carry these numbers over to the realistic workloads. They are the
 hypotheses the new comparison tests.

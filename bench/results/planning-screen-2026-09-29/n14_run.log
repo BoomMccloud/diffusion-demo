@@ -1,0 +1,41 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.13/dist-packages/transformers/modeling_rope_utils.py:1080: FutureWarning: `rope_config_validation` is deprecated and has been removed. Its functionality has been moved to RotaryEmbeddingConfigMixin.validate_rope method. PreTrainedConfig inherits this class, so please call self.validate_rope() instead. Also, make sure to use the new rope_parameters syntax. You can call self.standardize_rope_params() in the meantime.
+  warnings.warn(
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='yarn': {'llama_4_scaling_beta'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='yarn': {'llama_4_scaling_beta'}
+[transformers] Model config: mask_token_id must be `None` or an integer within the vocabulary (between 0 and 131071), got -1. This may result in unexpected behavior.
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='yarn': {'llama_4_scaling_beta'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='yarn': {'llama_4_scaling_beta'}
+[transformers] The `check_model_inputs` decorator is deprecated in favor of `merge_with_config_defaults`.
+[ERROR] `cache_position` is part of Ministral3Model.forward's signature, but not documented. Make sure to add it to the docstring of the function in /root/.cache/huggingface/modules/transformers_modules/nvidia/Nemotron_hyphen_Labs_hyphen_Diffusion_hyphen_14B/f8c3e2c078e193599b8882d965b1001c456ba738/modeling_ministral.py.
+Loading weights:   0%|          | 0/363 [00:00<?, ?it/s]Loading weights: 100%|██████████| 363/363 [00:00<00:00, 4367.14it/s]
+[transformers] Calling `crop` with a positive value is deprecated and will be removed in version 5.18. Please use a negative integer to remove that number of tokens from the cache instead.
+{"arm": "nemotron-14b-diffusion", "case_id": "pickup-11", "stop_reason": "eos", "output_tokens": 197, "nfe": 66, "elapsed_seconds": 3.7227}
+{"arm": "nemotron-14b-diffusion", "case_id": "pickup-12", "stop_reason": "eos", "output_tokens": 117, "nfe": 35, "elapsed_seconds": 1.99}
+{"arm": "nemotron-14b-diffusion", "case_id": "pickup-13", "stop_reason": "eos", "output_tokens": 197, "nfe": 61, "elapsed_seconds": 3.4261}
+{"arm": "nemotron-14b-diffusion", "case_id": "pickup-14", "stop_reason": "max_new_tokens", "output_tokens": 768, "nfe": 112, "elapsed_seconds": 6.2992}
+{"arm": "nemotron-14b-diffusion", "case_id": "pickup-15", "stop_reason": "eos", "output_tokens": 147, "nfe": 56, "elapsed_seconds": 3.1454}
+{"arm": "nemotron-14b-diffusion", "case_id": "pickup-16", "stop_reason": "eos", "output_tokens": 98, "nfe": 36, "elapsed_seconds": 2.0611}
+{"arm": "nemotron-14b-diffusion", "case_id": "pickup-17", "stop_reason": "eos", "output_tokens": 97, "nfe": 49, "elapsed_seconds": 2.7504}
+{"arm": "nemotron-14b-diffusion", "case_id": "pickup-18", "stop_reason": "eos", "output_tokens": 107, "nfe": 47, "elapsed_seconds": 2.6335}
+{"arm": "nemotron-14b-diffusion", "case_id": "pickup-19", "stop_reason": "eos", "output_tokens": 172, "nfe": 63, "elapsed_seconds": 3.5324}
+{"arm": "nemotron-14b-diffusion", "case_id": "key_door-00", "stop_reason": "eos", "output_tokens": 152, "nfe": 65, "elapsed_seconds": 3.6636}
+{"arm": "nemotron-14b-diffusion", "case_id": "key_door-01", "stop_reason": "eos", "output_tokens": 107, "nfe": 33, "elapsed_seconds": 1.8915}
+{"arm": "nemotron-14b-diffusion", "case_id": "key_door-02", "stop_reason": "max_new_tokens", "output_tokens": 768, "nfe": 176, "elapsed_seconds": 9.7827}
+{"arm": "nemotron-14b-diffusion", "case_id": "key_door-03", "stop_reason": "eos", "output_tokens": 97, "nfe": 29, "elapsed_seconds": 1.6627}
+{"arm": "nemotron-14b-diffusion", "case_id": "key_door-04", "stop_reason": "eos", "output_tokens": 162, "nfe": 62, "elapsed_seconds": 3.4535}
+{"arm": "nemotron-14b-diffusion", "case_id": "key_door-05", "stop_reason": "max_new_tokens", "output_tokens": 768, "nfe": 109, "elapsed_seconds": 6.0544}
+{"arm": "nemotron-14b-diffusion", "case_id": "key_door-06", "stop_reason": "max_new_tokens", "output_tokens": 768, "nfe": 156, "elapsed_seconds": 8.62}
+{"arm": "nemotron-14b-diffusion", "case_id": "key_door-07", "stop_reason": "eos", "output_tokens": 162, "nfe": 57, "elapsed_seconds": 3.1641}
+{"arm": "nemotron-14b-diffusion", "case_id": "key_door-08", "stop_reason": "eos", "output_tokens": 272, "nfe": 88, "elapsed_seconds": 4.8921}
+{"arm": "nemotron-14b-diffusion", "case_id": "key_door-09", "stop_reason": "eos", "output_tokens": 162, "nfe": 50, "elapsed_seconds": 2.7918}
+{"arm": "nemotron-14b-diffusion", "case_id": "key_door-10", "stop_reason": "eos", "output_tokens": 172, "nfe": 59, "elapsed_seconds": 3.3115}
+{"arm": "nemotron-14b-diffusion", "case_id": "key_door-11", "stop_reason": "eos", "output_tokens": 212, "nfe": 63, "elapsed_seconds": 3.5479}
+{"arm": "nemotron-14b-diffusion", "case_id": "key_door-12", "stop_reason": "eos", "output_tokens": 322, "nfe": 103, "elapsed_seconds": 5.7}
+{"arm": "nemotron-14b-diffusion", "case_id": "key_door-13", "stop_reason": "eos", "output_tokens": 702, "nfe": 137, "elapsed_seconds": 7.5184}
+{"arm": "nemotron-14b-diffusion", "case_id": "key_door-14", "stop_reason": "eos", "output_tokens": 182, "nfe": 61, "elapsed_seconds": 3.3989}
+{"arm": "nemotron-14b-diffusion", "case_id": "key_door-15", "stop_reason": "eos", "output_tokens": 252, "nfe": 77, "elapsed_seconds": 4.2767}
+{"arm": "nemotron-14b-diffusion", "case_id": "key_door-16", "stop_reason": "eos", "output_tokens": 157, "nfe": 46, "elapsed_seconds": 2.6243}
+{"arm": "nemotron-14b-diffusion", "case_id": "key_door-17", "stop_reason": "eos", "output_tokens": 207, "nfe": 66, "elapsed_seconds": 3.7193}
+{"arm": "nemotron-14b-diffusion", "case_id": "key_door-18", "stop_reason": "eos", "output_tokens": 112, "nfe": 46, "elapsed_seconds": 2.5994}
+{"arm": "nemotron-14b-diffusion", "case_id": "key_door-19", "stop_reason": "eos", "output_tokens": 97, "nfe": 46, "elapsed_seconds": 2.5779}
