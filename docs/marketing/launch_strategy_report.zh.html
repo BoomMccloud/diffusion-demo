@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DiffuSpace 发布策略</title><style>
+:root{--bg:#eef1f5;--surface:#ffffff;--card:#ffffff;--ink:#131820;--ink2:#4a5463;--muted:#7c8594;--grid:#dde2e9;--axis:#c3cad4;--ring:rgba(19,24,32,.09);
+--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--neutral:#b9c0ca;
+--r250:#86b6ef;--r350:#5598e7;--r450:#2a78d6;--r550:#1c5cab;--none:#e6e9ee;
+--good:#0ca30c;--warn:#fab219;--serious:#ec835a;--crit:#d03b3b;--goodink:#006300;--tint:#f3f5f8;--mask:#c9d0da;
+--fd:"IBM Plex Sans Condensed","IBM Plex Sans","PingFang SC","Noto Sans SC",system-ui,sans-serif;
+--fb:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+--fm:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace}
+@media (prefers-color-scheme: dark){:root:where(:not([data-theme="light"])){--bg:#0e1116;--surface:#161b22;--card:#161b22;--ink:#f2f4f7;--ink2:#b7c0cc;--muted:#7f8896;--grid:#262d37;--axis:#3a4250;--ring:rgba(255,255,255,.09);
+--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--neutral:#4b5361;--none:#202630;--goodink:#0ca30c;--tint:#1c222b;--mask:#2c3440}}
+:root[data-theme="dark"]{--bg:#0e1116;--surface:#161b22;--card:#161b22;--ink:#f2f4f7;--ink2:#b7c0cc;--muted:#7f8896;--grid:#262d37;--axis:#3a4250;--ring:rgba(255,255,255,.09);
+--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--neutral:#4b5361;--none:#202630;--goodink:#0ca30c;--tint:#1c222b;--mask:#2c3440}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--fb)}
+main{max-width:1120px;margin:0 auto;padding:24px 16px 96px}
+a{color:var(--s1)}
+.top .bar{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--muted);padding-bottom:12px;border-bottom:1px solid var(--grid)}
+.top .bar a{font-weight:600;text-decoration:none}
+h1{font-family:var(--fd);font-weight:700;font-size:clamp(34px,5.2vw,58px);line-height:1.04;margin:36px 0 16px;letter-spacing:-.015em;max-width:20ch}
+.lede{font-size:18px;color:var(--ink2);max-width:62ch;margin:0 0 20px}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px}
+.toc a{font-size:14px;padding:6px 12px;border-radius:999px;background:var(--card);box-shadow:0 0 0 1px var(--ring);color:var(--ink2);text-decoration:none}
+.toc a:hover{color:var(--ink)}
+section{margin-top:56px}
+h2{font-family:var(--fd);font-weight:700;font-size:30px;line-height:1.15;margin:0 0 20px;padding-top:18px;border-top:2px solid var(--ink)}
+h3{font-size:19px;margin:40px 0 14px}
+h4{font-size:15px;margin:0}
+h5{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:0 0 8px}
+p{margin:0 0 10px}
+.lead2{color:var(--ink2);max-width:72ch}
+.card{background:var(--card);border-radius:12px;box-shadow:0 0 0 1px var(--ring);padding:18px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:16px}
+.tile{background:var(--card);border-radius:12px;box-shadow:0 0 0 1px var(--ring);padding:18px}
+.tv{display:block;font-size:44px;font-weight:650;line-height:1.05;letter-spacing:-.02em}
+.tl{display:block;font-size:14px;color:var(--ink2);margin-top:8px}
+.takeaways{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.take{background:var(--card);border-radius:12px;box-shadow:0 0 0 1px var(--ring);padding:16px;border-top:4px solid var(--neutral)}
+.take p{font-size:14.5px;color:var(--ink2);margin:8px 0 0}
+.take b{color:var(--ink)}
+.take.copy{border-top-color:var(--good)}.take.learn{border-top-color:var(--s1)}.take.avoid{border-top-color:var(--crit)}.take.risk{border-top-color:var(--warn)}.take.path{border-top-color:var(--ink)}
+.tag{display:inline-block;font-size:12px;font-weight:650;text-transform:uppercase;letter-spacing:.05em;color:var(--ink2)}
+.sets{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.set{display:flex;gap:12px;background:var(--card);border-radius:12px;box-shadow:0 0 0 1px var(--ring);padding:16px}
+.set p{font-size:14px;color:var(--ink2);margin:2px 0 0}.set .names{color:var(--ink);margin-top:6px}
+.dot{flex:none;width:12px;height:12px;border-radius:50%;margin-top:6px}.d1{background:var(--s1)}.d2{background:var(--s2)}
+.chart{margin:16px 0;padding:18px 18px 12px}
+.sub{font-size:13.5px;color:var(--muted);margin:2px 0 8px}
+.plot{position:relative;width:100%}
+.plot svg{display:block;width:100%;height:auto;overflow:visible}
+.note{font-size:12.5px;color:var(--muted);margin:8px 0 0}
+.dt summary{font-size:12.5px;color:var(--muted);cursor:pointer;margin-top:8px}
+.dt table{border-collapse:collapse;font-size:13px;margin-top:6px;font-variant-numeric:tabular-nums}
+.dt td,.dt th{padding:3px 12px 3px 0;text-align:left;border-bottom:1px solid var(--grid)}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px}
+.grid3 .chart,.grid2 .chart,.grid2w .chart{margin:0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:12px}
+.grid2w{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:12px}
+@media (max-width:820px){.grid2w{grid-template-columns:1fr}}
+.callouts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:12px}
+.callout{background:var(--tint);border-radius:10px;padding:14px 16px;font-size:14.5px;color:var(--ink2)}
+.callout b{color:var(--ink)}
+.callout.wide{margin-top:16px;border-left:4px solid var(--s1)}
+.pattern{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:14px}
+.pcard{background:var(--card);border-radius:10px;box-shadow:0 0 0 1px var(--ring);padding:12px 14px;border-left:4px solid var(--s1)}
+.pcard.ref{border-left-color:var(--s2)}
+.pn{font-weight:650;margin-bottom:6px}
+.pk{font-size:13px;color:var(--ink);display:flex;gap:8px}.pk span{color:var(--muted);min-width:44px}
+.pcard p{font-size:13px;color:var(--ink2);margin:6px 0 0}
+.comp{margin:14px 0}
+.comp header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.comp h3{margin:0;font-size:20px}
+.maker{font-size:14px;color:var(--muted);margin:2px 0 0}
+.chip{font-size:12.5px;font-weight:650;padding:4px 10px;border-radius:999px;background:var(--tint);color:var(--ink);display:inline-flex;align-items:center;gap:6px}
+.chip::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--neutral)}
+.chip.good::before{background:var(--good)}.chip.mid::before{background:var(--s1)}.chip.warn::before{background:var(--warn)}.chip.bad::before{background:var(--crit)}
+.minis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:14px 0}
+.mini{background:var(--tint);border-radius:8px;padding:10px 12px}
+.mv{display:block;font-size:22px;font-weight:650;line-height:1.1}
+.ml{display:block;font-size:12.5px;color:var(--ink2);margin-top:2px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.cols ul{margin:0;padding-left:18px;font-size:14.5px;color:var(--ink2)}
+.cols li{margin:0 0 6px}
+.why{margin:12px 0 0;padding-top:12px;border-top:1px solid var(--grid);font-size:14.5px}
+.why b{display:inline-block;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-right:10px}
+.channels{display:grid;gap:8px}
+.chan{display:flex;gap:14px;align-items:center;background:var(--card);border-radius:10px;box-shadow:0 0 0 1px var(--ring);padding:12px 14px}
+.rank{flex:none;width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-weight:650;font-size:14px}
+.cb{flex:1;min-width:0}.cb p{font-size:14px;color:var(--ink2);margin:2px 0 0}
+.lev{flex:none;display:flex;gap:3px}.lev i{width:10px;height:18px;border-radius:2px;background:var(--grid)}.lev i.on{background:var(--s1)}
+.kols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.kol ul{list-style:none;margin:0;padding:0}
+.kol li{padding:7px 0;border-bottom:1px solid var(--grid);font-size:14px}
+.kol li:last-child{border-bottom:0}
+.kol li span{display:block;color:var(--ink2);font-size:13px}
+.ready{width:100%;border-collapse:separate;border-spacing:3px;font-size:13.5px;font-variant-numeric:tabular-nums}
+.ready th{font-weight:600;color:var(--ink2);text-align:center;padding:4px;font-size:12.5px}
+.ready th:first-child{text-align:left}
+.ready td{text-align:center;padding:10px 4px;border-radius:6px;font-weight:600}
+.ready td:first-child{text-align:left;background:none;font-weight:650;padding-left:0;white-space:nowrap}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--ink2);margin:10px 0 0}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.legend i.line{height:2px;border-radius:1px;width:16px}
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:110px;top:6px;bottom:6px;width:2px;background:var(--grid)}
+.timeline li{display:grid;grid-template-columns:96px 1fr;gap:28px;padding:10px 0;position:relative}
+.timeline li::before{content:"";position:absolute;left:105px;top:16px;width:12px;height:12px;border-radius:50%;background:var(--card);box-shadow:0 0 0 2px var(--s1)}
+.timeline li.crit::before{box-shadow:0 0 0 2px var(--crit);background:var(--crit)}
+.timeline li.go::before{background:var(--s1)}
+.when{font-weight:650;text-align:right;font-size:14px;padding-top:2px}
+.timeline p{font-size:14px;color:var(--ink2);margin:2px 0 0}
+@media (max-width:600px){.timeline::before{left:6px}.timeline li{grid-template-columns:1fr;gap:2px;padding-left:24px}.timeline li::before{left:1px}.when{text-align:left}}
+.evidence{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:16px}
+.ev{background:var(--card);border-radius:10px;box-shadow:0 0 0 1px var(--ring);padding:14px 16px;border-top:4px solid var(--good)}
+.ev.warn{border-top-color:var(--warn)}.ev.bad{border-top-color:var(--crit)}
+.ev p{font-size:14px;color:var(--ink2);margin:6px 0 0}
+.ladder{display:grid;gap:6px}
+.rung{display:grid;grid-template-columns:34px 130px 1fr;align-items:center;gap:12px;background:var(--card);box-shadow:0 0 0 1px var(--ring);border-radius:10px;padding:12px 14px;margin-left:calc(var(--i) * 22px)}
+.rung p{margin:0;font-size:14px;color:var(--ink2)}
+.step{width:28px;height:28px;border-radius:50%;background:var(--s1);color:#fff;display:grid;place-items:center;font-weight:650;font-size:13px}
+@media (max-width:700px){.rung{grid-template-columns:34px 1fr;margin-left:0}.rung p{grid-column:2}}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.stepc{display:flex;gap:14px;background:var(--card);border-radius:12px;box-shadow:0 0 0 1px var(--ring);padding:16px}
+.stepc p{font-size:14px;color:var(--ink2);margin:4px 0 0}
+.sn{flex:none;width:36px;height:36px;border-radius:10px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-weight:700;font-size:16px}
+.stepc:first-child{grid-column:1/-1;box-shadow:0 0 0 2px var(--s1)}
+.stepc:first-child .sn{background:var(--s1);color:#fff}
+.stepc.low{opacity:.75}.stepc.low .sn{background:var(--grid);color:var(--ink2)}
+.questions{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.q{display:flex;gap:12px;background:var(--tint);border-radius:10px;padding:14px}
+.q span{flex:none;width:26px;height:26px;border-radius:50%;background:var(--warn);color:#0b0b0b;display:grid;place-items:center;font-weight:700}
+.q p{margin:0;font-size:14px}
+.foot{font-size:12.5px;color:var(--muted);margin-top:32px}
+
+.mono{font-family:var(--fm);letter-spacing:.02em}
+.eyebrow{font-family:var(--fm);font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1 .tk{transition:color .25s ease,background-color .25s ease;border-radius:4px}
+h1 .tk.m{color:transparent;background:var(--mask)}
+@media (prefers-reduced-motion: reduce){h1 .tk{transition:none}}
+.srow{display:grid;gap:12px;margin-bottom:12px}
+.srow.r3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.srow.r2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:860px){.srow.r3,.srow.r2{grid-template-columns:1fr}}
+.sbox{background:var(--card);border-radius:14px;box-shadow:0 0 0 1px var(--ring);padding:18px 20px;display:flex;flex-direction:column;border-top:5px solid var(--neutral)}
+.sbox.copy{border-top-color:var(--good)}.sbox.learn{border-top-color:var(--s1)}.sbox.avoid{border-top-color:var(--crit)}.sbox.risk{border-top-color:var(--warn)}.sbox.path{border-top-color:var(--ink)}
+.shead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.shead b{font-family:var(--fd);font-size:21px;font-weight:700}
+.smetric{display:flex;align-items:baseline;gap:10px;margin:12px 0 10px;flex-wrap:wrap}
+.sv{font-family:var(--fd);font-size:46px;font-weight:700;line-height:1;letter-spacing:-.02em}
+.sl{font-size:14px;color:var(--ink2);flex:1;min-width:140px}
+.sbox>p{font-size:14.5px;color:var(--ink2);margin:0 0 10px}
+.swhy{margin-top:auto !important;padding-top:10px;border-top:1px dashed var(--grid);font-size:13.5px !important}
+.swhy .mono{display:block;font-size:10.5px;color:var(--muted);margin-bottom:3px}
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:8px 0 16px}
+@media (max-width:860px){.tiers{grid-template-columns:1fr}}
+.tier{background:var(--card);border-radius:12px;box-shadow:0 0 0 1px var(--ring);padding:16px 18px;border-left:5px solid var(--neutral)}
+.tier.t1{border-left-color:var(--r550)}.tier.t2{border-left-color:var(--r350)}.tier.t3{border-left-color:var(--neutral)}
+.tw1{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.tw1 b{font-family:var(--fd);font-size:20px}
+.weight{margin-left:auto;display:flex;gap:3px}.weight i{width:16px;height:6px;border-radius:2px;background:var(--grid)}.weight i.on{background:var(--s1)}
+.tm{font-size:12px;color:var(--ink2);margin:10px 0 8px;line-height:1.5}
+.tier p:last-child{font-size:14px;color:var(--ink2);margin:0}
+.score{padding:18px}
+.stw{overflow-x:auto}
+.scoret{border-collapse:collapse;width:100%;font-size:14px;min-width:480px}
+.scoret th{font-family:var(--fm);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:center;padding:6px}
+.scoret th:first-child{text-align:left}
+.scoret td{padding:8px 6px;border-top:1px solid var(--grid);text-align:center}
+.scoret td:first-child{text-align:left;font-weight:600}
+.rk{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;font-family:var(--fm);font-weight:500;font-size:13px}
+.rk.r1{background:var(--r550);color:#fff}.rk.r2{background:var(--r450);color:#fff}.rk.r3{background:var(--r350);color:#0b0b0b}.rk.r4{background:var(--r250);color:#0b0b0b}.rk.r5{background:var(--none);color:var(--muted)}
+.th3{margin:44px 0 14px;padding-left:14px;border-left:5px solid var(--neutral)}
+.th3.t1{border-left-color:var(--r550)}.th3.t2{border-left-color:var(--r350)}
+.th3 h3{margin:2px 0 4px;font-family:var(--fd);font-size:22px}
+.th3 p{color:var(--ink2);margin:0;max-width:72ch;font-size:15px}
+.mini.t1{box-shadow:inset 3px 0 0 var(--r550)}.mini.t2{box-shadow:inset 3px 0 0 var(--r350)}.mini.t3{box-shadow:inset 3px 0 0 var(--neutral)}
+.comp h3{font-family:var(--fd)}
+.top .bar .mono{font-size:11.5px}
+
+/* professional overrides */
+:root{--fd:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;--fb:var(--fd);--fm:var(--fd);--bg:#f5f6f8}
+@media (prefers-color-scheme: dark){:root:where(:not([data-theme="light"])){--bg:#0f1217}}
+:root[data-theme="dark"]{--bg:#0f1217}
+body{font-size:15px;line-height:1.55}
+main{max-width:1080px}
+h1{font-family:var(--fd);font-size:28px;font-weight:600;letter-spacing:0;line-height:1.25;margin:24px 0 8px;max-width:none}
+.lede{font-size:15.5px;max-width:80ch}
+h2{font-family:var(--fd);font-size:20px;font-weight:600;border-top:1px solid var(--axis);padding-top:14px;margin-bottom:14px}
+h3,.th3 h3,.comp h3,.shead b,.tw1 b{font-family:var(--fd);font-weight:600}
+h3{font-size:16px;margin:28px 0 10px}
+section{margin-top:40px}
+.toc a{border-radius:4px;box-shadow:0 0 0 1px var(--grid);font-size:13px;padding:4px 10px}
+.mono,.eyebrow{font-family:var(--fd);letter-spacing:0}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.04em}
+.card,.sbox,.tier,.set,.pcard,.chan,.stepc,.ev,.rung,.kol,.comp{border-radius:6px;box-shadow:0 0 0 1px var(--grid)}
+.sbox{border-top:none;border-left:3px solid var(--neutral);padding:14px 16px}
+.sbox.copy{border-left-color:var(--good)}.sbox.learn{border-left-color:var(--s1)}.sbox.avoid{border-left-color:var(--crit)}.sbox.risk{border-left-color:var(--warn)}.sbox.path{border-left-color:var(--ink2)}
+.shead b{font-size:16px}
+.sv{font-family:var(--fd);font-size:30px;font-weight:600;letter-spacing:0}
+.smetric{margin:8px 0}
+.sl{font-size:13px}
+.sbox>p{font-size:14px}
+.swhy{border-top:1px solid var(--grid)}
+.swhy .mono{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.tier{border-left-width:3px}
+.tw1 b{font-size:16px}
+.tm{font-size:12.5px}
+.th3{margin:32px 0 10px;border-left-width:3px;padding-left:12px}
+.th3 h3{font-size:16px}
+.th3 p{font-size:14px}
+.comp h3{font-size:17px}
+.mv{font-size:20px;font-weight:600}
+.mini{border-radius:4px}
+.chip{border-radius:4px;font-size:12px;font-weight:600}
+.callout{border-radius:4px;font-size:14px}
+.callout.wide{border-left-width:3px}
+.take,.ev{border-top-width:3px}
+.rank,.sn,.step{border-radius:4px}
+.rung{margin-left:0}
+.stepc:first-child{box-shadow:0 0 0 1px var(--s1)}
+.pcard{border-left-width:3px}
+.tv{font-size:32px}
+.rk{border-radius:4px;font-family:var(--fd);font-weight:600}
+.scoret th{font-family:var(--fd);letter-spacing:.03em}
+.timeline li::before{border-radius:2px}
+
+/* summary keywords */
+:root{--kw-copy:#006300;--kw-learn:#1c5cab;--kw-avoid:#b42d2d;--kw-risk:#8a5a00;--kw-path:var(--ink)}
+@media (prefers-color-scheme: dark){:root:where(:not([data-theme="light"])){--kw-copy:#3fbf3f;--kw-learn:#6da7ec;--kw-avoid:#ef7070;--kw-risk:#fab219}}
+:root[data-theme="dark"]{--kw-copy:#3fbf3f;--kw-learn:#6da7ec;--kw-avoid:#ef7070;--kw-risk:#fab219}
+.sbox .shead{display:block;margin-bottom:4px}
+.sbox .kw{display:block;font-size:30px;font-weight:700;line-height:1.1;letter-spacing:-.01em;color:var(--kw-path)}
+.sbox.copy .kw{color:var(--kw-copy)}.sbox.learn .kw{color:var(--kw-learn)}.sbox.avoid .kw{color:var(--kw-avoid)}.sbox.risk .kw{color:var(--kw-risk)}
+.sbox .shead b{display:block;font-size:16px;font-weight:600;color:var(--ink);margin-top:2px}
+.sbox .smetric{margin:10px 0 8px;padding:8px 10px;background:var(--tint);border-radius:4px}
+.sbox .sv{font-size:22px}
+.sbox{border-left-width:4px}
+figure.score{margin:0 0 8px}
+.orstats{margin:12px 0 0}
+.ort{border-collapse:collapse;width:100%;font-size:14px;min-width:560px;font-variant-numeric:tabular-nums}
+.ort th{font-size:11px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);text-align:right;padding:6px 8px}
+.ort th:first-child,.ort td:first-child{text-align:left}
+.ort td{padding:7px 8px;border-top:1px solid var(--grid);text-align:right}
+.ort td:first-child{font-weight:600;display:flex;align-items:center;gap:8px}
+.ort .dot{width:9px;height:9px;margin:0}
+h3.cu{margin-top:8px}
+.lowlist{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-bottom:8px}
+.lowc{background:var(--card);border-radius:6px;box-shadow:0 0 0 1px var(--grid);border-left:3px solid var(--neutral);padding:12px 14px}
+.lowc p{font-size:13.5px;color:var(--ink2);margin:4px 0 0}
+#tip{position:fixed;pointer-events:none;background:var(--card);color:var(--ink);box-shadow:0 0 0 1px var(--ring),0 6px 20px rgba(0,0,0,.15);border-radius:8px;padding:8px 10px;font-size:13px;opacity:0;transition:opacity .08s;z-index:10;min-width:120px}
+#tip .tv2{font-weight:650;font-size:15px}
+#tip .row{display:flex;align-items:center;gap:8px;justify-content:space-between}
+#tip .row i{display:inline-block;width:12px;height:2px;border-radius:1px;margin-right:6px}
+#tip .tl2{color:var(--ink2)}
+.hit:hover + .bar,.hit:focus + .bar{filter:brightness(1.12)}
+.concl{font-size:24px;font-weight:600;line-height:1.3;color:var(--ink);max-width:46ch;margin:4px 0 18px;letter-spacing:-.005em}
+.concl.lg{font-size:30px;line-height:1.22;max-width:40ch;margin:4px 0 22px}
+.concl.sm{font-size:19px;line-height:1.35;max-width:60ch;margin:0 0 14px}
+.comp .concl.sm{margin:12px 0 0}
+.concl{text-wrap:pretty}
+:lang(zh) .concl,:lang(zh) .concl.lg,:lang(zh) .concl.sm{max-width:none}
+@media (max-width:600px){.concl{font-size:20px}.concl.lg{font-size:24px}.concl.sm{font-size:17px}}
+</style></head>
+<body><main>
+<header class="top"><div class="bar"><span class="mono">DiffuSpace · 发布评审 · 草稿，2026-10-12</span>
+<a href="launch_strategy_report.en.html">English</a></div>
+<h1>竞品发布复盘：对 DiffuSpace 的启示</h1>
+<p class="lede">2026 年 1 月至 10 月的九次模型发布：五个开源权重直接竞品和四个参照。按持续使用排序，并给出 DiffuSpace 发布建议。</p>
+<nav class="toc"><a href="#summary">摘要</a><a href="#path">建议路径</a><a href="#low">低杠杆事项</a><a href="#metrics">评判标准</a><a href="#compare">1 · 对比</a><a href="#deep">2 · 竞品</a><a href="#learn">3 · 启示</a></nav></header>
+<section id="summary"><h2>摘要</h2>
+<p class="concl lg">所有持续使用强劲的发布，首日都能在主流本地运行时中运行。这些运行时目前都不支持扩散解码。</p>
+<div class="srow r3"><article class="sbox copy"><div class="shead"><span class="kw">模仿</span><b>Qwen3.8-27B</b></div><div class="smetric"><span class="sv">52%</span><span class="sl">第 14 天仍保持的峰值搜索热度</span></div><p>开源模型中持续使用最高。首日所有主流运行时均支持。核心卖点：消费级 GPU 上的前沿级编程能力。</p></article><article class="sbox learn"><div class="shead"><span class="kw">学习</span><b>Jev</b></div><div class="smetric"><span class="sv">40M</span><span class="sl">浏览量，来自约 1,500 粉丝的创始人账号</span></div><p>以结果为主打（结构化决策，约快 100 倍、便宜 100 倍），而非架构。Jev 同样是并行、非自回归模型。</p></article><article class="sbox avoid"><div class="shead"><span class="kw">避免</span><b>Edge0-35B-A3B</b></div><div class="smetric"><span class="sv">82k</span><span class="sl">下载量，对比 4.5k GitHub star</span></div><p>与 DiffuSpace 同体量。发布时不被任何标准运行时支持。四天内上手评测即转为负面。</p></article></div>
+<div class="srow r2"><article class="sbox risk"><div class="shead"><span class="kw">风险</span><b>运行时支持</b></div><div class="smetric"><span class="sv">0 / 4</span><span class="sl">主流本地运行时目前支持扩散解码：llama.cpp、Ollama、LM Studio、MLX</span></div><p>发布前没有合入上游支持，就会重蹈 Edge0 覆辙。</p></article><article class="sbox path"><div class="shead"><span class="kw">路径</span><b>小团队路径</b></div><div class="smetric"><span class="sv">首日</span><span class="sl">处处可跑，先于第一条帖子</span></div><p>然后一个可视化的结果型卖点，给 8 到 12 位创作者提前体验，创始人文章加演示同时发 X、Hacker News 和 r/LocalLLaMA。</p></article></div></section>
+<section id="path"><h2>小团队的建议路径</h2>
+<p class="concl ">第一步是首日运行时支持，这是所有持续使用强劲的发布唯一的共同点。</p>
+<p class="lead2">在没有粉丝基础时，按杠杆从高到低排序。</p>
+<div class="steps"><div class="stepc"><span class="sn">1</span><div><b>首日处处可跑</b><p>上游运行时支持，加上提前准备的 GGUF 和 MLX 量化版。不需要粉丝，却能把别人的关注转化为视频、帖子和下载。没有这一步，下面都转化不了。</p></div></div><div class="stepc"><span class="sn">2</span><div><b>一篇创始人文章加演示视频</b><p>同时从创始人账号发 X、发 Show HN、发 r/LocalLLaMA 链接帖。Jev 的 4,000 万浏览来自 1,500 粉丝的账号。</p></div></div><div class="stepc"><span class="sn">3</span><div><b>提前给 8 到 12 位创作者</b><p>首日：Bijan Bowen、Fahd Mirza、Sam Witteveen、Caleb Writes Code、Luke's Dev Lab。后续：RepoChad、Red Stapler。向 IBM Technology 提议做扩散讲解。</p></div></div><div class="stepc"><span class="sn">4</span><div><b>借力合作方渠道</b><p>请 Unsloth、LM Studio、Ollama 和 OpenRouter 托管方在发布当天发帖。</p></div></div><div class="stepc"><span class="sn">5</span><div><b>成为编程智能体中的免费模型</b><p>Nemotron 3.5 社区热度低，却是 OpenCode 使用量第 12 的模型：来自 27.8 万用户的 660 万次会话，几乎全部是免费选项。与 OpenCode 等智能体洽谈首发免费名额。</p></div></div><div class="stepc"><span class="sn">6</span><div><b>公开框架和真实结果</b><p>提前回应质疑者，也给 Hacker News 讨论素材。</p></div></div><div class="stepc"><span class="sn">7</span><div><b>规划第二波</b><p>第 2、3 周发布硬件指南、对比 Qwen3.8-27B、智能体工具链配置。</p></div></div></div>
+<div class="callout wide"><b>从发布当天开始记录。</b> 大多数数据源只显示当前总量。每天快照：HF 下载、Ollama 拉取、OpenRouter token、GitHub star、r/LocalLLaMA 帖子数、相对 Qwen 3.8 的搜索热度。</div>
+<h3>待团队决定的问题</h3>
+<div class="questions"><div class="q"><span>?</span><p>用哪个卖点打头？能否经得起独立复现？先解决 700 对 207 tok/s 的出入。</p></div><div class="q"><span>?</span><p>能否及时把扩散解码合入 llama.cpp 和 Ollama？否则是否发布现有投机解码路径能运行的“扩散起草、自回归验证”模式？</p></div><div class="q"><span>?</span><p>OpenRouter 上谁来托管我们的端点？</p></div><div class="q"><span>?</span><p>选哪一周？对照 Qwen、Gemma 和 DeepSeek 的预期发布时间。</p></div></div>
+</section>
+<section id="low"><h2>对我们杠杆较低的事项</h2>
+<p class="concl ">在这组样本中，官方视频、新闻稿、免费 API 档和互动数字都不能预测持续使用。</p>
+<div class="lowlist"><div class="lowc"><b>官方 YouTube 发布视频</b><p>只有谷歌的有效（41.9 万播放），依托 268 万订阅的频道。英伟达的只有 1 万和 1.5 万。Qwen 没发官方视频，靠的是创作者。</p></div><div class="lowc"><b>新闻稿和付费推广</b><p>持续使用强劲的发布都没有依赖它们。</p></div><div class="lowc"><b>单靠免费 API 档</b><p>Nemotron 的免费 OpenRouter 端点每月 2.8 万亿 token，但几乎没有社区（首周 7 个 Reddit 帖）。</p></div><div class="lowc"><b>追求互动数字</b><p>star、点赞和收藏不能预测使用。Edge0 按体量计在三项上都领先，下载却只有 8.2 万。</p></div></div>
+<h3>案例：Edge0 的互动与使用不匹配</h3>
+<div class="grid2"><figure class="card chart"><figcaption><h4>X 发布帖每千次浏览的收藏数</h4><p class="sub">Edge0 两条帖子是其他发布的 4 到 22 倍。</p></figcaption><div class="plot" id="c_bm"></div><details class="dt"><summary>显示数据表</summary><div class="dtwrap" data-for="c_bm"></div></details></figure><figure class="card chart"><figcaption><h4>Hugging Face 每千次下载的点赞数</h4><p class="sub">官方仓库，累计。Edge0 是 Qwen 的 36 倍。</p></figcaption><div class="plot" id="c_lk"></div><details class="dt"><summary>显示数据表</summary><div class="dtwrap" data-for="c_lk"></div></details></figure></div>
+<div class="callout wide"><b>可能非自然，未经核实。</b> Edge0 的收藏率为每千次浏览 12.5 次，其他发布为 0.6 到 2.3；其 Hugging Face 点赞为每千次下载 43 个，其他为 0.02 到 1.2。它还有 4.5k GitHub star，但 r/LocalLLaMA 零帖、Hacker News 仅 2 分。这种模式符合非自然互动，也可能是大量“先收藏再说”的行为。两种情况都没有直接证据。无论如何结论不变：互动数字容易被抬高，且不能预测使用。</div>
+</section>
+<section id="metrics"><h2>我们如何评判一次发布</h2>
+<p class="concl ">按持续使用排名，Qwen 和 Gemma 在直接竞品中领先，Edge0 排最后。</p>
+<figure class="card score"><figcaption><h4>直接竞品：分层排名</h4><p class="sub">1 为最佳。总排名按 3 : 2 : 1 加权。</p></figcaption><div class="stw"><table class="scoret"><thead><tr><th></th><th>持续使用</th><th>社区深度</th><th>覆盖面</th><th>总排名</th></tr></thead><tbody><tr><td>Qwen3.8-27B</td><td><span class="rk r1">1</span></td><td><span class="rk r2">2</span></td><td><span class="rk r1">1</span></td><td><span class="chip good">第 1</span></td></tr><tr><td>Gemma 4</td><td><span class="rk r2">2</span></td><td><span class="rk r1">1</span></td><td><span class="rk r2">2</span></td><td><span class="chip good">第 2</span></td></tr><tr><td>GLM-4.7-Flash</td><td><span class="rk r3">3</span></td><td><span class="rk r3">3</span></td><td><span class="rk r4">4</span></td><td><span class="chip mid">第 3</span></td></tr><tr><td>Nemotron 3.5</td><td><span class="rk r4">4</span></td><td><span class="rk r4">4</span></td><td><span class="rk r3">3</span></td><td><span class="chip warn">第 4</span></td></tr><tr><td>Edge0</td><td><span class="rk r5">5</span></td><td><span class="rk r5">5</span></td><td><span class="rk r5">5</span></td><td><span class="chip bad">第 5</span></td></tr></tbody></table></div><p class="note">Qwen 官方下载略少于 Gemma，但持续使用排第一：第 14 天保持度是 Gemma 的两倍（52% 对 26%），OpenRouter token 更多（1.35 万亿 对 0.82 万亿），另有 649 万 Unsloth 下载。按覆盖面 Nemotron 高于 GLM，但在关键指标上 GLM 胜出，这正是按此方式排序指标的理由。</p></figure>
+<h3>分层定义</h3>
+<p class="lead2">对开源权重模型来说，成功就是持续被使用。所以这些指标按它们在九次发布中对持续使用的预测力排序，而不是按数字大小。</p>
+<div class="tiers"><div class="tier t1"><div class="tw1"><span class="eyebrow">第一层</span><b>持续使用</b><span class="weight" aria-label="weight 3"><i class="on"></i><i class="on"></i><i class="on"></i></span></div><p class="tm mono">Hugging Face 近 30 天下载 · OpenRouter 近 30 天 token · 第 14 天搜索热度</p><p>发布要达成的结果本身。</p></div><div class="tier t2"><div class="tw1"><span class="eyebrow">第二层</span><b>社区深度</b><span class="weight" aria-label="weight 2"><i class="on"></i><i class="on"></i><i class=""></i></span></div><p class="tm mono">首周 r/LocalLLaMA 帖子 · YouTube 播放</p><p>领先指标。Qwen、Gemma 和 GLM 在此领先并保持了使用；Nemotron 和 Edge0 没有。</p></div><div class="tier t3"><div class="tw1"><span class="eyebrow">第三层</span><b>覆盖面</b><span class="weight" aria-label="weight 1"><i class="on"></i><i class=""></i><i class=""></i></span></div><p class="tm mono">X 发布帖浏览 · Hacker News 最高帖</p><p>知名度，也是最弱的预测指标。Nemotron 264 万 X 浏览只带来 7 个 Reddit 帖；Edge0 72.5 万浏览只带来 8.2 万下载。例外是真正的新想法（Jev）。</p></div></div>
+</section>
+<section id="compare"><h2>1 · 各次发布对比</h2>
+<p class="concl ">覆盖面不能预测持续使用。Nemotron 有 264 万 X 浏览，首周 r/LocalLLaMA 只有 7 帖。</p>
+<div class="sets"><div class="set"><span class="dot d1"></span><div><b>直接竞品</b><p>开源权重，约 25B 到 35B，面向本地和智能体</p><p class="names">Qwen3.8-27B · Gemma 4 26B-A4B · GLM-4.7-Flash · Nemotron 3.5 Lightning · Edge0-35B-A3B</p></div></div><div class="set"><span class="dot d2"></span><div><b>参照组</b><p>不同品类或体量大得多的闭源模型，用于对比量级</p><p class="names">Jev · GPT-6 Luna · Claude Haiku 5.5 · Ember-1</p></div></div></div>
+<div class="th3 t1"><span class="eyebrow">第一层</span><h3>持续使用</h3><p>使用近 30 天数据，避免老发布只因时间长而占优。Gemma 和 GLM 分别发布于 6 个月和 9 个月前。</p></div>
+<p class="concl ">Gemma 和 Qwen 的 Hugging Face 下载领先。Nemotron 在直接竞品中 OpenRouter 用量最高，几乎全部来自免费端点。</p>
+<h3 class="cu">当前使用情况</h3><p class="lead2">截至 2026 年 10 月 11 日的 30 天使用量：开源权重的 Hugging Face 下载量、通过 OpenRouter 处理的 API token 量，以及 OpenCode 编程智能体中的 token 和用户数。</p>
+<div class="grid2"><figure class="card chart"><figcaption><h4>Hugging Face 近 30 天下载</h4><p class="sub">单位：百万，仅官方仓库</p></figcaption><div class="plot" id="c_hf"></div><p class="note">Qwen 另有 649 万来自 Unsloth 的社区 GGUF。</p><details class="dt"><summary>显示数据表</summary><div class="dtwrap" data-for="c_hf"></div></details></figure><figure class="card chart"><figcaption><h4>OpenRouter 近 30 天 token</h4><p class="sub">单位：万亿</p></figcaption><div class="plot" id="c_or"></div><p class="note">** Haiku 5.5 只有 4 天数据。GLM-4.7-Flash 和 Ember-1 从未进入 OpenRouter 每日前 50。Edge0 未上架。</p><details class="dt"><summary>显示数据表</summary><div class="dtwrap" data-for="c_or"></div></details></figure></div>
+<figure class="card score orstats"><figcaption><h4>OpenRouter 使用统计</h4><p class="sub">每日排名导出数据，2026 年 9 月 12 日至 10 月 11 日。单位：万亿 token。</p></figcaption><div class="stw"><table class="ort"><thead><tr><th>模型</th><th>30 天 token</th><th>10 月 5–11 日 token</th><th>进入每日前 50 的天数</th><th>最佳单日排名</th></tr></thead><tbody><tr><td><span class="dot d2"></span>GPT-6 Luna</td><td>16.1</td><td>7.08</td><td>20</td><td>5</td></tr><tr><td><span class="dot d2"></span>Jev</td><td>9.50</td><td>3.36</td><td>24</td><td>9</td></tr><tr><td><span class="dot d1"></span>Nemotron 3.5 (free tier)</td><td>2.82</td><td>0.91</td><td>30</td><td>22</td></tr><tr><td><span class="dot d1"></span>Qwen3.8-27B</td><td>1.35</td><td>0.34</td><td>20</td><td>28</td></tr><tr><td><span class="dot d2"></span>Claude Haiku 5.5 (from Oct 8)</td><td>1.06</td><td>1.06</td><td>4</td><td>15</td></tr><tr><td><span class="dot d1"></span>Gemma 4 26B</td><td>0.82</td><td>0.32</td><td>17</td><td>46</td></tr><tr><td><span class="dot d1"></span>GLM-4.7-Flash</td><td>—</td><td>—</td><td>0</td><td>—</td></tr><tr><td><span class="dot d2"></span>Ember-1</td><td>—</td><td>—</td><td>0</td><td>—</td></tr><tr><td><span class="dot d1"></span>Edge0</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td></tr></tbody></table></div><p class="note">每天只公布前 50 名模型，因此总量为下限。GLM-4.7-Flash 和 Ember-1 在此期间从未进入前 50。Edge0 未在 OpenRouter 上架。公开导出不含 9 月 12 日之前的数据，因此 Qwen、Nemotron、Gemma 和 GLM 的发布周未覆盖。 来源：OpenRouter，CC BY 4.0。</p></figure>
+<figure class="card score orstats"><figcaption><h4>OpenCode 使用统计（智能体编程）</h4><p class="sub">OpenCode Data，更新于 2026-10-12 05:01 UTC。单位：十亿 token。</p></figcaption><div class="stw"><table class="ort"><thead><tr><th>模型</th><th>9 月 12 日–10 月 11 日 token</th><th>10 月 5–11 日 token</th><th>10 月 5–11 日日均用户</th><th>周留存</th></tr></thead><tbody><tr><td><span class="dot d2"></span>GPT-6 Luna</td><td>1,719</td><td>758</td><td>16.9K</td><td>65.2%</td></tr><tr><td><span class="dot d1"></span>Nemotron 3.5</td><td>1,805</td><td>638</td><td>3.7K</td><td>—</td></tr><tr><td><span class="dot d2"></span>Claude Haiku 5.5 (from Oct 7)</td><td>151</td><td>151</td><td>2.7K</td><td>—</td></tr><tr><td><span class="dot d1"></span>Qwen3.8-27B</td><td>~0*</td><td>0</td><td>~0</td><td>—</td></tr><tr><td><span class="dot d1"></span>GLM-4.7-Flash</td><td>0</td><td>0</td><td>0</td><td>—</td></tr><tr><td><span class="dot d1"></span>Gemma 4 26B</td><td>not offered</td><td>—</td><td>—</td><td>—</td></tr></tbody></table></div><p class="note">* 8 月 18 日以来合计 1.9 亿 token，来自 52 名用户、318 次会话。Nemotron 3.5 在 OpenCode 内免费使用（总花费 0 美元），发布以来来自 27.8 万用户的会话达 660 万次。Edge0、Jev 和 Ember-1 未列出。 来源：OpenCode Data（opencode.ai/data）。</p></figure>
+<div class="callout wide"><b>托管智能体的使用本身就是一条分发渠道。</b> Nemotron 3.5 社区热度低，却是 OpenCode 使用量第 12 的模型，几乎全靠免费默认选项。在下载和社区上领先的 Qwen3.8-27B 和 GLM-4.7-Flash 在那里几乎无人使用。本地下载和托管智能体使用衡量的是不同的用户群。</div>
+<p class="concl ">第 14 天，Qwen 保持峰值搜索热度的 52%，GLM 为 39%。Luna 和 Haiku 第 2 天就跌破一半。</p>
+<div class="grid2w"><figure class="card chart"><figcaption><h4>发布后的搜索热度，第 0 到 28 天</h4><p class="sub">Google Trends，每条线以自身峰值 = 100 缩放。比较形状，不比较量级。</p></figcaption><div class="plot" id="c_tr"></div><details class="dt"><summary>显示数据表</summary><div class="dtwrap" data-for="c_tr"></div></details></figure><figure class="card chart"><figcaption><h4>参照组：Jev 与 GPT-6 Luna</h4><p class="sub">Jev 连续攀升六天，Luna 在第 0 天就见顶。</p></figcaption><div class="plot" id="c_tr2"></div><details class="dt"><summary>显示数据表</summary><div class="dtwrap" data-for="c_tr2"></div></details></figure></div>
+<div class="callouts"><div class="callout"><b>本地模型保持最久。</b> Qwen 第 14 天仍有峰值的 52%，GLM 为 39%。创作者的硬件指南带来了第二波。</div><div class="callout"><b>API 发布衰减最快。</b> Luna 和 Haiku 第 2 天就跌破一半。Nemotron 虽开源，第 7 天也只剩 23%。</div><div class="callout"><b>巨头的使用量与声量是分离的。</b> Luna 的 OpenRouter 使用量全场最大（16.1 万亿 token），搜索热度却几乎没有保持。</div></div>
+<div class="th3 t2"><span class="eyebrow">第二层</span><h3>社区深度</h3><p>持续使用的领先指标。</p></div>
+<p class="concl ">首周 r/LocalLLaMA 帖子：Gemma 354，Qwen 274，Nemotron 7，Edge0 0。</p>
+<div class="grid2"><figure class="card chart"><figcaption><h4>r/LocalLLaMA 首周帖子数</h4><p class="sub">标题提到该模型的帖子，第 0 到 6 天</p></figcaption><div class="plot" id="c_rd"></div><details class="dt"><summary>显示数据表</summary><div class="dtwrap" data-for="c_rd"></div></details></figure><figure class="card chart"><figcaption><h4>YouTube 已发现播放量</h4><p class="sub">单位：百万，标题提到该模型的视频</p></figcaption><div class="plot" id="c_yt"></div><details class="dt"><summary>显示数据表</summary><div class="dtwrap" data-for="c_yt"></div></details></figure></div>
+<div class="th3 t3"><span class="eyebrow">第三层</span><h3>覆盖面</h3><p>对持续使用预测力最弱。</p></div>
+<p class="concl ">X 浏览量反映账号体量。新品类 Jev 有 180 个 Hacker News 帖，开源模型为 4 到 36 个。</p>
+<div class="grid2w"><figure class="card chart"><figcaption><h4>X 发布帖浏览量</h4><p class="sub">单位：百万次</p></figcaption><div class="plot" id="c_x"></div><p class="note">* GPT-6 Luna 的帖子与 GPT-6 Sol 共用。Gemma 4 只统计了 @googlegemma 的帖子，@GoogleDeepMind 的发布帖未统计。</p><details class="dt"><summary>显示数据表</summary><div class="dtwrap" data-for="c_x"></div></details></figure><figure class="card chart"><figcaption><h4>Hacker News 最高帖</h4><p class="sub">得分，直接竞品</p></figcaption><div class="plot" id="c_hn"></div><details class="dt"><summary>显示数据表</summary><div class="dtwrap" data-for="c_hn"></div></details></figure></div>
+</section>
+<section id="deep"><h2>2 · 直接竞品：做了什么，结果如何</h2>
+<p class="concl ">Qwen、Gemma 和 GLM 首日即可在主流运行时中运行。Edge0 一个都不支持，Nemotron 则与一个独立路由库一同发布。</p>
+<article class="card comp"><header><div><h3>Qwen3.8-27B</h3><p class="maker">阿里 · 2026 年 8 月 14 日发布</p></div><span class="chip good">强</span></header><p class="concl sm">零门槛运行，加上把免费本地模型和付费前沿订阅正面对比的卖点。</p><div class="minis"><div class="mini t1"><span class="mv">52%</span><span class="ml">第 14 天搜索</span></div><div class="mini t1"><span class="mv">18.0M</span><span class="ml">Unsloth GGUF 下载</span></div><div class="mini t2"><span class="mv">274</span><span class="ml">首周 Reddit 帖</span></div><div class="mini t3"><span class="mv">6.04M</span><span class="ml">X 浏览</span></div></div><div class="cols"><div><h5>做了什么</h5><ul><li>8 月 3 日随家族发布预告 27B，推迟十天才发布。等待期间积累了搜索需求。</li><li>沿用 Qwen3.5 架构，所有运行时无需新代码。</li><li>Unsloth 提前 31 小时拿到权重。LM Studio 和 llama.cpp GGUF 20 分钟内上线，OpenRouter 一小时内上线。</li><li>在官方基准表里放入 Claude Opus 4.6 Max。</li><li>没有官方视频，只有一条 X 帖和一份模型卡。</li></ul></div><div><h5>结果</h5><ul><li>创作者把表格变成两个标题：“8GB 显卡能跑”（59.2 万播放）和“和 Opus 一样好”（24.7 万）。</li><li>硬件指南在第 10 到 13 天带来第二波，搜索曲线清晰可见。</li><li>Unsloth 的 GGUF 下载超过官方仓库，累计 1,800 万 对 1,460 万。</li></ul></div></div></article>
+<article class="card comp"><header><div><h3>Gemma 4</h3><p class="maker">Google DeepMind · 2026 年 4 月 2 日发布</p></div><span class="chip good">强</span></header><p class="concl sm">整个生态同时就绪，谷歌渠道全力推送。我们无法复制，但提前准备生态可以。</p><div class="minis"><div class="mini t1"><span class="mv">11.7M</span><span class="ml">半年后 HF 月下载</span></div><div class="mini t1"><span class="mv">354</span><span class="ml">首周 Reddit 帖</span></div><div class="mini t2"><span class="mv">4×</span><span class="ml">Qwen 搜索峰值</span></div><div class="mini t3"><span class="mv">1,812</span><span class="ml">HN 得分</span></div></div><div class="cols"><div><h5>做了什么</h5><ul><li>Demis Hassabis 和 Logan Kilpatrick 在 X 预热。</li><li>Unsloth 和 ggml-org 提前 1 到 2 天，LM Studio 提前 3 小时，mlx-lm 发布时合入。</li><li>博客列出约 30 家首发伙伴。标题：“按参数量计算，最强的开源模型”。</li><li>官方发布视频（41.9 万），半年持续后续视频、Kaggle 挑战赛、6 月发布 12B。</li></ul></div><div><h5>结果</h5><ul><li>直接竞品中首周社区反响最大。</li><li>创作者包装成战略故事（“为什么谷歌免费送出 Gemma 4”，71.9 万）和免费、隐私、离线 AI。</li><li>第 5 天跌破峰值一半，比 Qwen 快，但后续发布又拉了回来。</li></ul></div></div></article>
+<article class="card comp"><header><div><h3>GLM-4.7-Flash</h3><p class="maker">智谱 Z.ai · 2026 年 1 月 19 日发布</p></div><span class="chip mid">中</span></header><p class="concl sm">在大家跑得动的体量上给出具体可信的基准，加上稳定转化新模型的社区。</p><div class="minis"><div class="mini t1"><span class="mv">39%</span><span class="ml">第 14 天搜索</span></div><div class="mini t1"><span class="mv">1.4M</span><span class="ml">9 个月后 HF 月下载</span></div><div class="mini t2"><span class="mv">60</span><span class="ml">首周 Reddit 帖</span></div><div class="mini t3"><span class="mv">1.66M</span><span class="ml">X 浏览</span></div></div><div class="cols"><div><h5>做了什么</h5><ul><li>同一天发布模型卡和 X 帖：“30B 级别最强”，SWE-bench Verified 59.2。</li><li>看不到提前访问，社区完成其余：MLX 和 LM Studio 几小时内，Ollama 6 小时，Unsloth 9 小时。</li><li>OpenRouter 与 X 帖同一分钟上线。</li></ul></div><div><h5>结果</h5><ul><li>首日视频标题是“家里的 Claude Code”和“比 Claude 便宜 42 倍”。</li><li>保持度仅次于 Qwen，九个月后月下载仍有 140 万。</li></ul></div></div></article>
+<article class="card comp"><header><div><h3>Nemotron 3.5 Lightning</h3><p class="maker">英伟达 · 2026 年 8 月 11 日发布</p></div><span class="chip warn">弱</span></header><p class="concl sm">两个产品分散了信息，数字讲的不是模型本身，且撞上拥挤的一周。</p><div class="minis"><div class="mini t1"><span class="mv">23%</span><span class="ml">第 7 天搜索</span></div><div class="mini t1"><span class="mv">2.8T</span><span class="ml">OpenRouter 月 token，免费档</span></div><div class="mini t2"><span class="mv">7</span><span class="ml">首周 Reddit 帖</span></div><div class="mini t3"><span class="mv">2.64M</span><span class="ml">X 浏览</span></div></div><div class="cols"><div><h5>做了什么</h5><ul><li>运行时协同最好：llama.cpp 和 Ollama 18 分钟内合入，LM Studio 提前 13 小时。</li><li>与路由库一同发布，博客数字多为客户路由节省。</li><li>与另外三个模型同周发布。</li></ul></div><div><h5>结果</h5><ul><li>创作者打包报道：“3 天 4 个新模型”。</li><li>有真实 API 使用，几乎都在免费端点，但没有社区。</li></ul></div></div></article>
+<article class="card comp"><header><div><h3>Edge0-35B-A3B</h3><p class="maker">Edge0 · 2026 年 9 月 8 至 10 日发布</p></div><span class="chip bad">弱</span></header><p class="concl sm">卖点传开了，但大家无法在已有工具里验证。兴趣变成了收藏，而不是使用。</p><div class="minis"><div class="mini t1"><span class="mv">82k</span><span class="ml">累计下载</span></div><div class="mini t1"><span class="mv">0</span><span class="ml">首周 Reddit 帖</span></div><div class="mini t2"><span class="mv">12.5</span><span class="ml">每千次浏览收藏</span></div><div class="mini t3"><span class="mv">725k</span><span class="ml">X 浏览</span></div></div><div class="cols"><div><h5>做了什么</h5><ul><li>在 GitHub 和 HF 发布模型和自研流式运行时，两天后创始人发帖。</li><li>只有一个卖点：35B MoE 只占 3 GB 活跃内存，能在手机上跑。</li><li>没有质量基准，没有 GGUF、Ollama、LM Studio 或 OpenRouter。</li></ul></div><div><h5>结果</h5><ul><li>大家收藏留着以后试，收藏率是其他人的五倍以上。</li><li>评测转负面：安装后第一条命令就挂；“开源版本和 iPhone 演示还不是一回事”。</li></ul></div></div></article>
+</section>
+<section id="learn"><h2>3 · 对 DiffuSpace 的启示</h2>
+<h3>渠道：按开源权重发布的杠杆排序</h3>
+<p class="concl sm">Unsloth 的 Qwen GGUF 累计下载超过官方仓库，1,800 万 对 1,460 万。</p>
+<div class="channels"><div class="chan"><span class="rank">1</span><div class="cb"><b>运行时与量化者</b><p>Unsloth、LM Studio、ggml-org、Ollama、mlx-community 本身就是分发。Unsloth 的 Qwen 版本下载超过官方。</p></div><span class="lev" aria-label="5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><div class="chan"><span class="rank">2</span><div class="cb"><b>r/LocalLLaMA</b><p>本地模型的生死场：Gemma 354 帖，Qwen 274，Edge0 0。简单的 HF 链接帖就有效。</p></div><span class="lev" aria-label="5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><div class="chan"><span class="rank">3</span><div class="cb"><b>YouTube 本地测评者</b><p>他们制造长尾。Qwen 播放最高的视频出现在第 10 到 13 天。</p></div><span class="lev" aria-label="4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span></div><div class="chan"><span class="rank">4</span><div class="cb"><b>Hacker News</b><p>奖励新想法，不奖励新权重。Jev 有 180 帖，开源模型 4 到 36。扩散解码是 HN 好素材。</p></div><span class="lev" aria-label="3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></div><div class="chan"><span class="rank">5</span><div class="cb"><b>X</b><p>基本反映账号体量，除非想法新且可视化（Jev）。创始人帖胜过官方号。</p></div><span class="lev" aria-label="3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></div><div class="chan"><span class="rank">6</span><div class="cb"><b>OpenRouter</b><p>API 用户试用模型的地方。免费档带来量，带不来社区。</p></div><span class="lev" aria-label="2/5"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></div></div>
+<h3>KOL 名单</h3>
+<p class="concl sm">Qwen 播放最高的视频是第 10 到 13 天发布的硬件指南。</p>
+<div class="kols"><div class="card kol"><h5>首日本地测评</h5><ul><li><b>Bijan Bowen</b><span>6 次发布，当天出片，固定测试</span></li><li><b>Fahd Mirza</b><span>6 次发布，24 小时出教程，报道过 Edge0</span></li><li><b>Luke's Dev Lab</b><span>16GB 本地测试系列</span></li><li><b>Sam Witteveen</b><span>偏技术，准确转述厂商定位</span></li></ul></div><div class="card kol"><h5>长尾硬件</h5><ul><li><b>RepoChad</b><span>显存指南，1.1 万订阅拿到 40.6 万</span></li><li><b>Red Stapler</b><span>低预算显卡挑战，59.2 万</span></li><li><b>Digital Spaceport</b><span>本地推理硬件</span></li><li><b>Zero to MVP</b><span>同一应用对比两个模型</span></li></ul></div><div class="card kol"><h5>机制讲解</h5><ul><li><b>Caleb Writes Code</b><span>“7 分钟讲清楚”，四次发布共 127 万</span></li><li><b>IBM Technology</b><span>Jev 一期 113 万</span></li><li><b>Theo · Greg Isenberg</b><span>开发者与创业视角</span></li><li><b>Matthew Berman</b><span>发布日直播</span></li></ul></div><div class="card kol"><h5>需提前应对的质疑者</h5><ul><li><b>Prompt Engineer 48</b><span>实测 Edge0 安装失败</span></li><li><b>TechWealth Hub</b><span>演示与发布版本的差距</span></li></ul></div></div>
+<h3>首日就绪情况</h3>
+<p class="concl sm">所有持续使用强劲的发布首日都能运行。Edge0 不能。</p>
+<p class="lead2">从官方发布到各工具能运行该模型的小时数。</p>
+<figure class="card chart"><figcaption><h4>各运行时首日就绪情况</h4><p class="sub">负数 = 早于官方发布（合作方提前拿到）。“arch” = 沿用已有架构，无需适配。</p></figcaption><div class="plot" id="c_ready"></div></figure>
+<h3>发布前需要完成什么</h3>
+<p class="concl sm">上游运行时支持所需准备时间最长，8 周以上。</p>
+<ol class="timeline"><li class="crit"><span class="when">8 周以上</span><div><b>把扩散解码合入 llama.cpp 上游，再到 Ollama、LM Studio、MLX；确认 vLLM 和 SGLang</b><p>最长的一环。我们自己的框架需要打补丁的 llama-diffusion-cli。</p></div></li><li class=""><span class="when">6 周</span><div><b>创始人演讲或技术文章：为什么做扩散解码，附真实基准结论</b><p>Jev 提前六周的演讲埋下了叙事。</p></div></li><li class="crit"><span class="when">4 周</span><div><b>锁定一个有数据支撑的卖点，公开基准测试框架</b><p>HackMD 草稿写 700 对 140 tok/s，MiniWoB++ 数据是 207 对 99。先解决。</p></div></li><li class=""><span class="when">2 周</span><div><b>查发布日历，避开大模型扎堆的周</b><p>Luna 和 Nemotron 被打包进合集报道。</p></div></li><li class=""><span class="when">3–5 天</span><div><b>权重给 Unsloth、bartowski、LM Studio、mlx-community；OpenRouter 托管端点；给 8 到 12 位创作者保密期提前体验</b><p>Gemma 和 Nemotron 合作方提前 1 到 2 天就绪；首日视频需要提前体验。</p></div></li><li class="go"><span class="when">发布那一分钟</span><div><b>X、博客、HF 模型卡、Hacker News、r/LocalLLaMA 同时发</b><p>Haiku、Gemma 和 Nemotron 都是同一分钟全渠道发布。</p></div></li><li class=""><span class="when">第 7–14 天</span><div><b>第二波：硬件指南、对比 Qwen3.8-27B、智能体工具链配置</b><p>Qwen 的长尾正是来自这些。</p></div></li></ol>
+<h3>信息策略：一个核心标题，分层支撑</h3>
+<p class="concl sm">Jev、Qwen 和 Haiku 各自只主打一个结果，创作者几乎逐字复述。</p>
+<div class="evidence"><div class="ev good"><span class="tag">单一结果型标题胜出</span><p>Jev：要决策不要文本，快 100 倍。Qwen：你的 GPU 上跑出旗舰质量。Haiku：最便宜最快的小模型。创作者几乎逐字复述。</p></div><div class="ev warn"><span class="tag">信息分散的输了</span><p>Nemotron 同时发布模型和路由器，数字讲的是路由器客户。</p></div><div class="ev bad"><span class="tag">无法证明的也输了</span><p>Edge0 卖点清楚但无从验证。Ember-1 卖点单一但没东西可看。</p></div></div>
+<div class="ladder"><div class="rung" style="--i:0"><span class="step">1</span><b>标题</b><p>一句话讲看得见的速度，绑定大家熟悉的模型。用结果开头，不用“扩散”。</p></div><div class="rung" style="--i:1"><span class="step">2</span><b>证明</b><p>基准表点名 Qwen3.8-27B，质量和速度一起给。</p></div><div class="rung" style="--i:2"><span class="step">3</span><b>演示</b><p>并排视频：同一提示词，并行生成 对 逐 token 生成。必须可复现。</p></div><div class="rung" style="--i:3"><span class="step">4</span><b>机制</b><p>扩散解码如何工作，以及诚实的局限。讲解视频的第二幕，也是 HN 的钩子。</p></div><div class="rung" style="--i:4"><span class="step">5</span><b>受众</b><p>本地用户：具体 GPU 上的 tok/s；智能体开发者：每步延迟；研究者：架构。</p></div></div>
+<div class="callout wide"><b>卖点选择。</b> 在我们的基准中，纯扩散比自回归快 2 到 3 倍，但准确率从未更高；“扩散起草 + 自回归验证”在输出完全一致的前提下延迟降低 2.3 到 3.6 倍。</div>
+</section>
+<p class="foot">来源：competitor_launches.md、launch_playbooks.md、youtube_launch_study.md、community_mentions.md。数据核对于 2026-10-12。</p>
+</main><div id="tip" role="tooltip"></div>
+<script>window.DATA={"xviews": [["Jev", 40.02, "ref"], ["GPT-6 Luna*", 10.15, "ref"], ["Claude Haiku 5.5", 6.43, "ref"], ["Qwen3.8-27B", 6.04, "direct"], ["Nemotron 3.5", 2.64, "direct"], ["GLM-4.7-Flash", 1.66, "direct"], ["Edge0", 0.73, "direct"], ["Gemma 4*", 0.63, "direct"], ["Ember-1", 0.161, "ref"]], "reddit": [["Gemma 4", 354], ["Qwen3.8-27B", 274], ["GLM-4.7-Flash", 60], ["Nemotron 3.5", 7], ["Edge0", 0]], "youtube": [["Gemma 4", 7.4], ["Qwen3.8-27B", 4.9], ["Nemotron 3.5", 0.4], ["GLM-4.7-Flash", 0.17], ["Edge0", 0.04]], "hn": [["Gemma 4", 1812], ["Qwen3.8-27B", 381], ["GLM-4.7-Flash", 378], ["Nemotron 3.5", 262], ["Edge0", 2]], "trends_direct": {"Qwen3.8-27B": [67, 100, 81, 86, 90, 81, 60, 54, 43, 43, 46, 54, 66, 62, 52, 40, 38, 38, 36, 42, 36, 33, 30, 28, 31, 31, 30, 30, 29], "GLM-4.7-Flash": [26, 100, 63, 52, 36, 56, 49, 42, 42, 42, 39, 47, 27, 43, 39, 33, 24, 25, 31, 19, 20, 26, 22, 30, 22, 34, 25, 18, 18], "Gemma 4": [27, 100, 82, 60, 64, 48, 45, 48, 38, 37, 33, 33, 32, 26, 26, 31, 23, 20, 19, 19, 17, 16, 16, 14, 15, 13, 13, 11, 11], "Nemotron 3.5": [54, 100, 56, 31, 22, 23, 24, 23, 21, 11, 11, 10, 7, 8, 12, 14, 15, 13, 7, 8, 10, 11, 17, 11, 9, 8, 7, 11, 8]}, "trends_ref": {"Jev": [2, 11, 24, 46, 69, 97, 100, 78, 57, 45, 33, 27, 24, 29, 27, 22, 18, 15, 12, 10, 14, 13, 13, 12, 11, 8, 6, 8], "GPT-6 Luna": [100, 81, 34, 24, 18, 17, 15, 14, 12, 7, 6, 5, 4, 6, 6, 7, 8, 5, 4, 3, 4]}, "hf30": [["Gemma 4", 11.66], ["Qwen3.8-27B", 11.3], ["GLM-4.7-Flash", 1.44], ["Nemotron 3.5", 1.44], ["Edge0", 0.08]], "openrouter": [["GPT-6 Luna", 16.1, "ref"], ["Jev", 9.5, "ref"], ["Nemotron 3.5", 2.82, "direct"], ["Qwen3.8-27B", 1.35, "direct"], ["Claude Haiku 5.5**", 1.06, "ref"], ["Gemma 4", 0.82, "direct"]], "hflikes": [["Edge0", 43.4, "hi"], ["Qwen3.8-27B", 1.2, ""], ["Nemotron 3.5", 0.2, ""], ["GLM-4.7-Flash", 0.13, ""], ["Gemma 4", 0.02, ""]], "bookmarks": [["Edge0", 12.5, "hi"], ["Edge0 apps", 9.5, "hi"], ["Gemma 4", 2.27, ""], ["Ember-1", 1.68, ""], ["Jev", 1.46, ""], ["GLM-4.7-Flash", 1.38, ""], ["Qwen3.8-27B", 0.8, ""], ["Claude Haiku 5.5", 0.79, ""], ["GPT-6 Sol/Luna", 0.63, ""], ["Nemotron 3.5", 0.58, ""]]};window.LBL={"direct": "直接竞品", "ref": "参照组", "day": "第", "dayAfter": " 天", "peak": "% 峰值", "M": " 百万", "T": " 万亿", "posts": " 帖", "pts": " 分", "model": "模型", "value": "数值", "buckets": {"pre": "发布前", "h1": "1 小时内", "h6": "1–6 小时", "h24": "6–24 小时", "late": "超过 1 天", "none": "不可用", "unk": "未记录"}, "edge": "Edge0 帖子", "other": "其他发布帖"};window.READY=[["Qwen3.8-27B", [["pre", "−31h"], ["h1", "+16m"], ["h1", "0h"], ["pre", "arch"], ["unk", "?"], ["h1", "+1h"]]], ["Gemma 4", [["pre", "−50h"], ["pre", "−30h"], ["pre", "−3h"], ["h6", "+1h"], ["h1", "0h"], ["h24", "+23h"]]], ["Nemotron 3.5", [["none", "—"], ["h1", "+26m"], ["pre", "−13h"], ["h6", "+3h"], ["h1", "+18m"], ["pre", "−8m"]]], ["GLM-4.7-Flash", [["h24", "+9h"], ["h24", "+18h"], ["h6", "+2h"], ["h6", "+1h"], ["h6", "+6h"], ["h1", "0h"]]], ["Edge0", [["none", "—"], ["none", "—"], ["none", "—"], ["none", "—"], ["none", "—"], ["none", "—"]]]];window.RCOLS=["Unsloth", "llama.cpp GGUF", "LM Studio", "MLX", "Ollama", "OpenRouter"];</script>
+<script>
+const D=window.DATA,L=window.LBL,NS='http://www.w3.org/2000/svg';
+const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const tip=document.getElementById('tip');
+function el(n,a={},p){const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+function txt(n,a,s,p){const e=el(n,a,p);e.textContent=s;return e}
+function showTip(ev,rows){tip.replaceChildren();for(const r of rows){const d=document.createElement('div');d.className='row';
+ const l=document.createElement('span');l.className='tl2';if(r.c){const i=document.createElement('i');i.style.background=r.c;l.appendChild(i)}l.appendChild(document.createTextNode(r.k));
+ const v=document.createElement('span');v.className='tv2';v.textContent=r.v;d.append(v,l);tip.appendChild(d)}
+ tip.style.opacity=1;moveTip(ev)}
+function moveTip(ev){const x=Math.min(ev.clientX+14,innerWidth-tip.offsetWidth-8);tip.style.left=x+'px';tip.style.top=(ev.clientY+14)+'px'}
+function hideTip(){tip.style.opacity=0}
+function table(id,head,rows){const w=document.querySelector(`.dtwrap[data-for="${id}"]`);if(!w)return;const t=document.createElement('table');
+ const h=t.insertRow();for(const c of head){const th=document.createElement('th');th.textContent=c;h.appendChild(th)}
+ for(const r of rows){const tr=t.insertRow();for(const c of r){tr.insertCell().textContent=c}}w.replaceChildren(t)}
+function fmt(v,u){if(Number.isInteger(v))return v.toLocaleString('en-US')+u;const d=v>=10?1:v>=0.1?2:3;return parseFloat(v.toFixed(d)).toString()+u}
+
+// Horizontal bar chart. items: [label, value, group]; colorFn(group) -> css var
+function bars(id,items,unit,colorFn,legend){
+ const host=document.getElementById(id);if(!host)return;const W=host.clientWidth||600,rowH=30,pad={l:Math.min(150,W*0.36),r:64,t:4,b:4};
+ const H=pad.t+pad.b+items.length*rowH;const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img'},host);
+ const max=Math.max(...items.map(d=>d[1]));const sx=v=>(W-pad.l-pad.r)*v/max;
+ el('line',{x1:pad.l,x2:pad.l,y1:pad.t,y2:H-pad.b,stroke:css('--axis'),'stroke-width':1},svg);
+ items.forEach((d,i)=>{const y=pad.t+i*rowH,bh=Math.min(18,rowH-10),by=y+(rowH-bh)/2,w=Math.max(sx(d[1]),d[1]>0?3:0);
+  txt('text',{x:pad.l-8,y:y+rowH/2+4,'text-anchor':'end','font-size':12.5,fill:css('--ink2')},d[0],svg);
+  const g=el('g',{tabindex:0},svg);
+  el('rect',{class:'hit',x:pad.l,y:y,width:W-pad.l,height:rowH,fill:'transparent'},g);
+  if(w>0){const r=Math.min(4,w/2);el('path',{class:'bar',fill:css(colorFn(d[2])),d:`M${pad.l},${by}h${w-r}a${r},${r} 0 0 1 ${r},${r}v${bh-2*r}a${r},${r} 0 0 1 -${r},${r}h-${w-r}z`},g)}
+  txt('text',{x:pad.l+w+6,y:y+rowH/2+4,'font-size':12.5,fill:css('--ink'),'font-weight':600},fmt(d[1],unit),svg);
+  const rows=[{k:d[0],v:fmt(d[1],unit)}];if(legend&&d[2]&&legend[d[2]])rows.push({k:legend[d[2]],v:''});
+  g.addEventListener('pointermove',e=>showTip(e,rows));g.addEventListener('pointerleave',hideTip);
+  g.addEventListener('focus',()=>{const b=g.getBoundingClientRect();showTip({clientX:b.left+pad.l+w,clientY:b.top},rows)});g.addEventListener('blur',hideTip)});
+ if(legend){const lg=document.createElement('div');lg.className='legend';for(const k in legend){const s=document.createElement('span');const i=document.createElement('i');i.style.background=css(colorFn(k));s.append(i,document.createTextNode(legend[k]));lg.appendChild(s)}host.appendChild(lg)}
+ table(id,[L.model,L.value],items.map(d=>[d[0],fmt(d[1],unit)]))}
+
+// Line chart with crosshair; series: {name:[...]}, colors in order
+function lines(id,series,colors){
+ const host=document.getElementById(id);if(!host)return;const W=host.clientWidth||600,H=Math.max(220,Math.min(300,W*0.5)),pad={l:34,r:118,t:10,b:28};
+ const names=Object.keys(series),n=Math.max(...names.map(k=>series[k].length));const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img'},host);
+ const sx=i=>pad.l+(W-pad.l-pad.r)*i/(n-1),sy=v=>pad.t+(H-pad.t-pad.b)*(1-v/100);
+ for(const v of [0,25,50,75,100]){el('line',{x1:pad.l,x2:W-pad.r,y1:sy(v),y2:sy(v),stroke:css(v?'--grid':'--axis'),'stroke-width':1},svg);
+  txt('text',{x:pad.l-6,y:sy(v)+4,'text-anchor':'end','font-size':11,fill:css('--muted')},v,svg)}
+ for(let i=0;i<n;i+=7)txt('text',{x:sx(i),y:H-8,'text-anchor':'middle','font-size':11,fill:css('--muted')},(L.day+' '+i+L.dayAfter).trim(),svg);
+ const ends=[];
+ names.forEach((k,j)=>{const a=series[k],c=css(colors[j]);el('path',{d:a.map((v,i)=>(i?'L':'M')+sx(i)+','+sy(v)).join(''),fill:'none',stroke:c,'stroke-width':2,'stroke-linejoin':'round','stroke-linecap':'round'},svg);
+  const li=a.length-1;el('circle',{cx:sx(li),cy:sy(a[li]),r:4,fill:c,stroke:css('--card'),'stroke-width':2},svg);ends.push({k,y:sy(a[li]),x:sx(li),c,v:a[li]})});
+ ends.sort((a,b)=>a.y-b.y);for(let i=1;i<ends.length;i++)ends[i].ly=Math.max(ends[i].y,(ends[i-1].ly??ends[i-1].y)+15);ends[0].ly=ends[0].y;
+ const lx=W-pad.r+14;for(const e of ends){if(Math.abs(e.ly-e.y)>1)el('path',{d:`M${e.x+6},${e.y}L${lx-4},${e.ly}`,stroke:css('--axis'),fill:'none'},svg);
+  el('line',{x1:lx,x2:lx+10,y1:e.ly,y2:e.ly,stroke:e.c,'stroke-width':2},svg);txt('text',{x:lx+14,y:e.ly+4,'font-size':12,fill:css('--ink2')},e.k,svg)}
+ const cross=el('line',{y1:pad.t,y2:H-pad.b,stroke:css('--axis'),'stroke-width':1,opacity:0},svg);
+ const hit=el('rect',{x:pad.l,y:pad.t,width:W-pad.l-pad.r,height:H-pad.t-pad.b,fill:'transparent',tabindex:0},svg);
+ const at=i=>{cross.setAttribute('x1',sx(i));cross.setAttribute('x2',sx(i));cross.setAttribute('opacity',1);
+  return [{k:(L.day+' '+i+L.dayAfter).trim(),v:''}].concat(names.map((k,j)=>({k,v:series[k][i]!=null?series[k][i]+L.peak:'–',c:css(colors[j])})))};
+ hit.addEventListener('pointermove',e=>{const r=svg.getBoundingClientRect(),x=(e.clientX-r.left)*W/r.width;const i=Math.max(0,Math.min(n-1,Math.round((x-pad.l)/(W-pad.l-pad.r)*(n-1))));showTip(e,at(i))});
+ hit.addEventListener('pointerleave',()=>{hideTip();cross.setAttribute('opacity',0)});
+ const lg=document.createElement('div');lg.className='legend';names.forEach((k,j)=>{const s=document.createElement('span');const i=document.createElement('i');i.className='line';i.style.background=css(colors[j]);s.append(i,document.createTextNode(k));lg.appendChild(s)});host.appendChild(lg);
+ table(id,[L.day.trim()||'Day'].concat(names),Array.from({length:n},(_,i)=>[i].concat(names.map(k=>series[k][i]??''))))}
+
+function ready(){const host=document.getElementById('c_ready');if(!host)return;const t=document.createElement('table');t.className='ready';
+ const fill={pre:'--r550',h1:'--r450',h6:'--r350',h24:'--r250',late:'--r250',none:'--none',unk:'--none'};const dark={pre:1,h1:1};
+ const h=t.insertRow();const th0=document.createElement('th');h.appendChild(th0);for(const c of window.RCOLS){const th=document.createElement('th');th.textContent=c;h.appendChild(th)}
+ for(const [m,cells] of window.READY){const tr=t.insertRow();tr.insertCell().textContent=m;cells.forEach(([b,lab],j)=>{const td=tr.insertCell();td.textContent=lab;td.style.background=css(fill[b]);td.style.color=dark[b]?'#fff':css(b==='none'||b==='unk'?'--muted':'--ink');
+  if(b==='h24'||b==='h6')td.style.color='#0b0b0b';td.title=m+' · '+window.RCOLS[j]+': '+L.buckets[b];
+  td.addEventListener('pointermove',e=>showTip(e,[{k:m+' · '+window.RCOLS[j],v:lab},{k:L.buckets[b],v:''}]));td.addEventListener('pointerleave',hideTip)})}
+ host.appendChild(t);const lg=document.createElement('div');lg.className='legend';for(const b of ['pre','h1','h6','h24','none']){const s=document.createElement('span');const i=document.createElement('i');i.style.background=css(fill[b]);if(b==='none')i.style.boxShadow='inset 0 0 0 1px '+css('--axis');s.append(i,document.createTextNode(L.buckets[b]));lg.appendChild(s)}host.appendChild(lg)}
+
+function render(){for(const id of ['c_x','c_rd','c_yt','c_hn','c_tr','c_tr2','c_hf','c_or','c_bm','c_lk','c_ready']){const h=document.getElementById(id);if(h)h.replaceChildren()}
+ const grp=g=>g==='ref'?'--s2':'--s1';const LG={direct:L.direct,ref:L.ref};
+ bars('c_x',D.xviews,L.M,grp,LG);
+ bars('c_rd',D.reddit,'',()=>'--s1');bars('c_yt',D.youtube,L.M,()=>'--s1');bars('c_hn',D.hn,'',()=>'--s1');
+ lines('c_tr',D.trends_direct,['--s1','--s2','--s3','--s4']);lines('c_tr2',D.trends_ref,['--s1','--s2']);
+ bars('c_hf',D.hf30,L.M,()=>'--s1');bars('c_or',D.openrouter,L.T,grp,LG);
+ bars('c_bm',D.bookmarks,'',g=>g==='hi'?'--s2':'--neutral',{hi:L.edge,'':L.other});
+ bars('c_lk',D.hflikes,'',g=>g==='hi'?'--s2':'--neutral');
+ ready()}
+
+render();let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(render,150)});
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',render);
+</script>
+</body></html>
