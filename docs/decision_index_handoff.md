@@ -4,10 +4,17 @@ Written 2026-10-16. Hand this to whoever runs the full suite on another machine.
 
 ## Goal
 
-Score our Jev-style endpoint on the Decision Index 0.3 public suite and see where it lands against Jev, Cloudflare Clef and the other diffusion entrants. The suite has 110,201 requests over 37 benchmarks. The board is https://huggingface.co/spaces/multimodalart/jev-decision-index and the kit is https://github.com/apolinario/decision-index.
+Score our Jev-style endpoint on the Decision Index 0.3 public suite and compare it with TypeSafe's Jev. The suite has 110,201 requests over 37 benchmarks. The board is https://huggingface.co/spaces/multimodalart/jev-decision-index and the kit is https://github.com/apolinario/decision-index.
 
 - Endpoint: `http://43.107.54.53:31001/v1/systemone`, plain HTTP with no auth. It reports model `qwen36-iter22000-jev`.
-- Reference points on the board (0.3.2, Full score): Jev 1.13 is 60.11 (public 57.96), Clef is 53.08 (public 61.71), and the best diffusion entrant, JoshuaSP DiffusionGemma, is 47.32. The kit computes only the public index. The Full score adds two private parts that the maintainers run after a submission.
+- Jev on the board (edition 0.3.2):
+
+  | Model | Full score | Public index |
+  |---|---:|---:|
+  | Jev 1.13 | 60.11 | 57.96 |
+  | Jev 1.14 | 61.53 | 60.70 |
+
+  Jev 1.13 is the reference row the suite was frozen on. The kit computes only the public index. The Full score adds two private parts that the maintainers run after a submission.
 
 ## Decisions so far
 
@@ -75,9 +82,9 @@ Full write-up: [decision_index_smoke_findings.md](decision_index_smoke_findings.
 
    It writes `results.jsonl` as it goes and resumes from it if interrupted. Rerunning retries the rejected rows, so pass `--limit` or accept the extra requests.
 
-4. Compare `runs/qwen36-jev/index.json` with Jev 1.13's public index of 57.96. The board's per-benchmark numbers for every entrant are in `data/index.json` of the Space.
+4. Compare `runs/qwen36-jev/index.json` with the public index of Jev 1.13 (57.96) and Jev 1.14 (60.70). Jev's per-benchmark numbers are in `data/index.json` of the Space, under `jev` for 1.13 and under `models` for 1.14.
 
-5. Record the result in a findings doc under `docs/`, the way `decision_index_smoke_findings.md` does. Include the endpoint, the request options, the worker count, the status counts, the public index, and the per-benchmark table next to Jev and Clef.
+5. Record the result in a findings doc under `docs/`, the way `decision_index_smoke_findings.md` does. Include the endpoint, the request options, the worker count, the status counts, the public index, and the per-benchmark table next to Jev 1.13 and 1.14.
 
 ## Files
 
@@ -89,6 +96,6 @@ None of this is committed yet. To get it onto the other machine, either commit a
 
 ## Open issues
 
-- The 26-option cap. Raising it to 255 needs whoever runs the server. One board entrant, Winnow-12B, lifted its label cap to 255 for the board, so the maintainers accept that change.
+- The 26-option cap. Raising it to 255 needs whoever runs the server.
 - The server is public with no auth. Anyone can use its GPU.
 - Submitting to the board needs the weights on the Hub and an inference server the maintainers can start. The maintainers then run the private 80% of the Full score themselves. We have neither the weights nor the server code.
