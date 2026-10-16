@@ -107,6 +107,14 @@ findings for limits.
   as DiffusionGemma on easy items and 10x to 50x faster. DiffusionGemma always
   reasons, so that gap is reasoning against none. The subset run it prepared
   was not run (`docs/gemma_homework_planning_smoke_findings.md`).
+- On 2026-10-16 a streaming probe of the hosted diffusion endpoint
+  (`qwen36-iter22000-blk16-arverify-best`; 72 requests, thinking off, two reps
+  per cell) decoded at about 410 tok/s per request alone, 280 at
+  4 concurrent, and 210 at 10, with aggregate throughput rising from about 335
+  to 1,550 tok/s. Time to first token held at 0.85 s. Output length from 1k to
+  4.5k tokens didn't change the rate. Content did: code ran at 706 tok/s and
+  prose at 270 to 310 alone. The 150 to 200 tok/s seen in HLE came from its 10
+  concurrent workers (`bench/tps/run_tps.py`).
 
 Do not carry these numbers over to the realistic workloads. They are the
 hypotheses the new comparison tests.
@@ -122,6 +130,8 @@ hypotheses the new comparison tests.
   API.
 - `bench/nemotron_runner.py`: Nemotron three-mode runner and OpenRouter AR arm.
 - `bench/native/`: pinned `llama.cpp` patch, build, and CUDA probes.
+- `bench/tps/run_tps.py`: streaming probe that splits time to first token from
+  decode tok/s across output lengths and concurrency.
 - `cells/`: Colab model staging and prior runner setup.
 - `docs/*_findings.md`: what each earlier run established and its limits.
 
