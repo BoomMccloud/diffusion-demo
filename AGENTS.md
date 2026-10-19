@@ -130,9 +130,13 @@ hypotheses the new comparison tests.
   API.
 - `bench/nemotron_runner.py`: Nemotron three-mode runner and OpenRouter AR arm.
 - `bench/native/`: pinned `llama.cpp` patch, build, and CUDA probes.
+- `bench/tau2/`: τ³-bench runner and the patch that swaps its OpenAI grader for
+  Gemini. `bench/hle/`: HLE text-only runner and the empty-answer probe.
 - `bench/tps/run_tps.py`: streaming probe that splits time to first token from
   decode tok/s across output lengths and concurrency.
 - `cells/`: Colab model staging and prior runner setup.
+- `.claude/skills/race-video/`: how to record a side-by-side race video of the
+  diffusion model and an AR model on WebArena, WindTunnel, or MiniWoB++.
 - `docs/*_findings.md`: what each earlier run established and its limits.
 
 ## Accelerator sessions
