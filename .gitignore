@@ -75,3 +75,18 @@ archive/artifact-bundles/
 !/bench/results/dependency-density/README.md
 !/bench/results/dependency-density/**/summary.json
 !/bench/results/dependency-density/**/*-summary.json
+
+# Addition-in-words raw records are the evidence for its README.
+!experiments/addition-in-words/results/**/*.jsonl
+!experiments/addition-in-words/results/**/*.log
+experiments/addition-in-words/results/upstream_*.csv
+
+# Upstream MiniWoB++ clone
+bench/miniwob/miniwob-plusplus/
+bench/miniwob/recordings/
+
+# WebArena race recordings (videos and timings)
+bench/webarena/recordings/
+
+# WindTunnel race-video recordings (webm, mp4, timings)
+bench/windtunnel/recordings/
