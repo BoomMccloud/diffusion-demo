@@ -68,6 +68,8 @@ archive/artifact-bundles/
 # Keep benchmark evidence cited by docs
 !bench/results/**/*.jsonl
 !bench/results/**/*.log
+# Embedding caches are rebuilt from text and run to hundreds of MB.
+bench/results/**/embeddings.jsonl
 
 # Dependency-density raw run artifacts stay local; only summaries are tracked.
 /bench/results/dependency-density/**

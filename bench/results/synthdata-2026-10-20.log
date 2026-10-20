@@ -1,0 +1,187 @@
+generate: 13824 to run, 0 already done
+  dllm: 100/6912
+  qwen: 100/6912
+  dllm: 200/6912
+  qwen: 200/6912
+  dllm: 300/6912
+  qwen: 300/6912
+  dllm: 400/6912
+  qwen: 400/6912
+  dllm: 500/6912
+  qwen: 500/6912
+  dllm: 600/6912
+  qwen: 600/6912
+  dllm: 700/6912
+  qwen: 700/6912
+  dllm: 800/6912
+  qwen: 800/6912
+  dllm: 900/6912
+  qwen: 900/6912
+  qwen: 1000/6912
+  qwen: 1100/6912
+  qwen: 1200/6912
+  dllm: 1000/6912
+  qwen: 1300/6912
+  qwen: 1400/6912
+  qwen: 1500/6912
+  qwen: 1600/6912
+  dllm: 1100/6912
+  qwen: 1700/6912
+  qwen: 1800/6912
+  qwen: 1900/6912
+  dllm: 1200/6912
+  qwen: 2000/6912
+  qwen: 2100/6912
+  qwen: 2200/6912
+  qwen: 2300/6912
+  dllm: 1300/6912
+  qwen: 2400/6912
+  qwen: 2500/6912
+  qwen: 2600/6912
+  qwen: 2700/6912
+  dllm: 1400/6912
+  qwen: 2800/6912
+  qwen: 2900/6912
+  qwen: 3000/6912
+  dllm: 1500/6912
+  qwen: 3100/6912
+  qwen: 3200/6912
+  qwen: 3300/6912
+  qwen: 3400/6912
+  qwen: 3500/6912
+  qwen: 3600/6912
+  qwen: 3700/6912
+  qwen: 3800/6912
+  qwen: 3900/6912
+  qwen: 4000/6912
+  qwen: 4100/6912
+  qwen: 4200/6912
+  qwen: 4300/6912
+  qwen: 4400/6912
+  qwen: 4500/6912
+  qwen: 4600/6912
+  qwen: 4700/6912
+  qwen: 4800/6912
+  qwen: 4900/6912
+  qwen: 5000/6912
+  qwen: 5100/6912
+  qwen: 5200/6912
+  qwen: 5300/6912
+  qwen: 5400/6912
+  qwen: 5500/6912
+  qwen: 5600/6912
+  qwen: 5700/6912
+  qwen: 5800/6912
+  qwen: 5900/6912
+  qwen: 6000/6912
+  qwen: 6100/6912
+  qwen: 6200/6912
+  qwen: 6300/6912
+  qwen: 6400/6912
+  qwen: 6500/6912
+  qwen: 6600/6912
+  qwen: 6700/6912
+  qwen: 6800/6912
+  qwen: 6900/6912
+  dllm: 1600/6912
+  dllm: 1700/6912
+  dllm: 1800/6912
+  dllm: 1900/6912
+  dllm: 2000/6912
+  dllm: 2100/6912
+  dllm: 2200/6912
+  dllm: 2300/6912
+  dllm: 2400/6912
+  dllm: 2500/6912
+  dllm: 2600/6912
+  dllm: 2700/6912
+  dllm: 2800/6912
+  dllm: 2900/6912
+  dllm: 3000/6912
+  dllm: 3100/6912
+generate: 5478 to run, 6300 already done
+  dllm: 100/1728
+  dllm: 200/1728
+  dllm: 300/1728
+  dllm: 400/1728
+  dllm: 500/1728
+  dllm: 600/1728
+  qwen: 100/3750
+  dllm: 700/1728
+  dllm: 800/1728
+  dllm: 900/1728
+  dllm: 1000/1728
+  dllm: 1100/1728
+  dllm: 1200/1728
+  qwen: 200/3750
+  dllm: 1300/1728
+  dllm: 1400/1728
+  dllm: 1500/1728
+  dllm: 1600/1728
+  dllm: 1700/1728
+  qwen: 300/3750
+  qwen: 400/3750
+  qwen: 500/3750
+  qwen: 600/3750
+  qwen: 700/3750
+  qwen: 800/3750
+  qwen: 900/3750
+  qwen: 1000/3750
+  qwen: 1100/3750
+  qwen: 1200/3750
+  qwen: 1300/3750
+  qwen: 1400/3750
+  qwen: 1500/3750
+  qwen: 1600/3750
+  qwen: 1700/3750
+  qwen: 1800/3750
+  qwen: 1900/3750
+  qwen: 2000/3750
+  qwen: 2100/3750
+  qwen: 2200/3750
+  qwen: 2300/3750
+  qwen: 2400/3750
+  qwen: 2500/3750
+  qwen: 2600/3750
+  qwen: 2700/3750
+  qwen: 2800/3750
+  qwen: 2900/3750
+  qwen: 3000/3750
+  qwen: 3100/3750
+  qwen: 3200/3750
+  qwen: 3300/3750
+  qwen: 3400/3750
+  qwen: 3500/3750
+  qwen: 3600/3750
+  qwen: 3700/3750
+judge: 5060 to run, 5060 already done
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/jasonbxu/Documents/GitHub/diffusion-demo/bench/synthdata/__main__.py", line 63, in <module>
+    main()
+    ~~~~^^
+  File "/Users/jasonbxu/Documents/GitHub/diffusion-demo/bench/synthdata/__main__.py", line 57, in main
+    metrics.score(cfg, run_dir, a.tag)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jasonbxu/Documents/GitHub/diffusion-demo/bench/synthdata/metrics.py", line 114, in score
+    vecs = embed(texts, cfg.embed_model, cache)
+  File "/Users/jasonbxu/Documents/GitHub/diffusion-demo/bench/synthdata/metrics.py", line 32, in embed
+    data = json.load(urllib.request.urlopen(req, timeout=120))["data"]
+                     ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.8/Frameworks/Python.framework/Versions/3.13/lib/python3.13/urllib/request.py", line 189, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.8/Frameworks/Python.framework/Versions/3.13/lib/python3.13/urllib/request.py", line 495, in open
+    response = meth(req, response)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.8/Frameworks/Python.framework/Versions/3.13/lib/python3.13/urllib/request.py", line 604, in http_response
+    response = self.parent.error(
+        'http', request, response, code, msg, hdrs)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.8/Frameworks/Python.framework/Versions/3.13/lib/python3.13/urllib/request.py", line 533, in error
+    return self._call_chain(*args)
+           ~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.8/Frameworks/Python.framework/Versions/3.13/lib/python3.13/urllib/request.py", line 466, in _call_chain
+    result = func(*args)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.8/Frameworks/Python.framework/Versions/3.13/lib/python3.13/urllib/request.py", line 613, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 429: Too Many Requests

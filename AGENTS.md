@@ -115,6 +115,14 @@ findings for limits.
   4.5k tokens didn't change the rate. Content did: code ran at 706 tok/s and
   prose at 270 to 310 alone. The 150 to 200 tok/s seen in HLE came from its 10
   concurrent workers (`bench/tps/run_tps.py`).
+- On 2026-10-20 a synthetic-data benchmark (`bench/synthdata`, about 15,500
+  generations) compared the hosted dLLM with Qwen3.6-35B-A3B AR on fictional
+  Chinese inpatient narratives and JSON records. At each model's best
+  temperature, they tied on clean and distinct records per request, so the
+  pre-registered "dLLM yields more" claim failed. The dLLM is varied at 0.6,
+  where Qwen needs 1.0 to 1.2, but it is less often clean. Its inconsistency
+  rises with narrative length, and it is unusable above 0.8
+  (`docs/synthdata_benchmark_findings.md`).
 
 Do not carry these numbers over to the realistic workloads. They are the
 hypotheses the new comparison tests.
@@ -134,6 +142,8 @@ hypotheses the new comparison tests.
   Gemini. `bench/hle/`: HLE text-only runner and the empty-answer probe.
 - `bench/tps/run_tps.py`: streaming probe that splits time to first token from
   decode tok/s across output lengths and concurrency.
+- `bench/synthdata/`: synthetic-data benchmark (clean and distinct records per
+  request) with resumable generate, judge, score and audit stages.
 - `cells/`: Colab model staging and prior runner setup.
 - `.claude/skills/race-video/`: how to record a side-by-side race video of the
   diffusion model and an AR model on WebArena, WindTunnel, or MiniWoB++.

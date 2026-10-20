@@ -1,0 +1,287 @@
+<title>Synthetic Record Variety</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500&family=Noto+Sans+SC:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column, lede then two charts then the cell table; charts span the column. */
+:root {
+  --bg: #f7f8f6;
+  --surface: #fcfcfb;
+  --fg: #16181a;
+  --fg-2: #4d5254;
+  --muted: #7b8083;
+  --rule: #dfe2df;
+  --grid: #e9ebe8;
+  --s1: #2a78d6;   /* dLLM, categorical slot 1 */
+  --s2: #eb6834;   /* Qwen, categorical slot 2 */
+  --chip: #eceeeb;
+  --font-display: "Newsreader", "Noto Serif SC", Georgia, serif;
+  --font-body: "IBM Plex Sans", "Noto Sans SC", "PingFang SC", system-ui, sans-serif;
+  --font-data: "IBM Plex Mono", "Noto Sans SC", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141615; --surface: #1a1a19; --fg: #eeefec; --fg-2: #c3c5bf; --muted: #8d918c;
+    --rule: #2e312f; --grid: #252826; --s1: #3987e5; --s2: #d95926; --chip: #242725;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141615; --surface: #1a1a19; --fg: #eeefec; --fg-2: #c3c5bf; --muted: #8d918c;
+  --rule: #2e312f; --grid: #252826; --s1: #3987e5; --s2: #d95926; --chip: #242725;
+  color-scheme: dark;
+}
+body { background: var(--bg); color: var(--fg); font: 15px/1.55 var(--font-body); }
+.wrap {
+  max-width: 760px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 64px;
+  display: grid; gap: 40px;
+}
+header { display: grid; gap: 12px; }
+.eyebrow { font: 500 12px/1 var(--font-data); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+h1 { font: 500 clamp(30px, 6vw, 42px)/1.1 var(--font-display); margin: 0; text-wrap: balance; }
+h2 { font: 600 17px/1.3 var(--font-body); margin: 0; text-wrap: balance; }
+p { margin: 0; max-width: 65ch; }
+.lede { font-size: 17px; color: var(--fg); }
+.note { color: var(--fg-2); font-size: 14px; }
+section { display: grid; gap: 14px; min-width: 0; }
+.figure { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 16px; display: grid; gap: 12px; min-width: 0; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip {
+  font: 500 13px/1 var(--font-data); padding: 7px 11px; border-radius: 999px; cursor: pointer;
+  background: var(--chip); color: var(--fg-2); border: 1px solid transparent;
+}
+.chip[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+.chip:focus-visible { outline: 2px solid var(--s1); outline-offset: 2px; }
+.legend { display: flex; gap: 16px; font-size: 13px; color: var(--fg-2); flex-wrap: wrap; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.sw { width: 14px; height: 3px; border-radius: 2px; display: inline-block; }
+.chart { position: relative; min-width: 0; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart text { font: 12px var(--font-data); fill: var(--muted); }
+.chart text.lab { font: 500 12px var(--font-data); fill: var(--fg); }
+.tip {
+  position: absolute; pointer-events: none; background: var(--fg); color: var(--bg);
+  font: 12px/1.45 var(--font-data); padding: 8px 10px; border-radius: 6px; white-space: nowrap;
+  transform: translate(-50%, calc(-100% - 10px)); z-index: 2;
+}
+.findings { display: grid; gap: 10px; padding: 0; margin: 0; list-style: none; }
+.findings li { display: grid; grid-template-columns: 120px 1fr; gap: 12px; padding-top: 10px; border-top: 1px solid var(--rule); }
+.findings b { font-weight: 600; }
+@media (max-width: 520px) { .findings li { grid-template-columns: 1fr; gap: 2px; } }
+.tablewrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font: 13px/1.4 var(--font-data); font-variant-numeric: tabular-nums; }
+th, td { padding: 8px 10px; text-align: right; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+th { font: 500 12px var(--font-body); color: var(--muted); }
+th:first-child, td:first-child, th:last-child, td:last-child { text-align: left; }
+tr:last-child td { border-bottom: 0; }
+td .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+td.reason { color: var(--fg-2); white-space: normal; min-width: 200px; }
+footer { color: var(--muted); font-size: 13px; display: grid; gap: 6px; }
+code { font: 13px var(--font-data); }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Synthetic data · 400 generations · 2026-10-20</div>
+    <h1>Synthetic Record Variety</h1>
+    <p class="lede">At the same temperature, the dLLM writes more varied fictional patient records than Qwen3.6-35B-A3B. Raise Qwen's temperature to 1.2 and it matches, while the dLLM breaks down above 0.8. What the dLLM keeps is speed: it reaches the same number of distinct diagnoses in about a third of the time.</p>
+  </header>
+
+  <section>
+    <h2>Distinct valid diagnoses over time</h2>
+    <p class="note">50 requests per model at 4 concurrent. A record counts only if it passes every check, and only when its diagnosis is new. Qwen runs through OpenRouter, so its time includes network and queueing.</p>
+    <div class="figure">
+      <div class="controls">
+        <div class="chips" role="group" aria-label="Temperature">
+          <button class="chip" id="t06" data-t="0.6" aria-pressed="false">T 0.6</button>
+          <button class="chip" id="t08" data-t="0.8" aria-pressed="true">T 0.8</button>
+          <button class="chip" id="t10" data-t="1.0" aria-pressed="false">T 1.0</button>
+          <button class="chip" id="t12" data-t="1.2" aria-pressed="false">T 1.2</button>
+        </div>
+        <div class="legend"><span><i class="sw" style="background:var(--s1)"></i>dLLM</span><span><i class="sw" style="background:var(--s2)"></i>Qwen AR</span></div>
+      </div>
+      <div class="chart" id="race"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Variety against validity, by temperature</h2>
+    <p class="note">Each point is one model at one temperature. Up means more distinct diagnoses per 50 requests, right means more records pass the checks. Speed plays no part here.</p>
+    <div class="figure">
+      <div class="controls">
+        <div class="legend"><span><i class="sw" style="background:var(--s1)"></i>dLLM</span><span><i class="sw" style="background:var(--s2)"></i>Qwen AR</span></div>
+      </div>
+      <div class="chart" id="frontier"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What the runs show</h2>
+    <ul class="findings">
+      <li><b>Same temperature</b><span>At 0.8 the dLLM produced 31 distinct diagnoses and 22 names from 43 valid records. Qwen produced 21 and 9 from 46, and named 28 of them 张伟.</span></li>
+      <li><b>Matched validity</b><span>Qwen at 1.2 reached 31 diagnoses and 24 names at 84% valid. The dLLM at 0.8 reached 31 and 22 at 86% valid, so the variety gap closes.</span></li>
+      <li><b>High temperature</b><span>The dLLM fell to 60% valid at 1.0 and 2% at 1.2, where it wrote multilingual noise until the 512-token cap. Qwen stayed at 84% or above.</span></li>
+      <li><b>Speed</b><span>A batch of 50 took the dLLM 8 to 9 seconds at 0.6 and 0.8, and Qwen 21 to 26 seconds at every temperature.</span></li>
+      <li><b>Safety check</b><span>Both models sometimes prescribed a drug in the same class as a listed allergy, such as 阿莫西林 for a 青霉素 allergy. The dLLM did it 3 to 6 times per 50 at 0.6 to 1.0, Qwen 1 to 4 times.</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>All cells</h2>
+    <div class="tablewrap"><table id="cells"></table></div>
+  </section>
+
+  <footer>
+    <p>Prompt: one fictional inpatient summary as JSON with name, sex, age, chief complaint, diagnosis, allergies and prescriptions. Checks: all fields present, age 18 to 95, 1 to 4 prescriptions, and no prescription in the same class as an allergy. Thinking off, max 512 tokens.</p>
+    <p>dLLM <code>qwen36-iter22000-blk16-arverify-best</code> (hosted, AR-verified block diffusion). Qwen <code>qwen/qwen3.6-35b-a3b</code> on OpenRouter. 50 requests per cell, one run, so differences of a few records are noise. Source: <code>experiments/medical-fill/synth.py</code>.</p>
+  </footer>
+</div>
+
+<script>
+const DATA = __DATA__;
+const ARMS = { dllm: { name: "dLLM", color: "var(--s1)" }, qwen: { name: "Qwen AR", color: "var(--s2)" } };
+const cell = (arm, t) => DATA.cells.find(c => c.arm === arm && c.temp === t);
+const NS = "http://www.w3.org/2000/svg";
+const el = (tag, attrs, parent) => {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+};
+const ticks = (max, n) => {
+  const raw = max / n, mag = 10 ** Math.floor(Math.log10(raw));
+  const step = [1, 2, 5, 10].map(m => m * mag).find(s => s >= raw);
+  const out = [];
+  for (let v = 0; v <= max + 1e-9; v += step) out.push(+v.toFixed(6));
+  return out;
+};
+
+function frame(host, height, m) {
+  host.innerHTML = "";
+  const W = Math.max(280, host.clientWidth), H = height;
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img" }, host);
+  const tip = document.createElement("div");
+  tip.className = "tip"; tip.hidden = true; host.appendChild(tip);
+  return { svg, tip, W, H, iw: W - m.l - m.r, ih: H - m.t - m.b, m };
+}
+
+function axes(f, xs, ys, xLabel, yLabel, fx, fy) {
+  const g = el("g", {}, f.svg);
+  for (const v of ys) {
+    const y = f.m.t + fy(v);
+    el("line", { x1: f.m.l, x2: f.m.l + f.iw, y1: y, y2: y, stroke: "var(--grid)", "stroke-width": 1 }, g);
+    el("text", { x: f.m.l - 8, y: y + 4, "text-anchor": "end" }, g).textContent = v;
+  }
+  for (const v of xs) {
+    el("text", { x: f.m.l + fx(v), y: f.m.t + f.ih + 18, "text-anchor": "middle" }, g).textContent = v;
+  }
+  el("line", { x1: f.m.l, x2: f.m.l + f.iw, y1: f.m.t + f.ih, y2: f.m.t + f.ih, stroke: "var(--muted)", "stroke-width": 1 }, g);
+  el("text", { x: f.m.l + f.iw, y: f.m.t + f.ih + 36, "text-anchor": "end" }, g).textContent = xLabel;
+  el("text", { x: f.m.l, y: f.m.t - 12, "text-anchor": "start" }, g).textContent = yLabel;
+}
+
+let temp = 0.8;
+function drawRace() {
+  const host = document.getElementById("race");
+  const f = frame(host, 300, { l: 40, r: 70, t: 28, b: 44 });
+  const cs = ["dllm", "qwen"].map(a => cell(a, temp));
+  const xMax = Math.max(...cs.map(c => c.wall_s)) * 1.02;
+  const yMax = Math.max(35, ...cs.map(c => c.distinct_dx));
+  const fx = v => v / xMax * f.iw, fy = v => f.ih - v / yMax * f.ih;
+  axes(f, ticks(xMax, 5), ticks(yMax, 5), "seconds", "distinct diagnoses", fx, fy);
+  const lines = el("g", { transform: `translate(${f.m.l},${f.m.t})` }, f.svg);
+  cs.forEach((c, i) => {
+    const arm = ARMS[c.arm];
+    let d = "";
+    c.curve.forEach(([t, n], j) => {
+      const x = fx(t), y = fy(n);
+      d += j === 0 ? `M${x},${y}` : `H${x}V${y}`;
+    });
+    el("path", { d, fill: "none", stroke: arm.color, "stroke-width": 2, "stroke-linejoin": "round" }, lines);
+    const [lt, ln] = c.curve[c.curve.length - 1];
+    el("circle", { cx: fx(lt), cy: fy(ln), r: 4, fill: arm.color, stroke: "var(--surface)", "stroke-width": 2 }, lines);
+    const ly = fy(ln) + (cs.length > 1 && Math.abs(fy(cs[0].distinct_dx) - fy(cs[1].distinct_dx)) < 16 ? (i ? 10 : -6) : 4);
+    el("text", { x: fx(lt) + 8, y: ly, class: "lab" }, lines).textContent = `${c.distinct_dx} ${arm.name}`;
+  });
+  const cross = el("line", { y1: 0, y2: f.ih, stroke: "var(--muted)", "stroke-width": 1, "stroke-dasharray": "3 3", visibility: "hidden" }, lines);
+  const hit = el("rect", { x: 0, y: 0, width: f.iw, height: f.ih, fill: "transparent" }, lines);
+  const at = (c, t) => { let n = 0; for (const [ct, cn] of c.curve) if (ct <= t) n = cn; return n; };
+  const move = ev => {
+    const r = f.svg.getBoundingClientRect(), sx = f.W / r.width;
+    const px = Math.min(f.iw, Math.max(0, (ev.clientX - r.left) * sx - f.m.l));
+    const t = px / f.iw * xMax;
+    cross.setAttribute("x1", px); cross.setAttribute("x2", px); cross.setAttribute("visibility", "visible");
+    f.tip.hidden = false;
+    f.tip.innerHTML = `${t.toFixed(1)} s<br>` + cs.map(c => `${ARMS[c.arm].name}: ${at(c, t)} diagnoses`).join("<br>");
+    f.tip.style.left = `${(px + f.m.l) / sx}px`; f.tip.style.top = `${f.m.t / sx}px`;
+  };
+  hit.addEventListener("pointermove", move);
+  hit.addEventListener("pointerleave", () => { f.tip.hidden = true; cross.setAttribute("visibility", "hidden"); });
+  f.svg.setAttribute("aria-label", `At temperature ${temp}: ` + cs.map(c => `${ARMS[c.arm].name} ${c.distinct_dx} distinct diagnoses in ${c.wall_s} seconds`).join("; "));
+}
+
+// Label offsets per point, so near-identical points stay readable: [dx, dy, anchor].
+const LABEL = {
+  "dllm 0.6": [0, -11, "middle"], "dllm 0.8": [9, -9, "start"], "dllm 1.0": [-9, 4, "end"],
+  "qwen 0.6": [-9, 4, "end"], "qwen 0.8": [9, 4, "start"], "qwen 1.0": [0, 20, "middle"], "qwen 1.2": [-9, -9, "end"],
+};
+const X0 = 50;
+function drawFrontier() {
+  const host = document.getElementById("frontier");
+  const f = frame(host, 300, { l: 40, r: 24, t: 28, b: 44 });
+  const fx = v => (v - X0) / (100 - X0) * f.iw, fy = v => f.ih - v / 35 * f.ih;
+  axes(f, [50, 60, 70, 80, 90, 100], [0, 5, 10, 15, 20, 25, 30, 35], "% of records valid", "distinct diagnoses per 50", fx, fy);
+  const g = el("g", { transform: `translate(${f.m.l},${f.m.t})` }, f.svg);
+  const off = [];
+  for (const a of ["dllm", "qwen"]) {
+    const all = DATA.cells.filter(c => c.arm === a).sort((p, q) => p.temp - q.temp);
+    const cs = all.filter(c => c.valid / c.n * 100 >= X0);
+    off.push(...all.filter(c => !cs.includes(c)));
+    const pts = cs.map(c => [fx(c.valid / c.n * 100), fy(c.distinct_dx)]);
+    el("path", { d: "M" + pts.map(p => p.join(",")).join("L"), fill: "none", stroke: ARMS[a].color, "stroke-width": 2, "stroke-opacity": .55 }, g);
+    cs.forEach((c, i) => {
+      const [x, y] = pts[i];
+      el("circle", { cx: x, cy: y, r: 5, fill: ARMS[a].color, stroke: "var(--surface)", "stroke-width": 2 }, g);
+      const [dx, dy, anchor] = LABEL[`${a} ${c.temp.toFixed(1)}`] || [9, 4, "start"];
+      el("text", { x: x + dx, y: y + dy, "text-anchor": anchor, class: "lab" }, g).textContent = c.temp.toFixed(1);
+      const hit = el("circle", { cx: x, cy: y, r: 14, fill: "transparent" }, g);
+      hit.addEventListener("pointerenter", () => {
+        const r = f.svg.getBoundingClientRect(), sx = f.W / r.width;
+        f.tip.hidden = false;
+        f.tip.innerHTML = `${ARMS[a].name} · T ${c.temp.toFixed(1)}<br>${c.valid}/${c.n} valid · ${c.distinct_dx} diagnoses · ${c.distinct_names} names`;
+        f.tip.style.left = `${(x + f.m.l) / sx}px`; f.tip.style.top = `${(y + f.m.t) / sx}px`;
+      });
+      hit.addEventListener("pointerleave", () => { f.tip.hidden = true; });
+    });
+  }
+  off.forEach((c, i) => {
+    el("text", { x: 8, y: f.ih - 10 - 16 * i }, g).textContent =
+      `${ARMS[c.arm].name} T ${c.temp.toFixed(1)}: ${c.valid}/${c.n} valid, off scale`;
+  });
+  f.svg.setAttribute("aria-label", "Distinct diagnoses against share valid for each model and temperature; values are in the table below.");
+}
+
+function drawTable() {
+  const t = document.getElementById("cells");
+  const head = "<tr><th>Model</th><th>Temp</th><th>Valid</th><th>Diagnoses</th><th>Names</th><th>Top name</th><th>Seconds</th><th>Failures</th></tr>";
+  const rows = DATA.cells.map(c => {
+    const top = c.top_names[0] ? `${c.top_names[0][0]} ×${c.top_names[0][1]}` : "–";
+    const fails = Object.entries(c.reasons).map(([k, v]) => `${k} ${v}`).join(", ") || "none";
+    return `<tr><td><i class="dot" style="background:${ARMS[c.arm].color}"></i>${ARMS[c.arm].name}</td><td>${c.temp.toFixed(1)}</td><td>${c.valid}/${c.n}</td><td>${c.distinct_dx}</td><td>${c.distinct_names}</td><td>${top}</td><td>${c.wall_s}</td><td class="reason">${fails}</td></tr>`;
+  }).join("");
+  t.innerHTML = head + rows;
+}
+
+document.querySelectorAll(".chip").forEach(b => b.addEventListener("click", () => {
+  temp = +b.dataset.t;
+  document.querySelectorAll(".chip").forEach(o => o.setAttribute("aria-pressed", o === b ? "true" : "false"));
+  drawRace();
+}));
+const drawAll = () => { drawRace(); drawFrontier(); };
+drawAll(); drawTable();
+let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(drawAll, 120); });
+</script>
