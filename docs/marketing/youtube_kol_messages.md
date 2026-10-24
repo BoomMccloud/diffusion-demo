@@ -1,5 +1,7 @@
 # YouTube KOL outreach messages
 
+The messages to send are in `youtube_kol_send_sheet.md`, which uses a plainer template. This file keeps the research behind each creator: their top video and the video most relevant to us.
+
 One draft per creator in `youtube_kol_outreach.md`, in the same order. Each
 entry lists the channel's most-viewed video, the video the message hooks on,
 and a DM short enough for X. Send by X DM where a handle exists, otherwise
