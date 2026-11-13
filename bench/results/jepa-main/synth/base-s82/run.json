@@ -1,0 +1,44 @@
+{
+  "schema": "jepa-smoke-v1",
+  "started_at": "2026-11-13T00:29:15.325430+00:00",
+  "model": "nvidia/Nemotron-Labs-Diffusion-3B",
+  "revision": "0d51902da1f8869f83413ce642fab402fa5641e0",
+  "gpu": "NVIDIA GB10",
+  "data": "https://raw.githubusercontent.com/galilai-group/llm-jepa/ea0017c654ad917066ff32afc88276bea8ca5f7e/datasets/synth_{train,test}.jsonl",
+  "args": {
+    "out": "runs/main/synth/base-s82",
+    "dataset": "synth",
+    "data_dir": "bench/jepa/.data",
+    "steps": 2000,
+    "epochs": 1.0,
+    "val_cases": 0,
+    "val_seed": 0,
+    "skip_eval_before": false,
+    "eval_before_cases": 200,
+    "grad_accum": 4,
+    "lr": 0.0001,
+    "lora_rank": 16,
+    "lbd": 0.0,
+    "jepa_attn": "bidirectional",
+    "pool": "last",
+    "block_length": 32,
+    "threshold": 0.9,
+    "eval_cases": 1000000,
+    "eval_modes": "ar,diffusion",
+    "max_new_tokens": 64,
+    "seed": 82
+  },
+  "eval_split": "test",
+  "train_examples": 8000,
+  "eval_examples": 2000,
+  "eval_before": {
+    "ar": 0.0,
+    "diffusion": 0.0
+  },
+  "eval_after": {
+    "ar": 0.783,
+    "diffusion": 0.445
+  },
+  "peak_gb": 8.166329860687256,
+  "finished_at": "2026-11-13T03:19:22.265218+00:00"
+}
