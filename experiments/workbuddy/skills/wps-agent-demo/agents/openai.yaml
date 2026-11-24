@@ -1,0 +1,3 @@
+interface:
+  display_name: "WPS Agent Demo"
+  short_description: "Run and record a WPS agent task"
