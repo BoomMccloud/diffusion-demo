@@ -1,3 +1,0 @@
-# Stored diffs: a blank context line is a single space, so whitespace checks
-# must not "fix" it — that would corrupt the patch.
-*.patch -whitespace

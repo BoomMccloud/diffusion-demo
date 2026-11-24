@@ -1,1 +1,0 @@
-{"prompt": "code", "max_tokens": 256, "thinking": false, "finish_reason": "length", "completion_tokens": 256, "prompt_tokens": 63, "chunks": 256, "latency_s": 5.778, "ttft_s": 0.575, "decode_tps": 49.0, "e2e_tps": 44.3, "concurrency": 1}

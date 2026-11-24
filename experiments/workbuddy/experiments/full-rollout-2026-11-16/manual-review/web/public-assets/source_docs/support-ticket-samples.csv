@@ -1,5 +1,0 @@
-ticket_id,customer_phrase,legacy_slug,target_help_topic,source_hint
-SUP-219,"The reset link in my email says expired after half an hour, but support told me it should be shorter.",reset-password,password reset link lifetime conflict,faq password reset row and conflict override
-SUP-244,"An admin hit the seat cap and could not invite a teammate even after seeing a usage warning last week.",close-account,seat-cap invite blocking and release-or-upgrade path,faq seat limit row and conflict override
-SUP-271,"Our SSO setup page points me to login security, but the SCIM sync instructions are hard to find from there.",sso-setup,SSO and SCIM navigation handoff,redirects and security article anchors
-SUP-288,"Finance needs invoice download steps and account closure prerequisites in the same handoff before renewal.",invoice-help,billing invoice and closure cross-reference,legacy billing section and FAQ rows

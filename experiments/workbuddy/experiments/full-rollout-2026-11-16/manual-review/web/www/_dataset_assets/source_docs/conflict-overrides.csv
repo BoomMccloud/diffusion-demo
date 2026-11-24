@@ -1,3 +1,0 @@
-topic,legacy_value,faq_value,source_of_truth,target_resolution
-password_reset_link_ttl,30 minutes,15 minutes,faq_csv,Final doc states 15 minutes and conflict-report.json records that FAQ overrides legacy HTML
-seat_limit_invite_behavior,release a seat or upgrade plan,invitations blocked when cap is reached; 90% triggers warning,merge,Body retains both the 90% warning and the block/release/upgrade actions once the cap is reached

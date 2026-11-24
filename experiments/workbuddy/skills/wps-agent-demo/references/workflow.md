@@ -58,7 +58,7 @@ Replace placeholders; use the user's authorized task prompt, model and harness. 
 
 Use the task's original verifier with paths redirected only where necessary. Compare the actual saved WPS file with the scored file. Preserve failures, partial work, verifier version, limits and all retries. Avoid claiming the test is controlled if the OS, prompt, tools, model endpoint, reasoning setting or timeout differ; paced editing makes wall-time comparisons especially weak.
 
-The local pilot's source material, original task artifacts, recorded examples and local path-adapted verifiers are under `experiments/workbuddy/experiments/wps-office-pilot/` in the `diffusion-demo` checkout. These are examples, not prerequisites and not portable installations. The weekly-ticket task passed 15/15 in one recorded Clover run. The board presentation scored 310/379 for recorded Clover and 326/379 for recorded Qwen3.8-Flash, each once, with different model routes and edit counts. Never reuse those scores for a new task or run.
+The local pilot's source material, original task artifacts, recorded examples and local path-adapted verifiers are under `experiments/workbuddy/experiments/wps-office-pilot/` in the `diffusion-demo` checkout. These are local examples. Use the [WorkBuddy handoff](../../../AGENTS.md) to obtain and stage the upstream inputs and verifier. The weekly-ticket task passed 15/15 in one recorded Clover run. The board presentation scored 310/379 for recorded Clover and 326/379 for recorded Qwen3.8-Flash, each once, with different model routes and edit counts. Never reuse those scores for a new task or run.
 
 
 For telemetry comparisons, the `diffusion-demo` checkout contains audited

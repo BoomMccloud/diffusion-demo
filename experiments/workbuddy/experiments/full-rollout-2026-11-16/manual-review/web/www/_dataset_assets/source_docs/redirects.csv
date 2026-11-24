@@ -1,6 +1,0 @@
-old_slug,target,status,reason
-reset-password,articles/account-billing.md#reset-password,301,old CMS slug merged into account billing article
-invoice-help,articles/account-billing.md#invoices,301,billing invoice help renamed
-sso-setup,articles/account-security.md#sso-configuration,301,SSO setup moved to security article
-close-account,articles/account-security.md#close-account,301,account closure moved to security article
-scim-sync,articles/account-security.md#scim-sync,301,SCIM topic moved to security article

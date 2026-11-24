@@ -1,0 +1,1203 @@
+diff --git a/capsules/nextjs-starter-medusa/capsule.sh b/capsules/nextjs-starter-medusa/capsule.sh
+index 1a37f1f..924d351 100644
+--- a/capsules/nextjs-starter-medusa/capsule.sh
++++ b/capsules/nextjs-starter-medusa/capsule.sh
+@@ -95,11 +95,22 @@ wait_for_database() {
+ }
+ 
+ wait_for_backend() {
+-  local deadline=$((SECONDS + 120))
++  local deadline=$((SECONDS + 120)) restarted=false
+   until capsule_compose exec -T backend node -e \
+     'fetch("http://127.0.0.1:9000/health").then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))' \
+     >/dev/null 2>&1; do
+     [ "$SECONDS" -lt "$deadline" ] || {
++      # diffusion-demo local patch: on podman machine (libkrun virtiofs) the
++      # backend can start before freshly built files are visible and crash
++      # with MODULE_NOT_FOUND. One restart clears it.
++      if [ "$restarted" = false ]; then
++        echo "Medusa backend not ready after 120s; restarting once" >&2
++        capsule_compose restart backend >/dev/null 2>&1 || true
++        restarted=true
++        deadline=$((SECONDS + 180))
++        continue
++      fi
++      capsule_compose logs --tail 80 backend >&2 || true
+       echo "Medusa backend did not become ready" >&2
+       return 1
+     }
+diff --git a/harness/cli.mjs b/harness/cli.mjs
+index 1bcdb2f..c8a9dba 100644
+--- a/harness/cli.mjs
++++ b/harness/cli.mjs
+@@ -22,6 +22,7 @@ import { loadTaskFile, loadTasks, resolveTask, taskFile } from "./tasks.mjs";
+ import { writeReport } from "../scoring/report.mjs";
+ import { isInfraRow } from "./lib.mjs";
+ import { apiKeyEnvFor } from "../arms/prompts.mjs";
++import { createRecorder } from "./record.mjs";
+ 
+ const PRESETS = { smoke: { n: 1 }, lite: { n: 3 }, full: { n: 3 } };
+ const ARMS = {
+@@ -59,6 +60,7 @@ export const USAGE = `Usage: node harness/cli.mjs [options]
+   --perturbed                 Enable perturbations
+   --label <name>              Label this run
+   --model <arm=model>         Override a method model
++  --record-video <dir>        Film each attempt and log model/tool call times
+   --help                      Show this usage`;
+ 
+ export function parseArgs(argv) {
+@@ -81,6 +83,7 @@ export function parseArgs(argv) {
+       else if (flag === "--budget") options.budget = Number(value);
+       else if (flag === "--max-consecutive-infra") options.maxConsecutiveInfra = Number(value);
+       else if (flag === "--label") options.label = value;
++      else if (flag === "--record-video") options.recordVideo = value;
+       else if (flag === "--model") {
+         const [arm, ...model] = value.split("=");
+         if (!arm || !model.length) throw new Error("--model must be arm=model");
+@@ -170,6 +173,7 @@ export async function runBenchmark(argv, {
+   // that measure the outage, not the model — so stop the flight and let it be
+   // restarted cleanly once the provider recovers.
+   let consecutiveInfra = 0, abortedReason = "";
++  const recorder = options.recordVideo ? createRecorder(options.recordVideo) : null;
+   // Live journal: every finished attempt is appended immediately (transcript
+   // and final_text stripped — run.json carries those at the end), so a
+   // 20-hour run has a mid-flight scoreboard instead of an all-or-nothing
+@@ -190,7 +194,7 @@ export async function runBenchmark(argv, {
+       continue;
+     }
+     if (!method.run) { log(`Skipping ${method.id}: not yet implemented.`); continue; }
+-    const browser = await openPage(env);
++    const browser = recorder ? recorder.wrap(await openPage(env)) : await openPage(env);
+     const { WT_WEBMCP: _ignored, ...armEnv } = env;
+     if (method.webmcp) armEnv.WT_WEBMCP = "1";
+     try {
+@@ -207,7 +211,8 @@ export async function runBenchmark(argv, {
+         siteId, method, tasks, n: options.n, seed: options.seed, port: 3215 + index,
+         model: method.model, perturbed: options.perturbed, browser,
+         boot: (id, bootOptions) => boot(id, { ...bootOptions, env: armEnv }),
+-        onResult: (row) => {
++        onResult: async (row) => {
++          if (recorder) await recorder.save(row).catch((error) => log(`Recording not saved for ${row.run_id}: ${error.message}`));
+           streamRow(row);
+           if (isInfraRow(row)) {
+             consecutiveInfra++;
+diff --git a/harness/record.mjs b/harness/record.mjs
+new file mode 100644
+index 0000000..dd2270f
+--- /dev/null
++++ b/harness/record.mjs
+@@ -0,0 +1,116 @@
++// diffusion-demo: opt-in attempt recording, enabled only by `--record-video DIR`.
++//
++// Films each attempt's page with Playwright's recordVideo and logs wall-clock
++// (Date.now() ms) timestamps for every model call, WebMCP tool call and main
++// frame navigation. Arm code is not touched: model calls are seen through
++// global fetch, which both the Anthropic SDK and the Gemini REST arm use, and
++// tool calls through page.evaluate, which executeBridgeTool calls with
++// { name, args }. Output: DIR/<task>/<arm>-<k>.webm and DIR/timings.json.
++import fs from "node:fs";
++import path from "node:path";
++
++// After the arm returns and the harness has scored the attempt, keep the page
++// open this long before run.mjs closes the context, so the film shows what the
++// last tool call did to the page (Medusa navigates to the order confirmation
++// ~150 ms after complete_checkout returns and renders it a second or two
++// later). No metric includes this time: agent_s and wall_clock_s are taken
++// before the context closes.
++const HOLD_MS = 3000;
++
++const modelProvider = (url) => url.includes("/v1/messages") ? "anthropic" : url.includes("/interactions") ? "gemini" : null;
++
++export function createRecorder(dir) {
++  const out = path.resolve(dir);
++  const raw = path.join(out, ".video");
++  fs.mkdirSync(raw, { recursive: true });
++  const takes = [];
++  const counts = {};
++  let events = [];
++  let current = null;
++
++  const realFetch = globalThis.fetch;
++  globalThis.fetch = async (input, init) => {
++    const provider = modelProvider(String(input?.url ?? input));
++    if (!provider) return realFetch(input, init);
++    const event = { kind: "model", provider, t_start: Date.now() };
++    events.push(event);
++    try {
++      const response = await realFetch(input, init);
++      const text = await response.clone().text();
++      event.t_end = Date.now();
++      event.status = response.status;
++      try { const usage = JSON.parse(text).usage; if (usage) event.usage = usage; } catch { /* non-JSON body */ }
++      return response;
++    } catch (error) {
++      event.t_end = Date.now();
++      event.error = error.message;
++      throw error;
++    }
++  };
++
++  const wrap = (browser) => ({
++    close: () => browser.close(),
++    async newContext(options = {}) {
++      const size = options.viewport ?? { width: 1280, height: 800 };
++      const context = await browser.newContext({ ...options, recordVideo: { dir: raw, size } });
++      const newPage = context.newPage.bind(context);
++      const close = context.close.bind(context);
++      context.close = async (...rest) => {
++        const take = current;
++        await new Promise((resolve) => setTimeout(resolve, HOLD_MS));
++        // The video file ends at close; its first frame comes at first paint,
++        // so the video start is t_close minus the file's duration.
++        if (take) take.t_close = Date.now();
++        return close(...rest);
++      };
++      context.newPage = async () => {
++        const video_t0 = Date.now();
++        const page = await newPage();
++        current = { video_t0, page };
++        page.on?.("framenavigated", (frame) => {
++          if (frame === page.mainFrame()) events.push({ kind: "navigation", t: Date.now(), url: frame.url() });
++        });
++        const evaluate = page.evaluate.bind(page);
++        page.evaluate = async (fn, arg) => {
++          if (!arg || typeof arg !== "object" || typeof arg.name !== "string" || !("args" in arg)) return evaluate(fn, arg);
++          const event = { kind: "tool", name: arg.name, args: arg.args, t_start: Date.now() };
++          events.push(event);
++          try {
++            const result = await evaluate(fn, arg);
++            event.t_end = Date.now();
++            event.result = JSON.stringify(result ?? null).slice(0, 2000);
++            return result;
++          } catch (error) {
++            event.t_end = Date.now();
++            event.error = error.message;
++            throw error;
++          }
++        };
++        return page;
++      };
++      return context;
++    },
++  });
++
++  // Called with each finished row, after run.mjs has closed the context, so
++  // the video file is complete.
++  async function save(row) {
++    const take = current;
++    current = null;
++    const key = `${row.task_id}/${row.arm}`;
++    const k = (counts[key] = (counts[key] ?? 0) + 1);
++    let video = null;
++    const source = take?.page?.video?.() ? await take.page.video().path() : null;
++    if (source && fs.existsSync(source)) {
++      video = path.join(row.task_id, `${row.arm}-${k}.webm`);
++      fs.mkdirSync(path.join(out, row.task_id), { recursive: true });
++      fs.renameSync(source, path.join(out, video));
++    }
++    const { transcript, final_text, ...lean } = row;
++    takes.push({ ...lean, take: k, video, video_t0: take?.video_t0 ?? null, t_close: take?.t_close ?? null, final_text, events });
++    events = [];
++    fs.writeFileSync(path.join(out, "timings.json"), JSON.stringify({ clock: "Date.now() ms", takes }, null, 2));
++  }
++
++  return { wrap, save };
++}
+diff --git a/make_medusa_race.py b/make_medusa_race.py
+new file mode 100644
+index 0000000..7fe1b45
+--- /dev/null
++++ b/make_medusa_race.py
+@@ -0,0 +1,275 @@
++"""Race video for WindTunnel md-8 on the Medusa storefront: DiffuSpace Clover vs. Gemini 3.6 Flash,
++or vs. Qwen 3.6 Flash with --opponent qwen.
++
++Reads a recording directory written by `cli.mjs --record-video` (timings.json
++plus one .webm per arm, renamed clover.webm and gemini.webm or qwen.webm) and draws, in the
++style of bench/miniwob/make_race_grid_video.py: an intro card with the task,
++both recorded pages side by side in real time from each agent's first model
++call, a live clock and the WebMCP tool calls per side, then an outro card with
++the measured numbers and the earlier 3-run medians.
++
++The clock starts at each side's first model call and stops at the harness's
++own agent_s. After a side finishes, its recording keeps playing until the
++harness closes the page (it stays open while the harness scores the attempt),
++because the store navigates to the order confirmation about 150 ms after
++complete_checkout returns and takes a second or two to render it. The page
++then freezes on its last recorded frame.
++
++The Qwen take runs the same wm-claude arm against DashScope's Anthropic-compatible
++endpoint, so its timings.json entry must have its arm renamed to wm-qwen.
++
++Usage:
++    python3 bench/windtunnel/make_medusa_race.py bench/windtunnel/recordings/20261019/md-8
++    python3 bench/windtunnel/make_medusa_race.py bench/windtunnel/recordings/20261021/md-8-qwen --opponent qwen
++"""
++import argparse
++import csv
++import json
++import os
++import statistics
++import subprocess
++import sys
++import textwrap
++
++from PIL import Image, ImageDraw
++
++HERE = os.path.dirname(os.path.abspath(__file__))
++sys.path.insert(0, os.path.join(HERE, "..", "miniwob"))
++from make_race_grid_video import GEMINI, MONO, TILE_BG  # noqa: E402
++from make_race_video import BG, DIM, FG, FPS, GREEN, H, RED, SYMBOLS, W, YELLOW, font  # noqa: E402
++
++CLOVER = ("wm-claude", "clover", "DiffuSpace Clover", "Diffusion language model", (110, 200, 255))
++OPPONENTS = {"gemini": ("wm-gemini", "gemini", "Gemini 3.6 Flash", "Autoregressive language model", GEMINI),
++             "qwen": ("wm-qwen", "qwen", "Qwen 3.6 Flash", "Autoregressive language model", (255, 170, 90))}
++SIDES = [CLOVER, OPPONENTS["gemini"]]  # main() swaps the opponent
++EARLIER = os.path.join(HERE, "results-diffuspace", "2026-10-15-fill-dir-medusa-qwen36-vs-gemini", "results.csv")
++TASK_ID = "md-8"
++
++COL_X, COL_W = (40, 980), 900
++SRC_W, SRC_H = 1280, 800
++VID_W, VID_H = COL_W, round(COL_W * SRC_H / SRC_W)  # 900 x 562
++VID_Y = 190
++LIST_Y, ROW_H = VID_Y + VID_H + 66, 40
++INTRO_SEC, OUTRO_SEC, END_HOLD = 4.0, 7.0, 2.0
++
++
++def load_takes(rec_dir):
++    timings = json.load(open(os.path.join(rec_dir, "timings.json")))
++    sides = {}
++    for arm, key, label, kind, color in SIDES:
++        take = [t for t in timings["takes"] if t["arm"] == arm and t["task_id"] == TASK_ID][-1]
++        models = [e for e in take["events"] if e["kind"] == "model"]
++        tools = [e for e in take["events"] if e["kind"] == "tool"]
++        t0 = models[0]["t_start"]  # agent clock starts at the first model call
++        video = os.path.join(rec_dir, f"{key}.webm")
++        if not os.path.exists(video):
++            video = os.path.join(rec_dir, take["video"])
++        sides[key] = {
++            "label": label, "kind": kind, "color": color, "video": video, "take": take,
++            "start_in_video": (t0 - video_start(take, video)) / 1000,
++            "agent_s": float(take["agent_s"]), "passed": take["success"] in (True, "true"),
++            "models": [((e["t_start"] - t0) / 1000, (e["t_end"] - t0) / 1000) for e in models],
++            "tools": [{"name": e["name"], "args": e.get("args") or {}, "start": (e["t_start"] - t0) / 1000,
++                       "end": (e["t_end"] - t0) / 1000, "error": tool_error(e)} for e in tools],
++        }
++    return sides
++
++
++def video_start(take, path):
++    """Wall-clock ms of the video's first frame: the file ends when the page closes."""
++    if take.get("t_close"):
++        dur = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration",
++                                             "-of", "csv=p=0", path]))
++        return take["t_close"] - dur * 1000
++    return take["video_t0"]
++
++
++def tool_error(event):
++    """A tool result that reports an error (e.g. 'choose a shipping option') is not a failure of the call."""
++    if event.get("error"):
++        return True
++    try:
++        inner = json.loads(json.loads(event.get("result") or "null")["content"][0]["text"])
++        return "error" in inner
++    except (TypeError, KeyError, IndexError, ValueError):
++        return False
++
++
++def task_prompt():
++    text = open(os.path.join(HERE, "tasks", "nextjs-starter-medusa.yaml")).read()
++    block = text.split(f"- id: {TASK_ID}\n", 1)[1]
++    return block.split("prompt:", 1)[1].split("\n", 1)[0].strip()
++
++
++def earlier_medians():
++    rows = [r for r in csv.DictReader(open(EARLIER)) if r["task_id"] == TASK_ID]
++    out = {}
++    for arm, key, *_ in SIDES:
++        mine = [r for r in rows if r["arm"] == arm]
++        if not mine:
++            continue
++        out[key] = {"agent_s": statistics.median(float(r["agent_s"]) for r in mine),
++                    "turns": statistics.median(int(r["model_turns"]) for r in mine),
++                    "passed": sum(r["success"] == "true" for r in mine), "runs": len(mine)}
++    return out
++
++
++def short_args(args):
++    def val(v):
++        s = v if isinstance(v, str) else json.dumps(v)
++        return s if len(s) <= 22 else s[:20] + "…"
++    return ", ".join(f"{k}: {val(v)}" for k, v in args.items())
++
++
++class Frames:
++    """Streams one recorded page from the agent's start, scaled, holding its last frame."""
++
++    def __init__(self, side):
++        self.proc = subprocess.Popen(
++            ["ffmpeg", "-loglevel", "error", "-ss", f"{max(0.0, side['start_in_video']):.3f}", "-i", side["video"],
++             "-vf", f"fps={FPS},scale={VID_W}:{VID_H}:flags=lanczos", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"],
++            stdout=subprocess.PIPE)
++        self.last = Image.new("RGB", (VID_W, VID_H), TILE_BG), 0
++
++    def next(self):
++        buf = self.proc.stdout.read(VID_W * VID_H * 3)
++        if len(buf) == VID_W * VID_H * 3:
++            self.last = Image.frombytes("RGB", (VID_W, VID_H), buf)
++        return self.last
++
++    def close(self):
++        self.proc.kill()
++
++
++def draw_intro(d, task_prompt):
++    d.text((W // 2, 150), "WindTunnel: guest checkout on a Medusa store", font=font(64, True), fill=FG, anchor="mm")
++    lines = textwrap.wrap(task_prompt, 78)
++    for i, line in enumerate(lines):
++        d.text((W // 2, 250 + i * 46), line, font=font(34), fill=DIM, anchor="mm")
++    top = 290 + len(lines) * 46
++    for (_, key, label, kind, color), x0 in zip(SIDES, COL_X):
++        d.rounded_rectangle((x0, top, x0 + COL_W, top + 300), radius=18, fill=TILE_BG)
++        d.text((x0 + COL_W // 2, top + 120), label, font=font(72, True), fill=color, anchor="mm")
++        d.text((x0 + COL_W // 2, top + 220), kind, font=font(38), fill=FG, anchor="mm")
++    d.text((W // 2, 1010), "Both models call the store's WebMCP tools. Real time, one take each.",
++           font=font(30), fill=DIM, anchor="mm")
++
++
++def draw_race(img, d, t, sides, frames):
++    d.text((W // 2, 46), "Buy a black T-shirt, size L, and check out as a guest", font=font(46, True),
++           fill=FG, anchor="mm")
++    d.text((W // 2, 98), "WindTunnel md-8  ·  same store reset, seed and tools for both  ·  real time",
++           font=font(26), fill=DIM, anchor="mm")
++    for (_, key, label, _, color), x0 in zip(SIDES, COL_X):
++        s = sides[key]
++        done = t >= s["agent_s"]
++        clock = min(t, s["agent_s"])
++        d.text((x0, 150), label, font=font(44, True), fill=color, anchor="lm")
++        result_col = (GREEN if s["passed"] else RED) if done else FG
++        d.text((x0 + COL_W, 150), f"{clock:4.1f} s", font=font(44, True), fill=result_col, anchor="rm")
++        img.paste(frames[key].next(), (x0, VID_Y))
++        d.rectangle((x0, VID_Y, x0 + COL_W - 1, VID_Y + VID_H - 1), outline=(70, 74, 82), width=2)
++        turn = sum(1 for a, _ in s["models"] if a <= clock)
++        thinking = any(a <= clock < b for a, b in s["models"])
++        ntools = sum(1 for c in s["tools"] if c["start"] <= clock)
++        if done:
++            status, col = (f"Final answer  ·  {'passed' if s['passed'] else 'failed'}", GREEN if s["passed"] else RED)
++        elif thinking:
++            status, col = f"Model turn {turn} thinking…", YELLOW
++        elif any(c["start"] <= clock < c["end"] for c in s["tools"]):
++            status, col = "Calling a store tool", FG
++        else:
++            status, col = "Harness pause between turns", DIM
++        d.text((x0, VID_Y + VID_H + 30), status, font=font(30, True), fill=col, anchor="lm")
++        d.text((x0 + COL_W, VID_Y + VID_H + 30), f"turn {turn}  ·  {ntools} tool calls", font=font(28),
++               fill=DIM, anchor="rm")
++        shown = [c for c in s["tools"] if c["start"] <= clock][-6:]
++        for i, c in enumerate(shown):
++            y = LIST_Y + i * ROW_H
++            running = clock < c["end"]
++            mark, mcol = ("▶", YELLOW) if running else (("!", YELLOW) if c["error"] else ("✓", GREEN))
++            d.text((x0 + 6, y), mark, font=SYMBOLS, fill=mcol, anchor="lm")
++            d.text((x0 + 44, y), c["name"], font=font(28, True), fill=FG, anchor="lm")
++            ax = x0 + 44 + d.textlength(c["name"], font=font(28, True)) + 16
++            args = short_args(c["args"])
++            while args and ax + d.textlength(args, font=MONO) > x0 + COL_W:
++                args = args[:-2] + "…" if len(args) > 2 else ""
++            d.text((ax, y), args, font=MONO, fill=DIM, anchor="lm")
++        if done:
++            ov = Image.new("RGBA", (COL_W, 110), (0, 0, 0, 0))
++            od = ImageDraw.Draw(ov)
++            od.rounded_rectangle((0, 0, COL_W, 110), radius=14, fill=(21, 23, 28, 225))
++            col = GREEN if s["passed"] else RED
++            od.text((COL_W // 2, 55), f"{'Passed' if s['passed'] else 'Failed'} in {s['agent_s']:.1f} s",
++                    font=font(54, True), fill=col, anchor="mm")
++            img.paste(ov, (x0, VID_Y + VID_H - 130), ov)
++
++
++def draw_outro(d, sides, earlier, overlap_note):
++    ours, other = sides["clover"], sides[SIDES[1][1]]
++    d.text((W // 2, 110), f"{ours['label']} finished {other['agent_s'] / ours['agent_s']:.1f}x faster",
++           font=font(66, True), fill=FG, anchor="mm")
++    for (_, key, label, _, color), x0 in zip(SIDES, COL_X):
++        s, e = sides[key], earlier.get(key)
++        d.rounded_rectangle((x0, 200, x0 + COL_W, 860), radius=18, fill=TILE_BG)
++        d.text((x0 + COL_W // 2, 265), label, font=font(48, True), fill=color, anchor="mm")
++        d.text((x0 + COL_W // 2, 410), f"{s['agent_s']:.1f} s", font=font(170, True), fill=color, anchor="mm")
++        d.text((x0 + COL_W // 2, 525), "agent time, this take", font=font(36, True), fill=color, anchor="mm")
++        rows = [("Result (harness check)", "passed" if s["passed"] else "failed"),
++                ("Model turns", str(len(s["models"]))),
++                ("WebMCP tool calls", str(len(s["tools"])))]
++        if e:
++            rows.append((f"Earlier median, {e['runs']} runs", f"{e['agent_s']:.1f} s, {e['passed']} of {e['runs']} passed"))
++        for k, (name, value) in enumerate(rows):
++            y = 625 + k * 58
++            d.text((x0 + 60, y), name, font=font(32), fill=DIM, anchor="lm")
++            d.text((x0 + COL_W - 60, y), value, font=font(32, True), fill=FG, anchor="rm")
++    d.text((W // 2, 940), "Agent time runs from the first model call to the final answer and excludes "
++           "store reset and page load." + (" Earlier runs: October 15, 2026." if earlier else ""),
++           font=font(26), fill=DIM, anchor="mm")
++    d.text((W // 2, 985), overlap_note, font=font(26), fill=DIM, anchor="mm")
++
++
++def main():
++    ap = argparse.ArgumentParser()
++    ap.add_argument("rec_dir")
++    ap.add_argument("--out", help="default <rec_dir>/race.mp4")
++    ap.add_argument("--note", default="No other traffic on the diffusion endpoint during either take.",
++                    help="Footnote on endpoint load during the takes")
++    ap.add_argument("--opponent", choices=sorted(OPPONENTS), default="gemini")
++    args = ap.parse_args()
++    SIDES[1] = OPPONENTS[args.opponent]
++    rec = os.path.abspath(args.rec_dir)
++    sides, earlier = load_takes(rec), earlier_medians()
++    prompt = task_prompt()
++    race_sec = max(s["agent_s"] for s in sides.values()) + END_HOLD
++    total = INTRO_SEC + race_sec + OUTRO_SEC
++    out = args.out or os.path.join(rec, "race.mp4")
++    for key, s in sides.items():
++        print(f"{s['label']}: {s['agent_s']:.2f} s, {len(s['models'])} turns, {len(s['tools'])} tool calls, "
++              f"{'passed' if s['passed'] else 'failed'}")
++    ff = subprocess.Popen(["ffmpeg", "-loglevel", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24",
++                           "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-crf", "18",
++                           "-pix_fmt", "yuv420p", "-movflags", "+faststart", out], stdin=subprocess.PIPE)
++    frames = None
++    for i in range(int(round(total * FPS))):
++        tv = i / FPS
++        img = Image.new("RGB", (W, H), BG)
++        d = ImageDraw.Draw(img)
++        if tv < INTRO_SEC:
++            draw_intro(d, prompt)
++        elif tv < INTRO_SEC + race_sec:
++            frames = frames or {k: Frames(s) for k, s in sides.items()}
++            draw_race(img, d, tv - INTRO_SEC, sides, frames)
++        else:
++            draw_outro(d, sides, earlier, args.note)
++        ff.stdin.write(img.tobytes())
++    for f in (frames or {}).values():
++        f.close()
++    ff.stdin.close()
++    ff.wait()
++    print(f"{out} ({total:.1f} s)")
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/experiments/jev/run-diffusion.mjs b/experiments/jev/run-diffusion.mjs
+new file mode 100644
+index 0000000..998319d
+--- /dev/null
++++ b/experiments/jev/run-diffusion.mjs
+@@ -0,0 +1,61 @@
++import fs from 'node:fs';
++import path from 'node:path';
++import crypto from 'node:crypto';
++import assert from 'node:assert/strict';
++import {parseArgs} from 'node:util';
++import {loadTasks,resolveTask} from '../../harness/tasks.mjs';
++import {bootCapsule} from '../../harness/capsule.mjs';
++import {runBatch} from './frozen/harness/run.mjs';
++// diffusion-demo: run.mjs for Jev (via OpenRouter) + our diffusion model, WebMCP only.
++import {runWebMCPDiffusion,TOOL_VERSION as WEBMCP_VERSION} from './webmcp/arm-diffusion.mjs';
++import {MODEL as FILLER} from './webmcp/diffusion.mjs';
++
++const {values:args} = parseArgs({options:{interface:{type:'string',default:'webmcp'},site:{type:'string'},task:{type:'string'},repeats:{type:'string',default:'3'},out:{type:'string'},port:{type:'string',default:'3215'},run:{type:'boolean',default:false}}});
++assert.equal(args.interface,'webmcp','Only --interface webmcp is supported');
++const repeats=Number(args.repeats),port=Number(args.port);
++assert(Number.isInteger(repeats)&&repeats>=1&&repeats<=3,'--repeats must be 1, 2 or 3');
++assert(Number.isInteger(port)&&port>=1024&&port<=65535,'Invalid --port');
++assert(!args.task||args.site,'--task requires --site');
++const root=path.resolve(import.meta.dirname,'../..');
++const hashes=JSON.parse(fs.readFileSync(new URL('./source-manifest.json',import.meta.url)));
++for(const entry of [...hashes.files,...hashes.dependencies])assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,entry.file))).digest('hex'),entry.published_sha256,`Runner source changed: ${entry.file}`);
++const tasks=JSON.parse(fs.readFileSync(new URL('./tasks.json',import.meta.url))).filter(t=>(!args.site||t.site===args.site)&&(!args.task||t.id===args.task)).map(t=>{
++ const definition=resolveTask(loadTasks(t.site).find(x=>x.id===t.id),1);
++ assert.equal(crypto.createHash('sha256').update(JSON.stringify(definition)).digest('hex'),t.sha256,`Task changed: ${t.id}`);
++ return {...t,definition};
++});
++assert(tasks.length,'No matching benchmark tasks');
++console.log(JSON.stringify({interface:args.interface,tasks:tasks.length,attempts:tasks.length*repeats,mode:args.run?'live':'check-only'}));
++if(!args.run)process.exit(0);
++assert(Number(process.versions.node.split('.')[0])>=22,'Node 22+ required');
++assert(args.out,'--run requires a fresh --out directory');
++for(const key of ['OPENROUTER_API_KEY','DIFFUSION_BASE_URL'])assert(process.env[key],`Missing ${key}`);
++assert(!process.env.WT_FAKE_LIFECYCLE&&!process.env.WT_MANUAL_BASEURL,'Real benchmark capsules required');
++const out=path.resolve(args.out);
++assert(!fs.existsSync(out),'Output already exists; use a new directory');
++fs.mkdirSync(out,{recursive:true,mode:0o700});
++const {chromium}=await import('playwright');
++const browser=await chromium.launch({headless:true,...(process.env.WT_CHROME?{executablePath:process.env.WT_CHROME}:{})});
++const webmcp=true;
++const method={id:'wm-jev-diffusion-v1',version:WEBMCP_VERSION,model:`typesafe-ai/jev-1.13+${FILLER}`,webmcp,jevTransport:'typesafe',run:runWebMCPDiffusion};
++const SNAPSHOTS=['jev-1.13-20260917',FILLER];
++const rows=[]; let stopped=false;
++try{
++ for(const site of [...new Set(tasks.map(t=>t.site))]){
++  const batch=await runBatch({siteId:site,method,tasks:tasks.filter(t=>t.site===site).map(t=>t.definition),n:repeats,seed:1,port,browser,captureEvidence:true,
++   boot:(id,options)=>bootCapsule(id,{...options,env:{...process.env,WT_WEBMCP:webmcp?'1':'0'}}),
++   onResult:async row=>{
++    rows.push(row);fs.writeFileSync(path.join(out,`${rows.length}.json`),JSON.stringify(row,null,2)+'\n',{mode:0o600});
++    // Stop on drift/unknown accounting; never silently pool or automatically rerun it.
++    stopped = !!row.transcript?.some(e=>e.cost_unknown||(e.model_snapshot&&!SNAPSHOTS.includes(e.model_snapshot)))||/harness-infra:/.test(row.failure_category??'')||!!row.context_close_error;
++    if(stopped)console.error(`Stopped after ${row.run_id}: model drift, unknown cost or infrastructure failure; inspect the saved attempt.`);
++    return !stopped;
++   }});
++  if(batch.teardown_error)throw Error(batch.teardown_error);
++  if(stopped)break;
++ }
++}finally{
++ await browser.close();
++ fs.writeFileSync(path.join(out,'run.json'),JSON.stringify({options:{reproduction:true,interface:args.interface,automatic_retries:false},rows},null,2)+'\n',{mode:0o600});
++}
++if(stopped)process.exitCode=1;
+diff --git a/experiments/jev/webmcp/arm-diffusion.mjs b/experiments/jev/webmcp/arm-diffusion.mjs
+new file mode 100644
+index 0000000..f51c177
+--- /dev/null
++++ b/experiments/jev/webmcp/arm-diffusion.mjs
+@@ -0,0 +1,44 @@
++// diffusion-demo: arm.mjs with Mercury replaced by our diffusion model and Jev
++// reached through OpenRouter. Readiness, the decision agent and its settings
++// are unchanged from the measured Jev + Mercury method.
++import {runDecisionAgent} from '../frozen/arms/decision-agent.mjs';
++import {createDecisionProviders} from '../frozen/arms/decision-providers.mjs';
++import {createReadinessAdapter, VERSION} from './readiness.mjs';
++import {diffusionProvider, MODEL} from './diffusion.mjs';
++import {openRouterJevFetch, JEV_MODEL} from './openrouter-jev.mjs';
++import {fetchWithDeadline} from './transport.mjs';
++export const TOOL_VERSION = VERSION;
++export async function runWebMCPDiffusion(args, {fetchCall = globalThis.fetch} = {}) {
++  const readinessAudit = [];
++  let decisionSignal;
++  const readiness = {max_wait_ms:1000, poll_interval_ms:25, condition:'empty-only', attempt_budget:'actual-agent-AbortSignal', timeout:'preserve-empty-list', audit:'one-event-per-observation;outside-model-state'};
++  const adapter = createReadinessAdapter(args, {getSignal:()=>decisionSignal, audit:e=>readinessAudit.push(e), timeoutMs:1000, pollMs:25});
++  const jevFetch = openRouterJevFetch(fetchCall);
++  const result = await runDecisionAgent({...args, model:undefined, jevTransport:'typesafe'}, {
++    adapter,
++    providerFactory:opts=>{
++      decisionSignal = opts.signal;
++      const providers = createDecisionProviders({...opts, fetchCall:(url,options)=>fetchWithDeadline(url,options,{fetchCall:jevFetch,timeoutMs:60000,provider:'Jev'})});
++      providers.fillLuna = diffusionProvider({...opts,fetchCall,requestTimeoutMs:60000});
++      return providers;
++    },
++  });
++  result.transcript.push(...readinessAudit);
++  for (const event of result.transcript) {
++    if (event.provider === 'luna') event.provider = 'diffusion';
++    if (event.requests) { event.requests.diffusion = event.requests.luna; delete event.requests.luna; }
++  }
++  if (result.provider_usage.luna) { result.provider_usage.diffusion = result.provider_usage.luna; delete result.provider_usage.luna; }
++  Object.assign(result.decision_config, {
++    version:VERSION, tool_readiness:readiness,
++    tool_readiness_audit:{observations:readinessAudit.length,wait_count:readinessAudit.filter(e=>e.waited).length,total_wait_ms:readinessAudit.reduce((n,e)=>n+(e.wait_ms??0),0),outcomes:readinessAudit.map(e=>e.outcome)},
++    argument_policy:'omit-unsupported-optional-fields;entity-specific-identifiers;non-finish-only',
++    filler:MODEL, answer:'diffusion-written', optional_arguments:'diffusion-filled', answer_assembly:'diffusion-written',
++    experiment:'diffusion-arguments-v1-readiness-v1',
++    jev_model:JEV_MODEL, jev_route:'openrouter-systemone',
++    filler_reasoning_effort:'none', filler_tool_choice:'auto', filler_max_completion_tokens:4096, filler_request_timeout_ms:60000, jev_request_timeout_ms:60000,
++    filler_prices_per_million:'mercury-2.5 list (0.20 in, 0.02 cached, 0.75 out)',
++    reproduction:'diffusion-demo variant of the portable launcher',
++  });
++  return result;
++}
+diff --git a/experiments/jev/webmcp/diffusion.mjs b/experiments/jev/webmcp/diffusion.mjs
+new file mode 100644
+index 0000000..75996e1
+--- /dev/null
++++ b/experiments/jev/webmcp/diffusion.mjs
+@@ -0,0 +1,53 @@
++// diffusion-demo: Mercury's argument-filler slot pointed at our hosted diffusion
++// model. Prompts, schema handling and validation match mercury.mjs; the request
++// differs only where our SGLang endpoint requires it.
++import {fetchWithDeadline} from './transport.mjs';
++import {validateArgumentSchema, assertArgs} from '../frozen/arms/decision-providers.mjs';
++import {INSTRUCTIONS, ARGUMENT_GUIDANCE} from './mercury.mjs';
++
++export const MODEL = process.env.DIFFUSION_MODEL ?? 'qwen36-iter22000-blk16-arverify-best';
++// Priced at Mercury 2.5's list rates (per million tokens) so cost compares like
++// for like; we self-host, so there is no real per-token bill.
++export const PRICES = {input: .20, cached: .02, output: .75};
++
++export function diffusionProvider({signal, record, fetchCall = fetch, requestTimeoutMs = 60000}) {
++  const url = process.env.DIFFUSION_BASE_URL;
++  if (!url) throw new Error('Missing DIFFUSION_BASE_URL');
++  return async (state, action) => {
++    validateArgumentSchema(action.inputSchema);
++    // Offered tool name: the action id, minus edge underscores (the model
++    // writes `__finish__` as `finish__`, which would miss the schema lookup).
++    const toolName = action.id.replace(/^_+|_+$/g, '') || 'finish';
++    const outboundSchema = structuredClone(action.inputSchema);
++    if (action.id === '__finish__') { delete outboundSchema.properties.answer.minLength; delete outboundSchema.properties.answer.maxLength; }
++    // 'none' disables thinking, the closest match to Mercury's 'instant'.
++    // tool_choice is left on auto: the endpoint rejects forced tool calls
++    // (no grammar constraints under its speculative decoding).
++    // The one tool is offered under the selected action's name. Unforced, the
++    // model names its call after the action; under any other name SGLang's
++    // parser finds no matching schema and returns every value as a string
++    // ("20" for an integer), which fails validation and loops the step.
++    const body = {model: MODEL, reasoning_effort: 'none', max_completion_tokens: 4096,
++      messages: [{role: 'system', content: INSTRUCTIONS.replaceAll('submit_arguments', toolName) + (action.id === '__finish__' ? '' : ARGUMENT_GUIDANCE)},
++        {role: 'user', content: JSON.stringify({state, selected: {description: action.description, name: action.id}})}],
++      tools: [{type: 'function', function: {name: toolName, description: action.description ?? 'Fill arguments', parameters: outboundSchema, strict: false}}]};
++    record({provider: 'luna', model: MODEL, kind: 'request', request_body: body});
++    const started = performance.now();
++    const res = await fetchWithDeadline(url, {method: 'POST', signal, headers: {'content-type': 'application/json'}, body: JSON.stringify(body)},
++      {fetchCall, timeoutMs: requestTimeoutMs, provider: 'Diffusion', onTimeout: () => record({provider: 'luna', model: MODEL, kind: 'transport_error', error_type: 'provider_request_timeout', timeout_ms: requestTimeoutMs, elapsed_ms: performance.now() - started})});
++    const text = await res.text();
++    if (!res.ok) { record({provider: 'luna', model: MODEL, kind: 'http_error', status: res.status, response_body: text}); throw new Error(`Diffusion provider HTTP ${res.status}: ${text}`); }
++    let response; try { response = JSON.parse(text); } catch { throw new Error('Diffusion provider returned invalid JSON'); }
++    const u = response.usage ?? {}, cached = u.prompt_tokens_details?.cached_tokens ?? 0;
++    const known = [u.prompt_tokens, u.completion_tokens, cached].every(n => Number.isFinite(n) && n >= 0) && cached <= u.prompt_tokens;
++    const usage = {input_tokens: known ? u.prompt_tokens - cached : 0, output_tokens: u.completion_tokens ?? 0, cached_input_tokens: cached, cache_creation_tokens: 0};
++    const cost = known ? (usage.input_tokens * PRICES.input + cached * PRICES.cached + usage.output_tokens * PRICES.output) / 1e6 : null;
++    record({provider: 'luna', model: MODEL, model_snapshot: response.model ?? '', snapshot_source: 'provider-response-alias', usage, cost, cost_estimated: true, cost_unknown: !known, elapsed_ms: performance.now() - started, response});
++    if (!known) throw new Error('Diffusion provider missing or invalid usage; cost unknown');
++    if (response.model !== MODEL) throw new Error(`Diffusion provider model mismatch: ${response.model ?? 'missing'}`);
++    const choices = response.choices ?? [], calls = choices[0]?.message?.tool_calls ?? [];
++    if (choices.length !== 1 || !['tool_calls', 'stop'].includes(choices[0].finish_reason) || calls.length !== 1 || calls[0].function?.name !== toolName) throw new Error('Diffusion provider must return exactly selected argument function without truncation');
++    let args; try { args = JSON.parse(calls[0].function.arguments); } catch { throw new Error('invalid arguments: diffusion model returned malformed function JSON'); }
++    assertArgs(action.inputSchema, args); return args;
++  };
++}
+diff --git a/experiments/jev/webmcp/openrouter-jev.mjs b/experiments/jev/webmcp/openrouter-jev.mjs
+new file mode 100644
+index 0000000..2f5a9e8
+--- /dev/null
++++ b/experiments/jev/webmcp/openrouter-jev.mjs
+@@ -0,0 +1,26 @@
++// diffusion-demo: route the frozen scaffold's Typesafe Jev call through
++// OpenRouter's System One endpoint, pinned to the Jev 1.13 snapshot used on
++// the September 18 board. Only the transport changes; request and response
++// bodies keep the Typesafe shape.
++export const JEV_MODEL = process.env.JEV_MODEL ?? 'typesafe/jev-1.13';
++const TYPESAFE_URL = 'https://api.typesafe.ai/v1/systemone';
++const OPENROUTER_URL = 'https://openrouter.ai/api/v1/systemone';
++
++export function openRouterJevFetch(fetchCall = globalThis.fetch) {
++  return async (url, options) => {
++    if (url !== TYPESAFE_URL) return fetchCall(url, options);
++    if (!process.env.OPENROUTER_API_KEY) throw new Error('Missing OPENROUTER_API_KEY');
++    const body = JSON.parse(options.body);
++    body.model = JEV_MODEL;
++    const response = await fetchCall(OPENROUTER_URL, {...options,
++      headers: {...options.headers, authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`},
++      body: JSON.stringify(body)});
++    const text = await response.text();
++    if (!response.ok) return new Response(text, {status: response.status, statusText: response.statusText, headers: response.headers});
++    // The scaffold requires a bare `jev-` snapshot name; OpenRouter prefixes
++    // the vendor ("typesafe/jev-1.13-20260917").
++    const result = JSON.parse(text);
++    if (typeof result.model === 'string') result.model = result.model.replace(/^typesafe\//, '');
++    return new Response(JSON.stringify(result), {status: response.status, statusText: response.statusText, headers: response.headers});
++  };
++}
+diff --git a/experiments/video/make_video.py b/experiments/video/make_video.py
+new file mode 100644
+index 0000000..69a5de4
+--- /dev/null
++++ b/experiments/video/make_video.py
+@@ -0,0 +1,390 @@
++"""Race video for WebMCP: DiffuSpace Clover vs. Gemini 3.6 Flash on WindTunnel tasks.
++
++Same structure as bench/miniwob/make_race_grid_video.py: an intro card, a grid
++race where each task's tile zooms up while it runs, a speed card, then the
++agent-time bars from the full WindTunnel run. Each side plays its median take
++of each task (by agent time, among passing takes when there are any), so the
++clip is not the best case. Model calls were not streamed, so the panel under
++the zoomed tile shows each model call's wait and the tools it called.
++
++After --ff-at real seconds the race fast-forwards, with a scanline effect and
++a flash, at whatever extra speed fits the whole video under --target seconds
++(or at --ff times the base speed).
++
++Usage:
++    python3 make_video.py recordings/run-20261016 --speed 6 --ff-at 50 --target 30
++"""
++import argparse
++import json
++import os
++import statistics
++import subprocess
++import sys
++import textwrap
++from datetime import datetime
++
++from PIL import Image, ImageDraw, ImageFont
++
++HERE = os.path.dirname(os.path.abspath(__file__))
++sys.path.insert(0, os.path.join(HERE, "..", "..", "..", "miniwob"))
++from make_race_grid_video import (GEMINI, MONO, THINK_BG, TILE_BG, WEBMCP_GLOB, WEBMCP_SEC,  # noqa: E402
++                                  draw_webmcp, ease, lerp_rect, webmcp_stats)
++from make_race_video import BG, DIM, FG, FPS, GREEN, H, RED, SYMBOLS, W, YELLOW, font  # noqa: E402
++
++TASKS = [
++    ("id-6", "Create a draft invoice", "Create an invoice"),
++    ("lh-7", "Enroll in a course and find the first lesson", "Enroll in a course"),
++    ("id-8", "Report this month's total invoiced", "Total invoiced"),
++    ("hev-8", "Report an event's status", "Event status"),
++    ("ea-8", "Find the registered customer", "Find a customer"),
++    ("id-1", "Find which client an invoice is billed to", "Invoice's client"),
++]
++SIDES = [("ours", "DiffuSpace Clover", (110, 200, 255)), ("gemini", "Gemini 3.6 Flash", GEMINI)]
++INTRO = {"ours": "Diffusion language model", "gemini": "Autoregressive language model"}
++BENCH_TASKS = 49  # WindTunnel tasks with results for both models
++
++SRC_W, SRC_H = 640, 400
++PANEL_X, PANEL_W = (40, 980), 900
++GRID_Y, COLS, ROWS, GAP_X, GAP_Y = 235, 3, 3, 14, 12
++TILE_W = (PANEL_W - GAP_X * (COLS - 1)) // COLS
++THUMB_H = round(TILE_W * SRC_H / SRC_W)
++LABEL_H = 34
++CELL_H = THUMB_H + LABEL_H
++GRID_H = ROWS * CELL_H + (ROWS - 1) * GAP_Y
++ZOOM_W = 720
++ZOOM_H = round(ZOOM_W * SRC_H / SRC_W)
++ZOOM_TOP = 44  # room above the zoomed tile for the task heading
++LOG_H = GRID_H - ZOOM_TOP - ZOOM_H - 14
++ZOOM_SEC = 0.3
++HOLD = 1.0  # real seconds kept after the last model call
++INTRO_SEC, OUTRO_SEC, END_HOLD = 4.0, 7.0, 2.0
++
++
++def pick_median(takes):
++    """The take with the median agent time, among passing takes when any passed."""
++    pool = [t for t in takes if t["success"]] or takes
++    pool = sorted(pool, key=lambda t: float(t["agent_s"]))
++    return pool[(len(pool) - 1) // 2]
++
++
++def take_end(take):
++    """Seconds from the start of the take's video to the end of its last model call."""
++    ends = [c["t_end"] for c in take["calls"]]
++    return (max(ends) - take["video_t0"]) / 1000 + HOLD if ends else float(take["setup_s"]) + float(take["agent_s"]) + HOLD
++
++
++class Clock:
++    """Maps output video time to real recorded time: base speed, then fast-forward after ff_at."""
++
++    def __init__(self, speed, ff_at=float("inf"), ff=1.0):
++        self.speed, self.ff_at, self.ff = speed, ff_at, ff
++        self.tv_ff = ff_at / speed
++
++    def real(self, tv):
++        return tv * self.speed if tv < self.tv_ff else self.ff_at + (tv - self.tv_ff) * self.speed * self.ff
++
++    def video(self, t):
++        return t / self.speed if t < self.ff_at else self.tv_ff + (t - self.ff_at) / (self.speed * self.ff)
++
++
++def build_side(run_dir, takes, out_path, clock, length):
++    inputs, filters, segments, t = [], [], [], 0.0
++    for i, (task, _, _) in enumerate(TASKS):
++        take = takes[task]
++        d = take_end(take)
++        inputs += ["-i", os.path.join(run_dir, take["video"])]
++        filters.append(f"[{i}:v]trim=0:{d:.3f},setpts=PTS-STARTPTS,fps={FPS},"
++                       f"scale={SRC_W}:{SRC_H}:flags=lanczos,setsar=1[v{i}]")
++        segments.append({"task": task, "start": t, "end": t + d, "passed": take["success"], "take": take})
++        t += d
++    n = len(TASKS)
++    chain = "".join(f"[v{i}]" for i in range(n)) + f"concat=n={n}:v=1:a=0"
++    if clock.ff_at < t:
++        # Two speeds: split the real-time sequence at ff_at and speed each part up separately.
++        filters.append(f"{chain},split[a][b]")
++        filters.append(f"[a]trim=end={clock.ff_at:.3f},setpts=(PTS-STARTPTS)/{clock.speed}[a1]")
++        filters.append(f"[b]trim=start={clock.ff_at:.3f},setpts=(PTS-STARTPTS)/{clock.speed * clock.ff}[b1]")
++        chain = "[a1][b1]concat=n=2:v=1:a=0"
++    else:
++        chain += f",setpts=PTS/{clock.speed}"
++    filters.append(f"{chain},fps={FPS},tpad=stop_mode=clone:stop_duration={length}[out]")
++    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", *inputs, "-filter_complex", ";".join(filters),
++                    "-map", "[out]", "-t", str(length), "-r", str(FPS), "-c:v", "libx264", "-crf", "16",
++                    "-pix_fmt", "yuv420p", out_path], check=True)
++    return segments, t
++
++
++class SideReader:
++    def __init__(self, path):
++        self.proc = subprocess.Popen(["ffmpeg", "-loglevel", "error", "-i", path, "-f", "rawvideo",
++                                      "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
++        self.last = Image.new("RGB", (SRC_W, SRC_H), TILE_BG)
++
++    def next(self):
++        buf = self.proc.stdout.read(SRC_W * SRC_H * 3)
++        if len(buf) == SRC_W * SRC_H * 3:
++            self.last = Image.frombytes("RGB", (SRC_W, SRC_H), buf)
++        return self.last
++
++
++def cell_rect(i, x0):
++    r, c = divmod(i, COLS)
++    return x0 + c * (TILE_W + GAP_X), GRID_Y + r * (CELL_H + GAP_Y), TILE_W, THUMB_H
++
++
++def zoom_rect(x0):
++    return x0 + (PANEL_W - ZOOM_W) // 2, GRID_Y + ZOOM_TOP, ZOOM_W, ZOOM_H
++
++
++def call_lines(take, t_rel):
++    """Log lines for what the agent had done t_rel seconds into the take's video."""
++    lines, t0 = [], take["video_t0"]
++    tools = {}
++    for e in take["transcript"]:
++        if "tool" in e:
++            tools.setdefault(e["turn"], []).append(e)
++    for k, call in enumerate(take["calls"], 1):
++        start, end = (call["t_start"] - t0) / 1000, (call["t_end"] - t0) / 1000
++        if t_rel < start:
++            break
++        if t_rel < end:
++            lines.append((f"Step {k}: waiting for the model  {t_rel - start:.1f} s", YELLOW))
++            break
++        lines.append((f"Step {k}: model took {end - start:.2f} s, {call['output_tokens']} tokens", FG))
++        for e in tools.get(k, []):
++            args = ", ".join(f"{a}={json.dumps(v)}" for a, v in (e["input"] or {}).items())
++            lines.append((f"  → {e['tool']}({args})", DIM))
++        if k == len(take["calls"]) and not tools.get(k):
++            lines.append(("  → Answer: " + " ".join(take["final_text"].split()), GREEN))
++    return lines
++
++
++def draw_log(d, x0, take, t_rel):
++    top = GRID_Y + ZOOM_TOP + ZOOM_H + 14
++    d.rectangle((x0, top, x0 + PANEL_W, top + LOG_H), fill=THINK_BG, outline=(60, 64, 72))
++    rows = []
++    for text, color in call_lines(take, t_rel):
++        rows += [(line, color) for line in textwrap.wrap(text, 84, subsequent_indent="    ")]
++    room = (LOG_H - 24) // 21
++    for n, (line, color) in enumerate(rows[-room:]):
++        d.text((x0 + 12, top + 12 + n * 21), line, font=MONO, fill=color)
++
++
++def draw_side(img, d, label, color, x0, segs, total, frame, prev, thumbs, tv, clock):
++    t_real = clock.real(tv)
++    finished = all(s["end"] <= t_real for s in segs)
++    won = finished and all(s["passed"] for s in segs)
++    d.text((x0, 190), label, font=font(46, True), fill=color, anchor="lm")
++    d.text((x0 + PANEL_W, 190), f"{total if finished else t_real:5.1f} s", font=font(46, True),
++           fill=GREEN if won else FG, anchor="rm")
++    active = None
++    for i, seg in enumerate(segs):
++        x, y, w, h = cell_rect(i, x0)
++        name = TASKS[i][2]
++        ts, te = clock.video(seg["start"]), clock.video(seg["end"])
++        d.rectangle((x, y + h, x + w, y + h + LABEL_H), fill=TILE_BG)
++        if tv >= te:
++            if i not in thumbs:
++                thumbs[i] = prev.resize((w, h), Image.LANCZOS)
++            img.paste(thumbs[i], (x, y))
++            ok = seg["passed"]
++            d.text((x + 8, y + h + LABEL_H // 2), name, font=font(21), fill=FG, anchor="lm")
++            d.text((x + w - 8, y + h + LABEL_H // 2), "passed" if ok else "failed", font=font(20, True),
++                   fill=GREEN if ok else RED, anchor="rm")
++            d.text((x + w - 10, y + 8), "✓" if ok else "✗", font=SYMBOLS, fill=GREEN if ok else RED, anchor="rt")
++        else:
++            d.rectangle((x, y, x + w, y + h), fill=TILE_BG)
++            if tv >= ts:
++                active = (i, ts, te)
++                d.text((x + 8, y + h + LABEL_H // 2), name, font=font(21), fill=FG, anchor="lm")
++                d.text((x + w - 8, y + h + LABEL_H // 2), "running", font=font(20, True), fill=YELLOW, anchor="rm")
++            else:
++                d.text((x + w // 2, y + h // 2), "waiting", font=font(24), fill=DIM, anchor="mm")
++                d.text((x + 8, y + h + LABEL_H // 2), name, font=font(21), fill=DIM, anchor="lm")
++    # The seventh cell holds the running tally.
++    x, y, w, h = cell_rect(len(segs), x0)
++    done = [s for s in segs if s["end"] <= t_real]
++    d.text((x + 8, y + 40), f"{len(done)} of {len(segs)} done", font=font(30, True), fill=GREEN if won else FG,
++           anchor="lm")
++    d.text((x + 8, y + 84), f"{sum(s['passed'] for s in done)} passed", font=font(26), fill=DIM, anchor="lm")
++    if active:
++        i, ts, te = active
++        zoom = min(ZOOM_SEC, (te - ts) / 3)  # tasks shown in fast-forward are short on screen
++        p = min(ease((tv - ts) / zoom), ease((te - tv) / zoom))
++        shade = Image.new("RGBA", (PANEL_W, GRID_H), (*BG, round(220 * p)))
++        img.paste(shade, (x0, GRID_Y), shade)
++        x, y, w, h = lerp_rect(cell_rect(i, x0), zoom_rect(x0), p)
++        img.paste(frame.resize((w, h), Image.LANCZOS), (x, y))
++        if p > 0.5:
++            d.text((x0 + PANEL_W // 2, GRID_Y + ZOOM_TOP // 2), TASKS[i][1], font=font(28, True), fill=YELLOW,
++                   anchor="mm")
++            draw_log(d, x0, segs[i]["take"], t_real - segs[i]["start"])
++
++
++CHEVRON = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial Unicode.ttf", 54)
++
++
++def draw_ff_banner(img, factor, t):
++    """Big banner under the race while it fast-forwards, with chevrons that march left to right."""
++    big = font(64, True)
++    text = f"{factor:g}x SPEED-UP"
++    tw = ImageDraw.Draw(img).textlength(text, font=big)
++    w, h = round(tw) + 260, 112
++    x, y = (W - w) // 2, 925
++    layer = Image.new("RGBA", (w, h), (0, 0, 0, 0))
++    d = ImageDraw.Draw(layer)
++    d.rounded_rectangle((0, 0, w - 1, h - 1), radius=h // 2, fill=(40, 34, 12, 235), outline=(*YELLOW, 255), width=4)
++    lead = (t * 6) % 3  # one chevron lights up at a time, cycling twice a second
++    for k in range(3):
++        glow = 1.0 if int(lead) == k else 0.35
++        d.text((60 + k * 48, h // 2), "▶", font=CHEVRON, fill=(*YELLOW, round(255 * glow)), anchor="mm")
++    d.text((210, h // 2), text, font=big, fill=(*YELLOW, 255), anchor="lm")
++    img.paste(layer, (x, y), layer)
++
++
++def speed_stats(all_takes, key):
++    calls = [c for t in all_takes if t["model_key"] == key for c in t["calls"] if c["status"] == 200]
++    secs = sum(c["t_end"] - c["t_start"] for c in calls) / 1000
++    # Attempts where the site failed before the first model call say nothing about the model.
++    mine = [t for t in all_takes if t["model_key"] == key and t["calls"]]
++    return {"skipped": sum(t["model_key"] == key and not t["calls"] for t in all_takes),"tok_s": sum(c["output_tokens"] for c in calls) / secs, "per_call": secs / len(calls),
++            "calls": len(calls), "passed": sum(t["success"] for t in mine), "attempts": len(mine)}
++
++
++def draw_intro(d):
++    d.text((W // 2, 260), "WebMCP", font=font(96, True), fill=FG, anchor="mm")
++    d.text((W // 2, 360), f"Selected {len(TASKS)} samples from {BENCH_TASKS} WindTunnel tasks", font=font(40),
++           fill=DIM, anchor="mm")
++    for (key, label, color), x0 in zip(SIDES, PANEL_X):
++        d.rounded_rectangle((x0, 490, x0 + PANEL_W, 830), radius=18, fill=TILE_BG)
++        d.text((x0 + PANEL_W // 2, 615), label, font=font(72, True), fill=color, anchor="mm")
++        d.text((x0 + PANEL_W // 2, 720), INTRO[key], font=font(38), fill=FG, anchor="mm")
++
++
++def draw_speed(d, stats):
++    ours, theirs = stats["ours"], stats["gemini"]
++    d.text((W // 2, 130), f"Each model call: {ours['per_call']:.2f} s vs. {theirs['per_call']:.2f} s",
++           font=font(68, True), fill=FG, anchor="mm")
++    for (key, label, color), x0 in zip(SIDES, PANEL_X):
++        st = stats[key]
++        d.rounded_rectangle((x0, 230, x0 + PANEL_W, 880), radius=18, fill=TILE_BG)
++        d.text((x0 + PANEL_W // 2, 300), label, font=font(48, True), fill=color, anchor="mm")
++        d.text((x0 + PANEL_W // 2, 450), f"{st['tok_s']:.0f}", font=font(220, True), fill=color, anchor="mm")
++        d.text((x0 + PANEL_W // 2, 575), "tokens per second (TPS)", font=font(48, True), fill=color, anchor="mm")
++        for k, (name, value) in enumerate([("Model time per call", f"{st['per_call']:.2f} s"),
++                                           ("Model calls", f"{st['calls']}"),
++                                           ("Attempts passed", f"{st['passed']} of {st['attempts']}")]):
++            y = 700 + k * 56
++            d.text((x0 + 60, y), name, font=font(32), fill=DIM, anchor="lm")
++            d.text((x0 + PANEL_W - 60, y), value, font=font(32, True), fill=FG, anchor="rm")
++    d.text((W // 2, 950), "Tokens per second = output tokens ÷ model call time, over every recorded call. "
++           "Calls were not streamed,", font=font(26), fill=DIM, anchor="mm")
++    d.text((W // 2, 995), "so call time includes the wait for the first token. Gemini thinks before it returns "
++           "anything; its thinking tokens are counted.", font=font(26), fill=DIM, anchor="mm")
++    skipped = [f"{n} {label} attempt{'s' * (n > 1)}" for (key, label, _) in SIDES if (n := stats[key]["skipped"])]
++    if skipped:
++        d.text((W // 2, 1040), f"Left out: {' and '.join(skipped)} where the site's tools never loaded, "
++               "before any model call.", font=font(26), fill=DIM, anchor="mm")
++
++
++def main():
++    parser = argparse.ArgumentParser()
++    parser.add_argument("run_dir", help="Directory written by record.mjs")
++    parser.add_argument("--speed", type=float, default=6.0, help="Playback speed for both sides")
++    parser.add_argument("--ff-at", type=float, default=50.0, help="Real seconds into the race to start fast-forward")
++    parser.add_argument("--ff", type=float, help="Fast-forward factor on top of --speed (default: fit --target)")
++    parser.add_argument("--target", type=float, default=30.0, help="Whole-video length to fit under, in seconds")
++    parser.add_argument("--outro-sec", type=float, default=OUTRO_SEC, help="Seconds for the speed card")
++    parser.add_argument("--bars-sec", type=float, default=WEBMCP_SEC, help="Seconds for the agent-time card")
++    parser.add_argument("--webmcp", default=WEBMCP_GLOB, help="WindTunnel results.csv glob for the agent-time card")
++    parser.add_argument("--out", help="Output path (default <run_dir>/race_webmcp.mp4)")
++    args = parser.parse_args()
++
++    run_dir = os.path.abspath(args.run_dir)
++    all_takes = [json.loads(line) for line in open(os.path.join(run_dir, "takes.jsonl"))]
++    out = args.out or os.path.join(run_dir, "race_webmcp.mp4")
++    picked = {key: {task: pick_median([t for t in all_takes if t["model_key"] == key and t["task_id"] == task])
++                    for task, _, _ in TASKS} for key, _, _ in SIDES}
++    totals = {key: sum(take_end(t) for t in picked[key].values()) for key, _, _ in SIDES}
++    longest = max(totals.values())
++    cards = INTRO_SEC + args.outro_sec + (args.bars_sec if webmcp_stats(args.webmcp) else 0)
++    ff = args.ff
++    if ff is None:
++        budget = args.target - 0.2 - cards - END_HOLD - args.ff_at / args.speed
++        if budget <= 0:
++            sys.exit(f"Cannot fit under {args.target} s: the cards and the first {args.ff_at} s already take too long")
++        ff = max(1.0, (longest - args.ff_at) / (budget * args.speed))
++    clock = Clock(args.speed, args.ff_at, ff) if longest > args.ff_at and ff > 1 else Clock(args.speed)
++    length = clock.video(longest) + END_HOLD
++    print(f"Fast-forward {clock.ff:.1f}x after {args.ff_at:g} s (playback {args.speed * clock.ff:.0f}x), "
++          f"race {length:.1f} s, video {length + cards:.1f} s")
++    recorded = datetime.fromtimestamp(min(t["video_t0"] for t in all_takes) / 1000)
++
++    sides, readers = {}, {}
++    for key, label, _ in SIDES:
++        tmp = os.path.join(run_dir, f".side_{key}.mp4")
++        sides[key] = build_side(run_dir, picked[key], tmp, clock, length)
++        readers[key] = (SideReader(tmp), tmp)
++        segs, total = sides[key]
++        print(f"{label}: {total:.1f} s real time, {sum(s['passed'] for s in segs)}/{len(segs)} passed, "
++              f"takes {[s['take']['take'] for s in segs]}, ends on screen at {clock.video(total):.1f} s")
++    stats = {key: speed_stats(all_takes, key) for key, _, _ in SIDES}
++    ws = webmcp_stats(args.webmcp)
++
++    ff = subprocess.Popen(["ffmpeg", "-loglevel", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24",
++                           "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-crf", "18",
++                           "-pix_fmt", "yuv420p", "-movflags", "+faststart", out], stdin=subprocess.PIPE)
++
++    def card(seconds, draw):
++        for k in range(int(seconds * FPS)):
++            img = Image.new("RGB", (W, H), BG)
++            draw(img, ImageDraw.Draw(img), k / FPS)
++            ff.stdin.write(img.tobytes())
++
++    card(INTRO_SEC, lambda img, d, t: draw_intro(d))
++    scan = Image.new("RGBA", (W, H - 150), (0, 0, 0, 0))
++    ImageDraw.Draw(scan).rectangle((0, 0, W, H), fill=(110, 200, 255, 10))
++    for y in range(0, H - 150, 4):
++        ImageDraw.Draw(scan).line((0, y, W, y), fill=(0, 0, 0, 70), width=1)
++    thumbs = {key: {} for key, _, _ in SIDES}
++    prev = {key: readers[key][0].last for key, _, _ in SIDES}
++    for k in range(int(length * FPS)):
++        tv = k / FPS
++        img = Image.new("RGB", (W, H), BG)
++        d = ImageDraw.Draw(img)
++        d.text((W // 2, 52), f"Same {len(TASKS)} WebMCP tasks, run back to back", font=font(52, True), fill=FG,
++               anchor="mm")
++        fast = clock.ff > 1 and clock.tv_ff <= tv and clock.real(tv) < longest
++        if fast:
++            d.text((W // 2 - 175, 112), "▶▶", font=SYMBOLS, fill=YELLOW, anchor="mm")
++            d.text((W // 2 + 20, 112), f"FAST FORWARD  ·  {args.speed * clock.ff:.0f}x", font=font(30, True),
++                   fill=YELLOW, anchor="mm")
++        else:
++            d.text((W // 2, 112), f"WindTunnel  ·  median of 3 takes per task  ·  playback {args.speed:g}x  ·  "
++                   f"Gemini via Google's API, recorded {recorded:%B} {recorded.day}, {recorded.year}",
++                   font=font(26), fill=DIM, anchor="mm")
++        for (key, label, color), x0 in zip(SIDES, PANEL_X):
++            frame = readers[key][0].next()
++            draw_side(img, d, label, color, x0, *sides[key], frame, prev[key], thumbs[key], tv, clock)
++            prev[key] = frame
++        if fast:
++            img.paste(scan, (0, 150), scan)
++            flash = 1 - (tv - clock.tv_ff) / 0.25
++            if flash > 0:
++                white = Image.new("RGBA", (W, H), (255, 255, 255, round(170 * flash)))
++                img.paste(white, (0, 0), white)
++            draw_ff_banner(img, clock.ff, tv - clock.tv_ff)
++        ff.stdin.write(img.tobytes())
++    card(args.outro_sec, lambda img, d, t: draw_speed(d, stats))
++    if ws:
++        card(args.bars_sec, lambda img, d, t: draw_webmcp(img, d, ws, t))
++    ff.stdin.close()
++    ff.wait()
++    for reader, tmp in readers.values():
++        reader.proc.kill()
++        os.remove(tmp)
++    print(out)
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/experiments/video/record.mjs b/experiments/video/record.mjs
+new file mode 100644
+index 0000000..af84d6c
+--- /dev/null
++++ b/experiments/video/record.mjs
+@@ -0,0 +1,107 @@
++// diffusion-demo: record WebMCP attempts for a side-by-side video.
++//
++// Runs the unmodified wm-claude (pointed at our diffusion model) and wm-gemini
++// arms through the harness's runBatch. Two wrappers add what the video needs
++// without touching hash-pinned arm code: every browser context records video,
++// and global fetch logs each model call's start, end and token counts.
++//
++// Usage (from the windtunnel root, with env.sh sourced):
++//   node experiments/video/record.mjs --out /tmp/webmcp-video \
++//     --tasks idurar-erp-crm:id-6,learnhouse:lh-7 \
++//     --repeats 3
++//
++// Each attempt is saved as <out>/<task>/<model>-<k>.webm, with its row,
++// video start time and model calls in <out>/takes.jsonl.
++import fs from "node:fs";
++import path from "node:path";
++import { parseArgs } from "node:util";
++import { chromium } from "playwright";
++import { run as runWMClaude } from "../../arms/wm-claude.mjs";
++import { run as runWMGemini } from "../../arms/wm-gemini.mjs";
++import { bootCapsule } from "../../harness/capsule.mjs";
++import { runBatch } from "../../harness/run.mjs";
++import { loadTasks, resolveTask } from "../../harness/tasks.mjs";
++
++const { values: args } = parseArgs({ options: {
++  out: { type: "string" }, tasks: { type: "string" }, port: { type: "string", default: "3215" },
++  repeats: { type: "string", default: "3" },
++  "clover-model": { type: "string", default: "qwen36-iter22000-blk16-arverify-best" },
++  "gemini-model": { type: "string", default: "gemini-3.6-flash" },
++} });
++if (!args.out || !args.tasks) throw new Error("--out and --tasks site:id,... are required");
++for (const key of ["ANTHROPIC_BASE_URL", "GEMINI_API_KEY"]) if (!process.env[key]) throw new Error(`Missing ${key}`);
++
++const ARMS = [
++  { id: "wm-claude", key: "ours", run: runWMClaude, model: args["clover-model"], webmcp: true },
++  { id: "wm-gemini", key: "gemini", run: runWMGemini, model: args["gemini-model"], webmcp: true },
++];
++const VIEWPORT = { width: 1280, height: 800 };
++const out = path.resolve(args.out);
++fs.mkdirSync(path.join(out, ".video"), { recursive: true });
++
++// Model calls, appended as they finish. The arms read globalThis.fetch when
++// they create their clients, so patching it here covers both providers.
++const calls = [];
++const realFetch = globalThis.fetch;
++globalThis.fetch = async (input, init) => {
++  const url = String(input?.url ?? input);
++  const provider = url.includes("/v1/messages") ? "anthropic" : url.includes("/interactions") ? "gemini" : null;
++  if (!provider) return realFetch(input, init);
++  const t_start = Date.now();
++  const response = await realFetch(input, init);
++  const text = await response.clone().text();
++  const t_end = Date.now();
++  let usage = {};
++  try { usage = JSON.parse(text).usage ?? {}; } catch {}
++  const output_tokens = provider === "anthropic" ? usage.output_tokens ?? 0
++    : (usage.total_output_tokens ?? 0) + (usage.total_thought_tokens ?? 0);
++  calls.push({ provider, t_start, t_end, status: response.status, output_tokens, usage });
++  return response;
++};
++
++// Every context records video; remember each page so its file can be found after close.
++let current = null;
++const real = await chromium.launch({ headless: true, ...(process.env.WT_CHROME ? { executablePath: process.env.WT_CHROME } : {}) });
++const browser = {
++  async newContext(options) {
++    const context = await real.newContext({ ...options, viewport: VIEWPORT,
++      recordVideo: { dir: path.join(out, ".video"), size: VIEWPORT } });
++    current = { video_t0: Date.now(), page: null };
++    const newPage = context.newPage.bind(context);
++    context.newPage = async () => (current.page = await newPage());
++    return context;
++  },
++};
++
++const wanted = args.tasks.split(",").map((s) => { const [site, id] = s.split(":"); return { site, id }; });
++const sites = [...new Set(wanted.map((t) => t.site))];
++const log = path.join(out, "takes.jsonl");
++const taken = {};
++try {
++  for (const [s, site] of sites.entries()) {
++    const tasks = wanted.filter((t) => t.site === site)
++      .map(({ id }) => resolveTask(loadTasks(site).find((t) => t.id === id) ?? (() => { throw new Error(`unknown task ${site}:${id}`); })(), 1));
++    // Alternate which model goes first per site, so drift in load is shared.
++    for (const method of s % 2 ? [...ARMS].reverse() : ARMS) {
++      await runBatch({
++        siteId: site, method, tasks, n: Number(args.repeats), seed: 1, port: Number(args.port), model: method.model, browser,
++        boot: (id, options) => bootCapsule(id, { ...options, env: { ...process.env, WT_WEBMCP: "1" } }),
++        onResult: async (row) => {
++          const take = current;
++          const dir = path.join(out, row.task_id);
++          fs.mkdirSync(dir, { recursive: true });
++          const k = (taken[`${row.task_id}/${method.key}`] = (taken[`${row.task_id}/${method.key}`] ?? 0) + 1);
++          const video = path.join(dir, `${method.key}-${k}.webm`);
++          if (take?.page) fs.renameSync(await take.page.video().path(), video);
++          const mine = calls.filter((c) => take && c.t_start >= take.video_t0);
++          fs.appendFileSync(log, JSON.stringify({ ...row, model_key: method.key, take: k, video: path.relative(out, video),
++            video_t0: take?.video_t0, calls: mine }) + "\n");
++          calls.length = 0;
++          console.log(`${row.task_id} ${method.key}: ${row.success ? "passed" : "failed"} in ${row.agent_s} s, ${mine.length} model calls`);
++        },
++      });
++    }
++  }
++} finally {
++  await real.close();
++}

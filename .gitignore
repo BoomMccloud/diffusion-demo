@@ -70,18 +70,9 @@ archive/artifact-bundles/
 .~*.docx
 ~$*.docx
 
-# Keep benchmark evidence cited by docs
-!bench/results/**/*.jsonl
-!bench/results/**/*.log
-# Embedding caches are rebuilt from text and run to hundreds of MB.
-bench/results/**/embeddings.jsonl
-
-# Dependency-density raw run artifacts stay local; only summaries are tracked.
-/bench/results/dependency-density/**
-!/bench/results/dependency-density/**/
-!/bench/results/dependency-density/README.md
-!/bench/results/dependency-density/**/summary.json
-!/bench/results/dependency-density/**/*-summary.json
+# Local benchmark outputs
+/bench/results/
+/bench/**/results/
 
 # Addition-in-words raw records are the evidence for its README.
 !experiments/addition-in-words/results/**/*.jsonl
@@ -95,8 +86,21 @@ bench/miniwob/recordings/
 # WebArena race recordings (videos and timings)
 bench/webarena/recordings/
 
-# WindTunnel race-video recordings (webm, mp4, timings)
-bench/windtunnel/recordings/
+# Upstream benchmark checkouts and downloaded WorkBuddy task materials
+/bench/windtunnel/
+/bench/webarena/webarena/
+/bench/terminal_bench/terminal-bench/
+/experiments/workbuddy/workbuddy-bench/
+/experiments/workbuddy/experiments/drug-inventory-video/source/instruction.md
+/experiments/workbuddy/experiments/drug-inventory-video/source/inventory_workbook.xlsx
+/experiments/workbuddy/experiments/drug-inventory-video/source/workspace.tar.gz
+/experiments/workbuddy/experiments/full-rollout-2026-11-16/manual-review/web/instruction.md
+/experiments/workbuddy/experiments/full-rollout-2026-11-16/manual-review/web/public-assets/
+/experiments/workbuddy/experiments/full-rollout-2026-11-16/manual-review/web/www/
+/experiments/workbuddy/experiments/full-rollout-2026-11-16/manual-review/web/source_assets.tar.gz
+/experiments/workbuddy/experiments/full-rollout-2026-11-16/manual-review/web/agent.workspace.tar.gz
+/experiments/workbuddy/experiments/full-rollout-2026-11-16/manual-review/web/testcases.json
+/experiments/workbuddy/experiments/office-marketing-evidence-2026-11-19/raw-spark/
 
 # TabDLM source CSVs, downloaded at a pinned commit
 bench/tabdlm/.data/

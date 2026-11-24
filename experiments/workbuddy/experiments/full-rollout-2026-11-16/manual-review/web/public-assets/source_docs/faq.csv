@@ -1,7 +1,0 @@
-question,answer,category
-How to reset password,Reset via the email link; the link is valid for 15 minutes,Account
-How to download invoices,Go to the Billing Center and download by month,Billing
-How to enable SSO,Enterprise admins configure SSO under Login Security,Security
-How to close an account,First confirm billing is settled and export historical records,Account
-Can I still invite members once the seat limit is reached,Once the seat limit is reached invitations are blocked; admins are notified when usage hits 90%,Account
-How to troubleshoot SCIM sync failures,First check the identity provider mapping, then review sync errors in the audit_log,Security

@@ -39,7 +39,7 @@ there is no second copy. This preserves existing commands, Python imports,
 historical references, and local datasets. The WorkBuddy folder and several
 standalone demos contain their files directly.
 
-`downloads/`, some result files, model weights, and caches are local or ignored
-by Git. Links to those files may be unavailable in a fresh checkout. The DGX
+`downloads/`, new outputs in `bench/results/`, model weights, and caches are
+ignored by Git. Links to those files may be unavailable in a fresh checkout. The DGX
 Spark has additional run artifacts that are not copied to this machine. A
 README describing a planned experiment does not imply that it has been run.

@@ -18,7 +18,7 @@ earlier evidence and plans. Neither comparison has been completed.
 2. Open the [Office workbook example](experiments/full-rollout-2026-11-16/manual-review/office/weekly_workbook.xlsx)
    or the [Web task instruction](experiments/full-rollout-2026-11-16/manual-review/web/instruction.md)
    and its [generated submission](experiments/full-rollout-2026-11-16/manual-review/web/submission/help-center/).
-   These are saved outputs, not an interactive demo.
+   The copied Web task instruction is available in the local review bundle.
 3. Read the planned [official reproduction](experiments/official-reproduction/)
    and [harness comparison](experiments/harness-comparison/) before running anything.
 
@@ -49,6 +49,6 @@ In the review examples, `result.json` records the task, settings, timing, and
 verifier outcome. The Office `judge.yaml` is the saved judge configuration.
 For Web, `instruction.md` is the task, `submission/` is the generated work,
 `agent.patch` records changes, and the JSON evidence files capture checks or
-observations. `public-assets/` and `www/_dataset_assets/` hold task inputs;
-the `.tar.gz` files are archived workspace and source assets. Open the files
-directly to inspect them; their presence alone does not mean the task passed.
+observations. Copied task assets, test cases, and workspace archives stay
+local. Obtain the upstream task materials using the
+[reproduction instructions](AGENTS.md).

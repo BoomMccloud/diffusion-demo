@@ -1,21 +1,19 @@
 # WindTunnel benchmark and demos
 
-Contains the WindTunnel project and related browser-agent scoring and race-video work.
+WindTunnel runs browser-agent tasks. The upstream checkout and its run outputs
+stay local. This repository contains the changes for the recording workflow
+and the local diffusion runners.
 
-## Contents
+From the repository root, set up a fresh checkout with:
 
-- [windtunnel](code/windtunnel): code; stored at `bench/windtunnel`.
+```sh
+git clone https://github.com/nekuda-ai/WindTunnel.git bench/windtunnel
+git -C bench/windtunnel checkout --detach 5ca8644e23826ebb30108e7bad240b61043bfe67
+git -C bench/windtunnel apply "$PWD/experiments/windtunnel/local-runners.patch"
+npm ci --prefix bench/windtunnel
+```
 
-These links point to the original files, so existing commands and imports continue
-to use their documented paths. Some result or download links refer to local,
-untracked files and may be absent in another checkout. See the linked findings
-or source README for methods, run status, and limitations before interpreting
-results. Running model experiments may require the Spark, dependencies, and
-credentials; this folder does not itself launch an experiment.
-
-
-The checked-in WindTunnel snapshot comes from the local
-`diffusion-demo-recording` branch at `ab72e45`, plus its local runner and
-result additions. See [upstream attribution and license](../../bench/windtunnel/ATTRIBUTION.md).
-Install dependencies in `bench/windtunnel` using its lockfile before running
-the harness.
+If you already have a local checkout with these changes, use it directly.
+The [WindTunnel README](code/windtunnel/README.md) documents the harness,
+and the [upstream attribution](code/windtunnel/ATTRIBUTION.md) covers its
+dependencies and fixtures.
