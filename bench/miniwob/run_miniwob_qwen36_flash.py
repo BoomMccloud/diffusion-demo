@@ -579,6 +579,7 @@ def main():
     all_files = sorted(glob.glob(HERE + "/miniwob-plusplus/miniwob/html/miniwob/*.html"))
     all_tasks = [os.path.basename(f)[:-5] for f in all_files]
     
+    os.makedirs(os.path.join(HERE, "results"), exist_ok=True)
     output_file = HERE + "/results/miniwob_qwen36_results.json"
     if MODEL_NAME != "qwen3.6-flash":
         output_file = HERE + f"/results/miniwob_{MODEL_NAME}_results.json"

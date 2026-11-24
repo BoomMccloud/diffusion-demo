@@ -48,9 +48,13 @@ These use no model:
 
 ## Run
 
+Use the [API setup](../../docs/api-experiments.md) with the diffusion,
+OpenRouter, and Gemini routes. The runner downloads the pinned datasets.
+Start with one request per dataset, setting, and arm:
+
 ```bash
-set -a; source .env.local; set +a
-uv run --with openai --with numpy python -m bench.tabdlm all --run smoke-2026-10-20
+python -m bench.tabdlm all --run replicate-smoke-01 --n 1
+python -m bench.tabdlm all --run replicate-full-01
 ```
 
 - Stages are `generate`, `judge`, `score` and `all`. Each resumes and retries errored rows.
@@ -59,6 +63,7 @@ uv run --with openai --with numpy python -m bench.tabdlm all --run smoke-2026-10
   fields, raw output, parsed records, tokens, latency; `tasks.prompt` rebuilds each prompt from its
   dataset, setting and idx), `judgments.jsonl`, `metrics.json` and
   `summary.md`.
+- Check the smoke summary and generation and judge errors before the full run.
 
 ## Long-range consistency (`longrange.py`)
 
@@ -98,8 +103,8 @@ records only, so the drift isn't just stopping short of B. Intervals come from 2
 requests, since records in one batch aren't independent.
 
 ```bash
-uv run --with openai python -m bench.tabdlm.longrange all --run <name> --probe   # 1 request per cell
-uv run --with openai python -m bench.tabdlm.longrange all --run <name>
+python -m bench.tabdlm.longrange all --run replicate-longrange-smoke-01 --probe
+python -m bench.tabdlm.longrange all --run replicate-longrange-full-01
 ```
 
 ## Batch-wide constraints (`constraints.py`)
@@ -128,6 +133,6 @@ two-sided:
   matter most.
 
 ```bash
-uv run --with openai python -m bench.tabdlm.constraints all --run <name> --probe
-uv run --with openai python -m bench.tabdlm.constraints all --run <name>
+python -m bench.tabdlm.constraints all --run replicate-constraints-smoke-01 --probe
+python -m bench.tabdlm.constraints all --run replicate-constraints-full-01
 ```

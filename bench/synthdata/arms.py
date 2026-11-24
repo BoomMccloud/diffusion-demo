@@ -7,7 +7,7 @@ ARMS = {
     "dllm": {
         "model": "qwen36-iter22000-blk16-arverify-best",
         "base": lambda: os.environ["DIFFUSION_BASE_URL"].removesuffix("/chat/completions"),
-        "key": lambda: "none",
+        "key": lambda: os.environ.get("DIFFUSION_API_KEY") or "none",
         "extra": {"chat_template_kwargs": {"enable_thinking": False}},
     },
     "qwen": {
@@ -29,7 +29,11 @@ def fingerprint():
     out = {arm: {"model": a["model"]} for arm, a in ARMS.items()}
     try:
         base = os.environ["DIFFUSION_BASE_URL"].removesuffix("/chat/completions").removesuffix("/v1")
-        info = json.load(urllib.request.urlopen(f"{base}/get_server_info", timeout=30))
+        key = os.environ.get("DIFFUSION_API_KEY")
+        headers = {"Authorization": f"Bearer {key}"} if key else {}
+        request = urllib.request.Request(f"{base}/get_server_info", headers=headers)
+        with urllib.request.urlopen(request, timeout=30) as response:
+            info = json.load(response)
         out["dllm"]["model_path"] = info.get("model_path")
         # internal_states changes on every call, so it's left out of the hash.
         stable = {k: v for k, v in info.items() if k != "internal_states"}

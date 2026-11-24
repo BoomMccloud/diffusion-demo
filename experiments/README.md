@@ -5,6 +5,9 @@ Each folder identifies the experiment, its code, evidence, and findings where
 available. Results vary from exploratory demos to benchmark screens; read the
 individual notes before comparing scores.
 
+For hosted runs, use the [API experiment guide](../docs/api-experiments.md)
+to choose a smoke test and find its dependencies, credentials, and outputs.
+
 | Folder | Question or activity |
 | --- | --- |
 | [addition-in-words](addition-in-words/) | Can models add numbers written as words? |

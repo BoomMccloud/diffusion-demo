@@ -1,5 +1,8 @@
 # WorkBuddy Office demos
 
+For a scored run through a hosted model API, use the
+[public WorkBuddy Office setup](README.md#run-office-via-api).
+
 Start with the [WPS agent demo skill](skills/wps-agent-demo/SKILL.md) and
 [workflow](skills/wps-agent-demo/references/workflow.md) for the macOS
 setup, scoped writer, CodeBuddy command, and capture tooling. The

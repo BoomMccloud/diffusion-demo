@@ -2,6 +2,23 @@
 
 Tests whether models keep related values consistent across fictional tax forms and forward references.
 
+## Run
+
+From the repository root, use the [API setup](../../docs/api-experiments.md)
+with `DIFFUSION_BASE_URL` and `OPENROUTER_API_KEY`. Preview one generated
+case and its expected answers offline, then run three cases per cell:
+
+```sh
+python -m bench.taxloop.run show --run main_first
+python -m bench.taxloop.run all --run replicate-smoke-01 --probe
+```
+
+Read `bench/results/taxloop-replicate-smoke-01/summary.md` and check
+`generations.jsonl` for request errors. Use a fresh run name and omit
+`--probe` for the full grid. For the forward-reference distance experiment,
+use `python -m bench.taxloop.gap all --run replicate-gap-01 --probe`.
+The scoring is deterministic and uses no judge API.
+
 ## Contents
 
 - [taxloop](code/taxloop): code; stored at `bench/taxloop`.

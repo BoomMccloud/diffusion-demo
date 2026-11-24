@@ -32,6 +32,21 @@ Keep the two copies of the guide in sync when the layout changes.
 
 ## Current work
 
+The hosted API reproduction handoff starts at [docs/api-experiments.md](docs/api-experiments.md).
+It links setup and smoke commands for the direct API runners, WebArena,
+Terminal-Bench, and WorkBuddy Office. The portable Office runner uses the
+public pinned checkout and native deterministic verification.
+On 2026-11-24, verified WebArena task selection and mocked judge routing,
+Harbor's resolved Terminal-Bench dataset and task, and WorkBuddy dry runs
+against the checksum-verified Office archive. The local Mac VM then ran
+two live smokes through OpenRouter GLM 5.3 Flash. Terminal-Bench
+`vf2-speedup-networkx` returned reward 0.0 with no trial exception.
+WorkBuddy Office `ticket-weekly-L3-010` passed 15/15 with a saved workbook
+after repairing Bash selection and proxy routing. Local verifier evidence
+is under `bench/results/api-smokes-2026-11-24/`. The WebArena adapter
+returned a live browser click and replayed it in Chromium. The official
+fixture was unavailable, so WebArena has no score.
+
 On 2026-11-23, tested DeepSeek V4.1 Flash 1017 and GLM 5.3 Flash through
 OpenRouter for the WorkBuddy Office comparison. Both passed a synthetic
 tool-call round trip with a streamed final answer. The staged model configs

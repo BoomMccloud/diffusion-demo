@@ -275,8 +275,14 @@ def server_root() -> str:
     return url
 
 
+def api_headers() -> dict[str, str]:
+    key = os.environ.get("DIFFUSION_API_KEY")
+    return {"Authorization": f"Bearer {key}"} if key else {}
+
+
 def get_json(url: str, timeout: float = 30) -> Any:
-    with urllib.request.urlopen(url, timeout=timeout) as response:
+    request = urllib.request.Request(url, headers=api_headers())
+    with urllib.request.urlopen(request, timeout=timeout) as response:
         return json.loads(response.read().decode("utf-8"))
 
 
@@ -284,7 +290,7 @@ def post_json(url: str, payload: dict[str, Any]) -> tuple[int, Any, float]:
     request = urllib.request.Request(
         url,
         data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
-        headers={"Content-Type": "application/json"},
+        headers={"Content-Type": "application/json", **api_headers()},
     )
     started = time.perf_counter()
     try:
@@ -485,7 +491,7 @@ def cmd_prepare(args: argparse.Namespace) -> None:
         "runner_sha256": sha256(Path(__file__)),
         "prepared_at": utc_now(),
     })
-    print(f"prepared {len(cases)} cases in {directory.relative_to(REPO)}; model {model}")
+    print(f"prepared {len(cases)} cases in {directory}; model {model}")
 
 
 def call(case: dict[str, Any], config: str, model: str, root: str, attempts_path: Path) -> dict[str, Any] | None:
@@ -709,7 +715,10 @@ def cmd_compare(_: argparse.Namespace) -> None:
 
 
 def main() -> None:
+    global RESULTS
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--results-dir", type=Path, default=RESULTS,
+                        help="directory for inputs, attempts, and summaries")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("self-test").set_defaults(func=cmd_self_test)
     for name, func in (("prepare", cmd_prepare), ("smoke", cmd_smoke),
@@ -722,6 +731,7 @@ def main() -> None:
             command.add_argument("--progress-every", type=int, default=50)
     sub.add_parser("compare").set_defaults(func=cmd_compare)
     args = parser.parse_args()
+    RESULTS = args.results_dir.resolve()
     args.func(args)
 
 

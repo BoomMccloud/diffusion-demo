@@ -3,6 +3,7 @@
 Use the [experiment index](README.md) to find the project, then open its README
 for the task inputs, runner, model settings, and evidence. The root
 [AGENTS.md](../AGENTS.md) records known runs and their limitations.
+For hosted endpoints, start with the [API experiment guide](../docs/api-experiments.md).
 
 1. Start with the smallest smoke command in the project README. Stage its
    pinned inputs and models, then check credentials and accelerator access

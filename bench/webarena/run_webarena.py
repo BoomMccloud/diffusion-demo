@@ -28,12 +28,15 @@ from agentlab.experiments.study import Study, make_study
 from agentlab.llm.base_api import BaseModelArgs
 from agentlab.llm.chat_api import ChatModel
 from browsergym.experiments.benchmark.base import HighLevelActionSetArgs
+from openai import OpenAI
 MODEL_NAME = "qwen36-iter22000-blk16-arverify-best"
 # --model choices. "diffusion" is the hosted model every earlier run used.
 # "qwen-flash" is the autoregressive comparison arm, Qwen 3.6 Flash on
 # Alibaba's OpenAI-compatible endpoint (the same one bench/miniwob uses), with
 # thinking turned on explicitly so both arms reason.
 MODELS = {
+    "api": dict(base_url_env="BENCH_API_BASE_URL", key_env="BENCH_API_KEY",
+                model_env="BENCH_API_MODEL", extra_body=None),
     "diffusion": dict(model_name=MODEL_NAME, base_url_env="DIFFUSION_BASE_URL", key_env=None,
                       extra_body=None),
     "qwen-flash": dict(model_name="qwen3.6-flash",
@@ -266,7 +269,7 @@ class ReasoningChatModel(ChatModel):
                 "time": start,
                 "latency_s": time.time() - start,
                 "finish_reason": out.choices[0].finish_reason,
-                "usage": out.usage.model_dump(),
+                "usage": out.usage.model_dump() if out.usage else None,
                 "content": raw,
                 "tool_calls": [c.model_dump() for c in msg.tool_calls or []],
                 "adapted": msg.content if msg.content != raw else None,
@@ -287,6 +290,7 @@ class DiffusionModelArgs(BaseModelArgs):
     extra_body: dict = None
 
     def make_model(self):
+        configure_judge()
         return ReasoningChatModel(
             model_name=self.model_name,
             api_key=os.environ[self.key_env] if self.key_env else "none",
@@ -298,6 +302,37 @@ class DiffusionModelArgs(BaseModelArgs):
             think_in_reply=self.think_in_reply,
             extra_body=self.extra_body,
         )
+
+
+def configure_judge():
+    base_url = os.environ.get("WA_JUDGE_BASE_URL")
+    if not base_url:
+        return
+    from browsergym.webarena.instance import WebArenaInstance
+
+    # AgentLab constructs the agent before the task initializes the site URLs.
+    WebArenaInstance()
+    from webarena.evaluation_harness import helper_functions
+
+    model_name = os.environ["WA_JUDGE_MODEL"]
+    out_cap = int(os.environ.get("WA_JUDGE_MAX_TOKENS", "768"))
+    client = OpenAI(
+        base_url=base_url.rstrip("/").removesuffix("/chat/completions"),
+        api_key=os.environ["WA_JUDGE_API_KEY"],
+        timeout=120,
+    )
+
+    def judge(*, messages, temperature, top_p, **_):
+        response = client.chat.completions.create(
+            model=model_name, messages=messages, temperature=temperature,
+            top_p=top_p, max_tokens=out_cap,
+        )
+        answer = response.choices[0].message.content
+        if not answer:
+            raise RuntimeError("WebArena judge returned no answer.")
+        return answer
+
+    helper_functions.generate_from_openai_chat_completion = judge
 
 
 def smoke_tasks(metadata, per_site):
@@ -345,17 +380,26 @@ def main():
     p.add_argument("--tasks", nargs="*", help="explicit task names, e.g. webarena.27")
     p.add_argument("--n-jobs", type=int, default=1)
     p.add_argument("--max-new-tokens", type=int, default=16_384)
+    p.add_argument("--context-window", type=int, default=131_072)
     p.add_argument("--suffix", default="")
     p.add_argument("--resume", help="study dir: rerun its unfinished and errored tasks")
     p.add_argument("--dry-run", action="store_true", help="with --resume, only count tasks")
+    p.add_argument("--list-tasks", action="store_true", help="print selected task names without calling the API")
+    p.add_argument("--skip-backend-warmup", action="store_true",
+                   help="run one task against an already initialized fixture without touching other sites")
     p.add_argument("--think-history", action="store_true",
                    help="not stock: carry the model's reasoning into later steps")
     p.add_argument("--model", choices=sorted(MODELS), default="diffusion")
     p.add_argument("--record-video", action="store_true",
                    help="save Playwright video of each task to <exp_dir>/task_video/")
     args = p.parse_args()
+    if args.list_tasks and args.resume:
+        p.error("--list-tasks selects tasks for a new study.")
+    if args.skip_backend_warmup and (len(args.tasks or []) != 1 or args.resume or args.smoke):
+        p.error("--skip-backend-warmup requires exactly one explicit task in a new study.")
     harden_error_report()
-    fresh_worker_per_task()
+    if args.n_jobs > 1 and not args.list_tasks:
+        fresh_worker_per_task()
     run_kwargs = dict(n_jobs=args.n_jobs, parallel_backend="ray" if args.n_jobs > 1 else "sequential")
 
     if args.resume:
@@ -369,15 +413,36 @@ def main():
         study.run(**run_kwargs)
         return
 
+    from browsergym.experiments.benchmark import DEFAULT_BENCHMARKS
+
+    benchmark = DEFAULT_BENCHMARKS["webarena"]()
+    task_list = args.tasks or (smoke_tasks(benchmark.task_metadata, args.smoke) if args.smoke else None)
+    if task_list:
+        benchmark = benchmark.subset_from_list(task_list, benchmark_name_suffix="subset")
+    if args.skip_backend_warmup:
+        # BrowserGym's stock warm-up opens tasks on unrelated sites even for a subset.
+        benchmark.backends = []
+    if args.list_tasks:
+        for env_args in benchmark.env_args_list:
+            print(env_args.task_name)
+        return
+    if task_list:
+        print("tasks:", " ".join(task_list))
+
     m = MODELS[args.model]
-    base_url = m.get("base_url") or os.environ[m["base_url_env"]].removesuffix("/chat/completions")
+    model_name = m.get("model_name") or os.environ.get(m["model_env"])
+    base_url = m.get("base_url") or os.environ.get(m["base_url_env"])
+    if not base_url or not model_name or (m["key_env"] and not os.environ.get(m["key_env"])):
+        p.error("The selected model's API URL, model ID, or key is missing.")
+    if not 0 < args.max_new_tokens < args.context_window:
+        p.error("--max-new-tokens must be positive and smaller than --context-window.")
     chat = DiffusionModelArgs(
-        model_name=m["model_name"],
-        base_url=base_url,
+        model_name=model_name,
+        base_url=base_url.rstrip("/").removesuffix("/chat/completions"),
         key_env=m["key_env"],
         extra_body=m["extra_body"],
-        max_total_tokens=131_072,
-        max_input_tokens=100_000,
+        max_total_tokens=args.context_window,
+        max_input_tokens=min(100_000, args.context_window - args.max_new_tokens),
         max_new_tokens=args.max_new_tokens,
         temperature=0.1,
         think_in_reply=args.think_history,
@@ -387,15 +452,9 @@ def main():
         flags = deepcopy(FLAGS_GPT_4o)
         flags.obs.use_think_history = True
     agent = GenericAgentArgs(chat_model_args=chat, flags=flags)
-    agent.agent_name = f"GenericAgent-{m['model_name']}" + ("-thinkhist" if args.think_history else "")
+    model_label = re.sub(r"[^a-zA-Z0-9_.-]+", "-", model_name)
+    agent.agent_name = f"GenericAgent-{model_label}" + ("-thinkhist" if args.think_history else "")
 
-    from browsergym.experiments.benchmark import DEFAULT_BENCHMARKS
-
-    benchmark = DEFAULT_BENCHMARKS["webarena"]()
-    task_list = args.tasks or (smoke_tasks(benchmark.task_metadata, args.smoke) if args.smoke else None)
-    if task_list:
-        benchmark = benchmark.subset_from_list(task_list, benchmark_name_suffix="subset")
-        print("tasks:", " ".join(task_list))
     if args.record_video:
         for env_args in benchmark.env_args_list:
             env_args.record_video = True

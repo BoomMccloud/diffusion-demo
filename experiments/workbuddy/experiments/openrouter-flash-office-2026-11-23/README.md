@@ -12,10 +12,23 @@ no structured reasoning blocks in its tool-call response.
 - GLM 5.3 Flash uses `z-ai/glm-5.3-flash`.
 
 The [saved probe results](preflight.json) include model IDs, providers, usage
-and timing. Reproduce from the repository root with
+and timing. To run the API probe, put your authorized `OPENROUTER_API_KEY`
+in a Git-ignored `.env.local` and run from the repository root:
 `python3 -B experiments/workbuddy/experiments/openrouter-flash-office-2026-11-23/preflight.py .env.local`.
 
 ## WorkBuddy rollout
+
+The scored rollout requires Docker, WorkBuddy Office v1.0 task images,
+CodeBuddy 2.109.3, and the original patched WorkBuddy checkout. The queue
+expects that checkout as its working directory, the two route YAMLs under
+`/run/workbuddy-code`, the saved 50-task order in
+`configs/jobs/clover-office-full-uncapped.yaml`, and the runner's Docker
+proxy network. The patched harness, baseline job file, and container launch
+recipe still need to be packaged for a fresh checkout. With the original
+environment available, use the queue's `--smoke-only` mode to score one
+weekly-ticket task per route before starting a batch. For a new scored
+Office run from a fresh checkout, see the
+[public-runner setup](../../README.md#run-office-via-api).
 
 Spark SSH and the WorkBuddy checkout are verified over the LAN at
 `jx25520@192.168.3.3`. The end-to-end weekly ticket task
@@ -30,7 +43,7 @@ deterministic score on both routes.
 DeepSeek's sole failure was `has_4_weeks`. The workbook had five rows where
 the verifier expected four. Both smokes used CodeBuddy 2.109.3 and the native
 task image. The WorkBuddy proxy confirmed it sent no completion cap. The
-[smoke checkpoints](smoke-scores.jsonl) give the Spark result paths.
+smoke rows in the remote queue ledger give the Spark result paths.
 
 The Spark container `workbuddy-openrouter-office-batch-20261123` queued 100
 scored trials serially, DeepSeek first and GLM second. Each model uses the

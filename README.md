@@ -9,6 +9,8 @@ short free-form answers, and agent tool-call loops.
 `experiments/workbuddy/` contains the Clover WorkBuddy evidence and comparison plan.
 
 For Spark model, build and benchmark locations, see the [Spark workspace guide](docs/spark-workspace.md).
+To reproduce experiments using hosted models, start with the
+[API experiment guide](docs/api-experiments.md).
 
 ## Layout
 

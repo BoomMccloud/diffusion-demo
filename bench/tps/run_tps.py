@@ -61,7 +61,8 @@ async def one(client, model, name, prompt, max_tokens, thinking):
 
 async def main(a):
     client = AsyncOpenAI(base_url=os.environ["DIFFUSION_BASE_URL"].removesuffix("/chat/completions"),
-                         api_key="none", timeout=3600, max_retries=0)
+                         api_key=os.environ.get("DIFFUSION_API_KEY") or "none",
+                         timeout=3600, max_retries=0)
     out = Path(a.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     thinking = {"on": True, "off": False, "default": None}[a.thinking]

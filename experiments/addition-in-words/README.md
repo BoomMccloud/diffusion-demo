@@ -204,22 +204,30 @@ demand and are not committed.
 
 ## Reproduction
 
-Set `DIFFUSION_BASE_URL` in the repository's `.env.local`. It may be the server
-root, `/v1`, or the full `/v1/chat/completions` URL. Then, from this directory:
+Set `DIFFUSION_BASE_URL` in the repository's `.env.local` or export it. The
+runner reads the model ID from `/v1/models` and records the runtime settings
+from SGLang's `/get_server_info`. The route needs to allow both calls as well
+as chat completions. From the repository root:
 
 ```bash
-python3 addition_in_words.py self-test
-python3 addition_in_words.py prepare --config off
-python3 addition_in_words.py smoke --config off
-python3 addition_in_words.py run --config off
-python3 addition_in_words.py summarize --config off
+runner=experiments/addition-in-words/addition_in_words.py
+run="$(mktemp -d)"
+python3 "$runner" self-test
+python3 "$runner" --results-dir "$run" prepare --config off
+python3 "$runner" --results-dir "$run" smoke --config off
+python3 "$runner" --results-dir "$run" run --config off --limit 3
+python3 "$runner" --results-dir "$run" summarize --config off
 ```
 
-Repeat with `--config on` for the thinking-enabled run, then:
+Check `smoke.jsonl` and the three graded rows under `thinking-off-full/`.
+To complete the 5,070-case run, rerun without `--limit` and summarize again.
+Repeat setup, smoke, run and summarize with `--config on` for the 169-case
+thinking-enabled run. Then compare with the upstream baseline:
 
 ```bash
-python3 addition_in_words.py compare
+python3 "$runner" --results-dir "$run" compare
 ```
 
 The runner resumes from `attempts.jsonl` and skips cases that already have a
-successful response. Use a fresh results directory for an independent repeat.
+successful response. Create a fresh directory with `mktemp -d` for an
+independent repeat. Keep the directory path to find the results later.

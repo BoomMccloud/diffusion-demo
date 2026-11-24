@@ -31,26 +31,44 @@ leaves it at Alibaba's default.
 
 ## Running
 
-The runners load tasks from `http://127.0.0.1:8000/miniwob/<task>.html`.
+From the repository root, install Playwright in the environment from the
+[API guide](../../docs/api-experiments.md) and pin the browser fixtures:
 
 ```bash
 git clone https://github.com/Farama-Foundation/miniwob-plusplus.git bench/miniwob/miniwob-plusplus
+git -C bench/miniwob/miniwob-plusplus checkout --detach 33c3b4ddef8c6eb67c57a29663d844b1eda7e614
+python -m pip install playwright==1.63.0 requests
+python -m playwright install chromium
 ```
+
+Export `MINIWOB_DIFFUSION_URL` with your full hosted chat-completions URL
+and `DASHSCOPE_API_KEY`. Set `MINIWOB_DIFFUSION_MODEL` if the diffusion
+route requires a model field. Run one task with the same seed in both arms:
 
 ```bash
-python3 -m http.server 8000 --directory bench/miniwob/miniwob-plusplus/miniwob/html
+run="$(mktemp -d)"
+python bench/miniwob/record_takes.py --tasks find-word --takes 1 --out "$run"
 ```
+
+The smoke starts the fixture server on loopback and saves two scored rows in
+`takes.jsonl`, plus videos. Check that both rows contain an outcome and that
+each arm received a model response before scaling up. For the historical
+batch runners, start the fixture server from the repository root in another
+shell:
 
 ```bash
-pip install playwright==1.63.0 requests && playwright install chromium
+python -m http.server 8000 --bind 127.0.0.1 --directory bench/miniwob/miniwob-plusplus/miniwob/html
 ```
+
+Run in a fresh checkout so the runners start with empty checkpoints:
 
 ```bash
-python3 bench/miniwob/run_all_v2.py
+python bench/miniwob/run_all_v2.py
+python bench/miniwob/run_miniwob_qwen36_flash.py
 ```
 
-The Qwen runner reads its Alibaba key from `DASHSCOPE_API_KEY`. The DiffuSpace
-runners call the sglang endpoint at `43.107.54.53:31003` with no key.
+Find both summaries in `bench/miniwob/results/`. Use the shared task list
+when comparing results because the v2 and Qwen runners cover different sets.
 
 Both runners take `--seed N` and `--video-dir DIR`. The October run used
 neither, so each model drew different random task instances. A seed calls

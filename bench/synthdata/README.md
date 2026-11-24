@@ -96,14 +96,14 @@ case", fix the measure before trusting the result.
 
 ## Run
 
-From the repo root, with `openai` and `numpy` installed and `.env.local` loaded
-(`DIFFUSION_BASE_URL`, `OPENROUTER_API_KEY`, `GEMINI_API_KEY`):
+From the repo root, follow the [API setup](../../docs/api-experiments.md) with
+`DIFFUSION_BASE_URL`, `OPENROUTER_API_KEY`, and `GEMINI_API_KEY`.
 
 ```bash
-python -m bench.synthdata all --run smoke --smoke
-python -m bench.synthdata all --run 2026-10-21
-python -m bench.synthdata audit --run 2026-10-21
-python -m bench.synthdata audit --run 2026-10-21 --score-labels
+python -m bench.synthdata all --run replicate-smoke-01 --smoke
+python -m bench.synthdata all --run replicate-full-01
+python -m bench.synthdata audit --run replicate-full-01
+python -m bench.synthdata audit --run replicate-full-01 --score-labels
 ```
 
 - `all` runs `generate`, `judge` and `score` in order. Each stage can also run alone.

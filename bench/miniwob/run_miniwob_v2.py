@@ -12,7 +12,7 @@ from playwright.sync_api import sync_playwright
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
-API_URL = "http://43.107.54.53:31003/v1/chat/completions"
+API_URL = os.environ.get("MINIWOB_DIFFUSION_URL", "http://43.107.54.53:31003/v1/chat/completions")
 
 SYSTEM_PROMPT = """You are an autonomous web agent solving MiniWoB++ benchmark tasks.
 You receive:
@@ -124,10 +124,17 @@ def query_model(messages):
     if STREAM:
         payload["stream"] = True
         payload["stream_options"] = {"include_usage": True}
+    model = os.environ.get("MINIWOB_DIFFUSION_MODEL")
+    if model:
+        payload["model"] = model
+    headers = {"Content-Type": "application/json"}
+    api_key = os.environ.get("DIFFUSION_API_KEY")
+    if api_key:
+        headers["Authorization"] = f"Bearer {api_key}"
     req = urllib.request.Request(
         API_URL,
         data=json.dumps(payload).encode("utf-8"),
-        headers={"Content-Type": "application/json"}
+        headers=headers
     )
     t0 = time.time()
     last_stream.clear()
@@ -597,6 +604,7 @@ def main():
     print("="*60)
     
     task_results = []
+    os.makedirs(os.path.join(HERE, "results"), exist_ok=True)
     output_file = HERE + f"/results/miniwob_v2_results_batch_{batch_num}.json"
     
     with sync_playwright() as p:

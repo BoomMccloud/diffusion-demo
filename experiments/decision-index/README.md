@@ -2,6 +2,25 @@
 
 Tests a retrieval-based index for decision-making workloads on a small sample.
 
+## Run
+
+Use Python and `pyarrow` with an authorized SystemOne API route. Set
+`SYSTEMONE_URL` to the complete URL ending in `/v1/systemone`. From the
+repository root, build inputs and run the first seven rows:
+
+```sh
+python -m pip install pyarrow
+python bench/decision_index/build_smoke.py --per 40
+run="$(mktemp -d)"
+python bench/decision_index/run_smoke.py --url "$SYSTEMONE_URL" --out "$run" --limit 7
+```
+
+Check `summary.json` and the statuses in `results.jsonl`. Omit `--limit`
+with the same run directory to resume on the remaining rows. The input
+builder mixes pinned dataset revisions with two sources on their default
+branches. Save the generated `smoke-rows.jsonl` alongside the run so later
+comparisons can use the same input.
+
 ## Contents
 
 - [decision_index](code/decision_index): code; stored at `bench/decision_index`.
