@@ -7,6 +7,13 @@ it before choosing a task. Update this section when the active objective or its
 verified status changes. Do not infer the active task from findings documents or
 git history.
 
+## Run the Office demos
+
+- [WPS supplier onboarding](go-live/wps-supplier-onboarding-demo/AGENTS.md)
+  covers the short workbook edit and the full intake workflow.
+- [WorkBuddy Office demos](experiments/workbuddy/AGENTS.md) covers the
+  weekly tickets and board presentation workflows.
+
 ## Current work
 
 The objective is a realistic workload comparison between autoregressive (AR) and
