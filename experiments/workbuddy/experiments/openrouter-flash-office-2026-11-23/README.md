@@ -81,6 +81,18 @@ mean, versus Clover's 74.44% and Qwen3.6-Flash's 72.14% on the same tasks.
 GLM averaged 81.43% on the 34 scored tasks, versus DeepSeek's 81.72% on
 the same tasks.
 
+The runner exited 0 on 2026-11-24 at 13:18 Taipei time with all 100 batch
+trials scored. GLM led DeepSeek by 1.16 percentage points in this run.
+
+| Model | Matched Office tasks | Equal-weight deterministic mean |
+| --- | ---: | ---: |
+| GLM 5.3 Flash | 50 | 83.49% |
+| DeepSeek V4.1 Flash 1017 | 50 | 82.33% |
+| Clover | 50 | 74.44% |
+| Qwen3.6-Flash | 50 | 72.14% |
+
+[Matched per-task scores](comparison.json) exclude rubric grading.
+
 The queue validates the native verifier score before checkpointing each
 completed trial. Its ledger is
 `~/diffusion-demo/runs/workbuddy-smoke/results/openrouter-flash-office-20261123/queue.jsonl`

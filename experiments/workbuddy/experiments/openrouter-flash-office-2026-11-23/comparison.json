@@ -1,0 +1,411 @@
+{
+  "task_count": 50,
+  "deterministic_means": {
+    "clover_rule_score": 0.744412,
+    "qwen_rule_score": 0.721424,
+    "deepseek-flash-office": 0.82332,
+    "glm-flash-office": 0.83492
+  },
+  "tasks": [
+    {
+      "task": "analyst-forecast-extract-L3-018",
+      "clover_rule_score": "0.83",
+      "qwen_rule_score": "0.83",
+      "qwen_source": "fresh_rerun",
+      "deepseek-flash-office": 0.8833,
+      "glm-flash-office": 0.9267
+    },
+    {
+      "task": "api-usage-explain-cli-l3-001",
+      "clover_rule_score": "0.9016",
+      "qwen_rule_score": "0.9016",
+      "qwen_source": "fresh_rerun",
+      "deepseek-flash-office": 0.9508,
+      "glm-flash-office": 0.9344
+    },
+    {
+      "task": "board-material-update-timeline-excel",
+      "clover_rule_score": "0.7045",
+      "qwen_rule_score": "0.8285",
+      "qwen_source": "fresh_rerun",
+      "deepseek-flash-office": 0.8443,
+      "glm-flash-office": 0.8681
+    },
+    {
+      "task": "calendar-dida-sync-state",
+      "clover_rule_score": "0.844",
+      "qwen_rule_score": "0.6881",
+      "qwen_source": "fresh_rerun",
+      "deepseek-flash-office": 0.8073,
+      "glm-flash-office": 0.7798
+    },
+    {
+      "task": "channel-period-compare-L4-017",
+      "clover_rule_score": "0.7273",
+      "qwen_rule_score": "1.0",
+      "qwen_source": "original_verifier_stdout",
+      "deepseek-flash-office": 0.1818,
+      "glm-flash-office": 0.8182
+    },
+    {
+      "task": "cloudagent-sdk-doc-validation-report",
+      "clover_rule_score": "0.8417",
+      "qwen_rule_score": "0.875",
+      "qwen_source": "fresh_rerun",
+      "deepseek-flash-office": 0.875,
+      "glm-flash-office": 0.8417
+    },
+    {
+      "task": "contract-extract-L3-014",
+      "clover_rule_score": "0.9231",
+      "qwen_rule_score": "0.6538",
+      "qwen_source": "fresh_rerun",
+      "deepseek-flash-office": 1.0,
+      "glm-flash-office": 0.9615
+    },
+    {
+      "task": "cross-week-dashboard-migration",
+      "clover_rule_score": "0.6176",
+      "qwen_rule_score": "0.6397",
+      "qwen_source": "fresh_rerun",
+      "deepseek-flash-office": 0.7721,
+      "glm-flash-office": 0.6691
+    },
+    {
+      "task": "crypto-backtest-chain-L4-002",
+      "clover_rule_score": "0.4545",
+      "qwen_rule_score": "0.6195",
+      "qwen_source": "fresh_rerun",
+      "deepseek-flash-office": 0.7776,
+      "glm-flash-office": 0.7768
+    },
+    {
+      "task": "daily-creation-checkpoint-recovery",
+      "clover_rule_score": "0.5625",
+      "qwen_rule_score": "0.65",
+      "qwen_source": "fresh_rerun",
+      "deepseek-flash-office": 0.6375,
+      "glm-flash-office": 0.625
+    },
+    {
+      "task": "deepep-api-source-anchor-explain",
+      "clover_rule_score": "0.6667",
+      "qwen_rule_score": "0.7714",
+      "qwen_source": "fresh_rerun",
+      "deepseek-flash-office": 0.8667,
+      "glm-flash-office": 0.8952
+    },
+    {
+      "task": "delivery-package-readonly-diff",
+      "clover_rule_score": "0.9157",
+      "qwen_rule_score": "0.1339",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.9337,
+      "glm-flash-office": 0.9578
+    },
+    {
+      "task": "device-incident-attribution-L5-037",
+      "clover_rule_score": "0.5622",
+      "qwen_rule_score": "0.6216",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.7514,
+      "glm-flash-office": 0.8
+    },
+    {
+      "task": "drug-inventory-split-L2-006",
+      "clover_rule_score": "1.0",
+      "qwen_rule_score": "1.0",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 1.0,
+      "glm-flash-office": 0.8667
+    },
+    {
+      "task": "effective-control-state-L5-036",
+      "clover_rule_score": "0.3099",
+      "qwen_rule_score": "0.3878",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.5038,
+      "glm-flash-office": 0.3344
+    },
+    {
+      "task": "effective-sop-reconstruction-L5-034",
+      "clover_rule_score": "0.7785",
+      "qwen_rule_score": "0.4753",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.886,
+      "glm-flash-office": 0.8065
+    },
+    {
+      "task": "execution-closeout-reconcile-L4-003-successor",
+      "clover_rule_score": "0.3821",
+      "qwen_rule_score": "0.5268",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.806,
+      "glm-flash-office": 0.7156
+    },
+    {
+      "task": "fund-product-table-normalize-L3-017",
+      "clover_rule_score": "0.7849",
+      "qwen_rule_score": "0.8964",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.9887,
+      "glm-flash-office": 0.8805
+    },
+    {
+      "task": "furniture-refinish-L3-016",
+      "clover_rule_score": "0.8",
+      "qwen_rule_score": "0.9333",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.8,
+      "glm-flash-office": 0.9333
+    },
+    {
+      "task": "handbook-notice-insert-L3L4-030",
+      "clover_rule_score": "0.8312",
+      "qwen_rule_score": "0.5844",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.8701,
+      "glm-flash-office": 0.7403
+    },
+    {
+      "task": "health-quote-L2-003",
+      "clover_rule_score": "0.8095",
+      "qwen_rule_score": "0.2381",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.8571,
+      "glm-flash-office": 0.8571
+    },
+    {
+      "task": "html-report-quadrant-ppt",
+      "clover_rule_score": "0.7821",
+      "qwen_rule_score": "0.5769",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.8846,
+      "glm-flash-office": 0.9615
+    },
+    {
+      "task": "indicator-window-rules-L4-005",
+      "clover_rule_score": "0.5614",
+      "qwen_rule_score": "0.6201",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.7149,
+      "glm-flash-office": 0.7315
+    },
+    {
+      "task": "inspection-notice-provenance-L4-032",
+      "clover_rule_score": "0.8397",
+      "qwen_rule_score": "0.7099",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.8931,
+      "glm-flash-office": 0.8626
+    },
+    {
+      "task": "invoice-email-archive-manifest",
+      "clover_rule_score": "0.5178",
+      "qwen_rule_score": "0.5482",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.6954,
+      "glm-flash-office": 0.6802
+    },
+    {
+      "task": "json-screener-summary-L4-004",
+      "clover_rule_score": "0.7447",
+      "qwen_rule_score": "0.7167",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.9173,
+      "glm-flash-office": 0.8521
+    },
+    {
+      "task": "kline-signal-segments-L4-012",
+      "clover_rule_score": "0.9733",
+      "qwen_rule_score": "0.957",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.8945,
+      "glm-flash-office": 0.9769
+    },
+    {
+      "task": "market-daily-brief-a-share-recap",
+      "clover_rule_score": "0.8333",
+      "qwen_rule_score": "0.875",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.8333,
+      "glm-flash-office": 0.875
+    },
+    {
+      "task": "monitoring-weekly-draft-followup",
+      "clover_rule_score": "0.72",
+      "qwen_rule_score": "0.72",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.76,
+      "glm-flash-office": 0.8
+    },
+    {
+      "task": "news-event-multifile-extract-L4-013",
+      "clover_rule_score": "0.6213",
+      "qwen_rule_score": "0.5917",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.716,
+      "glm-flash-office": 0.8047
+    },
+    {
+      "task": "portfolio-valuation-limits-L4-009",
+      "clover_rule_score": "0.0062",
+      "qwen_rule_score": "0.7928",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.8539,
+      "glm-flash-office": 0.8027
+    },
+    {
+      "task": "prd-system-design-task-breakdown",
+      "clover_rule_score": "0.7255",
+      "qwen_rule_score": "0.8301",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.8758,
+      "glm-flash-office": 0.8758
+    },
+    {
+      "task": "priority-sync-notification-pipeline",
+      "clover_rule_score": "0.792",
+      "qwen_rule_score": "0.816",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.992,
+      "glm-flash-office": 0.952
+    },
+    {
+      "task": "procurement-reconcile-L3-015",
+      "clover_rule_score": "0.7143",
+      "qwen_rule_score": "0.5714",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.7619,
+      "glm-flash-office": 0.5238
+    },
+    {
+      "task": "rank-ic-topn-L4-001",
+      "clover_rule_score": "0.7186",
+      "qwen_rule_score": "0.7337",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.7446,
+      "glm-flash-office": 0.6589
+    },
+    {
+      "task": "recruiting-search-skill-mock-mcp-hardened",
+      "clover_rule_score": "0.6269",
+      "qwen_rule_score": "0.6418",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.791,
+      "glm-flash-office": 0.7239
+    },
+    {
+      "task": "release-phase-gate-progression",
+      "clover_rule_score": "0.6702",
+      "qwen_rule_score": "0.6596",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.8617,
+      "glm-flash-office": 0.766
+    },
+    {
+      "task": "research-factor-table-extract-L3-016",
+      "clover_rule_score": "0.8774",
+      "qwen_rule_score": "0.7356",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.9151,
+      "glm-flash-office": 0.8902
+    },
+    {
+      "task": "rule-based-stock-exclusion-L4-011",
+      "clover_rule_score": "0.8565",
+      "qwen_rule_score": "0.779",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.8172,
+      "glm-flash-office": 0.9252
+    },
+    {
+      "task": "safety-inspection-extract-L4-019",
+      "clover_rule_score": "0.9259",
+      "qwen_rule_score": "0.8519",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.9259,
+      "glm-flash-office": 0.9259
+    },
+    {
+      "task": "service-channel-ticket-daily",
+      "clover_rule_score": "0.9707",
+      "qwen_rule_score": "0.9011",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.9341,
+      "glm-flash-office": 0.989
+    },
+    {
+      "task": "static-strategy-signal-report-L3-015",
+      "clover_rule_score": "0.791",
+      "qwen_rule_score": "0.7425",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.9627,
+      "glm-flash-office": 0.9701
+    },
+    {
+      "task": "stock-fund-return-compare-L3-010",
+      "clover_rule_score": "0.9173",
+      "qwen_rule_score": "0.9161",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.9928,
+      "glm-flash-office": 1.0
+    },
+    {
+      "task": "subscription-credit-reconcile-L4-024",
+      "clover_rule_score": "0.7073",
+      "qwen_rule_score": "0.5772",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.9268,
+      "glm-flash-office": 0.9024
+    },
+    {
+      "task": "ticket-weekly-L3-010",
+      "clover_rule_score": "1.0",
+      "qwen_rule_score": "1.0",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.1333,
+      "glm-flash-office": 1.0
+    },
+    {
+      "task": "trade-pnl-positions-L4-007",
+      "clover_rule_score": "0.8146",
+      "qwen_rule_score": "0.8278",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.9283,
+      "glm-flash-office": 0.9028
+    },
+    {
+      "task": "warranty-recovery-allocation-L5-033",
+      "clover_rule_score": "0.8655",
+      "qwen_rule_score": "0.883",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.883,
+      "glm-flash-office": 0.858
+    },
+    {
+      "task": "wechat-tech-topic-package-hardened",
+      "clover_rule_score": "0.8202",
+      "qwen_rule_score": "0.8764",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.8764,
+      "glm-flash-office": 0.8202
+    },
+    {
+      "task": "xiaohongshu-psychology-note-pack",
+      "clover_rule_score": "0.8095",
+      "qwen_rule_score": "0.5238",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.873,
+      "glm-flash-office": 0.9206
+    },
+    {
+      "task": "xmind-screenshot-template-ppt",
+      "clover_rule_score": "0.7699",
+      "qwen_rule_score": "0.8407",
+      "qwen_source": "original_fixed_verifier",
+      "deepseek-flash-office": 0.8142,
+      "glm-flash-office": 0.8053
+    }
+  ]
+}

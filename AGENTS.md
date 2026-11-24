@@ -69,9 +69,11 @@ limit had $0 remaining and no automatic reset. After the user updated the
 key, verified $5 of key budget and resumed in
 `workbuddy-openrouter-office-funded-20261124`. Task 18 attempt 4 passed
 351/355 checks, and task 19 attempt 2 passed 12/15. The runner advanced to
-task 20. At the 2026-11-24 checkpoint with 34 GLM scores, DeepSeek had
-completed all 50 tasks with an 82.33% deterministic mean. GLM averaged
-81.43% on the 34 scored tasks, versus DeepSeek's 81.72% on the same tasks.
+task 20. The runner exited 0 on 2026-11-24 at 13:18 Taipei time after both
+models completed all 50 tasks. Equal-weight deterministic means were GLM
+83.49%, DeepSeek 82.33%, Clover 74.44%, and Qwen3.6-Flash 72.14%.
+Rubric grading remains deferred. Matched per-task results are in
+`experiments/workbuddy/experiments/openrouter-flash-office-2026-11-23/comparison.json`.
 
 On 2026-11-23, recorded Clover completing the fictional supplier onboarding
 demo through native WPS spreadsheet edits on the Mac. A scoped writer applied
