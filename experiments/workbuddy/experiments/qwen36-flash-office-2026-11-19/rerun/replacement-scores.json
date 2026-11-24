@@ -1,0 +1,112 @@
+[
+  {
+    "task": "analyst-forecast-extract-L3-018",
+    "job": "qwen36-flash-office-recovery-01-a001",
+    "status": "completed",
+    "output_tokens": 18226,
+    "http_200": 10,
+    "result": "results/qwen36-flash-office-recovery-01-a001/2026-11-19__12-31-56/analyst-forecast-extract-L3-018__ks7ajFv/result.json",
+    "score": 0.83,
+    "tests_passed": 249,
+    "tests_total": 300
+  },
+  {
+    "task": "api-usage-explain-cli-l3-001",
+    "job": "qwen36-flash-office-recovery-02-a001",
+    "status": "completed",
+    "output_tokens": 8711,
+    "http_200": 14,
+    "result": "results/qwen36-flash-office-recovery-02-a001/2026-11-19__12-34-28/api-usage-explain-cli-l3-001__QCj9MZH/result.json",
+    "score": 0.9016,
+    "tests_passed": 55,
+    "tests_total": 61
+  },
+  {
+    "task": "board-material-update-timeline-excel",
+    "job": "qwen36-flash-office-recovery-03-a001",
+    "status": "completed",
+    "output_tokens": 10580,
+    "http_200": 11,
+    "result": "results/qwen36-flash-office-recovery-03-a001/2026-11-19__12-36-19/board-material-update-timeline-e__DCSYweo/result.json",
+    "score": 0.8285,
+    "tests_passed": 314,
+    "tests_total": 379
+  },
+  {
+    "task": "calendar-dida-sync-state",
+    "job": "qwen36-flash-office-recovery-04-a001",
+    "status": "completed",
+    "output_tokens": 23784,
+    "http_200": 5,
+    "result": "results/qwen36-flash-office-recovery-04-a001/2026-11-19__12-37-52/calendar-dida-sync-state__WMHxepU/result.json",
+    "score": 0.6881,
+    "tests_passed": 75,
+    "tests_total": 109
+  },
+  {
+    "task": "cloudagent-sdk-doc-validation-report",
+    "job": "qwen36-flash-office-recovery-05-a001",
+    "status": "completed",
+    "output_tokens": 9332,
+    "http_200": 7,
+    "result": "results/qwen36-flash-office-recovery-05-a001/2026-11-19__12-40-19/cloudagent-sdk-doc-validation-re__a4jvk2U/result.json",
+    "score": 0.875,
+    "tests_passed": 105,
+    "tests_total": 120
+  },
+  {
+    "task": "contract-extract-L3-014",
+    "job": "qwen36-flash-office-recovery-06-a001",
+    "status": "completed",
+    "output_tokens": 36686,
+    "http_200": 48,
+    "result": "results/qwen36-flash-office-recovery-06-a001/2026-11-19__12-41-51/contract-extract-L3-014__32CareF/result.json",
+    "score": 0.6538,
+    "tests_passed": 17,
+    "tests_total": 26
+  },
+  {
+    "task": "cross-week-dashboard-migration",
+    "job": "qwen36-flash-office-recovery-07-a001",
+    "status": "completed",
+    "output_tokens": 6718,
+    "http_200": 9,
+    "result": "results/qwen36-flash-office-recovery-07-a001/2026-11-19__12-46-39/cross-week-dashboard-migration__Fbuhh6A/result.json",
+    "score": 0.6397,
+    "tests_passed": 87,
+    "tests_total": 136
+  },
+  {
+    "task": "crypto-backtest-chain-L4-002",
+    "job": "qwen36-flash-office-recovery-08-a001",
+    "status": "completed",
+    "output_tokens": 54675,
+    "http_200": 38,
+    "result": "results/qwen36-flash-office-recovery-08-a001/2026-11-19__12-47-57/crypto-backtest-chain-L4-002__suQGpGC/result.json",
+    "score": 0.6195,
+    "tests_passed": 438,
+    "tests_total": 707
+  },
+  {
+    "task": "daily-creation-checkpoint-recovery",
+    "job": "qwen36-flash-office-recovery-09-a001",
+    "status": "completed",
+    "output_tokens": 14727,
+    "http_200": 29,
+    "result": "results/qwen36-flash-office-recovery-09-a001/2026-11-19__12-54-19/daily-creation-checkpoint-recove__bH6mmnC/result.json",
+    "score": 0.65,
+    "tests_passed": 104,
+    "tests_total": 160
+  },
+  {
+    "task": "deepep-api-source-anchor-explain",
+    "job": "qwen36-flash-office-recovery-10-a001",
+    "status": "completed",
+    "output_tokens": 12848,
+    "http_200": 33,
+    "result": "results/qwen36-flash-office-recovery-10-a001/2026-11-19__12-56-36/deepep-api-source-anchor-explain__cLXrjkA/result.json",
+    "score": 0.7714,
+    "tests_passed": 81,
+    "tests_total": 105
+  }
+]

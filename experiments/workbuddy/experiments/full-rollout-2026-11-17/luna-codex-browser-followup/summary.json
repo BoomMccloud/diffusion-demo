@@ -1,0 +1,20 @@
+{
+  "tasks": 70,
+  "resolved_tasks": 51,
+  "workbuddy_default_fail_mean": 0.26142857142857145,
+  "mean_bounds": [
+    0.26142857142857145,
+    0.36857142857142855
+  ],
+  "browser_agent_verdicts": {
+    "fail": 19,
+    "unverifiable": 7,
+    "pass": 22
+  },
+  "followup_verdicts": {
+    "fail": 6,
+    "pass": 9
+  },
+  "remaining_score_relevant_browser_checks": 0,
+  "method": "Source-directed Playwright checks of saved submissions, scored offline using the WorkBuddy penalty formula."
+}

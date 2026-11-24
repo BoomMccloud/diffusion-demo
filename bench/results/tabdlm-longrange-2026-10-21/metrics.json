@@ -1,0 +1,390 @@
+{
+ "cells": {
+  "10/fields/dllm": {
+   "requests": 55,
+   "records_asked": 550,
+   "parse_ok": 54,
+   "truncated": 0,
+   "errors": 0,
+   "fail_pct": 16.7,
+   "fail_by_position": {
+    "1-10": 16.7
+   },
+   "failures": {
+    "age": 57,
+    "occupation": 33,
+    "missing": 10,
+    "birth_year_math": 3,
+    "graduation_year": 2,
+    "schema:biography": 1,
+    "pronoun": 1
+   },
+   "median_latency_s": 5.77,
+   "median_completion_tokens": 1713
+  },
+  "10/fields/qwen": {
+   "requests": 55,
+   "records_asked": 550,
+   "parse_ok": 55,
+   "truncated": 0,
+   "errors": 0,
+   "fail_pct": 14.5,
+   "fail_by_position": {
+    "1-10": 14.5
+   },
+   "failures": {
+    "age": 61,
+    "occupation": 9,
+    "birth_year": 9,
+    "birth_state": 4,
+    "degree": 1
+   },
+   "median_latency_s": 11.05,
+   "median_completion_tokens": 1678
+  },
+  "10/text/dllm": {
+   "requests": 55,
+   "records_asked": 550,
+   "parse_ok": 55,
+   "truncated": 0,
+   "errors": 0,
+   "fail_pct": 14.4,
+   "fail_by_position": {
+    "1-10": 14.4
+   },
+   "failures": {
+    "birth_year_math": 53,
+    "graduation_year": 9,
+    "birth_year": 9,
+    "age": 8,
+    "degree": 4,
+    "occupation": 4
+   },
+   "median_latency_s": 6.02,
+   "median_completion_tokens": 1714
+  },
+  "10/text/qwen": {
+   "requests": 55,
+   "records_asked": 550,
+   "parse_ok": 55,
+   "truncated": 0,
+   "errors": 0,
+   "fail_pct": 6.5,
+   "fail_by_position": {
+    "1-10": 6.5
+   },
+   "failures": {
+    "birth_year": 31,
+    "age": 3,
+    "graduation_year": 2,
+    "degree": 1,
+    "occupation": 1
+   },
+   "median_latency_s": 10.17,
+   "median_completion_tokens": 1674
+  },
+  "30/fields/dllm": {
+   "requests": 20,
+   "records_asked": 600,
+   "parse_ok": 20,
+   "truncated": 0,
+   "errors": 0,
+   "fail_pct": 32.8,
+   "fail_by_position": {
+    "1-10": 26.5,
+    "11-20": 34.0,
+    "21-30": 38.0
+   },
+   "failures": {
+    "age": 130,
+    "occupation": 83,
+    "degree": 6,
+    "birth_year_math": 5,
+    "pronoun": 1,
+    "schema:degree": 1,
+    "missing": 1
+   },
+   "median_latency_s": 15.3,
+   "median_completion_tokens": 5294
+  },
+  "30/fields/qwen": {
+   "requests": 20,
+   "records_asked": 600,
+   "parse_ok": 20,
+   "truncated": 0,
+   "errors": 0,
+   "fail_pct": 13.2,
+   "fail_by_position": {
+    "1-10": 12.5,
+    "11-20": 12.0,
+    "21-30": 15.0
+   },
+   "failures": {
+    "age": 38,
+    "occupation": 28,
+    "birth_year": 12,
+    "birth_state": 3,
+    "unique_pair": 1
+   },
+   "median_latency_s": 36.45,
+   "median_completion_tokens": 5004
+  },
+  "30/text/dllm": {
+   "requests": 20,
+   "records_asked": 600,
+   "parse_ok": 20,
+   "truncated": 0,
+   "errors": 0,
+   "fail_pct": 14.0,
+   "fail_by_position": {
+    "1-10": 14.0,
+    "11-20": 13.5,
+    "21-30": 14.5
+   },
+   "failures": {
+    "birth_year_math": 57,
+    "graduation_year": 19,
+    "degree": 17,
+    "college": 15,
+    "pronoun": 2,
+    "missing": 1,
+    "schema:college": 1,
+    "occupation": 1,
+    "unique_pair": 1,
+    "age": 1
+   },
+   "median_latency_s": 14.78,
+   "median_completion_tokens": 5077
+  },
+  "30/text/qwen": {
+   "requests": 20,
+   "records_asked": 600,
+   "parse_ok": 19,
+   "truncated": 0,
+   "errors": 0,
+   "fail_pct": 9.3,
+   "fail_by_position": {
+    "1-10": 8.5,
+    "11-20": 10.0,
+    "21-30": 9.5
+   },
+   "failures": {
+    "missing": 30,
+    "birth_year": 20,
+    "pronoun": 3,
+    "unique_pair": 2,
+    "degree": 1
+   },
+   "median_latency_s": 38.66,
+   "median_completion_tokens": 4990
+  },
+  "50/fields/dllm": {
+   "requests": 12,
+   "records_asked": 600,
+   "parse_ok": 12,
+   "truncated": 0,
+   "errors": 0,
+   "fail_pct": 40.8,
+   "fail_by_position": {
+    "1-10": 25.0,
+    "11-20": 38.3,
+    "21-30": 44.2,
+    "31-40": 45.8,
+    "41-50": 50.8
+   },
+   "failures": {
+    "age": 134,
+    "occupation": 124,
+    "missing": 5,
+    "birth_year_math": 1,
+    "unique_pair": 1,
+    "birth_state": 1
+   },
+   "median_latency_s": 22.93,
+   "median_completion_tokens": 8603
+  },
+  "50/fields/qwen": {
+   "requests": 12,
+   "records_asked": 600,
+   "parse_ok": 12,
+   "truncated": 0,
+   "errors": 0,
+   "fail_pct": 24.0,
+   "fail_by_position": {
+    "1-10": 19.2,
+    "11-20": 24.2,
+    "21-30": 23.3,
+    "31-40": 23.3,
+    "41-50": 30.0
+   },
+   "failures": {
+    "age": 93,
+    "occupation": 68,
+    "missing": 13,
+    "schema:degree": 3,
+    "unique_pair": 2,
+    "birth_state": 1
+   },
+   "median_latency_s": 76.52,
+   "median_completion_tokens": 8230
+  },
+  "50/text/dllm": {
+   "requests": 12,
+   "records_asked": 600,
+   "parse_ok": 12,
+   "truncated": 0,
+   "errors": 0,
+   "fail_pct": 15.3,
+   "fail_by_position": {
+    "1-10": 12.5,
+    "11-20": 12.5,
+    "21-30": 12.5,
+    "31-40": 12.5,
+    "41-50": 26.7
+   },
+   "failures": {
+    "birth_year_math": 66,
+    "missing": 20,
+    "age": 2,
+    "occupation": 2,
+    "college": 1,
+    "birth_state": 1,
+    "unique_pair": 1
+   },
+   "median_latency_s": 19.87,
+   "median_completion_tokens": 8098
+  },
+  "50/text/qwen": {
+   "requests": 12,
+   "records_asked": 600,
+   "parse_ok": 12,
+   "truncated": 0,
+   "errors": 0,
+   "fail_pct": 17.7,
+   "fail_by_position": {
+    "1-10": 14.2,
+    "11-20": 10.8,
+    "21-30": 18.3,
+    "31-40": 13.3,
+    "41-50": 31.7
+   },
+   "failures": {
+    "age": 34,
+    "graduation_year": 29,
+    "missing": 23,
+    "birth_year": 8,
+    "occupation": 6,
+    "unique_pair": 3,
+    "birth_state": 2,
+    "degree": 1,
+    "graduation_math": 1
+   },
+   "median_latency_s": 51.58,
+   "median_completion_tokens": 7815
+  }
+ },
+ "tests": {
+  "drift50/fields": {
+   "dllm": {
+    "value": 0.258,
+    "ci": [
+     0.108,
+     0.417
+    ]
+   },
+   "qwen": {
+    "value": 0.108,
+    "ci": [
+     0.008,
+     0.208
+    ]
+   },
+   "dllm_minus_qwen": {
+    "value": 0.15,
+    "ci": [
+     -0.025,
+     0.333
+    ]
+   },
+   "returned_only_dllm_minus_qwen": {
+    "value": 0.214,
+    "ci": [
+     0.04,
+     0.391
+    ]
+   }
+  },
+  "drift50/text": {
+   "dllm": {
+    "value": 0.142,
+    "ci": [
+     0.092,
+     0.192
+    ]
+   },
+   "qwen": {
+    "value": 0.175,
+    "ci": [
+     0.058,
+     0.292
+    ]
+   },
+   "dllm_minus_qwen": {
+    "value": -0.033,
+    "ci": [
+     -0.158,
+     0.1
+    ]
+   },
+   "returned_only_dllm_minus_qwen": {
+    "value": -0.018,
+    "ci": [
+     -0.127,
+     0.075
+    ]
+   }
+  },
+  "gap/10/fields": {
+   "dllm_minus_qwen_fail": 0.022,
+   "ci": [
+    -0.071,
+    0.125
+   ]
+  },
+  "gap/10/text": {
+   "dllm_minus_qwen_fail": 0.078,
+   "ci": [
+    0.015,
+    0.147
+   ]
+  },
+  "gap/30/fields": {
+   "dllm_minus_qwen_fail": 0.197,
+   "ci": [
+    0.025,
+    0.373
+   ]
+  },
+  "gap/30/text": {
+   "dllm_minus_qwen_fail": 0.047,
+   "ci": [
+    -0.092,
+    0.177
+   ]
+  },
+  "gap/50/fields": {
+   "dllm_minus_qwen_fail": 0.168,
+   "ci": [
+    -0.118,
+    0.448
+   ]
+  },
+  "gap/50/text": {
+   "dllm_minus_qwen_fail": -0.023,
+   "ci": [
+    -0.192,
+    0.122
+   ]
+  }
+ }
+}

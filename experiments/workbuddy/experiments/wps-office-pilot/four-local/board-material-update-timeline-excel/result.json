@@ -1,0 +1,13 @@
+{
+  "task": "board-material-update-timeline-excel",
+  "passed": 242,
+  "total": 379,
+  "baseline_passed": 267,
+  "baseline_total": 379,
+  "agent_status": "max_turns_48",
+  "wps_output_matches_scored_output": true,
+  "wps_update_calls": 8,
+  "wps_update_successes": 4,
+  "wps_update_text_mismatch_errors": 4,
+  "judge": "original deterministic task checks, local path redirects"
+}

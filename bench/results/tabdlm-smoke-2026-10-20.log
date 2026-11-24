@@ -1,0 +1,60 @@
+generate: 240 to run, 0 already done
+  dllm: 20/120
+  qwen: 20/120
+  dllm: 40/120
+  dllm: 60/120
+  dllm: 80/120
+  dllm: 100/120
+  dllm: 120/120
+  qwen: 40/120
+  qwen: 60/120
+  qwen: 80/120
+  qwen: 100/120
+  qwen: 120/120
+judge: 456 to run, 0 already done
+# TabDLM consistency smoke
+
+20 requests per cell and arm; dllm at 0.6, qwen at 1.0; thinking off.
+
+## Setting A: generation
+
+| cell | arm | parse ok | bare JSON | records | schema ok | consistent yield | new consistent yield | consistent given schema | copies | batch dups | distinct keys | median words | median latency s | trunc |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| amazon gen1 | dllm | 100.0 | 95.0 | 20/20 | 20 | 100.0 | 100.0 | 100.0 | 0 | 0 | 15 | 53.0 | 1.49 | 0 |
+| amazon gen1 | qwen | 100.0 | 100.0 | 20/20 | 20 | 90.0 | 90.0 | 90.0 | 0 | 0 | 18 | 51.0 | 5.92 | 0 |
+| amazon gen10 | dllm | 100.0 | 60.0 | 199/200 | 191 | 91.0 | 91.0 | 95.3 | 0 | 0 | 129 | 32 | 8.7 | 0 |
+| amazon gen10 | qwen | 100.0 | 100.0 | 200/200 | 199 | 92.5 | 92.5 | 93.0 | 0 | 0 | 157 | 33 | 37.62 | 0 |
+| bio gen1 | dllm | 100.0 | 100.0 | 20/20 | 20 | 100.0 | 100.0 | 100.0 | 0 | 0 | 12 | 69.5 | 1.01 | 0 |
+| bio gen1 | qwen | 100.0 | 100.0 | 20/20 | 20 | 100.0 | 100.0 | 100.0 | 0 | 0 | 16 | 61.0 | 2.82 | 0 |
+| bio gen10 | dllm | 100.0 | 75.0 | 200/200 | 200 | 96.5 | 96.5 | 96.5 | 0 | 0 | 191 | 53.0 | 6.19 | 0 |
+| bio gen10 | qwen | 100.0 | 100.0 | 200/200 | 200 | 98.0 | 98.0 | 98.0 | 0 | 0 | 192 | 48.0 | 19.45 | 0 |
+
+Yields are % of records asked for. Failures among schema-valid records:
+
+- `amazon/gen1/dllm`: none; ratings {4: 20}; median specific claims 3.0
+- `amazon/gen1/qwen`: {'same_book': 2, 'no_contradiction': 2}; ratings {4: 19, 5: 1}; median specific claims 3.0
+- `amazon/gen10/dllm`: {'schema:review_time': 8, 'no_contradiction': 8, 'same_book': 4, 'rating_fits_review': 1, 'summary_fits_review': 1}; ratings {1: 20, 2: 26, 3: 28, 4: 55, 5: 62}; median specific claims 2
+- `amazon/gen10/qwen`: {'no_contradiction': 12, 'same_book': 8, 'rating_fits_review': 2, 'schema:review_time': 1}; ratings {1: 21, 2: 36, 3: 23, 4: 52, 5: 67}; median specific claims 2
+- `bio/gen1/dllm`: none; distinct 5-word openings 8
+- `bio/gen1/qwen`: none; distinct 5-word openings 5
+- `bio/gen10/dllm`: {'occupation': 5, 'college': 1, 'degree': 1}; distinct 5-word openings 98
+- `bio/gen10/qwen`: {'birth_state': 2, 'occupation': 1, 'college': 1}; distinct 5-word openings 97
+
+## Setting B: extraction
+
+| cell | arm | parse ok | field accuracy | extra |
+|---|---|---|---|---|
+| amazon | dllm | 100.0 | {'rating': 50.0, 'rating_within_1': 100.0, 'category': 65.0} | rating macro-F1 0.494 |
+| amazon | qwen | 100.0 | {'rating': 40.0, 'rating_within_1': 100.0, 'category': 65.0} | rating macro-F1 0.417 |
+| bio | dllm | 100.0 | {'age': 100.0, 'salary': 100.0, 'sex': 100.0, 'birth_state': 100.0, 'college': 100.0, 'degree': 100.0, 'occupation': 100.0} | all fields 100.0 |
+| bio | qwen | 100.0 | {'age': 100.0, 'salary': 100.0, 'sex': 100.0, 'birth_state': 100.0, 'college': 100.0, 'degree': 100.0, 'occupation': 100.0} | all fields 100.0 |
+
+## Floors (no model)
+
+- `amazon_fewshot`: {'n': 3, 'consistent': 100.0, 'judged': 3, 'median_specific_claims': 1}
+- `amazon_real`: {'n': 20, 'consistent': 75.0, 'judged': 20, 'median_specific_claims': 1.0}
+- `amazon_bland`: {'n': 3, 'consistent': 100.0, 'judged': 3, 'median_specific_claims': 0}
+- `amazon_extract_majority`: {'rating': 20.0, 'rating_within_1': 40.0, 'category': 25.0, 'rating_macro_f1': 0.067}
+- `bio_code_template`: {'n': 20, 'consistent': 100.0}
+- `bio_extract_regex`: {'all_fields': 100.0}
+

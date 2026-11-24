@@ -1,0 +1,244 @@
+{
+ "cells": {
+  "quota/dllm": {
+   "requests": 30,
+   "pass_pct": 93.3,
+   "shape_ok_pct": 100.0,
+   "type_pass_pct": {
+    "quota": 93.3
+   },
+   "median_distance": {
+    "quota": 0
+   },
+   "median_returned": 30,
+   "median_distinct_ages": 30,
+   "median_latency_s": 2.715,
+   "median_completion_tokens": 1155
+  },
+  "quota/qwen": {
+   "requests": 30,
+   "pass_pct": 100.0,
+   "shape_ok_pct": 100.0,
+   "type_pass_pct": {
+    "quota": 100.0
+   },
+   "median_distance": {
+    "quota": 0
+   },
+   "median_returned": 30,
+   "median_distinct_ages": 30,
+   "median_latency_s": 8.48,
+   "median_completion_tokens": 1152
+  },
+  "sorted/dllm": {
+   "requests": 30,
+   "pass_pct": 100.0,
+   "shape_ok_pct": 100.0,
+   "type_pass_pct": {
+    "sorted": 100.0
+   },
+   "median_distance": {
+    "sorted": 0
+   },
+   "median_returned": 30,
+   "median_distinct_ages": 30,
+   "median_latency_s": 2.903,
+   "median_completion_tokens": 1155
+  },
+  "sorted/qwen": {
+   "requests": 30,
+   "pass_pct": 100.0,
+   "shape_ok_pct": 100.0,
+   "type_pass_pct": {
+    "sorted": 100.0
+   },
+   "median_distance": {
+    "sorted": 0
+   },
+   "median_returned": 30,
+   "median_distinct_ages": 30,
+   "median_latency_s": 10.601,
+   "median_completion_tokens": 1151
+  },
+  "sum/dllm": {
+   "requests": 30,
+   "pass_pct": 3.3,
+   "shape_ok_pct": 100.0,
+   "type_pass_pct": {
+    "sum": 3.3
+   },
+   "median_distance": {
+    "sum": 17
+   },
+   "median_returned": 30,
+   "median_distinct_ages": 30,
+   "median_latency_s": 2.678,
+   "median_completion_tokens": 1156
+  },
+  "sum/qwen": {
+   "requests": 30,
+   "pass_pct": 43.3,
+   "shape_ok_pct": 100.0,
+   "type_pass_pct": {
+    "sum": 43.3
+   },
+   "median_distance": {
+    "sum": 9
+   },
+   "median_returned": 30,
+   "median_distinct_ages": 21,
+   "median_latency_s": 11.915,
+   "median_completion_tokens": 1154
+  },
+  "balance/dllm": {
+   "requests": 30,
+   "pass_pct": 100.0,
+   "shape_ok_pct": 100.0,
+   "type_pass_pct": {
+    "balance": 100.0
+   },
+   "median_distance": {
+    "balance": 0
+   },
+   "median_returned": 30,
+   "median_distinct_ages": 30,
+   "median_latency_s": 2.839,
+   "median_completion_tokens": 1156
+  },
+  "balance/qwen": {
+   "requests": 30,
+   "pass_pct": 100.0,
+   "shape_ok_pct": 100.0,
+   "type_pass_pct": {
+    "balance": 100.0
+   },
+   "median_distance": {
+    "balance": 0
+   },
+   "median_returned": 30,
+   "median_distinct_ages": 30,
+   "median_latency_s": 9.719,
+   "median_completion_tokens": 1154
+  },
+  "forward/dllm": {
+   "requests": 30,
+   "pass_pct": 0.0,
+   "shape_ok_pct": 100.0,
+   "type_pass_pct": {
+    "forward": 0.0
+   },
+   "median_distance": {
+    "forward": 61
+   },
+   "median_returned": 30,
+   "median_distinct_ages": 30,
+   "median_latency_s": 2.86,
+   "median_completion_tokens": 1158
+  },
+  "forward/qwen": {
+   "requests": 30,
+   "pass_pct": 0.0,
+   "shape_ok_pct": 100.0,
+   "type_pass_pct": {
+    "forward": 0.0
+   },
+   "median_distance": {
+    "forward": 27
+   },
+   "median_returned": 30,
+   "median_distinct_ages": 30,
+   "median_latency_s": 11.96,
+   "median_completion_tokens": 1158
+  },
+  "all/dllm": {
+   "requests": 30,
+   "pass_pct": 0.0,
+   "shape_ok_pct": 100.0,
+   "type_pass_pct": {
+    "quota": 96.7,
+    "sorted": 100.0,
+    "sum": 0.0,
+    "balance": 100.0,
+    "forward": 0.0
+   },
+   "median_distance": {
+    "quota": 0,
+    "sorted": 0,
+    "sum": 135,
+    "balance": 0,
+    "forward": 107
+   },
+   "median_returned": 30,
+   "median_distinct_ages": 30,
+   "median_latency_s": 2.554,
+   "median_completion_tokens": 1154
+  },
+  "all/qwen": {
+   "requests": 30,
+   "pass_pct": 0.0,
+   "shape_ok_pct": 100.0,
+   "type_pass_pct": {
+    "quota": 100.0,
+    "sorted": 100.0,
+    "sum": 13.3,
+    "balance": 100.0,
+    "forward": 0.0
+   },
+   "median_distance": {
+    "quota": 0,
+    "sorted": 0,
+    "sum": 135,
+    "balance": 0,
+    "forward": 107
+   },
+   "median_returned": 30,
+   "median_distinct_ages": 30,
+   "median_latency_s": 11.876,
+   "median_completion_tokens": 1136
+  }
+ },
+ "tests": {
+  "quota": {
+   "dllm_minus_qwen_pass": -0.067,
+   "ci": [
+    -0.167,
+    0.0
+   ]
+  },
+  "sorted": {
+   "dllm_minus_qwen_pass": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ]
+  },
+  "sum": {
+   "dllm_minus_qwen_pass": -0.4,
+   "ci": [
+    -0.6,
+    -0.2
+   ]
+  },
+  "balance": {
+   "dllm_minus_qwen_pass": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ]
+  },
+  "forward": {
+   "dllm_minus_qwen_pass": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ]
+  },
+  "all": {
+   "dllm_minus_qwen_pass": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ]
+  }
+ }
+}

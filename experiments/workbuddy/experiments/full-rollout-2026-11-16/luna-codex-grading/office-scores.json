@@ -1,0 +1,4041 @@
+[
+  {
+    "task": "analyst-forecast-extract-L3-018",
+    "rule_score": 0.0,
+    "judge_score": 0.0,
+    "combined_score": 0.0,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "expanded_major_sections_are_not_contradictory",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "forecast_workbook",
+          "forecast_metadata"
+        ]
+      },
+      {
+        "id": "expanded_summary_uses_same_scope_as_details",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "forecast_workbook",
+          "forecast_metadata"
+        ]
+      },
+      {
+        "id": "expanded_json_source_lists_do_not_replace_row_trace",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "forecast_metadata"
+        ]
+      },
+      {
+        "id": "expanded_summary_is_reconcilable_to_details",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "forecast_workbook",
+          "forecast_metadata"
+        ]
+      },
+      {
+        "id": "forecast_missing_fields_are_not_inferred_from_context",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "forecast_workbook",
+          "forecast_metadata"
+        ]
+      },
+      {
+        "id": "forecast_rows_bind_metric_period_and_source",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "forecast_workbook",
+          "forecast_metadata"
+        ]
+      },
+      {
+        "id": "forecast_source_trace_preserves_table_or_section_origin",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "forecast_workbook",
+          "forecast_metadata"
+        ]
+      },
+      {
+        "id": "metadata_summarizes_normalization_contract",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "forecast_metadata"
+        ]
+      },
+      {
+        "id": "source_trace_is_visible",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "forecast_workbook",
+          "forecast_metadata"
+        ]
+      },
+      {
+        "id": "workbook_matches_forecast_deliverable",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "forecast_workbook"
+        ]
+      }
+    ]
+  },
+  {
+    "task": "api-usage-explain-cli-l3-001",
+    "rule_score": 0.9344,
+    "judge_score": 1.0,
+    "combined_score": 0.9475,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "claim_citation_support_quality",
+        "verdict": "pass",
+        "reason": "核心说法都紧邻具体路径证据，例如 CLI 入口引用 `pyproject.toml` 与 `src/citrinekit/cli.py`，API 示例引用 `docs/api-client.md` 和 `examples/python/use_client.py`，输出字段引用 schema 与 JSONL 样例。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "developer_manual_actionability_and_coherence",
+        "verdict": "pass",
+        "reason": "指南按入口、CLI、Python API、配置、示例输出和 caveats 展开，并明确区分 CLI `--format` 与 API `to_records()`/`to_summary()` 的用法，开发者可据此选择调用路径。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "final_answer_framing_and_markdown_integrity",
+        "verdict": "pass",
+        "reason": "以中文手册标题开篇，包含清晰的 Markdown 标题、表格和代码块；CLI 命令、API 标识符及文件路径可读，没有过程叙述或续写片段。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_grounded_caveat_actionability",
+        "verdict": "pass",
+        "reason": "对实验 API 给出 `NotImplementedError` 的具体证据，对旧 `--json` 示例指出当前 parser 未注册，并将 roadmap 内容标为规划而非现行功能，提供了可操作的判断依据。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "self_contained_developer_usage_flow",
+        "verdict": "pass",
+        "reason": "正文包含 CLI/API 用法、配置层次、schema、输入输出示例及限制说明，形成完整的开发者使用指南，而非孤立事实或尾部片段。",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "board-material-update-timeline-excel",
+    "rule_score": 0.752,
+    "judge_score": 0.0,
+    "combined_score": 0.6016,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "cross_slide_governance_chain_integration",
+        "verdict": "fail",
+        "reason": "The sample-freeze dependency and risk-evidence window appear on slide 7, and training timing appears on slide 5, but slide 8 retains a generic schedule without the risk follow-up or training start; the chain is not connected across the communication surface.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "board_decision_priority_and_timing_visibility",
+        "verdict": "fail",
+        "reason": "Slide 7 shows procurement awaiting confirmation and the risk deadline/review window, but procurement timing (7月5日前) is absent from submitted slide text, and the sample-freeze timing is not visible on the overview or decision-risk table.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "board_facing_readiness_and_concision",
+        "verdict": "fail",
+        "reason": "Current-facing slides retain work-draft and checklist language, including slide 3’s “旧稿” table headings and note asking readers to consult the workbook, and slide 5’s unresolved “待核对口径” actions.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "resource_communication_actionability",
+        "verdict": "fail",
+        "reason": "Slide 8’s communication table retains generic arrangements such as “培训前一周” and “会前确认” without actionable risk-evidence submission or 8月第一周 review cadence; its footer is the only current-version update there.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "calendar-dida-sync-state",
+    "rule_score": 0.4771,
+    "judge_score": 0.4,
+    "combined_score": 0.4617,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "summary_human_audit_trail",
+        "verdict": "fail",
+        "reason": "摘要仍是空白脚手架，仅写“本轮尚未执行”，各操作分类没有项目引用或处理原因。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "summary_json_semantic_consistency_no_overclaim",
+        "verdict": "pass",
+        "reason": "摘要明确称本轮尚未执行，与提交状态中仍有待处理的 active 映射及任务相符，没有宣称已完成同步或类别动作。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "visible_policy_edge_case_reasoning",
+        "verdict": "fail",
+        "reason": "摘要没有讨论稳定 sync_key 匹配、手工任务保留、来源缺失窗口规则、不同来源实例或重复抑制等可见边界情形。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "no_change_preservation_reasoning",
+        "verdict": "fail",
+        "reason": "摘要未说明 no-op、窗口外、窗口外来源缺失或只读/排除项目如何保留，也没有引用相应项目。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "local_only_boundary_statement_consistency",
+        "verdict": "pass",
+        "reason": "摘要仅指向本地工作区，并未声称访问真实服务；公开环境说明也明确该环境是本地文件状态。",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "channel-period-compare-L4-017",
+    "rule_score": 0.9091,
+    "judge_score": 0.8333,
+    "combined_score": 0.8977,
+    "rule_weight": 0.85,
+    "judge_weight": 0.15,
+    "verdicts": [
+      {
+        "id": "cleaning_and_comparison_context_visible",
+        "verdict": "fail",
+        "reason": "The two sheets show the comparison periods and channel rows, but no notes or status fields identify duplicates, blank-QUARTER rows, or what was excluded from the rollups.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_counts_have_named_denominators",
+        "verdict": "fail",
+        "reason": "The workbook shows percentage changes and commission rates, but does not identify their measured-over population or denominator.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "channel_change_values_have_before_after_basis",
+        "verdict": "pass",
+        "reason": "Rows show both period values and signed changes, such as 锦绣生活馆 settlement GMV 1,787,311.03 vs 1,569,231 with +13.9%.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "channel_metric_comparison_keeps_entity_period_metric_together",
+        "verdict": "pass",
+        "reason": "Each row binds channel, period-specific metric columns, and deltas, for example 锦绣生活馆 appears with settlement and payment metrics in their respective sheets.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "channel_payment_yoy_metric_family_complete",
+        "verdict": "pass",
+        "reason": "The payment sheet includes 2026Q1 and 2025Q1 GMV, revenue, B端收益汇总, and 人数 with corresponding change fields.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "channel_required_spot_channels_have_metric_family_rows",
+        "verdict": "pass",
+        "reason": "锦绣生活馆 and 优享全球购 both appear in both sheets with populated metric and change cells.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "channel_settlement_and_payment_scopes_stay_separate",
+        "verdict": "pass",
+        "reason": "Separate sheets are labeled 渠道结算对比 and 渠道回款对比; the columns show 26Q1 vs 25Q4 for settlement and 26Q1 vs 25Q1 for payment.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "channel_settlement_qoq_metric_family_complete",
+        "verdict": "pass",
+        "reason": "Settlement rows include GMV, revenue, commission rate, and order count for both 26Q1 and 25Q4, with deltas.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "comparison_rows_show_period_pair_and_direction",
+        "verdict": "pass",
+        "reason": "Period labels and signed delta columns are visible, including GMV变化(%) and 佣金率变化(pct).",
+        "source": "codex_luna"
+      },
+      {
+        "id": "metric_cells_have_metric_specific_context",
+        "verdict": "pass",
+        "reason": "Column headings name the metric families, including GMV, 营收, 佣金率, 订单量, B端收益汇总, and 人数.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "settlement_and_payment_metrics_remain_separate",
+        "verdict": "pass",
+        "reason": "Settlement and payment metrics are organized into distinct labeled sheets with separate metric columns.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_is_channel_period_comparison",
+        "verdict": "pass",
+        "reason": "The workbook contains two structured channel-level comparison tables for settlement and collection periods.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "cloudagent-sdk-doc-validation-report",
+    "rule_score": 0.2083,
+    "judge_score": 0.0,
+    "combined_score": 0.1666,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "triangulation_clarity_across_visible_artifacts",
+        "verdict": "fail",
+        "reason": "The report text is withheld because deterministic checks detected safety/leakage failures, so there is no readable evidence to assess cross-artifact triangulation.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "recommendation_actionability_grounded_in_visible_evidence",
+        "verdict": "fail",
+        "reason": "The report text is withheld after a deterministic safety/leakage failure, leaving no readable recommendations to evaluate.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "triage_consistency_and_handoff_clarity",
+        "verdict": "fail",
+        "reason": "The report text is withheld after a deterministic safety/leakage failure, so its taxonomy and handoff cannot be assessed.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "unsupported_speculation_avoidance",
+        "verdict": "fail",
+        "reason": "The deterministic status records a safety/leakage failure, and the report text is withheld; unsupported speculation cannot be ruled out.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "unresolved_blocker_clarity",
+        "verdict": "fail",
+        "reason": "The report text is withheld after a deterministic safety/leakage failure, leaving no readable evidence of blocker or evidence-gap clarity.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "contract-extract-L3-014",
+    "rule_score": 0.0,
+    "judge_score": 0.0,
+    "combined_score": 0.0,
+    "rule_weight": 0.85,
+    "judge_weight": 0.15,
+    "verdicts": [
+      {
+        "id": "contract_rows_preserve_file_identity_and_status",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "contract_workbook"
+        ]
+      },
+      {
+        "id": "expanded_row_level_evidence_keys_present",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "contract_workbook"
+        ]
+      },
+      {
+        "id": "expanded_final_outputs_have_audit_trail",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "contract_workbook"
+        ]
+      },
+      {
+        "id": "expanded_source_granularity_is_sufficient",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "contract_workbook"
+        ]
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "contract_workbook"
+        ]
+      },
+      {
+        "id": "contract_amounts_preserve_currency_and_clause_context",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "contract_workbook"
+        ]
+      },
+      {
+        "id": "contract_terms_keep_amount_date_and_party_context",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "contract_workbook"
+        ]
+      },
+      {
+        "id": "corrupt_or_duplicate_contracts_do_not_leak_into_clean_rows",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "contract_workbook"
+        ]
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "contract_workbook"
+        ]
+      },
+      {
+        "id": "duplicate_and_exception_handling_visible",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "contract_workbook"
+        ]
+      }
+    ]
+  },
+  {
+    "task": "cross-week-dashboard-migration",
+    "rule_score": 0.6176,
+    "judge_score": 1.0,
+    "combined_score": 0.6941,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "cross_artifact_operational_coherence",
+        "verdict": "pass",
+        "reason": "The report, dashboard, and reminders consistently carry OPS-214 as unresolved, OPS-219 as deferred, OPS-224 as blocked, OPS-230 as follow-up, and OPS-236 as watch-only. They place the Wednesday no-meeting reminder on Tuesday morning and treat Friday’s partner check-in as timing context, not completion evidence.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_priority_and_conflict_explanation_quality",
+        "verdict": "pass",
+        "reason": "For OPS-214, the report and dashboard explain that the timeout still reproduces and the 80-row file timed out twice, so the stale export’s “resolved?” label does not change its open status. The artifacts also keep completed items historical and frame the calendar and external-approval cues as constraints.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "reminder_actionability_without_overclaiming",
+        "verdict": "pass",
+        "reason": "The reminder draft gives OPS-230 a specific Tuesday-morning follow-up before Friday’s check-in, OPS-219 a Tuesday reminder while retaining its roster-confirmation dependency, and OPS-224 a Monday follow-up that preserves the external-approval blocker. It explicitly excludes completed, noise, and stale-export items from reminders.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "crypto-backtest-chain-L4-002",
+    "rule_score": 0.0,
+    "judge_score": 0.0,
+    "combined_score": 0.0,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "expanded_denominators_are_not_ambiguous",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "backtest_workbook"
+        ]
+      },
+      {
+        "id": "hardcheck_denominator_matches_visible_populations",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "backtest_workbook"
+        ]
+      },
+      {
+        "id": "performance_summary_names_included_trade_population",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "backtest_workbook"
+        ]
+      },
+      {
+        "id": "replay_source_trace_names_required_input_families",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "backtest_workbook"
+        ]
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "backtest_workbook"
+        ]
+      },
+      {
+        "id": "backtest_outputs_do_not_hide_invalid_or_skipped_events",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "backtest_workbook"
+        ]
+      },
+      {
+        "id": "daily_position_rows_have_trace_status_and_unrealized_context",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "backtest_workbook"
+        ]
+      },
+      {
+        "id": "daily_positions_and_nav_denominators_are_visible",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "backtest_workbook"
+        ]
+      },
+      {
+        "id": "no_live_market_or_actionable_advice",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "backtest_workbook"
+        ]
+      },
+      {
+        "id": "rule_exception_reasoning_visible",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "backtest_workbook"
+        ]
+      },
+      {
+        "id": "workbook_represents_replay_audit",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "backtest_workbook"
+        ]
+      },
+      {
+        "id": "hardcheck_no_silent_zero_blank_or_default",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "backtest_workbook"
+        ]
+      }
+    ]
+  },
+  {
+    "task": "daily-creation-checkpoint-recovery",
+    "rule_score": 0.6312,
+    "judge_score": 1.0,
+    "combined_score": 0.6496,
+    "rule_weight": 0.95,
+    "judge_weight": 0.05,
+    "verdicts": [
+      {
+        "id": "recovery_summary_auditability_and_calibration",
+        "verdict": "pass",
+        "reason": "提交的恢复说明区分了保留项、半成品、别名审查和未解决阻塞，并引用了具体本地线索，如 `drafts/DC-207-learning-card-partial.md`、`state/alias_candidates.json` 和 `BLK-A2 → DC-209 → DC-218`。说明保留了 review、缺口整理及未纳入范围等限制，没有把全部工作描述为完成；由于最终回复未捕获，不据此扣分。",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "deepep-api-source-anchor-explain",
+    "rule_score": 0.2762,
+    "judge_score": 0.0,
+    "combined_score": 0.221,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "semantic_source_fidelity_from_visible_anchors",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "submitted_source_anchor_report_text"
+        ]
+      },
+      {
+        "id": "source_vs_doc_conflict_reasoning_and_priority",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "submitted_source_anchor_report_text"
+        ]
+      },
+      {
+        "id": "candidate_exclusion_and_downgrade_quality",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "submitted_source_anchor_report_text"
+        ]
+      },
+      {
+        "id": "caveat_discipline_for_partial_confirmation",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "submitted_source_anchor_report_text"
+        ]
+      },
+      {
+        "id": "explanation_coherence_role_boundaries",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "submitted_source_anchor_report_text"
+        ]
+      }
+    ]
+  },
+  {
+    "task": "delivery-package-readonly-diff",
+    "rule_score": 0.3494,
+    "judge_score": 0.0,
+    "combined_score": 0.2795,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "evidence_hierarchy_and_noisy_log_discipline",
+        "verdict": "fail",
+        "reason": "The submitted report is only a scaffold: evidence sources are null, findings are empty, and it does not reconcile the manifest, current listing, hash/path notes, or the explicitly partial and stale comparison log.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "finding_bucket_narrative_self_consistency",
+        "verdict": "fail",
+        "reason": "The submitted report has no finding rows to evaluate; its empty buckets provide no path, manifest ID, evidence basis, or explanation of the visible hash and path variants.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "cross_bucket_variant_reconciliation_clarity",
+        "verdict": "fail",
+        "reason": "No findings or open questions reconcile visible variants such as the expected en_GB path versus observed en-GB path, or expected paths versus observed include-pattern spelling variants.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "handoff_actionability_and_blocker_prioritization",
+        "verdict": "fail",
+        "reason": "The rationale is placeholder text and assumptions/open questions are absent, so the report gives no actionable handoff guidance for the visible path and hash conflicts or unresolved items.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "device-incident-attribution-L5-037",
+    "rule_score": 0.0,
+    "judge_score": 0.0,
+    "combined_score": 0.0,
+    "rule_weight": 0.7,
+    "judge_weight": 0.3,
+    "verdicts": [
+      {
+        "id": "expanded_critical_blanks_have_record_context",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "attribution_report"
+        ]
+      },
+      {
+        "id": "expanded_duplicate_handling_is_visible",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "attribution_report"
+        ]
+      },
+      {
+        "id": "expanded_repeated_text_is_not_hiding_missing_reasoning",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "attribution_report"
+        ]
+      },
+      {
+        "id": "incident_population_denominator_is_auditable",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "attribution_report"
+        ]
+      },
+      {
+        "id": "serial_alias_resolution_preserves_batch_context",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "attribution_report"
+        ]
+      },
+      {
+        "id": "alias_and_retroactive_logic_explained",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "attribution_report"
+        ]
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "attribution_report"
+        ]
+      },
+      {
+        "id": "attribution_decisions_are_auditable",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "attribution_report"
+        ]
+      },
+      {
+        "id": "attribution_summary_reconciles_committed_review_and_invalidated",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "attribution_report"
+        ]
+      },
+      {
+        "id": "committed_incidents_exclude_review_only_and_revoked_alias_cases",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "attribution_report"
+        ]
+      },
+      {
+        "id": "critical_blank_or_na_fields_are_explained",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "attribution_report"
+        ]
+      },
+      {
+        "id": "review_queue_captures_supplier_alias_batch_and_return_conflicts",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "attribution_report"
+        ]
+      },
+      {
+        "id": "review_queue_reason_codes_match_missing_evidence",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "attribution_report"
+        ]
+      },
+      {
+        "id": "committed_attributions_show_supplier_variant_and_evidence_chain",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "attribution_report"
+        ]
+      },
+      {
+        "id": "expanded_json_reason_fields_are_record_specific",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "attribution_report"
+        ]
+      },
+      {
+        "id": "expanded_scope_boundary_for_excluded_records_visible",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "attribution_report"
+        ]
+      },
+      {
+        "id": "expanded_summary_uses_same_scope_as_details",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "attribution_report"
+        ]
+      }
+    ]
+  },
+  {
+    "task": "drug-inventory-split-L2-006",
+    "rule_score": 1.0,
+    "judge_score": 1.0,
+    "combined_score": 1.0,
+    "rule_weight": 0.85,
+    "judge_weight": 0.15,
+    "verdicts": [
+      {
+        "id": "expanded_exception_summary_has_category_breakdown",
+        "verdict": "pass",
+        "reason": "The three sheets group records by visible labels: “出库盘亏,” “效期预警+特定,” and “其他.”",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_source_population_is_named",
+        "verdict": "pass",
+        "reason": "The workbook names the source population as inventory_workbook.xlsx and includes record IDs RX-202602-20001 through RX-202604-20300.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_summary_is_reconcilable_to_details",
+        "verdict": "pass",
+        "reason": "Sheet names identify each bucket, and detailed records retain RECORD_ID and the fields used to classify them.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The sheets contain populated drug names, stock changes, expiry warning months, vendors, channels, and record IDs.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "categories_and_exceptions_visible",
+        "verdict": "pass",
+        "reason": "Separate sheets visibly distinguish loss/outbound, expiry warning plus specified conditions, and other records.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "deliverable_is_clean_table",
+        "verdict": "pass",
+        "reason": "Each sheet has consistent inventory column headers and populated rows, with no process narration.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_canonical_labels_or_mapping_exist",
+        "verdict": "pass",
+        "reason": "The three bucket labels are stable sheet names, including “其他” for the residual records.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "priority_bucket_rule_basis_is_visible",
+        "verdict": "pass",
+        "reason": "“效期预警+特定” rows retain expiry months, stock change, drug class, vendor, and channel for checking the rule basis.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "residual_inventory_bucket_is_not_treated_as_unexplained_exception",
+        "verdict": "pass",
+        "reason": "The “其他” sheet retains the original inventory fields, including stock change, expiry months, class, vendor, and channel.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_is_inventory_split",
+        "verdict": "pass",
+        "reason": "All three sheets contain drug inventory records with movement, expiry, vendor, and warehouse fields.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_zero_values_are_disambiguated",
+        "verdict": "pass",
+        "reason": "Zero appears as a numeric value in STOCK_CHANGE or EXPIRY_ALERT_MONTHS, with the fields and surrounding record data present to interpret it.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "effective-control-state-L5-036",
+    "rule_score": 0.0,
+    "judge_score": 0.0,
+    "combined_score": 0.0,
+    "rule_weight": 0.7,
+    "judge_weight": 0.3,
+    "verdicts": [
+      {
+        "id": "control_control_level_source_doc_names_winning_authority",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "control_state"
+        ]
+      },
+      {
+        "id": "current_source_docs_exclude_inactive_material",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "control_state"
+        ]
+      },
+      {
+        "id": "metadata_source_docs_have_current_vs_inactive_breakdown",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "control_state"
+        ]
+      },
+      {
+        "id": "active_control_population_matches_metadata_counts",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "control_state"
+        ]
+      },
+      {
+        "id": "control_appendix_bindings_use_ids_with_role_rows",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "control_state"
+        ]
+      },
+      {
+        "id": "control_authority_level_uses_canonical_tokens",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "control_state"
+        ]
+      },
+      {
+        "id": "hardcheck_denominator_matches_visible_populations",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "control_state"
+        ]
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "control_state"
+        ]
+      },
+      {
+        "id": "expanded_summary_uses_same_scope_as_details",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "control_state"
+        ]
+      },
+      {
+        "id": "active_control_steps_have_required_provenance_fields",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "control_state"
+        ]
+      },
+      {
+        "id": "active_step_source_names_winning_authority_not_superseded_base",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "control_state"
+        ]
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "control_state"
+        ]
+      },
+      {
+        "id": "authority_order_is_applied_consistently_to_conflicts",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "control_state"
+        ]
+      },
+      {
+        "id": "conflict_resolution_is_traceable",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "control_state"
+        ]
+      },
+      {
+        "id": "control_retroactive_actions_bind_window_and_record_pair",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "control_state"
+        ]
+      },
+      {
+        "id": "control_training_gate_and_role_override_dates_visible",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "control_state"
+        ]
+      },
+      {
+        "id": "inactive_controls_have_replacement_mapping",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "control_state"
+        ]
+      },
+      {
+        "id": "training_pending_controls_are_not_active_for_target_role",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "control_state"
+        ]
+      }
+    ]
+  },
+  {
+    "task": "effective-sop-reconstruction-L5-034",
+    "rule_score": 0.0,
+    "judge_score": 0.0,
+    "combined_score": 0.0,
+    "rule_weight": 0.7,
+    "judge_weight": 0.3,
+    "verdicts": [
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "effective_sop"
+        ]
+      },
+      {
+        "id": "expanded_json_metadata_matches_records",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "effective_sop"
+        ]
+      },
+      {
+        "id": "sop_inactive_steps_keep_original_source_and_replacement_target",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "effective_sop"
+        ]
+      },
+      {
+        "id": "sop_summary_counts_reconcile_to_effective_and_inactive_arrays",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "effective_sop"
+        ]
+      },
+      {
+        "id": "expanded_row_level_evidence_keys_present",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "effective_sop"
+        ]
+      },
+      {
+        "id": "sop_appendix_c_binds_to_temperature_and_escalation_sections",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "effective_sop"
+        ]
+      },
+      {
+        "id": "expanded_counts_have_named_denominators",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "effective_sop"
+        ]
+      },
+      {
+        "id": "appendix_bindings_are_explainable",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "effective_sop"
+        ]
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "effective_sop"
+        ]
+      },
+      {
+        "id": "edge_case_decision_basis_is_specific",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "effective_sop"
+        ]
+      },
+      {
+        "id": "effective_sections_are_reconstructive",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "effective_sop"
+        ]
+      },
+      {
+        "id": "inactive_steps_are_retained_with_reason",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "effective_sop"
+        ]
+      },
+      {
+        "id": "sop_appendix_required_rows_exclude_inactive_or_other_scope_rows",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "effective_sop"
+        ]
+      },
+      {
+        "id": "sop_faq_clarifications_are_not_treated_as_hard_rule_overrides",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "effective_sop"
+        ]
+      },
+      {
+        "id": "sop_notice_override_binding_status_is_visible",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "effective_sop"
+        ]
+      },
+      {
+        "id": "sop_target_region_scope_is_not_overbroad",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "effective_sop"
+        ]
+      },
+      {
+        "id": "expanded_label_vocabulary_is_consistent",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "effective_sop"
+        ]
+      }
+    ]
+  },
+  {
+    "task": "execution-closeout-reconcile-L4-003-successor",
+    "rule_score": 0.0,
+    "judge_score": 0.0,
+    "combined_score": 0.0,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "discriminator_no_silent_default_for_failed_fields",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "closeout_workbook"
+        ]
+      },
+      {
+        "id": "expanded_repeated_text_is_not_hiding_missing_reasoning",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "closeout_workbook"
+        ]
+      },
+      {
+        "id": "critical_blank_or_na_fields_are_explained",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "closeout_workbook"
+        ]
+      },
+      {
+        "id": "discriminator_exception_categories_match_hard_checks",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "closeout_workbook"
+        ]
+      },
+      {
+        "id": "execution_cancel_correct_chains_preserve_superseded_events",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "closeout_workbook"
+        ]
+      },
+      {
+        "id": "expanded_conflicts_have_winner_and_loser_context",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "closeout_workbook"
+        ]
+      },
+      {
+        "id": "expanded_major_sections_are_not_contradictory",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "closeout_workbook"
+        ]
+      },
+      {
+        "id": "expanded_zero_values_are_disambiguated",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "closeout_workbook"
+        ]
+      },
+      {
+        "id": "allocation_and_confirmation_breaks_are_not_marked_clean",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "closeout_workbook"
+        ]
+      },
+      {
+        "id": "allocation_confirmation_and_position_breaks_have_row_level_keys",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "closeout_workbook"
+        ]
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "closeout_workbook"
+        ]
+      },
+      {
+        "id": "closeout_exception_rows_have_diagnosis_and_source_side",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "closeout_workbook"
+        ]
+      },
+      {
+        "id": "closeout_exceptions_reconcile_to_lifecycle_rows",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "closeout_workbook"
+        ]
+      },
+      {
+        "id": "exceptions_are_separated",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "closeout_workbook"
+        ]
+      },
+      {
+        "id": "execution_position_close_balances_three_sources",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "closeout_workbook"
+        ]
+      },
+      {
+        "id": "execution_summary_is_by_account_portfolio_and_domain",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "closeout_workbook"
+        ]
+      },
+      {
+        "id": "lifecycle_final_state_preserves_replacement_cancel_and_zero_quantity_semantics",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "closeout_workbook"
+        ]
+      },
+      {
+        "id": "lifecycle_rows_keep_exec_ids_final_state_and_quantity_context",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "closeout_workbook"
+        ]
+      },
+      {
+        "id": "lifecycle_rows_preserve_source_event_chain",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "closeout_workbook"
+        ]
+      },
+      {
+        "id": "workbook_is_closeout_reconciliation",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "closeout_workbook"
+        ]
+      }
+    ]
+  },
+  {
+    "task": "fund-product-table-normalize-L3-017",
+    "rule_score": 0.0,
+    "judge_score": 0.0,
+    "combined_score": 0.0,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "expanded_xlsx_summary_not_only_sheet_count",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "fund_product_workbook"
+        ]
+      },
+      {
+        "id": "product_source_trace_is_granular",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "fund_product_workbook"
+        ]
+      },
+      {
+        "id": "expanded_success_summary_does_not_hide_failures",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "fund_product_workbook"
+        ]
+      },
+      {
+        "id": "normalization_scope_and_exceptions_are_visible",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "fund_product_workbook"
+        ]
+      },
+      {
+        "id": "normalized_values_are_not_freeform_claims",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "fund_product_workbook"
+        ]
+      },
+      {
+        "id": "product_strategy_and_risk_text_are_source_specific",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "fund_product_workbook"
+        ]
+      },
+      {
+        "id": "source_and_exception_context_visible",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "fund_product_workbook"
+        ]
+      },
+      {
+        "id": "workbook_is_normalized_product_table",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "fund_product_workbook"
+        ]
+      },
+      {
+        "id": "fee_taxonomy_is_normalized_not_source_label_copy",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "fund_product_workbook"
+        ]
+      }
+    ]
+  },
+  {
+    "task": "furniture-refinish-L3-016",
+    "rule_score": 0.7333,
+    "judge_score": 0.8571,
+    "combined_score": 0.7704,
+    "rule_weight": 0.7,
+    "judge_weight": 0.3,
+    "verdicts": [
+      {
+        "id": "expanded_source_population_is_named",
+        "verdict": "pass",
+        "reason": "The report names 《家具翻新DIY完全手册》第三部分“上漆翻新” as its source and explicitly excludes parts one and two.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_duplicate_handling_is_visible",
+        "verdict": "pass",
+        "reason": "The report presents a single ordered six-step process and one 12-item materials list, with no visible duplicate source records.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_exception_summary_has_category_breakdown",
+        "verdict": "pass",
+        "reason": "The “常见上漆问题与对策” table categorizes issues such as 流挂、橘皮、发白 and gives causes and countermeasures.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_final_outputs_have_audit_trail",
+        "verdict": "fail",
+        "reason": "The report gives process details but no traceable source locations such as page numbers or section-level evidence keys linking claims to the manual.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_source_trace_uses_realistic_identifiers",
+        "verdict": "pass",
+        "reason": "It identifies the source as 《家具翻新DIY完全手册》第三部分“上漆翻新”.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "It includes concrete task details, including 180/240/400-grit sandpaper, drying times, and a 12-item materials table.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "reason": "The narrative says the materials list covers the full process, but it omits materials explicitly used in the steps, such as the 3寸刷子 being included and air blower being mentioned; the latter makes the claimed 12 materials incomplete relative to process details.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "edge_case_decision_basis_is_specific",
+        "verdict": "pass",
+        "reason": "Visible cautions include specific conditions and actions, for example humidity above 70% calls for dehumidification and weights during the first 24 hours can leave permanent dents.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_material_sections_have_nonempty_content",
+        "verdict": "pass",
+        "reason": "All three requested sections contain substantive content, including six procedural steps and a populated materials table.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_reviewer_can_audit_without_recomputing_everything",
+        "verdict": "pass",
+        "reason": "The report states each step’s method, timing, completion criteria, and the corresponding materials’ uses.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_summary_uses_same_scope_as_details",
+        "verdict": "pass",
+        "reason": "The report consistently limits its stated scope to the manual’s “上漆翻新” section and says parts one and two are excluded.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "recommendations_are_specific_and_supported",
+        "verdict": "pass",
+        "reason": "Recommendations name specific actions and conditions, such as two coats for cabinet doors and bookshelves and three coats for frequently used tabletops.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "report_matches_refinish_task",
+        "verdict": "pass",
+        "reason": "The artifact is a final furniture refinishing report with the requested process, recommendations, and purchase list.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "uncertainties_and_constraints_are_not_hidden",
+        "verdict": "pass",
+        "reason": "It qualifies drying and curing times by temperature and humidity and notes that final hardness takes seven days.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "handbook-notice-insert-L3L4-030",
+    "rule_score": 0.7013,
+    "judge_score": 0.4,
+    "combined_score": 0.6109,
+    "rule_weight": 0.7,
+    "judge_weight": 0.3,
+    "verdicts": [
+      {
+        "id": "expanded_duplicate_handling_is_visible",
+        "verdict": "fail",
+        "reason": "HN-030-02 appears twice as separate entries for 4.2.1 and 4.2.2, with no explanation that the repeated update ID represents a grouped update.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_exception_examples_are_covered",
+        "verdict": "fail",
+        "reason": "The JSON has no status, reason, or exception fields for inactive or superseded notices, duplicate insertions, missing sections, or unresolved placement.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_status_reason_source_triplet_present",
+        "verdict": "fail",
+        "reason": "Update entries include source_doc and target_section, but no status or reason basis attached to each decision.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "unchanged_and_excluded_sections_have_reasons",
+        "verdict": "fail",
+        "reason": "Unchanged sections are only listed by title, and excluded text entries identify text and type without a reason or source context for exclusion.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The records include specific handbook rules, dates, amounts, section anchors, document IDs, and notice text such as the 80-yuan transport cap.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "reason": "There are four inserted update records, including two with ID HN-030-02, but summary.total_formal_updates is 3 and the update-type counts total 4.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "inserted_and_unchanged_sections_are_distinguished",
+        "verdict": "pass",
+        "reason": "inserted_updates, unchanged_sections, and excluded_notice_text are separate top-level fields with distinct entries.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "update_records_are_source_bound",
+        "verdict": "pass",
+        "reason": "Each update has a source_doc and target_section, while metadata includes notice_doc_id, notice_effective_date, and source_files.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_json_reason_fields_are_record_specific",
+        "verdict": "fail",
+        "reason": "The update, unchanged, and excluded records have no record-specific reason fields.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_row_level_evidence_keys_present",
+        "verdict": "pass",
+        "reason": "Each update record carries an update_id, target_section, insertion anchor, and source_doc, providing row-level audit context.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "health-quote-L2-003",
+    "rule_score": 0.1429,
+    "judge_score": 0.375,
+    "combined_score": 0.1777,
+    "rule_weight": 0.85,
+    "judge_weight": 0.15,
+    "verdicts": [
+      {
+        "id": "expanded_clean_and_exception_populations_separated",
+        "verdict": "fail",
+        "reason": "The workbook shows all quote lines in one table and provides no status, exception section, or review population.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_status_reason_source_triplet_present",
+        "verdict": "fail",
+        "reason": "The visible rows contain quote fields but no status, decision reason, or evidence key.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The quote sheet is populated with task-specific service names, identifiers HQ-001 through HQ-080, descriptions, and prices.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "reason": "The summary labels its rows 一 through 五, but the detail rows for the fourth and fifth groups use category names without those numerals, so the displayed group labels do not align.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "every_visible_quote_module_has_detail_rows",
+        "verdict": "pass",
+        "reason": "Each of the five summarized service groups has corresponding itemized rows, including HQ-049 through HQ-064 and HQ-065 through HQ-080.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "no_medical_or_policy_overreach",
+        "verdict": "fail",
+        "reason": "The workbook adds an unsupported policy-style claim in the note that actual settlement can be invoiced by 元/人·月.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_text_anomalies_are_preserved_without_guessing",
+        "verdict": "pass",
+        "reason": "The final detail remains visibly truncated as “运营维” in row 84, with no completion shown.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_summary_rollups_preserve_minor_but_material_exceptions",
+        "verdict": "fail",
+        "reason": "The workbook has no exception notes or statuses in its summary; the visible evidence does not identify any exceptions to preserve.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "html-report-quadrant-ppt",
+    "rule_score": 0.0,
+    "judge_score": 0.0,
+    "combined_score": 0.0,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "JQ-01_source_grounded_quadrant_synthesis",
+        "verdict": "fail",
+        "reason": "No submitted PPTX text, notes, or metadata were available: the candidate was not selected, and the text summary reports zero visible text and zero notes/metadata. Required evidence of four role-specific board-facing implications is absent.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "JQ-02_revision_chronology_conflict_resolution",
+        "verdict": "fail",
+        "reason": "The submitted PPTX text evidence is unavailable, so the slide cannot be checked for stale Q1 routing, forecast-as-actual framing, or superseded expansion language. The candidate was not selected and no slide text or notes were extracted.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "JQ-03a_metric_direction_status_interpretation",
+        "verdict": "fail",
+        "reason": "No PPTX text or notes were extracted to assess metric direction or status interpretation. The workbook summary also reports that parsing failed and no metric rows were available.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "JQ-03b_decision_action_overclaim_discipline",
+        "verdict": "fail",
+        "reason": "No submitted PPTX text, notes, or metadata were available to evaluate action or risk claims; the candidate was not selected and the extracted text evidence is empty.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "JQ-04_cross_quadrant_role_separation_non_duplication",
+        "verdict": "fail",
+        "reason": "No quadrant-scoped PPTX text or metadata was available. The provenance summary marks all four quadrant regions and their local bindings absent, so role separation cannot be established.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "JQ-05_board_readable_compression_auditable_provenance",
+        "verdict": "fail",
+        "reason": "The candidate was not selected, with zero visible text and zero notes/metadata characters. Readability and auditable provenance therefore cannot be established from the required artifact evidence.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "indicator-window-rules-L4-005",
+    "rule_score": 0.5873,
+    "judge_score": 0.6818,
+    "combined_score": 0.6062,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "expanded_summary_uses_same_scope_as_details",
+        "verdict": "fail",
+        "reason": "The summary says 160 review rows (R2), while the detail sheets visibly run from R2 to R161, which is 160 records, plus a header; however, the summary’s claimed 144 ready rows and category totals do not reconcile: indicator detail has 83 qualified, 5 watch, 56 no-signal, and 16 insufficient-history rows, totaling 160, but the summary counts 144 ready plus 16 insufficient. Yet the 83+5+56=144, so these align. The override counts also align by categories. More concrete mismatch: summary says 67 override rows, but risk_overrides has many rows with final label differing from base (e.g. FQ1001 rows 2-13, 12 changes; full tally likely 67). The included evidence gives no scope conflict. Wait summary counts align. Pass.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_major_sections_are_not_contradictory",
+        "verdict": "fail",
+        "reason": "The detail sheet shows 161 rows including header, 160 records; summary review_row_count is 160, consistent. But the indicator detail omits close_vs_ma despite its required header: its columns show 13 fields and contain history_status directly after atr14, so summary/detail is not about this rubric. No material contradictions are evident. Pass.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_retroactive_or_backdated_effects_are_marked",
+        "verdict": "pass",
+        "reason": "No backdated or retroactive changes are visible; override rows are keyed to their trade_date and include reasons for the shown halt and risk-status effects.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_denominator_matches_visible_populations",
+        "verdict": "fail",
+        "reason": "Summary exposes counts for ready/history and base/final signal categories, but no explicit clean-signal denominator or named denominator for the override counts; the row populations cannot be fully reconciled from its aggregate labels.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_exception_rows_have_repair_path",
+        "verdict": "fail",
+        "reason": "Insufficient-history examples such as FQ1006.SH on 2026-04-17 are labeled and have a generic reason, but provide no missing evidence detail or next review cue.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "rule_state_columns_are_not_raw_numbers_or_formulas",
+        "verdict": "pass",
+        "reason": "Categorical fields use tokens such as sufficient_history, qualified_signal, close_geq_ma20_and_positive_slope, HALT_PM, RISK_ON, and blocked_by_halt; numeric indicator values are in separate metric columns.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "signal_labels_explain_comparison_state",
+        "verdict": "fail",
+        "reason": "indicator_by_date does not include the requested close_vs_ma field; the visible headers proceed from atr14 directly to history_status, leaving comparison state absent from the indicator rows.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "pass",
+        "reason": "The summary’s 160 total, 144 ready and 16 insufficient-history counts reconcile with the 160 detail rows; base counts 83+5+56 also equal 144 ready rows.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The workbook contains dated securities, computed MA20/TR/ATR14 values, signal reasons, halt/risk states, and final labels.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "each_review_row_has_history_status_and_close_relation",
+        "verdict": "fail",
+        "reason": "The indicator headers include history_status but omit close_vs_ma, and rows such as FQ1001.SZ 2026-04-17 have no explicit close relation state.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "edge_case_decision_basis_is_specific",
+        "verdict": "pass",
+        "reason": "Visible override cases identify the affected row and concrete basis, for example FQ1001.SZ 2026-04-22 is HALT_PM with announcement time 13:20 and a halt override reason.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "final_signal_preserves_rule_and_override_chain",
+        "verdict": "pass",
+        "reason": "The signals sheet records base_signal and threshold_case, while risk_overrides records pre_override_signal, halt/risk status, final_label, and override_reason for the same keyed rows.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "indicator_current_bar_included_in_ma_atr_context",
+        "verdict": "pass",
+        "reason": "Each row places current close and TR alongside MA20 and ATR14; for example FQ1001.SZ 2026-04-24 11:30 shows close 21.05 and TR 0.50 with current MA20 20.0945 and ATR14 0.5421.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "indicator_previous_trade_date_uses_calendar_basis",
+        "verdict": "pass",
+        "reason": "prev_trade_date and prev_ma20 are row-level fields; FQ1001.SZ on 2026-04-20 points to 2026-04-17, and 2026-05-05 points to 2026-04-30 across the calendar gap.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "indicator_risk_overrides_preserve_pre_override_signal",
+        "verdict": "pass",
+        "reason": "The override sheet includes all required fields; FQ1001.SZ 2026-04-22 retains qualified_signal, HALT_PM, RISK_ON, blocked_by_halt, and the halt/risk explanation.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "indicator_signal_reason_names_threshold_case",
+        "verdict": "pass",
+        "reason": "Signal rows include signal_reason and threshold_case; FQ1004.SH on 2026-04-17 identifies close_geq_ma20_and_nonpositive_slope and explains the zero MA slope.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "no_trading_advice",
+        "verdict": "pass",
+        "reason": "Visible fields report indicator values, classifications, and data/status reasons; no order or portfolio advice appears.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "override_summary_preserves_pre_override_population",
+        "verdict": "pass",
+        "reason": "The summary reports base-signal population counts and override_row_count, and each override row retains pre_override_signal for tracing suppressed rows.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "summary_reconciles_signal_and_override_counts",
+        "verdict": "pass",
+        "reason": "Summary includes review, ready, insufficient-history, base-label, override, halt, risk, and final-label counts that correspond to the detailed sheet categories.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "canonical_rule_state_tokens_or_mapping_are_preserved",
+        "verdict": "fail",
+        "reason": "The workbook omits close_vs_ma entirely, so the close comparison state has no canonical token or mapping, despite the signal threshold_case tokens.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_normalized_fields_keep_raw_context",
+        "verdict": "pass",
+        "reason": "Override rows preserve raw halt_status values such as HALT_PM and RISK_ON alongside final labels and reasons that describe the source condition.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_repeated_text_is_not_hiding_missing_reasoning",
+        "verdict": "pass",
+        "reason": "Repeated risk reasons correspond to the same continuing ST condition, while halt cases include record-specific session and announcement time, such as FQ1003.SZ on 2026-04-24 at 15:00.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "inspection-notice-provenance-L4-032",
+    "rule_score": 0.7939,
+    "judge_score": 0.6364,
+    "combined_score": 0.7466,
+    "rule_weight": 0.7,
+    "judge_weight": 0.3,
+    "verdicts": [
+      {
+        "id": "metadata_source_counts_reconcile_to_unmatched_files",
+        "verdict": "fail",
+        "reason": "Metadata reports 14 source files and lists one unmatched file, but the JSON provides no complete inventory or count breakdown for archived, draft, supplementary, current, and superseded files.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "discriminator_review_items_have_failure_mode_and_next_step",
+        "verdict": "pass",
+        "reason": "Project-specific conflict notes identify concrete issues and next steps, such as PRJ-B24 needing a third-party pressure-test report and a new recheck.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "notice_effective_source_file_is_relative_project_path",
+        "verdict": "pass",
+        "reason": "All three effective_source_file values retain relative project paths, including projects/PRJ-A17/formal/recheck_opinion_RO-2026-041.md.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "project_records_preserve_notice_requirement_fields",
+        "verdict": "fail",
+        "reason": "Records include project IDs, status, and file paths, but omit the controlling notice IDs and do not consistently show which notice requirement carries forward.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "Records contain specific project names, parties, violation types, amounts, deadlines, statuses, notice identifiers, and conflict explanations.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "formal_recheck_and_rectification_precedence_is_explicit",
+        "verdict": "pass",
+        "reason": "Metadata states that cited formal rechecks determine status while amount and deadline carry forward from the referenced notice, and excludes archive and supplement overrides absent adoption.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "notice_conflict_notes_explain_formal_over_supplement_or_draft",
+        "verdict": "pass",
+        "reason": "Notes describe affected fields and losing evidence, for example PRJ-A17's unaccepted deadline extension and superseded draft amount and deadline.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "notice_resolution_rules_are_explicit_in_metadata",
+        "verdict": "pass",
+        "reason": "Metadata rules cover formal rechecks, notices, archives, supplements, normalization, and relative provenance paths; the project decisions reflect these rules.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "notice_superseded_sources_include_draft_formal_and_supplement_context",
+        "verdict": "fail",
+        "reason": "Superseded lists include some relevant sources, but omit related evidence: PRJ-C31's supplement SN-2026-091C is discussed in conflict_notes but absent from its superseded_source_files.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "project_status_is_provenance_oriented",
+        "verdict": "pass",
+        "reason": "Each status is paired with an effective source path, and the unmatched PRJ-X00 notice is separately listed with a reason.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_inventory_includes_unmatched_and_noncurrent_files",
+        "verdict": "fail",
+        "reason": "The JSON gives a total count and paths for selected superseded sources and the unmatched file, but does not account for all archived, supplementary, draft, and current files in an auditable inventory.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "invoice-email-archive-manifest",
+    "rule_score": 0.1015,
+    "judge_score": 0.0,
+    "combined_score": 0.0914,
+    "rule_weight": 0.9,
+    "judge_weight": 0.1,
+    "verdicts": [
+      {
+        "id": "row_exception_policy_alignment",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "raw_submitted_archive_manifest",
+          "raw_submitted_archive_report"
+        ]
+      },
+      {
+        "id": "evidence_resolution_calibration",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "raw_submitted_archive_manifest",
+          "raw_submitted_archive_report"
+        ]
+      },
+      {
+        "id": "report_review_handoff_prioritization",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "raw_submitted_archive_report",
+          "raw_submitted_archive_manifest"
+        ]
+      },
+      {
+        "id": "readback_self_check_substantive_accuracy",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "raw_submitted_archive_report",
+          "raw_submitted_archive_manifest"
+        ]
+      }
+    ]
+  },
+  {
+    "task": "json-screener-summary-L4-004",
+    "rule_score": 0.0084,
+    "judge_score": 0.0,
+    "combined_score": 0.0067,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "selected_reasons_preserve_master_taxonomy_override_basis",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "normalized_candidates",
+          "screener_workbook"
+        ]
+      },
+      {
+        "id": "expanded_conflicts_have_winner_and_loser_context",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "normalized_candidates",
+          "screener_workbook"
+        ]
+      },
+      {
+        "id": "expanded_unit_or_period_context_visible",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "normalized_candidates",
+          "screener_workbook"
+        ]
+      },
+      {
+        "id": "expanded_zero_values_are_disambiguated",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "normalized_candidates",
+          "screener_workbook"
+        ]
+      },
+      {
+        "id": "hardcheck_source_trace_granularity",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "normalized_candidates",
+          "screener_workbook"
+        ]
+      },
+      {
+        "id": "leaf_industry_and_concept_fields_keep_label_and_code_context",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "normalized_candidates",
+          "screener_workbook"
+        ]
+      },
+      {
+        "id": "screening_boolean_flags_are_explicit_not_placeholder_dash",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "normalized_candidates",
+          "screener_workbook"
+        ]
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "normalized_candidates",
+          "screener_workbook"
+        ]
+      },
+      {
+        "id": "artifacts_are_screening_deliverables",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "normalized_candidates",
+          "screener_workbook"
+        ]
+      },
+      {
+        "id": "critical_blank_or_na_fields_are_explained",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "normalized_candidates",
+          "screener_workbook"
+        ]
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "normalized_candidates",
+          "screener_workbook"
+        ]
+      },
+      {
+        "id": "edge_case_decision_basis_is_specific",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "normalized_candidates",
+          "screener_workbook"
+        ]
+      },
+      {
+        "id": "factor_detail_keeps_raw_value_and_source_artifact",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "normalized_candidates",
+          "screener_workbook"
+        ]
+      },
+      {
+        "id": "hardcheck_canonical_tokens_or_mapping",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "normalized_candidates",
+          "screener_workbook"
+        ]
+      },
+      {
+        "id": "hardcheck_denominator_matches_visible_populations",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "normalized_candidates",
+          "screener_workbook"
+        ]
+      },
+      {
+        "id": "hardcheck_intermediate_state_preserved",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "normalized_candidates",
+          "screener_workbook"
+        ]
+      },
+      {
+        "id": "no_investment_recommendation_language",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "normalized_candidates",
+          "screener_workbook"
+        ]
+      },
+      {
+        "id": "screening_summary_separates_selected_excluded_and_incomplete_denominators",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "normalized_candidates",
+          "screener_workbook"
+        ]
+      }
+    ]
+  },
+  {
+    "task": "kline-signal-segments-L4-012",
+    "rule_score": 0.908,
+    "judge_score": 0.7,
+    "combined_score": 0.8664,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "trigger_rules_include_canonical_rule_tokens_or_mapping",
+        "verdict": "fail",
+        "reason": "The trigger_rules entries use labels such as “v2026Q2-base / 制造观察 / 组默认” without canonical rule-family tokens or a mapping.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_insufficient_history_rows_have_explicit_ma_trend_state",
+        "verdict": "pass",
+        "reason": "Indicator rows marked insufficient_history show ma_trend as “undetermined,” for example 002734.SZ on 2026-04-13.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_segment_drawdown_preserves_loss_sign",
+        "verdict": "fail",
+        "reason": "Loss drawdowns are positive magnitudes with no convention note, for example max_drawdown 0.043659 for 300118.SZ segment 1.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "trigger_rules_use_stable_rule_families",
+        "verdict": "fail",
+        "reason": "Segment trigger_rules provide version/group labels but do not identify stable families such as breakout threshold, volume threshold, MA trend, or gap tolerance.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_ma_trend_unavailable_fields_are_consistently_qualified",
+        "verdict": "pass",
+        "reason": "For 002734.SZ on 2026-04-13, unavailable MA values accompany ma_trend “undetermined,” signal_day False, and exception_flag insufficient_history.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_summary_deepest_drawdown_matches_segment_convention",
+        "verdict": "pass",
+        "reason": "The summary retains the positive-magnitude convention, and 300118.SZ’s deepest_drawdown_segment 2 matches detailed segment 2’s max_drawdown of 0.047668.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "no_actionable_trading_advice",
+        "verdict": "pass",
+        "reason": "The workbook contains static indicators, signal segments, summaries, and exceptions, with no orders, positions, targets, or timing advice shown.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "segment_boundaries_and_reasons_visible",
+        "verdict": "pass",
+        "reason": "Segment rows show security, start and end dates, duration, signal count, gap, returns, drawdown, and trigger_rules; exceptions are listed separately.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "segment_summary_counts_reconcile_to_triggered_segments",
+        "verdict": "pass",
+        "reason": "Summary counts reconcile to detailed rows, for example 300118.SZ has three segment rows and segment_count 3; the rows show signal_day_count and trigger_rules.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_is_signal_segment_output",
+        "verdict": "pass",
+        "reason": "The workbook has indicator_values, signal_segments, segment_summary, and exceptions sheets with structured K-line signal analysis data.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "market-daily-brief-a-share-recap",
+    "rule_score": 0.2917,
+    "judge_score": 0.0,
+    "combined_score": 0.2334,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "reader_facing_chinese_recap_synthesis",
+        "verdict": "fail",
+        "reason": "No `daily_recap.md` text was submitted, so there is no reader-facing Chinese recap to assess; the verifier also reports the required file is absent.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_decision_implications_are_explained",
+        "verdict": "fail",
+        "reason": "No recap text was submitted, so no source adoption, replacement, or exclusion decision and its effect on conclusions can be evaluated.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "draft_overclaims_are_evidence_bounded",
+        "verdict": "fail",
+        "reason": "No recap text was submitted, so there is no evidence that draft overclaims were revised or bounded by source scope and status.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "non_advisory_boundary_integrated",
+        "verdict": "fail",
+        "reason": "No recap text was submitted, so integration of the local-only and non-advisory boundary cannot be established.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "monitoring-weekly-draft-followup",
+    "rule_score": 0.03,
+    "judge_score": 0.3333,
+    "combined_score": 0.0907,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "weekly_report_synthesis_for_reader",
+        "verdict": "fail",
+        "reason": "正文主要是待核对清单式条目；例如已确认事实表仍写“待核对”，各模块概览也停留在线索提示，没有形成清晰的本周状态总结。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "pending_followups_explain_evidence_gap",
+        "verdict": "pass",
+        "reason": "待跟进表说明了当前线索、具体缺口和后续确认条件，例如泵站振动需确认正式复测值、设备绑定及可写状态。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "uncertainty_and_late_evidence_coherence",
+        "verdict": "pass",
+        "reason": "报告反复区分线索与确认事实，并保留不确定性；例如浊度的缺失字段、标签差异和电话背景被列为待核对，没有写成正常或闭环。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "reader_ready_markdown_report_style",
+        "verdict": "fail",
+        "reason": "虽有清晰标题、表格和谨慎措辞，但仍保留“初稿线索，需按来源核对后定稿”等草稿残句，且主要结论缺少具体来源指向，读者难以审计。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "reader_auditable_source_orientation",
+        "verdict": "fail",
+        "reason": "来源说明停留在 notes/** 等目录级泛称；例如泵站振动只称“早期巡查读数带问号”，未指出可追溯的证据来源或后续记录。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "weekly_report_information_design",
+        "verdict": "fail",
+        "reason": "章节齐全，但概览、异常进展和待跟进内容重复且都以待核对为主；下周关注也未对应各项具体未决问题。",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "news-event-multifile-extract-L4-013",
+    "rule_score": 0.0,
+    "judge_score": 0.0,
+    "combined_score": 0.0,
+    "rule_weight": 0.7,
+    "judge_weight": 0.3,
+    "verdicts": [
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "events_workbook",
+          "event_summary"
+        ]
+      },
+      {
+        "id": "event_ids_and_source_counts_map_consistently_between_summary_and_workbook",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "events_workbook",
+          "event_summary"
+        ]
+      },
+      {
+        "id": "event_summary_counts_reconcile_to_workbook",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "events_workbook",
+          "event_summary"
+        ]
+      },
+      {
+        "id": "expanded_major_sections_are_not_contradictory",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "events_workbook",
+          "event_summary"
+        ]
+      },
+      {
+        "id": "expanded_summary_uses_same_scope_as_details",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "events_workbook",
+          "event_summary"
+        ]
+      },
+      {
+        "id": "policy_program_events_keep_program_subject_not_only_issuer",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "events_workbook",
+          "event_summary"
+        ]
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "events_workbook",
+          "event_summary"
+        ]
+      },
+      {
+        "id": "entity_aliases_do_not_merge_distinct_subjects",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "events_workbook",
+          "event_summary"
+        ]
+      },
+      {
+        "id": "entity_mentions_cover_material_subjects_with_type",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "events_workbook",
+          "event_summary"
+        ]
+      },
+      {
+        "id": "event_claims_are_source_bound",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "events_workbook",
+          "event_summary"
+        ]
+      },
+      {
+        "id": "event_date_and_publication_date_are_not_conflated",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "events_workbook",
+          "event_summary"
+        ]
+      },
+      {
+        "id": "event_identity_preserves_policy_program_vs_issuer_subject",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "events_workbook",
+          "event_summary"
+        ]
+      }
+    ]
+  },
+  {
+    "task": "portfolio-valuation-limits-L4-009",
+    "rule_score": 0.0,
+    "judge_score": 0.0,
+    "combined_score": 0.0,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "valuation_workbook"
+        ]
+      },
+      {
+        "id": "expanded_major_sections_are_not_contradictory",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "valuation_workbook"
+        ]
+      },
+      {
+        "id": "expanded_summary_uses_same_scope_as_details",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "valuation_workbook"
+        ]
+      },
+      {
+        "id": "portfolio_summary_reconciles_valuation_and_limit_populations",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "valuation_workbook"
+        ]
+      },
+      {
+        "id": "valuation_summary_reconciles_missing_prices_and_exposure",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "valuation_workbook"
+        ]
+      },
+      {
+        "id": "breaches_and_exceptions_have_reasons",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "valuation_workbook"
+        ]
+      },
+      {
+        "id": "limit_actions_are_separated_from_observations",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "valuation_workbook"
+        ]
+      },
+      {
+        "id": "limit_breach_rows_show_threshold_and_observed_value",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "valuation_workbook"
+        ]
+      },
+      {
+        "id": "no_investment_advice_or_live_claims",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "valuation_workbook"
+        ]
+      },
+      {
+        "id": "portfolio_missing_prices_not_zeroed_or_counted_as_breaches",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "valuation_workbook"
+        ]
+      },
+      {
+        "id": "portfolio_source_rows_are_specific_record_keys_not_generic_files",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "valuation_workbook"
+        ]
+      },
+      {
+        "id": "portfolio_valuation_detail_price_fx_status_components_visible",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "valuation_workbook"
+        ]
+      },
+      {
+        "id": "workbook_is_valuation_limits_review",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "valuation_workbook"
+        ]
+      }
+    ]
+  },
+  {
+    "task": "prd-system-design-task-breakdown",
+    "rule_score": 0.0,
+    "judge_score": 0.0,
+    "combined_score": 0.0,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "engineering_actionability_behavior_changing_rows",
+        "verdict": "fail",
+        "reason": "The submitted breakdown is withheld because deterministic checks detected safety/leakage failures, and no task-row text is available to assess implementable behavior.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "acceptance_tests_bind_behavior_error_policy_constraints",
+        "verdict": "fail",
+        "reason": "The submitted breakdown is withheld, so acceptance criteria and tests tied to affected tasks cannot be inspected.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "cross_document_synthesis_changes_tasks_and_ac",
+        "verdict": "fail",
+        "reason": "The submitted breakdown is withheld; the public source summary alone does not show how the two documents shape task rows.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "open_question_task_binding_and_provisional_limits",
+        "verdict": "fail",
+        "reason": "No submitted task rows are available to verify that open questions constrain implementation or identify provisional limits.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "conflict_ambiguity_classification_and_operational_effect",
+        "verdict": "fail",
+        "reason": "The submitted breakdown is withheld, so operational effects of conflicts and ambiguities cannot be verified.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "execution_safe_sequence_semantics",
+        "verdict": "fail",
+        "reason": "No task breakdown text is available to assess sequencing; deterministic status also reports a failed gate.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "non_goal_boundary_preservation_without_positive_tasks",
+        "verdict": "fail",
+        "reason": "The submitted breakdown is withheld and the deterministic status reports safety/leakage failure, so exclusions in the artifact cannot be verified.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "merge_export_manual_mapping_boundary_preservation",
+        "verdict": "fail",
+        "reason": "No submitted task rows are available to inspect merge, mapping, and export constraints.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "failure_mode_and_boundary_case_task_binding",
+        "verdict": "fail",
+        "reason": "The submitted breakdown is withheld, so public error cases cannot be checked against affected implementation rows or validation.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "reader_usability_constraints_gates_visible_in_rows",
+        "verdict": "fail",
+        "reason": "The artifact text is withheld and deterministic checks report missing output and required sections, leaving no task rows or nearby gates to assess.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "operational_policy_semantics_privacy_audit_timeout_reopen_archive_export",
+        "verdict": "fail",
+        "reason": "The submitted breakdown is withheld; policy semantics and their implementation and validation consequences cannot be verified.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "priority-sync-notification-pipeline",
+    "rule_score": 0.792,
+    "judge_score": 0.6,
+    "combined_score": 0.7536,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "summary_matches_structured_state_families",
+        "verdict": "pass",
+        "reason": "The summary assigns VOP-2198, VOP-2207, VOP-2250, VOP-2241, and VOP-2256 the same families and next steps shown in the structured artifacts, including partner confirmation, retry backoff, allowed fallback, dedup suppression, and dead-letter handling.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "decision_reasons_explain_operational_boundaries",
+        "verdict": "pass",
+        "reason": "Reasons identify concrete triggers: VOP-2207 has retry_after 10:46 after the 10:20 decision time, VOP-2250 exhausted its rate-limit retries with chat fallback allowed, and VOP-2219 has an active hold and ambiguous contact.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "decision_family_matches_stated_operational_trigger",
+        "verdict": "fail",
+        "reason": "VOP-2198 is labeled human_followup even though the stated blocker is passive waiting for partner confirmation; the rubric treats that as skipped unless a concrete coordinator clarification action is described.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "handoff_notes_separate_safe_next_steps",
+        "verdict": "pass",
+        "reason": "The summary distinguishes coordinator follow-up for VOP-2198, VOP-2219, and VOP-2234 from VOP-2256's malformed-channel dead letter, and describes retry, fallback, dedup, and the no-live-service/fake-secret boundary separately.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "reader_facing_summary_finalized_not_template",
+        "verdict": "fail",
+        "reason": "The summary begins with the template instruction “Fill this file from workspace evidence only,” leaving writer-facing scaffolding in the delivered handoff.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "procurement-reconcile-L3-015",
+    "rule_score": 0.7619,
+    "judge_score": 0.7,
+    "combined_score": 0.7526,
+    "rule_weight": 0.85,
+    "judge_weight": 0.15,
+    "verdicts": [
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "reason": "The summary lists 300 orders, 285 receipt records, and 20 missing orders, but the visible detail rows show 15 quantity-difference orders, 25 amount-difference orders, 20 missing orders, and 5 orphan receipts; the summary does not clarify category overlap or denominator.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_major_sections_are_not_contradictory",
+        "verdict": "pass",
+        "reason": "The quantity and amount sheets show 15 and 25 rows respectively, matching their summary counts; the missing-order and orphan-receipt sheets show 20 and 5 rows, also matching.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_summary_uses_same_scope_as_details",
+        "verdict": "pass",
+        "reason": "Each summary exception count matches the visible rows in its corresponding detail sheet: 15, 25, 20, and 5.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "summary_counts_reconcile_to_exception_sheets",
+        "verdict": "fail",
+        "reason": "The summary gives separate category counts, but does not state that categories may overlap or identify whether the figures represent distinct orders; the quantity and amount sheets share multiple order IDs, such as PO-2026-14490.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "amount_and_quantity_variances_keep_separate_evidence",
+        "verdict": "pass",
+        "reason": "Quantity rows show ordered, received, and delta quantities; amount rows separately show order amount, receipt amount, and amount delta.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "differences_and_review_items_visible",
+        "verdict": "fail",
+        "reason": "Exception rows show differences and unmatched IDs, but provide no reasons or review notes, and do not distinguish settled from unresolved items.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "required_issue_categories_are_present_and_distinct",
+        "verdict": "pass",
+        "reason": "The workbook has distinct sheets for 数量差异, 金额差异, 未入库订单, 无对应订单入库, and 汇总.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_identifiers_support_audit",
+        "verdict": "pass",
+        "reason": "Exception rows include concrete order IDs, and orphan receipt rows include concrete receipt numbers such as PO-2026-28009-01.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "unmatched_side_is_not_ambiguous",
+        "verdict": "pass",
+        "reason": "未入库订单 lists order IDs, while 无对应订单入库 lists receipt IDs under the 入库单号 heading, distinguishing the unmatched sides.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_is_procurement_reconciliation",
+        "verdict": "pass",
+        "reason": "The workbook contains separate procurement quantity and amount comparisons, unmatched order and receipt sections, and a summary.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "rank-ic-topn-L4-001",
+    "rule_score": 0.0,
+    "judge_score": 0.0,
+    "combined_score": 0.0,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "expanded_overrides_preserve_pre_override_state",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "rank_ic_workbook"
+        ]
+      },
+      {
+        "id": "every_topn_rank_has_auditable_ordering_note",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "rank_ic_workbook"
+        ]
+      },
+      {
+        "id": "rank_topn_tie_break_notes_use_required_precedence",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "rank_ic_workbook"
+        ]
+      },
+      {
+        "id": "score_availability_flags_match_exclusion_story",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "rank_ic_workbook"
+        ]
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "rank_ic_workbook"
+        ]
+      },
+      {
+        "id": "critical_blank_or_na_fields_are_explained",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "rank_ic_workbook"
+        ]
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "rank_ic_workbook"
+        ]
+      },
+      {
+        "id": "exclusion_scope_distinguishes_ic_and_topn",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "rank_ic_workbook"
+        ]
+      }
+    ]
+  },
+  {
+    "task": "recruiting-search-skill-mock-mcp-hardened",
+    "rule_score": 0.6493,
+    "judge_score": 0.375,
+    "combined_score": 0.5944,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "claim_evidence_alignment_provenance_humility",
+        "verdict": "fail",
+        "reason": "The report claims completed exports, snapshots, audit, and method runs using placeholder refs such as `export-ref-v2-harden-[phone_like_redacted]`, while the runtime state and method log are explicitly missing; it also describes work as complete despite this gap.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "evidence_explanation_depth_risk_grounding",
+        "verdict": "fail",
+        "reason": "The report lists a workflow and drift fixes, but presents unsupported completion claims as evidence. The missing runtime capture leaves export/snapshot/audit readiness ungrounded; follow-up risks are suggested rather than tied to observed state.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workflow_precondition_actionability_skill_support",
+        "verdict": "pass",
+        "reason": "The Skill and API notes give actionable preconditions, including inspect before save, saved evidence before export, and two snapshots before audit, and clearly constrain use to offline synthetic profiles with no contact data.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "cross_artifact_semantic_coherence_without_exact_rescore",
+        "verdict": "fail",
+        "reason": "The report and evidence summary claim completed state-chain actions, but the runtime summary says both runtime state and method log are missing. This contradiction is not scoped in the completion claims.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "search_strategy_relevance_scope_control",
+        "verdict": "pass",
+        "reason": "The guidance uses job-related filters and profile evidence, limits examples to task-provided synthetic profiles, and explicitly rules out live sourcing and contact-data retrieval.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "support_template_end_to_end_operability",
+        "verdict": "fail",
+        "reason": "Templates provide concrete discovery and search arguments, but later steps are only listed as post_steps. They give no reusable argument patterns for inspect, save, export, snapshot, or audit.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "current_example_status_handoff_clarity",
+        "verdict": "fail",
+        "reason": "The output examples are labeled `draft_shortlist_report` yet contain populated export, snapshot, and audit refs, and the report treats those values as actual completed workflow evidence despite the missing runtime capture.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "profile_fit_and_followup_grounding",
+        "verdict": "pass",
+        "reason": "The profile summaries tie role-fit and limitations to same-profile evidence labels and described synthetic experience; follow-up is framed as bounded confirmation of visible role-related limitations.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "release-phase-gate-progression",
+    "rule_score": 0.6809,
+    "judge_score": 0.5,
+    "combined_score": 0.6447,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "maintainer_facing_status_summary_is_actionable",
+        "verdict": "fail",
+        "reason": "报告给出了 repair_alignment 状态及 failed、stale、missing_lookup 的处理，但又称所有 blocker 已解决、无需 carry-forward；deterministic scope summary 显示仍有 3 个阻塞项，且下一步仅称可由维护者复核，未说明关闭条件。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "deliverables_are_final_not_scaffold_or_pending",
+        "verdict": "pass",
+        "reason": "报告、状态更新记录和最终捕获均作为本轮已完成的本地交付呈现，没有待创建或稍后补填的占位内容。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "carry_forward_is_specific_and_not_evasive",
+        "verdict": "fail",
+        "reason": "报告称无 carry-forward blocker，只建议维护者复核 repair_alignment 一致性；deterministic scope summary 显示仍有 3 个阻塞项，且没有指出具体待复查的条件或证据。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "final_mutable_artifacts_are_free_of_process_or_template_residue",
+        "verdict": "pass",
+        "reason": "所提供的报告、状态记录、最终捕获、审计历史和看板内容没有可见的 solver TODO 或填充指令；旧的 handoff 和 ready 文案被明确标为过早或非权威。",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "research-factor-table-extract-L3-016",
+    "rule_score": 0.8812,
+    "judge_score": 0.5,
+    "combined_score": 0.805,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "discriminator_hard_rule_counts_are_explainable",
+        "verdict": "fail",
+        "reason": "No hard-rule counts, denominators, or exclusion/review population are shown; the workbook only contains extraction rows.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_reader_can_locate_high_risk_or_important_items",
+        "verdict": "fail",
+        "reason": "Risks appear as ordinary rows, with no priority, flag, or grouping that identifies which need attention.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_scope_boundary_for_excluded_records_visible",
+        "verdict": "fail",
+        "reason": "No excluded or out-of-scope records are represented; the three sheets contain only extracted points, factors, and risks.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_scope_exclusions_are_justified",
+        "verdict": "fail",
+        "reason": "There is no visible exclusion list or record-level reason for sources or records omitted from extraction.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "critical_blank_or_na_fields_are_explained",
+        "verdict": "fail",
+        "reason": "Unrevised rows have blank superseded_source cells, with no record-level explanation or explicit not-applicable marker.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The workbook includes populated company, factor, risk, date, and source rows, and the JSON has field-level citation entries.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifacts_are_factor_extraction_deliverables",
+        "verdict": "pass",
+        "reason": "The workbook has structured research_points, factor_mentions, and risk_disclosures sheets, while the JSON contains aligned citation metadata.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "pass",
+        "reason": "No conflicting summaries or rollups are visible; the workbook rows and JSON citations refer to matching IDs and source sections.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "discriminator_opus_style_row_level_trace",
+        "verdict": "pass",
+        "reason": "Rows such as FM-005 and RP-004 identify evening sources and locations, and JSON citation keys map fields to document sections and snippet anchors.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "discriminator_record_identity_survives_transformation",
+        "verdict": "pass",
+        "reason": "Output IDs such as FM-009 and RD-006 remain linked to company IDs, source locations, and field-level JSON citation anchors.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "discriminator_stronger_output_preserves_intermediate_state",
+        "verdict": "pass",
+        "reason": "Morning and evening records remain separate, and revised rows include superseded-source identifiers such as M-T1-R4.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "edge_case_decision_basis_is_specific",
+        "verdict": "pass",
+        "reason": "Visible revision cases include concrete evidence, such as FM-009 changing the raw-material direction to neutral and pointing to M-T1-R4.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "research_factor_mentions_have_direction_horizon_evidence_triplet",
+        "verdict": "pass",
+        "reason": "Each listed factor row contains factor_id, normalized name, direction, horizon, evidence text, effective time, and source location.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "research_superseded_source_keeps_prior_table_anchor",
+        "verdict": "fail",
+        "reason": "Revised rows point only to identifiers such as M-T1-R1; the superseded_source field does not preserve the prior source document and table or section anchor.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "discriminator_no_silent_default_for_failed_fields",
+        "verdict": "fail",
+        "reason": "Blank superseded_source cells are used for non-revised rows without an explicit not-applicable label or explanation.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_json_metadata_matches_records",
+        "verdict": "fail",
+        "reason": "The JSON contains citation_map entries but no metadata describing scope, counts, source lists, or excluded populations that could be reconciled with the workbook.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "rule-based-stock-exclusion-L4-011",
+    "rule_score": 0.8402,
+    "judge_score": 0.5,
+    "combined_score": 0.7722,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "expanded_source_granularity_is_sufficient",
+        "verdict": "fail",
+        "reason": "Every selected and excluded row traces only to a candidate batch key, such as `candidate_universe:CU-20260616-A`; it does not locate the market, indicator, or theme inputs supporting that record.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_source_trace_granularity",
+        "verdict": "fail",
+        "reason": "Hard-check rows have candidate batch keys, but no row-level market snapshot, factor, or theme-codebook locator; for example, exclusion row SH.60C391 has only `candidate_universe:CU-20260616-A`.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "selected_and_excluded_rows_have_record_level_source_trace",
+        "verdict": "pass",
+        "reason": "Both selected and excluded rows include candidate record identifiers in `source_trace`, such as `candidate_universe:CU-20260616-A`, allowing the candidate record to be distinguished.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_trace_or_rule_context_visible",
+        "verdict": "fail",
+        "reason": "Rows show symbols and exclusion rule codes, but the trace only names a candidate batch and does not link decisions to specific market, indicator, or theme records.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_human_review_boundary_is_clear",
+        "verdict": "fail",
+        "reason": "The workbook identifies watch-only and Beijing Exchange counts in the summary, but does not identify which specific rows require human review or distinguish them as a review queue.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The workbook contains 30 selected symbols with scores, turnover, themes, and source traces, plus 34 excluded symbols with rule codes and populated summaries and audit rows.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "critical_blank_or_na_fields_are_explained",
+        "verdict": "fail",
+        "reason": "The stale-factor audit row has an empty examples list and does not explicitly explain that no stale factors were found; critical input evidence is not linked by row-level trace.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "edge_case_decision_basis_is_specific",
+        "verdict": "pass",
+        "reason": "Excluded rows give specific reasons and triggered codes; for example, SH.60C391 lists `st_or_halt` as primary and retains `market_cap_out_of_range` as an additional trigger.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "exclusion_reasons_visible",
+        "verdict": "pass",
+        "reason": "Excluded records show a primary exclusion reason and triggered rule codes, while selected rows appear in a separate sheet with scores.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "exclusion_rules_expose_triggering_values_and_rule_codes",
+        "verdict": "fail",
+        "reason": "Rows expose rule codes but not the triggering values or statuses; SH.60G539 is labeled `market_cap_out_of_range` without its market-cap value.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_canonical_tokens_or_mapping",
+        "verdict": "pass",
+        "reason": "Rule audit and exclusion rows use stable codes such as `st_or_halt`, `missing_required_metric`, and `theme_not_allowed`, with descriptions mapping codes to meanings.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "no_buy_sell_or_target_price_advice",
+        "verdict": "pass",
+        "reason": "The workbook contains screening scores, rule outcomes, and audit information, with no buy/sell instruction, target price, or portfolio advice shown.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "screen_summary_separates_universe_denominators",
+        "verdict": "fail",
+        "reason": "The summary counts exclusion reasons and selected themes but does not provide a candidate-universe denominator or separate watch, inactive, suspended, and missing-data population totals.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_is_rule_based_screen",
+        "verdict": "pass",
+        "reason": "The four sheets present selected and excluded symbols, reason summaries, and rule audit results, including the selection-score formula and sort rule.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "safety-inspection-extract-L4-019",
+    "rule_score": 0.8889,
+    "judge_score": 0.7333,
+    "combined_score": 0.8578,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "discriminator_no_silent_default_for_failed_fields",
+        "verdict": "pass",
+        "reason": "Missing penalties and deadlines are explicitly marked “未提及” in rows 3–6 where absent, rather than silently defaulted.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "discriminator_rule_failure_population_visible",
+        "verdict": "fail",
+        "reason": "The table shows rows and some missing values, but has no exception counts or review/failure categories for missing penalties, deadlines, or actionability.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_canonical_labels_or_mapping_exist",
+        "verdict": "fail",
+        "reason": "Violation categories are detailed free-text lists, with no canonical label set or mapping to standardized categories.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_critical_blanks_have_record_context",
+        "verdict": "pass",
+        "reason": "Critical missing fields have row-level context, such as row 4’s penalty and row 5’s owner marked “未提及.”",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_zero_values_are_disambiguated",
+        "verdict": "pass",
+        "reason": "No numeric zero amounts appear; row 4’s absent penalty is marked “未提及.”",
+        "source": "codex_luna"
+      },
+      {
+        "id": "missing_penalty_amount_is_not_silently_zeroed",
+        "verdict": "pass",
+        "reason": "Row 4 uses “未提及” for the missing penalty, while the other rows show numeric amounts.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The six-row sheet includes five notice IDs, named projects and contractors, dates, violation details, amounts, and deadlines or missing markers.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_label_vocabulary_is_consistent",
+        "verdict": "pass",
+        "reason": "The single sheet uses the same “未提及” marker for absent values across fields.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_missing_values_not_fabricated",
+        "verdict": "pass",
+        "reason": "Absent owner, penalty, and deadline details are marked “未提及,” for example the owner and penalty in row 4.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_no_placeholder_or_todo_content",
+        "verdict": "pass",
+        "reason": "The rows contain task-specific notice data and explicit missing markers, with no TODO or sample filler.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "inspection_rows_use_consistent_detail_semantics",
+        "verdict": "fail",
+        "reason": "Violation types are lengthy, unnormalized lists of individual findings, rather than a consistent set of category labels as requested.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "missing_inspection_fields_are_source_limited",
+        "verdict": "pass",
+        "reason": "Missing fields use the source-limited marker “未提及,” including row 4’s missing owner and penalty.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "uncertain_or_missing_fields_are_flagged",
+        "verdict": "pass",
+        "reason": "The artifact flags unavailable fields with “未提及,” including row 3’s deadline and row 5’s owner.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "violation_type_labels_are_source_specific_not_overbroad",
+        "verdict": "fail",
+        "reason": "Each violation cell lists several detailed findings, rather than normalized type/category labels; for example row 2 enumerates five separate issues.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_is_safety_inspection_summary",
+        "verdict": "pass",
+        "reason": "The sheet is titled “安全检查通报汇总” and presents five structured safety notice records with findings and follow-up fields.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "service-channel-ticket-daily",
+    "rule_score": 0.0,
+    "judge_score": 0.0,
+    "combined_score": 0.0,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "operational_tips_are_evidence_grounded",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "submitted_daily_report_text"
+        ]
+      },
+      {
+        "id": "report_sections_are_state_consistent",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "submitted_daily_report_text"
+        ]
+      },
+      {
+        "id": "reader_ready_markdown_daily_report_style",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "submitted_daily_report_text"
+        ]
+      }
+    ]
+  },
+  {
+    "task": "static-strategy-signal-report-L3-015",
+    "rule_score": 0.0,
+    "judge_score": 0.0,
+    "combined_score": 0.0,
+    "rule_weight": 0.7,
+    "judge_weight": 0.3,
+    "verdicts": [
+      {
+        "id": "forbidden_action_terms_are_absent_even_in_disclaimer",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "signal_summary"
+        ]
+      },
+      {
+        "id": "hardcheck_flag_reasons_are_reader_facing_for_priority_and_exceptions",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "signal_workbook",
+          "signal_summary"
+        ]
+      },
+      {
+        "id": "hardcheck_markdown_preserves_canonical_scope_metric_keys",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "signal_summary"
+        ]
+      },
+      {
+        "id": "hardcheck_stale_basic_uses_canonical_late_prior_day_status",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "signal_workbook",
+          "signal_summary"
+        ]
+      },
+      {
+        "id": "hardcheck_summary_data_quality_counts_preserve_all_exception_types",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "signal_workbook",
+          "signal_summary"
+        ]
+      },
+      {
+        "id": "signal_flag_reasons_keep_reader_facing_rule_phrases",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "signal_workbook",
+          "signal_summary"
+        ]
+      },
+      {
+        "id": "artifacts_match_static_signal_report",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "signal_workbook",
+          "signal_summary"
+        ]
+      },
+      {
+        "id": "hardcheck_adjustment_preview_rows_are_excluded_with_basis",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "signal_workbook",
+          "signal_summary"
+        ]
+      },
+      {
+        "id": "hardcheck_high_risk_reasons_include_field_and_reference_date",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "signal_workbook",
+          "signal_summary"
+        ]
+      },
+      {
+        "id": "hardcheck_inactive_watchlist_population_is_counted_and_named",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "signal_workbook",
+          "signal_summary"
+        ]
+      },
+      {
+        "id": "markdown_covers_required_reader_sections",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "signal_summary"
+        ]
+      },
+      {
+        "id": "no_trading_or_investment_advice",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "signal_workbook",
+          "signal_summary"
+        ]
+      },
+      {
+        "id": "hardcheck_missing_quote_rows_preserve_available_basic_metrics",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "signal_workbook",
+          "signal_summary"
+        ]
+      }
+    ]
+  },
+  {
+    "task": "stock-fund-return-compare-L3-010",
+    "rule_score": 0.9161,
+    "judge_score": 1.0,
+    "combined_score": 0.9329,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "aligned_return_rows_have_product_interval_and_source_trace",
+        "verdict": "pass",
+        "reason": "Aligned rows include interval and product IDs, source codes, and source traces such as `stock_prices::EQ-A17Q`.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The workbook contains dated stock and fund returns, product names, rankings, and populated exception and summary sheets.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "critical_blank_or_na_fields_are_explained",
+        "verdict": "pass",
+        "reason": "Rows excluded for missing coverage appear in `missing_date_exceptions` with categories such as `missing_end_observation` and `source_code_not_found`; their date and value fields are intentionally absent there.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "pass",
+        "reason": "For each interval, summary counts reconcile to 18 valid returns and 6 exceptions overall, matching the detail sheets.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "edge_case_decision_basis_is_specific",
+        "verdict": "pass",
+        "reason": "Exceptions use specific categories and include product, interval, source code, dates, and source trace, for example P-XW-916 is marked `source_code_not_found`.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "exceptions_are_clearly_separated",
+        "verdict": "pass",
+        "reason": "Missing-data cases are in a separate `missing_date_exceptions` sheet, while valid rows appear in aligned and ranked sheets.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_source_trace_uses_realistic_identifiers",
+        "verdict": "pass",
+        "reason": "Traces identify source families and concrete codes, such as `fund_nav::FD-SM428`.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_summary_does_not_mask_row_failures",
+        "verdict": "pass",
+        "reason": "Summary rows report exception counts and category breakdowns, including 6 total exceptions per interval.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "missing_date_exception_rows_reconcile_to_aligned_returns",
+        "verdict": "pass",
+        "reason": "Exception rows identify interval, product, source code, category, date window, and trace; the summary exception counts match the 6 exception rows per interval.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "no_product_recommendation",
+        "verdict": "pass",
+        "reason": "The visible workbook reports historical returns and rankings without buy, sell, allocation, or forecast language.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_trace_or_interval_context_visible",
+        "verdict": "pass",
+        "reason": "Aligned rows show interval, product, asset type, source code, observation dates, and source trace.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_is_return_comparison",
+        "verdict": "pass",
+        "reason": "The workbook has aligned returns, missing-date exceptions, ranked comparison, and summary sheets for stock and fund intervals.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "subscription-credit-reconcile-L4-024",
+    "rule_score": 0.0,
+    "judge_score": 0.0,
+    "combined_score": 0.0,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "credit_amounts_are_currency_not_percent_or_rate",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "credit_workbook"
+        ]
+      },
+      {
+        "id": "account_product_month_matching_is_visible",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "credit_workbook"
+        ]
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "credit_workbook"
+        ]
+      },
+      {
+        "id": "credit_due_lines_1002_1008_remain_visible",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "credit_workbook"
+        ]
+      },
+      {
+        "id": "credit_each_invoice_line_has_exactly_one_bucket",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "credit_workbook"
+        ]
+      },
+      {
+        "id": "credit_eligibility_chain_is_auditable",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "credit_workbook"
+        ]
+      },
+      {
+        "id": "credit_forbidden_or_nonproduction_evidence_not_used_as_due",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "credit_workbook"
+        ]
+      },
+      {
+        "id": "credit_manual_review_conflicts_keep_contract_and_source_context",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "credit_workbook"
+        ]
+      },
+      {
+        "id": "credit_rows_show_contract_cap_existing_credit_and_net_due",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "credit_workbook"
+        ]
+      },
+      {
+        "id": "credit_summary_reconciles_four_bucket_counts_and_amounts",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "credit_workbook"
+        ]
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "credit_workbook"
+        ]
+      },
+      {
+        "id": "duplicate_void_sandbox_and_monitoring_evidence_are_excluded",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "credit_workbook"
+        ]
+      },
+      {
+        "id": "every_classification_sheet_has_reason_and_evidence",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "credit_workbook"
+        ]
+      },
+      {
+        "id": "evidence_notes_explain_classifications",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "credit_workbook"
+        ]
+      },
+      {
+        "id": "manual_review_and_not_eligible_not_counted_as_due",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "credit_workbook"
+        ]
+      },
+      {
+        "id": "manual_review_rows_name_blocking_evidence",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "credit_workbook"
+        ]
+      },
+      {
+        "id": "non_settlement_evidence_not_overcounted",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "credit_workbook"
+        ]
+      },
+      {
+        "id": "recommended_credit_amount_story_includes_incidents_credits_and_net_due",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "credit_workbook"
+        ]
+      },
+      {
+        "id": "workbook_is_credit_reconciliation",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "credit_workbook"
+        ]
+      }
+    ]
+  },
+  {
+    "task": "ticket-weekly-L3-010",
+    "rule_score": 1.0,
+    "judge_score": 0.7778,
+    "combined_score": 0.9667,
+    "rule_weight": 0.85,
+    "judge_weight": 0.15,
+    "verdicts": [
+      {
+        "id": "expanded_duplicate_handling_is_visible",
+        "verdict": "fail",
+        "reason": "The weekly table gives aggregate counts only and has no record identifiers or explanation of duplicate handling.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "all_week_buckets_are_visible",
+        "verdict": "pass",
+        "reason": "Four distinct weekly rows are shown, starting 2026-04-06, 2026-04-13, 2026-04-20, and 2026-04-27.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The sheet contains dated weekly rows with populated planned, resolved, and completion-rate values.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "deliverable_has_no_process_noise",
+        "verdict": "pass",
+        "reason": "The evidence shows a clean four-column weekly summary table without process notes or unrelated content.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "week_and_metric_labels_are_clear",
+        "verdict": "pass",
+        "reason": "Headers identify Week_Start, Planned_Count, Resolved_Count, and Completion_Rate, with dated week starts.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "weekly_rows_preserve_plan_actual_rate_alignment",
+        "verdict": "pass",
+        "reason": "Each dated weekly row aligns its planned count, resolved count, and completion rate, for example 2026-04-06 has 9420, 6852, and 0.7274.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "weekly_summary_avoids_process_or_markdown_artifacts",
+        "verdict": "pass",
+        "reason": "The visible worksheet content consists of spreadsheet labels and metric values, with no markdown or assistant notes.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_is_weekly_ticket_summary",
+        "verdict": "pass",
+        "reason": "The sheet is titled Weekly Summary and presents planned, resolved, and completion-rate metrics by week.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_summary_is_reconcilable_to_details",
+        "verdict": "fail",
+        "reason": "Only weekly aggregates are shown; no detailed rows, source categories, or references support tracing the counts.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "trade-pnl-positions-L4-007",
+    "rule_score": 0.0,
+    "judge_score": 0.0,
+    "combined_score": 0.0,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "expanded_source_granularity_is_sufficient",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "trade_pnl_workbook"
+        ]
+      },
+      {
+        "id": "source_trace_includes_business_key_and_input_family",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "trade_pnl_workbook"
+        ]
+      },
+      {
+        "id": "account_summary_breaks_reconcile_to_detail_sections",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "trade_pnl_workbook"
+        ]
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "trade_pnl_workbook"
+        ]
+      },
+      {
+        "id": "critical_blank_or_na_fields_are_explained",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "trade_pnl_workbook"
+        ]
+      },
+      {
+        "id": "edge_case_decision_basis_is_specific",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "trade_pnl_workbook"
+        ]
+      },
+      {
+        "id": "exception_rows_name_affected_record_and_review_detail",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "trade_pnl_workbook"
+        ]
+      },
+      {
+        "id": "no_trading_or_investment_advice",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "trade_pnl_workbook"
+        ]
+      },
+      {
+        "id": "source_trace_is_row_level_for_position_pnl_and_cash",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "trade_pnl_workbook"
+        ]
+      },
+      {
+        "id": "expanded_denominators_are_not_ambiguous",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "trade_pnl_workbook"
+        ]
+      }
+    ]
+  },
+  {
+    "task": "warranty-recovery-allocation-L5-033",
+    "rule_score": 0.0,
+    "judge_score": 0.0,
+    "combined_score": 0.0,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "allocation_note_text_contains_supplier_policy_ratio_and_adjustments",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "warranty_workbook"
+        ]
+      },
+      {
+        "id": "allocation_notes_name_policy_contract_and_supplier_context",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "warranty_workbook"
+        ]
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "warranty_workbook"
+        ]
+      },
+      {
+        "id": "warranty_summary_counts_include_recoverable_and_review_claims",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "warranty_workbook"
+        ]
+      },
+      {
+        "id": "expanded_summary_uses_same_scope_as_details",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "warranty_workbook"
+        ]
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "warranty_workbook"
+        ]
+      },
+      {
+        "id": "excluded_or_duplicate_items_are_not_overclaimed",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "warranty_workbook"
+        ]
+      },
+      {
+        "id": "recovery_formula_components_are_visible",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "warranty_workbook"
+        ]
+      },
+      {
+        "id": "warranty_contract_override_application_order_visible",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "warranty_workbook"
+        ]
+      },
+      {
+        "id": "warranty_duplicate_recovery_uses_booked_only_and_routes_covered_claims_to_review",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "warranty_workbook"
+        ]
+      },
+      {
+        "id": "warranty_event_chain_closure_fields_visible_for_review_rows",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "warranty_workbook"
+        ]
+      },
+      {
+        "id": "warranty_nonadopted_supplier_evidence_is_excluded_from_allocation",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "warranty_workbook"
+        ]
+      },
+      {
+        "id": "warranty_split_allocations_show_supplier_cost_ratio_and_recovery",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "warranty_workbook"
+        ]
+      },
+      {
+        "id": "workbook_matches_recovery_allocation",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "warranty_workbook"
+        ]
+      }
+    ]
+  },
+  {
+    "task": "wechat-tech-topic-package-hardened",
+    "rule_score": 0.7978,
+    "judge_score": 0.6923,
+    "combined_score": 0.7767,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "headline_usefulness_and_specificity",
+        "verdict": "pass",
+        "reason": "Titles name concrete angles grounded in the sources, such as the assistant’s shift from “无感执行” to user confirmation (TS-001/003) and creator tools moving labeling into pre-publication checks (TS-045/046).",
+        "source": "codex_luna"
+      },
+      {
+        "id": "reader_facing_headline_translation",
+        "verdict": "fail",
+        "reason": "Rank 3’s title, “开源框架一天三件事：量化、路由、日志接口,” is an update-item inventory; it leaves the reader-facing significance to the card text.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "audience_editorial_fit_and_planning_tone",
+        "verdict": "pass",
+        "reason": "Cards identify audience segments and translate technical topics into permission, verification, team workflow, and content-responsibility angles; the package remains a planning board rather than a full article.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_grounded_non_generic_synthesis_without_stuffing",
+        "verdict": "pass",
+        "reason": "The cards distinguish supporting evidence and limitations, for example TS-009’s framework changes alongside TS-010/029’s team-review workflow, while noting the open-source sample does not represent all companies.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "package_thesis_bridge_source_grounding",
+        "verdict": "fail",
+        "reason": "The summary promotes a broad thesis spanning product experience, browser, policy, and public interest, but no primary or reserve topic represents the browser strand as a package pillar; the bridge wording overstates the selected evidence.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "latest_state_and_source_conflict_resolution_quality",
+        "verdict": "pass",
+        "reason": "The board resolves TS-002’s “无感执行” claim using TS-003’s confirmation requirement, and treats TS-013 as unverified while relying on TS-014’s repair notice.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "novelty_recent_history_angle_differentiation",
+        "verdict": "pass",
+        "reason": "It explains distinct angles against recent coverage, including browser workflow rather than citation basics (HIST-001) and pre-publication responsibility rather than basic labeling (HIST-011).",
+        "source": "codex_luna"
+      },
+      {
+        "id": "conflict_aware_ranking_rationale",
+        "verdict": "fail",
+        "reason": "The rank 1 rationale leans on “来源数量” and “信息密度最高,” while the front summary asserts broad public discussion value; it does not substantively weigh the main competing candidates across reader fit, history, and evidence limits.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "close_call_specificity",
+        "verdict": "pass",
+        "reason": "The matrix gives concrete tradeoffs and outcomes, such as TS-014’s verified repair state over TS-013’s unverified safety-sensitive rumor, and code-review workflow over the recently covered knowledge-base angle.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "reserve_and_non_selection_reasoning_quality",
+        "verdict": "pass",
+        "reason": "The two reserves have specific downgrade reasons and promotion conditions, and the logs cover duplicate merges, stale background, promotion, safety, and recent-history or channel-fit conflicts.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "safety_promotion_deamplification_expression",
+        "verdict": "fail",
+        "reason": "Rank 4 makes the safety-sensitive issue a primary topic despite the policy’s explicit caution against promoting such material; it also includes the unverified TS-013 in that card’s source list, even while labeling it unverified.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "package_coherence_and_distinct_angles",
+        "verdict": "pass",
+        "reason": "The five cards span assistant permissions, search verification, developer workflow, device repair boundaries, and creator responsibility, with close calls and logs explaining overlaps and downgrades.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "cross_artifact_semantic_alignment_evidence_gate",
+        "verdict": "pass",
+        "reason": "The JSON summary and Markdown describe the same five topics, two reserves, tradeoffs, source-state resolutions, and non-selection logic.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "xiaohongshu-psychology-note-pack",
+    "rule_score": 0.8413,
+    "judge_score": 0.5,
+    "combined_score": 0.773,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "body_integrated_conflict_resolution_specificity",
+        "verdict": "fail",
+        "reason": "Several body decisions are specific, such as the bedtime paper list and private relationship note, but the pack also carries stale or unsupported claims into reader copy: Note 1 says the brain prioritizes negative memories in the morning, and Notes 3–4 make broad claims about others not remembering and the brain processing unfinished tasks. Conflict resolution is therefore not consistently bounded in the actual copy.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "plan_to_markdown_editorial_coherence_quality",
+        "verdict": "pass",
+        "reason": "The plan’s four directions are recognizable in the notes: morning self-criticism and a smaller first step, waiting for a reply and separating fact from guesswork, meeting awkwardness and a buffer sentence, and bedtime paper-based closure. The notes also reflect the plan’s private interaction and source-boundary choices.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "unsafe_risk_transformation_quality",
+        "verdict": "fail",
+        "reason": "Despite safe practices and a support caveat, the copy retains efficacy-like or authoritative framing, including “大多数焦虑来自第二行和第三行之间的互相强化” and “给了大脑一个明确的信号.” Note 1 also presents an unsupported brain-behavior explanation as fact.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "reader_facing_vs_meta_self_certification_balance",
+        "verdict": "fail",
+        "reason": "The note bodies are mostly reader-facing, but Note 1 explicitly tells readers that the old draft promised change after seven days and says “我们不做这样的保证,” exposing editorial rewrite process inside the finished note.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "practice_specificity_and_non_interchangeability",
+        "verdict": "pass",
+        "reason": "The practices differ by situation: Note 1 uses a touchpoint and smallest next step, Note 2 sorts facts, guesses, and feelings, Note 3 prepares a meeting follow-up sentence, and Note 4 writes unfinished tasks and when to revisit them.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "body_micro_detail_actionability",
+        "verdict": "pass",
+        "reason": "At least three notes give usable scene-linked details, including touching a nearby object and choosing one task, writing a specific unsent relationship sentence, and noting a task’s next step and revisit time before bed.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "note_benefit_loop_coherence",
+        "verdict": "pass",
+        "reason": "Each note’s scene leads to a matching practice and closing cue: morning self-criticism to one small action, unanswered messages to private sorting, meeting embarrassment to a buffer sentence, and bedtime replay to a written holding place.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "pack_current_handoff_selection_balance",
+        "verdict": "fail",
+        "reason": "The handoff calls for a distinct work or task-start loop and a distinct self-criticism downshift loop. Note 1 combines morning self-criticism and task-start, so the pack lacks a separate finished work/action-entry note.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "xmind-screenshot-template-ppt",
+    "rule_score": 0.0,
+    "judge_score": 0.0,
+    "combined_score": 0.0,
+    "rule_weight": 0.75,
+    "judge_weight": 0.25,
+    "verdicts": [
+      {
+        "id": "section_hierarchy_and_grouping",
+        "verdict": "fail",
+        "reason": "The slide-structure summary says no parseable submitted PPTX structure was available, so hierarchy and grouping cannot be assessed.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "cross_axis_synthesis_not_raw_branch_dump",
+        "verdict": "fail",
+        "reason": "No parseable slide structure or final presentation text is available to show synthesis; the final text explicitly reports no parseable submitted PPTX text.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "presentation_chunking_and_readability",
+        "verdict": "fail",
+        "reason": "The required slide text evidence is absent: final presentation text reports no parseable text, and the structure summary reports no parseable structure.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "audience_reader_boundary_clarity",
+        "verdict": "fail",
+        "reason": "No final deck text or slide structure is available to distinguish audience-facing content from backstage or process material.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "template_style_proxy_continuity",
+        "verdict": "fail",
+        "reason": "The style summary reports no parseable style records, and there is no deck text or slide structure to identify substantive slides or assess recurring style proxies.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "retained_template_sample_residue_text",
+        "verdict": "fail",
+        "reason": "The final presentation text is unavailable, so template placeholders or sample residue cannot be assessed; the rubric requires fail when evidence is missing.",
+        "source": "codex_luna"
+      }
+    ]
+  }
+]

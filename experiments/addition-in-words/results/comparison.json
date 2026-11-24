@@ -1,0 +1,56 @@
+{
+  "off": {
+    "canonical_text_correct": 14,
+    "instruction_compliant": 93,
+    "mean_latency": 0.2777221715976331,
+    "median_completion_tokens": 19,
+    "median_latency": 0.197807,
+    "median_reasoning_tokens": 0,
+    "numeric_correct": 14,
+    "total_completion_tokens": 3909
+  },
+  "on": {
+    "canonical_text_correct": 166,
+    "instruction_compliant": 169,
+    "mean_latency": 2.0108293964497044,
+    "median_completion_tokens": 784,
+    "median_latency": 1.562799,
+    "median_reasoning_tokens": 764,
+    "numeric_correct": 167,
+    "total_completion_tokens": 192301
+  },
+  "on_failures": [
+    {
+      "a": 8810047276,
+      "answer": "\n\nthirty-one billion, three hundred thirty-one million, one hundred five thousand, five hundred thirty-five",
+      "b": 22521053259,
+      "case_id": "a10_b11_r01",
+      "expected": 31331100535,
+      "finish_reason": "stop",
+      "parse_error": "",
+      "parsed": 31331105535
+    },
+    {
+      "a": 9558190671365,
+      "answer": "\n\nNine trillion, five hundred ninety-three billion, seven hundred sixty-seven million, eight hundred eighty-eight thousand, one hundred thirty-four",
+      "b": 35576416769,
+      "case_id": "a13_b11_r01",
+      "expected": 9593767088134,
+      "finish_reason": "stop",
+      "parse_error": "",
+      "parsed": 9593767888134
+    }
+  ],
+  "overlap": {
+    "both": 14,
+    "neither": 2,
+    "off_only": 0,
+    "on_only": 153
+  },
+  "paired_cases": 169,
+  "vs_upstream_no_thinking_full": {
+    "cases": 5070,
+    "ours_correct": 606,
+    "upstream_correct": 1195
+  }
+}

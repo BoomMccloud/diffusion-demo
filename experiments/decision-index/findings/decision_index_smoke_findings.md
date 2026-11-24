@@ -1,0 +1,1 @@
+../../../docs/decision_index_smoke_findings.md

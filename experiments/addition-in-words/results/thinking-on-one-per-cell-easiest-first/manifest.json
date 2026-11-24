@@ -1,0 +1,41 @@
+{
+  "benchmark": "addition-in-words, repeat of simonw/research qwen38-addition-in-words",
+  "cases_csv_sha256": "d5c528ffd71cd4ad0be20dc54764e7ed9abdbb898dcf7873810e52a6a31dd59e",
+  "client_concurrency": 1,
+  "config": "on",
+  "dllm_block_size": 16,
+  "dllm_spec_accept_rule": "medusa",
+  "endpoint": "DIFFUSION_BASE_URL from .env.local (kept out of the repo)",
+  "expected_cases": 169,
+  "model": "qwen36-iter22000-blk16-arverify-best",
+  "model_path": "/cpfs/exports/qwen36_35b_a3b_mixed_v6.3_from_v6_dmoe0p9_lr1e-6_warmup100_constant_to40000_iter0022000_hf",
+  "prepared_at": "2026-10-11T03:28:44.050063+00:00",
+  "prompt_template": "What is {a} + {b}? Please write your answer in words. Do not include any other text or information, just the answer in words.",
+  "request_template": {
+    "chat_template_kwargs": {
+      "enable_thinking": true
+    },
+    "max_tokens": 32000,
+    "messages": [
+      {
+        "content": "What is 7 + 9? Please write your answer in words. Do not include any other text or information, just the answer in words.",
+        "role": "user"
+      }
+    ],
+    "min_p": 0,
+    "model": "qwen36-iter22000-blk16-arverify-best",
+    "repetition_penalty": 1,
+    "seed": 4075241621,
+    "stream": false,
+    "temperature": 0,
+    "top_k": -1,
+    "top_p": 1
+  },
+  "runner_note": "runner_sha256 is the revision that ran; the only later change moved the endpoint out of the manifest",
+  "runner_sha256": "72c32ae5357ea04df837aa5219c67419a913e4d5c3b61f973abc12f9b5417158",
+  "selection": "replicate r01 from each of the 169 cells, easiest first",
+  "server_version": "0.0.0.dev13504+g11de4bf7f",
+  "speculative_algorithm": "DLLM",
+  "upstream_pairs_sha256": "a1bbd56ef958aa30c2d76c52d57bac43b4e0e96d43e75ae18f1110c82b4053aa",
+  "upstream_pairs_url": "https://raw.githubusercontent.com/simonw/research/main/qwen38-addition-in-words/runs/qwen3.8-27b-q4_k_m-seed-20260929/pairs.csv"
+}

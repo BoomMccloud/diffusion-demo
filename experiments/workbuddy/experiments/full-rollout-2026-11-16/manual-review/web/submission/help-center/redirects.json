@@ -1,0 +1,32 @@
+[
+  {
+    "old_slug": "reset-password",
+    "target": "articles/account-billing.md#reset-password",
+    "status": 301,
+    "reason": "old CMS slug merged into account billing article"
+  },
+  {
+    "old_slug": "invoice-help",
+    "target": "articles/account-billing.md#invoices",
+    "status": 301,
+    "reason": "billing invoice help renamed"
+  },
+  {
+    "old_slug": "sso-setup",
+    "target": "articles/account-security.md#sso-configuration",
+    "status": 301,
+    "reason": "SSO setup moved to security article"
+  },
+  {
+    "old_slug": "close-account",
+    "target": "articles/account-security.md#close-account",
+    "status": 301,
+    "reason": "account closure moved to security article"
+  },
+  {
+    "old_slug": "scim-sync",
+    "target": "articles/account-security.md#scim-sync",
+    "status": 301,
+    "reason": "SCIM topic moved to security article"
+  }
+]

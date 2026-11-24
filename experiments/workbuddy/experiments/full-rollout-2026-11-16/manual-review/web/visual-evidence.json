@@ -1,0 +1,15 @@
+{
+  "schema_version": "3.0-visual-evidence",
+  "case_id": "T50",
+  "status": "missing_entrypoint",
+  "entrypoint": "",
+  "entrypoint_kind": "",
+  "screenshots": [],
+  "scroll_probes": [],
+  "console": [],
+  "errors": [
+    "No supported HTML entrypoint was found. Checked declared artifact, /app/www/index.html, /app/submission/chart.html, /app/www/sidepanel.html, and /app/www/popup.html."
+  ],
+  "text_summary": "",
+  "tool": "playwright"
+}

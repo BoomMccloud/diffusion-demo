@@ -1,0 +1,103 @@
+version: 1
+artifacts:
+- id: weekly_workbook
+  path: output/result.xlsx
+  required: true
+  type: xlsx
+llm_judge:
+  method: rubric_binary_mean
+  rubrics:
+  - id: expanded_duplicate_handling_is_visible
+    question: Is duplicate or overlapping evidence handled transparently?
+    artifact_refs:
+    - weekly_workbook
+    pass_criteria:
+    - Duplicates, overlaps, or repeated records are deduplicated with visible basis or isolated as exceptions.
+    - The artifact preserves enough identifiers to see why records were merged, excluded, or kept separate.
+    fail_criteria:
+    - Potential duplicates appear as independent final facts without explanation.
+    - Deduplication is claimed but not traceable to record identifiers.
+  - id: all_week_buckets_are_visible
+    question: Are all required weekly buckets visible rather than merged into an aggregate-only summary?
+    artifact_refs:
+    - weekly_workbook
+    pass_criteria:
+    - The artifact shows four distinct week labels or equivalent weekly buckets.
+    - Any aggregate or summary sheet remains secondary to visible week-level rows.
+    fail_criteria:
+    - Weeks are collapsed into a single total with no distinct week labels.
+    - Some week buckets are omitted without a zero/none or missing-data note.
+  - id: artifact_contains_task_specific_evidence_not_placeholders
+    question: Does the artifact contain task-specific evidence and populated content rather than mostly headers, placeholders, or generic boilerplate?
+    artifact_refs:
+    - weekly_workbook
+    pass_criteria:
+    - Visible cells, fields, sections, or records mention task-specific entities, dates, metrics, rules, statuses, or source identifiers beyond the required headings.
+    - Important narrative, reason, evidence, or note fields are populated with meaningful task-specific content rather than repeated boilerplate.
+    fail_criteria:
+    - The artifact mainly consists of headings, empty tables, placeholder values, TODO markers, or generic prose that could fit almost any task.
+    - The available artifact evidence is too sparse to confirm task-specific completion.
+  - id: deliverable_has_no_process_noise
+    question: Is the workbook a clean deliverable without irrelevant process notes?
+    artifact_refs:
+    - weekly_workbook
+    pass_criteria:
+    - The workbook contains reviewable tables and no irrelevant assistant process narration.
+    - It does not include debugging output or unrelated content.
+    fail_criteria:
+    - The artifact is mostly notes, logs, or self-commentary.
+    - Unrelated content obscures the weekly summary.
+  - id: week_and_metric_labels_are_clear
+    question: Are week boundaries and metric labels clear enough for review?
+    artifact_refs:
+    - weekly_workbook
+    pass_criteria:
+    - Rows or headers identify week, planned amount, resolved amount, and completion rate or equivalent labels.
+    - Week grouping is understandable from the artifact.
+    fail_criteria:
+    - The artifact does not show what periods or metrics are being summarized.
+    - Metric labels are ambiguous or missing.
+  - id: weekly_rows_preserve_plan_actual_rate_alignment
+    question: Do weekly rows keep planned amount, actual resolved amount, and completion rate aligned for the same week?
+    artifact_refs:
+    - weekly_workbook
+    pass_criteria:
+    - Each week-level row shows planned volume, resolved or actual volume, and completion rate in the same row or clearly linked section.
+    - Completion-rate labels make clear which plan and actual values they compare.
+    fail_criteria:
+    - Plan, actual, and rate values are separated or summarized so a reviewer cannot tell which week they belong to.
+    - Completion rates appear without visible plan and actual values.
+  - id: weekly_summary_avoids_process_or_markdown_artifacts
+    question: Is the weekly workbook free of markdown remnants, assistant notes, or process logs that would confuse the delivered table?
+    artifact_refs:
+    - weekly_workbook
+    pass_criteria:
+    - The workbook contains spreadsheet-ready labels and values, not markdown bullets, code fences, or assistant process text.
+    - Any notes are business-facing and tied to the weekly metrics.
+    fail_criteria:
+    - Markdown, code fences, debug logs, or assistant self-commentary appear in worksheet content.
+    - Process notes obscure the weekly metric table.
+  - id: workbook_is_weekly_ticket_summary
+    question: Does the workbook read as a weekly customer-service ticket processing summary?
+    artifact_refs:
+    - weekly_workbook
+    pass_criteria:
+    - Visible rows or sheets summarize planned volume, actual resolved volume, completion rate, or weeks.
+    - The workbook is organized as weekly summary output.
+    fail_criteria:
+    - The workbook is unrelated to ticket weekly summary.
+    - It lacks week-level rows or summary metrics.
+  - id: expanded_summary_is_reconcilable_to_details
+    question: Can a reviewer reconcile summary counts or claims back to detailed rows?
+    artifact_refs:
+    - weekly_workbook
+    pass_criteria:
+    - Summary labels correspond to detailed status labels, sheets, or record categories.
+    - The artifact provides enough grouping fields, counts, or references to trace summary values.
+    fail_criteria:
+    - Summary categories cannot be matched to detailed row categories.
+    - Important summary values appear without any visible detailed support.
+score_merge:
+  method: weighted_sum
+  rule_weight: 0.85
+  llm_weight: 0.15

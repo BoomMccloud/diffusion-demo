@@ -1,0 +1,124 @@
+=== qwen36-unsloth-nvfp4-fast 2026-11-12T05:08:27-08:00
+1 essay 2048 2048 0.087 74.2 74.0 length 
+1 essay 2048 2048 0.069 74.1 73.9 length 
+1 code 2048 2048 0.064 74.0 73.9 length 
+1 code 2048 2048 0.064 74.0 73.9 length 
+1 story 2048 2048 0.065 74.2 74.1 length 
+1 story 2048 2048 0.065 74.2 74.1 length 
+1 math 2048 2048 0.064 73.9 73.8 length 
+1 math 2048 2048 0.065 73.9 73.8 length 
+concurrency 1: 8 requests in 222s
+8 code 2048 2048 0.128 32.2 32.1 length 
+8 essay 2048 2048 0.181 32.2 32.1 length 
+8 code 2048 2048 0.177 32.2 32.1 length 
+8 code 2048 2048 0.177 32.2 32.1 length 
+8 essay 2048 2048 0.195 32.2 32.1 length 
+8 code 2048 2048 0.18 32.2 32.1 length 
+8 essay 2048 2048 0.182 32.2 32.1 length 
+8 essay 2048 2048 0.181 32.2 32.1 length 
+8 story 2048 2048 0.134 31.8 31.7 length 
+8 story 2048 2048 0.158 31.8 31.7 length 
+8 story 2048 2048 0.155 31.8 31.7 length 
+8 story 2048 2048 0.153 31.8 31.7 length 
+8 math 2048 2048 0.149 31.8 31.7 length 
+8 math 2048 2048 0.146 31.8 31.7 length 
+8 math 2048 2048 0.143 31.8 31.7 length 
+8 math 2048 2048 0.14 31.8 31.7 length 
+concurrency 8: 16 requests in 128s
+32 code 2048 2048 0.172 14.0 14.0 length 
+32 code 2048 2048 0.329 14.0 13.9 length 
+32 code 2048 2048 0.329 14.0 13.9 length 
+32 essay 2048 2048 0.332 14.0 13.9 length 
+32 essay 2048 2048 0.333 14.0 13.9 length 
+32 code 2048 2048 0.33 14.0 13.9 length 
+32 code 2048 2048 0.329 14.0 13.9 length 
+32 code 2048 2048 0.329 14.0 13.9 length 
+32 code 2048 2048 0.329 14.0 13.9 length 
+32 story 2048 2048 0.329 14.0 13.9 length 
+32 story 2048 2048 0.329 14.0 13.9 length 
+32 story 2048 2048 0.329 14.0 13.9 length 
+32 story 2048 2048 0.329 14.0 13.9 length 
+32 story 2048 2048 0.329 14.0 13.9 length 
+32 story 2048 2048 0.329 14.0 13.9 length 
+32 story 2048 2048 0.329 14.0 13.9 length 
+32 story 2048 2048 0.33 14.0 13.9 length 
+32 math 2048 2048 0.33 14.0 13.9 length 
+32 math 2048 2048 0.45 14.0 13.9 length 
+32 math 2048 2048 0.45 14.0 13.9 length 
+32 math 2048 2048 0.45 14.0 13.9 length 
+32 math 2048 2048 0.45 14.0 13.9 length 
+32 essay 2048 2048 0.47 14.0 13.9 length 
+32 essay 2048 2048 0.459 14.0 13.9 length 
+32 essay 2048 2048 0.456 14.0 13.9 length 
+32 essay 2048 2048 0.455 14.0 13.9 length 
+32 essay 2048 2048 0.459 14.0 13.9 length 
+32 essay 2048 2048 0.457 14.0 13.9 length 
+32 code 2048 2048 0.456 14.0 13.9 length 
+32 math 2048 2048 0.451 14.0 13.9 length 
+32 math 2048 2048 0.451 14.0 13.9 length 
+32 math 2048 2048 0.451 14.0 13.9 length 
+concurrency 32: 32 requests in 147s
+{"model": "qwen36-unsloth-nvfp4-fast", "n": 100, "correct": 97, "errors": 0, "length_stops": 0, "completion_tokens": 154229, "wall_s": 662.4}
+=== qwen36-unsloth-nvfp4-fast-mtp 2026-11-12T05:42:57-08:00
+1 essay 2048 None None None None None APIConnectionError('Connection error.')
+1 essay 2048 None None None None None APIConnectionError('Connection error.')
+1 code 2048 None None None None None APIConnectionError('Connection error.')
+1 code 2048 None None None None None APIConnectionError('Connection error.')
+1 story 2048 None None None None None APIConnectionError('Connection error.')
+1 story 2048 None None None None None APIConnectionError('Connection error.')
+1 math 2048 None None None None None APIConnectionError('Connection error.')
+1 math 2048 None None None None None APIConnectionError('Connection error.')
+concurrency 1: 8 requests in 0s
+8 code 2048 None None None None None APIConnectionError('Connection error.')
+8 essay 2048 None None None None None APIConnectionError('Connection error.')
+8 code 2048 None None None None None APIConnectionError('Connection error.')
+8 essay 2048 None None None None None APIConnectionError('Connection error.')
+8 essay 2048 None None None None None APIConnectionError('Connection error.')
+8 code 2048 None None None None None APIConnectionError('Connection error.')
+8 code 2048 None None None None None APIConnectionError('Connection error.')
+8 essay 2048 None None None None None APIConnectionError('Connection error.')
+8 story 2048 None None None None None APIConnectionError('Connection error.')
+8 story 2048 None None None None None APIConnectionError('Connection error.')
+8 story 2048 None None None None None APIConnectionError('Connection error.')
+8 story 2048 None None None None None APIConnectionError('Connection error.')
+8 math 2048 None None None None None APIConnectionError('Connection error.')
+8 math 2048 None None None None None APIConnectionError('Connection error.')
+8 math 2048 None None None None None APIConnectionError('Connection error.')
+8 math 2048 None None None None None APIConnectionError('Connection error.')
+concurrency 8: 16 requests in 0s
+32 essay 2048 None None None None None APIConnectionError('Connection error.')
+32 essay 2048 None None None None None APIConnectionError('Connection error.')
+32 essay 2048 None None None None None APIConnectionError('Connection error.')
+32 essay 2048 None None None None None APIConnectionError('Connection error.')
+32 essay 2048 None None None None None APIConnectionError('Connection error.')
+32 essay 2048 None None None None None APIConnectionError('Connection error.')
+32 code 2048 None None None None None APIConnectionError('Connection error.')
+32 code 2048 None None None None None APIConnectionError('Connection error.')
+32 code 2048 None None None None None APIConnectionError('Connection error.')
+32 code 2048 None None None None None APIConnectionError('Connection error.')
+32 code 2048 None None None None None APIConnectionError('Connection error.')
+32 code 2048 None None None None None APIConnectionError('Connection error.')
+32 code 2048 None None None None None APIConnectionError('Connection error.')
+32 code 2048 None None None None None APIConnectionError('Connection error.')
+32 essay 2048 None None None None None APIConnectionError('Connection error.')
+32 essay 2048 None None None None None APIConnectionError('Connection error.')
+32 story 2048 None None None None None APIConnectionError('Connection error.')
+32 story 2048 None None None None None APIConnectionError('Connection error.')
+32 story 2048 None None None None None APIConnectionError('Connection error.')
+32 story 2048 None None None None None APIConnectionError('Connection error.')
+32 story 2048 None None None None None APIConnectionError('Connection error.')
+32 story 2048 None None None None None APIConnectionError('Connection error.')
+32 story 2048 None None None None None APIConnectionError('Connection error.')
+32 story 2048 None None None None None APIConnectionError('Connection error.')
+32 math 2048 None None None None None APIConnectionError('Connection error.')
+32 math 2048 None None None None None APIConnectionError('Connection error.')
+32 math 2048 None None None None None APIConnectionError('Connection error.')
+32 math 2048 None None None None None APIConnectionError('Connection error.')
+32 math 2048 None None None None None APIConnectionError('Connection error.')
+32 math 2048 None None None None None APIConnectionError('Connection error.')
+32 math 2048 None None None None None APIConnectionError('Connection error.')
+32 math 2048 None None None None None APIConnectionError('Connection error.')
+concurrency 32: 32 requests in 0s
+{"model": "qwen36-unsloth-nvfp4-fast-mtp", "n": 100, "correct": 0, "errors": 100, "length_stops": 0, "completion_tokens": 0, "wall_s": 0.1}
+Error response from daemon: No such container: srv-vllm
+=== done 2026-11-12T05:43:00-08:00

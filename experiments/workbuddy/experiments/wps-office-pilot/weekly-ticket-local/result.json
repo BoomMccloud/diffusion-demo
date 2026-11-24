@@ -1,0 +1,21 @@
+{
+  "task": "ticket-weekly-L3-010",
+  "passed": 15,
+  "total": 15,
+  "score": 1.0,
+  "baseline_passed": 15,
+  "baseline_total": 15,
+  "agent": "CodeBuddy 2.109.3",
+  "environment": "macOS sandbox-exec, local Python/openpyxl, WPS MCP writer and Clover API; task and grading local",
+  "output_written_by": "local WPS; task-scoped writer copies the saved file to output/result.xlsx",
+  "wps_and_output_byte_equal": true,
+  "verification": "original pytest and evaluator, with only hard-coded /tests/gold path redirected to copied local gold",
+  "local_verifier_parity": "previous WPS result reproduced 14/15",
+  "limitations": [
+    "single attempt per setup",
+    "normal CodeBuddy tools within macOS sandbox",
+    "WPS tool and instructions added",
+    "different operating system and launcher",
+    "verifier local Python 3.13 instead of Spark Python 3.12"
+  ]
+}

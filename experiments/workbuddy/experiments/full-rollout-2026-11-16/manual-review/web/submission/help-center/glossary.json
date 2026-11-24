@@ -1,0 +1,32 @@
+[
+  {
+    "term": "CMS",
+    "definition": "Legacy content system",
+    "anchor": "articles/account-billing.md#migration-context"
+  },
+  {
+    "term": "invoice",
+    "definition": "Invoice",
+    "anchor": "articles/account-billing.md#invoices"
+  },
+  {
+    "term": "SSO",
+    "definition": "Single Sign-On",
+    "anchor": "articles/account-security.md#sso-configuration"
+  },
+  {
+    "term": "seat_limit",
+    "definition": "Team seat limit",
+    "anchor": "articles/account-billing.md#team-seats"
+  },
+  {
+    "term": "SCIM",
+    "definition": "Cross-domain Identity Management auto sync",
+    "anchor": "articles/account-security.md#scim-sync"
+  },
+  {
+    "term": "audit_log",
+    "definition": "Audit log",
+    "anchor": "articles/account-security.md#audit-log"
+  }
+]

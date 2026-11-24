@@ -1,0 +1,9 @@
+{
+  "task": "procurement-reconcile-L3-015",
+  "passed": 16,
+  "total": 21,
+  "baseline_passed": 15,
+  "baseline_total": 21,
+  "wps_output_matches_scored_output": true,
+  "judge": "original deterministic task checks, local path redirects"
+}

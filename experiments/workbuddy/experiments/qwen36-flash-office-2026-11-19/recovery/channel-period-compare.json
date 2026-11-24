@@ -1,0 +1,8 @@
+{
+  "task": "channel-period-compare-L4-017",
+  "tests_passed": 22,
+  "tests_total": 22,
+  "score": 1.0,
+  "source": "results/qwen36-flash-office-005-a001/2026-11-19__09-00-20/channel-period-compare-L4-017__SfCXNUc/verifier/score.json",
+  "method": "Recovered from original verifier stdout containing pytest summary and scorer JSON; composite reward was judge_error."
+}

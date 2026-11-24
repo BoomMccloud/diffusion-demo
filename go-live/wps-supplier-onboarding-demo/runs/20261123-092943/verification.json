@@ -1,0 +1,45 @@
+{
+  "passed": 26,
+  "total": 26,
+  "checks": {
+    "value B6": true,
+    "value B7": true,
+    "value B8": true,
+    "value B9": true,
+    "value B10": true,
+    "value B11": true,
+    "value B12": true,
+    "value B13": true,
+    "value B14": true,
+    "source C6": true,
+    "source C7": true,
+    "source C8": true,
+    "source C9": true,
+    "source C10": true,
+    "source C11": true,
+    "source C12": true,
+    "source C13": true,
+    "source C14": true,
+    "delivery blank": true,
+    "review status": true,
+    "exactly two exception rows": true,
+    "signed declaration omitted": true,
+    "delivery conflict includes both values and sources": true,
+    "template labels preserved": true,
+    "native WPS edits and save recorded": true,
+    "scored file matches native save": true
+  },
+  "exceptions": [
+    [
+      "缺件",
+      "缺少必需材料「供应商合规承诺书（已签署）」，资料包中未提供该文件。建议通知供应商补充提交。",
+      "供应商入驻核对清单 必需材料3"
+    ],
+    [
+      "字段冲突",
+      "交货周期在申请表记为7工作日（第1页），报价单记为10工作日（第2页），两者不一致。建议向供应商确认实际交货周期并更新资料。",
+      "供应商入驻申请表 第1页; 采购报价单 第2页"
+    ]
+  ],
+  "native_saved_sha256": "59d972281cc0bc8d8d50c3a32a861fe975a12a9e60b35791615890c903029efc"
+}

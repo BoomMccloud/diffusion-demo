@@ -1,0 +1,2544 @@
+{
+  "passed_count": 88,
+  "total_count": 113,
+  "pass_rate": 0.7788,
+  "score_denominator_mode": "full_contract_113_output_gated",
+  "model_score": 88,
+  "model_total": 113,
+  "model_pass_rate": 0.7788,
+  "gated_pass": false,
+  "scoring": {
+    "score_denominator_mode": "full_contract_113_output_gated",
+    "model_score": 88,
+    "model_total": 113,
+    "model_pass_rate": 0.7788,
+    "gated_pass": false,
+    "output_gate_checks": [
+      "output_pptx_discovered",
+      "output_single_pptx_unambiguous",
+      "output_extension_pptx",
+      "output_zip_openable"
+    ],
+    "output_gate_failures": [],
+    "contract_complete": true,
+    "missing_expected_checks": [],
+    "duplicate_expected_checks": [],
+    "raw_emitted_passed_count": 88,
+    "raw_emitted_total_count": 113,
+    "raw_emitted_pass_rate": 0.7788,
+    "interpretation": "model_score/model_total and checks are the comparable release score; missing or invalid required PPTX output gates model_score to 0 while diagnostic_checks/raw_emitted_* preserve verifier/input-health diagnostics."
+  },
+  "checks": [
+    {
+      "name": "input_source_sha256_unchanged",
+      "group": "input_immutability",
+      "passed": true,
+      "detail": "actual=06679233d1ca3ea102d251e28d59e3779c0d39d6ed55d0486feb488682e9fa3c, expected=06679233d1ca3ea102d251e28d59e3779c0d39d6ed55d0486feb488682e9fa3c"
+    },
+    {
+      "name": "input_reference_sha256_unchanged",
+      "group": "input_immutability",
+      "passed": true,
+      "detail": "actual=becf6065f0fbcf82ce222ef0a63e386894e985f78e8629245333fb6ba44701c8, expected=becf6065f0fbcf82ce222ef0a63e386894e985f78e8629245333fb6ba44701c8"
+    },
+    {
+      "name": "input_template_sha256_unchanged",
+      "group": "input_immutability",
+      "passed": true,
+      "detail": "actual=576005b0ca48a3ffdb2afff98b2807894334522537114b139b631bc0380781b9, expected=576005b0ca48a3ffdb2afff98b2807894334522537114b139b631bc0380781b9"
+    },
+    {
+      "name": "public_source_xmind_zip_openable",
+      "group": "xmind_package_parsing",
+      "passed": true,
+      "detail": "/private/tmp/wb-qwen36-xmind-4jvi6gjh/task/input/source/community_sustainability_workshop.xmind"
+    },
+    {
+      "name": "public_source_content_json_parseable",
+      "group": "xmind_package_parsing",
+      "passed": true,
+      "detail": "社区低碳共创坊（周末场地版）"
+    },
+    {
+      "name": "public_source_topic_count_matches_gold",
+      "group": "xmind_package_parsing",
+      "passed": true,
+      "detail": "actual=92"
+    },
+    {
+      "name": "public_source_top_level_branch_count_matches_gold",
+      "group": "xmind_package_parsing",
+      "passed": true,
+      "detail": "actual=10"
+    },
+    {
+      "name": "public_source_attachments_present",
+      "group": "xmind_package_parsing",
+      "passed": true,
+      "detail": [
+        "attachments/主持人纸条/提问与降温处理.txt",
+        "attachments/主持人纸条/旧模板口号替换.txt",
+        "attachments/主持人纸条/签到拖延时怎么改.txt",
+        "attachments/主持人纸条/讨论跑偏白板角.txt",
+        "attachments/可选附录/亲子观察卡_雨天版.txt",
+        "attachments/可选附录/外部案例标题_需本地化.txt",
+        "attachments/可选附录/纸板屋檐演示_替代.txt",
+        "attachments/场地便签/门口右侧摆放.txt",
+        "attachments/场地便签/雨天室内路线.txt",
+        "attachments/旧版残留/排行榜说法删除.txt",
+        "attachments/旧版残留/秋季页脚替换提醒.txt",
+        "attachments/活动手卡/公共照明观察卡.txt",
+        "attachments/活动手卡/承诺卡_居民版.txt",
+        "attachments/活动手卡/旧物循环_不能收清单.txt",
+        "attachments/活动手卡/节能行动站_5分钟检查.txt",
+        "attachments/物料清单/物料箱清点.txt",
+        "attachments/物料清单/贴纸与粗头笔.txt",
+        "attachments/空白卡片/物品卡空白模板.txt",
+        "attachments/跟进记录/30天回访问句_草稿.txt",
+        "attachments/跟进记录/公告栏三条变化_样例.txt",
+        "attachments/跟进记录/志愿者复盘会_问题.txt"
+      ]
+    },
+    {
+      "name": "public_source_comments_present",
+      "group": "xmind_package_parsing",
+      "passed": true,
+      "detail": "actual=26"
+    },
+    {
+      "name": "public_source_styles_present",
+      "group": "xmind_package_parsing",
+      "passed": true,
+      "detail": "actual=13"
+    },
+    {
+      "name": "public_source_resource_assets_present",
+      "group": "xmind_package_parsing",
+      "passed": true,
+      "detail": [
+        "resources/cover_leaf_grid.svg",
+        "resources/icon_audience_lane.svg",
+        "resources/icon_caution_triangle.svg",
+        "resources/icon_commitment_card.svg",
+        "resources/icon_energy_meter.svg",
+        "resources/icon_materials_box.svg",
+        "resources/icon_notes_page.svg",
+        "resources/icon_opening_leaf.svg",
+        "resources/icon_privacy_boundary.svg",
+        "resources/icon_recycle_station.svg",
+        "resources/icon_route_map.svg",
+        "resources/icon_timing_axis.svg",
+        "resources/screenshot_lane_legend.svg",
+        "resources/template_placeholder_legend.svg"
+      ]
+    },
+    {
+      "name": "public_source_cross_links_present",
+      "group": "xmind_package_parsing",
+      "passed": true,
+      "detail": [
+        {
+          "from": "opening_three_observations",
+          "label": "本地观察转行动",
+          "to": "energy_home_check"
+        },
+        {
+          "from": "opening_three_observations",
+          "label": "包装堆放",
+          "to": "circular_exchange_flow"
+        },
+        {
+          "from": "opening_old_slogan",
+          "label": "旧稿痕迹",
+          "to": "template_old_footer"
+        },
+        {
+          "from": "energy_lighting_record",
+          "label": "预算边界",
+          "to": "audience_property"
+        },
+        {
+          "from": "energy_lighting_record",
+          "label": "隐私提醒",
+          "to": "safety_no_bill"
+        },
+        {
+          "from": "energy_cost_question",
+          "label": "跑偏降温",
+          "to": "energy_whiteboard_corner"
+        },
+        {
+          "from": "energy_cup_link",
+          "label": "杯具循环",
+          "to": "circular_exchange_flow"
+        },
+        {
+          "from": "circular_no_private_files",
+          "label": "隐私同类",
+          "to": "safety_no_bill"
+        },
+        {
+          "from": "circular_no_battery",
+          "label": "边界表",
+          "to": "safety_table_candidate"
+        },
+        {
+          "from": "circular_repair_corner",
+          "label": "不要承诺",
+          "to": "audience_shop"
+        },
+        {
+          "from": "audience_elder",
+          "label": "字大步骤少",
+          "to": "energy_home_check"
+        },
+        {
+          "from": "audience_elder",
+          "label": "不扫码唯一入口",
+          "to": "followup_no_phone"
+        },
+        {
+          "from": "audience_shop",
+          "label": "清运担心",
+          "to": "circular_cleanup"
+        },
+        {
+          "from": "audience_children",
+          "label": "雨天才用",
+          "to": "appendix_rain_child"
+        },
+        {
+          "from": "audience_volunteer",
+          "label": "现场协助",
+          "to": "venue_volunteer_positions"
+        },
+        {
+          "from": "timing_90_station_choice",
+          "label": "时间不够移后",
+          "to": "appendix_rain_child"
+        },
+        {
+          "from": "timing_signin_delay",
+          "label": "缩短开场",
+          "to": "opening_question"
+        },
+        {
+          "from": "timing_child_last",
+          "label": "备注或最后",
+          "to": "appendix_rain_child"
+        },
+        {
+          "from": "timing_commitment_wall",
+          "label": "承诺墙",
+          "to": "followup_commitment_card"
+        },
+        {
+          "from": "safety_child_photo",
+          "label": "亲子边界",
+          "to": "audience_children"
+        },
+        {
+          "from": "safety_supply_box",
+          "label": "清点",
+          "to": "appendix_material_check"
+        },
+        {
+          "from": "safety_no_ranking",
+          "label": "删除旧词",
+          "to": "template_ranking"
+        },
+        {
+          "from": "safety_privacy_followup",
+          "label": "回访隐私",
+          "to": "followup_question_draft"
+        },
+        {
+          "from": "followup_question_draft",
+          "label": "不收手机号",
+          "to": "followup_no_phone"
+        },
+        {
+          "from": "followup_notice_board",
+          "label": "不排名",
+          "to": "template_ranking"
+        },
+        {
+          "from": "followup_volunteer_review",
+          "label": "备注处理",
+          "to": "template_notes_surface"
+        },
+        {
+          "from": "appendix_external_titles",
+          "label": "本地化",
+          "to": "template_localize_title"
+        },
+        {
+          "from": "appendix_stickers",
+          "label": "可省略",
+          "to": "template_notes_surface"
+        },
+        {
+          "from": "venue_rain_route",
+          "label": "雨天替代",
+          "to": "appendix_roof_demo"
+        },
+        {
+          "from": "venue_accessibility",
+          "label": "可达性",
+          "to": "audience_elder"
+        },
+        {
+          "from": "template_checklist_mix",
+          "label": "清单易混",
+          "to": "safety_table_candidate"
+        },
+        {
+          "from": "visual_partial_view",
+          "label": "局部可见",
+          "to": "branch_energy"
+        }
+      ]
+    },
+    {
+      "name": "public_source_style_resource_cues_present",
+      "group": "xmind_package_parsing",
+      "passed": true,
+      "detail": "actual=31"
+    },
+    {
+      "name": "public_source_comment_visibility_mix_present",
+      "group": "xmind_package_parsing",
+      "passed": true,
+      "detail": [
+        "可选",
+        "场地",
+        "提醒",
+        "改稿",
+        "易混",
+        "版面",
+        "现场",
+        "节奏",
+        "视觉",
+        "隐私",
+        "风险"
+      ]
+    },
+    {
+      "name": "input_source_package_entries_unchanged",
+      "group": "input_immutability",
+      "passed": true,
+      "detail": "source package entries match expected manifest"
+    },
+    {
+      "name": "gold_contract_matches_public_xmind",
+      "group": "verifier_isolation",
+      "passed": true,
+      "detail": "gold xmind contract matches public package"
+    },
+    {
+      "name": "public_source_declares_synthetic_no_private_data",
+      "group": "verifier_isolation",
+      "passed": true,
+      "detail": {
+        "privacy": {
+          "containsPersonalData": false,
+          "containsPrivateUrls": false,
+          "localWorkshopSample": true
+        },
+        "provenance_marker_present": true
+      }
+    },
+    {
+      "name": "output_pptx_discovered",
+      "group": "output_contract",
+      "passed": true,
+      "detail": {
+        "search_root": "/private/tmp/wb-qwen36-xmind-4jvi6gjh/task/output/community_sustainability_workshop_deck.pptx",
+        "excluded_candidates": []
+      }
+    },
+    {
+      "name": "output_single_pptx_unambiguous",
+      "group": "output_contract",
+      "passed": true,
+      "detail": {
+        "candidates": [
+          "output/community_sustainability_workshop_deck.pptx"
+        ]
+      }
+    },
+    {
+      "name": "output_extension_pptx",
+      "group": "output_contract",
+      "passed": true,
+      "detail": "output/community_sustainability_workshop_deck.pptx"
+    },
+    {
+      "name": "output_not_public_input_file",
+      "group": "output_contract",
+      "passed": true,
+      "detail": "output/community_sustainability_workshop_deck.pptx"
+    },
+    {
+      "name": "output_not_template_clone",
+      "group": "output_contract",
+      "passed": true,
+      "detail": "candidate_sha=914bb9cdb5afb2b655e82b1aea59dfc68e329d65443da276a24194c4530d83b9"
+    },
+    {
+      "name": "output_zip_openable",
+      "group": "pptx_parseability",
+      "passed": true,
+      "detail": "output/community_sustainability_workshop_deck.pptx"
+    },
+    {
+      "name": "output_required_ooxml_parts_present",
+      "group": "pptx_parseability",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "output_content_types_include_presentation",
+      "group": "pptx_parseability",
+      "passed": true,
+      "detail": "presentation and slide content types"
+    },
+    {
+      "name": "output_presentation_xml_parseable",
+      "group": "pptx_parseability",
+      "passed": true,
+      "detail": "ppt/presentation.xml parsed"
+    },
+    {
+      "name": "output_slide_relationships_parseable",
+      "group": "pptx_parseability",
+      "passed": true,
+      "detail": "presentation order contains 8 slides"
+    },
+    {
+      "name": "slide_count_minimum_not_outline_stub",
+      "group": "output_contract",
+      "passed": true,
+      "detail": "slides=8, min=8"
+    },
+    {
+      "name": "slide_count_maximum_not_node_dump",
+      "group": "output_contract",
+      "passed": true,
+      "detail": "slides=8, max=12"
+    },
+    {
+      "name": "slides_have_text_no_blank",
+      "group": "output_contract",
+      "passed": true,
+      "detail": {
+        "blank_like_slides": [],
+        "slide_chars": [
+          160,
+          164,
+          190,
+          213,
+          220,
+          144,
+          156,
+          138
+        ]
+      }
+    },
+    {
+      "name": "slide_titles_present",
+      "group": "output_contract",
+      "passed": true,
+      "detail": "title_like_slides=8, slides=8"
+    },
+    {
+      "name": "chinese_text_dominant",
+      "group": "output_contract",
+      "passed": true,
+      "detail": "cjk=1129, latin=4"
+    },
+    {
+      "name": "root_title_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "root title"
+    },
+    {
+      "name": "top_level_opening_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": [
+        "为什么今天聊这个",
+        "为什么今天聊这个",
+        "开场",
+        "本地观察",
+        "低门槛问题",
+        "楼道灯",
+        "快递包装",
+        "雨天绕行",
+        "宏大口号"
+      ]
+    },
+    {
+      "name": "top_level_route_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": [
+        "安全、隐私和物料摆放",
+        "安全",
+        "隐私",
+        "边界",
+        "物料摆放",
+        "电费",
+        "儿童",
+        "雨天路线",
+        "不排名",
+        "不展示电费账单"
+      ]
+    },
+    {
+      "name": "top_level_energy_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": [
+        "行动站 A：电费、舒适度与公共照明",
+        "行动站 A",
+        "电费",
+        "舒适度",
+        "公共照明",
+        "5分钟检查",
+        "外带杯押金",
+        "插座",
+        "冰箱温度贴纸"
+      ]
+    },
+    {
+      "name": "top_level_circular_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": [
+        "行动站 B：旧物循环与不能收清单",
+        "行动站 B",
+        "旧物循环",
+        "不能收清单",
+        "旧物交换",
+        "维修角",
+        "不能收",
+        "物品卡"
+      ]
+    },
+    {
+      "name": "top_level_nature_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": [
+        "备选素材和附录，不一定上屏",
+        "备选素材",
+        "附录",
+        "亲子观察卡",
+        "纸板屋檐",
+        "贴纸",
+        "物料箱清点",
+        "雨天",
+        "可选材料"
+      ]
+    },
+    {
+      "name": "top_level_audience_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": [
+        "谁会听到",
+        "谁会听到",
+        "受众路线",
+        "老年居民",
+        "居民家庭",
+        "物业代表",
+        "小店店主",
+        "亲子家庭",
+        "志愿者"
+      ]
+    },
+    {
+      "name": "top_level_timing_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": [
+        "90 分钟 / 120 分钟两种走法",
+        "90 分钟",
+        "120 分钟",
+        "两种走法",
+        "签到拖延",
+        "承诺墙",
+        "09:00",
+        "09:35",
+        "11:25"
+      ]
+    },
+    {
+      "name": "top_level_prep_only_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": [
+        "场地布置与志愿者协作",
+        "场地布置",
+        "志愿者协作",
+        "物料箱",
+        "雨天室内路线",
+        "场务电话占位",
+        "讲者备注",
+        "后台"
+      ]
+    },
+    {
+      "name": "top_level_optional_materials_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": [
+        "模板旧页和改稿痕迹",
+        "模板旧页",
+        "改稿痕迹",
+        "旧页脚",
+        "排行榜",
+        "公开检查清单",
+        "主持检查清单",
+        "页脚日期",
+        "占位标题",
+        "局部参考图"
+      ]
+    },
+    {
+      "name": "top_level_followup_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": [
+        "30 天之后怎么知道有没有继续做",
+        "30 天之后",
+        "30天行动清单",
+        "回访问句",
+        "公告栏",
+        "志愿者复盘",
+        "承诺卡",
+        "不收手机号"
+      ]
+    },
+    {
+      "name": "opening_electricity_context_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "public-area electricity context with examples"
+    },
+    {
+      "name": "opening_waste_myths_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "local waste/packaging observation"
+    },
+    {
+      "name": "opening_small_actions_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "small resident actions"
+    },
+    {
+      "name": "route_grouping_signin_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "family/shop/volunteer grouping"
+    },
+    {
+      "name": "route_rotation_map_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "station route/map/timing relation"
+    },
+    {
+      "name": "route_safety_constraints_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "demo safety constraints"
+    },
+    {
+      "name": "energy_checkin_actions_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "energy check-in subactions"
+    },
+    {
+      "name": "energy_lighting_coordination_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "lighting coordination loop"
+    },
+    {
+      "name": "energy_cup_crosslink_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "cup pilot linked to circulation"
+    },
+    {
+      "name": "energy_attachment_privacy_boundary_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "energy station attachment privacy/scope"
+    },
+    {
+      "name": "circular_exchange_flow_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "register/sort/close flow"
+    },
+    {
+      "name": "circular_repair_role_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "repair-corner role and boundary"
+    },
+    {
+      "name": "circular_prohibited_items_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "prohibited_item_terms=3"
+    },
+    {
+      "name": "circular_visual_cards_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "display item cards"
+    },
+    {
+      "name": "nature_family_corner_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "family-friendly optional nature corner"
+    },
+    {
+      "name": "nature_rainwater_demo_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "rainwater demo materials"
+    },
+    {
+      "name": "nature_rainwater_safety_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "rainwater safety boundary"
+    },
+    {
+      "name": "nature_child_observation_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "child observation task"
+    },
+    {
+      "name": "audience_resident_actions_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "resident audience lane"
+    },
+    {
+      "name": "audience_shop_cup_packaging_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "shop audience lane"
+    },
+    {
+      "name": "audience_volunteer_scope_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "volunteer audience lane privacy boundary"
+    },
+    {
+      "name": "audience_children_observation_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "children audience lane"
+    },
+    {
+      "name": "audience_public_checklist_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "public checklist criteria"
+    },
+    {
+      "name": "timing_agenda_sequence_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "half-day timing sequence"
+    },
+    {
+      "name": "timing_rounds_break_boundary_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "round/break timing boundary"
+    },
+    {
+      "name": "timing_commitment_wall_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "commitment wall timing"
+    },
+    {
+      "name": "followup_commitment_cards_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "commitment-card examples"
+    },
+    {
+      "name": "followup_board_review_volunteers_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "board/review/volunteer follow-up"
+    },
+    {
+      "name": "followup_return_visit_boundary_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "return visit asks completion and obstacles"
+    },
+    {
+      "name": "prep_only_role_separation_present",
+      "group": "role_separation_and_distractors",
+      "passed": false,
+      "detail": "prep-only branch is recognized but scoped"
+    },
+    {
+      "name": "optional_materials_filtered_present",
+      "group": "role_separation_and_distractors",
+      "passed": false,
+      "detail": "optional materials are filtered rather than bulk copied"
+    },
+    {
+      "name": "near_duplicate_checklist_separation_present",
+      "group": "role_separation_and_distractors",
+      "passed": false,
+      "detail": "near-duplicate checklist labels separated"
+    },
+    {
+      "name": "topic_order_opening_before_route",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": {
+        "branch_opening": 1,
+        "branch_energy": 2,
+        "branch_circular": 3,
+        "branch_audience": 5,
+        "branch_timing": 7,
+        "branch_safety": 2,
+        "branch_followup": 6,
+        "branch_appendix": 1,
+        "branch_venue": 6,
+        "branch_template_revision": null
+      }
+    },
+    {
+      "name": "topic_order_route_before_station_details",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": {
+        "branch_opening": 1,
+        "branch_energy": 2,
+        "branch_circular": 3,
+        "branch_audience": 5,
+        "branch_timing": 7,
+        "branch_safety": 2,
+        "branch_followup": 6,
+        "branch_appendix": 1,
+        "branch_venue": 6,
+        "branch_template_revision": null
+      }
+    },
+    {
+      "name": "topic_order_followup_after_station_details",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": {
+        "branch_opening": 1,
+        "branch_energy": 2,
+        "branch_circular": 3,
+        "branch_audience": 5,
+        "branch_timing": 7,
+        "branch_safety": 2,
+        "branch_followup": 6,
+        "branch_appendix": 1,
+        "branch_venue": 6,
+        "branch_template_revision": null
+      }
+    },
+    {
+      "name": "source_relationship_evidence_to_action_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "opening electricity evidence ties to energy action"
+    },
+    {
+      "name": "source_relationship_reuse_link_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "cup pilot to circulation link"
+    },
+    {
+      "name": "source_relationship_safety_note_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "route safety carried to rainwater demo"
+    },
+    {
+      "name": "source_relationship_30day_loop_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "30-day loop back to small actions"
+    },
+    {
+      "name": "source_relationship_audience_residents_to_energy_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "audience residents to energy action"
+    },
+    {
+      "name": "source_relationship_audience_shops_to_cup_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "shop lane to cup pilot"
+    },
+    {
+      "name": "source_relationship_timing_to_route_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "timing round to route map"
+    },
+    {
+      "name": "source_relationship_timing_to_commitment_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "timing commitment to commitment cards"
+    },
+    {
+      "name": "source_relationship_near_duplicate_warning_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "near-duplicate checklist warning"
+    },
+    {
+      "name": "source_relationship_style_to_board_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "style cue to follow-up board/layout"
+    },
+    {
+      "name": "template_theme_part_present",
+      "group": "template_and_ppt_object_fidelity",
+      "passed": true,
+      "detail": "ppt/theme/theme1.xml"
+    },
+    {
+      "name": "template_core_green_palette_present",
+      "group": "template_and_ppt_object_fidelity",
+      "passed": true,
+      "detail": [
+        "24342B",
+        "2F6472",
+        "35523F",
+        "3F6B4A",
+        "5A4C7D",
+        "6AA56B",
+        "7A776E",
+        "A0642E",
+        "B65B4A",
+        "D9D4C8",
+        "E8F4F7",
+        "EAF4E5",
+        "F0ECF7",
+        "F4F2EC",
+        "F6F1E6",
+        "FBF0DF",
+        "FCE7DD",
+        "FFF8E7",
+        "FFFDF7",
+        "FFFFFF"
+      ]
+    },
+    {
+      "name": "template_palette_min_distinct_colors",
+      "group": "template_and_ppt_object_fidelity",
+      "passed": true,
+      "detail": {
+        "present_palette_colors": [
+          "24342B",
+          "2F6472",
+          "35523F",
+          "3F6B4A",
+          "5A4C7D",
+          "6AA56B",
+          "7A776E",
+          "A0642E",
+          "B65B4A",
+          "D9D4C8",
+          "E8F4F7",
+          "EAF4E5",
+          "F0ECF7",
+          "F4F2EC",
+          "F6F1E6",
+          "FBF0DF",
+          "FCE7DD",
+          "FFF8E7",
+          "FFFDF7",
+          "FFFFFF"
+        ]
+      }
+    },
+    {
+      "name": "template_card_roundrect_objects_present",
+      "group": "template_and_ppt_object_fidelity",
+      "passed": true,
+      "detail": {
+        "line": 18,
+        "rect": 35,
+        "roundRect": 108
+      }
+    },
+    {
+      "name": "document_shape_density_not_plain_text",
+      "group": "template_and_ppt_object_fidelity",
+      "passed": true,
+      "detail": "total_shapes=78, slides=8"
+    },
+    {
+      "name": "template_footer_or_page_marker_present",
+      "group": "template_and_ppt_object_fidelity",
+      "passed": false,
+      "detail": "footer workshop/page marker"
+    },
+    {
+      "name": "template_action_matrix_structure_present",
+      "group": "template_and_ppt_object_fidelity",
+      "passed": true,
+      "detail": "frontstage/backstage boundary table columns"
+    },
+    {
+      "name": "template_layout_parts_or_equivalent_present",
+      "group": "template_and_ppt_object_fidelity",
+      "passed": true,
+      "detail": {
+        "layout_parts": [
+          "ppt/slideLayouts/slideLayout1.xml",
+          "ppt/slideLayouts/slideLayout2.xml",
+          "ppt/slideLayouts/slideLayout3.xml",
+          "ppt/slideLayouts/slideLayout4.xml",
+          "ppt/slideLayouts/slideLayout5.xml",
+          "ppt/slideLayouts/slideLayout6.xml",
+          "ppt/slideLayouts/slideLayout7.xml",
+          "ppt/slideLayouts/slideLayout8.xml"
+        ]
+      }
+    },
+    {
+      "name": "template_layout_family_cues_present",
+      "group": "template_and_ppt_object_fidelity",
+      "passed": true,
+      "detail": "uses map/comparison/timeline/checklist layout family cues"
+    },
+    {
+      "name": "screenshot_reference_grouping_proxy_present",
+      "group": "screenshot_visual_alignment",
+      "passed": true,
+      "detail": {
+        "covered_branches": 9,
+        "palette_colors": [
+          "24342B",
+          "2F6472",
+          "35523F",
+          "3F6B4A",
+          "5A4C7D",
+          "6AA56B",
+          "7A776E",
+          "A0642E",
+          "B65B4A",
+          "D9D4C8",
+          "E8F4F7",
+          "EAF4E5",
+          "F0ECF7",
+          "F4F2EC",
+          "F6F1E6",
+          "FBF0DF",
+          "FCE7DD",
+          "FFF8E7",
+          "FFFDF7",
+          "FFFFFF"
+        ]
+      }
+    },
+    {
+      "name": "screenshot_lane_role_proxy_present",
+      "group": "screenshot_visual_alignment",
+      "passed": false,
+      "detail": "major screenshot lane roles represented textually/structurally"
+    },
+    {
+      "name": "visual_left_right_balance_not_required_exact",
+      "group": "screenshot_visual_alignment",
+      "passed": true,
+      "detail": "deterministic verifier checks grouping/lane/color proxies only; no pixel/VLM aesthetic score"
+    },
+    {
+      "name": "template_placeholder_text_absent",
+      "group": "template_cleanup",
+      "passed": false,
+      "detail": [
+        "不要求固定出现位置",
+        "折叠备选",
+        "外部标题提醒"
+      ]
+    },
+    {
+      "name": "template_instruction_text_absent",
+      "group": "template_cleanup",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "template_sample_rows_absent",
+      "group": "template_cleanup",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "optional_electricity_calc_not_promoted",
+      "group": "template_cleanup",
+      "passed": true,
+      "detail": "electricity calculation absent or clearly scoped as note/not standalone"
+    },
+    {
+      "name": "prep_checklist_not_copied_as_body",
+      "group": "template_cleanup",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "prep_private_details_not_promoted",
+      "group": "template_cleanup",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "optional_material_pool_not_overcopied",
+      "group": "template_cleanup",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no_external_relationships",
+      "group": "source_binding_safety",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no_external_url_or_file_uri",
+      "group": "source_binding_safety",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no_private_paths_or_source_locators",
+      "group": "source_binding_safety",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no_secret_like_strings",
+      "group": "source_binding_safety",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "local_only_no_network_dependency_claim",
+      "group": "source_binding_safety",
+      "passed": true,
+      "detail": "no claim of network/external/private asset use"
+    },
+    {
+      "name": "necessary_english_only_not_dominant",
+      "group": "source_binding_safety",
+      "passed": true,
+      "detail": "latin=4, cjk=1129"
+    }
+  ],
+  "diagnostic_checks": [
+    {
+      "name": "input_source_sha256_unchanged",
+      "group": "input_immutability",
+      "passed": true,
+      "detail": "actual=06679233d1ca3ea102d251e28d59e3779c0d39d6ed55d0486feb488682e9fa3c, expected=06679233d1ca3ea102d251e28d59e3779c0d39d6ed55d0486feb488682e9fa3c"
+    },
+    {
+      "name": "input_reference_sha256_unchanged",
+      "group": "input_immutability",
+      "passed": true,
+      "detail": "actual=becf6065f0fbcf82ce222ef0a63e386894e985f78e8629245333fb6ba44701c8, expected=becf6065f0fbcf82ce222ef0a63e386894e985f78e8629245333fb6ba44701c8"
+    },
+    {
+      "name": "input_template_sha256_unchanged",
+      "group": "input_immutability",
+      "passed": true,
+      "detail": "actual=576005b0ca48a3ffdb2afff98b2807894334522537114b139b631bc0380781b9, expected=576005b0ca48a3ffdb2afff98b2807894334522537114b139b631bc0380781b9"
+    },
+    {
+      "name": "public_source_xmind_zip_openable",
+      "group": "xmind_package_parsing",
+      "passed": true,
+      "detail": "/private/tmp/wb-qwen36-xmind-4jvi6gjh/task/input/source/community_sustainability_workshop.xmind"
+    },
+    {
+      "name": "public_source_content_json_parseable",
+      "group": "xmind_package_parsing",
+      "passed": true,
+      "detail": "社区低碳共创坊（周末场地版）"
+    },
+    {
+      "name": "public_source_topic_count_matches_gold",
+      "group": "xmind_package_parsing",
+      "passed": true,
+      "detail": "actual=92"
+    },
+    {
+      "name": "public_source_top_level_branch_count_matches_gold",
+      "group": "xmind_package_parsing",
+      "passed": true,
+      "detail": "actual=10"
+    },
+    {
+      "name": "public_source_attachments_present",
+      "group": "xmind_package_parsing",
+      "passed": true,
+      "detail": [
+        "attachments/主持人纸条/提问与降温处理.txt",
+        "attachments/主持人纸条/旧模板口号替换.txt",
+        "attachments/主持人纸条/签到拖延时怎么改.txt",
+        "attachments/主持人纸条/讨论跑偏白板角.txt",
+        "attachments/可选附录/亲子观察卡_雨天版.txt",
+        "attachments/可选附录/外部案例标题_需本地化.txt",
+        "attachments/可选附录/纸板屋檐演示_替代.txt",
+        "attachments/场地便签/门口右侧摆放.txt",
+        "attachments/场地便签/雨天室内路线.txt",
+        "attachments/旧版残留/排行榜说法删除.txt",
+        "attachments/旧版残留/秋季页脚替换提醒.txt",
+        "attachments/活动手卡/公共照明观察卡.txt",
+        "attachments/活动手卡/承诺卡_居民版.txt",
+        "attachments/活动手卡/旧物循环_不能收清单.txt",
+        "attachments/活动手卡/节能行动站_5分钟检查.txt",
+        "attachments/物料清单/物料箱清点.txt",
+        "attachments/物料清单/贴纸与粗头笔.txt",
+        "attachments/空白卡片/物品卡空白模板.txt",
+        "attachments/跟进记录/30天回访问句_草稿.txt",
+        "attachments/跟进记录/公告栏三条变化_样例.txt",
+        "attachments/跟进记录/志愿者复盘会_问题.txt"
+      ]
+    },
+    {
+      "name": "public_source_comments_present",
+      "group": "xmind_package_parsing",
+      "passed": true,
+      "detail": "actual=26"
+    },
+    {
+      "name": "public_source_styles_present",
+      "group": "xmind_package_parsing",
+      "passed": true,
+      "detail": "actual=13"
+    },
+    {
+      "name": "public_source_resource_assets_present",
+      "group": "xmind_package_parsing",
+      "passed": true,
+      "detail": [
+        "resources/cover_leaf_grid.svg",
+        "resources/icon_audience_lane.svg",
+        "resources/icon_caution_triangle.svg",
+        "resources/icon_commitment_card.svg",
+        "resources/icon_energy_meter.svg",
+        "resources/icon_materials_box.svg",
+        "resources/icon_notes_page.svg",
+        "resources/icon_opening_leaf.svg",
+        "resources/icon_privacy_boundary.svg",
+        "resources/icon_recycle_station.svg",
+        "resources/icon_route_map.svg",
+        "resources/icon_timing_axis.svg",
+        "resources/screenshot_lane_legend.svg",
+        "resources/template_placeholder_legend.svg"
+      ]
+    },
+    {
+      "name": "public_source_cross_links_present",
+      "group": "xmind_package_parsing",
+      "passed": true,
+      "detail": [
+        {
+          "from": "opening_three_observations",
+          "label": "本地观察转行动",
+          "to": "energy_home_check"
+        },
+        {
+          "from": "opening_three_observations",
+          "label": "包装堆放",
+          "to": "circular_exchange_flow"
+        },
+        {
+          "from": "opening_old_slogan",
+          "label": "旧稿痕迹",
+          "to": "template_old_footer"
+        },
+        {
+          "from": "energy_lighting_record",
+          "label": "预算边界",
+          "to": "audience_property"
+        },
+        {
+          "from": "energy_lighting_record",
+          "label": "隐私提醒",
+          "to": "safety_no_bill"
+        },
+        {
+          "from": "energy_cost_question",
+          "label": "跑偏降温",
+          "to": "energy_whiteboard_corner"
+        },
+        {
+          "from": "energy_cup_link",
+          "label": "杯具循环",
+          "to": "circular_exchange_flow"
+        },
+        {
+          "from": "circular_no_private_files",
+          "label": "隐私同类",
+          "to": "safety_no_bill"
+        },
+        {
+          "from": "circular_no_battery",
+          "label": "边界表",
+          "to": "safety_table_candidate"
+        },
+        {
+          "from": "circular_repair_corner",
+          "label": "不要承诺",
+          "to": "audience_shop"
+        },
+        {
+          "from": "audience_elder",
+          "label": "字大步骤少",
+          "to": "energy_home_check"
+        },
+        {
+          "from": "audience_elder",
+          "label": "不扫码唯一入口",
+          "to": "followup_no_phone"
+        },
+        {
+          "from": "audience_shop",
+          "label": "清运担心",
+          "to": "circular_cleanup"
+        },
+        {
+          "from": "audience_children",
+          "label": "雨天才用",
+          "to": "appendix_rain_child"
+        },
+        {
+          "from": "audience_volunteer",
+          "label": "现场协助",
+          "to": "venue_volunteer_positions"
+        },
+        {
+          "from": "timing_90_station_choice",
+          "label": "时间不够移后",
+          "to": "appendix_rain_child"
+        },
+        {
+          "from": "timing_signin_delay",
+          "label": "缩短开场",
+          "to": "opening_question"
+        },
+        {
+          "from": "timing_child_last",
+          "label": "备注或最后",
+          "to": "appendix_rain_child"
+        },
+        {
+          "from": "timing_commitment_wall",
+          "label": "承诺墙",
+          "to": "followup_commitment_card"
+        },
+        {
+          "from": "safety_child_photo",
+          "label": "亲子边界",
+          "to": "audience_children"
+        },
+        {
+          "from": "safety_supply_box",
+          "label": "清点",
+          "to": "appendix_material_check"
+        },
+        {
+          "from": "safety_no_ranking",
+          "label": "删除旧词",
+          "to": "template_ranking"
+        },
+        {
+          "from": "safety_privacy_followup",
+          "label": "回访隐私",
+          "to": "followup_question_draft"
+        },
+        {
+          "from": "followup_question_draft",
+          "label": "不收手机号",
+          "to": "followup_no_phone"
+        },
+        {
+          "from": "followup_notice_board",
+          "label": "不排名",
+          "to": "template_ranking"
+        },
+        {
+          "from": "followup_volunteer_review",
+          "label": "备注处理",
+          "to": "template_notes_surface"
+        },
+        {
+          "from": "appendix_external_titles",
+          "label": "本地化",
+          "to": "template_localize_title"
+        },
+        {
+          "from": "appendix_stickers",
+          "label": "可省略",
+          "to": "template_notes_surface"
+        },
+        {
+          "from": "venue_rain_route",
+          "label": "雨天替代",
+          "to": "appendix_roof_demo"
+        },
+        {
+          "from": "venue_accessibility",
+          "label": "可达性",
+          "to": "audience_elder"
+        },
+        {
+          "from": "template_checklist_mix",
+          "label": "清单易混",
+          "to": "safety_table_candidate"
+        },
+        {
+          "from": "visual_partial_view",
+          "label": "局部可见",
+          "to": "branch_energy"
+        }
+      ]
+    },
+    {
+      "name": "public_source_style_resource_cues_present",
+      "group": "xmind_package_parsing",
+      "passed": true,
+      "detail": "actual=31"
+    },
+    {
+      "name": "public_source_comment_visibility_mix_present",
+      "group": "xmind_package_parsing",
+      "passed": true,
+      "detail": [
+        "可选",
+        "场地",
+        "提醒",
+        "改稿",
+        "易混",
+        "版面",
+        "现场",
+        "节奏",
+        "视觉",
+        "隐私",
+        "风险"
+      ]
+    },
+    {
+      "name": "input_source_package_entries_unchanged",
+      "group": "input_immutability",
+      "passed": true,
+      "detail": "source package entries match expected manifest"
+    },
+    {
+      "name": "gold_contract_matches_public_xmind",
+      "group": "verifier_isolation",
+      "passed": true,
+      "detail": "gold xmind contract matches public package"
+    },
+    {
+      "name": "public_source_declares_synthetic_no_private_data",
+      "group": "verifier_isolation",
+      "passed": true,
+      "detail": {
+        "privacy": {
+          "containsPersonalData": false,
+          "containsPrivateUrls": false,
+          "localWorkshopSample": true
+        },
+        "provenance_marker_present": true
+      }
+    },
+    {
+      "name": "output_pptx_discovered",
+      "group": "output_contract",
+      "passed": true,
+      "detail": {
+        "search_root": "/private/tmp/wb-qwen36-xmind-4jvi6gjh/task/output/community_sustainability_workshop_deck.pptx",
+        "excluded_candidates": []
+      }
+    },
+    {
+      "name": "output_single_pptx_unambiguous",
+      "group": "output_contract",
+      "passed": true,
+      "detail": {
+        "candidates": [
+          "output/community_sustainability_workshop_deck.pptx"
+        ]
+      }
+    },
+    {
+      "name": "output_extension_pptx",
+      "group": "output_contract",
+      "passed": true,
+      "detail": "output/community_sustainability_workshop_deck.pptx"
+    },
+    {
+      "name": "output_not_public_input_file",
+      "group": "output_contract",
+      "passed": true,
+      "detail": "output/community_sustainability_workshop_deck.pptx"
+    },
+    {
+      "name": "output_not_template_clone",
+      "group": "output_contract",
+      "passed": true,
+      "detail": "candidate_sha=914bb9cdb5afb2b655e82b1aea59dfc68e329d65443da276a24194c4530d83b9"
+    },
+    {
+      "name": "output_zip_openable",
+      "group": "pptx_parseability",
+      "passed": true,
+      "detail": "output/community_sustainability_workshop_deck.pptx"
+    },
+    {
+      "name": "output_required_ooxml_parts_present",
+      "group": "pptx_parseability",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "output_content_types_include_presentation",
+      "group": "pptx_parseability",
+      "passed": true,
+      "detail": "presentation and slide content types"
+    },
+    {
+      "name": "output_presentation_xml_parseable",
+      "group": "pptx_parseability",
+      "passed": true,
+      "detail": "ppt/presentation.xml parsed"
+    },
+    {
+      "name": "output_slide_relationships_parseable",
+      "group": "pptx_parseability",
+      "passed": true,
+      "detail": "presentation order contains 8 slides"
+    },
+    {
+      "name": "slide_count_minimum_not_outline_stub",
+      "group": "output_contract",
+      "passed": true,
+      "detail": "slides=8, min=8"
+    },
+    {
+      "name": "slide_count_maximum_not_node_dump",
+      "group": "output_contract",
+      "passed": true,
+      "detail": "slides=8, max=12"
+    },
+    {
+      "name": "slides_have_text_no_blank",
+      "group": "output_contract",
+      "passed": true,
+      "detail": {
+        "blank_like_slides": [],
+        "slide_chars": [
+          160,
+          164,
+          190,
+          213,
+          220,
+          144,
+          156,
+          138
+        ]
+      }
+    },
+    {
+      "name": "slide_titles_present",
+      "group": "output_contract",
+      "passed": true,
+      "detail": "title_like_slides=8, slides=8"
+    },
+    {
+      "name": "chinese_text_dominant",
+      "group": "output_contract",
+      "passed": true,
+      "detail": "cjk=1129, latin=4"
+    },
+    {
+      "name": "root_title_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "root title"
+    },
+    {
+      "name": "top_level_opening_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": [
+        "为什么今天聊这个",
+        "为什么今天聊这个",
+        "开场",
+        "本地观察",
+        "低门槛问题",
+        "楼道灯",
+        "快递包装",
+        "雨天绕行",
+        "宏大口号"
+      ]
+    },
+    {
+      "name": "top_level_energy_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": [
+        "行动站 A：电费、舒适度与公共照明",
+        "行动站 A",
+        "电费",
+        "舒适度",
+        "公共照明",
+        "5分钟检查",
+        "外带杯押金",
+        "插座",
+        "冰箱温度贴纸"
+      ]
+    },
+    {
+      "name": "top_level_circular_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": [
+        "行动站 B：旧物循环与不能收清单",
+        "行动站 B",
+        "旧物循环",
+        "不能收清单",
+        "旧物交换",
+        "维修角",
+        "不能收",
+        "物品卡"
+      ]
+    },
+    {
+      "name": "top_level_audience_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": [
+        "谁会听到",
+        "谁会听到",
+        "受众路线",
+        "老年居民",
+        "居民家庭",
+        "物业代表",
+        "小店店主",
+        "亲子家庭",
+        "志愿者"
+      ]
+    },
+    {
+      "name": "top_level_timing_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": [
+        "90 分钟 / 120 分钟两种走法",
+        "90 分钟",
+        "120 分钟",
+        "两种走法",
+        "签到拖延",
+        "承诺墙",
+        "09:00",
+        "09:35",
+        "11:25"
+      ]
+    },
+    {
+      "name": "top_level_route_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": [
+        "安全、隐私和物料摆放",
+        "安全",
+        "隐私",
+        "边界",
+        "物料摆放",
+        "电费",
+        "儿童",
+        "雨天路线",
+        "不排名",
+        "不展示电费账单"
+      ]
+    },
+    {
+      "name": "top_level_followup_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": [
+        "30 天之后怎么知道有没有继续做",
+        "30 天之后",
+        "30天行动清单",
+        "回访问句",
+        "公告栏",
+        "志愿者复盘",
+        "承诺卡",
+        "不收手机号"
+      ]
+    },
+    {
+      "name": "top_level_nature_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": [
+        "备选素材和附录，不一定上屏",
+        "备选素材",
+        "附录",
+        "亲子观察卡",
+        "纸板屋檐",
+        "贴纸",
+        "物料箱清点",
+        "雨天",
+        "可选材料"
+      ]
+    },
+    {
+      "name": "top_level_prep_only_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": [
+        "场地布置与志愿者协作",
+        "场地布置",
+        "志愿者协作",
+        "物料箱",
+        "雨天室内路线",
+        "场务电话占位",
+        "讲者备注",
+        "后台"
+      ]
+    },
+    {
+      "name": "top_level_optional_materials_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": [
+        "模板旧页和改稿痕迹",
+        "模板旧页",
+        "改稿痕迹",
+        "旧页脚",
+        "排行榜",
+        "公开检查清单",
+        "主持检查清单",
+        "页脚日期",
+        "占位标题",
+        "局部参考图"
+      ]
+    },
+    {
+      "name": "opening_electricity_context_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "public-area electricity context with examples"
+    },
+    {
+      "name": "opening_waste_myths_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "local waste/packaging observation"
+    },
+    {
+      "name": "opening_small_actions_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "small resident actions"
+    },
+    {
+      "name": "route_grouping_signin_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "family/shop/volunteer grouping"
+    },
+    {
+      "name": "route_rotation_map_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "station route/map/timing relation"
+    },
+    {
+      "name": "route_safety_constraints_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "demo safety constraints"
+    },
+    {
+      "name": "energy_checkin_actions_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "energy check-in subactions"
+    },
+    {
+      "name": "energy_lighting_coordination_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "lighting coordination loop"
+    },
+    {
+      "name": "energy_cup_crosslink_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "cup pilot linked to circulation"
+    },
+    {
+      "name": "energy_attachment_privacy_boundary_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "energy station attachment privacy/scope"
+    },
+    {
+      "name": "circular_exchange_flow_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "register/sort/close flow"
+    },
+    {
+      "name": "circular_repair_role_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "repair-corner role and boundary"
+    },
+    {
+      "name": "circular_prohibited_items_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "prohibited_item_terms=3"
+    },
+    {
+      "name": "circular_visual_cards_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "display item cards"
+    },
+    {
+      "name": "nature_family_corner_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "family-friendly optional nature corner"
+    },
+    {
+      "name": "nature_rainwater_demo_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "rainwater demo materials"
+    },
+    {
+      "name": "nature_rainwater_safety_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "rainwater safety boundary"
+    },
+    {
+      "name": "nature_child_observation_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "child observation task"
+    },
+    {
+      "name": "audience_resident_actions_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "resident audience lane"
+    },
+    {
+      "name": "audience_shop_cup_packaging_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "shop audience lane"
+    },
+    {
+      "name": "audience_volunteer_scope_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "volunteer audience lane privacy boundary"
+    },
+    {
+      "name": "audience_children_observation_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "children audience lane"
+    },
+    {
+      "name": "audience_public_checklist_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "public checklist criteria"
+    },
+    {
+      "name": "timing_agenda_sequence_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "half-day timing sequence"
+    },
+    {
+      "name": "timing_rounds_break_boundary_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "round/break timing boundary"
+    },
+    {
+      "name": "timing_commitment_wall_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "commitment wall timing"
+    },
+    {
+      "name": "followup_commitment_cards_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "commitment-card examples"
+    },
+    {
+      "name": "followup_board_review_volunteers_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "board/review/volunteer follow-up"
+    },
+    {
+      "name": "followup_return_visit_boundary_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "return visit asks completion and obstacles"
+    },
+    {
+      "name": "prep_only_role_separation_present",
+      "group": "role_separation_and_distractors",
+      "passed": false,
+      "detail": "prep-only branch is recognized but scoped"
+    },
+    {
+      "name": "optional_materials_filtered_present",
+      "group": "role_separation_and_distractors",
+      "passed": false,
+      "detail": "optional materials are filtered rather than bulk copied"
+    },
+    {
+      "name": "near_duplicate_checklist_separation_present",
+      "group": "role_separation_and_distractors",
+      "passed": false,
+      "detail": "near-duplicate checklist labels separated"
+    },
+    {
+      "name": "topic_order_opening_before_route",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": {
+        "branch_opening": 1,
+        "branch_energy": 2,
+        "branch_circular": 3,
+        "branch_audience": 5,
+        "branch_timing": 7,
+        "branch_safety": 2,
+        "branch_followup": 6,
+        "branch_appendix": 1,
+        "branch_venue": 6,
+        "branch_template_revision": null
+      }
+    },
+    {
+      "name": "topic_order_route_before_station_details",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": {
+        "branch_opening": 1,
+        "branch_energy": 2,
+        "branch_circular": 3,
+        "branch_audience": 5,
+        "branch_timing": 7,
+        "branch_safety": 2,
+        "branch_followup": 6,
+        "branch_appendix": 1,
+        "branch_venue": 6,
+        "branch_template_revision": null
+      }
+    },
+    {
+      "name": "topic_order_followup_after_station_details",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": {
+        "branch_opening": 1,
+        "branch_energy": 2,
+        "branch_circular": 3,
+        "branch_audience": 5,
+        "branch_timing": 7,
+        "branch_safety": 2,
+        "branch_followup": 6,
+        "branch_appendix": 1,
+        "branch_venue": 6,
+        "branch_template_revision": null
+      }
+    },
+    {
+      "name": "source_relationship_evidence_to_action_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "opening electricity evidence ties to energy action"
+    },
+    {
+      "name": "source_relationship_reuse_link_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "cup pilot to circulation link"
+    },
+    {
+      "name": "source_relationship_safety_note_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "route safety carried to rainwater demo"
+    },
+    {
+      "name": "source_relationship_30day_loop_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "30-day loop back to small actions"
+    },
+    {
+      "name": "source_relationship_audience_residents_to_energy_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "audience residents to energy action"
+    },
+    {
+      "name": "source_relationship_audience_shops_to_cup_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "shop lane to cup pilot"
+    },
+    {
+      "name": "source_relationship_timing_to_route_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "timing round to route map"
+    },
+    {
+      "name": "source_relationship_timing_to_commitment_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "timing commitment to commitment cards"
+    },
+    {
+      "name": "source_relationship_near_duplicate_warning_present",
+      "group": "content_order_and_coverage",
+      "passed": false,
+      "detail": "near-duplicate checklist warning"
+    },
+    {
+      "name": "source_relationship_style_to_board_present",
+      "group": "content_order_and_coverage",
+      "passed": true,
+      "detail": "style cue to follow-up board/layout"
+    },
+    {
+      "name": "template_theme_part_present",
+      "group": "template_and_ppt_object_fidelity",
+      "passed": true,
+      "detail": "ppt/theme/theme1.xml"
+    },
+    {
+      "name": "template_core_green_palette_present",
+      "group": "template_and_ppt_object_fidelity",
+      "passed": true,
+      "detail": [
+        "24342B",
+        "2F6472",
+        "35523F",
+        "3F6B4A",
+        "5A4C7D",
+        "6AA56B",
+        "7A776E",
+        "A0642E",
+        "B65B4A",
+        "D9D4C8",
+        "E8F4F7",
+        "EAF4E5",
+        "F0ECF7",
+        "F4F2EC",
+        "F6F1E6",
+        "FBF0DF",
+        "FCE7DD",
+        "FFF8E7",
+        "FFFDF7",
+        "FFFFFF"
+      ]
+    },
+    {
+      "name": "template_palette_min_distinct_colors",
+      "group": "template_and_ppt_object_fidelity",
+      "passed": true,
+      "detail": {
+        "present_palette_colors": [
+          "24342B",
+          "2F6472",
+          "35523F",
+          "3F6B4A",
+          "5A4C7D",
+          "6AA56B",
+          "7A776E",
+          "A0642E",
+          "B65B4A",
+          "D9D4C8",
+          "E8F4F7",
+          "EAF4E5",
+          "F0ECF7",
+          "F4F2EC",
+          "F6F1E6",
+          "FBF0DF",
+          "FCE7DD",
+          "FFF8E7",
+          "FFFDF7",
+          "FFFFFF"
+        ]
+      }
+    },
+    {
+      "name": "template_card_roundrect_objects_present",
+      "group": "template_and_ppt_object_fidelity",
+      "passed": true,
+      "detail": {
+        "line": 18,
+        "rect": 35,
+        "roundRect": 108
+      }
+    },
+    {
+      "name": "document_shape_density_not_plain_text",
+      "group": "template_and_ppt_object_fidelity",
+      "passed": true,
+      "detail": "total_shapes=78, slides=8"
+    },
+    {
+      "name": "template_footer_or_page_marker_present",
+      "group": "template_and_ppt_object_fidelity",
+      "passed": false,
+      "detail": "footer workshop/page marker"
+    },
+    {
+      "name": "template_action_matrix_structure_present",
+      "group": "template_and_ppt_object_fidelity",
+      "passed": true,
+      "detail": "frontstage/backstage boundary table columns"
+    },
+    {
+      "name": "template_layout_parts_or_equivalent_present",
+      "group": "template_and_ppt_object_fidelity",
+      "passed": true,
+      "detail": {
+        "layout_parts": [
+          "ppt/slideLayouts/slideLayout1.xml",
+          "ppt/slideLayouts/slideLayout2.xml",
+          "ppt/slideLayouts/slideLayout3.xml",
+          "ppt/slideLayouts/slideLayout4.xml",
+          "ppt/slideLayouts/slideLayout5.xml",
+          "ppt/slideLayouts/slideLayout6.xml",
+          "ppt/slideLayouts/slideLayout7.xml",
+          "ppt/slideLayouts/slideLayout8.xml"
+        ]
+      }
+    },
+    {
+      "name": "template_layout_family_cues_present",
+      "group": "template_and_ppt_object_fidelity",
+      "passed": true,
+      "detail": "uses map/comparison/timeline/checklist layout family cues"
+    },
+    {
+      "name": "screenshot_reference_grouping_proxy_present",
+      "group": "screenshot_visual_alignment",
+      "passed": true,
+      "detail": {
+        "covered_branches": 9,
+        "palette_colors": [
+          "24342B",
+          "2F6472",
+          "35523F",
+          "3F6B4A",
+          "5A4C7D",
+          "6AA56B",
+          "7A776E",
+          "A0642E",
+          "B65B4A",
+          "D9D4C8",
+          "E8F4F7",
+          "EAF4E5",
+          "F0ECF7",
+          "F4F2EC",
+          "F6F1E6",
+          "FBF0DF",
+          "FCE7DD",
+          "FFF8E7",
+          "FFFDF7",
+          "FFFFFF"
+        ]
+      }
+    },
+    {
+      "name": "screenshot_lane_role_proxy_present",
+      "group": "screenshot_visual_alignment",
+      "passed": false,
+      "detail": "major screenshot lane roles represented textually/structurally"
+    },
+    {
+      "name": "visual_left_right_balance_not_required_exact",
+      "group": "screenshot_visual_alignment",
+      "passed": true,
+      "detail": "deterministic verifier checks grouping/lane/color proxies only; no pixel/VLM aesthetic score"
+    },
+    {
+      "name": "template_placeholder_text_absent",
+      "group": "template_cleanup",
+      "passed": false,
+      "detail": [
+        "不要求固定出现位置",
+        "折叠备选",
+        "外部标题提醒"
+      ]
+    },
+    {
+      "name": "template_instruction_text_absent",
+      "group": "template_cleanup",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "template_sample_rows_absent",
+      "group": "template_cleanup",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "optional_electricity_calc_not_promoted",
+      "group": "template_cleanup",
+      "passed": true,
+      "detail": "electricity calculation absent or clearly scoped as note/not standalone"
+    },
+    {
+      "name": "prep_checklist_not_copied_as_body",
+      "group": "template_cleanup",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "prep_private_details_not_promoted",
+      "group": "template_cleanup",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "optional_material_pool_not_overcopied",
+      "group": "template_cleanup",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no_external_relationships",
+      "group": "source_binding_safety",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no_external_url_or_file_uri",
+      "group": "source_binding_safety",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no_private_paths_or_source_locators",
+      "group": "source_binding_safety",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no_secret_like_strings",
+      "group": "source_binding_safety",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "local_only_no_network_dependency_claim",
+      "group": "source_binding_safety",
+      "passed": true,
+      "detail": "no claim of network/external/private asset use"
+    },
+    {
+      "name": "necessary_english_only_not_dominant",
+      "group": "source_binding_safety",
+      "passed": true,
+      "detail": "latin=4, cjk=1129"
+    }
+  ],
+  "artifact_manifest": {
+    "case_slug": "xmind_screenshot_template_ppt",
+    "stage": "verifier",
+    "judge_planned": true,
+    "deterministic_first": true,
+    "artifacts": [
+      {
+        "id": "visual_evidence_summary",
+        "source_path": "judge_evidence/visual_evidence_summary.md",
+        "type": "md",
+        "required": true,
+        "verifier_raw_path": "raw_artifacts/visual_evidence_summary.md",
+        "text_path": "artifact_text/visual_evidence_summary.md",
+        "extract_status": "ok",
+        "sha256": "0cb9f53304a75d8ba6e8c67d8b4ecde0e09b1b60386d3fd0059458a1542d295a"
+      },
+      {
+        "id": "slide_structure_summary",
+        "source_path": "judge_evidence/slide_structure_summary.md",
+        "type": "md",
+        "required": true,
+        "verifier_raw_path": "raw_artifacts/slide_structure_summary.md",
+        "text_path": "artifact_text/slide_structure_summary.md",
+        "extract_status": "ok",
+        "sha256": "7eed4ccb75805c3052d5326f2365456a3c0bb3ba984d2188dad165955b05b5a0"
+      },
+      {
+        "id": "style_structure_summary",
+        "source_path": "judge_evidence/style_structure_summary.md",
+        "type": "md",
+        "required": true,
+        "verifier_raw_path": "raw_artifacts/style_structure_summary.md",
+        "text_path": "artifact_text/style_structure_summary.md",
+        "extract_status": "ok",
+        "sha256": "dba8b666901e95aaadce490ca0ce6776f1ab1be83f6929e7aa8cafc1e90be649"
+      },
+      {
+        "id": "reference_structure_summary",
+        "source_path": "judge_evidence/reference_structure_summary.md",
+        "type": "md",
+        "required": true,
+        "verifier_raw_path": "raw_artifacts/reference_structure_summary.md",
+        "text_path": "artifact_text/reference_structure_summary.md",
+        "extract_status": "ok",
+        "sha256": "85531af0af11191c50017e9ada1cea8427ae944e74458c7963cbd2dbc2ddb87c"
+      },
+      {
+        "id": "template_structure_summary",
+        "source_path": "judge_evidence/template_structure_summary.md",
+        "type": "md",
+        "required": true,
+        "verifier_raw_path": "raw_artifacts/template_structure_summary.md",
+        "text_path": "artifact_text/template_structure_summary.md",
+        "extract_status": "ok",
+        "sha256": "b03b7150f68ce9c5aeee948c049c66fb674071a43ba854381ec5d7f99be951f6"
+      },
+      {
+        "id": "final_presentation_text",
+        "source_path": "judge_evidence/final_presentation_text.md",
+        "type": "md",
+        "required": true,
+        "verifier_raw_path": "raw_artifacts/final_presentation_text.md",
+        "text_path": "artifact_text/final_presentation_text.md",
+        "extract_status": "ok",
+        "sha256": "a57ac1c42e87879718f17d07f0979d91fb4a603e9e49bda8826fbedf0a9f1cd9"
+      }
+    ],
+    "extract_status": "ok",
+    "required_artifact_errors": [],
+    "judge_activation_ready": true,
+    "judge_activation_requirements": {
+      "deterministic_pass_required_for_merge": true,
+      "deterministic_passed": false,
+      "parseable_output_required_for_judge_evidence": true,
+      "parseable_output_available": true,
+      "required_judge_evidence_present": true,
+      "required_judge_evidence_files": [
+        "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/judge_evidence/visual_evidence_summary.md",
+        "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/judge_evidence/slide_structure_summary.md",
+        "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/judge_evidence/style_structure_summary.md",
+        "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/judge_evidence/reference_structure_summary.md",
+        "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/judge_evidence/template_structure_summary.md",
+        "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/judge_evidence/final_presentation_text.md"
+      ],
+      "write_back_policy": "WB Judge may run when parseable output and required text-first evidence exist, but Judge score may be merged only under the harness-approved policy when wb_judge status is completed and llm_judge is non-null; never use Judge scoring to compensate deterministic factual, package, safety, or output-contract failures."
+    },
+    "inputs_consumed": [
+      "submitted/discovered output PPTX",
+      "public XMind-like package",
+      "public screenshot-reference file hash",
+      "public PPTX template hash and theme/style features",
+      "hidden gold contract derived only from public inputs"
+    ],
+    "private_trace_dependency": false,
+    "created_artifacts": [
+      {
+        "path": "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/artifact_text/deterministic_eval_summary.json",
+        "kind": "artifact_text",
+        "description": "Deterministic pass/fail summary without hidden expected answers"
+      },
+      {
+        "path": "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/artifact_text/pptx_slide_text_records.json",
+        "kind": "artifact_text",
+        "description": "Verifier-owned slide text excerpts extracted from submitted PPTX"
+      },
+      {
+        "path": "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/artifact_text/pptx_style_records.json",
+        "kind": "artifact_text",
+        "description": "Verifier-owned PPTX color/shape/external-relationship records"
+      },
+      {
+        "path": "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/judge_evidence/visual_evidence_summary.md",
+        "kind": "judge_evidence",
+        "description": "Required text-first markdown evidence for conditional Judge after verifier extraction"
+      },
+      {
+        "path": "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/judge_evidence/slide_structure_summary.md",
+        "kind": "judge_evidence",
+        "description": "Required text-first markdown evidence for conditional Judge after verifier extraction"
+      },
+      {
+        "path": "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/judge_evidence/style_structure_summary.md",
+        "kind": "judge_evidence",
+        "description": "Required text-first markdown evidence for conditional Judge after verifier extraction"
+      },
+      {
+        "path": "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/judge_evidence/reference_structure_summary.md",
+        "kind": "judge_evidence",
+        "description": "Required text-first markdown evidence for conditional Judge after verifier extraction"
+      },
+      {
+        "path": "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/judge_evidence/template_structure_summary.md",
+        "kind": "judge_evidence",
+        "description": "Required text-first markdown evidence for conditional Judge after verifier extraction"
+      },
+      {
+        "path": "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/judge_evidence/final_presentation_text.md",
+        "kind": "judge_evidence",
+        "description": "Required text-first markdown evidence for conditional Judge after verifier extraction"
+      }
+    ],
+    "judge_evidence": {
+      "judge_evidence_dir": "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/judge_evidence",
+      "required_files": [
+        "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/judge_evidence/visual_evidence_summary.md",
+        "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/judge_evidence/slide_structure_summary.md",
+        "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/judge_evidence/style_structure_summary.md",
+        "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/judge_evidence/reference_structure_summary.md",
+        "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/judge_evidence/template_structure_summary.md",
+        "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/judge_evidence/final_presentation_text.md"
+      ],
+      "required_files_present": true,
+      "raw_visual_artifacts": [
+        "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/raw_artifacts/judge_evidence_rendered_slide_contact_sheet.png",
+        "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/raw_artifacts/judge_evidence_reference_thumbnail.png",
+        "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/raw_artifacts/judge_evidence_template_contact_sheet.png"
+      ],
+      "deterministic_passed": false
+    },
+    "raw_artifacts": [
+      "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/raw_artifacts/community_sustainability_workshop_deck.pptx",
+      "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/raw_artifacts/judge_evidence_rendered_slide_contact_sheet.png",
+      "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/raw_artifacts/judge_evidence_reference_thumbnail.png",
+      "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/raw_artifacts/judge_evidence_template_contact_sheet.png",
+      "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/raw_artifacts/visual_evidence_summary.md",
+      "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/raw_artifacts/slide_structure_summary.md",
+      "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/raw_artifacts/style_structure_summary.md",
+      "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/raw_artifacts/reference_structure_summary.md",
+      "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/raw_artifacts/template_structure_summary.md",
+      "/private/tmp/wb-qwen36-xmind-4jvi6gjh/verification/raw_artifacts/final_presentation_text.md"
+    ],
+    "check_summary": {
+      "passed_count": 88,
+      "total_count": 113,
+      "pass_rate": 0.7788,
+      "score_denominator_mode": "full_contract_113_output_gated",
+      "model_score": 88,
+      "model_total": 113,
+      "model_pass_rate": 0.7788,
+      "gated_pass": false,
+      "scoring": {
+        "score_denominator_mode": "full_contract_113_output_gated",
+        "model_score": 88,
+        "model_total": 113,
+        "model_pass_rate": 0.7788,
+        "gated_pass": false,
+        "output_gate_checks": [
+          "output_pptx_discovered",
+          "output_single_pptx_unambiguous",
+          "output_extension_pptx",
+          "output_zip_openable"
+        ],
+        "output_gate_failures": [],
+        "contract_complete": true,
+        "missing_expected_checks": [],
+        "duplicate_expected_checks": [],
+        "raw_emitted_passed_count": 88,
+        "raw_emitted_total_count": 113,
+        "raw_emitted_pass_rate": 0.7788,
+        "interpretation": "model_score/model_total and checks are the comparable release score; missing or invalid required PPTX output gates model_score to 0 while diagnostic_checks/raw_emitted_* preserve verifier/input-health diagnostics."
+      },
+      "groups": [
+        "content_order_and_coverage",
+        "input_immutability",
+        "output_contract",
+        "pptx_parseability",
+        "role_separation_and_distractors",
+        "screenshot_visual_alignment",
+        "source_binding_safety",
+        "template_and_ppt_object_fidelity",
+        "template_cleanup",
+        "verifier_isolation",
+        "xmind_package_parsing"
+      ],
+      "failed_checks": [
+        "top_level_optional_materials_present",
+        "route_safety_constraints_present",
+        "energy_cup_crosslink_present",
+        "energy_attachment_privacy_boundary_present",
+        "circular_exchange_flow_present",
+        "circular_repair_role_present",
+        "nature_family_corner_present",
+        "audience_resident_actions_present",
+        "audience_shop_cup_packaging_present",
+        "audience_children_observation_present",
+        "audience_public_checklist_present",
+        "timing_agenda_sequence_present",
+        "timing_rounds_break_boundary_present",
+        "followup_commitment_cards_present",
+        "followup_return_visit_boundary_present",
+        "prep_only_role_separation_present",
+        "optional_materials_filtered_present",
+        "near_duplicate_checklist_separation_present",
+        "source_relationship_audience_shops_to_cup_present",
+        "source_relationship_timing_to_route_present",
+        "source_relationship_timing_to_commitment_present",
+        "source_relationship_near_duplicate_warning_present",
+        "template_footer_or_page_marker_present",
+        "screenshot_lane_role_proxy_present",
+        "template_placeholder_text_absent"
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "CMS": "Legacy content system",
+  "invoice": "Invoice",
+  "SSO": "Single Sign-On",
+  "seat_limit": "Team seat limit",
+  "SCIM": "Cross-domain Identity Management auto sync",
+  "audit_log": "Audit log"
+}

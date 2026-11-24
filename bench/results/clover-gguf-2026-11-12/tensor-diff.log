@@ -1,0 +1,5 @@
+   https://docs.nvidia.com/datacenter/cloud-native/ .
+blk.N.ssm_bd_history.bias: official=30 bartowski=0
+blk.N.ssm_bd_history.weight: official=30 bartowski=0
+blk.N.ssm_bd_logit_scale.weight: official=30 bartowski=0
+blk.N.ssm_conv1d.weight_right: official=30 bartowski=0

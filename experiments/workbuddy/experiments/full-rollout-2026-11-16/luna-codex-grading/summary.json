@@ -1,0 +1,27 @@
+{
+  "model": "gpt-6-luna",
+  "harness": "Codex CLI",
+  "method": "One structured Codex response per saved trial; Office task weights and Web penalty rules applied offline",
+  "office": {
+    "trials": 50,
+    "completed": 50,
+    "weighted_task_mean": 0.374986,
+    "deterministic_mean": 0.390064,
+    "luna_scored_trials": 31,
+    "missing_evidence_only": 19,
+    "full_passes": 1,
+    "zeroes": 19
+  },
+  "web": {
+    "trials": 70,
+    "reviewed": 13,
+    "resolved": 6,
+    "mean_resolved_only": 0.36666666666666664,
+    "unavailable": 57,
+    "browser_agent_checks_pending": 9,
+    "fixed_score_mean_bounds_on_reviewed_only": [
+      0.2,
+      0.5076923076923077
+    ]
+  }
+}

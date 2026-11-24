@@ -1,0 +1,56 @@
+{"prompt": "essay", "max_tokens": 2048, "thinking": false, "finish_reason": "length", "completion_tokens": 2048, "prompt_tokens": 63, "chunks": 2048, "latency_s": 36.277, "ttft_s": 0.483, "decode_tps": 57.2, "e2e_tps": 56.5, "concurrency": 1}
+{"prompt": "essay", "max_tokens": 2048, "thinking": false, "finish_reason": "length", "completion_tokens": 2048, "prompt_tokens": 63, "chunks": 2048, "latency_s": 35.983, "ttft_s": 0.088, "decode_tps": 57.0, "e2e_tps": 56.9, "concurrency": 1}
+{"prompt": "code", "max_tokens": 2048, "thinking": false, "finish_reason": "length", "completion_tokens": 2048, "prompt_tokens": 63, "chunks": 2048, "latency_s": 23.099, "ttft_s": 0.12, "decode_tps": 89.1, "e2e_tps": 88.7, "concurrency": 1}
+{"prompt": "code", "max_tokens": 2048, "thinking": false, "finish_reason": "length", "completion_tokens": 2048, "prompt_tokens": 63, "chunks": 2048, "latency_s": 23.099, "ttft_s": 0.092, "decode_tps": 89.0, "e2e_tps": 88.7, "concurrency": 1}
+{"prompt": "story", "max_tokens": 2048, "thinking": false, "finish_reason": "length", "completion_tokens": 2048, "prompt_tokens": 47, "chunks": 2048, "latency_s": 50.463, "ttft_s": 0.121, "decode_tps": 40.7, "e2e_tps": 40.6, "concurrency": 1}
+{"prompt": "story", "max_tokens": 2048, "thinking": false, "finish_reason": "length", "completion_tokens": 2048, "prompt_tokens": 47, "chunks": 2048, "latency_s": 51.254, "ttft_s": 0.089, "decode_tps": 40.0, "e2e_tps": 40.0, "concurrency": 1}
+{"prompt": "math", "max_tokens": 2048, "thinking": false, "finish_reason": "length", "completion_tokens": 2048, "prompt_tokens": 54, "chunks": 2048, "latency_s": 18.229, "ttft_s": 0.123, "decode_tps": 113.1, "e2e_tps": 112.3, "concurrency": 1}
+{"prompt": "math", "max_tokens": 2048, "thinking": false, "finish_reason": "length", "completion_tokens": 2048, "prompt_tokens": 54, "chunks": 2048, "latency_s": 18.23, "ttft_s": 0.088, "decode_tps": 112.8, "e2e_tps": 112.3, "concurrency": 1}
+{"prompt": "code", "max_tokens": 2048, "thinking": false, "finish_reason": "length", "completion_tokens": 2048, "prompt_tokens": 63, "chunks": 2048, "latency_s": 80.217, "ttft_s": 0.423, "decode_tps": 25.7, "e2e_tps": 25.5, "concurrency": 8}
+{"prompt": "code", "max_tokens": 2048, "thinking": false, "finish_reason": "length", "completion_tokens": 2048, "prompt_tokens": 63, "chunks": 2048, "latency_s": 87.921, "ttft_s": 0.425, "decode_tps": 23.4, "e2e_tps": 23.3, "concurrency": 8}
+{"prompt": "code", "max_tokens": 2048, "thinking": false, "finish_reason": "length", "completion_tokens": 2048, "prompt_tokens": 63, "chunks": 2048, "latency_s": 87.925, "ttft_s": 0.424, "decode_tps": 23.4, "e2e_tps": 23.3, "concurrency": 8}
+{"prompt": "story", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 8}
+{"prompt": "essay", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 8}
+{"prompt": "essay", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 8}
+{"prompt": "story", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 8}
+{"prompt": "essay", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 8}
+{"prompt": "story", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 8}
+{"prompt": "essay", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 8}
+{"prompt": "code", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 8}
+{"prompt": "story", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 8}
+{"prompt": "math", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 8}
+{"prompt": "math", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 8}
+{"prompt": "math", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 8}
+{"prompt": "math", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 8}
+{"prompt": "essay", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "essay", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "essay", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "code", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "code", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "essay", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "essay", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "code", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "code", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "essay", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "code", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "code", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "code", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "code", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "story", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "story", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "story", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "story", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "essay", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "essay", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "story", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "story", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "story", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "story", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "math", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "math", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "math", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "math", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "math", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "math", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "math", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}
+{"prompt": "math", "max_tokens": 2048, "error": "APIConnectionError('Connection error.')", "concurrency": 32}

@@ -1,0 +1,9 @@
+services:
+  main:
+    volumes:
+      - minicpm_gateway:/gateway:ro
+
+volumes:
+  minicpm_gateway:
+    name: tb41-minicpm-gateway
+    external: true

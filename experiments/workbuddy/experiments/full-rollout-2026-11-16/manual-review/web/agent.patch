@@ -1,0 +1,320 @@
+diff --git a/submission/help-center/articles/account-billing.md b/submission/help-center/articles/account-billing.md
+new file mode 100644
+index 0000000..2e43b25
+--- /dev/null
++++ b/submission/help-center/articles/account-billing.md
+@@ -0,0 +1,54 @@
++# Account and Billing
++
++This article covers subscription management, invoices, team seat usage, and account closure prerequisites. It was migrated from the legacy CMS (`legacy-help.html`, section `data-slug="account-billing"`) and enriched with FAQ rows from `faq.csv` (category tags preserved).
++
++## Migration Context
++
++The content below replaces pages served by the legacy CMS. Legacy slugs are redirected via `redirects.json`; see [Redirects](../redirects.json) for the full mapping.
++
++---
++
++## Reset Password
++
++Users can reset their password via email. The reset link is valid for **15 minutes**.
++
++> **FAQ — Category: Account**
++> Q: How to reset password?
++> A: Reset via the email link; the link is valid for 15 minutes.
++> Source: `faq.csv` row 1 (`question=How to reset password`).
++
++### Conflict Resolution
++
++Legacy HTML stated a 30-minute window; the FAQ row specified 15 minutes. Per `conflict-overrides.csv` (`password_reset_link_ttl`), the FAQ value wins. This decision is also recorded in `conflict-report.json`. Support ticket SUP-219 referenced the discrepancy ("expired after half an hour").
++
++---
++
++## Invoices
++
++Admins can download invoices from the Billing Center and filter by month using the invoice field.
++
++> **FAQ — Category: Billing**
++> Q: How to download invoices?
++> A: Go to the Billing Center and download by month.
++> Source: `faq.csv` row 2 (`question=How to download invoices`).
++
++Cross-reference: See [Close Account](./account-security.md#close-account) for billing settlement prerequisites before closing an account.
++
++---
++
++## Team Seats
++
++Once the team reaches `seat_limit`, new members require an admin to release a seat or upgrade the plan. When usage hits 90%, admins receive a warning notification. If the cap is reached, invitations are blocked until an admin releases a seat or upgrades the plan.
++
++> **FAQ — Category: Account**
++> Q: Can I still invite members once the seat limit is reached?
++> A: Once the seat limit is reached invitations are blocked; admins are notified when usage hits 90%.
++> Source: `faq.csv` row 5 (`question=Can I still invite members once the seat limit is reached`).
++
++### Conflict Resolution
++
++Legacy HTML described only "release a seat or upgrade plan"; the FAQ added "invitations blocked when cap is reached; 90% triggers warning." Per `conflict-overrides.csv` (`seat_limit_invite_behavior`), both behaviors are retained in this body copy. Support ticket SUP-244 confirmed the real-world impact of this dual-path flow.
++
++---
++
++*Article anchors: #reset-password, #invoices, #team-seats*
+diff --git a/submission/help-center/articles/account-security.md b/submission/help-center/articles/account-security.md
+new file mode 100644
+index 0000000..07976e0
+--- /dev/null
++++ b/submission/help-center/articles/account-security.md
+@@ -0,0 +1,56 @@
++# Login Security
++
++This article covers SSO configuration, SCIM sync, audit logging, and account closure. It was migrated from the legacy CMS (`legacy-help.html`, section `data-slug="account-security"`) and enriched with FAQ rows from `faq.csv` (category tags preserved).
++
++## Migration Context
++
++The content below replaces pages served by the legacy CMS. Legacy slugs are redirected via `redirects.json`; see [Redirects](../redirects.json) for the full mapping.
++
++---
++
++## SSO Configuration
++
++Enterprise admins can enable SSO and require members to sign in with their corporate identity.
++
++> **FAQ — Category: Security**
++> Q: How to enable SSO?
++> A: Enterprise admins configure SSO under Login Security.
++> Source: `faq.csv` row 3 (`question=How to enable SSO`).
++
++Cross-reference: See [SCIM Sync](#scim-sync) for automatic member provisioning alongside SSO.
++
++---
++
++## SCIM Sync
++
++Enterprises can use SCIM to automatically sync member accounts; when sync fails, check the audit_log.
++
++> **FAQ — Category: Security**
++> Q: How to troubleshoot SCIM sync failures?
++> A: First check the identity provider mapping, then review sync errors in the audit_log.
++> Source: `faq.csv` row 6 (`question=How to troubleshoot SCIM sync failures`).
++
++Cross-reference: See [Audit Log](#audit-log) for exporting logs used in troubleshooting.
++
++---
++
++## Audit Log
++
++Admins can export the audit_log from Login Security to troubleshoot SSO and SCIM related login issues.
++
++---
++
++## Close Account
++
++Before closing an account, confirm that billing is settled and export any necessary historical records.
++
++> **FAQ — Category: Account**
++> Q: How to close an account?
++> A: First confirm billing is settled and export historical records.
++> Source: `faq.csv` row 4 (`question=How to close an account`).
++
++Cross-reference: See [Invoices](./account-billing.md#invoices) for downloading invoices before closure.
++
++---
++
++*Article anchors: #sso-configuration, #scim-sync, #audit-log, #close-account*
+diff --git a/submission/help-center/conflict-report.json b/submission/help-center/conflict-report.json
+new file mode 100644
+index 0000000..be74b51
+--- /dev/null
++++ b/submission/help-center/conflict-report.json
+@@ -0,0 +1,16 @@
++[
++  {
++    "topic": "password_reset_link_ttl",
++    "chosenValue": "15 minutes",
++    "sourceOfTruth": "faq_csv",
++    "discardedValue": "30 minutes",
++    "reason": "FAQ row specified 15-minute window; final doc states 15 minutes and conflict-report.json records that FAQ overrides legacy HTML. Support ticket SUP-219 referenced discrepancy ('expired after half an hour')."
++  },
++  {
++    "topic": "seat_limit_invite_behavior",
++    "chosenValue": "Both behaviors retained: 90% usage warning triggers admin notification; when cap is reached invitations are blocked until admin releases a seat or upgrades plan.",
++    "sourceOfTruth": "merged",
++    "discardedValue": "Legacy-only 'release a seat or upgrade plan' without warning threshold or invite-block detail.",
++    "reason": "Per conflict-overrides.csv, merge approach keeps both the 90% heads-up and the at-cap invite-block flow with ship-out-or-upgrade affordances. Support ticket SUP-244 confirmed real-world impact of dual-path flow."
++  }
++]
+diff --git a/submission/help-center/glossary.json b/submission/help-center/glossary.json
+new file mode 100644
+index 0000000..96198a7
+--- /dev/null
++++ b/submission/help-center/glossary.json
+@@ -0,0 +1,32 @@
++[
++  {
++    "term": "CMS",
++    "definition": "Legacy content system",
++    "anchor": "articles/account-billing.md#migration-context"
++  },
++  {
++    "term": "invoice",
++    "definition": "Invoice",
++    "anchor": "articles/account-billing.md#invoices"
++  },
++  {
++    "term": "SSO",
++    "definition": "Single Sign-On",
++    "anchor": "articles/account-security.md#sso-configuration"
++  },
++  {
++    "term": "seat_limit",
++    "definition": "Team seat limit",
++    "anchor": "articles/account-billing.md#team-seats"
++  },
++  {
++    "term": "SCIM",
++    "definition": "Cross-domain Identity Management auto sync",
++    "anchor": "articles/account-security.md#scim-sync"
++  },
++  {
++    "term": "audit_log",
++    "definition": "Audit log",
++    "anchor": "articles/account-security.md#audit-log"
++  }
++]
+diff --git a/submission/help-center/links.json b/submission/help-center/links.json
+new file mode 100644
+index 0000000..aa2d135
+--- /dev/null
++++ b/submission/help-center/links.json
+@@ -0,0 +1,32 @@
++[
++  {
++    "source": "articles/account-billing.md#invoices",
++    "target": "articles/account-security.md#close-account",
++    "label": "Close Account — billing settlement prerequisites before closure"
++  },
++  {
++    "source": "articles/account-security.md#close-account",
++    "target": "articles/account-billing.md#invoices",
++    "label": "Invoices — download by month from Billing Center"
++  },
++  {
++    "source": "articles/account-security.md#sso-configuration",
++    "target": "articles/account-security.md#scim-sync",
++    "label": "SCIM Sync — automatic member provisioning alongside SSO"
++  },
++  {
++    "source": "articles/account-security.md#scim-sync",
++    "target": "articles/account-security.md#audit-log",
++    "label": "Audit Log — export logs for troubleshooting SCIM failures"
++  },
++  {
++    "source": "articles/account-billing.md#reset-password",
++    "target": "articles/account-billing.md#team-seats",
++    "label": "Team Seats — seat management after subscription changes"
++  },
++  {
++    "source": "articles/account-billing.md#team-seats",
++    "target": "articles/account-billing.md#reset-password",
++    "label": "Reset Password — account access recovery"
++  }
++]
+diff --git a/submission/help-center/nav.json b/submission/help-center/nav.json
+new file mode 100644
+index 0000000..63a2c6e
+--- /dev/null
++++ b/submission/help-center/nav.json
+@@ -0,0 +1,56 @@
++[
++  {
++    "title": "Account and Billing",
++    "path": "articles/account-billing.md",
++    "group": "Account & Billing",
++    "order": 1
++  },
++  {
++    "title": "Reset Password",
++    "path": "articles/account-billing.md#reset-password",
++    "group": "Account & Billing",
++    "order": 2
++  },
++  {
++    "title": "Invoices",
++    "path": "articles/account-billing.md#invoices",
++    "group": "Account & Billing",
++    "order": 3
++  },
++  {
++    "title": "Team Seats",
++    "path": "articles/account-billing.md#team-seats",
++    "group": "Account & Billing",
++    "order": 4
++  },
++  {
++    "title": "Login Security",
++    "path": "articles/account-security.md",
++    "group": "Security",
++    "order": 5
++  },
++  {
++    "title": "SSO Configuration",
++    "path": "articles/account-security.md#sso-configuration",
++    "group": "Security",
++    "order": 6
++  },
++  {
++    "title": "SCIM Sync",
++    "path": "articles/account-security.md#scim-sync",
++    "group": "Security",
++    "order": 7
++  },
++  {
++    "title": "Audit Log",
++    "path": "articles/account-security.md#audit-log",
++    "group": "Security",
++    "order": 8
++  },
++  {
++    "title": "Close Account",
++    "path": "articles/account-security.md#close-account",
++    "group": "Security",
++    "order": 9
++  }
++]
+diff --git a/submission/help-center/redirects.json b/submission/help-center/redirects.json
+new file mode 100644
+index 0000000..df599ce
+--- /dev/null
++++ b/submission/help-center/redirects.json
+@@ -0,0 +1,32 @@
++[
++  {
++    "old_slug": "reset-password",
++    "target": "articles/account-billing.md#reset-password",
++    "status": 301,
++    "reason": "old CMS slug merged into account billing article"
++  },
++  {
++    "old_slug": "invoice-help",
++    "target": "articles/account-billing.md#invoices",
++    "status": 301,
++    "reason": "billing invoice help renamed"
++  },
++  {
++    "old_slug": "sso-setup",
++    "target": "articles/account-security.md#sso-configuration",
++    "status": 301,
++    "reason": "SSO setup moved to security article"
++  },
++  {
++    "old_slug": "close-account",
++    "target": "articles/account-security.md#close-account",
++    "status": 301,
++    "reason": "account closure moved to security article"
++  },
++  {
++    "old_slug": "scim-sync",
++    "target": "articles/account-security.md#scim-sync",
++    "status": 301,
++    "reason": "SCIM topic moved to security article"
++  }
++]

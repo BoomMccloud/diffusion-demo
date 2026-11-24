@@ -1,0 +1,1 @@
+../../../docs/jepa_diffusion_findings.md

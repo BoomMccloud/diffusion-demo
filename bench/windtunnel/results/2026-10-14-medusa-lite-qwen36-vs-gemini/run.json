@@ -1,0 +1,159 @@
+{
+  "options": {
+    "preset": "lite",
+    "sites": "nextjs-starter-medusa",
+    "arms": [
+      "wm-claude",
+      "wm-gemini"
+    ],
+    "seed": 1,
+    "budget": 5,
+    "perturbed": false,
+    "models": {
+      "wm-claude": "qwen36-iter22000-blk16-arverify-best"
+    },
+    "maxConsecutiveInfra": 2,
+    "label": "medusa-lite-qwen36-vs-gemini",
+    "n": 3,
+    "fake": false,
+    "model": "qwen36-iter22000-blk16-arverify-best,gemini-3.6-flash",
+    "armModels": {
+      "wm-claude": "qwen36-iter22000-blk16-arverify-best",
+      "wm-gemini": "gemini-3.6-flash"
+    },
+    "git_revision": "5ca8644e23826ebb30108e7bad240b61043bfe67-dirty",
+    "task_set_hash": "07aef320029195b45128a93364d7bbd7c45853ffb8fa5e54613d0dd37e4063d2",
+    "goldens_hash": "88421834fd03b608de6ec39ec125305c9f468f9f9729e801b29aef317eb3f2ec",
+    "prices": [
+      [
+        "claude-fable-5",
+        [
+          10,
+          50,
+          1,
+          12.5
+        ]
+      ],
+      [
+        "claude-opus-5",
+        [
+          5,
+          25,
+          0.5,
+          6.25
+        ]
+      ],
+      [
+        "claude-opus-4",
+        [
+          5,
+          25,
+          0.5,
+          6.25
+        ]
+      ],
+      [
+        "claude-sonnet-5",
+        [
+          3,
+          15,
+          0.3,
+          3.75
+        ]
+      ],
+      [
+        "claude-sonnet-4-6",
+        [
+          3,
+          15,
+          0.3,
+          3.75
+        ]
+      ],
+      [
+        "claude-sonnet-4",
+        [
+          3,
+          15,
+          0.3,
+          3.75
+        ]
+      ],
+      [
+        "claude-haiku-4",
+        [
+          1,
+          5,
+          0.1,
+          1.25
+        ]
+      ],
+      [
+        "gpt-6-astra",
+        [
+          10,
+          50,
+          1,
+          12.5
+        ]
+      ],
+      [
+        "gpt-5.6-sol",
+        [
+          5,
+          30,
+          0.5,
+          6.25
+        ]
+      ],
+      [
+        "gpt-5.6-terra",
+        [
+          2.5,
+          15,
+          0.25,
+          3.125
+        ]
+      ],
+      [
+        "gpt-5.6-luna",
+        [
+          1,
+          6,
+          0.1,
+          1.25
+        ]
+      ],
+      [
+        "gpt-5.5",
+        [
+          5,
+          30,
+          0.5,
+          0
+        ]
+      ],
+      [
+        "computer-use-preview",
+        [
+          1.5,
+          6,
+          0.15,
+          0
+        ]
+      ],
+      [
+        "gemini-3.6-flash",
+        [
+          0.75,
+          3.75,
+          0.075,
+          0
+        ]
+      ]
+    ]
+  },
+  "capsules": [],
+  "rows": [],
+  "verdicts": []
+}

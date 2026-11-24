@@ -11,8 +11,8 @@ Output is JSONL rows with raw output, stop reason, token counts, forward passes
 (``nfe``) and wall time. Rows resume by (case_id, arm). Scoring belongs to the workload.
 
 Subcommands:
-  nemotron    Colab GPU, needs torch and transformers
-  openrouter  local, reads OPENROUTER_API_KEY from the environment or .env.local
+  nemotron    DGX Spark container, needs torch and transformers
+  openrouter  API arm, reads OPENROUTER_API_KEY from the environment or .env.local
 """
 
 from __future__ import annotations
@@ -23,6 +23,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import sys
 import time
 import urllib.error
 import urllib.request
@@ -79,6 +80,13 @@ def thinking_text(text):
     return text.split("</think>")[0].replace("<think>", "").strip() if "</think>" in text else None
 
 
+def crop_dynamic_cache(past_key_values, max_length):
+    # Transformers accepts a negative token count across both cache APIs.
+    tokens_to_drop = past_key_values.get_seq_length() - max_length
+    if tokens_to_drop > 0:
+        past_key_values.crop(-tokens_to_drop)
+
+
 def cmd_nemotron(args):
     import torch
     from transformers import AutoModel, AutoTokenizer
@@ -89,6 +97,9 @@ def cmd_nemotron(args):
     model = AutoModel.from_pretrained(
         args.model, revision=args.revision, trust_remote_code=True, dtype=torch.bfloat16,
     ).cuda().eval()
+    modeling_module = sys.modules[type(model).__module__]
+    if hasattr(modeling_module, "_crop_dynamic_cache"):
+        modeling_module._crop_dynamic_cache = crop_dynamic_cache
     stop_ids = {tokenizer.eos_token_id, tokenizer.convert_tokens_to_ids("<|im_end|>")} - {None}
     gpu = torch.cuda.get_device_name(0)
     revision = getattr(model.config, "_commit_hash", None)

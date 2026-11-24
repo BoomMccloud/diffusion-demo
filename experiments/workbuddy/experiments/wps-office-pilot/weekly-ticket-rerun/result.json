@@ -1,0 +1,31 @@
+{
+  "task": "ticket-weekly-L3-010",
+  "run_type": "WPS proof of concept with contained Python",
+  "passed": 10,
+  "total": 15,
+  "score": 0.6666666666666666,
+  "baseline_passed": 15,
+  "baseline_total": 15,
+  "output_replayed": false,
+  "input_source": "openpyxl extraction of original workbook and task-image Python",
+  "output_writer": "WPS MCP",
+  "computation": "network-disabled read-only isolated Docker container on Spark",
+  "native_verifier": "original task pytest in baseline task Docker image",
+  "failed_checks": [
+    "has_4_weeks",
+    "week1_rate_correct",
+    "week2_rate_correct",
+    "week3_rate_correct",
+    "week4_rate_correct"
+  ],
+  "failure_details": [
+    "extra total row",
+    "percentage-point values written as plain numbers rather than fractions or percent strings"
+  ],
+  "caveats": [
+    "one attempt per setup",
+    "CodeBuddy built-in tools restricted",
+    "agent runs on Mac not original task container",
+    "WPS uses pre-opened dedicated workbook"
+  ]
+}

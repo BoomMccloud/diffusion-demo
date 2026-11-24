@@ -1,0 +1,5 @@
+import {readFileSync} from 'node:fs';
+import {startProxy} from './audit-proxy.mjs';
+const line=readFileSync(process.env.CLOVER_ENV_FILE,'utf8').split(/\r?\n/).find(x=>/^\s*(?:export\s+)?CLOVER_API_KEY\s*=/.test(x));
+if(!line)throw Error('CLOVER_API_KEY is missing');let key=line.slice(line.indexOf('=')+1).trim();if((key.startsWith('"')&&key.endsWith('"'))||(key.startsWith("'")&&key.endsWith("'")))key=key.slice(1,-1);if(!key)throw Error('CLOVER_API_KEY is empty');
+startProxy({port:Number(process.env.PROXY_PORT||18767),auditPath:process.env.PROXY_AUDIT_PATH,upstream:process.env.CLOVER_API_URL||'http://43.107.54.53:31002/v1/chat/completions',headers:{Authorization:'Bearer '+key,'X-User-ID':process.env.CLOVER_USER_ID||'wps-pilot-20261118','X-Session-ID':process.env.CLOVER_SESSION_ID||'wps-ticket-pilot'},transform:b=>{b.model='Clover-35B-A3B-Preview';delete b.max_tokens;delete b.max_completion_tokens;delete b.max_output_tokens;b.temperature=0;b.chat_template_kwargs={...(b.chat_template_kwargs||{}),enable_thinking:true,preserve_thinking:true};return b;}});

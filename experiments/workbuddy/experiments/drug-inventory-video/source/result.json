@@ -1,0 +1,182 @@
+{
+    "id": "4acbb40a-0ab7-4350-83b3-503c5767a819",
+    "task_name": "workbuddy/drug-inventory-split-L2-006",
+    "trial_name": "drug-inventory-split-L2-006__sz8HP6h",
+    "trial_uri": "file:///home/jx25520/diffusion-demo/runs/workbuddy-smoke/results/clover-serial-office-014-a001/2026-11-17__12-55-49/drug-inventory-split-L2-006__sz8HP6h",
+    "task_id": {
+        "path": ".workspace/tmp/staged/clover-serial-office-014-a001-17006-1794920145/wb-bench-office-v1.0/tasks/drug-inventory-split-L2-006"
+    },
+    "source": "tasks",
+    "task_checksum": "7938cc4db2c0910eb3d0e4dcf85c0eb588c69ee2a76e6c6cc6d91b4676e08498",
+    "config": {
+        "task": {
+            "path": ".workspace/tmp/staged/clover-serial-office-014-a001-17006-1794920145/wb-bench-office-v1.0/tasks/drug-inventory-split-L2-006",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": "tasks"
+        },
+        "trial_name": "drug-inventory-split-L2-006__sz8HP6h",
+        "trials_dir": "results/clover-serial-office-014-a001/2026-11-17__12-55-49",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "workbuddy_bench.agents.cbc_agent:CbcAgent",
+            "model_name": "clover-spark-serial",
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {
+                "CBC_MAX_TURNS": 48,
+                "CBC_VERSION": "2.109.3",
+                "model_params": {
+                    "temperature": 0.0,
+                    "thinking_enabled": true,
+                    "extra_body": {
+                        "chat_template_kwargs": {
+                            "enable_thinking": true,
+                            "preserve_thinking": true
+                        }
+                    }
+                },
+                "instance_id": "clover-serial-office-014-a001-17006-1794920145",
+                "connection": {
+                    "mode": "local_proxy",
+                    "proxy_url": "http://workbuddy-serial-proxy:3487",
+                    "model_route": "clover-spark-serial"
+                },
+                "mount_path": "/opt/codebuddy-code",
+                "settings_preset": {
+                    "alwaysThinkingEnabled": true,
+                    "autoUpdates": false,
+                    "autoCompactEnabled": true,
+                    "includeCoAuthoredBy": false,
+                    "promptSuggestionEnabled": false,
+                    "enableAllProjectMcpServers": false,
+                    "cleanupPeriodDays": 3650,
+                    "permissions": {
+                        "defaultMode": "bypassPermissions",
+                        "deny": [
+                            "WebSearch",
+                            "AskUserQuestion",
+                            "Workflow",
+                            "ComputerUse",
+                            "WaitForMcpServers",
+                            "EnterPlanMode"
+                        ]
+                    }
+                },
+                "models_preset": {
+                    "id": "${MODEL_ID}",
+                    "name": "${MODEL_ID}",
+                    "vendor": "OpenAI",
+                    "url": "${CBC_BASE_URL}",
+                    "apiKey": "${CBC_API_KEY}",
+                    "maxInputTokens": "${CONTEXT_WINDOW}",
+                    "maxOutputTokens": "${MAX_OUTPUT_TOKENS}",
+                    "supportsToolCall": true,
+                    "supportsImages": false,
+                    "supportsReasoning": true
+                },
+                "context_window": 110000,
+                "context_compact_pct": 92
+            },
+            "env": {
+                "CODEBUDDY_COMPUTER_USE_ENABLED": "0",
+                "CODEBUDDY_WAIT_FOR_MCP_SERVERS_ENABLED": "0",
+                "CODEBUDDY_CODE_DISABLE_SESSION_TITLE_REFRESH": "1"
+            },
+            "mcp_servers": []
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": "workbuddy_bench.runner.docker_environment:WorkBuddyDockerEnvironment",
+            "force_build": true,
+            "delete": false,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": [
+                {
+                    "type": "image",
+                    "source": "workbuddy-bench/harness/codebuddy-code:2.109.3",
+                    "target": "/opt/codebuddy-code",
+                    "read_only": true
+                }
+            ],
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "import_path": "workbuddy_bench.judge:CompositeVerifier",
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "job_id": "271af030-b210-4777-bc7f-34618b84767e"
+    },
+    "agent_info": {
+        "name": "cbc",
+        "version": "2.109.3",
+        "model_info": {
+            "name": "clover-spark-serial",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 140317,
+        "n_cache_tokens": 127424,
+        "n_output_tokens": 1921,
+        "cost_usd": 0.0,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "test_pass_rate": 1.0,
+            "overall": 1.0,
+            "reward": 1.0,
+            "tests_passed": 15,
+            "tests_total": 15
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-11-17T12:55:49.641210Z",
+    "finished_at": "2026-11-17T12:56:24.183715Z",
+    "environment_setup": {
+        "started_at": "2026-11-17T12:55:49.651308Z",
+        "finished_at": "2026-11-17T12:55:51.799516Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-11-17T12:55:51.799568Z",
+        "finished_at": "2026-11-17T12:55:52.375391Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-11-17T12:55:52.375494Z",
+        "finished_at": "2026-11-17T12:56:01.914523Z"
+    },
+    "verifier": {
+        "started_at": "2026-11-17T12:56:02.218199Z",
+        "finished_at": "2026-11-17T12:56:13.462745Z"
+    },
+    "step_results": null
+}

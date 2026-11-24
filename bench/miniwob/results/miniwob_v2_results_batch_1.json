@@ -1,0 +1,556 @@
+{
+  "batch": 1,
+  "count": 50,
+  "results": [
+    {
+      "task": "ascending-numbers",
+      "goal": "Click on the numbers in ascending order.",
+      "steps": 4,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\":has-text('1')\")",
+        "click(\":has-text('1')\")",
+        "click(\":has-text('2')\")",
+        "click(\":has-text('3')\")"
+      ]
+    },
+    {
+      "task": "bisect-angle",
+      "goal": "Create a line that bisects the angle evenly in two, then press submit.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "book-flight-nodelay",
+      "goal": "Book the cheapest one-way flight from: LNS to: BWD on 12/04/2016.",
+      "steps": 10,
+      "reward": 0,
+      "passed": false,
+      "history": [
+        "fill(\"#flight-from\", \"LNS\")",
+        "fill(\"#flight-to\", \"BWD\")",
+        "fill(\"#datepicker\", \"12/04/2016\")",
+        "click(\"#datepicker\")",
+        "click(\"#ui-datepicker-div a.ui-state-default:has-text('4')\")",
+        "click(\"#search\")",
+        "click(\"#search\")",
+        "click(\"#search\")",
+        "click(\"#search\")",
+        "press(\"#datepicker\", \"Enter\")"
+      ]
+    },
+    {
+      "task": "book-flight",
+      "goal": "Book the cheapest one-way flight from: Kivalina, AK to: RDM on 11/01/2016.",
+      "steps": 6,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "fill(\"#flight-from\", \"Kivalina, AK\")",
+        "fill(\"#flight-to\", \"RDM\")",
+        "fill(\"#datepicker\", \"11/01/2016\")",
+        "fill(\"#datepicker\", \"11/01/2016\")",
+        "press(\"#datepicker\", \"Enter\")",
+        "click(\"#ui-datepicker-div a.ui-state-default:has-text('1')\")"
+      ]
+    },
+    {
+      "task": "button-delay",
+      "goal": "Click button ONE, wait 3 seconds, then click button TWO.",
+      "steps": 10,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "buy-ticket",
+      "goal": "Buy the ticket with the longest duration.",
+      "steps": 1,
+      "reward": 0.8586,
+      "passed": true,
+      "history": [
+        "click(\"button:has-text(\\\"Book for $1212\\\")\")"
+      ]
+    },
+    {
+      "task": "chase-circle",
+      "goal": "Keep your mouse inside the circle as it moves around.",
+      "steps": 10,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "choose-date-easy",
+      "goal": "Select 12/29/2016 as the date and hit submit.",
+      "steps": 3,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#datepicker\")",
+        "fill(\"#datepicker\", \"12/29/2016\")",
+        "fill(\"#datepicker\", \"12/29/2016\")"
+      ]
+    },
+    {
+      "task": "choose-date-medium",
+      "goal": "Select 11/16/2016 as the date and hit submit.",
+      "steps": 4,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#datepicker\")",
+        "click(\".ui-datepicker-next\")",
+        "click(\"#ui-datepicker-div a.ui-state-default:has-text('16')\")",
+        "click(\".ui-datepicker-prev\")"
+      ]
+    },
+    {
+      "task": "choose-date-nodelay",
+      "goal": "Select 04/11/2016 as the date and hit submit.",
+      "steps": 10,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#datepicker\")",
+        "click(\"#ui-datepicker-div a.ui-state-default:has-text('11')\")",
+        "click(\"#datepicker\")",
+        "click(\"#datepicker\")",
+        "click(\"#ui-datepicker-div .ui-datepicker-header .ui-datepicker-title\")",
+        "click(\"#ui-datepicker-div .ui-datepicker-prev\")",
+        "click(\"#ui-datepicker-div .ui-datepicker-prev\")",
+        "click(\"#ui-datepicker-div .ui-datepicker-prev\")",
+        "click(\"#ui-datepicker-div .ui-datepicker-prev\")",
+        "click(\"#ui-datepicker-div .ui-datepicker-title\")"
+      ]
+    },
+    {
+      "task": "choose-date",
+      "goal": "Select 04/24/2016 as the date and hit submit.",
+      "steps": 7,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#datepicker\")",
+        "click(\"#ui-datepicker-div a.ui-state-default:has-text('24')\")",
+        "click(\"#datepicker\")",
+        "press(\"#ui-datepicker-div\", \"ArrowLeft\")",
+        "press(\"#ui-datepicker-div\", \"ArrowRight\")",
+        "press(\"#ui-datepicker-div\", \"ArrowLeft\")",
+        "fill(\"#datepicker\", \"04/24/2016\")"
+      ]
+    },
+    {
+      "task": "choose-list",
+      "goal": "Select Suki from the list and click Submit.",
+      "steps": 2,
+      "reward": 0.7283,
+      "passed": true,
+      "history": [
+        "select(\"#options\", \"Suki\")",
+        "click(\"button.secondary-action\")"
+      ]
+    },
+    {
+      "task": "circle-center",
+      "goal": "Find and click on the center of the circle, then press submit.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "click-button-sequence",
+      "goal": "Click button ONE, then click button TWO.",
+      "steps": 2,
+      "reward": 0.7119,
+      "passed": true,
+      "history": [
+        "click(\"#subbtn\")",
+        "click(\"#subbtn2\")"
+      ]
+    },
+    {
+      "task": "click-checkboxes-large",
+      "goal": "Select Q6C7, fBTL, I0juOxH, tvRgwY, XuU5tj8, FKC, nQsv and click Submit.",
+      "steps": 7,
+      "reward": 0.38074090909090913,
+      "passed": true,
+      "history": [
+        "click(\"#ch0\")",
+        "click(\"#ch1\")",
+        "click(\"#ch2\")",
+        "click(\"#ch3\")",
+        "click(\"#ch6\")",
+        "click(\"#ch8\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "click-checkboxes-soft",
+      "goal": "Select words similar to camouflage, mild, murder and click Submit.",
+      "steps": 5,
+      "reward": 0.06175000000000003,
+      "passed": true,
+      "history": [
+        "click(\"#ch0\")",
+        "click(\"#ch1\")",
+        "click(\"#ch2\")",
+        "click(\"#ch3\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "click-checkboxes-transfer",
+      "goal": "Select 2EvDyE6, 5bt, Iz and click Submit.",
+      "steps": 4,
+      "reward": 0.4456,
+      "passed": true,
+      "history": [
+        "click(\"#ch0\")",
+        "click(\"#ch1\")",
+        "click(\"#ch2\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "click-collapsible-2-nodelay",
+      "goal": "Expand the sections below, to find and click on the link \"non\".",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"h3:has-text('Section #1')\")",
+        "click(\".alink:has-text('non')\")"
+      ]
+    },
+    {
+      "task": "click-collapsible-2",
+      "goal": "Expand the sections below, to find and click on the link \"feugiat\".",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"h3:has-text('Section #1')\")",
+        "click(\".alink:has-text('feugiat')\")"
+      ]
+    },
+    {
+      "task": "click-collapsible-nodelay",
+      "goal": "Expand the section below and click submit.",
+      "steps": 2,
+      "reward": 0.5804,
+      "passed": true,
+      "history": [
+        "click(\"h3:has-text('Section #13')\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "click-color",
+      "goal": "Click on the white colored box.",
+      "steps": 1,
+      "reward": 0.8699,
+      "passed": true,
+      "history": [
+        "click(\".color[data-color='white']\")"
+      ]
+    },
+    {
+      "task": "click-dialog-2",
+      "goal": "Click the button in the dialog box labeled \"OK\".",
+      "steps": 1,
+      "reward": 0.8609,
+      "passed": true,
+      "history": [
+        "click(\"button:has-text('OK')\")"
+      ]
+    },
+    {
+      "task": "click-menu-2",
+      "goal": "Click the \"Menu\" button, and then find and click on the item labeled \"Zoom Out\".",
+      "steps": 2,
+      "reward": 0.6281,
+      "passed": true,
+      "history": [
+        "click(\"#open-menu\")",
+        "click(\"#ui-id-9\")"
+      ]
+    },
+    {
+      "task": "click-menu",
+      "goal": "Select Milly",
+      "steps": 1,
+      "reward": 0.8619,
+      "passed": true,
+      "history": [
+        "click(\"#ui-id-1\")"
+      ]
+    },
+    {
+      "task": "click-pie-nodelay",
+      "goal": "Expand the pie menu below and click on the item labeled \"i\".",
+      "steps": 4,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\":contains('i')\")",
+        "click(\":contains('i')\")",
+        "click(\":contains('i')\")",
+        "click(\":contains('i')\")"
+      ]
+    },
+    {
+      "task": "click-pie",
+      "goal": "Expand the pie menu below and click on the item labeled \"g\".",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"g\")"
+      ]
+    },
+    {
+      "task": "click-scroll-list",
+      "goal": "Select Suriname from the scroll list and click Submit.",
+      "steps": 2,
+      "reward": 0.7900666666666667,
+      "passed": true,
+      "history": [
+        "select(\"#options\", \"Suriname\")",
+        "click(\"button.secondary-action\")"
+      ]
+    },
+    {
+      "task": "click-shades",
+      "goal": "Select all the shades of blue and press Submit.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#submit\")"
+      ]
+    },
+    {
+      "task": "click-shape",
+      "goal": "Click on a green letter",
+      "steps": 10,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "click-tab-2-easy",
+      "goal": "Switch between the tabs to find and click on the link \"Elit\".",
+      "steps": 1,
+      "reward": 0.848,
+      "passed": true,
+      "history": [
+        "click(\".alink:has-text('Elit')\")"
+      ]
+    },
+    {
+      "task": "click-tab-2-hard",
+      "goal": "Switch between the tabs to find and click on the link \"lorem\".",
+      "steps": 10,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#ui-id-1\")",
+        "click(\"#ui-id-2\")",
+        "click(\"#ui-id-3\")",
+        "click(\"#ui-id-4\")",
+        "click(\"#ui-id-5\")",
+        "click(\"#ui-id-6\")",
+        "click(\"#ui-id-5\")"
+      ]
+    },
+    {
+      "task": "click-tab-2-medium",
+      "goal": "Switch between the tabs to find and click on the link \"consequat\".",
+      "steps": 1,
+      "reward": 0.8141,
+      "passed": true,
+      "history": [
+        "click(\"#ui-id-2\")"
+      ]
+    },
+    {
+      "task": "click-tab-2",
+      "goal": "Switch between the tabs to find and click on the link \"elementum,\".",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#ui-id-1\")",
+        "click(\".alink:has-text('elementum,')\")"
+      ]
+    },
+    {
+      "task": "click-test-2",
+      "goal": "Click button ONE.",
+      "steps": 1,
+      "reward": 0.8568,
+      "passed": true,
+      "history": [
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "click-test-transfer",
+      "goal": "Click button ONE.",
+      "steps": 1,
+      "reward": 0.7767,
+      "passed": true,
+      "history": [
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "click-test",
+      "goal": "Click the button.",
+      "steps": 1,
+      "reward": 0.8749,
+      "passed": true,
+      "history": [
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "click-widget",
+      "goal": "Click on a \"textarea\" widget.",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"textarea[type=\\\"textarea\\\"]\")",
+        "click(\"textarea[type=\\\"textarea\\\"]\")"
+      ]
+    },
+    {
+      "task": "copy-paste-2",
+      "goal": "Copy the text from the 1st text area below and paste it into the text input, then press Submit.",
+      "steps": 2,
+      "reward": 0.7033,
+      "passed": true,
+      "history": [
+        "fill(\"#answer-input\", \"Egestas. Mattis. Venenatis tellus. Blandit et, enim augue \")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "copy-paste",
+      "goal": "Copy the text in the textarea below, paste it into the textbox and press Submit.",
+      "steps": 2,
+      "reward": 0.6915,
+      "passed": true,
+      "history": [
+        "fill(\"#answer-input\", \"Mauris nulla proin pellentesque nunc at \")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "count-shape",
+      "goal": "How many aqua shapes are there?",
+      "steps": 10,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "count-sides",
+      "goal": "Press the button that correctly denotes how many sides the shape has.",
+      "steps": 10,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "daily-calendar",
+      "goal": "Create a 1.5 hours event named \"Gym\", between 12PM and 4PM.",
+      "steps": 10,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "drag-box",
+      "goal": "Drag the smaller box so that it is completely inside the larger box.",
+      "steps": 10,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "drag-circle",
+      "goal": "Drag the circle up then press Submit.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "drag-cube",
+      "goal": "Move the cube around so that \"3\" is the active side facing the user.",
+      "steps": 10,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "drag-items-grid",
+      "goal": "Drag Ninnetta to the top left.",
+      "steps": 10,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "drag-items",
+      "goal": "Drag Sandye to the top.",
+      "steps": 3,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "drag_coords(100, 300, 100, 50)",
+        "drag_coords(200, 210, 200, 50)",
+        "drag_coords(200, 210, 200, 50)"
+      ]
+    },
+    {
+      "task": "drag-shapes-2",
+      "goal": "Drag all rectangles into the left box, and everything else into the right box.",
+      "steps": 10,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "drag-shapes",
+      "goal": "Drag all triangles into the black box.",
+      "steps": 10,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "drag-single-shape",
+      "goal": "Drag the item up then press Submit.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#subbtn\")"
+      ]
+    }
+  ]
+}

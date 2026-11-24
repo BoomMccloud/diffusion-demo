@@ -1,0 +1,1413 @@
+{
+  "model": "qwen3.6-flash",
+  "total_tasks": 130,
+  "evaluated": 130,
+  "passed": 51,
+  "pass_rate": 39.23076923076923,
+  "results": [
+    {
+      "task": "ascending-numbers",
+      "goal": "Click on the numbers in ascending order.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"1\")"
+      ]
+    },
+    {
+      "task": "bisect-angle",
+      "goal": "Create a line that bisects the angle evenly in two, then press submit.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "book-flight-nodelay",
+      "goal": "Book the cheapest one-way flight from: XHH to: APN on 10/13/2016.",
+      "steps": 6,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "fill(\"#flight-from\", \"XHH\")",
+        "fill(\"#flight-to\", \"APN\")",
+        "fill(\"#datepicker\", \"10/13/2016\")",
+        "click(\"#datepicker\")",
+        "click(\"#ui-datepicker-div a.ui-state-default:has-text('13')\")",
+        "fill(\"#datepicker\", \"10/13/2016\")"
+      ]
+    },
+    {
+      "task": "book-flight",
+      "goal": "Book the cheapest one-way flight from: EWR to: SYR on 10/13/2016.",
+      "steps": 7,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "fill(\"#flight-from\", \"EWR\")",
+        "fill(\"#flight-to\", \"SYR\")",
+        "fill(\"#datepicker\", \"10/13/2016\")",
+        "click(\"#datepicker\")",
+        "click(\"#ui-datepicker-div a.ui-state-default:has-text('13')\")",
+        "click(\"#search\")",
+        "fill(\"#datepicker\", \"10/13/2016\")"
+      ]
+    },
+    {
+      "task": "button-delay",
+      "goal": "Click button ONE, wait 2 seconds, then click button TWO.",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#subbtn\")",
+        "click(\"#subbtn2\")"
+      ]
+    },
+    {
+      "task": "buy-ticket",
+      "goal": "Buy the ticket with the longest duration.",
+      "steps": 1,
+      "reward": 0.8208,
+      "passed": true,
+      "history": [
+        "click('button:has-text(\"Book for $1497\")')"
+      ]
+    },
+    {
+      "task": "chase-circle",
+      "goal": "Keep your mouse inside the circle as it moves around.",
+      "steps": 1,
+      "reward": 0.0087,
+      "passed": true,
+      "history": [
+        "click(\"#circle\")"
+      ]
+    },
+    {
+      "task": "choose-date-easy",
+      "goal": "Select 12/29/2016 as the date and hit submit.",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "fill(\"#datepicker\", \"12/29/2016\")",
+        "fill(\"#datepicker\", \"12/29/2016\")"
+      ]
+    },
+    {
+      "task": "choose-date-medium",
+      "goal": "Select 11/22/2016 as the date and hit submit.",
+      "steps": 3,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "fill(\"#datepicker\", \"11/22/2016\")",
+        "fill(\"#datepicker\", \"11/22/2016\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "choose-date-nodelay",
+      "goal": "Select 05/18/2016 as the date and hit submit.",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "fill(\"#datepicker\", \"05/18/2016\")",
+        "fill(\"#datepicker\", \"05/18/2016\")"
+      ]
+    },
+    {
+      "task": "choose-date",
+      "goal": "Select 09/03/2016 as the date and hit submit.",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "fill(\"#datepicker\", \"09/03/2016\")",
+        "fill(\"#datepicker\", \"09/03/2016\")"
+      ]
+    },
+    {
+      "task": "choose-list",
+      "goal": "Select Karlotte from the list and click Submit.",
+      "steps": 2,
+      "reward": 0.6344000000000001,
+      "passed": true,
+      "history": [
+        "select(\"#options\", \"Karlotte\")",
+        "click(\"button.secondary-action\")"
+      ]
+    },
+    {
+      "task": "circle-center",
+      "goal": "Find and click on the center of the circle, then press submit.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click_coords(400, 300)"
+      ]
+    },
+    {
+      "task": "click-button-sequence",
+      "goal": "Click button ONE, then click button TWO.",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#subbtn\")",
+        "click(\"#subbtn2\")"
+      ]
+    },
+    {
+      "task": "click-button",
+      "goal": "Click on the \"no\" button.",
+      "steps": 1,
+      "reward": 0.8468,
+      "passed": true,
+      "history": [
+        "click('button:has-text(\"no\")')"
+      ]
+    },
+    {
+      "task": "click-checkboxes-large",
+      "goal": "Select 2d, eb, 5fFQt, NnlmGxp, v1Fx, 836, sfdq7so, RcG, Xbn, qcno, s0, SNkz and click Submit.",
+      "steps": 8,
+      "reward": 0,
+      "passed": false,
+      "history": [
+        "click(\"#ch1\")",
+        "click(\"#ch0\")",
+        "click(\"#ch3\")",
+        "click(\"#ch2\")",
+        "click(\"#ch6\")",
+        "click(\"#ch10\")",
+        "click(\"#ch8\")",
+        "click(\"#ch11\")"
+      ]
+    },
+    {
+      "task": "click-checkboxes-soft",
+      "goal": "Select words similar to genuine, unhappy, assassinate and click Submit.",
+      "steps": 4,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#ch0\")",
+        "click(\"#ch2\")",
+        "click(\"#ch3\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "click-checkboxes-transfer",
+      "goal": "Select DZ67 and click Submit.",
+      "steps": 2,
+      "reward": 0.6821999999999999,
+      "passed": true,
+      "history": [
+        "click(\"#ch2\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "click-checkboxes",
+      "goal": "Select LSV6YO, AY9vCh and click Submit.",
+      "steps": 3,
+      "reward": 0.521,
+      "passed": true,
+      "history": [
+        "click(\"#ch0\")",
+        "click(\"#ch1\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "click-collapsible-2-nodelay",
+      "goal": "Expand the sections below, to find and click on the link \"elit\".",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click('h3:has-text(\"Section #1\")')",
+        "click(\".alink:has-text('elit')\")"
+      ]
+    },
+    {
+      "task": "click-collapsible-2",
+      "goal": "Expand the sections below, to find and click on the link \"turpis\".",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\".alink:has-text('turpis')\")"
+      ]
+    },
+    {
+      "task": "click-collapsible-nodelay",
+      "goal": "Expand the section below and click submit.",
+      "steps": 2,
+      "reward": 0.37239999999999995,
+      "passed": true,
+      "history": [
+        "click('h3:has-text(\"Section #10\")')",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "click-collapsible",
+      "goal": "Expand the section below and click submit.",
+      "steps": 2,
+      "reward": 0.6088,
+      "passed": true,
+      "history": [
+        "click(\"h3:has-text('Section #23')\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "click-color",
+      "goal": "Click on the purple colored box.",
+      "steps": 1,
+      "reward": 0.8517,
+      "passed": true,
+      "history": [
+        "click(\".color[data-color='purple']\")"
+      ]
+    },
+    {
+      "task": "click-dialog-2",
+      "goal": "Click the button in the dialog box labeled \"x\".",
+      "steps": 1,
+      "reward": 0.8342,
+      "passed": true,
+      "history": [
+        "click(\"button.ui-dialog-titlebar-close\")"
+      ]
+    },
+    {
+      "task": "click-dialog",
+      "goal": "Close the dialog box by clicking the \"x\".",
+      "steps": 1,
+      "reward": 0.8707,
+      "passed": true,
+      "history": [
+        "click(\"button.ui-dialog-titlebar-close\")"
+      ]
+    },
+    {
+      "task": "click-link",
+      "goal": "Click on the link \"Orci,.\".",
+      "steps": 1,
+      "reward": 0.8481,
+      "passed": true,
+      "history": [
+        "click(\".alink:has-text('Orci,.')\")"
+      ]
+    },
+    {
+      "task": "click-menu-2",
+      "goal": "Click the \"Menu\" button, and then find and click on the item with the icon.",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#open-menu\")",
+        "click(\"#ui-id-1\")"
+      ]
+    },
+    {
+      "task": "click-menu",
+      "goal": "Select Linell",
+      "steps": 1,
+      "reward": 0.8572,
+      "passed": true,
+      "history": [
+        "click(\"#ui-id-1\")"
+      ]
+    },
+    {
+      "task": "click-option",
+      "goal": "Select Oo7 and click Submit.",
+      "steps": 2,
+      "reward": 0.6504,
+      "passed": true,
+      "history": [
+        "click(\"#ch2\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "click-pie-nodelay",
+      "goal": "Expand the pie menu below and click on the item labeled \"3\".",
+      "steps": 10,
+      "reward": -1,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "click-pie",
+      "goal": "Expand the pie menu below and click on the item labeled \"F\".",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#pie-menu\")"
+      ]
+    },
+    {
+      "task": "click-scroll-list",
+      "goal": "Select Belize from the scroll list and click Submit.",
+      "steps": 5,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "select(\"#options\", \"Belize\")",
+        "select(\"#options\", \"Belize\")",
+        "select(\"#options\", \"Belize\")",
+        "select(\"#options\", \"Belize\")",
+        "click(\"button.secondary-action\")"
+      ]
+    },
+    {
+      "task": "click-shades",
+      "goal": "Select all the shades of blue and press Submit.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#submit\")"
+      ]
+    },
+    {
+      "task": "click-shape",
+      "goal": "Click on a small blue item",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"3\")"
+      ]
+    },
+    {
+      "task": "click-tab-2-easy",
+      "goal": "Switch between the tabs to find and click on the link \"tincidunt.\".",
+      "steps": 1,
+      "reward": 0.7812,
+      "passed": true,
+      "history": [
+        "click(\".alink:has-text('tincidunt.')\")"
+      ]
+    },
+    {
+      "task": "click-tab-2-hard",
+      "goal": "Switch between the tabs to find and click on the link \"Fermentum.\".",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\".alink:has-text('Fermentum.')\")",
+        "click(\".alink:has-text('Fermentum.')\")"
+      ]
+    },
+    {
+      "task": "click-tab-2-medium",
+      "goal": "Switch between the tabs to find and click on the link \"eget\".",
+      "steps": 1,
+      "reward": 0.7224999999999999,
+      "passed": true,
+      "history": [
+        "click(\"#ui-id-2\")"
+      ]
+    },
+    {
+      "task": "click-tab-2",
+      "goal": "Switch between the tabs to find and click on the link \"lacus\".",
+      "steps": 1,
+      "reward": 0.10909999999999997,
+      "passed": true,
+      "history": [
+        "click(\".alink:has-text('lacus')\")"
+      ]
+    },
+    {
+      "task": "click-tab",
+      "goal": "Click on Tab #2.",
+      "steps": 1,
+      "reward": 0.8557,
+      "passed": true,
+      "history": [
+        "click(\"#ui-id-2\")"
+      ]
+    },
+    {
+      "task": "click-test-2",
+      "goal": "Click button ONE.",
+      "steps": 1,
+      "reward": 0.862,
+      "passed": true,
+      "history": [
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "click-test-transfer",
+      "goal": "Click button ONE.",
+      "steps": 1,
+      "reward": 0.8601,
+      "passed": true,
+      "history": [
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "click-test",
+      "goal": "Click the button.",
+      "steps": 1,
+      "reward": 0.8668,
+      "passed": true,
+      "history": [
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "click-widget",
+      "goal": "Click on a \"checkbox\" widget.",
+      "steps": 1,
+      "reward": 0.832,
+      "passed": true,
+      "history": [
+        "click(\"input[type=\\\"checkbox\\\"]\")"
+      ]
+    },
+    {
+      "task": "copy-paste-2",
+      "goal": "Copy the text from the 1st text area below and paste it into the text input, then press Submit.",
+      "steps": 2,
+      "reward": 0.5966,
+      "passed": true,
+      "history": [
+        "fill(\"#answer-input\", \"Sem ornare porta consectetur consequat, platea \")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "copy-paste",
+      "goal": "Copy the text in the textarea below, paste it into the textbox and press Submit.",
+      "steps": 2,
+      "reward": 0.23170000000000002,
+      "passed": true,
+      "history": [
+        "fill(\"#answer-input\", \"Neque, dictum eu. Volutpat lectus lorem venenatis \")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "count-shape",
+      "goal": "How many small aqua items are there?",
+      "steps": 10,
+      "reward": -1,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "count-sides",
+      "goal": "Press the button that correctly denotes how many sides the shape has.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click('button:has-text(\"4\")')"
+      ]
+    },
+    {
+      "task": "daily-calendar",
+      "goal": "Create a 0.5 hours event named \"Meeting\", between 12PM and 4PM.",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"12pm\")",
+        "click(\"4pm\")"
+      ]
+    },
+    {
+      "task": "drag-box",
+      "goal": "Drag the smaller box so that it is completely inside the larger box.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "drag_coords(100, 100, 200, 200)"
+      ]
+    },
+    {
+      "task": "drag-circle",
+      "goal": "Drag the circle down then press Submit.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "drag_coords(300, 100, 300, 500)"
+      ]
+    },
+    {
+      "task": "drag-cube",
+      "goal": "Move the cube around so that \"3\" is the active side facing the user.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"button:has-text('3')\")"
+      ]
+    },
+    {
+      "task": "drag-items-grid",
+      "goal": "Drag Emmeline up by one.",
+      "steps": 10,
+      "reward": -1,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "drag-items",
+      "goal": "Drag Aloysia to the 5th position.",
+      "steps": 10,
+      "reward": -1,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "drag-shapes-2",
+      "goal": "Drag all red shapes into the left box, and everything else into the right box.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "drag-shapes",
+      "goal": "Drag all rectangles into the black box.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "drag-single-shape",
+      "goal": "Drag the item up then press Submit.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "drag_coords(250, 400, 250, 200)"
+      ]
+    },
+    {
+      "task": "drag-sort-numbers",
+      "goal": "Sort the numbers in increasing order, starting with the lowest number at the top of the list.",
+      "steps": 10,
+      "reward": -1,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "draw-circle",
+      "goal": "Draw a circle centered around the marked point by dragging the mouse. Press submit when done.",
+      "steps": 10,
+      "reward": -1,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "draw-line",
+      "goal": "Draw a horizontal line that runs through the dot, then press submit.",
+      "steps": 10,
+      "reward": -1,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "email-inbox-delete",
+      "goal": "Find the email by Pammie and click the trash icon to delete it.",
+      "steps": 1,
+      "reward": 0.9418666666666666,
+      "passed": true,
+      "history": [
+        "click(\".email-thread:has-text('Pammie') .trash\")"
+      ]
+    },
+    {
+      "task": "email-inbox-forward-nl-turk",
+      "goal": {
+        "utterance": "Let me send the email that I received from Juditha over to Georgiana.",
+        "fields": {
+          "by": "Juditha",
+          "to": "Georgiana"
+        }
+      },
+      "steps": 3,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\".email-thread:has-text('Juditha')\")",
+        "click(\"Forward\")",
+        "click(\"Forward\")"
+      ]
+    },
+    {
+      "task": "email-inbox-forward-nl",
+      "goal": {
+        "utterance": "Search for the mail Ashia sent you and send it to Ertha.",
+        "fields": {
+          "by": "Ashia",
+          "to": "Ertha"
+        }
+      },
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "fill(\"#search-input\", \"Ashia\")",
+        "fill(\"#search-input\", \"Ashia\")"
+      ]
+    },
+    {
+      "task": "email-inbox-forward",
+      "goal": "Find the email by Kynthia and forward that email to Kaja.",
+      "steps": 3,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\".email-thread:has-text('Kynthia')\")",
+        "click(\"Forward\")",
+        "click(\"Forward\")"
+      ]
+    },
+    {
+      "task": "email-inbox-important",
+      "goal": "Find the email by Wendye and click the star icon to mark it as important.",
+      "steps": 1,
+      "reward": 0.9372333333333334,
+      "passed": true,
+      "history": [
+        "click(\".email-thread:has-text('Wendye') .star\")"
+      ]
+    },
+    {
+      "task": "email-inbox-nl-turk",
+      "goal": {
+        "utterance": "Please hunt for Maurizia's important email.",
+        "fields": {
+          "task": "star",
+          "by": "Maurizia"
+        }
+      },
+      "steps": 1,
+      "reward": 0.7522,
+      "passed": true,
+      "history": [
+        "click(\".email-thread:has-text('Maurizia') .star\")"
+      ]
+    },
+    {
+      "task": "email-inbox-noscroll",
+      "goal": "Find the email by Marlee and forward that email to Kimmy.",
+      "steps": 10,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\".email-thread:has-text('Marlee')\")",
+        "click(\"Forward\")"
+      ]
+    },
+    {
+      "task": "email-inbox-reply",
+      "goal": "Find the email by Bethany and reply to them with the text \"Mi lectus lacus.\".",
+      "steps": 3,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\".email-thread:has-text('Bethany')\")",
+        "click(\"button:has-text('Reply')\")",
+        "fill(\"textarea\", \"Mi lectus lacus.\")"
+      ]
+    },
+    {
+      "task": "email-inbox-star-reply",
+      "goal": "Find the email by Hinda and reply to them with the text \"At nunc.\".",
+      "steps": 4,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\".email-thread:has-text('Hinda')\")",
+        "click(\"Reply\")",
+        "fill(\"textarea\", \"At nunc.\")",
+        "click(\"Reply\")"
+      ]
+    },
+    {
+      "task": "email-inbox",
+      "goal": "Find the email by Reeta and reply to them with the text \"Ac purus.\".",
+      "steps": 4,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\".email-thread:has-text('Reeta')\")",
+        "click(\"Reply\")",
+        "fill(\"textarea\", \"Ac purus.\")",
+        "click(\"Send\")"
+      ]
+    },
+    {
+      "task": "enter-date",
+      "goal": "Enter 06/02/2017 as the date and hit submit.",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "fill(\"#tt\", \"06/02/2017\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "enter-password",
+      "goal": "Enter the password \"ii\" into both text fields and press submit.",
+      "steps": 3,
+      "reward": 0.6437999999999999,
+      "passed": true,
+      "history": [
+        "fill(\"#password\", \"ii\")",
+        "fill(\"#verify\", \"ii\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "enter-text-2",
+      "goal": "Type \"kanesha\" in all upper case letters in the text input and press Submit.",
+      "steps": 2,
+      "reward": 0.6584,
+      "passed": true,
+      "history": [
+        "fill(\"#tt\", \"KANESHA\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "enter-text-dynamic",
+      "goal": "Enter \"C3TMU\" into the text field and press Submit.",
+      "steps": 2,
+      "reward": 0.6435,
+      "passed": true,
+      "history": [
+        "fill(\"#tt\", \"C3TMU\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "enter-text",
+      "goal": "Enter \"Keli\" into the text field and press Submit.",
+      "steps": 2,
+      "reward": 0.6252,
+      "passed": true,
+      "history": [
+        "fill(\"#tt\", \"Keli\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "enter-time",
+      "goal": "Enter 7:07 PM as the time and press submit.",
+      "steps": 3,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "fill(\"#tt\", \"7:07 PM\")",
+        "fill(\"#tt\", \"7:07 PM\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "find-greatest",
+      "goal": "Find and pick the card with the greatest number, then press submit.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#submit\")"
+      ]
+    },
+    {
+      "task": "find-midpoint",
+      "goal": "Find and click on the shortest mid-point between the two points, then press submit.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "find-word",
+      "goal": "Find the 3rd word in the paragraph, type that into the textbox and press \"Submit\".",
+      "steps": 2,
+      "reward": 0.1684,
+      "passed": true,
+      "history": [
+        "fill(\"#answer-input\", \"facilisis\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "focus-text-2",
+      "goal": "Focus into the 1st input textbox.",
+      "steps": 1,
+      "reward": 0.8634,
+      "passed": true,
+      "history": [
+        "click(\"#tt1\")"
+      ]
+    },
+    {
+      "task": "focus-text",
+      "goal": "Focus into the textbox.",
+      "steps": 1,
+      "reward": 0.8368,
+      "passed": true,
+      "history": [
+        "click(\"#tt\")"
+      ]
+    },
+    {
+      "task": "form-sequence-2",
+      "goal": "Check the 1st radio button and enter the number \"24\" into the 1st textbox.",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"input[name='radio']\")",
+        "fill(\"#input-1\", \"24\")"
+      ]
+    },
+    {
+      "task": "form-sequence-3",
+      "goal": "Choose 5ft 9in from the dropdown, then click the button labeled \"Yes\".",
+      "steps": 2,
+      "reward": 0.6707000000000001,
+      "passed": true,
+      "history": [
+        "select(\"#dropdown\", \"5ft 9in\")",
+        "click(\"#yes\")"
+      ]
+    },
+    {
+      "task": "form-sequence",
+      "goal": "Select 7 with the slider, click the 1st checkbox, then hit Submit.",
+      "steps": 4,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "press(\".ui-slider-handle\", \"ArrowRight\")",
+        "press(\".ui-slider-handle\", \"ArrowRight\")",
+        "press(\".ui-slider-handle\", \"ArrowRight\")",
+        "press(\".ui-slider-handle\", \"ArrowRight\")"
+      ]
+    },
+    {
+      "task": "generate-number",
+      "goal": "Generate an odd number, then press submit.",
+      "steps": 2,
+      "reward": 0.789,
+      "passed": true,
+      "history": [
+        "click(\"#generate\")",
+        "click(\"#submit\")"
+      ]
+    },
+    {
+      "task": "grid-coordinate",
+      "goal": "Click on the grid coordinate (-2,-1).",
+      "steps": 10,
+      "reward": -1,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "guess-number",
+      "goal": "Guess the number between 0-9 and press Submit. Use the feedback below to find the right number.",
+      "steps": 6,
+      "reward": 0.12580000000000002,
+      "passed": true,
+      "history": [
+        "fill(\"#tt\", \"4\")",
+        "click(\"#subbtn\")",
+        "fill(\"#tt\", \"7\")",
+        "click(\"#subbtn\")",
+        "fill(\"#tt\", \"8\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "highlight-text-2",
+      "goal": "Highlight the text in the 2nd paragraph and click submit.",
+      "steps": 10,
+      "reward": -1,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "highlight-text",
+      "goal": "Highlight the text in the paragraph below and click submit.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "hot-cold",
+      "goal": "Find and click on the HOT area.",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\":has-text('HOT')\")",
+        "click(\"#hot\")"
+      ]
+    },
+    {
+      "task": "hover-shape",
+      "goal": "Keep the mouse hovered over the colored square.",
+      "steps": 10,
+      "reward": -1,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "identify-shape",
+      "goal": "Click the button that best describes the figure below.",
+      "steps": 1,
+      "reward": 0.8117,
+      "passed": true,
+      "history": [
+        "click('button:has-text(\"Number\")')"
+      ]
+    },
+    {
+      "task": "login-user-popup",
+      "goal": "Enter the username \"emile\" and the password \"3KnSi\" into the text fields and press login.",
+      "steps": 5,
+      "reward": 0.16273333333333329,
+      "passed": true,
+      "history": [
+        "fill(\"#username\", \"emile\")",
+        "fill(\"#password\", \"3KnSi\")",
+        "click(\"#popup-cancel\")",
+        "fill(\"#password\", \"3KnSi\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "login-user",
+      "goal": "Enter the username \"olin\" and the password \"0I\" into the text fields and press login.",
+      "steps": 3,
+      "reward": 0.5232,
+      "passed": true,
+      "history": [
+        "fill(\"#username\", \"olin\")",
+        "fill(\"#password\", \"0I\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "moving-items",
+      "goal": "Click as many moving circles as possible.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#canvas\")"
+      ]
+    },
+    {
+      "task": "multi-layouts",
+      "goal": "Search for crime movies directed by Barnett from year 1972.",
+      "steps": 3,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "fill(\"input[type='text']\", \"Barnett\")",
+        "fill(\"input[type='text']:nth-of-type(2)\", \"1972\")",
+        "fill(\"input[type='text']:nth-of-type(3)\", \"crime\")"
+      ]
+    },
+    {
+      "task": "multi-orderings",
+      "goal": "Search for urban movies directed by Ashley from year 1994.",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "fill(\"input[type=\\\"text\\\"]\", \"Ashley\")",
+        "fill(\"input[type=\\\"text\\\"]:nth-of-type(2)\", \"urban\")"
+      ]
+    },
+    {
+      "task": "navigate-tree",
+      "goal": "Navigate through the file tree. Find and click on the folder or file named \"Dolores\".",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"Truman\")"
+      ]
+    },
+    {
+      "task": "number-checkboxes",
+      "goal": "Draw the number \"0\" in the checkboxes using the example on the right and press Submit when finished.",
+      "steps": 10,
+      "reward": -1,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "odd-or-even",
+      "goal": "Mark the numbers below as odd or even and press submit when done.",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click('button:has-text(\"Odd\")')",
+        "click('button:has-text(\"Even\")')"
+      ]
+    },
+    {
+      "task": "order-food",
+      "goal": "Order one of each item: Ice cream sundae, Spinach and goat cheese dip",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"button:has-text('+')\")"
+      ]
+    },
+    {
+      "task": "phone-book",
+      "goal": "Find Carolyn in the contact book and click on their email.",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"a:has-text('First')\")",
+        "click(\"a:has-text(\\\">\\\")\")"
+      ]
+    },
+    {
+      "task": "read-table-2",
+      "goal": "Enter the value that corresponds with each label into the form and submit when done.",
+      "steps": 3,
+      "reward": 0.65175,
+      "passed": true,
+      "history": [
+        "fill(\"#tt1\", \"Male\")",
+        "fill(\"#tt2\", \"Azerbaijan\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "read-table",
+      "goal": "Enter the value of First name into the text field and press Submit.",
+      "steps": 2,
+      "reward": 0.6637,
+      "passed": true,
+      "history": [
+        "fill(\"#tt\", \"Sue\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "resize-textarea",
+      "goal": "Resize the textarea so that the height is smaller than its initial size then press Submit.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "drag_coords(350, 450, 350, 300)"
+      ]
+    },
+    {
+      "task": "right-angle",
+      "goal": "Add a third point to create a right angle, then press submit.",
+      "steps": 10,
+      "reward": -1,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "scroll-text-2",
+      "goal": "Scroll the textarea to the top of the text hit submit.",
+      "steps": 2,
+      "reward": 0.42410000000000003,
+      "passed": true,
+      "history": [
+        "press(\"#text-area\", \"Home\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "scroll-text",
+      "goal": "Find the last word in the text area, enter it into the text field and hit Submit.",
+      "steps": 2,
+      "reward": 0.5102,
+      "passed": true,
+      "history": [
+        "fill(\"#answer-input\", \"Orci\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "search-engine",
+      "goal": "Use the textbox to enter \"Olin\" and press \"Search\", then find and click the 1st search result.",
+      "steps": 3,
+      "reward": 0.7702,
+      "passed": true,
+      "history": [
+        "fill(\"#search-text\", \"Olin\")",
+        "click(\"#search\")",
+        "click(\"a:has-text('Olin')\")"
+      ]
+    },
+    {
+      "task": "sign-agreement",
+      "goal": "Scroll to the bottom of the textarea, enter the name \"Livia\" then press \"Cancel\"",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "press(\"#text-area\", \"End\")",
+        "fill(\"#name\", \"Livia\")"
+      ]
+    },
+    {
+      "task": "simon-says",
+      "goal": "Push the buttons in the order displayed.",
+      "steps": 3,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#button-1\")",
+        "click(\"#button-2\")",
+        "click(\"#button-3\")"
+      ]
+    },
+    {
+      "task": "simple-algebra",
+      "goal": "Solve for x and type your answer into the textbox. Press Submit when done.",
+      "steps": 2,
+      "reward": 0.5795,
+      "passed": true,
+      "history": [
+        "fill(\"#math-answer\", \"76\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "simple-arithmetic",
+      "goal": "Solve the math problem and type your answer into the textbox. Press submit when done.",
+      "steps": 2,
+      "reward": 0.6265000000000001,
+      "passed": true,
+      "history": [
+        "fill(\"#math-answer\", \"9\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "social-media-all",
+      "goal": "Click the \"Reply\" button on all posts by @cierra and then click Submit.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"button:has-text('Reply')\")"
+      ]
+    },
+    {
+      "task": "social-media-some",
+      "goal": "Click the \"Share\" button on 1 post by @jerald and then click Submit.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"button:has-text('Share')\")"
+      ]
+    },
+    {
+      "task": "social-media",
+      "goal": "For the user @dannie, click on the \"Reply\" button.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"div:has-text('@dannie') button:has-text('Reply')\")"
+      ]
+    },
+    {
+      "task": "stock-market",
+      "goal": "Buy AZQ stock when the price is less than $58.90.",
+      "steps": 1,
+      "reward": 0.8567,
+      "passed": true,
+      "history": [
+        "click(\"#buy\")"
+      ]
+    },
+    {
+      "task": "terminal",
+      "goal": "Use the terminal below to delete a file ending with the extension .sh",
+      "steps": 3,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "fill(\"#terminal-target\", \"rm *.sh\")",
+        "press(\"#terminal-target\", \"Enter\")",
+        "click(\"#terminal-target\")"
+      ]
+    },
+    {
+      "task": "text-editor",
+      "goal": "Using the text editor, give everything the style italics and press Submit.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"button:nth-of-type(2)\")"
+      ]
+    },
+    {
+      "task": "text-transform",
+      "goal": "Type the text below into the text field and press Submit.",
+      "steps": 2,
+      "reward": 0.6934666666666667,
+      "passed": true,
+      "history": [
+        "fill(\"#tt\", \"WPfy\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "tic-tac-toe",
+      "goal": "Playing as 'X', win a game of tic-tac-toe.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\".cell:nth-child(5)\")"
+      ]
+    },
+    {
+      "task": "unicode-test",
+      "goal": "Click on the \"\u00c7\u00a1\u00ae\u00e5\u00ae\u0161\" button.",
+      "steps": 1,
+      "reward": 0.8521,
+      "passed": true,
+      "history": [
+        "click('button:has-text(\"\u00c7\u00a1\u00ae\u00e5\u00ae\u0161\")')"
+      ]
+    },
+    {
+      "task": "use-autocomplete-nodelay",
+      "goal": "Enter an item that starts with \"Cana\" and ends with \"da\".",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "fill(\"#tags\", \"Canada\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "use-autocomplete",
+      "goal": "Enter an item that starts with \"Mona\" and ends with \"co\".",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "fill(\"#tags\", \"Monaco\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "use-colorwheel-2",
+      "goal": "Select the following color with the color picker and hit Submit.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#col\")"
+      ]
+    },
+    {
+      "task": "use-colorwheel",
+      "goal": "Select white with the color picker and hit Submit.",
+      "steps": 1,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "fill(\"#col\", \"#FFFFFF\")"
+      ]
+    },
+    {
+      "task": "use-slider-2",
+      "goal": "Set the sliders to the combination [16,4,6] and submit.",
+      "steps": 10,
+      "reward": -1,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "use-slider",
+      "goal": "Select -50 with the slider and hit Submit.",
+      "steps": 3,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "press(\".ui-slider-handle\", \"ArrowRight\")",
+        "press(\".ui-slider-handle\", \"ArrowRight\")",
+        "press(\".ui-slider-handle\", \"ArrowRight\")"
+      ]
+    },
+    {
+      "task": "use-spinner",
+      "goal": "Select -5 with the spinner and hit Submit.",
+      "steps": 2,
+      "reward": 0.376,
+      "passed": true,
+      "history": [
+        "fill(\"#spinner\", \"-5\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "visual-addition",
+      "goal": "Type the total number of blocks into the textbox and press Submit.",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "fill(\"#math-answer\", \"1\")",
+        "click(\"#subbtn\")"
+      ]
+    }
+  ]
+}

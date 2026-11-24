@@ -1,0 +1,26 @@
+{
+  "tasks": 70,
+  "resolved_tasks": 47,
+  "workbuddy_default_fail_mean": 0.25,
+  "mean_bounds": [
+    0.25,
+    0.38571428571428573
+  ],
+  "browser_agent_total": 48,
+  "browser_agent_verdicts": {
+    "fail": 13,
+    "unverifiable": 22,
+    "pass": 13
+  },
+  "browser_agent_targeted_observations": 48,
+  "browser_agent_targeted_errors": 16,
+  "unresolved_checks_in_partial_tasks": {
+    "vlm": 14,
+    "agent": 15,
+    "llm": 54
+  },
+  "native_replays": 21,
+  "targeted_replays": 37,
+  "luna_replay_reviews": 37,
+  "method": "Native Playwright traces plus custom read-only browser probes over archived workspaces, judged with GPT-6 Luna through Codex. WorkBuddy penalty formula with failed or unsubmitted rubric items counted as failures for the conservative score."
+}

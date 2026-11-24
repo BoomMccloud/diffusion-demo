@@ -1,0 +1,123 @@
+=== clover-bartowski-q4km 2026-11-12T04:13:42-08:00
+1 essay 2048 2048 0.322 63.8 63.2 length 
+1 essay 2048 2048 0.08 63.0 62.9 length 
+1 code 2048 2048 0.106 61.7 61.5 length 
+1 code 2048 2048 0.081 61.6 61.5 length 
+1 story 2048 2048 0.1 61.9 61.8 length 
+1 story 2048 2048 0.08 61.8 61.7 length 
+1 math 2048 2048 0.104 61.2 61.0 length 
+1 math 2048 2048 0.079 61.3 61.2 length 
+concurrency 1: 8 requests in 265s
+8 code 2048 2048 0.344 18.8 18.8 length 
+8 essay 2048 2048 0.346 18.8 18.8 length 
+8 code 2048 2048 0.342 18.8 18.8 length 
+8 code 2048 2048 0.343 18.8 18.8 length 
+8 essay 2048 2048 0.348 18.8 18.8 length 
+8 essay 2048 2048 0.362 18.8 18.8 length 
+8 essay 2048 2048 0.352 18.8 18.8 length 
+8 code 2048 2048 0.353 18.8 18.8 length 
+8 story 2048 2048 2.387 19.1 18.7 length 
+8 story 2048 2048 2.387 19.1 18.7 length 
+8 story 2048 2048 2.387 19.1 18.7 length 
+8 story 2048 2048 2.386 19.1 18.7 length 
+8 math 2048 2048 2.385 19.1 18.7 length 
+8 math 2048 2048 2.385 19.1 18.7 length 
+8 math 2048 2048 2.385 19.1 18.7 length 
+8 math 2048 2048 2.388 19.1 18.7 length 
+concurrency 8: 16 requests in 219s
+32 code 2048 2048 3.432 6.4 6.4 length 
+32 story 2048 2048 3.431 6.4 6.4 length 
+32 story 2048 2048 3.432 6.4 6.4 length 
+32 story 2048 2048 3.433 6.4 6.4 length 
+32 story 2048 2048 3.435 6.4 6.4 length 
+32 math 2048 2048 3.434 6.4 6.4 length 
+32 code 2048 2048 3.438 6.4 6.4 length 
+32 math 2048 2048 3.436 6.4 6.4 length 
+32 essay 2048 2048 3.443 6.4 6.4 length 
+32 code 2048 2048 3.441 6.4 6.4 length 
+32 math 2048 2048 3.44 6.4 6.4 length 
+32 math 2048 2048 3.44 6.4 6.4 length 
+32 math 2048 2048 3.441 6.4 6.4 length 
+32 math 2048 2048 3.443 6.4 6.4 length 
+32 math 2048 2048 3.444 6.4 6.4 length 
+32 essay 2048 2048 3.452 6.4 6.4 length 
+32 code 2048 2048 3.449 6.4 6.4 length 
+32 story 2048 2048 3.448 6.4 6.4 length 
+32 code 2048 2048 3.453 6.4 6.4 length 
+32 essay 2048 2048 3.458 6.4 6.4 length 
+32 essay 2048 2048 3.461 6.4 6.4 length 
+32 essay 2048 2048 3.459 6.4 6.4 length 
+32 story 2048 2048 3.458 6.4 6.4 length 
+32 code 2048 2048 3.459 6.4 6.4 length 
+32 code 2048 2048 3.461 6.4 6.4 length 
+32 essay 2048 2048 3.465 6.4 6.4 length 
+32 math 2048 2048 3.462 6.4 6.4 length 
+32 story 2048 2048 3.464 6.4 6.4 length 
+32 essay 2048 2048 3.471 6.4 6.4 length 
+32 code 2048 2048 3.468 6.4 6.4 length 
+32 story 2048 2048 3.469 6.4 6.4 length 
+32 essay 2048 2048 3.488 6.4 6.4 length 
+concurrency 32: 32 requests in 322s
+{"model": "clover-bartowski-q4km", "n": 100, "correct": 99, "errors": 0, "length_stops": 0, "completion_tokens": 57318, "wall_s": 486.5}
+=== qwen36-unsloth-ud-q4km 2026-11-12T04:35:29-08:00
+1 essay 2048 2048 0.322 66.6 66.0 length 
+1 essay 2048 2048 0.08 65.2 65.1 length 
+1 code 2048 2048 0.101 65.0 64.8 length 
+1 code 2048 2048 0.08 65.0 64.8 length 
+1 story 2048 2048 0.1 65.5 65.3 length 
+1 story 2048 2048 0.081 65.5 65.3 length 
+1 math 2048 2048 0.102 65.0 64.8 length 
+1 math 2048 2048 0.081 65.0 64.9 length 
+concurrency 1: 8 requests in 252s
+8 essay 2048 2048 0.34 21.7 21.6 length 
+8 code 2048 2048 0.339 21.7 21.6 length 
+8 code 2048 2048 0.337 21.7 21.6 length 
+8 essay 2048 2048 0.339 21.7 21.6 length 
+8 code 2048 2048 0.338 21.7 21.6 length 
+8 code 2048 2048 0.342 21.7 21.6 length 
+8 essay 2048 2048 0.353 21.7 21.6 length 
+8 essay 2048 2048 0.343 21.7 21.6 length 
+8 story 2048 2048 2.356 22.1 21.6 length 
+8 story 2048 2048 2.357 22.1 21.5 length 
+8 story 2048 2048 2.356 22.1 21.6 length 
+8 story 2048 2048 2.357 22.1 21.5 length 
+8 math 2048 2048 2.356 22.1 21.5 length 
+8 math 2048 2048 2.357 22.1 21.5 length 
+8 math 2048 2048 2.357 22.1 21.5 length 
+8 math 2048 2048 2.358 22.1 21.5 length 
+concurrency 8: 16 requests in 190s
+32 code 2048 2048 3.339 7.4 7.3 length 
+32 story 2048 2048 3.338 7.4 7.3 length 
+32 code 2048 2048 3.34 7.4 7.3 length 
+32 math 2048 2048 3.336 7.4 7.3 length 
+32 math 2048 2048 3.334 7.4 7.3 length 
+32 story 2048 2048 3.335 7.4 7.3 length 
+32 math 2048 2048 3.336 7.4 7.3 length 
+32 story 2048 2048 3.337 7.4 7.3 length 
+32 story 2048 2048 3.337 7.4 7.3 length 
+32 math 2048 2048 3.337 7.4 7.3 length 
+32 math 2048 2048 3.338 7.4 7.3 length 
+32 math 2048 2048 3.338 7.4 7.3 length 
+32 essay 2048 2048 3.342 7.4 7.3 length 
+32 story 2048 2048 3.34 7.4 7.3 length 
+32 math 2048 2048 3.341 7.4 7.3 length 
+32 story 2048 2048 3.34 7.4 7.3 length 
+32 essay 2048 2048 3.348 7.4 7.3 length 
+32 essay 2048 2048 3.36 7.4 7.3 length 
+32 essay 2048 2048 3.347 7.4 7.3 length 
+32 essay 2048 2048 3.349 7.4 7.3 length 
+32 code 2048 2048 3.348 7.4 7.3 length 
+32 code 2048 2048 3.349 7.4 7.3 length 
+32 code 2048 2048 3.347 7.4 7.3 length 
+32 essay 2048 2048 3.355 7.4 7.3 length 
+32 code 2048 2048 3.35 7.4 7.3 length 
+32 essay 2048 2048 3.355 7.4 7.3 length 
+32 code 2048 2048 3.351 7.4 7.3 length 
+32 story 2048 2048 3.352 7.4 7.3 length 
+32 story 2048 2048 3.352 7.4 7.3 length 
+32 code 2048 2048 3.354 7.4 7.3 length 
+32 essay 2048 2048 3.357 7.4 7.3 length 
+32 math 2048 2048 3.354 7.4 7.3 length 
+concurrency 32: 32 requests in 279s
+{"model": "qwen36-unsloth-ud-q4km", "n": 100, "correct": 98, "errors": 0, "length_stops": 0, "completion_tokens": 136728, "wall_s": 865.8}
+=== done 2026-11-12T05:01:59-08:00

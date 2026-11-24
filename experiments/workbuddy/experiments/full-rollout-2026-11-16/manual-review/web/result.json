@@ -1,0 +1,184 @@
+{
+    "id": "f32fa2ab-54e4-4707-b7c4-207081e52ec7",
+    "task_name": "workbuddy/help-center-doc-pack-L4-050",
+    "trial_name": "help-center-doc-pack-L4-050__SbekbAn",
+    "trial_uri": "file:///home/jx25520/diffusion-demo/runs/workbuddy-smoke/results/clover-web-full-deferred/2026-11-17__00-03-54/help-center-doc-pack-L4-050__SbekbAn",
+    "task_id": {
+        "path": ".workspace/tmp/staged/clover-web-full-deferred-44021-1794873828/wb-bench-web-v1.0/tasks/help-center-doc-pack-L4-050"
+    },
+    "source": "tasks",
+    "task_checksum": "bcbe59d4db330f8d3d67750d25cc13307f18d154b70b09ede4326c17132a3e04",
+    "config": {
+        "task": {
+            "path": ".workspace/tmp/staged/clover-web-full-deferred-44021-1794873828/wb-bench-web-v1.0/tasks/help-center-doc-pack-L4-050",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": "tasks"
+        },
+        "trial_name": "help-center-doc-pack-L4-050__SbekbAn",
+        "trials_dir": "results/clover-web-full-deferred/2026-11-17__00-03-54",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": null,
+            "import_path": "workbuddy_bench.agents.cbc_agent:CbcAgent",
+            "model_name": "clover-spark-smoke",
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {
+                "CBC_MAX_TURNS": 48,
+                "CBC_VERSION": "2.109.3",
+                "model_params": {
+                    "temperature": 0.0,
+                    "max_output_tokens": 8192,
+                    "thinking_enabled": true,
+                    "extra_body": {
+                        "chat_template_kwargs": {
+                            "enable_thinking": true,
+                            "preserve_thinking": true
+                        }
+                    }
+                },
+                "instance_id": "clover-web-full-deferred-44021-1794873828",
+                "connection": {
+                    "mode": "local_proxy",
+                    "proxy_url": "http://workbuddy-full-proxy:3488",
+                    "model_route": "clover-spark-smoke"
+                },
+                "mount_path": "/opt/codebuddy-code",
+                "settings_preset": {
+                    "alwaysThinkingEnabled": true,
+                    "autoUpdates": false,
+                    "autoCompactEnabled": true,
+                    "includeCoAuthoredBy": false,
+                    "promptSuggestionEnabled": false,
+                    "enableAllProjectMcpServers": false,
+                    "cleanupPeriodDays": 3650,
+                    "permissions": {
+                        "defaultMode": "bypassPermissions",
+                        "deny": [
+                            "WebSearch",
+                            "AskUserQuestion",
+                            "Workflow",
+                            "ComputerUse",
+                            "WaitForMcpServers",
+                            "EnterPlanMode"
+                        ]
+                    }
+                },
+                "models_preset": {
+                    "id": "${MODEL_ID}",
+                    "name": "${MODEL_ID}",
+                    "vendor": "OpenAI",
+                    "url": "${CBC_BASE_URL}",
+                    "apiKey": "${CBC_API_KEY}",
+                    "maxInputTokens": "${CONTEXT_WINDOW}",
+                    "maxOutputTokens": "${MAX_OUTPUT_TOKENS}",
+                    "supportsToolCall": true,
+                    "supportsImages": false,
+                    "supportsReasoning": true
+                },
+                "context_window": 110000,
+                "context_compact_pct": 92
+            },
+            "env": {
+                "CODEBUDDY_COMPUTER_USE_ENABLED": "0",
+                "CODEBUDDY_WAIT_FOR_MCP_SERVERS_ENABLED": "0",
+                "CODEBUDDY_CODE_DISABLE_SESSION_TITLE_REFRESH": "1"
+            },
+            "mcp_servers": []
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": "workbuddy_bench.runner.docker_environment:WorkBuddyDockerEnvironment",
+            "force_build": true,
+            "delete": false,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": [
+                {
+                    "type": "image",
+                    "source": "workbuddy-bench/harness/codebuddy-code:2.109.3",
+                    "target": "/opt/codebuddy-code",
+                    "read_only": true
+                }
+            ],
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {
+                "WEB_BENCH_LLM_JUDGE_MODE": "full",
+                "WEB_BENCH_LLM_TIMEOUT_SEC": "1200"
+            },
+            "import_path": "workbuddy_bench.judge:CompositeVerifier",
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "job_id": "a89371e6-6719-47ec-a212-e487a9e7a142"
+    },
+    "agent_info": {
+        "name": "cbc",
+        "version": "2.109.3",
+        "model_info": {
+            "name": "clover-spark-smoke",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 322616,
+        "n_cache_tokens": 290432,
+        "n_output_tokens": 10795,
+        "cost_usd": 0.0,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": null,
+    "exception_info": {
+        "exception_type": "RuntimeError",
+        "exception_message": "stage 'llm_judge' failed: verifier LLM route is not configured for required LLM/VLM items",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/repo/runs/workbuddy-smoke/.venv/lib/python3.12/site-packages/harbor/trial/trial.py\", line 353, in run\n    await self._run()\n  File \"/repo/runs/workbuddy-smoke/.venv/lib/python3.12/site-packages/harbor/trial/single_step.py\", line 52, in _run\n    await self._run_verifier()\n  File \"/repo/runs/workbuddy-smoke/.venv/lib/python3.12/site-packages/harbor/trial/single_step.py\", line 105, in _run_verifier\n    self.result.verifier_result = await self._run_shared_verifier(\n                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/repo/runs/workbuddy-smoke/.venv/lib/python3.12/site-packages/harbor/trial/trial.py\", line 527, in _run_shared_verifier\n    return await asyncio.wait_for(\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/home/jx25520/diffusion-demo/runs/workbuddy-smoke/src/workbuddy_bench/judge/profiles/dispatcher.py\", line 53, in verify\n    return await _run_registry_verifier(self)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jx25520/diffusion-demo/runs/workbuddy-smoke/src/workbuddy_bench/judge/profiles/dispatcher.py\", line 70, in _run_registry_verifier\n    return await maybe_await(registry.custom_verify(verifier))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jx25520/diffusion-demo/runs/workbuddy-smoke/src/workbuddy_bench/judge/registry.py\", line 131, in maybe_await\n    return await value\n           ^^^^^^^^^^^\n  File \"/home/jx25520/diffusion-demo/runs/workbuddy-smoke/.workspace/tmp/staged/clover-web-full-deferred-44021-1794873828/wb-bench-web-v1.0/shared/verifier/plugin.py\", line 24, in custom_verify\n    return await run_profile(verifier)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jx25520/diffusion-demo/runs/workbuddy-smoke/.workspace/tmp/staged/clover-web-full-deferred-44021-1794873828/wb-bench-web-v1.0/shared/verifier/profile.py\", line 232, in run_profile\n    await _run_model_judges(\n  File \"/home/jx25520/diffusion-demo/runs/workbuddy-smoke/.workspace/tmp/staged/clover-web-full-deferred-44021-1794873828/wb-bench-web-v1.0/shared/verifier/profile.py\", line 393, in _run_model_judges\n    raise_for_stage_engine_error(score)\n  File \"/home/jx25520/diffusion-demo/runs/workbuddy-smoke/.workspace/tmp/staged/clover-web-full-deferred-44021-1794873828/wb-bench-web-v1.0/shared/verifier/rule.py\", line 96, in raise_for_stage_engine_error\n    raise RuntimeError(f\"stage {result.judge_name!r} failed: {message}\")\nRuntimeError: stage 'llm_judge' failed: verifier LLM route is not configured for required LLM/VLM items\n",
+        "occurred_at": "2026-11-17T00:07:20.339733"
+    },
+    "started_at": "2026-11-17T00:06:54.372167Z",
+    "finished_at": "2026-11-17T00:07:31.017868Z",
+    "environment_setup": {
+        "started_at": "2026-11-17T00:06:54.374002Z",
+        "finished_at": "2026-11-17T00:06:57.299504Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-11-17T00:06:57.299534Z",
+        "finished_at": "2026-11-17T00:06:58.016883Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-11-17T00:06:58.016947Z",
+        "finished_at": "2026-11-17T00:07:19.238318Z"
+    },
+    "verifier": {
+        "started_at": "2026-11-17T00:07:19.540061Z",
+        "finished_at": "2026-11-17T00:07:20.339245Z"
+    },
+    "step_results": null
+}

@@ -62,8 +62,13 @@ Thumbs.db
 .env.local
 .env.*
 
-# Large artifact bundles stay local (over GitHub's file size limit)
+# Large artifact bundles stay local. The launch archive contents are checked in separately.
 archive/artifact-bundles/
+/go-live/【中文版】35B模型发布官方博客 (2) 2.zip
+
+# Office editor lock files
+.~*.docx
+~$*.docx
 
 # Keep benchmark evidence cited by docs
 !bench/results/**/*.jsonl
@@ -92,3 +97,9 @@ bench/webarena/recordings/
 
 # WindTunnel race-video recordings (webm, mp4, timings)
 bench/windtunnel/recordings/
+
+# TabDLM source CSVs, downloaded at a pinned commit
+bench/tabdlm/.data/
+
+# LLM-JEPA datasets, downloaded at a pinned commit
+bench/jepa/.data/

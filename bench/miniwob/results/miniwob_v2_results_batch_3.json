@@ -1,0 +1,225 @@
+{
+  "batch": 3,
+  "count": 20,
+  "results": [
+    {
+      "task": "simon-says",
+      "goal": "Push the buttons in the order displayed.",
+      "steps": 3,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"#button-1\")",
+        "click(\"#button-2\")",
+        "click(\"#button-3\")"
+      ]
+    },
+    {
+      "task": "simple-algebra",
+      "goal": "Solve for x and type your answer into the textbox. Press Submit when done.",
+      "steps": 2,
+      "reward": 0.7155,
+      "passed": true,
+      "history": [
+        "fill(\"#math-answer\", \"61\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "simple-arithmetic",
+      "goal": "Solve the math problem and type your answer into the textbox. Press submit when done.",
+      "steps": 2,
+      "reward": 0.7283,
+      "passed": true,
+      "history": [
+        "fill(\"#math-answer\", \"3\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "social-media-all",
+      "goal": "Click the \"Share\" button on all posts by @lobortis and then click Submit.",
+      "steps": 10,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "social-media-some",
+      "goal": "Click the \"Retweet\" button on 3 posts by @nunc and then click Submit.",
+      "steps": 10,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "social-media",
+      "goal": "For the user @ut, click on the \"Embed Tweet\" button.",
+      "steps": 10,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"button:has-text('Embed Tweet')\")"
+      ]
+    },
+    {
+      "task": "stock-market",
+      "goal": "Buy NHP stock when the price is less than $48.50.",
+      "steps": 10,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "terminal",
+      "goal": "Use the terminal below to delete a file ending with the extension .json",
+      "steps": 10,
+      "reward": 0,
+      "passed": false,
+      "history": [
+        "fill(\"#terminal-target\", \"ls\")",
+        "press(\"#terminal-target\", \"Enter\")",
+        "fill(\"#terminal-target\", \"rm *.json\")",
+        "press(\"#terminal-target\", \"Enter\")",
+        "fill(\"#terminal-target\", \"ls\")",
+        "press(\"#terminal-target\", \"Enter\")",
+        "fill(\"#terminal-target\", \"ls -la\")"
+      ]
+    },
+    {
+      "task": "text-editor",
+      "goal": "Using the text editor, give everything the style bold and press Submit.",
+      "steps": 10,
+      "reward": 0,
+      "passed": false,
+      "history": [
+        "click(\"button\")   // but which one? We have three buttons with same selector. We need to be more specific."
+      ]
+    },
+    {
+      "task": "text-transform",
+      "goal": "Type the text below into the text field and press Submit.",
+      "steps": 2,
+      "reward": 0.8112,
+      "passed": true,
+      "history": [
+        "fill(\"#tt\", \"kDi\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "tic-tac-toe",
+      "goal": "Playing as 'X', win a game of tic-tac-toe.",
+      "steps": 10,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "unicode-test",
+      "goal": "Click on the \"\u00e2\u2122\u00a5\u00e2\u2122\u00a5\u00e2\u2122\u00a5\" button.",
+      "steps": 1,
+      "reward": 0.8601,
+      "passed": true,
+      "history": [
+        "click(\"button:has-text(\\\"\u00e2\u2122\u00a5\u00e2\u2122\u00a5\u00e2\u2122\u00a5\\\")\")"
+      ]
+    },
+    {
+      "task": "use-autocomplete-nodelay",
+      "goal": "Enter an item that starts with \"Se\" and ends with \"lles\".",
+      "steps": 2,
+      "reward": 0.49950000000000006,
+      "passed": true,
+      "history": [
+        "fill(\"#tags\", \"Seilles\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "use-autocomplete",
+      "goal": "Enter an item that starts with \"Ka\" and ends with \"tan\".",
+      "steps": 2,
+      "reward": 0.7017,
+      "passed": true,
+      "history": [
+        "fill(\"#tags\", \"Katan\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "use-colorwheel-2",
+      "goal": "Select the following color with the color picker and hit Submit.",
+      "steps": 1,
+      "reward": 0.5477915966386555,
+      "passed": true,
+      "history": [
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "use-colorwheel",
+      "goal": "Select aqua with the color picker and hit Submit.",
+      "steps": 2,
+      "reward": 0.5878571428571429,
+      "passed": true,
+      "history": [
+        "fill(\"#col\", \"00FFFF\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "use-slider-2",
+      "goal": "Set the sliders to the combination [1,15,11] and submit.",
+      "steps": 8,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "press(\".ui-slider-handle:nth-of-type(1)\", \"ArrowLeft\")",
+        "press(\".ui-slider-handle:nth-of-type(1)\", \"ArrowLeft\")",
+        "press(\".ui-slider-handle:nth-of-type(1)\", \"ArrowLeft\")",
+        "press(\".ui-slider-handle:nth-of-type(1)\", \"ArrowLeft\")",
+        "press(\".ui-slider-handle:nth-of-type(1)\", \"ArrowLeft\")",
+        "press(\".ui-slider-handle:nth-of-type(1)\", \"ArrowLeft\")",
+        "press(\".ui-slider-handle:nth-of-type(2)\", \"ArrowRight\")",
+        "press(\".ui-slider-handle:nth-of-type(2)\", \"ArrowRight\")"
+      ]
+    },
+    {
+      "task": "use-slider",
+      "goal": "Select -100 with the slider and hit Submit.",
+      "steps": 5,
+      "reward": 0.2964,
+      "passed": true,
+      "history": [
+        "press(\".ui-slider-handle\", \"ArrowLeft\")",
+        "press(\".ui-slider-handle\", \"ArrowLeft\")",
+        "press(\".ui-slider-handle\", \"ArrowLeft\")",
+        "press(\".ui-slider-handle\", \"ArrowLeft\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "use-spinner",
+      "goal": "Select -2 with the spinner and hit Submit.",
+      "steps": 2,
+      "reward": 0.649,
+      "passed": true,
+      "history": [
+        "fill(\"#spinner\", \"-2\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "visual-addition",
+      "goal": "Type the total number of blocks into the textbox and press Submit.",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "fill(\"#math-answer\", \"1\")",
+        "click(\"#subbtn\")"
+      ]
+    }
+  ]
+}

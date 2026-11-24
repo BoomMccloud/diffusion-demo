@@ -1,0 +1,16 @@
+[
+  {
+    "topic": "password_reset_link_ttl",
+    "chosenValue": "15 minutes",
+    "sourceOfTruth": "faq_csv",
+    "discardedValue": "30 minutes",
+    "reason": "FAQ row specified 15-minute window; final doc states 15 minutes and conflict-report.json records that FAQ overrides legacy HTML. Support ticket SUP-219 referenced discrepancy ('expired after half an hour')."
+  },
+  {
+    "topic": "seat_limit_invite_behavior",
+    "chosenValue": "Both behaviors retained: 90% usage warning triggers admin notification; when cap is reached invitations are blocked until admin releases a seat or upgrades plan.",
+    "sourceOfTruth": "merged",
+    "discardedValue": "Legacy-only 'release a seat or upgrade plan' without warning threshold or invite-block detail.",
+    "reason": "Per conflict-overrides.csv, merge approach keeps both the 90% heads-up and the at-cap invite-block flow with ship-out-or-upgrade affordances. Support ticket SUP-244 confirmed real-world impact of dual-path flow."
+  }
+]

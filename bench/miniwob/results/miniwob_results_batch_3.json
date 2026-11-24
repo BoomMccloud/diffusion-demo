@@ -1,0 +1,197 @@
+{
+  "batch": 3,
+  "count": 20,
+  "results": [
+    {
+      "task": "simon-says",
+      "goal": "Push the buttons in the order displayed.",
+      "steps": 6,
+      "reward": 0,
+      "passed": false,
+      "history": [
+        "click(\"#button-1\")",
+        "click(\"#button-2\")",
+        "click(\"#button-3\")",
+        "click(\"#button-4\")"
+      ]
+    },
+    {
+      "task": "simple-algebra",
+      "goal": "Solve for x and type your answer into the textbox. Press Submit when done.",
+      "steps": 6,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "simple-arithmetic",
+      "goal": "Solve the math problem and type your answer into the textbox. Press submit when done.",
+      "steps": 2,
+      "reward": 0.7118,
+      "passed": true,
+      "history": [
+        "fill(\"#math-answer\", \"12\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "social-media-all",
+      "goal": "Click the \"Retweet\" button on all posts by @vel and then click Submit.",
+      "steps": 6,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "social-media-some",
+      "goal": "Click the \"Retweet\" button on 2 posts by @aliquam and then click Submit.",
+      "steps": 6,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "social-media",
+      "goal": "For the user @semper, click on the \"Like\" button.",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "click(\"button:has-text('Like')\")",
+        "click(\"button:has-text('Like')\")"
+      ]
+    },
+    {
+      "task": "stock-market",
+      "goal": "Buy QRD stock when the price is less than $61.30.",
+      "steps": 1,
+      "reward": 0.52,
+      "passed": true,
+      "history": [
+        "click(\"#buy\")"
+      ]
+    },
+    {
+      "task": "terminal",
+      "goal": "Use the terminal below to delete a file ending with the extension .txt",
+      "steps": 3,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "fill(\"terminal-target\", \"ls\")",
+        "fill(\"terminal-target\", \"ls\")",
+        "fill(\"terminal-target\", \"ls\")"
+      ]
+    },
+    {
+      "task": "text-editor",
+      "goal": "Using the text editor, give the text vulputate the style underlined and press Submit.",
+      "steps": 6,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "text-transform",
+      "goal": "Type the text below into the text field and press Submit.",
+      "steps": 6,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "tic-tac-toe",
+      "goal": "Playing as 'X', win a game of tic-tac-toe.",
+      "steps": 6,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "unicode-test",
+      "goal": "Click on the \"Canc\u00c3\u00a9l\" button.",
+      "steps": 1,
+      "reward": 0.8735999999999999,
+      "passed": true,
+      "history": [
+        "click(\"button:has-text(\\\"Canc\u00c3\u00a9l\\\")\")"
+      ]
+    },
+    {
+      "task": "use-autocomplete-nodelay",
+      "goal": "Enter an item that starts with \"Kore\" and ends with \"ea\".",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "fill(\"#tags\", \"Korea\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "use-autocomplete",
+      "goal": "Enter an item that starts with \"Cro\" and ends with \"tia\".",
+      "steps": 2,
+      "reward": -1,
+      "passed": false,
+      "history": [
+        "fill(\"#tags\", \"Croatia\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "use-colorwheel-2",
+      "goal": "Select the following color  with the color picker and hit Submit.",
+      "steps": 6,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "use-colorwheel",
+      "goal": "Select silver with the color picker and hit Submit.",
+      "steps": 2,
+      "reward": 0.6132857142857142,
+      "passed": true,
+      "history": [
+        "fill(\"#col\", \"C0C0C0\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "use-slider-2",
+      "goal": "Set the sliders to the combination [3,12,8] and submit.",
+      "steps": 6,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "use-slider",
+      "goal": "Select 2 with the slider and hit Submit.",
+      "steps": 6,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    },
+    {
+      "task": "use-spinner",
+      "goal": "Select -1 with the spinner and hit Submit.",
+      "steps": 2,
+      "reward": 0.7328,
+      "passed": true,
+      "history": [
+        "fill(\"#spinner\", \"-1\")",
+        "click(\"#subbtn\")"
+      ]
+    },
+    {
+      "task": "visual-addition",
+      "goal": "Type the total number of blocks into the textbox and press Submit.",
+      "steps": 6,
+      "reward": 0,
+      "passed": false,
+      "history": []
+    }
+  ]
+}

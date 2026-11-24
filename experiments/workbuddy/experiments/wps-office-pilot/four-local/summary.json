@@ -1,0 +1,57 @@
+{
+  "run_date": "2026-11-18",
+  "scope": "four remaining Office tasks with local CodeBuddy, Clover API and local WPS",
+  "score_type": "deterministic checks only",
+  "task_count": 4,
+  "equal_weight_mean": 0.822329019558571,
+  "baseline_equal_weight_mean": 0.8361742820845723,
+  "limitations": [
+    "one attempt per task",
+    "local macOS versus Spark Linux",
+    "WPS MCP and additional WPS instructions",
+    "presentation tool uses exact-text replacement",
+    "LLM rubric checks disabled"
+  ],
+  "tasks": [
+    {
+      "task": "drug-inventory-split-L2-006",
+      "passed": 15,
+      "total": 15,
+      "baseline_passed": 15,
+      "baseline_total": 15,
+      "wps_output_matches_scored_output": true,
+      "judge": "original deterministic task checks, local path redirects"
+    },
+    {
+      "task": "safety-inspection-extract-L4-019",
+      "passed": 24,
+      "total": 27,
+      "baseline_passed": 25,
+      "baseline_total": 27,
+      "wps_output_matches_scored_output": true,
+      "judge": "original deterministic task checks, local path redirects"
+    },
+    {
+      "task": "board-material-update-timeline-excel",
+      "passed": 242,
+      "total": 379,
+      "baseline_passed": 267,
+      "baseline_total": 379,
+      "agent_status": "max_turns_48",
+      "wps_output_matches_scored_output": true,
+      "wps_update_calls": 8,
+      "wps_update_successes": 4,
+      "wps_update_text_mismatch_errors": 4,
+      "judge": "original deterministic task checks, local path redirects"
+    },
+    {
+      "task": "procurement-reconcile-L3-015",
+      "passed": 16,
+      "total": 21,
+      "baseline_passed": 15,
+      "baseline_total": 21,
+      "wps_output_matches_scored_output": true,
+      "judge": "original deterministic task checks, local path redirects"
+    }
+  ]
+}

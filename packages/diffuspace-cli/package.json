@@ -1,0 +1,30 @@
+{
+  "name": "@diffuspace/cli",
+  "version": "0.1.8",
+  "description": "Launch Codex with DiffuSpace Clover through a local compatibility adapter",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "diffuspace": "bin/diffuspace.mjs"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "README.md",
+    "INSTALL.md"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "check": "node --check bin/diffuspace.mjs && node --check src/adapter.mjs && node --check src/config.mjs && node --check src/launch.mjs && node --check src/protocol.mjs && node --check src/messages.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BoomMccloud/clover-cli.git"
+  },
+  "homepage": "https://github.com/BoomMccloud/clover-cli#readme",
+  "bugs": {
+    "url": "https://github.com/BoomMccloud/clover-cli/issues"
+  }
+}
