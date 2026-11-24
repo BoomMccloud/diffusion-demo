@@ -1,0 +1,64 @@
+{
+  "clover": {
+    "passed": 87,
+    "total": 113,
+    "tool_calls": {
+      "Bash": 17
+    },
+    "agent_seconds": 35.164,
+    "agent_exit": "success"
+  },
+  "qwen3.6-plus": {
+    "passed": 88,
+    "total": 113,
+    "tool_calls": {
+      "TaskCreate": 1,
+      "TaskUpdate": 2,
+      "Bash": 18,
+      "Read": 1,
+      "Edit": 1,
+      "Write": 1
+    },
+    "agent_seconds": 441.692,
+    "agent_exit": "error_during_execution"
+  },
+  "clover_only": [
+    "top_level_optional_materials_present",
+    "energy_cup_crosslink_present",
+    "circular_exchange_flow_present",
+    "audience_resident_actions_present",
+    "audience_children_observation_present",
+    "followup_commitment_cards_present",
+    "template_placeholder_text_absent"
+  ],
+  "qwen_only": [
+    "slide_count_maximum_not_node_dump",
+    "energy_checkin_actions_present",
+    "circular_prohibited_items_present",
+    "topic_order_route_before_station_details",
+    "source_relationship_reuse_link_present",
+    "source_relationship_style_to_board_present",
+    "template_action_matrix_structure_present",
+    "template_layout_family_cues_present"
+  ],
+  "both_missed": [
+    "route_safety_constraints_present",
+    "energy_attachment_privacy_boundary_present",
+    "circular_repair_role_present",
+    "nature_family_corner_present",
+    "audience_shop_cup_packaging_present",
+    "audience_public_checklist_present",
+    "timing_agenda_sequence_present",
+    "timing_rounds_break_boundary_present",
+    "followup_return_visit_boundary_present",
+    "prep_only_role_separation_present",
+    "optional_materials_filtered_present",
+    "near_duplicate_checklist_separation_present",
+    "source_relationship_audience_shops_to_cup_present",
+    "source_relationship_timing_to_route_present",
+    "source_relationship_timing_to_commitment_present",
+    "source_relationship_near_duplicate_warning_present",
+    "template_footer_or_page_marker_present",
+    "screenshot_lane_role_proxy_present"
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "source": "articles/account-billing.md#invoices",
+    "target": "articles/account-security.md#close-account",
+    "label": "Close Account — billing settlement prerequisites before closure"
+  },
+  {
+    "source": "articles/account-security.md#close-account",
+    "target": "articles/account-billing.md#invoices",
+    "label": "Invoices — download by month from Billing Center"
+  },
+  {
+    "source": "articles/account-security.md#sso-configuration",
+    "target": "articles/account-security.md#scim-sync",
+    "label": "SCIM Sync — automatic member provisioning alongside SSO"
+  },
+  {
+    "source": "articles/account-security.md#scim-sync",
+    "target": "articles/account-security.md#audit-log",
+    "label": "Audit Log — export logs for troubleshooting SCIM failures"
+  },
+  {
+    "source": "articles/account-billing.md#reset-password",
+    "target": "articles/account-billing.md#team-seats",
+    "label": "Team Seats — seat management after subscription changes"
+  },
+  {
+    "source": "articles/account-billing.md#team-seats",
+    "target": "articles/account-billing.md#reset-password",
+    "label": "Reset Password — account access recovery"
+  }
+]

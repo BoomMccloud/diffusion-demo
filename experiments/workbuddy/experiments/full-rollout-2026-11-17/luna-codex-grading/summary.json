@@ -1,0 +1,113 @@
+{
+  "model": "gpt-6-luna",
+  "harness": "Codex CLI",
+  "method": "One structured Codex response per saved trial; Office task weights and Web penalty rules applied offline",
+  "office": {
+    "trials": 50,
+    "completed": 50,
+    "weighted_task_mean": 0.704032,
+    "deterministic_mean": 0.744412,
+    "luna_scored_trials": 49,
+    "missing_evidence_only": 1,
+    "full_passes": 1,
+    "zeroes": 0
+  },
+  "web": {
+    "trials": 70,
+    "reviewed": 70,
+    "resolved": 35,
+    "mean_resolved_only": 0.28285714285714286,
+    "unavailable": 0,
+    "browser_agent_checks_pending": 48,
+    "deferred_evidence_trimming": {
+      "data-storytelling-L4-034": {
+        "agent.patch": 34494
+      },
+      "schedule-reschedule-flow-L4-061": {
+        "agent.patch": 95585
+      },
+      "mobile-product-detail-design-L3-047": {
+        "evidence/workflow/workflow-trace.json": 28709
+      },
+      "animated-explainer-L3-028": {
+        "agent.patch": 37273
+      },
+      "portfolio-showcase-L2-032": {
+        "agent.patch": 65540
+      },
+      "miniprogram-source-structure-L2-041": {
+        "agent.patch": 44146
+      },
+      "design-token-component-board-L2-045": {
+        "agent.patch": 31890
+      },
+      "survey-form-workflow-L4-030": {
+        "agent.patch": 47870
+      },
+      "dense-saas-visual-refactor-L3-046": {
+        "agent.patch": 31935
+      },
+      "sdk-status-compatibility-matrix-L4-057": {
+        "agent.patch": 32214
+      },
+      "compile-repair-L4-008": {
+        "agent.patch": 63012407
+      },
+      "content-review-sla-chart-L4-067": {
+        "agent.patch": 31028
+      },
+      "playwright-mobile-regression-suite-L4-052": {
+        "agent.patch": 31094
+      },
+      "workflow-backoffice-L4-002": {
+        "agent.patch": 18808915
+      },
+      "support-inbox-triage-L3-040": {
+        "agent.patch": 34206,
+        "evidence/workflow/workflow-trace.json": 41156
+      },
+      "runbook-handoff-conversion-L3-072": {
+        "agent.patch": 56252
+      },
+      "markdown-release-editor-L4-038": {
+        "evidence/workflow/workflow-trace.json": 33383
+      },
+      "rollout-support-static-page-L2-058": {
+        "agent.patch": 36366
+      },
+      "rule-builder-preview-L4-043": {
+        "agent.patch": 34187
+      },
+      "firmware-card-interaction-tests-L3-074": {
+        "agent.patch": 496725192
+      },
+      "framework-migration-preserve-behavior-L4-023": {
+        "agent.patch": 85808
+      },
+      "routing-console-L4-006": {
+        "agent.patch": 65547
+      },
+      "flaky-repro-stabilization-L3-018": {
+        "agent.patch": 61828
+      },
+      "observability-shareable-view-L4-068": {
+        "agent.patch": 49330
+      },
+      "reading-queue-state-recovery-tests-L4-073": {
+        "agent.patch": 35509
+      },
+      "browser-clipper-extension-L4-005": {
+        "agent.patch": 42834
+      },
+      "fixture-and-golden-tests-L4-017": {
+        "agent.patch": 99547
+      }
+    },
+    "mean_min": 0.18571428571428572,
+    "mean_max": 0.46857142857142864,
+    "fixed_score_mean_bounds_on_reviewed_only": [
+      0.18571428571428572,
+      0.4685714285714286
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "3.0-workflow-trace",
+  "case_id": "T50",
+  "status": "missing_entrypoint",
+  "entrypoint": "",
+  "url": "",
+  "snapshots": [],
+  "actions": [],
+  "dynamic_samples": [],
+  "errors": [
+    "No supported HTML entrypoint was found."
+  ],
+  "tool": "playwright"
+}

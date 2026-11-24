@@ -1,0 +1,9 @@
+{
+  "tasks": 50,
+  "clover_deterministic_mean": 0.744412,
+  "qwen_deterministic_mean": 0.721424,
+  "qwen_original_fixed": 39,
+  "qwen_recovered_stdout": 1,
+  "qwen_fresh_reruns": 10,
+  "caveat": "One attempt per score; ten Qwen scores are fresh replacement runs. Different model providers; rubric judging not included."
+}

@@ -1,0 +1,19 @@
+diff --git a/src/tau2/config.py b/src/tau2/config.py
+index d8a8ace..b9a3658 100644
+--- a/src/tau2/config.py
++++ b/src/tau2/config.py
+@@ -21,11 +21,11 @@ DEFAULT_LLM_TEMPERATURE_USER = 0.0
+ DEFAULT_LLM_ARGS_AGENT = {"temperature": DEFAULT_LLM_TEMPERATURE_AGENT}
+ DEFAULT_LLM_ARGS_USER = {"temperature": DEFAULT_LLM_TEMPERATURE_USER}
+ 
+-DEFAULT_LLM_NL_ASSERTIONS = "gpt-4.1-2025-04-14"
++DEFAULT_LLM_NL_ASSERTIONS = "gemini/gemini-3.8-flash"  # local: OpenAI blocked for this account
+ DEFAULT_LLM_NL_ASSERTIONS_TEMPERATURE = 0.0
+-DEFAULT_LLM_NL_ASSERTIONS_ARGS = {"temperature": DEFAULT_LLM_NL_ASSERTIONS_TEMPERATURE}
++DEFAULT_LLM_NL_ASSERTIONS_ARGS = {"temperature": DEFAULT_LLM_NL_ASSERTIONS_TEMPERATURE, "response_format": {"type": "json_object"}}  # local: Gemini grader
+ 
+-DEFAULT_LLM_ENV_INTERFACE = "gpt-4.1-2025-04-14"
++DEFAULT_LLM_ENV_INTERFACE = "gemini/gemini-3.8-flash"  # local: OpenAI blocked for this account
+ DEFAULT_LLM_ENV_INTERFACE_TEMPERATURE = 0.0
+ DEFAULT_LLM_ENV_INTERFACE_ARGS = {"temperature": DEFAULT_LLM_ENV_INTERFACE_TEMPERATURE}
+ 

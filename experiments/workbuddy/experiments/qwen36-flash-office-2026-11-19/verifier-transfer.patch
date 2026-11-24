@@ -1,0 +1,14 @@
+--- a/src/workbuddy_bench/judge/runners/rule/script.py
++++ b/src/workbuddy_bench/judge/runners/rule/script.py
+@@ -260,4 +260,10 @@
+     ) -> JudgeResult:
+         if not result.timed_out and not result.error:
+             await self.runtime.download_verifier_dir()
++            host_dir = Path(self.runtime.host_verifier_dir)
++            if not any((host_dir / name).exists() for name in ("score.json", "reward.json")):
++                await self.runtime.environment.download_dir(
++                    source_dir=self.runtime.container_verifier_dir,
++                    target_dir=host_dir,
++                )
+         return super()._finish(result, context, plan, evidence, judge, config, cwd)
+

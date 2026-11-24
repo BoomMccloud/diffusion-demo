@@ -1,0 +1,1635 @@
+[
+  {
+    "task": "animated-explainer-L3-028",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "atmosphere-game-L4-035",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "blog-editor-draft-recovery-L4-059",
+    "status": "partial",
+    "combined_score": null,
+    "score_bounds": [
+      0,
+      1
+    ],
+    "completion_gate_confirmed": true,
+    "verdicts": [
+      {
+        "id": "t59_completion_03_it_must_use_localstorage_key",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "`app.js` defines both required keys and uses them for draft and metadata storage.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "t59_task_functionality_06_confirm_editor_fields_restor",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "The trace shows the published baseline after load, not restoration of the seeded draft.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "t59_task_functionality_08_edit_title_body_tags_and_wai",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "The trace shows fields were filled and the preview changed, but provides no evidence of waiting for a saved state.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "t59_task_functionality_09_reload_and_confirm_the_lates",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "No reload or post-reload values are shown in the workflow trace.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "t59_task_functionality_10_use_the_clear_draft_button_r",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "The trace does not show using Clear draft or reloading afterward.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "t59_data_and_interaction_13_localstorage_cb_blog_editor",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "Source code builds the required draft fields, but the trace shows no storage keys or saved draft.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "t59_data_and_interaction_15_the_restored_preview_text_eq",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "The trace shows a preview after edits, but does not demonstrate a restored draft or preview after reload.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "t59_data_and_interaction_16_the_autosave_delay_is_near_t",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "The trace ends at “Unsaved changes”; it does not show autosave completing or persistence after reload.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "t59_data_and_interaction_17_clear_draft_removes_the_draf",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "Source removes the draft key when clearing, but the trace does not show the clear interaction or its storage result.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "t59_visual_responsive_20_desktop_1440x900_after_clear",
+        "judge_type": "vlm",
+        "verdict": "unverifiable",
+        "reason": "The supplied desktop screenshot shows the initial published state, not the result after clearing a draft.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "t59_visual_responsive_21_mobile_390x844_editor_articl",
+        "judge_type": "vlm",
+        "verdict": "pass",
+        "reason": "The mobile screenshot shows the article list, editor, and preview stacked vertically without overlapping controls.",
+        "penalty": 0.2,
+        "severity": "normal"
+      }
+    ]
+  },
+  {
+    "task": "browser-clipper-extension-L4-005",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "canvas-webgl-scene-L4-026",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "chart-generation-L2-025",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "checkout-incident-analysis-L4-049",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "city-article-theme-variants-L4-066",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "claims-drawer-state-review-report-L3-071",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "cohort-retention-dashboard-L4-054",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "compile-repair-L4-008",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "config-diff-review-console-L3-062",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "content-review-sla-chart-L4-067",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "csv-import-mapping-wizard-L4-037",
+    "status": "partial",
+    "combined_score": null,
+    "score_bounds": [
+      0,
+      0.2
+    ],
+    "completion_gate_confirmed": true,
+    "verdicts": [
+      {
+        "id": "upload_or_sample_loaded",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The sample button calls `useSample()`, which loads CSV text, parses headers and rows, auto-maps columns, and renders the mapping flow. The visual capture shows only the initial upload screen, but the artifact source establishes a working sample-loading path.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "field_mapping_controls",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "After CSV load, the source renders a select for each required field and optional `owner` field, populated with source headers and wired to `updateMapping`.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "required_mapping_validation",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The source lists `fullName`, `phone`, `signupDate`, and `plan` as required, shows an unmapped-fields warning, and withholds preview until all have mappings.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "error_rows_detected",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The source checks empty or short phone values and unparseable dates, and displays errors with source row index and offending value. The sample includes an empty phone and `not-a-date`.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "preview_matches_golden",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "The export builder immediately returns `null` because it tests undefined `review` instead of its `preview` parameter. This breaks the exported preview payload; the preview table also generates five cells per row but only four headers.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "wizard_layout_readability",
+        "judge_type": "vlm",
+        "verdict": "pass",
+        "reason": "The supplied desktop and mobile captures show a readable header, centered sample button, and clearly separated upload card with no visible overlap. Later workflow regions are not shown in these captures.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "remapping_recomputes_preview_and_error_rows",
+        "judge_type": "agent",
+        "verdict": "unverifiable",
+        "reason": "The workflow trace never loads a CSV or changes a mapping; it records zero filled fields and zero selected options. Source code rerenders after mapping changes, but no direct interaction trace verifies the required remap-to-preview behavior.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "export_payload_reflects_latest_valid_mapping_only",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "The source builds export from current state, but `buildExportPayload` returns `null` due to the undefined `review` reference, so a usable payload is not produced.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "invalid_mapping_blocks_export_then_recovery_exports_current_rows",
+        "judge_type": "agent",
+        "verdict": "unverifiable",
+        "reason": "The workflow trace has no mapping or export interaction, so it does not cover invalid mapping, blocked export, correction, and recovery.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "type_and_rule_errors_reference_source_rows",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "The source constructs row-indexed phone and date errors and rerenders after remapping, but the workflow trace never loads data or changes mappings to demonstrate that errors update.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "alternate_schema_mapping_path_is_not_hardcoded_to_sample_headers",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "The source provides selectable mappings, but the trace contains no loaded CSV or changed mapping, so it does not directly establish an alternate mapping path.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "export_import_roundtrip_or_copy_payload_is_machine_parseable",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "Although the source intends to provide JSON download and copy actions, `buildExportPayload` returns `null` because it references undefined `review`, preventing a complete structured payload.",
+        "penalty": 0.2,
+        "severity": "normal"
+      }
+    ]
+  },
+  {
+    "task": "csv-mapper-component-tests-L3-053",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "data-storytelling-L4-034",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "dense-saas-visual-refactor-L3-046",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "design-token-component-board-L2-045",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "dispatch-health-chart-extension-L3-069",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "document-table-to-web-L3-021",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "event-countdown-page-L2-031",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "expense-wizard-state-repair-L4-060",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "experiment-result-story-L3-056",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "file-manager-workflow-L3-044",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "firmware-card-interaction-tests-L3-074",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "fixture-and-golden-tests-L4-017",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "flaky-repro-stabilization-L3-018",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "framework-migration-preserve-behavior-L4-023",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "help-center-doc-pack-L4-050",
+    "status": "partial",
+    "combined_score": null,
+    "score_bounds": [
+      0,
+      0.1
+    ],
+    "completion_gate_confirmed": true,
+    "verdicts": [
+      {
+        "id": "doc_pack_present",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The patch includes both required Markdown articles and nav.json, links.json, and glossary.json under submission/help-center.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "heading_structure",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The two articles organize content under headings such as Invoices, Team Seats, SSO Configuration, SCIM Sync, and Close Account.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "faq_merged",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "FAQ rows 1–6 are cited, but row 1, Reset Password, appears in account-billing.md despite the article's account/billing organization and is not assigned to the security/password article; row coverage is incomplete as shown.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "terms_glossary_applied",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "glossary.json defines terms including SSO, SCIM, seat_limit, and audit_log with references to relevant article sections.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "nav_schema_valid",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "nav.json entries point to plausible article headings, but the supplied evidence does not include nav-schema.json contents needed to check requiredFiles and requiredSections.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "links_manifest",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "links.json lists internal article and section destinations, including Invoices to Close Account and SSO Configuration to SCIM Sync.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "cross_references_and_orphans",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "links.json creates a Reset Password ↔ Team Seats loop, and Reset Password is placed in the billing article despite being password/security content; orphan cleanup is not evidenced.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "source_fidelity_no_hallucination",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "The patch cites source rows and tickets, but the underlying legacy HTML, FAQ, and ticket sample contents are not supplied, so added policies and claims cannot be checked against source assets.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "redirects_manifest_valid",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "redirects.json maps five slugs to article anchors, but the supplied evidence omits redirects.csv, so required legacy-slug coverage cannot be confirmed.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "conflict_resolution_report",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "conflict-report.json records chosen and discarded values plus rationale for password reset TTL and seat-limit behavior.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "source_priority_applied",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The password-reset article states 15 minutes, and the report records FAQ as the source of truth over the legacy 30-minute value; seat-limit prose retains the reported merged behaviors.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "glossary_terms_have_used_in_anchors",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "All six glossary entries point to article anchors where their terms appear in the supplied article text.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "conflict_decisions_propagate_across_body_manifests",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "Body copy and conflict report reflect the reset-window and seat-cap choices, but no workflow trace directly verifies required page interaction and the supplied evidence does not establish consistency across all relevant manifest surfaces.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "migration_evidence_covers_each_source_family_without_stub_notes",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "The patch traces FAQ rows and some conflict choices, but provides no concrete mapping for nav-schema requirements or support-ticket samples to generated destinations.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "all_manifest_destinations_resolve_to_customer_readable_context",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The supplied articles contain the headings and relevant prose targeted by nav, links, glossary, and redirects, including #invoices, #scim-sync, and #close-account.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "migration_evidence_supports_spot_audit_of_three_customer_claims",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "For example, Reset Password cites FAQ row 1, password TTL names the override key and discarded legacy value, and Team Seats cites FAQ row 5 and the seat-limit override.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "support_ticket_language_maps_to_resolved_doc_destinations",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "The patch mentions tickets SUP-219 and SUP-244 but provides no ticket sample text or explicit ticket-phrase-to-destination mapping; ticket evidence is insufficient to establish coverage.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "ticket_answers_apply_conflict_resolution_without_stale_policy",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "Reset Password states 15 minutes and Team Seats presents the merged 90% warning and cap-reached behavior; no losing 30-minute value is presented as current policy.",
+        "penalty": 0.3,
+        "severity": "major"
+      }
+    ]
+  },
+  {
+    "task": "html-report-generation-L2-004",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "interaction-state-authoring-L3-027",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "kanban-drag-state-L3-042",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "markdown-release-editor-L4-038",
+    "status": "resolved",
+    "combined_score": 0.4,
+    "score_bounds": [
+      0.4,
+      0.4
+    ],
+    "completion_gate_confirmed": true,
+    "verdicts": [
+      {
+        "id": "template_insert_works",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The workflow trace shows Fill from Skeleton inserted all eight required headings and the summary reports an empty missingSections list.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "required_section_warnings",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The initial screenshot and trace display a warning listing the specific missing sections, including Impact Scope, Rollback Plan, Owner, Release Window, and Customer Communication.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "preview_updates",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "Source updates the preview on editor input, and the workflow trace shows rendered headings and content after Markdown was entered.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "export_markdown_and_summary",
+        "judge_type": "rule",
+        "verdict": "pass",
+        "reason": null,
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "summary_missing_sections_contract",
+        "judge_type": "rule",
+        "verdict": "pass",
+        "reason": null,
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "risk_level_derivation",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "The complete payment release summary reports medium risk despite all required sections and rollback/validation content; the trace also shows readinessScore 100 for the hotfix while Rollback Plan is missing.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "scenario_matrix_supported",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "Only complete and hotfix content were exercised in the workflow trace. The baseline scenario was not validated, and the complete release summary shows medium risk rather than a distinct low or medium result from all three cases.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "draft_persistence_reload",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The trace shows the edited payment release persisted under release-editor-draft and was restored after reload with its content and summary.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "editor_visual_quality",
+        "judge_type": "vlm",
+        "verdict": "pass",
+        "reason": "The supplied desktop and mobile screenshots show a readable two-column desktop editor and stacked mobile layout, with warnings, controls, and summary visible without clipping.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "template_insert_merges_existing",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "Source checks for missing headings before appending them, and the workflow trace confirms all eight headings were inserted without replacing existing content.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "owner_regex_supports_fullwidth_colon",
+        "judge_type": "rule",
+        "verdict": "pass",
+        "reason": null,
+        "penalty": 0.2,
+        "severity": "normal"
+      }
+    ]
+  },
+  {
+    "task": "miniprogram-source-structure-L2-041",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "misleading-chart-repair-L3-055",
+    "status": "resolved",
+    "combined_score": 0.1,
+    "score_bounds": [
+      0.1,
+      0.1
+    ],
+    "completion_gate_confirmed": true,
+    "verdicts": [
+      {
+        "id": "axis_not_misleading",
+        "judge_type": "vlm",
+        "verdict": "pass",
+        "reason": "The provided desktop and mobile screenshots show a zero baseline with ticks from 0 to 120 and bars for monthly values 100–112.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "aggregation_correct",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "The script calculates totals and month-over-month changes from embedded monthly data, but the workflow trace does not establish that this data matches the source CSV; the rule-judge log also reports aggregate metadata and runtime self-validation failures.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "labels_units_clear",
+        "judge_type": "vlm",
+        "verdict": "pass",
+        "reason": "Screenshots show labeled month and revenue axes, point units, values above bars, and a source data table with monthly changes.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "repair_note",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The visible “What we fixed” note describes the axis baseline, monthly versus cumulative data, corrected 12% growth claim, and labels and units.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "embedded_aggregate_metadata_complete",
+        "judge_type": "rule",
+        "verdict": "fail",
+        "reason": null,
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "runtime_self_validates_aggregation",
+        "judge_type": "rule",
+        "verdict": "fail",
+        "reason": null,
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "chart_has_accessible_text_alternative",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The artifact includes an HTML table with numeric monthly revenue, month-over-month changes, and cumulative totals.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "page_declares_unit_and_data_source",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "Visible page text identifies revenue in points and names revenue.csv as the source.",
+        "penalty": 0.3,
+        "severity": "major"
+      }
+    ]
+  },
+  {
+    "task": "mobile-booking-flow-L4-036",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "mobile-product-detail-design-L3-047",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "night-library-feature-page-L3-065",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "observability-shareable-view-L4-068",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "particle-boundary-simulation-L3-029",
+    "status": "partial",
+    "combined_score": null,
+    "score_bounds": [
+      0,
+      0.7
+    ],
+    "completion_gate_confirmed": true,
+    "verdicts": [
+      {
+        "id": "simulation_launchable",
+        "judge_type": "vlm",
+        "verdict": "pass",
+        "reason": "Visual evidence shows the simulator rendered with a particle cluster and live diagnostics; the canvas checksum is nonblank.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "deterministic_seed_or_replay",
+        "judge_type": "rule",
+        "verdict": "pass",
+        "reason": null,
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "boundary_no_penetration",
+        "judge_type": "agent",
+        "verdict": "unverifiable",
+        "reason": "The only runtime snapshot is the default scenario at 1.1s, with no recorded wall collision interaction or boundary trajectory.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "wall_stress_protocol_passes",
+        "judge_type": "agent",
+        "verdict": "unverifiable",
+        "reason": "The wall-stress option is visible, but the workflow trace never selected it; no stress scenario behavior was recorded.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "energy_stability",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "Runtime evidence reports only default-scenario max speed (about 14.38); no wall-stress or dense-cluster speed behavior was captured.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "energy_upper_bound",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "Source caps each frame's delta time and applies damping; wall contact also applies fixed stabilization damping of 0.90.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "damping_preserves_motion",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The default scenario uses 0.965 damping, and the screenshot shows a live particle cluster rather than a frozen empty scene.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "corner_escape_behavior",
+        "judge_type": "agent",
+        "verdict": "unverifiable",
+        "reason": "The corner-stuck metric is present in source and the default snapshot reads zero, but no corner-stress runtime interaction was recorded.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "center_motion_regression",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The visual evidence shows particles present in the central area, and the recorded canvas is nonblank.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "particle_count_stable",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The simulation initializes a fixed preset particle array and updates particle positions without adding or removing particles; the default runtime readout shows 56.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "boundary_collision_correction_strategy",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "Source uses four substeps, clamps particles back inside each wall, reflects velocity, and applies stabilization damping on contact.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "metrics_panel_richness",
+        "judge_type": "rule",
+        "verdict": "fail",
+        "reason": null,
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "pause_control_present",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "The supplied HTML has only three scenario buttons and no pause or resume control.",
+        "penalty": 0.1,
+        "severity": "minor"
+      }
+    ]
+  },
+  {
+    "task": "playwright-mobile-regression-suite-L4-052",
+    "status": "resolved",
+    "combined_score": 0.0,
+    "score_bounds": [
+      0.0,
+      0.0
+    ],
+    "completion_gate_confirmed": true,
+    "verdicts": [
+      {
+        "id": "test_suite_present",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The patch includes multiple Playwright specs under `submission/tests/specs/`, with `test()` cases.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "mobile_viewport_used",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The config has a mobile iPhone 14 project at 390×844, and the helper sets that viewport before navigating.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "happy_path_payload",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "The double-confirm spec compares the expected payload, but `interceptBookingRequest()` only calls `route.continue()`; the asserted payload is retrieved from the mock server, not captured from the intercepted request.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "tests_are_executable",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "The tab-resumption spec uses `toBeChecked()` on a service `<div>`, and its selector is a literal string containing `${SERVICE_IDS.BEARD}`. These assertions do not match the mock page’s controls, so that spec is not runnable as written.",
+        "penalty": 1.0,
+        "severity": "fatal"
+      },
+      {
+        "id": "empty_form_intercepts_network",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The blank-fields spec installs a route for `/api/bookings` and asserts that the captured request list has length zero.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "uses_concrete_fixture_ids_from_contract",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "Specs use concrete IDs such as `svc-haircut`, `slot-2026-06-03-10-00`, and the sold-out `svc-color` slot to drive UI actions.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "tests_organized_by_describe",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "Each supplied spec groups its cases in a named `test.describe()` block.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "three_negative_scenarios_covered",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The specs exercise blank fields, invalid date strings, and sold-out or repeated confirmation paths through browser actions with assertions.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "double_submit_guard_verified_by_intercepted_requests",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The double-confirm spec activates the confirm button twice and asserts a single captured booking request.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "tab_resumption_drives_real_navigation_and_payload",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "Although it navigates away and back, the resumption spec’s service assertion uses an invalid selector and `toBeChecked()` for a `<div>`, so the restored-state-to-submission path is not reliably verified.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "page_object_and_clock_are_used_in_executable_specs",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "Specs import and call `BookingPage`; the invalid-date spec calls `setBrowserClock()` before interacting with the form.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "regression_suite_runs_against_app_without_selector_or_fixture_shortcuts",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "The config serves `mock-page.html` as the booking page, a synthetic UI implemented alongside the tests, rather than targeting an existing application page.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "suite_has_negative_control_that_would_fail_if_intercepts_or_clock_removed",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "Request-count assertions depend on the mock server’s captured booking requests, and the invalid-date cases assert validation after setting a fixed browser time.",
+        "penalty": 0.2,
+        "severity": "normal"
+      }
+    ]
+  },
+  {
+    "task": "portfolio-showcase-L2-032",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "product-landing-page-L3-033",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "pwa-offline-checklist-L4-039",
+    "status": "partial",
+    "combined_score": null,
+    "score_bounds": [
+      0,
+      1
+    ],
+    "completion_gate_confirmed": true,
+    "verdicts": [
+      {
+        "id": "manifest_and_service_worker",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The page links to manifest.webmanifest and registers sw.js; the service worker caches checklist assets and handles fetch requests.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "items_from_json",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "The source fetches inspection-items.json, but the JSON asset contents are not included to confirm the displayed labels match it.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "offline_state_editable",
+        "judge_type": "agent",
+        "verdict": "unverifiable",
+        "reason": "The trace contains no offline simulation or successful edit action; its only snapshots show the initial state and unsuccessful fill/select actions.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "pending_sync_visible",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The screenshots and workflow text show “PENDING SYNC” labels and “3 unchecked item(s) queued.”",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "online_sync_transition",
+        "judge_type": "agent",
+        "verdict": "unverifiable",
+        "reason": "There is no workflow trace of returning online or triggering Sync now, so no observed transition is evidenced.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "observable_debug_state",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The page displays online status, queued-item count, and a localStorage debug readout with sync status.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "checklist_visual_integrity",
+        "judge_type": "vlm",
+        "verdict": "unverifiable",
+        "reason": "The supplied screenshots show pending-sync and online states, but do not show offline or synced states needed to assess their visual distinction.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "pending_state_visible_in_workflow_trace",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The after_fill_select snapshot text includes “pending_sync” in its localStorage status readout.",
+        "penalty": 0.1,
+        "severity": "minor"
+      },
+      {
+        "id": "manual_sync_control_present",
+        "judge_type": "rule",
+        "verdict": "pass",
+        "reason": null,
+        "penalty": 0.1,
+        "severity": "minor"
+      },
+      {
+        "id": "sync_status_color_coded",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "Source defines separate pending and synced row classes with distinct warm and green backgrounds, borders, and status-tag styles.",
+        "penalty": 0.2,
+        "severity": "normal"
+      }
+    ]
+  },
+  {
+    "task": "reading-queue-state-recovery-tests-L4-073",
+    "status": "resolved",
+    "combined_score": 0.0,
+    "score_bounds": [
+      0.0,
+      0.0
+    ],
+    "completion_gate_confirmed": true,
+    "verdicts": [
+      {
+        "id": "t73_data_and_interaction_12_s17_no_target_mutation_publi",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "The patch only shows a new test file; no before/after evidence for public assets is supplied.",
+        "penalty": 1.0,
+        "severity": "fatal"
+      },
+      {
+        "id": "t73_data_and_interaction_13_s17_runner_discovery_playwri",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "The supplied spec visibly stops after the FIFO test and does not show runner configuration or a complete suite; the workflow trace also reports a missing entrypoint.",
+        "penalty": 1.0,
+        "severity": "fatal"
+      },
+      {
+        "id": "t73_data_and_interaction_15_s17_target_is_real_runtime_n",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The tests use `page.goto('/')` and assert the bundled app’s queue, filter, view, banner, and storage test IDs, exercising target UI rather than a synthetic page.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "t73_data_and_interaction_16_s17_persistence_assertions_s",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The reload test asserts queue items and topic/view selectors, then parses `storage-state-json` and checks schema version, saved IDs, topic, and view.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "t73_data_and_interaction_17_s17_reload_restore_submitted",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The test saves `brief-104` and `brief-219`, selects `operations` and `offline-ready`, reloads, and checks restored UI and parsed storage.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "t73_data_and_interaction_18_s17_new_context_restore_subm",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "A fresh `browser.newContext()` is seeded with `addInitScript` before navigation; the test asserts restored queue, topic, view, and storage.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "t73_data_and_interaction_19_s17_offline_restore_submitte",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The offline test creates a context with `offline: true` and asserts the offline banner, readable queue items, offline status, and storage values.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "t73_data_and_interaction_20_s17_no_skips_or_placeholders",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The supplied test source contains no skip/fixme/only markers, unconditional early returns, or placeholder-only checks.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "t73_data_and_interaction_24_reviewable_run_evidence",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "The evidence includes a spec and coverage comments but no package/config files or documented run command; the full submission inventory is unavailable.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "t73_task_functionality_25_capacity_eviction_fifo",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The dedicated capacity test saves five articles, adds `brief-633`, and asserts five UI items, oldest `brief-104` absent, and five stored IDs.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "t73_task_functionality_26_cross_tab_consistency",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "No test uses two contexts to verify storage or BroadcastChannel propagation.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "t73_task_functionality_27_localstorage_clear_recovery",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "The source has no dedicated clear/reload recovery test with page-error tracking or default-schema assertions.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "t73_task_functionality_28_schema_v0_migration",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "No test injects a legacy v0 fixture or asserts migrated fields.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "t73_data_and_interaction_30_stable_selector_discipline",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "Queue identity and ordering use `data-testid` and `data-article-id` locators; no text or class selector is used for those checks.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "t73_task_functionality_31_concurrent_write_arbitration",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "No executable test performs concurrent mutations across two contexts or checks deterministic, deduplicated final state.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "t73_task_functionality_32_corrupted_storage_recovery",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "No test injects malformed storage or asserts error-free recovery to a safe default state.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "t73_data_and_interaction_33_offline_new_context_restore",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "The offline case uses a new context, but seeds storage through `page.evaluate` before `goto`, which has no origin, and omits topic/view UI assertions and parseable-storage schema checks.",
+        "penalty": 0.3,
+        "severity": "major"
+      }
+    ]
+  },
+  {
+    "task": "release-note-migration-guide-L4-051",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "release-readiness-review-L4-019",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "research-homepage-visual-repair-L3-064",
+    "status": "resolved",
+    "combined_score": 1,
+    "score_bounds": [
+      1,
+      1
+    ],
+    "completion_gate_confirmed": true,
+    "verdicts": [
+      {
+        "id": "t64_completion_02_the_page_must_preserve_every",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The evidence text contains the homepage sections, method labels, three dated updates, and contact line.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "t64_completion_03_the_target_should_repair_the",
+        "judge_type": "vlm",
+        "verdict": "pass",
+        "reason": "The supplied desktop and mobile screenshots show a muted paper-and-ink palette, thin dividers, and a restrained editorial layout.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "t64_task_functionality_08_check_computed_styles_agains",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The CSS defines warm paper (#faf8f2), dark ink (#242826), a muted blue accent, 1px rules, 4px radius, and no shadow stack.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "t64_task_functionality_09_inspect_the_first_viewport_a",
+        "judge_type": "vlm",
+        "verdict": "pass",
+        "reason": "The desktop screenshot shows the research title, summary, and overview content within the first viewport, with the hero taking less than half its height.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "t64_task_functionality_10_inspect_at_390x844_and_confi",
+        "judge_type": "vlm",
+        "verdict": "pass",
+        "reason": "The mobile screenshot shows the title, summary, navigation, and overview cue without visible overlap; runtime evidence reports zero horizontal overflow.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "t64_data_and_interaction_11_dom_contains_semantic_landma",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The HTML includes labeled sections for overview, questions, method, updates, and contact.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "t64_data_and_interaction_12_normalized_text_includes_the",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The runtime text summary includes the project name and summary, research questions, all method labels, three update dates, and contact line.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "t64_data_and_interaction_13_the_target_removes_or_substa",
+        "judge_type": "vlm",
+        "verdict": "pass",
+        "reason": "The screenshots show no saturated gradients or large shadows, and the four outlined hero links are visually restrained.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "t64_data_and_interaction_14_h1_is_readable_on_mobile_and",
+        "judge_type": "vlm",
+        "verdict": "pass",
+        "reason": "The mobile screenshot shows the full title clearly above the summary with no visible occlusion.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "t64_data_and_interaction_15_body_has_no_horizontal_scrol",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "Runtime quality evidence at 390px reports 0px horizontal overflow and zero overflowing elements.",
+        "penalty": 0.3,
+        "severity": "major"
+      }
+    ]
+  },
+  {
+    "task": "review-card-queue-persistence-L4-063",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "rollout-support-static-page-L2-058",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "root-cause-localization-L3-013",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "root-cause-localization-L3-015",
+    "status": "partial",
+    "combined_score": null,
+    "score_bounds": [
+      0,
+      0.4
+    ],
+    "completion_gate_confirmed": true,
+    "verdicts": [
+      {
+        "id": "reproduction_evidence_used",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "The report supplies row/run IDs and visibility values, but its cited observation-log entries omit timestamps, and the underlying CSV is not included to verify them.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "paint_trace_root_cause",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "The report claims sequences 4–6 show out-of-clip coordinates, but the paint trace itself is not supplied; its asserted trace evidence cannot be checked.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "fix_recommendation_grounded",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "The proposed bounded food-coordinate generation and restart reset are actionable, but the underlying fixtures needed to verify that this repair follows from the evidence are absent.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "no_direct_patch_shortcut",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "The shown patch adds only report.md, but no complete submission-directory listing is provided to establish that there are no source patches.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "observation_log_citation_density",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The report cites six distinct observation rows, rows 1–6, with run IDs and coordinate/visibility values.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "paint_trace_sequence_citations",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "It cites paint sequences 1–6, including visible controls at 1–3 and outside-clip failures at 4–6.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "fix_location_class_method",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "It names `SnakeGame.generateFood()`/`spawnFood()` for coordinate generation and `SnakeGame.paintComponent()` for painting, though it gives no exact line.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "minimum_repro_snippet_present",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The report provides a stepwise replay using specific observation rows and paint sequence 4, including the coordinates and clipping result.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "measurable_retest_criterion",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "It specifies at least 10 consecutive restarts, grid bounds below 20, and `draw_food == true` for every paint event.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "alternative_hypotheses_eliminated_with_trace_evidence",
+        "judge_type": "llm",
+        "verdict": "fail",
+        "reason": "It asserts coordinate generation is the cause but does not evaluate and rule out two alternative causes with fixture evidence.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "run_to_run_pattern_links_symptom_to_paint_order",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "The report describes a transition from visible runs to outside-clip paints, but no supplied trace records independently verify the event ordering or state transition.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "retest_plan_replays_before_after_failure_sequence",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "Its reproduction section replays the run-004 failure and contrasts run-001, while the retest criterion checks bounds and successful paints over 10 or more restarts.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "positive_negative_control_transition_explained",
+        "judge_type": "llm",
+        "verdict": "unverifiable",
+        "reason": "It identifies runs 1–3 as visible controls and run-004 as the first failure, but the referenced fixture rows and timestamps are not included for verification.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "state_transition_and_paint_boundary_separated",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "It distinguishes invalid coordinates created in the restart/state-generation layer from clipping in `paintComponent()`, and advises fixing the upstream state rather than bypassing clipping.",
+        "penalty": 0.3,
+        "severity": "major"
+      }
+    ]
+  },
+  {
+    "task": "routing-console-L4-006",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "rule-builder-preview-L4-043",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "runbook-handoff-conversion-L3-072",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "schedule-reschedule-flow-L4-061",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "sdk-status-compatibility-matrix-L4-057",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "search-suggest-error-handling-L3-011",
+    "status": "partial",
+    "combined_score": null,
+    "score_bounds": [
+      0.4,
+      1
+    ],
+    "completion_gate_confirmed": true,
+    "verdicts": [
+      {
+        "id": "html_error_no_blank_page",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The workflow trace shows the page shell remains visible after a failed search, with “Search service temporarily unavailable” and a Retry button.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "normal_result_still_works",
+        "judge_type": "agent",
+        "verdict": "unverifiable",
+        "reason": "The trace records that the normal-search click was not found, and contains no successful normal-results interaction.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "render_failure_fallback_present",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "After the search attempt, the trace shows a visible service-error message and Retry button; the search controls and page header remain present.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "defensive_content_type_and_parse",
+        "judge_type": "agent",
+        "verdict": "unverifiable",
+        "reason": "Source handles non-JSON, malformed JSON, and empty arrays separately, but the workflow trace does not establish a successful normal-results or valid-empty response comparison.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "error_state_visually_distinct",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The source defines separate `.service-error` and `.empty-state` elements, with distinct red error and gray empty-state styling.",
+        "penalty": 0.1,
+        "severity": "minor"
+      }
+    ]
+  },
+  {
+    "task": "security-privacy-permission-review-L4-020",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "snake-gameplay-implementation-L3-010",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "state-sync-table-workflow-L3-009",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "support-flow-sankey-state-repair-L4-070",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "support-inbox-triage-L3-040",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "survey-form-workflow-L4-030",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "svg-chart-diagram-refactor-L4-024",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "test-derivation-L2-016",
+    "status": "resolved",
+    "combined_score": 0.7,
+    "score_bounds": [
+      0.7,
+      0.7
+    ],
+    "completion_gate_confirmed": true,
+    "verdicts": [
+      {
+        "id": "test_plan_schema_valid",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The artifact uses a readable table and ten discrete test sections with IDs, steps, and observable results.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "step_count_in_range",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The artifact contains ten numbered test scenarios, T1 through T10.",
+        "penalty": 0.2,
+        "severity": "normal"
+      },
+      {
+        "id": "journey_coverage",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "It maps desktop hero/navigation and service-card checks, mobile menu/layout checks, form recovery, and successful consultation submission to named journeys.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "expected_results_actionable",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "Scenarios specify observable assertions, including URL hash, section visibility, aria-expanded state, validation messages, and form reset.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "automation_ready_language",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "Steps identify selectors, roles, field names, viewport widths, actions, and assertions suitable for Playwright translation.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "coverage_matrix_or_journey_mapping_present",
+        "judge_type": "llm",
+        "verdict": "pass",
+        "reason": "The Traceability Mapping table links each T1–T10 test to a journey, planning area, anchor, action, outcome, and inventory item.",
+        "penalty": 0.3,
+        "severity": "major"
+      },
+      {
+        "id": "stable_selector_density_meets_bar",
+        "judge_type": "rule",
+        "verdict": "fail",
+        "reason": null,
+        "penalty": 0.3,
+        "severity": "major"
+      }
+    ]
+  },
+  {
+    "task": "text-spec-dashboard-implementation-L3-001",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "ui-state-rebuild-L3-007",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "visual-qa-report-L3-048",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  },
+  {
+    "task": "workflow-backoffice-L4-002",
+    "status": "no_saved_workspace_or_patch",
+    "combined_score": null
+  }
+]

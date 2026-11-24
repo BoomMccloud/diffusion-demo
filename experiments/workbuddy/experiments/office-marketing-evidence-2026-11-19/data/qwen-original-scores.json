@@ -1,0 +1,402 @@
+[
+  {
+    "task": "analyst-forecast-extract-L3-018",
+    "status": "judge_error",
+    "tests_passed": 0,
+    "tests_total": 1,
+    "score": 0.0,
+    "result": "results/qwen36-flash-office-001-a001/2026-11-19__08-19-05/analyst-forecast-extract-L3-018__3Fm2Zr6/result.json"
+  },
+  {
+    "task": "api-usage-explain-cli-l3-001",
+    "status": "judge_error",
+    "tests_passed": 0,
+    "tests_total": 1,
+    "score": 0.0,
+    "result": "results/qwen36-flash-office-002-a001/2026-11-19__08-38-19/api-usage-explain-cli-l3-001__Djp6Ynq/result.json"
+  },
+  {
+    "task": "board-material-update-timeline-excel",
+    "status": "judge_error",
+    "tests_passed": 0,
+    "tests_total": 1,
+    "score": 0.0,
+    "result": "results/qwen36-flash-office-003-a001/2026-11-19__08-52-30/board-material-update-timeline-e__Yij2r4a/result.json"
+  },
+  {
+    "task": "calendar-dida-sync-state",
+    "status": "judge_error",
+    "tests_passed": 0,
+    "tests_total": 1,
+    "score": 0.0,
+    "result": "results/qwen36-flash-office-004-a001/2026-11-19__08-57-45/calendar-dida-sync-state__UgnfAXC/result.json"
+  },
+  {
+    "task": "channel-period-compare-L4-017",
+    "status": "judge_error",
+    "tests_passed": 0,
+    "tests_total": 1,
+    "score": 0.0,
+    "result": "results/qwen36-flash-office-005-a001/2026-11-19__09-00-20/channel-period-compare-L4-017__SfCXNUc/result.json"
+  },
+  {
+    "task": "cloudagent-sdk-doc-validation-report",
+    "status": "judge_error",
+    "tests_passed": 0,
+    "tests_total": 1,
+    "score": 0.0,
+    "result": "results/qwen36-flash-office-006-a001/2026-11-19__09-01-40/cloudagent-sdk-doc-validation-re__ne8HNi9/result.json"
+  },
+  {
+    "task": "contract-extract-L3-014",
+    "status": "judge_error",
+    "tests_passed": 0,
+    "tests_total": 1,
+    "score": 0.0,
+    "result": "results/qwen36-flash-office-007-a001/2026-11-19__09-03-17/contract-extract-L3-014__DWoLZLq/result.json"
+  },
+  {
+    "task": "cross-week-dashboard-migration",
+    "status": "judge_error",
+    "tests_passed": 0,
+    "tests_total": 1,
+    "score": 0.0,
+    "result": "results/qwen36-flash-office-008-a001/2026-11-19__09-07-46/cross-week-dashboard-migration__uQQ2kmH/result.json"
+  },
+  {
+    "task": "crypto-backtest-chain-L4-002",
+    "status": "judge_error",
+    "tests_passed": 0,
+    "tests_total": 1,
+    "score": 0.0,
+    "result": "results/qwen36-flash-office-009-a001/2026-11-19__09-14-04/crypto-backtest-chain-L4-002__SSmdjpm/result.json"
+  },
+  {
+    "task": "daily-creation-checkpoint-recovery",
+    "status": "judge_error",
+    "tests_passed": 0,
+    "tests_total": 1,
+    "score": 0.0,
+    "result": "results/qwen36-flash-office-010-a001/2026-11-19__09-20-46/daily-creation-checkpoint-recove__fbXhVoH/result.json"
+  },
+  {
+    "task": "deepep-api-source-anchor-explain",
+    "status": "judge_error",
+    "tests_passed": 0,
+    "tests_total": 1,
+    "score": 0.0,
+    "result": "results/qwen36-flash-office-011-a001/2026-11-19__09-25-40/deepep-api-source-anchor-explain__yfemTyQ/result.json"
+  },
+  {
+    "task": "delivery-package-readonly-diff",
+    "status": "partial_pass",
+    "tests_passed": 17,
+    "tests_total": 127,
+    "score": 0.1339,
+    "result": "results/qwen36-flash-office-012-a001/2026-11-19__09-27-49/delivery-package-readonly-diff__Xy65g2S/result.json"
+  },
+  {
+    "task": "device-incident-attribution-L5-037",
+    "status": "partial_pass",
+    "tests_passed": 115,
+    "tests_total": 185,
+    "score": 0.6216,
+    "result": "results/qwen36-flash-office-013-a001/2026-11-19__09-48-06/device-incident-attribution-L5-0__8WhkhnT/result.json"
+  },
+  {
+    "task": "drug-inventory-split-L2-006",
+    "status": "full_pass",
+    "tests_passed": 15,
+    "tests_total": 15,
+    "score": 1.0,
+    "result": "results/qwen36-flash-office-014-a001/2026-11-19__10-01-39/drug-inventory-split-L2-006__sjG9Ve3/result.json"
+  },
+  {
+    "task": "effective-control-state-L5-036",
+    "status": "partial_pass",
+    "tests_passed": 254,
+    "tests_total": 655,
+    "score": 0.3878,
+    "result": "results/qwen36-flash-office-015-a001/2026-11-19__10-02-39/effective-control-state-L5-036__DwADyH8/result.json"
+  },
+  {
+    "task": "effective-sop-reconstruction-L5-034",
+    "status": "partial_pass",
+    "tests_passed": 221,
+    "tests_total": 465,
+    "score": 0.4753,
+    "result": "results/qwen36-flash-office-016-a001/2026-11-19__10-05-21/effective-sop-reconstruction-L5__8CEp4j9/result.json"
+  },
+  {
+    "task": "execution-closeout-reconcile-L4-003-successor",
+    "status": "partial_pass",
+    "tests_passed": 305,
+    "tests_total": 579,
+    "score": 0.5268,
+    "result": "results/qwen36-flash-office-017-a001/2026-11-19__10-06-41/execution-closeout-reconcile-L4__pJkD2aT/result.json"
+  },
+  {
+    "task": "fund-product-table-normalize-L3-017",
+    "status": "partial_pass",
+    "tests_passed": 320,
+    "tests_total": 357,
+    "score": 0.8964,
+    "result": "results/qwen36-flash-office-018-a001/2026-11-19__10-15-47/fund-product-table-normalize-L3__s7VPLzQ/result.json"
+  },
+  {
+    "task": "furniture-refinish-L3-016",
+    "status": "partial_pass",
+    "tests_passed": 14,
+    "tests_total": 15,
+    "score": 0.9333,
+    "result": "results/qwen36-flash-office-019-a001/2026-11-19__10-17-17/furniture-refinish-L3-016__YpzGkhf/result.json"
+  },
+  {
+    "task": "handbook-notice-insert-L3L4-030",
+    "status": "partial_pass",
+    "tests_passed": 45,
+    "tests_total": 77,
+    "score": 0.5844,
+    "result": "results/qwen36-flash-office-020-a001/2026-11-19__10-18-10/handbook-notice-insert-L3L4-030__VEVMGSm/result.json"
+  },
+  {
+    "task": "health-quote-L2-003",
+    "status": "partial_pass",
+    "tests_passed": 5,
+    "tests_total": 21,
+    "score": 0.2381,
+    "result": "results/qwen36-flash-office-021-a001/2026-11-19__10-19-20/health-quote-L2-003__CmPhnWt/result.json"
+  },
+  {
+    "task": "html-report-quadrant-ppt",
+    "status": "partial_pass",
+    "tests_passed": 45,
+    "tests_total": 78,
+    "score": 0.5769,
+    "result": "results/qwen36-flash-office-022-a001/2026-11-19__10-20-57/html-report-quadrant-ppt__svanC6j/result.json"
+  },
+  {
+    "task": "indicator-window-rules-L4-005",
+    "status": "partial_pass",
+    "tests_passed": 1531,
+    "tests_total": 2469,
+    "score": 0.6201,
+    "result": "results/qwen36-flash-office-023-a001/2026-11-19__10-26-28/indicator-window-rules-L4-005__HuC4w6E/result.json"
+  },
+  {
+    "task": "inspection-notice-provenance-L4-032",
+    "status": "partial_pass",
+    "tests_passed": 93,
+    "tests_total": 131,
+    "score": 0.7099,
+    "result": "results/qwen36-flash-office-024-a001/2026-11-19__10-32-12/inspection-notice-provenance-L4__FvFmCvZ/result.json"
+  },
+  {
+    "task": "invoice-email-archive-manifest",
+    "status": "partial_pass",
+    "tests_passed": 108,
+    "tests_total": 197,
+    "score": 0.5482,
+    "result": "results/qwen36-flash-office-025-a001/2026-11-19__10-33-14/invoice-email-archive-manifest__iQ2LaBN/result.json"
+  },
+  {
+    "task": "json-screener-summary-L4-004",
+    "status": "partial_pass",
+    "tests_passed": 377,
+    "tests_total": 526,
+    "score": 0.7167,
+    "result": "results/qwen36-flash-office-026-a001/2026-11-19__10-35-57/json-screener-summary-L4-004__N2nRFzv/result.json"
+  },
+  {
+    "task": "kline-signal-segments-L4-012",
+    "status": "partial_pass",
+    "tests_passed": 2693,
+    "tests_total": 2814,
+    "score": 0.957,
+    "result": "results/qwen36-flash-office-027-a001/2026-11-19__10-37-27/kline-signal-segments-L4-012__Sfh6Wh3/result.json"
+  },
+  {
+    "task": "market-daily-brief-a-share-recap",
+    "status": "partial_pass",
+    "tests_passed": 21,
+    "tests_total": 24,
+    "score": 0.875,
+    "result": "results/qwen36-flash-office-028-a001/2026-11-19__10-45-00/market-daily-brief-a-share-recap__SUBc3xq/result.json"
+  },
+  {
+    "task": "monitoring-weekly-draft-followup",
+    "status": "partial_pass",
+    "tests_passed": 72,
+    "tests_total": 100,
+    "score": 0.72,
+    "result": "results/qwen36-flash-office-029-a001/2026-11-19__10-51-26/monitoring-weekly-draft-followup__NxEZXBW/result.json"
+  },
+  {
+    "task": "news-event-multifile-extract-L4-013",
+    "status": "partial_pass",
+    "tests_passed": 100,
+    "tests_total": 169,
+    "score": 0.5917,
+    "result": "results/qwen36-flash-office-030-a001/2026-11-19__11-14-58/news-event-multifile-extract-L4__EazK8vm/result.json"
+  },
+  {
+    "task": "portfolio-valuation-limits-L4-009",
+    "status": "partial_pass",
+    "tests_passed": 635,
+    "tests_total": 801,
+    "score": 0.7928,
+    "result": "results/qwen36-flash-office-031-a001/2026-11-19__11-17-14/portfolio-valuation-limits-L4-00__KXBLDkm/result.json"
+  },
+  {
+    "task": "prd-system-design-task-breakdown",
+    "status": "partial_pass",
+    "tests_passed": 127,
+    "tests_total": 153,
+    "score": 0.8301,
+    "result": "results/qwen36-flash-office-032-a001/2026-11-19__11-21-50/prd-system-design-task-breakdown__P3FFtid/result.json"
+  },
+  {
+    "task": "priority-sync-notification-pipeline",
+    "status": "partial_pass",
+    "tests_passed": 102,
+    "tests_total": 125,
+    "score": 0.816,
+    "result": "results/qwen36-flash-office-033-a001/2026-11-19__11-23-59/priority-sync-notification-pipel__BNhAmMF/result.json"
+  },
+  {
+    "task": "procurement-reconcile-L3-015",
+    "status": "partial_pass",
+    "tests_passed": 12,
+    "tests_total": 21,
+    "score": 0.5714,
+    "result": "results/qwen36-flash-office-034-a001/2026-11-19__11-25-56/procurement-reconcile-L3-015__k7XSYP7/result.json"
+  },
+  {
+    "task": "rank-ic-topn-L4-001",
+    "status": "partial_pass",
+    "tests_passed": 383,
+    "tests_total": 522,
+    "score": 0.7337,
+    "result": "results/qwen36-flash-office-035-a001/2026-11-19__11-27-03/rank-ic-topn-L4-001__C6wVpX6/result.json"
+  },
+  {
+    "task": "recruiting-search-skill-mock-mcp-hardened",
+    "status": "partial_pass",
+    "tests_passed": 86,
+    "tests_total": 134,
+    "score": 0.6418,
+    "result": "results/qwen36-flash-office-036-a001/2026-11-19__11-29-33/recruiting-search-skill-mock-mcp__in5HMWQ/result.json"
+  },
+  {
+    "task": "release-phase-gate-progression",
+    "status": "partial_pass",
+    "tests_passed": 62,
+    "tests_total": 94,
+    "score": 0.6596,
+    "result": "results/qwen36-flash-office-037-a001/2026-11-19__11-31-21/release-phase-gate-progression__dsCXmoW/result.json"
+  },
+  {
+    "task": "research-factor-table-extract-L3-016",
+    "status": "partial_pass",
+    "tests_passed": 192,
+    "tests_total": 261,
+    "score": 0.7356,
+    "result": "results/qwen36-flash-office-038-a001/2026-11-19__11-32-52/research-factor-table-extract-L3__s8Qx38n/result.json"
+  },
+  {
+    "task": "rule-based-stock-exclusion-L4-011",
+    "status": "partial_pass",
+    "tests_passed": 684,
+    "tests_total": 878,
+    "score": 0.779,
+    "result": "results/qwen36-flash-office-039-a001/2026-11-19__11-42-08/rule-based-stock-exclusion-L4-01__8ky7nyb/result.json"
+  },
+  {
+    "task": "safety-inspection-extract-L4-019",
+    "status": "partial_pass",
+    "tests_passed": 23,
+    "tests_total": 27,
+    "score": 0.8519,
+    "result": "results/qwen36-flash-office-040-a001/2026-11-19__11-46-05/safety-inspection-extract-L4-019__fWqKaN7/result.json"
+  },
+  {
+    "task": "service-channel-ticket-daily",
+    "status": "partial_pass",
+    "tests_passed": 246,
+    "tests_total": 273,
+    "score": 0.9011,
+    "result": "results/qwen36-flash-office-041-a001/2026-11-19__11-47-02/service-channel-ticket-daily__j94AGeM/result.json"
+  },
+  {
+    "task": "static-strategy-signal-report-L3-015",
+    "status": "partial_pass",
+    "tests_passed": 199,
+    "tests_total": 268,
+    "score": 0.7425,
+    "result": "results/qwen36-flash-office-042-a001/2026-11-19__11-48-26/static-strategy-signal-report-L3__NHetyfp/result.json"
+  },
+  {
+    "task": "stock-fund-return-compare-L3-010",
+    "status": "partial_pass",
+    "tests_passed": 1147,
+    "tests_total": 1252,
+    "score": 0.9161,
+    "result": "results/qwen36-flash-office-043-a001/2026-11-19__11-52-59/stock-fund-return-compare-L3-010__kuHWAww/result.json"
+  },
+  {
+    "task": "subscription-credit-reconcile-L4-024",
+    "status": "partial_pass",
+    "tests_passed": 71,
+    "tests_total": 123,
+    "score": 0.5772,
+    "result": "results/qwen36-flash-office-044-a001/2026-11-19__11-58-45/subscription-credit-reconcile-L4__m4TcDoy/result.json"
+  },
+  {
+    "task": "ticket-weekly-L3-010",
+    "status": "full_pass",
+    "tests_passed": 15,
+    "tests_total": 15,
+    "score": 1.0,
+    "result": "results/qwen36-flash-office-045-a001/2026-11-19__12-03-52/ticket-weekly-L3-010__sPEFtqJ/result.json"
+  },
+  {
+    "task": "trade-pnl-positions-L4-007",
+    "status": "partial_pass",
+    "tests_passed": 375,
+    "tests_total": 453,
+    "score": 0.8278,
+    "result": "results/qwen36-flash-office-046-a001/2026-11-19__12-04-42/trade-pnl-positions-L4-007__xpFKP8Z/result.json"
+  },
+  {
+    "task": "warranty-recovery-allocation-L5-033",
+    "status": "partial_pass",
+    "tests_passed": 302,
+    "tests_total": 342,
+    "score": 0.883,
+    "result": "results/qwen36-flash-office-047-a001/2026-11-19__12-11-15/warranty-recovery-allocation-L5__niLyzno/result.json"
+  },
+  {
+    "task": "wechat-tech-topic-package-hardened",
+    "status": "partial_pass",
+    "tests_passed": 78,
+    "tests_total": 89,
+    "score": 0.8764,
+    "result": "results/qwen36-flash-office-048-a001/2026-11-19__12-14-24/wechat-tech-topic-package-harden__L7fCozk/result.json"
+  },
+  {
+    "task": "xiaohongshu-psychology-note-pack",
+    "status": "partial_pass",
+    "tests_passed": 33,
+    "tests_total": 63,
+    "score": 0.5238,
+    "result": "results/qwen36-flash-office-049-a001/2026-11-19__12-16-14/xiaohongshu-psychology-note-pack__ZqxrnCF/result.json"
+  },
+  {
+    "task": "xmind-screenshot-template-ppt",
+    "status": "partial_pass",
+    "tests_passed": 95,
+    "tests_total": 113,
+    "score": 0.8407,
+    "result": "results/qwen36-flash-office-050-a001/2026-11-19__12-17-09/xmind-screenshot-template-ppt__Tu8YsNF/result.json"
+  }
+]

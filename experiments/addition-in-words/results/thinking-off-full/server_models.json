@@ -1,0 +1,14 @@
+{
+  "data": [
+    {
+      "created": 1791689323,
+      "id": "qwen36-iter22000-blk16-arverify-best",
+      "max_model_len": 131072,
+      "object": "model",
+      "owned_by": "sglang",
+      "parent": null,
+      "root": "qwen36-iter22000-blk16-arverify-best"
+    }
+  ],
+  "object": "list"
+}

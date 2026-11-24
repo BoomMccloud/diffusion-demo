@@ -1,0 +1,371 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="662" height="692" font-family="sans-serif" font-size="11">
+<rect width="662" height="692" fill="white"/>
+<text x="70" y="22" font-size="14" font-weight="bold">Addition in words: Thinking off, 30 cases per cell (n = 5070)</text>
+<text x="356.0" y="48" text-anchor="middle">digits in b</text>
+<text x="18" y="356.0" text-anchor="middle" transform="rotate(-90 18 356.0)">digits in a</text>
+<text x="92.0" y="64" text-anchor="middle">1</text>
+<text x="62" y="96.0" text-anchor="end">1</text>
+<text x="136.0" y="64" text-anchor="middle">2</text>
+<text x="62" y="140.0" text-anchor="end">2</text>
+<text x="180.0" y="64" text-anchor="middle">3</text>
+<text x="62" y="184.0" text-anchor="end">3</text>
+<text x="224.0" y="64" text-anchor="middle">4</text>
+<text x="62" y="228.0" text-anchor="end">4</text>
+<text x="268.0" y="64" text-anchor="middle">5</text>
+<text x="62" y="272.0" text-anchor="end">5</text>
+<text x="312.0" y="64" text-anchor="middle">6</text>
+<text x="62" y="316.0" text-anchor="end">6</text>
+<text x="356.0" y="64" text-anchor="middle">7</text>
+<text x="62" y="360.0" text-anchor="end">7</text>
+<text x="400.0" y="64" text-anchor="middle">8</text>
+<text x="62" y="404.0" text-anchor="end">8</text>
+<text x="444.0" y="64" text-anchor="middle">9</text>
+<text x="62" y="448.0" text-anchor="end">9</text>
+<text x="488.0" y="64" text-anchor="middle">10</text>
+<text x="62" y="492.0" text-anchor="end">10</text>
+<text x="532.0" y="64" text-anchor="middle">11</text>
+<text x="62" y="536.0" text-anchor="end">11</text>
+<text x="576.0" y="64" text-anchor="middle">12</text>
+<text x="62" y="580.0" text-anchor="end">12</text>
+<text x="620.0" y="64" text-anchor="middle">13</text>
+<text x="62" y="624.0" text-anchor="end">13</text>
+<rect x="70" y="70" width="44" height="44" fill="#2166ac" stroke="white"/>
+<text x="92.0" y="96.0" text-anchor="middle" fill="white">100</text>
+<rect x="114" y="70" width="44" height="44" fill="#4c83bb" stroke="white"/>
+<text x="136.0" y="96.0" text-anchor="middle" fill="white">90</text>
+<rect x="158" y="70" width="44" height="44" fill="#3e79b6" stroke="white"/>
+<text x="180.0" y="96.0" text-anchor="middle" fill="white">93</text>
+<rect x="202" y="70" width="44" height="44" fill="#f1c5a5" stroke="white"/>
+<text x="224.0" y="96.0" text-anchor="middle" fill="black">33</text>
+<rect x="246" y="70" width="44" height="44" fill="#efb184" stroke="white"/>
+<text x="268.0" y="96.0" text-anchor="middle" fill="black">27</text>
+<rect x="290" y="70" width="44" height="44" fill="#eea774" stroke="white"/>
+<text x="312.0" y="96.0" text-anchor="middle" fill="black">23</text>
+<rect x="334" y="70" width="44" height="44" fill="#ec9353" stroke="white"/>
+<text x="356.0" y="96.0" text-anchor="middle" fill="white">17</text>
+<rect x="378" y="70" width="44" height="44" fill="#f1c5a5" stroke="white"/>
+<text x="400.0" y="96.0" text-anchor="middle" fill="black">33</text>
+<rect x="422" y="70" width="44" height="44" fill="#e97f32" stroke="white"/>
+<text x="444.0" y="96.0" text-anchor="middle" fill="white">10</text>
+<rect x="466" y="70" width="44" height="44" fill="#f2cfb5" stroke="white"/>
+<text x="488.0" y="96.0" text-anchor="middle" fill="black">37</text>
+<rect x="510" y="70" width="44" height="44" fill="#eea774" stroke="white"/>
+<text x="532.0" y="96.0" text-anchor="middle" fill="black">23</text>
+<rect x="554" y="70" width="44" height="44" fill="#e87522" stroke="white"/>
+<text x="576.0" y="96.0" text-anchor="middle" fill="white">7</text>
+<rect x="598" y="70" width="44" height="44" fill="#eb8943" stroke="white"/>
+<text x="620.0" y="96.0" text-anchor="middle" fill="white">13</text>
+<rect x="70" y="114" width="44" height="44" fill="#2166ac" stroke="white"/>
+<text x="92.0" y="140.0" text-anchor="middle" fill="white">100</text>
+<rect x="114" y="114" width="44" height="44" fill="#2166ac" stroke="white"/>
+<text x="136.0" y="140.0" text-anchor="middle" fill="white">100</text>
+<rect x="158" y="114" width="44" height="44" fill="#6896c5" stroke="white"/>
+<text x="180.0" y="140.0" text-anchor="middle" fill="white">83</text>
+<rect x="202" y="114" width="44" height="44" fill="#dae4ed" stroke="white"/>
+<text x="224.0" y="140.0" text-anchor="middle" fill="black">57</text>
+<rect x="246" y="114" width="44" height="44" fill="#eb8943" stroke="white"/>
+<text x="268.0" y="140.0" text-anchor="middle" fill="white">13</text>
+<rect x="290" y="114" width="44" height="44" fill="#ec9353" stroke="white"/>
+<text x="312.0" y="140.0" text-anchor="middle" fill="white">17</text>
+<rect x="334" y="114" width="44" height="44" fill="#ec9353" stroke="white"/>
+<text x="356.0" y="140.0" text-anchor="middle" fill="white">17</text>
+<rect x="378" y="114" width="44" height="44" fill="#e87522" stroke="white"/>
+<text x="400.0" y="140.0" text-anchor="middle" fill="white">7</text>
+<rect x="422" y="114" width="44" height="44" fill="#e76b11" stroke="white"/>
+<text x="444.0" y="140.0" text-anchor="middle" fill="white">3</text>
+<rect x="466" y="114" width="44" height="44" fill="#e87522" stroke="white"/>
+<text x="488.0" y="140.0" text-anchor="middle" fill="white">7</text>
+<rect x="510" y="114" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="532.0" y="140.0" text-anchor="middle" fill="white">0</text>
+<rect x="554" y="114" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="576.0" y="140.0" text-anchor="middle" fill="white">0</text>
+<rect x="598" y="114" width="44" height="44" fill="#e97f32" stroke="white"/>
+<text x="620.0" y="140.0" text-anchor="middle" fill="white">10</text>
+<rect x="70" y="158" width="44" height="44" fill="#4c83bb" stroke="white"/>
+<text x="92.0" y="184.0" text-anchor="middle" fill="white">90</text>
+<rect x="114" y="158" width="44" height="44" fill="#e9edf2" stroke="white"/>
+<text x="136.0" y="184.0" text-anchor="middle" fill="black">53</text>
+<rect x="158" y="158" width="44" height="44" fill="#77a0ca" stroke="white"/>
+<text x="180.0" y="184.0" text-anchor="middle" fill="black">80</text>
+<rect x="202" y="158" width="44" height="44" fill="#bed0e3" stroke="white"/>
+<text x="224.0" y="184.0" text-anchor="middle" fill="black">63</text>
+<rect x="246" y="158" width="44" height="44" fill="#f2cfb5" stroke="white"/>
+<text x="268.0" y="184.0" text-anchor="middle" fill="black">37</text>
+<rect x="290" y="158" width="44" height="44" fill="#e87522" stroke="white"/>
+<text x="312.0" y="184.0" text-anchor="middle" fill="white">7</text>
+<rect x="334" y="158" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="356.0" y="184.0" text-anchor="middle" fill="white">0</text>
+<rect x="378" y="158" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="400.0" y="184.0" text-anchor="middle" fill="white">0</text>
+<rect x="422" y="158" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="444.0" y="184.0" text-anchor="middle" fill="white">0</text>
+<rect x="466" y="158" width="44" height="44" fill="#e76b11" stroke="white"/>
+<text x="488.0" y="184.0" text-anchor="middle" fill="white">3</text>
+<rect x="510" y="158" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="532.0" y="184.0" text-anchor="middle" fill="white">0</text>
+<rect x="554" y="158" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="576.0" y="184.0" text-anchor="middle" fill="white">0</text>
+<rect x="598" y="158" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="620.0" y="184.0" text-anchor="middle" fill="white">0</text>
+<rect x="70" y="202" width="44" height="44" fill="#77a0ca" stroke="white"/>
+<text x="92.0" y="228.0" text-anchor="middle" fill="black">80</text>
+<rect x="114" y="202" width="44" height="44" fill="#ed9d63" stroke="white"/>
+<text x="136.0" y="228.0" text-anchor="middle" fill="black">20</text>
+<rect x="158" y="202" width="44" height="44" fill="#dae4ed" stroke="white"/>
+<text x="180.0" y="228.0" text-anchor="middle" fill="black">57</text>
+<rect x="202" y="202" width="44" height="44" fill="#ccdae8" stroke="white"/>
+<text x="224.0" y="228.0" text-anchor="middle" fill="black">60</text>
+<rect x="246" y="202" width="44" height="44" fill="#ec9353" stroke="white"/>
+<text x="268.0" y="228.0" text-anchor="middle" fill="white">17</text>
+<rect x="290" y="202" width="44" height="44" fill="#e76b11" stroke="white"/>
+<text x="312.0" y="228.0" text-anchor="middle" fill="white">3</text>
+<rect x="334" y="202" width="44" height="44" fill="#e87522" stroke="white"/>
+<text x="356.0" y="228.0" text-anchor="middle" fill="white">7</text>
+<rect x="378" y="202" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="400.0" y="228.0" text-anchor="middle" fill="white">0</text>
+<rect x="422" y="202" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="444.0" y="228.0" text-anchor="middle" fill="white">0</text>
+<rect x="466" y="202" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="488.0" y="228.0" text-anchor="middle" fill="white">0</text>
+<rect x="510" y="202" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="532.0" y="228.0" text-anchor="middle" fill="white">0</text>
+<rect x="554" y="202" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="576.0" y="228.0" text-anchor="middle" fill="white">0</text>
+<rect x="598" y="202" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="620.0" y="228.0" text-anchor="middle" fill="white">0</text>
+<rect x="70" y="246" width="44" height="44" fill="#f4d9c6" stroke="white"/>
+<text x="92.0" y="272.0" text-anchor="middle" fill="black">40</text>
+<rect x="114" y="246" width="44" height="44" fill="#e76b11" stroke="white"/>
+<text x="136.0" y="272.0" text-anchor="middle" fill="white">3</text>
+<rect x="158" y="246" width="44" height="44" fill="#e87522" stroke="white"/>
+<text x="180.0" y="272.0" text-anchor="middle" fill="white">7</text>
+<rect x="202" y="246" width="44" height="44" fill="#ed9d63" stroke="white"/>
+<text x="224.0" y="272.0" text-anchor="middle" fill="black">20</text>
+<rect x="246" y="246" width="44" height="44" fill="#e97f32" stroke="white"/>
+<text x="268.0" y="272.0" text-anchor="middle" fill="white">10</text>
+<rect x="290" y="246" width="44" height="44" fill="#e76b11" stroke="white"/>
+<text x="312.0" y="272.0" text-anchor="middle" fill="white">3</text>
+<rect x="334" y="246" width="44" height="44" fill="#e87522" stroke="white"/>
+<text x="356.0" y="272.0" text-anchor="middle" fill="white">7</text>
+<rect x="378" y="246" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="400.0" y="272.0" text-anchor="middle" fill="white">0</text>
+<rect x="422" y="246" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="444.0" y="272.0" text-anchor="middle" fill="white">0</text>
+<rect x="466" y="246" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="488.0" y="272.0" text-anchor="middle" fill="white">0</text>
+<rect x="510" y="246" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="532.0" y="272.0" text-anchor="middle" fill="white">0</text>
+<rect x="554" y="246" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="576.0" y="272.0" text-anchor="middle" fill="white">0</text>
+<rect x="598" y="246" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="620.0" y="272.0" text-anchor="middle" fill="white">0</text>
+<rect x="70" y="290" width="44" height="44" fill="#ccdae8" stroke="white"/>
+<text x="92.0" y="316.0" text-anchor="middle" fill="black">60</text>
+<rect x="114" y="290" width="44" height="44" fill="#e97f32" stroke="white"/>
+<text x="136.0" y="316.0" text-anchor="middle" fill="white">10</text>
+<rect x="158" y="290" width="44" height="44" fill="#e76b11" stroke="white"/>
+<text x="180.0" y="316.0" text-anchor="middle" fill="white">3</text>
+<rect x="202" y="290" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="224.0" y="316.0" text-anchor="middle" fill="white">0</text>
+<rect x="246" y="290" width="44" height="44" fill="#e76b11" stroke="white"/>
+<text x="268.0" y="316.0" text-anchor="middle" fill="white">3</text>
+<rect x="290" y="290" width="44" height="44" fill="#e87522" stroke="white"/>
+<text x="312.0" y="316.0" text-anchor="middle" fill="white">7</text>
+<rect x="334" y="290" width="44" height="44" fill="#e76b11" stroke="white"/>
+<text x="356.0" y="316.0" text-anchor="middle" fill="white">3</text>
+<rect x="378" y="290" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="400.0" y="316.0" text-anchor="middle" fill="white">0</text>
+<rect x="422" y="290" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="444.0" y="316.0" text-anchor="middle" fill="white">0</text>
+<rect x="466" y="290" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="488.0" y="316.0" text-anchor="middle" fill="white">0</text>
+<rect x="510" y="290" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="532.0" y="316.0" text-anchor="middle" fill="white">0</text>
+<rect x="554" y="290" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="576.0" y="316.0" text-anchor="middle" fill="white">0</text>
+<rect x="598" y="290" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="620.0" y="316.0" text-anchor="middle" fill="white">0</text>
+<rect x="70" y="334" width="44" height="44" fill="#f4d9c6" stroke="white"/>
+<text x="92.0" y="360.0" text-anchor="middle" fill="black">40</text>
+<rect x="114" y="334" width="44" height="44" fill="#e76b11" stroke="white"/>
+<text x="136.0" y="360.0" text-anchor="middle" fill="white">3</text>
+<rect x="158" y="334" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="180.0" y="360.0" text-anchor="middle" fill="white">0</text>
+<rect x="202" y="334" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="224.0" y="360.0" text-anchor="middle" fill="white">0</text>
+<rect x="246" y="334" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="268.0" y="360.0" text-anchor="middle" fill="white">0</text>
+<rect x="290" y="334" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="312.0" y="360.0" text-anchor="middle" fill="white">0</text>
+<rect x="334" y="334" width="44" height="44" fill="#e87522" stroke="white"/>
+<text x="356.0" y="360.0" text-anchor="middle" fill="white">7</text>
+<rect x="378" y="334" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="400.0" y="360.0" text-anchor="middle" fill="white">0</text>
+<rect x="422" y="334" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="444.0" y="360.0" text-anchor="middle" fill="white">0</text>
+<rect x="466" y="334" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="488.0" y="360.0" text-anchor="middle" fill="white">0</text>
+<rect x="510" y="334" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="532.0" y="360.0" text-anchor="middle" fill="white">0</text>
+<rect x="554" y="334" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="576.0" y="360.0" text-anchor="middle" fill="white">0</text>
+<rect x="598" y="334" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="620.0" y="360.0" text-anchor="middle" fill="white">0</text>
+<rect x="70" y="378" width="44" height="44" fill="#efb184" stroke="white"/>
+<text x="92.0" y="404.0" text-anchor="middle" fill="black">27</text>
+<rect x="114" y="378" width="44" height="44" fill="#e97f32" stroke="white"/>
+<text x="136.0" y="404.0" text-anchor="middle" fill="white">10</text>
+<rect x="158" y="378" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="180.0" y="404.0" text-anchor="middle" fill="white">0</text>
+<rect x="202" y="378" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="224.0" y="404.0" text-anchor="middle" fill="white">0</text>
+<rect x="246" y="378" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="268.0" y="404.0" text-anchor="middle" fill="white">0</text>
+<rect x="290" y="378" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="312.0" y="404.0" text-anchor="middle" fill="white">0</text>
+<rect x="334" y="378" width="44" height="44" fill="#e87522" stroke="white"/>
+<text x="356.0" y="404.0" text-anchor="middle" fill="white">7</text>
+<rect x="378" y="378" width="44" height="44" fill="#e76b11" stroke="white"/>
+<text x="400.0" y="404.0" text-anchor="middle" fill="white">3</text>
+<rect x="422" y="378" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="444.0" y="404.0" text-anchor="middle" fill="white">0</text>
+<rect x="466" y="378" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="488.0" y="404.0" text-anchor="middle" fill="white">0</text>
+<rect x="510" y="378" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="532.0" y="404.0" text-anchor="middle" fill="white">0</text>
+<rect x="554" y="378" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="576.0" y="404.0" text-anchor="middle" fill="white">0</text>
+<rect x="598" y="378" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="620.0" y="404.0" text-anchor="middle" fill="white">0</text>
+<rect x="70" y="422" width="44" height="44" fill="#f2cfb5" stroke="white"/>
+<text x="92.0" y="448.0" text-anchor="middle" fill="black">37</text>
+<rect x="114" y="422" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="136.0" y="448.0" text-anchor="middle" fill="white">0</text>
+<rect x="158" y="422" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="180.0" y="448.0" text-anchor="middle" fill="white">0</text>
+<rect x="202" y="422" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="224.0" y="448.0" text-anchor="middle" fill="white">0</text>
+<rect x="246" y="422" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="268.0" y="448.0" text-anchor="middle" fill="white">0</text>
+<rect x="290" y="422" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="312.0" y="448.0" text-anchor="middle" fill="white">0</text>
+<rect x="334" y="422" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="356.0" y="448.0" text-anchor="middle" fill="white">0</text>
+<rect x="378" y="422" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="400.0" y="448.0" text-anchor="middle" fill="white">0</text>
+<rect x="422" y="422" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="444.0" y="448.0" text-anchor="middle" fill="white">0</text>
+<rect x="466" y="422" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="488.0" y="448.0" text-anchor="middle" fill="white">0</text>
+<rect x="510" y="422" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="532.0" y="448.0" text-anchor="middle" fill="white">0</text>
+<rect x="554" y="422" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="576.0" y="448.0" text-anchor="middle" fill="white">0</text>
+<rect x="598" y="422" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="620.0" y="448.0" text-anchor="middle" fill="white">0</text>
+<rect x="70" y="466" width="44" height="44" fill="#ec9353" stroke="white"/>
+<text x="92.0" y="492.0" text-anchor="middle" fill="white">17</text>
+<rect x="114" y="466" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="136.0" y="492.0" text-anchor="middle" fill="white">0</text>
+<rect x="158" y="466" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="180.0" y="492.0" text-anchor="middle" fill="white">0</text>
+<rect x="202" y="466" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="224.0" y="492.0" text-anchor="middle" fill="white">0</text>
+<rect x="246" y="466" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="268.0" y="492.0" text-anchor="middle" fill="white">0</text>
+<rect x="290" y="466" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="312.0" y="492.0" text-anchor="middle" fill="white">0</text>
+<rect x="334" y="466" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="356.0" y="492.0" text-anchor="middle" fill="white">0</text>
+<rect x="378" y="466" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="400.0" y="492.0" text-anchor="middle" fill="white">0</text>
+<rect x="422" y="466" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="444.0" y="492.0" text-anchor="middle" fill="white">0</text>
+<rect x="466" y="466" width="44" height="44" fill="#eea774" stroke="white"/>
+<text x="488.0" y="492.0" text-anchor="middle" fill="black">23</text>
+<rect x="510" y="466" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="532.0" y="492.0" text-anchor="middle" fill="white">0</text>
+<rect x="554" y="466" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="576.0" y="492.0" text-anchor="middle" fill="white">0</text>
+<rect x="598" y="466" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="620.0" y="492.0" text-anchor="middle" fill="white">0</text>
+<rect x="70" y="510" width="44" height="44" fill="#f2cfb5" stroke="white"/>
+<text x="92.0" y="536.0" text-anchor="middle" fill="black">37</text>
+<rect x="114" y="510" width="44" height="44" fill="#e87522" stroke="white"/>
+<text x="136.0" y="536.0" text-anchor="middle" fill="white">7</text>
+<rect x="158" y="510" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="180.0" y="536.0" text-anchor="middle" fill="white">0</text>
+<rect x="202" y="510" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="224.0" y="536.0" text-anchor="middle" fill="white">0</text>
+<rect x="246" y="510" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="268.0" y="536.0" text-anchor="middle" fill="white">0</text>
+<rect x="290" y="510" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="312.0" y="536.0" text-anchor="middle" fill="white">0</text>
+<rect x="334" y="510" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="356.0" y="536.0" text-anchor="middle" fill="white">0</text>
+<rect x="378" y="510" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="400.0" y="536.0" text-anchor="middle" fill="white">0</text>
+<rect x="422" y="510" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="444.0" y="536.0" text-anchor="middle" fill="white">0</text>
+<rect x="466" y="510" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="488.0" y="536.0" text-anchor="middle" fill="white">0</text>
+<rect x="510" y="510" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="532.0" y="536.0" text-anchor="middle" fill="white">0</text>
+<rect x="554" y="510" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="576.0" y="536.0" text-anchor="middle" fill="white">0</text>
+<rect x="598" y="510" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="620.0" y="536.0" text-anchor="middle" fill="white">0</text>
+<rect x="70" y="554" width="44" height="44" fill="#efb184" stroke="white"/>
+<text x="92.0" y="580.0" text-anchor="middle" fill="black">27</text>
+<rect x="114" y="554" width="44" height="44" fill="#eb8943" stroke="white"/>
+<text x="136.0" y="580.0" text-anchor="middle" fill="white">13</text>
+<rect x="158" y="554" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="180.0" y="580.0" text-anchor="middle" fill="white">0</text>
+<rect x="202" y="554" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="224.0" y="580.0" text-anchor="middle" fill="white">0</text>
+<rect x="246" y="554" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="268.0" y="580.0" text-anchor="middle" fill="white">0</text>
+<rect x="290" y="554" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="312.0" y="580.0" text-anchor="middle" fill="white">0</text>
+<rect x="334" y="554" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="356.0" y="580.0" text-anchor="middle" fill="white">0</text>
+<rect x="378" y="554" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="400.0" y="580.0" text-anchor="middle" fill="white">0</text>
+<rect x="422" y="554" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="444.0" y="580.0" text-anchor="middle" fill="white">0</text>
+<rect x="466" y="554" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="488.0" y="580.0" text-anchor="middle" fill="white">0</text>
+<rect x="510" y="554" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="532.0" y="580.0" text-anchor="middle" fill="white">0</text>
+<rect x="554" y="554" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="576.0" y="580.0" text-anchor="middle" fill="white">0</text>
+<rect x="598" y="554" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="620.0" y="580.0" text-anchor="middle" fill="white">0</text>
+<rect x="70" y="598" width="44" height="44" fill="#77a0ca" stroke="white"/>
+<text x="92.0" y="624.0" text-anchor="middle" fill="black">80</text>
+<rect x="114" y="598" width="44" height="44" fill="#e76b11" stroke="white"/>
+<text x="136.0" y="624.0" text-anchor="middle" fill="white">3</text>
+<rect x="158" y="598" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="180.0" y="624.0" text-anchor="middle" fill="white">0</text>
+<rect x="202" y="598" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="224.0" y="624.0" text-anchor="middle" fill="white">0</text>
+<rect x="246" y="598" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="268.0" y="624.0" text-anchor="middle" fill="white">0</text>
+<rect x="290" y="598" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="312.0" y="624.0" text-anchor="middle" fill="white">0</text>
+<rect x="334" y="598" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="356.0" y="624.0" text-anchor="middle" fill="white">0</text>
+<rect x="378" y="598" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="400.0" y="624.0" text-anchor="middle" fill="white">0</text>
+<rect x="422" y="598" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="444.0" y="624.0" text-anchor="middle" fill="white">0</text>
+<rect x="466" y="598" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="488.0" y="624.0" text-anchor="middle" fill="white">0</text>
+<rect x="510" y="598" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="532.0" y="624.0" text-anchor="middle" fill="white">0</text>
+<rect x="554" y="598" width="44" height="44" fill="#e66101" stroke="white"/>
+<text x="576.0" y="624.0" text-anchor="middle" fill="white">0</text>
+<rect x="598" y="598" width="44" height="44" fill="#e87522" stroke="white"/>
+<text x="620.0" y="624.0" text-anchor="middle" fill="white">7</text>
+<text x="70" y="674">Cell value: numeric accuracy, %. Orange 0%, blue 100%.</text>
+</svg>

@@ -1,0 +1,3536 @@
+[
+  {
+    "task": "analyst-forecast-extract-L3-018",
+    "rule_score": 0.83,
+    "judge_score": 1.0,
+    "combined_score": 0.864,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "expanded_major_sections_are_not_contradictory",
+        "verdict": "pass",
+        "reason": "Metadata counts match the workbook dimensions: 8 forecast, 5 rating, 5 target-price, and 6 missing records, excluding headers.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_summary_uses_same_scope_as_details",
+        "verdict": "pass",
+        "reason": "The metadata identifies the target company and says aggregate summaries and non-target rows are excluded to missing_fields, consistent with the visible detail rows.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_json_source_lists_do_not_replace_row_trace",
+        "verdict": "pass",
+        "reason": "Each forecast row includes a source file and extraction location such as forecast_detail_export!row2; other fact rows also name their source file.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_summary_is_reconcilable_to_details",
+        "verdict": "pass",
+        "reason": "The metadata's sheet counts reconcile to the listed workbook rows, and the workbook labels the exception categories in missing_fields.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "forecast_missing_fields_are_not_inferred_from_context",
+        "verdict": "pass",
+        "reason": "Missing FY2028, FY2026/FY2027, and FY2027 forecast values are recorded in missing_fields; missing target prices have blank values and status missing.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "forecast_rows_bind_metric_period_and_source",
+        "verdict": "pass",
+        "reason": "Each forecast row identifies the fiscal year, net profit and EPS values, institution and report date, and a source row location.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "forecast_source_trace_preserves_table_or_section_origin",
+        "verdict": "pass",
+        "reason": "Forecast rows cite specific export rows, while rating and target-price rows cite their source summary files; the evidence shows no row-level locations for those latter records.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "metadata_summarizes_normalization_contract",
+        "verdict": "pass",
+        "reason": "Metadata includes the case, workbook, target company, row counts, and normalization rules for aliases, ratings, dates, units, and exclusions.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_trace_is_visible",
+        "verdict": "pass",
+        "reason": "Workbook fact rows provide source files, and forecast rows additionally provide extraction row references.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_matches_forecast_deliverable",
+        "verdict": "pass",
+        "reason": "The workbook has the four requested structured sheets: forecast_fields, rating_changes, target_price_table, and missing_fields.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "api-usage-explain-cli-l3-001",
+    "rule_score": 0.9016,
+    "judge_score": 1.0,
+    "combined_score": 0.9213,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "claim_citation_support_quality",
+        "verdict": "pass",
+        "reason": "Major claims are tied to nearby paths: CLI syntax to `src/citrinekit/cli.py` and `pyproject.toml`, config behavior to `src/citrinekit/config.py` and `docs/config-resolution.md`, and output claims to `docs/output-format.md`, the schema, and the JSONL sample.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "developer_manual_actionability_and_coherence",
+        "verdict": "pass",
+        "reason": "The guide follows a usable flow from CLI commands through configuration and Python API to output formats and caveats, and explains how the API’s `to_records()`/`to_summary()` choices differ from CLI `--format`.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "final_answer_framing_and_markdown_integrity",
+        "verdict": "pass",
+        "reason": "It begins with a Chinese manual title, uses readable Markdown tables and code blocks, and keeps CLI/API identifiers and cited paths legible.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_grounded_caveat_actionability",
+        "verdict": "pass",
+        "reason": "Caveats give developers concrete reasons to avoid relying on stale or unimplemented features, including the absent `--json` parser option, `NotImplementedError` experimental stubs, roadmap-only items, and renderer limitations cited to local files.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "self_contained_developer_usage_flow",
+        "verdict": "pass",
+        "reason": "The answer stands alone with CLI examples, Python API entry points, config/profile behavior, output structures, and unsupported-feature boundaries. The listed deterministic failures concern specific missing details and do not prevent recovery of the main usage path.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "board-material-update-timeline-excel",
+    "rule_score": 0.7045,
+    "judge_score": 0.0,
+    "combined_score": 0.5636,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "cross_slide_governance_chain_integration",
+        "verdict": "fail",
+        "reason": "The deck updates some statuses, but slide 7 leaves the sample-freeze date and procurement timing unspecified, slide 8 retains generic communication schedules, and risk evidence submission and review cadence are absent.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "board_decision_priority_and_timing_visibility",
+        "verdict": "fail",
+        "reason": "Procurement remains pending and its sample-freeze dependency is mentioned, but the deck omits the 7月5日前 procurement timing and the 7月12日前 risk-evidence deadline with 8月第一周 review cadence.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "board_facing_readiness_and_concision",
+        "verdict": "fail",
+        "reason": "Current-facing slides still expose draft and backstage wording, including slide 1’s “工作稿” and instructions to update from the register, and slide 3’s “旧稿” table and workbook lookup note.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "resource_communication_actionability",
+        "verdict": "fail",
+        "reason": "Slide 8 keeps old generic schedules such as “培训前一周” and “会前确认”; it does not surface the risk-evidence deadline and review cadence or actionable follow-up linked to the current cycle.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "calendar-dida-sync-state",
+    "rule_score": 0.844,
+    "judge_score": 0.8,
+    "combined_score": 0.8352,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "summary_human_audit_trail",
+        "verdict": "pass",
+        "reason": "摘要在所需类别下列出任务、映射和事件引用，并说明 stable sync_key 匹配、取消/来源缺失规则、重复抑制、手工任务保留及未访问真实服务。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "summary_json_semantic_consistency_no_overclaim",
+        "verdict": "pass",
+        "reason": "所述新建、更新、inactive、重复抑制和保留项目均能在提交的任务与历史摘要中找到相应状态和动作；例如 task-local-2006/map-local-1006 被说明为仅刷新同步时间，历史也标为 no_change。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "visible_policy_edge_case_reasoning",
+        "verdict": "pass",
+        "reason": "摘要区分同标题不同 sync_key 的实例（旧合同 v1 inactive、新 v2 新建），并说明窗口内来源缺失置 inactive、窗口外缺失保持 active，以及同键重复行抑制和手工任务保护。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "no_change_preservation_reasoning",
+        "verdict": "fail",
+        "reason": "公开无变化锚点 task-local-2006/map-local-1006 在提交历史中 last_action 为 no_change，但摘要称其刷新了 source.last_synced_at 和 updated_at，且将其列在“更新已有同步项”，未按公开上下文说明这是仅元数据刷新而非完整无变化。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "local_only_boundary_statement_consistency",
+        "verdict": "pass",
+        "reason": "摘要明确称本轮未访问真实日历、待办、提醒、网络或 live service；提交状态证据描述的是本地 mock 日历与 JSON 状态。",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "channel-period-compare-L4-017",
+    "rule_score": 0.7273,
+    "judge_score": 0.9167,
+    "combined_score": 0.7557,
+    "rule_weight": 0.85,
+    "judge_weight": 0.15,
+    "verdicts": [
+      {
+        "id": "cleaning_and_comparison_context_visible",
+        "verdict": "fail",
+        "reason": "Sheets show channel rows and periods, but no visible duplicate handling, empty-QUARTER exclusions, or clean-data status.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_counts_have_named_denominators",
+        "verdict": "pass",
+        "reason": "Commission rates are shown as channel-specific metrics, while order and headcount counts are labeled by their metric and channel; no rate denominator or aggregate count is presented.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "channel_change_values_have_before_after_basis",
+        "verdict": "pass",
+        "reason": "For example, settlement shows 万家好物联盟 GMV for 26Q1 (1,861,736.78), 25Q4 (2,124,097.8), and signed delta (-262,361.02).",
+        "source": "codex_luna"
+      },
+      {
+        "id": "channel_metric_comparison_keeps_entity_period_metric_together",
+        "verdict": "pass",
+        "reason": "Both sheets keep channel names, labeled period-specific metric columns, and deltas in the same row.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "channel_payment_yoy_metric_family_complete",
+        "verdict": "pass",
+        "reason": "Channel Collection includes 26Q1 and 25Q1 GMV, revenue, B-side revenue, and headcount with deltas; for example, 万家好物联盟 has all four metric families populated.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "channel_required_spot_channels_have_metric_family_rows",
+        "verdict": "pass",
+        "reason": "锦绣生活馆 and 优享全球购 each appear in both sheets with populated comparison metrics.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "channel_settlement_and_payment_scopes_stay_separate",
+        "verdict": "pass",
+        "reason": "Separate Channel Settlement and Channel Collection sheets show 26Q1 vs 25Q4 and 26Q1 vs 25Q1, respectively.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "channel_settlement_qoq_metric_family_complete",
+        "verdict": "pass",
+        "reason": "Channel Settlement contains GMV, revenue, commission rate, and order count for both periods and deltas, including for 万家好物联盟.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "comparison_rows_show_period_pair_and_direction",
+        "verdict": "pass",
+        "reason": "Column headers name each period and delta; signed examples include settlement GMV delta -262,361.02 and collection headcount delta +4 for 万家好物联盟.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "metric_cells_have_metric_specific_context",
+        "verdict": "pass",
+        "reason": "Columns explicitly label the metric families and their deltas, such as COMMISSION_RATE_delta_pp and HEADCOUNT_delta.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "settlement_and_payment_metrics_remain_separate",
+        "verdict": "pass",
+        "reason": "Settlement metrics and collection metrics are presented on distinct, clearly named sheets with their own delta columns.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_is_channel_period_comparison",
+        "verdict": "pass",
+        "reason": "The workbook has structured channel-level settlement and collection period-comparison tables.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "cloudagent-sdk-doc-validation-report",
+    "rule_score": 0.8417,
+    "judge_score": 0.0,
+    "combined_score": 0.6734,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "triangulation_clarity_across_visible_artifacts",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "submitted_validation_report_text"
+        ]
+      },
+      {
+        "id": "recommendation_actionability_grounded_in_visible_evidence",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "submitted_validation_report_text"
+        ]
+      },
+      {
+        "id": "triage_consistency_and_handoff_clarity",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "submitted_validation_report_text"
+        ]
+      },
+      {
+        "id": "unsupported_speculation_avoidance",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "submitted_validation_report_text"
+        ]
+      },
+      {
+        "id": "unresolved_blocker_clarity",
+        "verdict": "fail",
+        "source": "workbuddy_missing_required_evidence",
+        "missing_artifact_ids": [
+          "submitted_validation_report_text"
+        ]
+      }
+    ]
+  },
+  {
+    "task": "contract-extract-L3-014",
+    "rule_score": 0.9231,
+    "judge_score": 0.8,
+    "combined_score": 0.9046,
+    "rule_weight": 0.85,
+    "judge_weight": 0.15,
+    "verdicts": [
+      {
+        "id": "contract_rows_preserve_file_identity_and_status",
+        "verdict": "pass",
+        "reason": "Clean rows include each source filename, while the 异常文件 sheet lists duplicate and incomplete files with reasons.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_row_level_evidence_keys_present",
+        "verdict": "pass",
+        "reason": "Each contract row has a filename key, such as contract_001.docx, and exceptions also identify source filenames.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_final_outputs_have_audit_trail",
+        "verdict": "fail",
+        "reason": "The workbook shows extracted values and filenames but no source clauses, locations, or intermediate evidence linking each value to its source.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_source_granularity_is_sufficient",
+        "verdict": "pass",
+        "reason": "Distinct filenames such as contract_001.docx and contract_002.txt identify individual supporting files.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The summary contains populated contract numbers, parties, dates, month values, amounts, and payment terms.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "contract_amounts_preserve_currency_and_clause_context",
+        "verdict": "fail",
+        "reason": "Amounts such as 28405.48 appear under a generic 金额 header with no currency, amount type, or clause context.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "contract_terms_keep_amount_date_and_party_context",
+        "verdict": "pass",
+        "reason": "Each row keeps its parties, signing date, amount, and payment term together under one contract number and filename.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "corrupt_or_duplicate_contracts_do_not_leak_into_clean_rows",
+        "verdict": "pass",
+        "reason": "Duplicate files are listed in 异常文件 with duplicate contract numbers, while the clean table retains one corresponding row.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "pass",
+        "reason": "No summary or rollup claims are shown that conflict with the detailed contract rows.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "duplicate_and_exception_handling_visible",
+        "verdict": "pass",
+        "reason": "The exception sheet explicitly lists duplicate files and parse or missing-field reasons, including draft_contract.json and scan_contract_broken.txt.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "cross-week-dashboard-migration",
+    "rule_score": 0.6176,
+    "judge_score": 1.0,
+    "combined_score": 0.6941,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "cross_artifact_operational_coherence",
+        "verdict": "pass",
+        "reason": "The report, dashboard, and reminders consistently keep OPS-214 open, OPS-219 deferred pending roster, OPS-224 blocked on external approval, OPS-230 as follow-up before the Friday check-in, and OPS-236 watch-only. They identify Tuesday morning as the shifted reminder slot and treat the check-in as timing context, not completion evidence.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_priority_and_conflict_explanation_quality",
+        "verdict": "pass",
+        "reason": "The report and dashboard explain that OPS-214 remains unresolved because the timeout still reproduces and larger-sample evidence is needed; the old export’s “resolved?” label is lower-confidence context. Completed items are explicitly historical, while reminders exclude watch-only and noise items.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "reminder_actionability_without_overclaiming",
+        "verdict": "pass",
+        "reason": "The draft gives OPS-219 and OPS-230 Tuesday morning timing with their roster and no-meeting or partner-check-in boundaries, and OPS-224 a Monday follow-up while retaining its external-approval blocker. It labels OPS-236, plant-move noise, and stale export as not to send.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "crypto-backtest-chain-L4-002",
+    "rule_score": 0.4545,
+    "judge_score": 0.3333,
+    "combined_score": 0.4303,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "expanded_denominators_are_not_ambiguous",
+        "verdict": "fail",
+        "reason": "Summary metrics such as total_trades and win_rate do not name their included population, and exception rows do not say how excluded events affect those totals.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_denominator_matches_visible_populations",
+        "verdict": "fail",
+        "reason": "summary_metrics reports 20 trades and rates without a denominator boundary; trade_log also contains duplicate entries for shared fills such as evt-70038 and evt-70058, while exception rows do not reconcile their effect to the totals.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "performance_summary_names_included_trade_population",
+        "verdict": "fail",
+        "reason": "The summary lists performance totals without stating which trade rows or forced exits are included; it also gives final cash of 149431.16 while the final NAV row shows 146831.354.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "replay_source_trace_names_required_input_families",
+        "verdict": "fail",
+        "reason": "Trade rows have blank entry_order_ref and entry_signal_ref for t-0001, and source_trace lists generic signal_events[] rather than a specific signal; daily traces also cite account_ledger cash without a matching row-level ledger reference.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The workbook contains task-specific trades, dates, symbols, exception events, rule names, metrics, and source identifiers across all six requested sheets.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "backtest_outputs_do_not_hide_invalid_or_skipped_events",
+        "verdict": "fail",
+        "reason": "Exceptions are listed, but summary metrics do not state whether they are excluded; trade_log also includes 20 trades despite the summary denominator being unspecified, and state_audit records force exits inconsistently as both BLOCKED and PASS.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "daily_position_rows_have_trace_status_and_unrealized_context",
+        "verdict": "fail",
+        "reason": "No-position rows show zero market value and unrealized PnL, but status only says none and does not label those zeros as not applicable or true zero; the first snapshot is also 2026-01-05 despite an initial-state row dated Jan 5.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "daily_positions_and_nav_denominators_are_visible",
+        "verdict": "fail",
+        "reason": "Daily position rows are only shown from 2026-01-05 onward and NAV starts the same day, with no explanation of omitted dates; the NAV closed_trades_to_date is 20 from its first row despite trade close dates occurring later.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "no_live_market_or_actionable_advice",
+        "verdict": "pass",
+        "reason": "The workbook shows offline replay data and audit tables, with no live market claims or instructions to place or modify trades.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "rule_exception_reasoning_visible",
+        "verdict": "pass",
+        "reason": "rule_exceptions gives event times, exception types, decisions, severity, related refs, and traces; state_audit also shows before/after state for many events.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_represents_replay_audit",
+        "verdict": "pass",
+        "reason": "The six sheets are organized as trade_log, daily_positions, nav_curve, rule_exceptions, summary_metrics, and state_audit, consistent with a static replay audit.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_no_silent_zero_blank_or_default",
+        "verdict": "fail",
+        "reason": "Critical blanks and zeros are unexplained, including blank entry order refs and zero entry fees across trade rows; no-position daily rows use zero valuation and unrealized PnL without an explicit not-applicable label.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "daily-creation-checkpoint-recovery",
+    "rule_score": 0.5625,
+    "judge_score": 0.0,
+    "combined_score": 0.5344,
+    "rule_weight": 0.95,
+    "judge_weight": 0.05,
+    "verdicts": [
+      {
+        "id": "recovery_summary_auditability_and_calibration",
+        "verdict": "fail",
+        "reason": "恢复说明按“重复抑制、纠偏、阻塞保留、草稿保护”分段并引用了本地路径，但声称“三个文件在 item_id、status marker、next_action 层面保持一致”，又只说 capture 补充了文件清单和 no-live-service confirmation；没有具体说明哪些工作是有限推进或仍待 review，也没有展示 no-live-service 边界的确认内容，因而不足以让审阅者审计同步程度和受限状态。",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "deepep-api-source-anchor-explain",
+    "rule_score": 0.6667,
+    "judge_score": 0.4,
+    "combined_score": 0.6134,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "semantic_source_fidelity_from_visible_anchors",
+        "verdict": "fail",
+        "reason": "The report gives a detailed call chain and backend conditions, but the visible cited source extract contains only the Python function signature and docstring, not the cited binding, queue, or selector implementations. The report’s own caveats also conflict with its confident claims about those paths.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_vs_doc_conflict_reasoning_and_priority",
+        "verdict": "fail",
+        "reason": "It identifies a specific conflict between the historical 0.8 note’s “device-first” description and the claimed selector conditions, and says current source takes priority. But the cited evidence supplied here does not expose either the note or selector text, so that conflict reasoning cannot be confirmed from the allowed evidence.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "candidate_exclusion_and_downgrade_quality",
+        "verdict": "pass",
+        "reason": "The report explains why examples, tests, tools, notes, collective bindings, and CUDA kernels are contextual or insufficient alone, and distinguishes their roles, for example noting that tests verify symbol resolution or queue behavior rather than the end-to-end route_async path.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "caveat_discipline_for_partial_confirmation",
+        "verdict": "fail",
+        "reason": "The report marks queue drain timing and route ticket formatting unresolved, while public source-family context lists local runtime and ticket implementation files. Its claims about selector branches and backend implementations are also not supported by the visible extracted source text.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "explanation_coherence_role_boundaries",
+        "verdict": "pass",
+        "reason": "The report presents distinct API, export, generated binding, C++ bridge, runtime submission, queue, and backend roles, with a coherent handoff narrative and separate discussion of tests and contextual materials.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "delivery-package-readonly-diff",
+    "rule_score": 0.9157,
+    "judge_score": 0.5,
+    "combined_score": 0.8326,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "evidence_hierarchy_and_noisy_log_discipline",
+        "verdict": "pass",
+        "reason": "The report prioritizes the manifest and current listing/tree, corroborates the 82 entries with archive metadata, uses current hash notes for mismatches, and explicitly treats the comparison log as partial/aborted while excluding its stale release lines.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "finding_bucket_narrative_self_consistency",
+        "verdict": "fail",
+        "reason": "MF-0039, MF-0007, and MF-0018 each appear under both missing and inconclusive, while their observed variants also appear under extra. The missing rows say they are classified as inconclusive, so the bucket narratives assign competing meanings without resolving the duplication.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "cross_bucket_variant_reconciliation_clarity",
+        "verdict": "fail",
+        "reason": "The three path variants are each described across missing, extra, and inconclusive, but the report does not clarify whether these are single variant issues or separate blockers. Its open question groups them together without reconciling those bucket assignments.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "handoff_actionability_and_blocker_prioritization",
+        "verdict": "pass",
+        "reason": "The recommendation identifies changed, extra, and unresolved inconclusive items as blockers, and the open questions request concrete review of path variants, extra files, and hash differences. It also confirms the read-only, no-repack boundary.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "device-incident-attribution-L5-037",
+    "rule_score": 0.5622,
+    "judge_score": 0.2353,
+    "combined_score": 0.4641,
+    "rule_weight": 0.7,
+    "judge_weight": 0.3,
+    "verdicts": [
+      {
+        "id": "expanded_critical_blanks_have_record_context",
+        "verdict": "fail",
+        "reason": "The report leaves critical fields unexplained, including `root_supplier_lot: \"n/a\"` for recall-affected firmware incidents, while the stated firmware exception only permits that value for committed attributions.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_duplicate_handling_is_visible",
+        "verdict": "fail",
+        "reason": "The provenance index assigns evidence from INC-E-05 and INC-E-06 to both incidents, and INC-E-08 and INC-E-09 likewise share evidence, without explaining whether those records are duplicates or distinct cases.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_repeated_text_is_not_hiding_missing_reasoning",
+        "verdict": "fail",
+        "reason": "All 12 invalidation entries use the same recall disposition, including incidents whose original attributions name firmware, battery, and hinge components, without record-specific reasoning.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "incident_population_denominator_is_auditable",
+        "verdict": "fail",
+        "reason": "The summary reports 6 committed, 3 review, and 12 affected incidents, but gives no total, in-scope, or out-of-scope population counts; the displayed categories also cannot be reconciled to the 21 incident IDs in the provenance index.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "serial_alias_resolution_preserves_batch_context",
+        "verdict": "pass",
+        "reason": "Each listed alias resolution includes an observed serial, canonical variant, production batch, change-log basis, and rejected alternative, for example `DV-A2-EARLY-0017` with `CR-008`.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "alias_and_retroactive_logic_explained",
+        "verdict": "pass",
+        "reason": "Alias resolutions cite change-log records and rejected mappings, while the recall entry lists affected incident IDs with original attribution and new disposition for each.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The report contains case-specific incidents, component and supplier-lot labels, dated recall details, workbook row keys, and change-log IDs.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "attribution_decisions_are_auditable",
+        "verdict": "pass",
+        "reason": "Committed records identify incidents, components, lots, confidence, and concrete evidence keys; for example INC-E-02 cites intake row, RMA-002, and CR-001.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "attribution_summary_reconciles_committed_review_and_invalidated",
+        "verdict": "fail",
+        "reason": "The summary's 12 affected incidents are not reconciled with the 6 committed and 3 review records, and its 3 distinct supplier lots conflicts with six lots shown in `supplier_summary`.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "committed_incidents_exclude_review_only_and_revoked_alias_cases",
+        "verdict": "fail",
+        "reason": "INC-W-09 is committed using CR-X3 while its provenance also includes another incident's CR-X3 context, and the report provides no evidence explaining how that possible alias or supplier ambiguity is resolved.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "critical_blank_or_na_fields_are_explained",
+        "verdict": "fail",
+        "reason": "Recall entries assign `supplier_lot: \"n/a\"` to firmware incidents without a case-specific explanation, and the invalidation dispositions do not explain the basis for treating each component as affected by the recalled lot.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "review_queue_captures_supplier_alias_batch_and_return_conflicts",
+        "verdict": "fail",
+        "reason": "The review queue contains only three incidents and omits visible recall-boundary and supplier/alias cases, including incidents whose original attributions differ from the recalled lot or whose evidence keys overlap other incident rows.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "review_queue_reason_codes_match_missing_evidence",
+        "verdict": "fail",
+        "reason": "INC-E-06 and INC-E-09 use the allowed alias-conflict code, but their listed blockers and generic next actions do not identify the specific arbitration record or effective-date comparison needed to resolve the conflicts.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "committed_attributions_show_supplier_variant_and_evidence_chain",
+        "verdict": "fail",
+        "reason": "Committed records show variant, component, lot, and evidence, but omit device or serial identity and supplier name; ambiguous or recall-affected incidents are also not consistently kept out of committed results.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_json_reason_fields_are_record_specific",
+        "verdict": "fail",
+        "reason": "Review reasons are expressed through codes and generic next actions rather than record-specific evidence or conflict explanations, and every recall disposition is identical despite different original attributions.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_scope_boundary_for_excluded_records_visible",
+        "verdict": "fail",
+        "reason": "The report names excluded evidence categories but does not identify which workbook incidents were out of scope or provide their exclusion reasons.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_summary_uses_same_scope_as_details",
+        "verdict": "fail",
+        "reason": "The summary's `distinct_supplier_lots` is 3 although six supplier-lot rows appear in `supplier_summary`, and the incident totals do not align with the detailed committed, review, and invalidation lists.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "drug-inventory-split-L2-006",
+    "rule_score": 1.0,
+    "judge_score": 1.0,
+    "combined_score": 1.0,
+    "rule_weight": 0.85,
+    "judge_weight": 0.15,
+    "verdicts": [
+      {
+        "id": "expanded_exception_summary_has_category_breakdown",
+        "verdict": "pass",
+        "reason": "The visible records are grouped into named sheets, including 出库盘亏, 效期预警, and 其他记录, with inventory fields retained for manual grouping.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_source_population_is_named",
+        "verdict": "pass",
+        "reason": "The workbook identifies the source as inventory_workbook.xlsx and shows record IDs RX-202602-20001 through RX-202604-20300 with record dates.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_summary_is_reconcilable_to_details",
+        "verdict": "pass",
+        "reason": "There are no summary claims to reconcile; the three sheet labels map directly to detailed rows with RECORD_ID and classification fields.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The sheets contain populated drug names, stock changes, expiry months, vendors, channels, and record IDs.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "categories_and_exceptions_visible",
+        "verdict": "pass",
+        "reason": "The split is visible in the sheet names 出库盘亏, 效期预警, and 其他记录.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "deliverable_is_clean_table",
+        "verdict": "pass",
+        "reason": "Evidence shows tabular headers and populated rows, with no process narration or debugging output.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_canonical_labels_or_mapping_exist",
+        "verdict": "pass",
+        "reason": "The output uses stable sheet labels and retains source fields such as DRUG_CLASS, STOCK_CHANGE, and CHANNEL to interpret categories.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "priority_bucket_rule_basis_is_visible",
+        "verdict": "pass",
+        "reason": "效期预警 rows retain EXPIRY_ALERT_MONTHS, DRUG_CLASS, VENDOR, CHANNEL, and STOCK_CHANGE, the fields needed to check the stated rule.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "residual_inventory_bucket_is_not_treated_as_unexplained_exception",
+        "verdict": "pass",
+        "reason": "其他记录 retains the original inventory columns, including stock change, expiry months, class, vendor, and channel.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_is_inventory_split",
+        "verdict": "pass",
+        "reason": "All three sheets contain drug inventory records with movement and expiry fields.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_zero_values_are_disambiguated",
+        "verdict": "pass",
+        "reason": "The displayed zero values occur in numeric STOCK_CHANGE or EXPIRY_ALERT_MONTHS fields, where zero is a valid decision value; blanks are not shown.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "effective-control-state-L5-036",
+    "rule_score": 0.3099,
+    "judge_score": 0.5556,
+    "combined_score": 0.3836,
+    "rule_weight": 0.7,
+    "judge_weight": 0.3,
+    "verdicts": [
+      {
+        "id": "control_control_level_source_doc_names_winning_authority",
+        "verdict": "fail",
+        "reason": "Control-level sources concatenate multiple documents, for example C1 lists the base SOP and signed appendix, while C2 lists two notices, without naming a single winner.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "current_source_docs_exclude_inactive_material",
+        "verdict": "fail",
+        "reason": "metadata.source_docs_used includes archived revisions, an unsigned draft, and the FAQ alongside active sources, without separating them.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "metadata_source_docs_have_current_vs_inactive_breakdown",
+        "verdict": "fail",
+        "reason": "source_docs_used is one undifferentiated list containing active documents and inactive background sources such as archived revisions and the unsigned draft.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "active_control_population_matches_metadata_counts",
+        "verdict": "fail",
+        "reason": "Counts appear in summary rather than metadata, and the claimed 3 appendix bindings conflicts with the three appendix IDs whose detailed bindings total six control bindings.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "control_appendix_bindings_use_ids_with_role_rows",
+        "verdict": "pass",
+        "reason": "Controls use compact APP-A/APP-B/APP-C IDs, and appendix_bindings maps them to controls and required rows, including role rows such as ROLE-NIGHT-QA.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "control_authority_level_uses_canonical_tokens",
+        "verdict": "fail",
+        "reason": "Control-level authority_level values combine prose and competing tokens, such as C1's \"signed_site_appendix > base_sop\".",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_denominator_matches_visible_populations",
+        "verdict": "fail",
+        "reason": "The summary gives totals but no denominator definition, and its appendix-binding count does not match the visible control-to-appendix bindings.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "reason": "C2 names NOTICE22A-C2.4 as active, but the summary's retroactive-action key findings label the actions RT-ACT-001/002 while the detailed records use RET-ACT-001/002.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_summary_uses_same_scope_as_details",
+        "verdict": "fail",
+        "reason": "The summary claims three total appendix bindings, while details show six control bindings across APP-A, APP-B, and APP-C.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "active_control_steps_have_required_provenance_fields",
+        "verdict": "pass",
+        "reason": "Active steps include step IDs, text, source document, authority, target roles, and training-gate context, for example NOTICE22-C2.1.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "active_step_source_names_winning_authority_not_superseded_base",
+        "verdict": "pass",
+        "reason": "The active C2 threshold step cites RC-2026-22, and the superseded 10-minute RC-2026-23 target-role step is explicitly listed as training-pending.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The artifact contains concrete procedure IDs, site and role names, dates, training evidence, notice rules, and incident records.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "authority_order_is_applied_consistently_to_conflicts",
+        "verdict": "pass",
+        "reason": "The RC-2026-23 conflict keeps the 12-minute RC-2026-22 step active for the target role due to pending training, while listing the trained warehouse role's 10-minute override.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "conflict_resolution_is_traceable",
+        "verdict": "pass",
+        "reason": "Conflict entries cite concrete source documents and step IDs and explain the basis, such as RC-2026-22A superseding the 14-day incident rule with a 7-day window.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "control_retroactive_actions_bind_window_and_record_pair",
+        "verdict": "pass",
+        "reason": "Both retroactive action records include notice issue/effective dates, affected and paired incident IDs and dates, trigger rule, severity change, and rationale.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "control_training_gate_and_role_override_dates_visible",
+        "verdict": "pass",
+        "reason": "The warehouse override cites TR-036-WH-23, its 2026-08-15 release, the 2026-08-18 notice effective date, and its effective-from date.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "inactive_controls_have_replacement_mapping",
+        "verdict": "pass",
+        "reason": "Inactive entries generally identify replacements and reasons, for example NOTICE23-C2.1 maps to the interim NOTICE22-C2.1 step and cites the unreleased target-role training.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "training_pending_controls_are_not_active_for_target_role",
+        "verdict": "pass",
+        "reason": "NOTICE23-C2.1 is excluded from active target-role steps and listed as training_pending_target_role with the 2026-08-30 release date.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "effective-sop-reconstruction-L5-034",
+    "rule_score": 0.7785,
+    "judge_score": 0.4118,
+    "combined_score": 0.6685,
+    "rule_weight": 0.7,
+    "judge_weight": 0.3,
+    "verdicts": [
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "reason": "Summary counts contradict the detail: 17 inactive steps are listed, while archive/draft exclusions are reported as 15 and FAQ clarifications as 17 despite only one inactive FAQ example.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_json_metadata_matches_records",
+        "verdict": "fail",
+        "reason": "The metadata lists eight source files, but `source_files_count` is 10; the artifact does not identify the other two business files.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "sop_inactive_steps_keep_original_source_and_replacement_target",
+        "verdict": "fail",
+        "reason": "Several replacements are not active steps visible in the artifact, including `N1-ROUTINE`, `BG-TRAIN-1`, and `BG-SITE-SIG-4`; draft rows also use null despite citing a conflict with current rules.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "sop_summary_counts_reconcile_to_effective_and_inactive_arrays",
+        "verdict": "fail",
+        "reason": "The visible arrays contain 17 inactive steps, 5 warnings, 4 appendix bindings, and 16 active steps, but summary counts for exclusions and FAQ clarifications do not reconcile to visible populations.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_row_level_evidence_keys_present",
+        "verdict": "pass",
+        "reason": "Effective steps and warnings carry source paths, section records have section IDs and authority levels, and appendix bindings identify table IDs and source files.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "sop_appendix_c_binds_to_temperature_and_escalation_sections",
+        "verdict": "fail",
+        "reason": "APP-C is bound only to S5, although S3 handles temperature deviation and the artifact says APP-C governs deviation levels and escalation.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_counts_have_named_denominators",
+        "verdict": "fail",
+        "reason": "Aggregate counts such as `faq_clarification_count` and `archive_or_draft_excluded_count` do not define their counted populations, and their values cannot be audited from the visible rows.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "appendix_bindings_are_explainable",
+        "verdict": "pass",
+        "reason": "Each appendix binding names its table, source document, and bound sections, and active sections reference tables such as S3 to APP-B and S4 to APP-D.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The artifact includes concrete SOP steps, notice NQI-2026-19's 20-minute threshold, regional addendum rules, appendix rows, and source paths.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "edge_case_decision_basis_is_specific",
+        "verdict": "pass",
+        "reason": "Exceptions have specific bases, such as the FAQ's 45-minute example being superseded by NQI-2026-19's 20-minute rule and APP-D being limited to cold-chain handoff fields.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "effective_sections_are_reconstructive",
+        "verdict": "pass",
+        "reason": "Five reconstructed sections include step IDs and text, sources, authority levels, warnings, table references, region, and replaced-step IDs.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "inactive_steps_are_retained_with_reason",
+        "verdict": "pass",
+        "reason": "Inactive archive, draft, FAQ, and addendum rows are retained with reasons, source paths, and replacement references or null.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "sop_appendix_required_rows_exclude_inactive_or_other_scope_rows",
+        "verdict": "fail",
+        "reason": "APP-B's required rows include entries such as `BG-B-VIP-EAST` and other BG rows without row-level status or evidence that each is current for this SOP scope; the binding notes do not establish their current status.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "sop_faq_clarifications_are_not_treated_as_hard_rule_overrides",
+        "verdict": "fail",
+        "reason": "The artifact correctly inactivates the old FAQ 45-minute example, but reports 17 FAQ clarifications without showing corresponding active clarification records or their limited format/terminology role.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "sop_notice_override_binding_status_is_visible",
+        "verdict": "fail",
+        "reason": "APP-B and APP-C are marked only `effective`; their notes mention NQI-2026-19 but the binding status does not distinguish notice-overridden bindings.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "sop_target_region_scope_is_not_overbroad",
+        "verdict": "pass",
+        "reason": "Every effective section declares `applicable_region` as 华东二仓, and regional steps identify the signed addendum as their source.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_label_vocabulary_is_consistent",
+        "verdict": "fail",
+        "reason": "The artifact uses `authority_level: \"mixed\"` for APP-B although the allowed authority vocabulary is specific authority sources, and mixes `inactive_archive` row labels with `archive` in excluded statuses without a mapping.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "execution-closeout-reconcile-L4-003-successor",
+    "rule_score": 0.3821,
+    "judge_score": 0.3,
+    "combined_score": 0.3657,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "discriminator_no_silent_default_for_failed_fields",
+        "verdict": "fail",
+        "reason": "Several zero values conceal unmatched or uncomputed decisions: confirmation rows for AC-C1009 and similar accounts show execution_qty=0 and execution_avg_price=0, while allocation rows such as IA-NAA show expected_alloc_qty=0 and expected_net_money=0 without a field-level reason.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_repeated_text_is_not_hiding_missing_reasoning",
+        "verdict": "fail",
+        "reason": "Many distinct historical confirmations repeat the generic note “Account … has no execution lifecycle data (likely test/historical account),” and exceptions repeatedly say “Conf TRDDET has no corresponding execution” without record-specific diagnosis.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "critical_blank_or_na_fields_are_explained",
+        "verdict": "fail",
+        "reason": "Critical fields are left blank without explanation, including supersession_note on most allocation rows and linked_exec_ids for unmatched confirmations; the rows do not consistently mark those blanks as review items.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "discriminator_exception_categories_match_hard_checks",
+        "verdict": "fail",
+        "reason": "The exception rows cover generic unknown state, quantity/cash mismatch, no matching execution, and position mismatch, but do not specifically categorize replacement-chain lineage, settlement state, blank portfolio explanations, or exception population denominator issues.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "execution_cancel_correct_chains_preserve_superseded_events",
+        "verdict": "fail",
+        "reason": "Lifecycle rows list some execution IDs but collapse replacement and correction chains into broad FILLED/CANCELLED states; for example AC-3107’s replacement lifecycle is simply FILLED, with no visible explanation of which prior events are superseded or their quantity/cash treatment.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_conflicts_have_winner_and_loser_context",
+        "verdict": "fail",
+        "reason": "The AC-8266 aggregate allocation row says it “supersedes ALR-ZHE,” but does not show the rejected allocation values or explain the resolution basis; other mismatch rows likewise show only a final status and deltas.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_major_sections_are_not_contradictory",
+        "verdict": "fail",
+        "reason": "The summary conflicts with detailed exception evidence: AC-3107 has a position break and allocation breaks in detail, yet summary total_exception_count is 0; similar zero exception totals appear for other accounts with listed breaks.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_zero_values_are_disambiguated",
+        "verdict": "fail",
+        "reason": "Zero quantities are used for unmatched execution and expected allocation values without clear semantics in the rows; for example AC-C1009 has execution_qty=0, and IA-NAA has expected_alloc_qty=0 despite reported allocation of 900.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "allocation_and_confirmation_breaks_are_not_marked_clean",
+        "verdict": "fail",
+        "reason": "The AC-8266 allocation row IA-NAK is labeled OK despite expected_alloc_qty 587.93 versus reported 550 and a 37.93 quantity delta; the row itself also notes aggregate allocated quantity 1450 versus executed quantity 1550.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "allocation_confirmation_and_position_breaks_have_row_level_keys",
+        "verdict": "pass",
+        "reason": "Break details carry traceable keys: confirmation rows identify account, symbol, dates and linked execution IDs where matched; allocation rows identify allocation_unit_id and linked lifecycle IDs where matched; position rows identify account, portfolio and symbol.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The workbook contains concrete closeout records for 2026-06-09/10, including account AC-3107, symbol 688201, execution IDs such as EVM-MRA, quantities, cash impacts, and reconciliation statuses.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "closeout_exception_rows_have_diagnosis_and_source_side",
+        "verdict": "fail",
+        "reason": "Exception rows identify a source_layer and generic diagnosis, but confirmation exceptions identify affected_ids only as “TRDDET,” without a unique confirmation row key or account/symbol; the repeated generic evidence note does not pinpoint the source record.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "closeout_exceptions_reconcile_to_lifecycle_rows",
+        "verdict": "fail",
+        "reason": "Lifecycle exceptions can often be traced by order ID, but confirmation exceptions cite only the repeated ID TRDDET and allocation exceptions cite allocation IDs without a corresponding lifecycle reference, so they do not reconcile consistently to lifecycle/source execution identifiers.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "exceptions_are_separated",
+        "verdict": "pass",
+        "reason": "The workbook has a dedicated exceptions sheet with source_layer, primary_cause, severity, affected_ids, and evidence_note, separating unresolved items from the detail reconciliation sheets.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "execution_position_close_balances_three_sources",
+        "verdict": "pass",
+        "reason": "Position rows show opening_qty, execution_delta_qty, allocation_delta_qty, expected_closing_qty, statement_closing_qty, break_type, and evidence_note for each account/portfolio/symbol.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "execution_summary_is_by_account_portfolio_and_domain",
+        "verdict": "fail",
+        "reason": "The summary has account and portfolio domain counts, but total_exception_count is zero for accounts with detailed exceptions, and its counts do not provide a reliable denominator or reconcile to the detail sheets.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "lifecycle_final_state_preserves_replacement_cancel_and_zero_quantity_semantics",
+        "verdict": "fail",
+        "reason": "Final states use broad labels such as FILLED, CANCELLED, PENDING, UNKNOWN, and ARCHIVED; replacement and correction semantics are not preserved in the final-state label or an accompanying mapping.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "lifecycle_rows_keep_exec_ids_final_state_and_quantity_context",
+        "verdict": "pass",
+        "reason": "Lifecycle rows keep order_ids, exec_ids, final_state, executed_qty, side, symbol, and cash impact together; for example AC-4820-OMS-HC shows three execution IDs, PARTIAL_WITH_REMAINING, and executed_qty 300.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "lifecycle_rows_preserve_source_event_chain",
+        "verdict": "fail",
+        "reason": "Although execution IDs are listed, rows do not expose cancel, correction, or replacement references as a traceable event chain; the AC-3107 replacement row is labeled FILLED without those references or their effects.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_is_closeout_reconciliation",
+        "verdict": "pass",
+        "reason": "The workbook is structured as an operational closeout deliverable with execution_lifecycle, confirmation_reconcile, allocation_reconcile, position_close, exceptions, and summary sheets.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "fund-product-table-normalize-L3-017",
+    "rule_score": 0.7849,
+    "judge_score": 0.4444,
+    "combined_score": 0.7168,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "expanded_xlsx_summary_not_only_sheet_count",
+        "verdict": "fail",
+        "reason": "The evidence shows four detail sheets but no workbook summary that reconciles populations, totals, statuses, or quality issues.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "product_source_trace_is_granular",
+        "verdict": "fail",
+        "reason": "Product traces are only PDF filenames, and fee traces only say raw_fee_table.xlsx, with no page, table, row, or key locator.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_success_summary_does_not_hide_failures",
+        "verdict": "fail",
+        "reason": "No success summary is shown; the workbook has unresolved FP-1303 missing management/comprehensive fee exceptions without a reader-facing summary.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "normalization_scope_and_exceptions_are_visible",
+        "verdict": "fail",
+        "reason": "Exceptions are listed, but there is no visible included-source inventory or scope/omission reconciliation; row traces are only filenames.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "normalized_values_are_not_freeform_claims",
+        "verdict": "pass",
+        "reason": "Normalized product, risk, and fee values appear in structured columns, with exceptions recorded separately.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "product_strategy_and_risk_text_are_source_specific",
+        "verdict": "pass",
+        "reason": "Product rows include distinct strategy and risk descriptions, such as FP-1302's high-equity growth strategy and FP-1303's balanced allocation.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_and_exception_context_visible",
+        "verdict": "pass",
+        "reason": "Rows identify source filenames, and missing fees and the channel waiver note are visibly listed in the exceptions sheet.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_is_normalized_product_table",
+        "verdict": "pass",
+        "reason": "The artifact contains tabular normalized product, fee, and risk mappings for four fund share classes.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "fee_taxonomy_is_normalized_not_source_label_copy",
+        "verdict": "fail",
+        "reason": "Several subscription fee values use percent_per_year, and FP-1303's channel discount is represented as an active zero fee, obscuring normalized unit/status semantics.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "furniture-refinish-L3-016",
+    "rule_score": 0.8,
+    "judge_score": 0.7857,
+    "combined_score": 0.7957,
+    "rule_weight": 0.7,
+    "judge_weight": 0.3,
+    "verdicts": [
+      {
+        "id": "expanded_source_population_is_named",
+        "verdict": "pass",
+        "reason": "Names 《家具翻新手册》第三部分“上漆翻新” as the source and states that Parts 1 and 2 are excluded.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_duplicate_handling_is_visible",
+        "verdict": "pass",
+        "reason": "The report presents a single ordered workflow and a 12-item materials list, with no duplicate or overlapping records requiring reconciliation.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_exception_summary_has_category_breakdown",
+        "verdict": "pass",
+        "reason": "The common-issues table categorizes six failure modes, including 流挂, 橘皮, 发白, and 附着力差, with causes and remedies.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_final_outputs_have_audit_trail",
+        "verdict": "fail",
+        "reason": "The report provides instructions and recommendations but no traceable path from source evidence through intermediate fields to decisions.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_source_trace_uses_realistic_identifiers",
+        "verdict": "pass",
+        "reason": "It identifies the source as 《家具翻新手册》第三部分“上漆翻新” and includes concrete section names and material details.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The report contains six detailed painting steps and a populated 12-row materials table with uses.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "reason": "The report says every painting step requires 400-grit sanding between coats, while its process only calls for sanding between primer coats and after the first topcoat.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "edge_case_decision_basis_is_specific",
+        "verdict": "pass",
+        "reason": "Visible cautions have specific bases, such as stopping when humidity exceeds 70% and extending drying below 10°C.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_material_sections_have_nonempty_content",
+        "verdict": "pass",
+        "reason": "The workflow, recommendations, and materials sections all contain substantive details.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_reviewer_can_audit_without_recomputing_everything",
+        "verdict": "pass",
+        "reason": "Each step includes actions, timing or conditions, and completion criteria; the materials table states each item's purpose.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_summary_uses_same_scope_as_details",
+        "verdict": "fail",
+        "reason": "The materials section claims coverage of the full painting process, but the 12-item list includes repair putty and omits some materials mentioned in the detailed process, such as clean water.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "recommendations_are_specific_and_supported",
+        "verdict": "pass",
+        "reason": "Recommendations specify actions and conditions, including two to three clear-coat layers depending on furniture use and humidity limits.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "report_matches_refinish_task",
+        "verdict": "pass",
+        "reason": "It is a final furniture-refinishing report focused on painting workflow, advice, and a materials purchasing list.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "uncertainties_and_constraints_are_not_hidden",
+        "verdict": "pass",
+        "reason": "The report states temperature and humidity constraints, drying-time ranges, and the seven-day final-hardness period.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "handbook-notice-insert-L3L4-030",
+    "rule_score": 0.8312,
+    "judge_score": 0.5,
+    "combined_score": 0.7318,
+    "rule_weight": 0.7,
+    "judge_weight": 0.3,
+    "verdicts": [
+      {
+        "id": "expanded_duplicate_handling_is_visible",
+        "verdict": "fail",
+        "reason": "The three updates have IDs, but the artifact does not address duplicate or overlapping records or show a basis for deduplication.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_exception_examples_are_covered",
+        "verdict": "fail",
+        "reason": "There are no fields or notes for inactive or superseded notices, duplicate insertions, missing sections, or unresolved placement.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_status_reason_source_triplet_present",
+        "verdict": "fail",
+        "reason": "Updates include source files and anchors, but no explicit status or per-record reason.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "unchanged_and_excluded_sections_have_reasons",
+        "verdict": "fail",
+        "reason": "Unchanged headings are listed without reasons; excluded text has descriptions but no explicit exclusion basis for each item.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "Records include specific notice IDs, section anchors, effective date, update text, and source file.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "pass",
+        "reason": "The summary counts of 1 paragraph, 1 numbered list, and 1 table row match the three detailed updates.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "inserted_and_unchanged_sections_are_distinguished",
+        "verdict": "pass",
+        "reason": "Inserted updates, unchanged sections, and excluded notice text appear in separate JSON fields.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "update_records_are_source_bound",
+        "verdict": "pass",
+        "reason": "Each update record includes its update ID, target section, insertion anchor, and source PDF filename.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_json_reason_fields_are_record_specific",
+        "verdict": "fail",
+        "reason": "No record-specific reason fields are present.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_row_level_evidence_keys_present",
+        "verdict": "pass",
+        "reason": "Each update includes row-level identifiers, section placement, and source document; metadata adds the notice ID and effective date.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "health-quote-L2-003",
+    "rule_score": 0.8095,
+    "judge_score": 0.5,
+    "combined_score": 0.7631,
+    "rule_weight": 0.85,
+    "judge_weight": 0.15,
+    "verdicts": [
+      {
+        "id": "expanded_clean_and_exception_populations_separated",
+        "verdict": "fail",
+        "reason": "There is no visible exception or review section; the workbook shows quote lines and a category rollup only.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_status_reason_source_triplet_present",
+        "verdict": "fail",
+        "reason": "Quote rows show item, description, and price, but no status, reason, or source evidence key.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The workbook contains 80 specific service lines, identifiers HQ-001 through HQ-080, descriptions, and prices.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "reason": "The summary lists categories four and five by name, while the detail rows identify them only as “健康数据平台与分析类” and “增值服务与运营保障类,” without the requested ordinal category labels.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "every_visible_quote_module_has_detail_rows",
+        "verdict": "pass",
+        "reason": "All five summarized service groups have corresponding detail rows, including HQ-049 through HQ-064 and HQ-065 through HQ-080.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "no_medical_or_policy_overreach",
+        "verdict": "pass",
+        "reason": "The artifact is a quote table with service descriptions and prices; it adds no advice or unsupported conclusions.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_text_anomalies_are_preserved_without_guessing",
+        "verdict": "pass",
+        "reason": "The final visible description remains truncated as “运营维,” with no completion added.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_summary_rollups_preserve_minor_but_material_exceptions",
+        "verdict": "fail",
+        "reason": "The rollup includes only category subtotals and has no exception or review notes for interpreting the quote lines.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "html-report-quadrant-ppt",
+    "rule_score": 0.7821,
+    "judge_score": 0.5,
+    "combined_score": 0.7257,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "JQ-01_source_grounded_quadrant_synthesis",
+        "verdict": "fail",
+        "reason": "Q3 has a supported budget judgment and Q4 has a staffing-risk/action judgment, but the quadrant summaries show Q1 and Q2 lack locally associated source bindings, and the required workbook metric rows are unavailable, so four-role synthesis grounded across the supplied evidence is insufficient.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "JQ-02_revision_chronology_conflict_resolution",
+        "verdict": "pass",
+        "reason": "Visible text labels Q3’s 89% as a Q3 forecast risk, not current actual, and Q4 rejects the superseded “全部稳定扩围” claim; Q1 identifies 15,980 as prior-quarter old-draft context.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "JQ-03a_metric_direction_status_interpretation",
+        "verdict": "pass",
+        "reason": "The visible claims align with the public direction/status summaries: reach and repeat share rise, processing time and backlog fall, budget execution and commitment are distinguished, and the 89% forecast is labeled a risk annotation.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "JQ-03b_decision_action_overclaim_discipline",
+        "verdict": "pass",
+        "reason": "Q4 frames staffing gaps as risks and specifies a first-week review action; the 64-item queue is explicitly not described as closed, and the forecast is not presented as a completed result.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "JQ-04_cross_quadrant_role_separation_non_duplication",
+        "verdict": "fail",
+        "reason": "Q1 and Q2 excerpts contain the same selected shape indexes and no scoped provenance, while the scoped summaries show Q3/Q4 content bundled together; the evidence does not establish four distinct locally bound sections.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "JQ-05_board_readable_compression_auditable_provenance",
+        "verdict": "fail",
+        "reason": "Visible text is concise and density checks pass, but provenance is absent for Q1/Q2 and the per-quadrant summary reports only H-304/CH-02 for Q3 and H-402/CH-04 for Q4, leaving auditability incomplete.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "indicator-window-rules-L4-005",
+    "rule_score": 0.5614,
+    "judge_score": 0.5,
+    "combined_score": 0.5491,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "expanded_summary_uses_same_scope_as_details",
+        "verdict": "fail",
+        "reason": "Summary reports 160 review rows, while the detail sheets each show 160 data rows plus a header (161 rows total), so its stated total does not match the visible detail population.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_major_sections_are_not_contradictory",
+        "verdict": "fail",
+        "reason": "Summary says override_row_count is 67, but the visible risk_overrides rows show 42 rows with final_label differing from pre_override_signal.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_retroactive_or_backdated_effects_are_marked",
+        "verdict": "pass",
+        "reason": "Visible overrides are keyed to their trade_date and review_time, with reasons such as “停牌状态：True” and “风险警示有效”; no backdated effects are evident.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_denominator_matches_visible_populations",
+        "verdict": "fail",
+        "reason": "Summary count review_row_count is 160, but the detail sheets display 160 records and the reported category counts do not reconcile: 83 qualified + 5 watch + 54 no-signal + 18 insufficient = 160, while ready_row_count is 142.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_exception_rows_have_repair_path",
+        "verdict": "fail",
+        "reason": "Insufficient-history rows identify affected securities and dates, but give only the generic reason “历史数据不足，无法计算完整指标” without specifying missing evidence or a review cue.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "rule_state_columns_are_not_raw_numbers_or_formulas",
+        "verdict": "fail",
+        "reason": "threshold_case contains raw comparison expressions such as “close >= MA20 and MA20 > prev_MA20,” rather than a normalized categorical state or mapping.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "signal_labels_explain_comparison_state",
+        "verdict": "pass",
+        "reason": "Rows expose interpretable states such as “>= MA20,” “< MA20,” “sufficient,” “insufficient_history,” and session labels such as “PM_EOD” and “AM_MID.”",
+        "source": "codex_luna"
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "reason": "The summary reports 67 override rows, but the visible override rows show 42 final labels changed from their pre-override signals.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The workbook includes populated rows with specific securities, dates, MA20/ATR14 values, base signals, and halt/risk override reasons.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "each_review_row_has_history_status_and_close_relation",
+        "verdict": "pass",
+        "reason": "Indicator rows include history_status and close_vs_ma; for example FQ1005.SZ on 2026-04-17 is marked insufficient_history.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "edge_case_decision_basis_is_specific",
+        "verdict": "fail",
+        "reason": "The visible insufficient-history exception rows do not specify which input history is missing or how to investigate it; their reason is only “历史数据不足，无法计算完整指标.”",
+        "source": "codex_luna"
+      },
+      {
+        "id": "final_signal_preserves_rule_and_override_chain",
+        "verdict": "pass",
+        "reason": "The workbook separately records base_signal, pre_override_signal, halt_status, risk_status, final_label, and override_reason for the same keyed rows.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "indicator_current_bar_included_in_ma_atr_context",
+        "verdict": "pass",
+        "reason": "Current close and TR appear alongside MA20 and ATR14 in each indicator row, for example FQ1001.SZ on 2026-04-17.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "indicator_previous_trade_date_uses_calendar_basis",
+        "verdict": "pass",
+        "reason": "Rows show prev_trade_date and prev_ma20; for example the 2026-04-20 record points to 2026-04-17, the prior visible trading date across the weekend.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "indicator_risk_overrides_preserve_pre_override_signal",
+        "verdict": "pass",
+        "reason": "Override rows include pre_override_signal, halt_status, risk_status, override_reason, and final_label; FQ1001.SZ on 2026-04-22 retains its qualified signal and halt override.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "indicator_signal_reason_names_threshold_case",
+        "verdict": "pass",
+        "reason": "Signal rows include specific reasons and threshold cases, such as “close >= MA20 and MA20 > prev_MA20” for qualified signals and “close < MA20” for no_signal.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "no_trading_advice",
+        "verdict": "pass",
+        "reason": "The visible workbook reports rule labels and status reasons, with no buy/sell instruction, target price, or portfolio recommendation.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "override_summary_preserves_pre_override_population",
+        "verdict": "pass",
+        "reason": "risk_overrides retains the pre_override_signal for every visible row, including signals later blocked by halt or market risk.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "summary_reconciles_signal_and_override_counts",
+        "verdict": "fail",
+        "reason": "Summary says 67 rows differ after override, but only 42 visible rows have final_label different from pre_override_signal.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "canonical_rule_state_tokens_or_mapping_are_preserved",
+        "verdict": "fail",
+        "reason": "Close-vs-MA uses labels like “>= MA20” and threshold_case uses formula-like expressions, with no visible mapping to canonical state tokens.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_normalized_fields_keep_raw_context",
+        "verdict": "fail",
+        "reason": "Risk and halt state cells show normalized booleans but provide no mapping or source wording that explains how those values correspond to the source market-status records.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_repeated_text_is_not_hiding_missing_reasoning",
+        "verdict": "fail",
+        "reason": "Insufficient-history records repeat the generic reason “历史数据不足，无法计算完整指标” without row-specific missing-data evidence or investigation detail.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "inspection-notice-provenance-L4-032",
+    "rule_score": 0.8397,
+    "judge_score": 0.6364,
+    "combined_score": 0.7787,
+    "rule_weight": 0.7,
+    "judge_weight": 0.3,
+    "verdicts": [
+      {
+        "id": "metadata_source_counts_reconcile_to_unmatched_files",
+        "verdict": "fail",
+        "reason": "Metadata reports 13 source files and identifies one unmatched file, but provides no complete inventory or separately reconciled count of current, archived, draft, and supplementary files.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "discriminator_review_items_have_failure_mode_and_next_step",
+        "verdict": "fail",
+        "reason": "No review or manual-check tracking rows are provided; the unmatched-file reason identifies PRJ-X00 but gives no next action.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "notice_effective_source_file_is_relative_project_path",
+        "verdict": "pass",
+        "reason": "Each effective_source_file uses a project-relative path, such as projects/PRJ-A17/formal/recheck_opinion_RO-2026-041.md.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "project_records_preserve_notice_requirement_fields",
+        "verdict": "fail",
+        "reason": "Records include project IDs, status, and source paths, but omit the notice ID and an explicit rectification requirement field as structured fields.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "Records include named projects, notice IDs, dates, amounts, statuses, and specific conflict explanations.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "formal_recheck_and_rectification_precedence_is_explicit",
+        "verdict": "pass",
+        "reason": "Metadata says a cited formal recheck controls status and conclusion while amount and deadline carry forward from its notice; it also excludes archive and unadopted supplements.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "notice_conflict_notes_explain_formal_over_supplement_or_draft",
+        "verdict": "pass",
+        "reason": "PRJ-A17's conflict_notes identify the supplement's proposed deadline extension and draft's differing amount and deadline, and explain why they do not supersede the formal evidence.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "notice_resolution_rules_are_explicit_in_metadata",
+        "verdict": "pass",
+        "reason": "Metadata resolution_rules cover formal rechecks, notices, archive materials, supplements, and normalization; project records apply those rules.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "notice_superseded_sources_include_draft_formal_and_supplement_context",
+        "verdict": "pass",
+        "reason": "Project-specific superseded_source_files include earlier formal notices, relevant archived items, drafts, and supplements with relative paths.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "project_status_is_provenance_oriented",
+        "verdict": "pass",
+        "reason": "Each project has an effective source path and superseded source paths, and the unmatched notice is listed separately with its path and reason.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_inventory_includes_unmatched_and_noncurrent_files",
+        "verdict": "fail",
+        "reason": "The unmatched file and noncurrent paths appear in project records, but there is no full source inventory accounting for all 13 inputs, including noncurrent files.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "invoice-email-archive-manifest",
+    "rule_score": 0.5178,
+    "judge_score": 0.5,
+    "combined_score": 0.516,
+    "rule_weight": 0.9,
+    "judge_weight": 0.1,
+    "verdicts": [
+      {
+        "id": "row_exception_policy_alignment",
+        "verdict": "fail",
+        "reason": "The report treats both loose files as candidate_docs because they contain invoice metadata, while their missing message links are only noted as source gaps; it does not preserve a manual-review posture for this weak provenance.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "evidence_resolution_calibration",
+        "verdict": "pass",
+        "reason": "The report explains why River copy 2 is the working candidate and copy 1 is retained for review, and cites the re-export notice and clipped-footer evidence; it also explains that Ivy’s revised memo replaces the earlier version and Cedar’s correction resolves the display-title mismatch.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "report_review_handoff_prioritization",
+        "verdict": "pass",
+        "reason": "Separate bucket sections and tables distinguish candidates, review items, references, and missing references. The report gives concrete handling for River duplicates, Ivy supersession, loose-file provenance gaps, and the missing Delta attachment.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "readback_self_check_substantive_accuracy",
+        "verdict": "fail",
+        "reason": "The validation table claims every row contains all required fields and that report and manifest are fully consistent, but the instruction requires 21 row fields while the report says 18, and its broad all-checks-passed language overstates validation despite explicitly unresolved review and missing-reference cases.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "json-screener-summary-L4-004",
+    "rule_score": 0.7447,
+    "judge_score": 0.3889,
+    "combined_score": 0.6735,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "selected_reasons_preserve_master_taxonomy_override_basis",
+        "verdict": "fail",
+        "reason": "Selected reasons cite industry or concept matches but do not identify master taxonomy authority or any vendor taxonomy override; factor rows likewise lack conflict context.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_conflicts_have_winner_and_loser_context",
+        "verdict": "fail",
+        "reason": "The selected candidates show no winning-versus-losing taxonomy resolution; the summary only reports one supplier industry conflict without identifying alternatives or its resolution.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_unit_or_period_context_visible",
+        "verdict": "fail",
+        "reason": "Factor values such as CHANGE_RATE and PE_TTM have no unit or period context in the visible rows.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_zero_values_are_disambiguated",
+        "verdict": "pass",
+        "reason": "For 301777, CHANGE_RATE has a raw value of 7 and normalized value 1, with component score 0, making the zero an explicit score value rather than a missing factor.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_source_trace_granularity",
+        "verdict": "fail",
+        "reason": "Traceability is limited to page filenames such as page_001.json, with no row-level source key or record identifier.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "leaf_industry_and_concept_fields_keep_label_and_code_context",
+        "verdict": "fail",
+        "reason": "Selected rows show labels such as 专用设备 and 低空经济, but no taxonomy codes or adjacent code mapping.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "screening_boolean_flags_are_explicit_not_placeholder_dash",
+        "verdict": "fail",
+        "reason": "Candidate JSON exposes concept_match labels but no explicit candidate-level industry, vendor-override, or other eligibility boolean flags; several factor_detail component scores are blank.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The workbook includes populated candidate rows, numeric factors, rule-specific exclusion reasons, and source page names.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifacts_are_screening_deliverables",
+        "verdict": "pass",
+        "reason": "The JSON has structured candidate records and the workbook contains screening, factor, exception, and summary sheets.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "critical_blank_or_na_fields_are_explained",
+        "verdict": "fail",
+        "reason": "Factor-detail rows for excluded and review candidates have blank component_score values without an explanation for those blanks.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "reason": "The summary says the 14 processed rows come from valid pages with matching dates, but the visible rows include 002222 from page_002.json with a 2026-06-17 date mismatch.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "edge_case_decision_basis_is_specific",
+        "verdict": "pass",
+        "reason": "The exception rows give concrete bases, including missing VOLUME_RATIO, a master/snapshot exchange conflict, and a dated snapshot mismatch.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "factor_detail_keeps_raw_value_and_source_artifact",
+        "verdict": "fail",
+        "reason": "Although numeric rows include raw values and page filenames, taxonomy factor rows record only True/False match flags without the source taxonomy evidence, and missing numeric factors are left blank.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_canonical_tokens_or_mapping",
+        "verdict": "fail",
+        "reason": "JSON statuses include selected, while workbook exceptions use ad hoc labels such as excluded_risk_warning and review_missing_required_metric without a visible mapping.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_denominator_matches_visible_populations",
+        "verdict": "pass",
+        "reason": "The summary reports 14 processed, 7 selected, 2 review, and 5 excluded, reconcilable to the visible 7 selected rows and 7 exception rows.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_intermediate_state_preserved",
+        "verdict": "fail",
+        "reason": "Selected records omit explicit vendor-versus-master taxonomy state and override history; final labels do not preserve that decision path.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "no_investment_recommendation_language",
+        "verdict": "pass",
+        "reason": "The visible artifacts present scores, ranks, screening outcomes, and rule reasons without buy/sell or trading recommendations.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "screening_summary_separates_selected_excluded_and_incomplete_denominators",
+        "verdict": "pass",
+        "reason": "The summary separately reports selected, under-review, and excluded counts alongside the total processed population.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "kline-signal-segments-L4-012",
+    "rule_score": 0.9733,
+    "judge_score": 0.7,
+    "combined_score": 0.9186,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "trigger_rules_include_canonical_rule_tokens_or_mapping",
+        "verdict": "fail",
+        "reason": "Segment trigger strings only show formulas and thresholds, such as “breakout≥0.015;volume_ratio≥1.1;ma_trend=up” (signal_segments R2), with no canonical tokens or mapping.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_insufficient_history_rows_have_explicit_ma_trend_state",
+        "verdict": "pass",
+        "reason": "Insufficient-history rows explicitly show ma_trend “undetermined”; for example, indicator_values R2.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_segment_drawdown_preserves_loss_sign",
+        "verdict": "fail",
+        "reason": "Loss drawdowns are positive with no convention note: segment R2 shows segment_return -0.001336 and max_drawdown 0.001336.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "trigger_rules_use_stable_rule_families",
+        "verdict": "fail",
+        "reason": "Trigger-rule fields use threshold formulas without stable family labels; signal_segments R4 lists “breakout≥0.018;volume_ratio≥1.15;ma_trend=up” only.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_ma_trend_unavailable_fields_are_consistently_qualified",
+        "verdict": "pass",
+        "reason": "For unavailable MA values, rows show ma_trend “undetermined,” signal_day False, and an exception reason; indicator_values R2 has insufficient_history.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_summary_deepest_drawdown_matches_segment_convention",
+        "verdict": "pass",
+        "reason": "Summary preserves the detailed table’s positive-magnitude convention: 300642.SZ segment 2 and its summary both show max drawdown 0.029762 (signal_segments R11, segment_summary R4).",
+        "source": "codex_luna"
+      },
+      {
+        "id": "no_actionable_trading_advice",
+        "verdict": "pass",
+        "reason": "The workbook contains static indicators, segments, summaries, and exceptions; the visible tables provide no orders, targets, or trading recommendations.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "segment_boundaries_and_reasons_visible",
+        "verdict": "pass",
+        "reason": "Segment rows include symbols, start/end dates, signal counts, and trigger rules; for example, signal_segments R2 gives dates 2026-05-14 to 2026-05-15 and its rule conditions.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "segment_summary_counts_reconcile_to_triggered_segments",
+        "verdict": "pass",
+        "reason": "Summary counts match detailed rows; for 002734.SZ, segment_summary R2 reports 2 and signal_segments R2-R3 show two segments with trigger rules.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_is_signal_segment_output",
+        "verdict": "pass",
+        "reason": "The workbook has structured indicator, segment, summary, and exception sheets, including K-line measures and rule-based signal segments.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "market-daily-brief-a-share-recap",
+    "rule_score": 0.8333,
+    "judge_score": 0.75,
+    "combined_score": 0.8166,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "reader_facing_chinese_recap_synthesis",
+        "verdict": "fail",
+        "reason": "The recap has reader-facing Chinese prose, but the opening and much of the report are dominated by source decision tables and a lengthy source ledger; the deterministic gate also records `market_overview_section_covered` and `draft_revision_section_covered` as failed.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_decision_implications_are_explained",
+        "verdict": "pass",
+        "reason": "It explains concrete consequences, including replacing the 71% breadth figure with 55.91% on denominator 558, and states that SRC-COR-1608 changes south turnover to 448.6 without replacing the south index or breadth rows.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "draft_overclaims_are_evidence_bounded",
+        "verdict": "pass",
+        "reason": "It removes unsupported funds-flow and full-market-mainline claims, splits the ambiguous “智能终端” alias into hardware and cloud-edge segments, and labels green-energy equipment +0.21% as low confidence.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "non_advisory_boundary_integrated",
+        "verdict": "pass",
+        "reason": "The report frames the data as frozen offline examples in its scope section, bounds sector observations by sample and confidence, and describes the recap as factual and descriptive as well as including a non-advisory disclosure.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "monitoring-weekly-draft-followup",
+    "rule_score": 0.72,
+    "judge_score": 0.5,
+    "combined_score": 0.676,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "weekly_report_synthesis_for_reader",
+        "verdict": "pass",
+        "reason": "概览将泵站、通风、水质和照明的本周变化与未决状态串联，异常进展和下周关注也对应这些事项，整体是周报叙述而非单纯摘录清单。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "pending_followups_explain_evidence_gap",
+        "verdict": "pass",
+        "reason": "待跟进表说明了具体线索和缺口，例如 VM-2 与泵体绑定待核、AHU-N2 噪声缺 dB/复测或关闭记录、浊度样本标签冲突，并给出后续核实条件。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "uncertainty_and_late_evidence_coherence",
+        "verdict": "fail",
+        "reason": "报告把 3.2 mm/s 和 0.8 NTU 的绑定不足晚到线索放进“已确认监测事实”，虽附有 caveat，仍与待跟进状态冲突；北侧步道也同时将 B 段完成、A 段未巡列为事实，却在异常进展中称全段状态待看。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "reader_ready_markdown_report_style",
+        "verdict": "fail",
+        "reason": "层级和表格清晰且措辞谨慎，但关键结论有相互冲突的状态表达，例如泵振动与浊度晚到读数列入已确认事实、又在待跟进中称绑定未核，影响读者对状态的把握。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "reader_auditable_source_orientation",
+        "verdict": "pass",
+        "reason": "主要事项均就近标注来源家族或证据边界；例如泵振动列出维护交接补录及别名卡，水质标出 SG-WQ-A/SG-WQ-B 差异，噪声项说明电话反馈缺少复测值和关闭记录。",
+        "source": "codex_luna"
+      },
+      {
+        "id": "weekly_report_information_design",
+        "verdict": "fail",
+        "reason": "章节分工和待跟进表可扫描，但已确认、异常进展与待跟进对泵振动、浊度和北侧步道的状态表述不完全一致，且下周关注复述部分待跟进内容，削弱了各章节的独立作用。",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "news-event-multifile-extract-L4-013",
+    "rule_score": 0.6213,
+    "judge_score": 0.4167,
+    "combined_score": 0.5599,
+    "rule_weight": 0.7,
+    "judge_weight": 0.3,
+    "verdicts": [
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "reason": "The summary reports 12 total merged sources, but the workbook’s event rows sum to 13 (2+1+3+2+1+1+2+1).",
+        "source": "codex_luna"
+      },
+      {
+        "id": "event_ids_and_source_counts_map_consistently_between_summary_and_workbook",
+        "verdict": "fail",
+        "reason": "The summary gives EVT-007 (小微票据周转便利) two source references: the meeting content and attachment table. The workbook lists only policy_meeting_release.pdf and sets merged_source_count to 1 despite showing two citation anchors.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "event_summary_counts_reconcile_to_workbook",
+        "verdict": "fail",
+        "reason": "The summary’s total of 12 merged sources does not reconcile to the workbook rows, which sum to 13; the workbook does show six exclusion rows matching the summary’s exclusion count.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_major_sections_are_not_contradictory",
+        "verdict": "fail",
+        "reason": "The summary says total merged sources are 12, while the detailed event rows’ merged_source_count values sum to 13.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_summary_uses_same_scope_as_details",
+        "verdict": "fail",
+        "reason": "The summary reports 12 total sources across the eight events, but the workbook event rows total 13 sources for that same scope.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "policy_program_events_keep_program_subject_not_only_issuer",
+        "verdict": "pass",
+        "reason": "Policy events retain their program or instrument subjects, including 渠道设备更新专项 and 小微票据周转便利, in the event rows.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The artifacts include dated events, named entities, figures such as the 42.0亿元 pilot quota and 51.6 index reading, citations, and six reason-coded exclusions.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "entity_aliases_do_not_merge_distinct_subjects",
+        "verdict": "fail",
+        "reason": "Entity mentions list 星澈云服股份 and 星澄云服集团 separately, but the event and exclusion records use 星澄云服 where the alias list gives 星澈云服; no normalization note resolves the near-name distinction.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "entity_mentions_cover_material_subjects_with_type",
+        "verdict": "fail",
+        "reason": "The material policy subject 渠道设备更新专项配套服务 appears as an event but has no corresponding entity-mention record or type.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "event_claims_are_source_bound",
+        "verdict": "pass",
+        "reason": "Event rows name source files and provide section-level citation anchors with short snippets, for example EVT-003 cites three files.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "event_date_and_publication_date_are_not_conflated",
+        "verdict": "pass",
+        "reason": "The summary excludes the 2026-04-12 weekend preview and explains that EVT-004 uses the 2026-04-11 date on the formal notice, while distinguishing EVT-005 as 2026-04-10 midday data.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "event_identity_preserves_policy_program_vs_issuer_subject",
+        "verdict": "pass",
+        "reason": "Event subjects distinguish policy topics, listed companies, and the market index; entity mentions also label issuers, policy programs, companies, and the index with types.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "portfolio-valuation-limits-L4-009",
+    "rule_score": 0.0062,
+    "judge_score": 0.5385,
+    "combined_score": 0.1127,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "reason": "The summary NAV is 76,655,070 CNY while the 28 visible valuation rows total 61,303,370 CNY; three missing-price holdings are absent from valuation_detail.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_major_sections_are_not_contradictory",
+        "verdict": "fail",
+        "reason": "limit_breaches lists three PRICE_MISSING holdings (HLD-0014, HLD-0022, HLD-0024), but valuation_detail has only 28 rows and includes none of them.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_summary_uses_same_scope_as_details",
+        "verdict": "fail",
+        "reason": "portfolio_summary counts 28 holdings and reports NAV 76,655,070 CNY, but the 28 valuation_detail rows sum to 61,303,370 CNY.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "portfolio_summary_reconciles_valuation_and_limit_populations",
+        "verdict": "fail",
+        "reason": "Summary rows omit explicit missing-price and breach counts, while limit_breaches shows three missing-price cases and several breaches.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "valuation_summary_reconciles_missing_prices_and_exposure",
+        "verdict": "fail",
+        "reason": "Summary gives no missing-price count or unavailable-valuation total, despite three PRICE_MISSING rows in limit_breaches.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "breaches_and_exceptions_have_reasons",
+        "verdict": "pass",
+        "reason": "Breach rows provide rule IDs, observed values, thresholds, boundary notes, and source holding IDs; missing-price rows state the MISSING status.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "limit_actions_are_separated_from_observations",
+        "verdict": "pass",
+        "reason": "The sheets present limit breaches, missing-price exceptions, and review flags as observations; none recommends trades or portfolio changes.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "limit_breach_rows_show_threshold_and_observed_value",
+        "verdict": "pass",
+        "reason": "For example, the 000858.SZ row shows 10.89% against a 10% threshold, boundary >10.00%, and source HLD-0019; missing-price rows are separately labeled.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "no_investment_advice_or_live_claims",
+        "verdict": "pass",
+        "reason": "The workbook contains static valuations, limits, and review flags, with no live-market claims or investment recommendations.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "portfolio_missing_prices_not_zeroed_or_counted_as_breaches",
+        "verdict": "fail",
+        "reason": "The three missing-price holdings appear as PRICE_MISSING rows in limit_breaches but are absent from valuation_detail, so their row-level status and value exception cannot be audited there.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "portfolio_source_rows_are_specific_record_keys_not_generic_files",
+        "verdict": "pass",
+        "reason": "Breach and deviation rows cite specific holding IDs, such as HLD-0019 and HLD-0002,HLD-0029.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "portfolio_valuation_detail_price_fx_status_components_visible",
+        "verdict": "pass",
+        "reason": "Visible valuation rows include holding, portfolio, account and symbol identifiers, price, FX, status, market value, and NAV weight.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_is_valuation_limits_review",
+        "verdict": "pass",
+        "reason": "The workbook has valuation_detail, limit_breaches, deviation_review_flags, and portfolio_summary sheets for static portfolio review.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "prd-system-design-task-breakdown",
+    "rule_score": 0.7255,
+    "judge_score": 0.6364,
+    "combined_score": 0.7077,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "engineering_actionability_behavior_changing_rows",
+        "verdict": "fail",
+        "reason": "Several public transitions are named without affected implementation work: T-09 only gates the unresolved five-day `needs_info` behavior, and OQ-06 is left as a scope gap with no withdraw-after-solution or resolution-source implementation row. The state diagram therefore carries behavior the task rows do not operationalize.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "acceptance_tests_bind_behavior_error_policy_constraints",
+        "verdict": "pass",
+        "reason": "Acceptance criteria and nearby test coverage bind important constraints to implementation, including private-field exclusion for intake/merge (T-01, T-05), unmapped legacy labels (T-03/T-06), notification budgets and retry intent (T-07), and separate timeout rules with maintenance-window handling (T-08).",
+        "source": "codex_luna"
+      },
+      {
+        "id": "cross_document_synthesis_changes_tasks_and_ac",
+        "verdict": "pass",
+        "reason": "Rows combine PRD behavior with design surfaces and consequences, for example T-07 ties notification throttling to `RequestAssigned`, `NotificationBudget`, retry intent, recipient buckets, and tests; T-10 ties the seven-day reopen policy to `ReopenWindow`, migration, errors, and tests.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "open_question_task_binding_and_provisional_limits",
+        "verdict": "fail",
+        "reason": "OQ-06 is explicitly labeled a scope gap in the OQ table, but no affected task row or decision gate covers withdrawal after a maintainer solution or its resolution behavior. T-11 only addresses unassigned withdrawal and assigned withdrawal intent.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "conflict_ambiguity_classification_and_operational_effect",
+        "verdict": "pass",
+        "reason": "The plan classifies distinct ambiguities and connects them to affected work: CONFLICT-02 separates the 48-hour and 72-hour monitor rules in T-08, while OQ-03 constrains merge undo in T-14 and OQ-05 limits export in T-12.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "execution_safe_sequence_semantics",
+        "verdict": "fail",
+        "reason": "The dependency prose and diagram conflict on T-07/T-08: the hard-dependency notes say T-06 feeds both, but the diagram places T-07 before T-08 and the prose says they can run in parallel. T-08 creates escalation reminders while T-07 is the limiter that must constrain reminder work, so the sequencing does not clearly gate the reminder behavior on the budget.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "non_goal_boundary_preservation_without_positive_tasks",
+        "verdict": "pass",
+        "reason": "The exclusions explicitly preserve the public boundaries, including no native push (OS-01), no enterprise multi-tenancy (OS-03), and no CSV/BI pipeline (OS-04); the implementation rows keep notifications as placeholder events and export as Markdown.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "merge_export_manual_mapping_boundary_preservation",
+        "verdict": "pass",
+        "reason": "The plan keeps merge/audit/undo, mapping fallback, and export policy distinct: T-05 requires audit before `RequestMerged`, T-03/T-06 route unmapped legacy labels to manual mapping, and T-12 limits export to Markdown with audit timeline unresolved.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "failure_mode_and_boundary_case_task_binding",
+        "verdict": "pass",
+        "reason": "The archived-target merge boundary is tied directly to T-05's merge command and acceptance criteria, which specify a recoverable error and reopen prompt. Other rows also bind notification failure to retry intent (T-07) and unmapped labels to manual mapping (T-03/T-06).",
+        "source": "codex_luna"
+      },
+      {
+        "id": "reader_usability_constraints_gates_visible_in_rows",
+        "verdict": "pass",
+        "reason": "The implementation rows appear in the main task table before the Optional Mermaid section, and key constraints are visible in their acceptance criteria or risk column, including conditional OQs and manual-mapping, notification, timeout, and export limits.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "operational_policy_semantics_privacy_audit_timeout_reopen_archive_export",
+        "verdict": "fail",
+        "reason": "Privacy, timeout, reopen/archive, and export limits are tied to rows, but withdraw-after-solution and resolution-source semantics are not. OQ-06 is only a scope-gap note, and T-10's resolution acceptance criterion does not distinguish member confirmation from maintainer marking resolved.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "priority-sync-notification-pipeline",
+    "rule_score": 0.792,
+    "judge_score": 0.8,
+    "combined_score": 0.7936,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "summary_matches_structured_state_families",
+        "verdict": "pass",
+        "reason": "The summary’s family table matches the action log and state slots for the listed items, including VOP-2241 as dedup_suppressed and VOP-2256 as dead_letter. Its human-follow-up notes are limited to VOP-2219 and VOP-2234.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "decision_reasons_explain_operational_boundaries",
+        "verdict": "pass",
+        "reason": "Reasons identify concrete triggers: VOP-2207’s retry_after is later than the decision time, VOP-2250’s retry budget is exhausted and fallback is allowed, VOP-2241 already has the same dedup key side effect, and VOP-2219/VOP-2234 have contact or consent ambiguity.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "decision_family_matches_stated_operational_trigger",
+        "verdict": "pass",
+        "reason": "The submitted families align with their stated triggers: waiting-partner and partner-confirmed items are skipped, active backoff remains retry_scheduled, existing side effect is dedup_suppressed, contact ambiguity is human_followup, and malformed unknown channel is dead_letter.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "handoff_notes_separate_safe_next_steps",
+        "verdict": "pass",
+        "reason": "The summary separates coordinator clarification for VOP-2219 and VOP-2234 from VOP-2256’s dead-letter state, and distinguishes retry, fallback, and dedup outcomes. It also states no real services were called and fake secrets are inert placeholders.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "reader_facing_summary_finalized_not_template",
+        "verdict": "fail",
+        "reason": "The summary retains the opening blockquote “Fill this file from workspace evidence only,” which is writer-facing template scaffolding despite the completed decision content.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "procurement-reconcile-L3-015",
+    "rule_score": 0.7143,
+    "judge_score": 0.6,
+    "combined_score": 0.6972,
+    "rule_weight": 0.85,
+    "judge_weight": 0.15,
+    "verdicts": [
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "reason": "The summary reports 20 unreceived orders, while the visible “未入库订单” sheet contains 20 data rows only if counting rows 2–21; however, it does not explain the discrepancy between the summary’s 15 quantity and 25 amount differences and the detailed sheet counts of 15 and 25? The counts align. More concretely, summary says total receipts 285, but orphan receipts list 5, and no receipt-side total detail is shown, so cannot establish contradiction.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_major_sections_are_not_contradictory",
+        "verdict": "fail",
+        "reason": "The “无对应订单入库” sheet is 6 rows × 5 columns but shows only five receipt records (R2–R6), while the summary reports 5 orphan receipts.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_summary_uses_same_scope_as_details",
+        "verdict": "pass",
+        "reason": "Summary exception counts match visible data rows: 15 quantity differences, 25 amount differences, 20 unreceived orders, and 5 orphan receipts.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "summary_counts_reconcile_to_exception_sheets",
+        "verdict": "fail",
+        "reason": "Summary gives separate category counts but does not name the corresponding sheets or state that quantity and amount categories overlap; shared PO IDs appear in both variance sheets.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "amount_and_quantity_variances_keep_separate_evidence",
+        "verdict": "pass",
+        "reason": "“数量差异” shows ordered, received, and delta quantities; “金额差异” shows order amount, receipt amount, and delta.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "differences_and_review_items_visible",
+        "verdict": "fail",
+        "reason": "Variance and unmatched records are visible, but rows provide no reason or review note explaining the differences.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "required_issue_categories_are_present_and_distinct",
+        "verdict": "pass",
+        "reason": "The workbook shows five distinct sheets: quantity differences, amount differences, unreceived orders, orphan receipts, and summary.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_identifiers_support_audit",
+        "verdict": "pass",
+        "reason": "Variance and missing-order rows include order IDs, and orphan rows include receipt IDs such as PO-2026-28009-01.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "unmatched_side_is_not_ambiguous",
+        "verdict": "pass",
+        "reason": "“未入库订单” lists order IDs, while “无对应订单入库” lists receipt IDs, making the unmatched side clear.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_is_procurement_reconciliation",
+        "verdict": "pass",
+        "reason": "The five visible sheets structure procurement order and receipt comparisons, unmatched records, and summary counts.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "rank-ic-topn-L4-001",
+    "rule_score": 0.7186,
+    "judge_score": 0.25,
+    "combined_score": 0.6249,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "expanded_overrides_preserve_pre_override_state",
+        "verdict": "fail",
+        "reason": "No override rows show original state, final state, and reason.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "every_topn_rank_has_auditable_ordering_note",
+        "verdict": "fail",
+        "reason": "All 20 TopN rows have blank tie_break_note cells; source_trace repeats only the generic sort rule.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "rank_topn_tie_break_notes_use_required_precedence",
+        "verdict": "fail",
+        "reason": "Every selected row has a blank tie_break_note, including tied-score selections.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "score_availability_flags_match_exclusion_story",
+        "verdict": "fail",
+        "reason": "Exclusions for missing_model_score show score_available=yes, and missing returns appear in TopN rows with blank fwd_20_return and no return explanation.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "Workbook includes four test periods, task metrics, stock symbols, exclusion rules, and populated records.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "critical_blank_or_na_fields_are_explained",
+        "verdict": "fail",
+        "reason": "TopN rows such as SY6112 on 2025-06-30 have blank fwd_20_return with no explanation in the row.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "reason": "Summary reports 20 TopN rows, but the detail sheet has 20 selections and its scope is stated as top_n=5; overall baseline/model IC denominator totals and key metrics are populated, but no clear issue there.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "exclusion_scope_distinguishes_ic_and_topn",
+        "verdict": "pass",
+        "reason": "Exclusion rows provide IC_denominator, TopN_pool, or both, and summary includes an exclusion_scope_distribution.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "recruiting-search-skill-mock-mcp-hardened",
+    "rule_score": 0.6269,
+    "judge_score": 0.25,
+    "combined_score": 0.5515,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "claim_evidence_alignment_provenance_humility",
+        "verdict": "fail",
+        "reason": "The runtime summary explicitly says runtime_state.json and method_call_log.json are missing, while the report and evidence log claim evidence was saved, export generated, snapshots recorded, and audit completed; the export ref is also a redacted placeholder, so those completion claims lack visible runtime support.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "evidence_explanation_depth_risk_grounding",
+        "verdict": "fail",
+        "reason": "The report lists drift repairs and follow-up risks, but describes export, snapshots, and audit as completed based on mock workflow without supporting runtime evidence; the runtime summary says both state and method log are missing.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workflow_precondition_actionability_skill_support",
+        "verdict": "pass",
+        "reason": "The Skill and API notes give operational preconditions, including saving inspected labels before export and requiring existing before/after snapshots for audit, and state that missing runtime evidence must not support completion claims; they also clearly constrain use to offline synthetic profiles without contact data.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "cross_artifact_semantic_coherence_without_exact_rescore",
+        "verdict": "fail",
+        "reason": "The report and evidence log say export, snapshots, and audit are complete, but the runtime summary reports no runtime state or method log and calls for harness capture, leaving the claimed state chain unsupported.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "search_strategy_relevance_scope_control",
+        "verdict": "pass",
+        "reason": "The guidance limits search to job-related criteria and task-provided synthetic profiles, requires detail inspection and evidence labels to support shortlist decisions, and explicitly prohibits live sourcing and contact-data retrieval.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "support_template_end_to_end_operability",
+        "verdict": "fail",
+        "reason": "Templates provide search arguments and list inspect/save/export/snapshot/audit as post_steps, but the support examples do not show reusable argument patterns or data handoff for those state-changing calls.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "current_example_status_handoff_clarity",
+        "verdict": "fail",
+        "reason": "The support summary labels the central shortlist object `draft_shortlist_report`, yet the report and evidence log rely on its export, snapshot, and audit refs as completed workflow proof without clearly scoping the example as illustrative.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "profile_fit_and_followup_grounding",
+        "verdict": "fail",
+        "reason": "The examples make material claims such as RP-218 having strong stakeholder communication and RP-259 having incident-review experience, while the visible evidence-log summary provides labels but no matching profile snippets or tags to ground those claims.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "release-phase-gate-progression",
+    "rule_score": 0.6702,
+    "judge_score": 0.0,
+    "combined_score": 0.5362,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "maintainer_facing_status_summary_is_actionable",
+        "verdict": "fail",
+        "reason": "The report and sidecar/capture evidence are withheld for deterministic safety, so the maintainer-facing status and next action cannot be assessed.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "deliverables_are_final_not_scaffold_or_pending",
+        "verdict": "fail",
+        "reason": "The required report, state update, and final capture text is withheld, leaving insufficient evidence that they are finalized deliverables.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "carry_forward_is_specific_and_not_evasive",
+        "verdict": "fail",
+        "reason": "The carry-forward text is withheld; the evidence only shows repair_alignment remains active and cannot establish a specific next action or close condition.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "final_mutable_artifacts_are_free_of_process_or_template_residue",
+        "verdict": "fail",
+        "reason": "The report, sidecar, capture, audit, and board text is withheld, so absence of active template/process residue cannot be established.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "research-factor-table-extract-L3-016",
+    "rule_score": 0.8774,
+    "judge_score": 0.625,
+    "combined_score": 0.8269,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "discriminator_hard_rule_counts_are_explainable",
+        "verdict": "fail",
+        "reason": "Neither artifact reports hard-rule counts, denominators, exclusions, missing-field status, or unresolved-observation counts.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_reader_can_locate_high_risk_or_important_items",
+        "verdict": "fail",
+        "reason": "Rows include source locations, but no flags, grouping, or status cues identify items needing attention.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_scope_boundary_for_excluded_records_visible",
+        "verdict": "fail",
+        "reason": "No excluded or out-of-scope records are identified; only extracted rows are shown.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_scope_exclusions_are_justified",
+        "verdict": "fail",
+        "reason": "There is no exclusion list or record-level exclusion reason in the workbook or JSON.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "critical_blank_or_na_fields_are_explained",
+        "verdict": "fail",
+        "reason": "FM-001 and other unsuperseded factor rows have blank superseded_source fields without an explicit not-applicable reason.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The records contain specific entities, factor IDs, dates, source files, evidence text, and risk disclosures.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifacts_are_factor_extraction_deliverables",
+        "verdict": "pass",
+        "reason": "The workbook has structured research_points, factor_mentions, and risk_disclosures sheets, and the JSON contains aligned extracted records and citations.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "pass",
+        "reason": "No separate summary or metadata claims conflict with the visible detailed records; the JSON arrays match the workbook rows.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "discriminator_opus_style_row_level_trace",
+        "verdict": "pass",
+        "reason": "Rows identify source documents and sections or tables, and JSON citations provide field-level snippet anchors, such as FM-007's evening revision table.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "discriminator_record_identity_survives_transformation",
+        "verdict": "pass",
+        "reason": "Stable IDs and supersession references link revisions, including FM-007 to morning evidence M-T1-R4 and P1 to M-T1-R1.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "discriminator_stronger_output_preserves_intermediate_state",
+        "verdict": "pass",
+        "reason": "The workbook retains both earlier and revised factor rows, and revised rows identify prior morning evidence in superseded_source.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "edge_case_decision_basis_is_specific",
+        "verdict": "pass",
+        "reason": "Visible revisions have specific bases and prior anchors, for example FM-007 states the neutral revision and cites M-T1-R4.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "research_factor_mentions_have_direction_horizon_evidence_triplet",
+        "verdict": "pass",
+        "reason": "Each factor_mentions row includes factor ID, normalized name, explicit direction and horizon, evidence, effective time, and source location.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "research_superseded_source_keeps_prior_table_anchor",
+        "verdict": "pass",
+        "reason": "Revised rows cite the replaced morning evidence, while unrevised factor rows leave superseded_source empty; FM-002 also retains the morning 1-2Q reference.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "discriminator_no_silent_default_for_failed_fields",
+        "verdict": "fail",
+        "reason": "Unsuperseded factor rows have blank superseded_source cells without an explicit reason or not-applicable marker.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_json_metadata_matches_records",
+        "verdict": "pass",
+        "reason": "The JSON contains no separate count or scope metadata that contradicts its visible record arrays.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "rule-based-stock-exclusion-L4-011",
+    "rule_score": 0.8565,
+    "judge_score": 0.4286,
+    "combined_score": 0.7709,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "expanded_source_granularity_is_sufficient",
+        "verdict": "fail",
+        "reason": "Material rows have only candidate batch and timestamp in source_trace, for example selected SH.68Y205; there are no row or record locators for the market, factor, or theme inputs.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_source_trace_granularity",
+        "verdict": "fail",
+        "reason": "Selected and excluded rows carry the candidate batch/time, but no row-level input IDs. For example, excluded SH.60C391 has no locators for its market-cap and status evidence.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "selected_and_excluded_rows_have_record_level_source_trace",
+        "verdict": "fail",
+        "reason": "Both selected and excluded source_trace values identify only CU batch and time, not the per-symbol candidate, market, indicator, or theme records.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_trace_or_rule_context_visible",
+        "verdict": "fail",
+        "reason": "Rule context is visible in exclusion fields, but source_trace only gives candidate-universe batch/time and does not link decisions to specific market, factor, or theme records.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_human_review_boundary_is_clear",
+        "verdict": "fail",
+        "reason": "Northbound and watch-only populations are identified as observation pools in reason_summary, but the workbook does not identify which records require human review or distinguish confirmation needs.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The sheets contain populated symbols, scores, themes, exclusion reasons, rule codes, counts, and examples, including 30 ranked selections and 33 exclusion records.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "critical_blank_or_na_fields_are_explained",
+        "verdict": "fail",
+        "reason": "The no_market_snapshot exclusions have empty triggered_rule_codes, and their source traces do not explain the absent market evidence.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "edge_case_decision_basis_is_specific",
+        "verdict": "pass",
+        "reason": "Visible boundary cases have specific labels and codes, such as stale_required_metric and scoped_regime_block; multiple triggers are retained for SH.60K687.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "exclusion_reasons_visible",
+        "verdict": "pass",
+        "reason": "Excluded rows show primary_exclusion_reason and triggered_rule_codes, while selected rows show scores and rank.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "exclusion_rules_expose_triggering_values_and_rule_codes",
+        "verdict": "fail",
+        "reason": "Rows expose rule codes but not triggering values or statuses. For example, SH.60C391 lists st_or_halt and market_cap_out_of_range without the status or market cap.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_canonical_tokens_or_mapping",
+        "verdict": "pass",
+        "reason": "Stable rule tokens appear in exclusion records and the audit sheet, with descriptions mapping codes such as scoped_regime_block to the observation-pool rule.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "no_buy_sell_or_target_price_advice",
+        "verdict": "pass",
+        "reason": "The workbook reports screening scores, rule outcomes, and ranks, with no buy/sell instructions, target prices, or portfolio advice.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "screen_summary_separates_universe_denominators",
+        "verdict": "fail",
+        "reason": "reason_summary gives reason and theme counts but no candidate-universe denominator or separate counts for the major exclusion populations.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_is_rule_based_screen",
+        "verdict": "pass",
+        "reason": "The workbook has selected_symbols, excluded_symbols, reason_summary, and rule_audit sheets with deterministic rule codes and a stated score formula.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "safety-inspection-extract-L4-019",
+    "rule_score": 0.9259,
+    "judge_score": 0.6667,
+    "combined_score": 0.8741,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "discriminator_no_silent_default_for_failed_fields",
+        "verdict": "pass",
+        "reason": "The missing penalty in the 江北市 notice is explicitly marked “未提及,” not silently set to zero.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "discriminator_rule_failure_population_visible",
+        "verdict": "fail",
+        "reason": "The table has no review or exception summary; missing penalties and deadlines appear only as row values, with no countable failure population or reasons.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_canonical_labels_or_mapping_exist",
+        "verdict": "fail",
+        "reason": "Violation labels are detailed free-text phrases such as “脚手架搭设不合规” and “外架基础及搭设不规范,” with no canonical categories or mapping.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_critical_blanks_have_record_context",
+        "verdict": "fail",
+        "reason": "Missing fields are marked “未提及,” but no record-level reason or exception status explains the omissions.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_zero_values_are_disambiguated",
+        "verdict": "pass",
+        "reason": "No numeric zero values appear; the missing penalty is marked “未提及.”",
+        "source": "codex_luna"
+      },
+      {
+        "id": "missing_penalty_amount_is_not_silently_zeroed",
+        "verdict": "pass",
+        "reason": "The 江北市 notice’s absent penalty is recorded as “未提及,” not 0.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "All five rows contain notice identifiers, project names, and task-specific inspection details.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_label_vocabulary_is_consistent",
+        "verdict": "fail",
+        "reason": "Violation vocabulary is an unmapped list of detailed descriptions rather than consistent category labels.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_missing_values_not_fabricated",
+        "verdict": "pass",
+        "reason": "Absent source fields, including a construction unit owner, inspection date, and penalty, are marked “未提及.”",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_no_placeholder_or_todo_content",
+        "verdict": "pass",
+        "reason": "The populated rows contain notice-specific facts and no TODO, sample, or generic filler.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "inspection_rows_use_consistent_detail_semantics",
+        "verdict": "pass",
+        "reason": "All five rows use the same eight columns, and unavailable fields consistently use “未提及.”",
+        "source": "codex_luna"
+      },
+      {
+        "id": "missing_inspection_fields_are_source_limited",
+        "verdict": "pass",
+        "reason": "Absent owner, date, penalty, or deadline fields are labeled “未提及,” indicating they were not stated.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "uncertain_or_missing_fields_are_flagged",
+        "verdict": "pass",
+        "reason": "Missing fields are visibly flagged as “未提及” rather than filled with guesses.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "violation_type_labels_are_source_specific_not_overbroad",
+        "verdict": "fail",
+        "reason": "For example, the first notice’s violation cell bundles five detailed issues, rather than normalized category labels as the task requested.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_is_safety_inspection_summary",
+        "verdict": "pass",
+        "reason": "The sheet “安全检查通报汇总” presents five inspection notices with project, contractor, date, violations, penalty, and deadline fields.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "service-channel-ticket-daily",
+    "rule_score": 0.9707,
+    "judge_score": 0.6667,
+    "combined_score": 0.9099,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "operational_tips_are_evidence_grounded",
+        "verdict": "fail",
+        "reason": "The tip for TCK-CS-3117 says last_responded_at (22:31) is later than due_at (22:00), but those timestamps are present and the comparison is chronologically correct. However, TCK-CS-3113’s tip says first_response_at is empty while last_responded_at is 18:20, which is evidence-grounded. The report’s stated failure evidence points to no logical error in these tips.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "report_sections_are_state_consistent",
+        "verdict": "pass",
+        "reason": "The report consistently uses the last eligible in-window updates and explicitly identifies later snapshot updates as outside the reporting window, including R-004, R-047, and R-052. Alias records R-043 through R-046 are attributed to canonical TCK-CS-3116, with R-046 as latest.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "reader_ready_markdown_daily_report_style",
+        "verdict": "pass",
+        "reason": "The artifact is a Chinese Markdown report with clear sections for scope, overview, summaries, operational tips, audit details, and exclusions, using tables and bullets without draft residue or process narration.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "static-strategy-signal-report-L3-015",
+    "rule_score": 0.791,
+    "judge_score": 0.5385,
+    "combined_score": 0.7152,
+    "rule_weight": 0.7,
+    "judge_weight": 0.3,
+    "verdicts": [
+      {
+        "id": "forbidden_action_terms_are_absent_even_in_disclaimer",
+        "verdict": "fail",
+        "reason": "The disclaimer explicitly lists prohibited terms, including “买入、卖出、加仓、减仓、目标价预测或止损”.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_flag_reasons_are_reader_facing_for_priority_and_exceptions",
+        "verdict": "fail",
+        "reason": "Overlap notes say only “multiple rules triggered; primary=risk_watch” without explaining priority resolution; the missing-quote and missing-basic rows also lack reader-facing explanations in their flag reasons.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_markdown_preserves_canonical_scope_metric_keys",
+        "verdict": "fail",
+        "reason": "The markdown gives counts for inactive rows (2) and preview factors (9), but omits the canonical keys `inactive_watchlist_rows` and `adjustment_preview_rows_ignored`.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_stale_basic_uses_canonical_late_prior_day_status",
+        "verdict": "fail",
+        "reason": "The stale row is labeled `daily_basic_lag` in the workbook rather than canonical `late_prior_day`; the risk note gives no prior source date or update flag.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_summary_data_quality_counts_preserve_all_exception_types",
+        "verdict": "pass",
+        "reason": "The summary separately counts `ok` (5), `daily_basic_lag` (1), `no_ref_day_data` (1), and `missing_daily_basic` (1), while risk notes identify the missing quote.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "signal_flag_reasons_keep_reader_facing_rule_phrases",
+        "verdict": "fail",
+        "reason": "Several flag reasons are compact metrics or tokens; for example, the missing quote row has only `neutral_track` and no reader-facing missing-quote explanation.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifacts_match_static_signal_report",
+        "verdict": "pass",
+        "reason": "The workbook has structured indicator, signal, risk, and summary sheets, and the markdown explains fixed-rule results and data-quality facts.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_adjustment_preview_rows_are_excluded_with_basis",
+        "verdict": "pass",
+        "reason": "The markdown states that only final factors are used, preview rows are ignored when final exists, and reports 9 preview rows superseded.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_high_risk_reasons_include_field_and_reference_date",
+        "verdict": "pass",
+        "reason": "Risk notes identify PE_TTM and 20-day return, their observed values and thresholds; both cite trade date 20260619 and the relevant source.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_inactive_watchlist_population_is_counted_and_named",
+        "verdict": "pass",
+        "reason": "The markdown names “未生效或已失效观察池行数” and reports a count of 2; the active signal distribution totals 8 effective observations.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "markdown_covers_required_reader_sections",
+        "verdict": "pass",
+        "reason": "The markdown includes all six reader-facing sections: data sources and method, baseline, signal distribution, observations, risks, and disclaimer.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "no_trading_or_investment_advice",
+        "verdict": "pass",
+        "reason": "The report says it is not investment advice and reports fixed-rule historical results; it gives no actionable recommendation or claims of live access.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_missing_quote_rows_preserve_available_basic_metrics",
+        "verdict": "fail",
+        "reason": "The 601012.SH row with `data_exception` and `no_ref_day_data` has blank PE_TTM, PB, turnover, and volume ratio fields, despite this criterion requiring available daily-basic metrics to be preserved.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "stock-fund-return-compare-L3-010",
+    "rule_score": 0.9173,
+    "judge_score": 0.6667,
+    "combined_score": 0.8672,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "aligned_return_rows_have_product_interval_and_source_trace",
+        "verdict": "fail",
+        "reason": "Rows include interval, product, code, and trace (for example R2), but the trace `stock_prices::EQ-S09X` does not distinguish product-mapping evidence from return-value evidence.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The workbook contains populated product/date/return records, including EQ-S09X’s 2026-05-07 to 2026-05-15 return, plus interval-specific exception categories.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "critical_blank_or_na_fields_are_explained",
+        "verdict": "fail",
+        "reason": "Aligned rows such as P-DM-011 in R4 have blank dates, values, return, and rank; the exception sheet records the product but does not explain the blank with a matching exception category, since its row is `missing_end_observation` but gives no available-date evidence.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "reason": "In the early interval, summary lists P-AQ-017 as top for all stocks and all products, but ranked_comparison shows P-AQ-042 tied at rank 1 with the same 0.04 return; the stated product-ID tie-break is not reflected in ranking.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "edge_case_decision_basis_is_specific",
+        "verdict": "fail",
+        "reason": "Exceptions are given categories, but rows such as early P-DM-011 `missing_end_observation` show no first or last available date, leaving the specific basis for the category unsupported in the visible evidence.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "exceptions_are_clearly_separated",
+        "verdict": "pass",
+        "reason": "Missing cases appear on a distinct `missing_date_exceptions` sheet, and the aligned rows leave unavailable returns blank rather than filling them with zero.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_source_trace_uses_realistic_identifiers",
+        "verdict": "pass",
+        "reason": "Traces use concrete source keys such as `stock_prices::EQ-S09X` and `fund_nav::FD-MY642`, rather than placeholders.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "hardcheck_summary_does_not_mask_row_failures",
+        "verdict": "pass",
+        "reason": "Summary rows report exception counts and category breakdowns, such as 6 total exceptions for I-2026-05-early, while detail sheets show the corresponding missing or not-found records.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "missing_date_exception_rows_reconcile_to_aligned_returns",
+        "verdict": "pass",
+        "reason": "Exception rows identify interval, product, source code, category, and source trace; for example late-interval P-CT-028 is marked `no_usable_observation_in_interval` in both aligned and exception records.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "no_product_recommendation",
+        "verdict": "pass",
+        "reason": "Visible sheets present historical returns and rankings; no buy, sell, allocation, or forecast recommendation appears.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_trace_or_interval_context_visible",
+        "verdict": "pass",
+        "reason": "Aligned rows contain interval ID, product ID, source code, observation dates, and source trace, as shown in R2.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_is_return_comparison",
+        "verdict": "pass",
+        "reason": "The workbook has aligned returns, missing-date exceptions, ranked comparison, and summary sheets covering stock and fund interval returns.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "subscription-credit-reconcile-L4-024",
+    "rule_score": 0.7073,
+    "judge_score": 0.7368,
+    "combined_score": 0.7132,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "credit_amounts_are_currency_not_percent_or_rate",
+        "verdict": "pass",
+        "reason": "Credit_due amounts are numeric dollar figures, and notes show calculations such as $120 × 2 = $240 and $90 less a $40 posted memo = $50.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "account_product_month_matching_is_visible",
+        "verdict": "fail",
+        "reason": "Credit rows show canonical account and service month, but the notes do not establish invoice-line product/tier matching or explain near-match exclusions.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "Rows cite specific invoice lines, contracts, incidents, credit memos, statuses, caps, and amounts.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "credit_due_lines_1002_1008_remain_visible",
+        "verdict": "pass",
+        "reason": "IL-1002 and IL-1008 appear in credit_due with account, month, eligible incidents, amounts, and evidence notes; IL-1002 also cites CM-701.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "credit_each_invoice_line_has_exactly_one_bucket",
+        "verdict": "pass",
+        "reason": "The 12 visible invoice lines are divided across four buckets with counts totaling 12, and no duplicate line IDs are shown.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "credit_eligibility_chain_is_auditable",
+        "verdict": "fail",
+        "reason": "Credit decisions cite contract and incident details, but IL-1004 and IL-1011 say no eligible incident was found without showing the checked incident or exclusion evidence.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "credit_forbidden_or_nonproduction_evidence_not_used_as_due",
+        "verdict": "fail",
+        "reason": "No forbidden evidence appears in due incident IDs, but the workbook does not document the relevant draft, duplicate, monitoring, sandbox, or nonproduction exclusions.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "credit_manual_review_conflicts_keep_contract_and_source_context",
+        "verdict": "pass",
+        "reason": "IL-1006 identifies ACC-005 and conflicting active contracts CT-ECHO-A and CT-ECHO-B in its review note.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "credit_rows_show_contract_cap_existing_credit_and_net_due",
+        "verdict": "pass",
+        "reason": "Due rows state contract terms and caps, incident calculations, prior memo amounts where present, and net recommendations; already-credited rows explain full coverage.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "credit_summary_reconciles_four_bucket_counts_and_amounts",
+        "verdict": "pass",
+        "reason": "Summary contains all four categories and its counts and amounts match the visible detail rows: 4/$480, 3/$0, 4/$0, and 1/$0.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "pass",
+        "reason": "Summary category counts and totals align with the detailed sheets and their classifications.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "duplicate_void_sandbox_and_monitoring_evidence_are_excluded",
+        "verdict": "fail",
+        "reason": "IL-1009 is explicitly marked void, but the visible workbook does not identify or explain duplicate, sandbox, monitoring, or draft evidence exclusions.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "every_classification_sheet_has_reason_and_evidence",
+        "verdict": "pass",
+        "reason": "All four populated classification sheets include classification_reason_code and evidence_note fields with row-level content.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "evidence_notes_explain_classifications",
+        "verdict": "pass",
+        "reason": "Notes explain due amounts, posted-credit coverage, void status, disabled credit terms, missing eligible incidents, and the conflicting contracts requiring review.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "manual_review_and_not_eligible_not_counted_as_due",
+        "verdict": "pass",
+        "reason": "Manual-review and not-eligible totals are separately shown as zero, while credit_due totals $480.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "manual_review_rows_name_blocking_evidence",
+        "verdict": "pass",
+        "reason": "IL-1006 names both conflicting active contracts, CT-ECHO-A and CT-ECHO-B, as the blocker to determining the governing contract.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "non_settlement_evidence_not_overcounted",
+        "verdict": "fail",
+        "reason": "The visible due rows contain no apparent non-settlement incident IDs, but the workbook does not document draft, duplicate, monitoring, sandbox, or near-match exclusions.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "recommended_credit_amount_story_includes_incidents_credits_and_net_due",
+        "verdict": "pass",
+        "reason": "Due rows show incident IDs, contract cap and calculation details, existing memo amounts when present, and resulting amounts; IL-1002 explains the partial $40 deduction.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_is_credit_reconciliation",
+        "verdict": "pass",
+        "reason": "The workbook has summary, credit_due, already_credited, not_eligible, and manual_review sheets organizing invoice lines into reconciliation buckets.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "ticket-weekly-L3-010",
+    "rule_score": 1.0,
+    "judge_score": 0.7778,
+    "combined_score": 0.9667,
+    "rule_weight": 0.85,
+    "judge_weight": 0.15,
+    "verdicts": [
+      {
+        "id": "expanded_duplicate_handling_is_visible",
+        "verdict": "fail",
+        "reason": "The sheet lists weekly totals but no record identifiers, duplicate handling, or exceptions.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "all_week_buckets_are_visible",
+        "verdict": "pass",
+        "reason": "Four distinct weekly rows are shown, starting 2026-04-06, 2026-04-13, 2026-04-20, and 2026-04-27.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The workbook contains dated weeks and populated plan, actual, and completion-rate values.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "deliverable_has_no_process_noise",
+        "verdict": "pass",
+        "reason": "The evidence shows a concise weekly table with no process notes or unrelated content.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "week_and_metric_labels_are_clear",
+        "verdict": "pass",
+        "reason": "Headers identify week start date, planned volume, actual completed volume, and completion rate.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "weekly_rows_preserve_plan_actual_rate_alignment",
+        "verdict": "pass",
+        "reason": "Each dated weekly row places planned amount, actual completed amount, and completion rate together.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "weekly_summary_avoids_process_or_markdown_artifacts",
+        "verdict": "pass",
+        "reason": "The shown workbook content is spreadsheet labels and values, with no markdown or assistant notes.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_is_weekly_ticket_summary",
+        "verdict": "pass",
+        "reason": "The sheet is organized by week and summarizes planned volume, completed volume, and rate.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_summary_is_reconcilable_to_details",
+        "verdict": "fail",
+        "reason": "Only weekly aggregates are visible; there are no detailed rows, category labels, or references to reconcile the totals.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "trade-pnl-positions-L4-007",
+    "rule_score": 0.8146,
+    "judge_score": 0.4,
+    "combined_score": 0.7317,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "expanded_source_granularity_is_sufficient",
+        "verdict": "fail",
+        "reason": "Source traces name files and, for some rows, IDs, but generally omit row, sheet, or record locators. For example, the 明澈医药 position trace lists `trade_fills.xlsx` without identifying its supporting fill ID.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_trace_includes_business_key_and_input_family",
+        "verdict": "fail",
+        "reason": "Many traces list input families without the business keys needed to connect them to the row. The 明澈医药 position trace includes `trade_fills.xlsx` but omits fill ID 77K450031, visible in its realized PnL row.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "account_summary_breaks_reconcile_to_detail_sections",
+        "verdict": "fail",
+        "reason": "Summary totals and exception counts lack visible account-level reconciliation detail. For example, 资产单元-A reports `pending_cash_amount` 17489, while cash detail rows show individual pending entries but no derivation of that total.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The workbook contains populated, task-specific records, including 2026-03-17 positions, trades, prices, cash items, and corporate-action exceptions.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "critical_blank_or_na_fields_are_explained",
+        "verdict": "fail",
+        "reason": "The 603Y21 unrealized row shows price status 停牌 and still reports closing price 16.73, market value 8365, and unrealized PnL 155; no explanation supports treating that price as valid.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "edge_case_decision_basis_is_specific",
+        "verdict": "fail",
+        "reason": "The 603Y21 unrealized row is marked 停牌 yet valued, and the missing cash-dividend exception describes a 40 CNY receipt as absent despite a related pending dividend-tax line; the valuation and cash treatment are not reconciled.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "exception_rows_name_affected_record_and_review_detail",
+        "verdict": "pass",
+        "reason": "Exceptions identify affected accounts and securities or source IDs and give concrete details, such as the 603Y21 missing 40 CNY dividend and its related corporate-action and ledger identifiers.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "no_trading_or_investment_advice",
+        "verdict": "pass",
+        "reason": "The artifact reports historical reconciliation and data-quality facts; it contains no buy, sell, hold, target-price, or next-day recommendation.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_trace_is_row_level_for_position_pnl_and_cash",
+        "verdict": "fail",
+        "reason": "Traces often stop at broad filenames. For example, cash reconciliation rows cite only `cash_ledger.csv` without a ledger row locator, even when they present final amounts.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_denominators_are_not_ambiguous",
+        "verdict": "pass",
+        "reason": "The artifact reports no rates or aggregate population metrics that depend on an unstated denominator.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "warranty-recovery-allocation-L5-033",
+    "rule_score": 0.8655,
+    "judge_score": 0.4286,
+    "combined_score": 0.7781,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "allocation_note_text_contains_supplier_policy_ratio_and_adjustments",
+        "verdict": "fail",
+        "reason": "Notes state split, cap, and deduction adjustments but do not name the supplier; duplicate and review reasons appear only in the separate review sheet.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "allocation_notes_name_policy_contract_and_supplier_context",
+        "verdict": "fail",
+        "reason": "Detail notes omit supplier and claim IDs, and policy is described by ratio without naming the selected policy version.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "detail_summary_semantic_consistency",
+        "verdict": "fail",
+        "reason": "For example, WR-033-010 is labeled duplicate recovery, but the summary reports 云岱模组 with 1,100 already recovered despite no recoverable detail row; the detail evidence does not reconcile the summary.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "warranty_summary_counts_include_recoverable_and_review_claims",
+        "verdict": "fail",
+        "reason": "The summary does not reconcile to visible records: 云岱模组 shows claim_count 2 although only WR-033-008 is in recoverable details and the review sheet has no 云岱模组 claim.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "expanded_summary_uses_same_scope_as_details",
+        "verdict": "fail",
+        "reason": "Summary counts and totals lack visible detail/review support, for example 星桥电子 claim_count 9 versus its visible 7 recoverable rows and review rows for other claims.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "artifact_contains_task_specific_evidence_not_placeholders",
+        "verdict": "pass",
+        "reason": "The workbook shows populated claim IDs, suppliers, policy versions, costs, recovery amounts, event-chain blockers, and summary figures.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "excluded_or_duplicate_items_are_not_overclaimed",
+        "verdict": "pass",
+        "reason": "WR-033-010 and WR-033-018 are listed as duplicate recovery, and event-chain blockers WR-033-015 through WR-033-017 are separated from recoverable details.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "recovery_formula_components_are_visible",
+        "verdict": "fail",
+        "reason": "Rows show cost, ratio and recovery amounts, but default split notes do not consistently explain adopted supplier split basis; for instance WR-033-013's 北陆材料 row says default split 0.25 without its responsibility evidence basis.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "warranty_contract_override_application_order_visible",
+        "verdict": "pass",
+        "reason": "Capped and split rows identify policy version and contract exception, and notes show cap-before/after amounts or override split followed by booked recovery deduction where applicable.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "warranty_duplicate_recovery_uses_booked_only_and_routes_covered_claims_to_review",
+        "verdict": "fail",
+        "reason": "Covered claims are routed to duplicate review, but the workbook provides no evidence that draft, void, or non-batch historical records were excluded from deduction.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "warranty_event_chain_closure_fields_visible_for_review_rows",
+        "verdict": "pass",
+        "reason": "Review rows list trigger requirements and specific blockers, including RETURN_INSPECTED≠PASSED, RECOVERY_READY≠READY, and HOLD_OPEN=OPEN, with next actions.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "warranty_nonadopted_supplier_evidence_is_excluded_from_allocation",
+        "verdict": "fail",
+        "reason": "The artifact does not expose evidence_state or identify adopted versus excluded inspection rows, so exclusion of non-adopted supplier evidence cannot be confirmed.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "warranty_split_allocations_show_supplier_cost_ratio_and_recovery",
+        "verdict": "pass",
+        "reason": "Split rows show supplier-level costs, responsibility ratios, prior recovery and current recovery; notes identify SPLIT_OVERRIDE ratios for WR-033-011 and WR-033-014.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "workbook_matches_recovery_allocation",
+        "verdict": "pass",
+        "reason": "The three sheets cover recoverable details, review cases and supplier summaries, and the content focuses on warranty recovery allocation.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "wechat-tech-topic-package-hardened",
+    "rule_score": 0.8202,
+    "judge_score": 1.0,
+    "combined_score": 0.8562,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "headline_usefulness_and_specificity",
+        "verdict": "pass",
+        "reason": "The titles name concrete tensions and workflows grounded in local records, such as required confirmation for cross-app actions (TS-001, TS-003) and document status and source links in enterprise knowledge bases (TS-025, TS-026).",
+        "source": "codex_luna"
+      },
+      {
+        "id": "reader_facing_headline_translation",
+        "verdict": "pass",
+        "reason": "High-ranked titles translate technical changes into reader concerns, including changed browser verification habits and how team review practices handle context and rollback plans.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "audience_editorial_fit_and_planning_tone",
+        "verdict": "pass",
+        "reason": "Cards identify reader segments and practical value, such as explaining phone permission prompts to general readers and review workflow changes to developers and technical managers; the package remains a restrained planning board.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "source_grounded_non_generic_synthesis_without_stuffing",
+        "verdict": "pass",
+        "reason": "The cards explain source roles, including TS-003 correcting TS-002’s promotional “un感” claim and TS-014 establishing the repaired firmware state while TS-013 is treated only as background.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "package_thesis_bridge_source_grounding",
+        "verdict": "pass",
+        "reason": "The front summary’s strongest thesis, user control of on-device assistants, is tied to original records TS-001, TS-003, TS-049, and TS-050; TS-052 is explicitly treated as a bridge note rather than factual support.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "latest_state_and_source_conflict_resolution_quality",
+        "verdict": "pass",
+        "reason": "The board prefers TS-003’s confirmation-required clarification over TS-002’s marketing language and TS-014’s repair notice over the unverified TS-013 forum claim, with explicit boundaries.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "novelty_recent_history_angle_differentiation",
+        "verdict": "pass",
+        "reason": "It distinguishes selected topics from recent coverage, for example shifting search-summary coverage from citation labels to verification workflow and knowledge-base coverage from general misconceptions to document status and source links.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "conflict_aware_ranking_rationale",
+        "verdict": "pass",
+        "reason": "Ranking rationales cite multiple axes, including evidence strength, reader fit, novelty, and risk; the top-three topics also differ across product experience, developer workflow, and governance.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "close_call_specificity",
+        "verdict": "pass",
+        "reason": "The matrix compares concrete candidates and outcomes, including the repaired sensor issue versus robot-inspection coverage, weighing recency and repair status against recent-history overlap and the need for a new angle.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "reserve_and_non_selection_reasoning_quality",
+        "verdict": "pass",
+        "reason": "Reserve entries give source IDs, specific downgrade reasons, and conditions to promote; logs separately cover duplicate collapse, stale background, promotion, safety-sensitive material, history conflicts, and over-broad bridges.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "safety_promotion_deamplification_expression",
+        "verdict": "pass",
+        "reason": "The sensor topic is bounded to repair status and low-risk reader actions with no reproduction steps; vendor metrics, health-adjacent claims, and automation overclaims are explicitly limited or downranked.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "package_coherence_and_distinct_angles",
+        "verdict": "pass",
+        "reason": "The five primary topics cover distinct reader problems: assistant permissions, search verification, code-review workflow, document governance, and safe reporting of a repaired device issue.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "cross_artifact_semantic_alignment_evidence_gate",
+        "verdict": "pass",
+        "reason": "The submitted JSON summary and Markdown describe the same five primary topics, three reserves, close-call outcomes, source-state handling, and non-selection logic; the summaries are qualitatively aligned.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "xiaohongshu-psychology-note-pack",
+    "rule_score": 0.8095,
+    "judge_score": 0.25,
+    "combined_score": 0.6976,
+    "rule_weight": 0.8,
+    "judge_weight": 0.2,
+    "verdicts": [
+      {
+        "id": "body_integrated_conflict_resolution_specificity",
+        "verdict": "fail",
+        "reason": "The bodies visibly remove diagnostic and manipulative framings and reshape the sleep routine as a small paper exercise, but the pack repeats the old three-column fact/evaluation/next-phrase structure in both meeting and message notes. The sleep note also calls the state “not insomnia,” an unsupported categorical claim.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "plan_to_markdown_editorial_coherence_quality",
+        "verdict": "fail",
+        "reason": "The plan says the morning note centers self-criticism downshift and the sleep note externalizes unfinished tasks, but the morning body is dominated by task selection and a three-line list, while the sleep body says “这不是失眠” and describes an unsupported signal to the brain. The delivered copy does not consistently match the planned safety and benefit loops.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "unsafe_risk_transformation_quality",
+        "verdict": "fail",
+        "reason": "Several risky framings are softened, but the sleep note makes a categorical claim (“这不是失眠”) and implies a brain-signaling explanation without support. The meeting note also says replay “只会让当下的不适感越来越满,” an overconfident outcome claim.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "reader_facing_vs_meta_self_certification_balance",
+        "verdict": "fail",
+        "reason": "The note bodies include editorial explanations addressed to the reader, such as the meeting note’s “这里不是要你去操控对方的感受” and the sleep note’s “不是某个课程里的标准流程,” exposing risk-rewrite and provenance handling instead of presenting only finished reader-facing copy.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "practice_specificity_and_non_interchangeability",
+        "verdict": "pass",
+        "reason": "The exercises are concrete and varied: the morning note identifies a small fact and one task, the meeting note drafts a next-time sentence, the message note separates fact, guess, and feeling, and the sleep note writes an unfinished task, next step, and review time.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "body_micro_detail_actionability",
+        "verdict": "pass",
+        "reason": "At least three notes provide usable scene-specific details, including touching a cup or desk on waking, a sample meeting repair sentence, a three-line message reflection, and a bedtime note with a specific time to revisit the task.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "note_benefit_loop_coherence",
+        "verdict": "fail",
+        "reason": "The meeting note shifts from post-meeting awkwardness to a relationship-boundary message that does not follow naturally from its scene. The morning note also bundles self-criticism, task planning, low-energy weekend actions, and a three-line writing exercise, weakening its central benefit loop.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "pack_current_handoff_selection_balance",
+        "verdict": "fail",
+        "reason": "The pack includes self-criticism, communication, and bedtime notes, but no distinct work/task-start note loop. The morning note mentions choosing one task, yet its title and main framing center morning self-blame rather than a clear work or action-entry need.",
+        "source": "codex_luna"
+      }
+    ]
+  },
+  {
+    "task": "xmind-screenshot-template-ppt",
+    "rule_score": 0.7699,
+    "judge_score": 0.6667,
+    "combined_score": 0.7441,
+    "rule_weight": 0.75,
+    "judge_weight": 0.25,
+    "verdicts": [
+      {
+        "id": "section_hierarchy_and_grouping",
+        "verdict": "pass",
+        "reason": "The 11-slide structure has meaningful roles and grouped sections, including opening context, action stations, audience and timing lanes, safety, follow-up, and optional material.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "cross_axis_synthesis_not_raw_branch_dump",
+        "verdict": "pass",
+        "reason": "Slides combine workshop dimensions into usable chunks, such as Slide 3 pairing household actions with public-lighting and budget boundaries, and Slide 8 linking commitments, follow-up, and privacy.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "presentation_chunking_and_readability",
+        "verdict": "pass",
+        "reason": "Text is organized into labeled groups, bullets, tables, and checklists across slides; for example, Slide 7 separates topics into “可以上屏 / 适合备注 / 需避免.”",
+        "source": "codex_luna"
+      },
+      {
+        "id": "audience_reader_boundary_clarity",
+        "verdict": "fail",
+        "reason": "The ordinary slide sequence includes backstage/process material: Slide 11 is a standalone template cleanup and draft-traces checklist, and Slides 9–10 present volunteer setup and optional materials as visible slides.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "template_style_proxy_continuity",
+        "verdict": "pass",
+        "reason": "Substantive slides show recurring template-related proxies, including green and cream fills, rounded cards, grouped panels, and page footers; Slides 2–6 and 8–10 contain workshop content in these structures.",
+        "source": "codex_luna"
+      },
+      {
+        "id": "retained_template_sample_residue_text",
+        "verdict": "fail",
+        "reason": "Slide 11 visibly presents “模板旧页和改稿痕迹” with cleanup instructions, old footer/date reminders, and placeholder guidance as finished slide content.",
+        "source": "codex_luna"
+      }
+    ]
+  }
+]

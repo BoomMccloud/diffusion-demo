@@ -62,16 +62,48 @@ Thumbs.db
 .env.local
 .env.*
 
-# Large artifact bundles stay local (over GitHub's file size limit)
+# Large artifact bundles stay local. The launch archive contents are checked in separately.
 archive/artifact-bundles/
+/go-live/【中文版】35B模型发布官方博客 (2) 2.zip
 
-# Keep benchmark evidence cited by docs
-!bench/results/**/*.jsonl
-!bench/results/**/*.log
+# Office editor lock files
+.~*.docx
+~$*.docx
 
-# Dependency-density raw run artifacts stay local; only summaries are tracked.
-/bench/results/dependency-density/**
-!/bench/results/dependency-density/**/
-!/bench/results/dependency-density/README.md
-!/bench/results/dependency-density/**/summary.json
-!/bench/results/dependency-density/**/*-summary.json
+# Local benchmark outputs
+/bench/results/
+/bench/**/results/
+
+# Addition-in-words raw records are the evidence for its README.
+!experiments/addition-in-words/results/**/*.jsonl
+!experiments/addition-in-words/results/**/*.log
+experiments/addition-in-words/results/upstream_*.csv
+
+# Upstream MiniWoB++ clone
+bench/miniwob/miniwob-plusplus/
+bench/miniwob/recordings/
+
+# WebArena race recordings (videos and timings)
+bench/webarena/recordings/
+
+# Upstream benchmark checkouts and downloaded WorkBuddy task materials
+/bench/windtunnel/
+/bench/webarena/webarena/
+/bench/terminal_bench/terminal-bench/
+/experiments/workbuddy/workbuddy-bench/
+/experiments/workbuddy/experiments/drug-inventory-video/source/instruction.md
+/experiments/workbuddy/experiments/drug-inventory-video/source/inventory_workbook.xlsx
+/experiments/workbuddy/experiments/drug-inventory-video/source/workspace.tar.gz
+/experiments/workbuddy/experiments/full-rollout-2026-11-16/manual-review/web/instruction.md
+/experiments/workbuddy/experiments/full-rollout-2026-11-16/manual-review/web/public-assets/
+/experiments/workbuddy/experiments/full-rollout-2026-11-16/manual-review/web/www/
+/experiments/workbuddy/experiments/full-rollout-2026-11-16/manual-review/web/source_assets.tar.gz
+/experiments/workbuddy/experiments/full-rollout-2026-11-16/manual-review/web/agent.workspace.tar.gz
+/experiments/workbuddy/experiments/full-rollout-2026-11-16/manual-review/web/testcases.json
+/experiments/workbuddy/experiments/office-marketing-evidence-2026-11-19/raw-spark/
+
+# TabDLM source CSVs, downloaded at a pinned commit
+bench/tabdlm/.data/
+
+# LLM-JEPA datasets, downloaded at a pinned commit
+bench/jepa/.data/

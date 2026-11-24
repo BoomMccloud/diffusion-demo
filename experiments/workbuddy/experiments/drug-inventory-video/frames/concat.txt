@@ -1,0 +1,15 @@
+file '/Users/jasonbxu/Documents/GitHub/diffusion-demo/experiments/workbuddy/experiments/drug-inventory-video/frames/01.png'
+duration 5
+file '/Users/jasonbxu/Documents/GitHub/diffusion-demo/experiments/workbuddy/experiments/drug-inventory-video/frames/02.png'
+duration 7
+file '/Users/jasonbxu/Documents/GitHub/diffusion-demo/experiments/workbuddy/experiments/drug-inventory-video/frames/03.png'
+duration 6
+file '/Users/jasonbxu/Documents/GitHub/diffusion-demo/experiments/workbuddy/experiments/drug-inventory-video/frames/04.png'
+duration 7
+file '/Users/jasonbxu/Documents/GitHub/diffusion-demo/experiments/workbuddy/experiments/drug-inventory-video/frames/05.png'
+duration 6
+file '/Users/jasonbxu/Documents/GitHub/diffusion-demo/experiments/workbuddy/experiments/drug-inventory-video/frames/06.png'
+duration 6
+file '/Users/jasonbxu/Documents/GitHub/diffusion-demo/experiments/workbuddy/experiments/drug-inventory-video/frames/07.png'
+duration 8
+file '/Users/jasonbxu/Documents/GitHub/diffusion-demo/experiments/workbuddy/experiments/drug-inventory-video/frames/07.png'

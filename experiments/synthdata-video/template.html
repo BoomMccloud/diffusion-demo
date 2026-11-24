@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Record Map Race</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&display=swap">
+<style>
+/* Single dark look, chosen for video. Layout: two equal map panels under a shared clock, end card overlays both. */
+:root {
+  --bg: #0f1214;
+  --panel: #161a1d;
+  --rule: #262c30;
+  --fg: #eef0ee;
+  --fg-2: #a9b0b3;
+  --muted: #6c7478;
+  --dllm: #3987e5;
+  --qwen: #e0703f;
+  --reject: #c2453f;
+  --font: "IBM Plex Sans", "Noto Sans SC", "PingFang SC", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.5 var(--font); }
+.stage { max-width: 1280px; margin: 0 auto; padding: 28px max(16px, env(safe-area-inset-left)) 24px; display: grid; gap: 18px; }
+header { display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap; }
+h1 { margin: 0; font-weight: 600; font-size: clamp(22px, 3vw, 32px); letter-spacing: -0.01em; }
+.sub { color: var(--fg-2); font-size: 14px; }
+.clock { font: 500 clamp(28px, 4vw, 44px)/1 var(--mono); font-variant-numeric: tabular-nums; }
+.clock small { font-size: 0.45em; color: var(--muted); margin-left: 4px; }
+.panels { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; position: relative; }
+@media (max-width: 760px) { .panels { grid-template-columns: 1fr; } }
+.panel { background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; padding: 14px; display: grid; gap: 10px; min-width: 0; }
+.ptop { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.name { font-weight: 600; font-size: 18px; display: flex; align-items: center; gap: 8px; }
+.name i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.temp { color: var(--muted); font: 13px var(--mono); }
+.done { font: 500 13px var(--mono); padding: 3px 8px; border-radius: 999px; background: var(--rule); color: var(--fg-2); }
+.done.on { color: var(--bg); }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.stat { display: grid; gap: 2px; }
+.stat b { font: 500 26px/1.1 var(--mono); font-variant-numeric: tabular-nums; }
+.stat span { color: var(--muted); font-size: 12px; letter-spacing: 0.03em; }
+canvas { width: 100%; aspect-ratio: 1 / 0.82; display: block; border-radius: 6px; background: #12161a; }
+.rejects { display: flex; flex-wrap: wrap; gap: 3px; min-height: 14px; }
+.rejects i { width: 5px; height: 12px; border-radius: 1px; background: var(--reject); opacity: 0.85; }
+.bar { height: 4px; background: var(--rule); border-radius: 2px; overflow: hidden; }
+.bar div { height: 100%; width: 0; }
+.controls { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+button { font: 500 13px var(--mono); color: var(--fg); background: var(--rule); border: 1px solid #333a3f; border-radius: 6px; padding: 7px 12px; cursor: pointer; }
+button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+button:focus-visible { outline: 2px solid var(--dllm); outline-offset: 2px; }
+.legend { display: flex; gap: 16px; color: var(--fg-2); font-size: 13px; flex-wrap: wrap; margin-left: auto; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.endcard { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(15, 18, 20, 0.86); border-radius: 10px; opacity: 0; pointer-events: none; transition: opacity 0.6s; }
+.endcard.on { opacity: 1; pointer-events: auto; }
+.endcard .card { display: grid; gap: 16px; text-align: center; padding: 24px; }
+.endcard h2 { margin: 0; font-size: clamp(24px, 3.4vw, 38px); font-weight: 600; }
+.endcard table { border-collapse: collapse; font: 15px var(--mono); font-variant-numeric: tabular-nums; margin: 0 auto; }
+.endcard td, .endcard th { padding: 6px 14px; text-align: right; border-bottom: 1px solid var(--rule); }
+.endcard th { color: var(--muted); font: 500 12px var(--font); }
+.endcard td:first-child, .endcard th:first-child { text-align: left; }
+footer { color: var(--muted); font-size: 12px; line-height: 1.6; }
+.tip { position: fixed; pointer-events: none; background: #000; color: var(--fg); font-size: 12px; padding: 6px 8px; border-radius: 4px; max-width: 280px; z-index: 5; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <header>
+    <div>
+      <h1>Same variety, faster</h1>
+      <div class="sub">138 requests each for fictional inpatient summaries, each request naming a department, sex and age range. Each dot is one usable, distinct summary.</div>
+    </div>
+    <div class="clock" id="clock">0.0<small>s</small></div>
+  </header>
+
+  <div class="panels" id="panels">
+    <div class="endcard" id="endcard"><div class="card">
+      <h2 id="endtitle"></h2>
+    </div></div>
+  </div>
+
+  <div class="controls">
+    <button id="play" aria-pressed="true">Pause</button>
+    <button id="restart">Restart</button>
+    <button class="speed" data-s="1" aria-pressed="false">1×</button>
+    <button class="speed" data-s="2" aria-pressed="true">2×</button>
+    <button class="speed" data-s="4" aria-pressed="false">4×</button>
+    <div class="legend">
+      <span><svg width="12" height="12"><circle cx="6" cy="6" r="4.5" fill="#eef0ee"/></svg>new case</span>
+      <span><svg width="14" height="14"><circle cx="7" cy="7" r="5.5" fill="none" stroke="#eef0ee" stroke-width="1.5"/></svg>repeat of an earlier case</span>
+      <span><svg width="8" height="12"><rect width="5" height="12" rx="1" fill="#c2453f"/></svg>rejected</span>
+    </div>
+  </div>
+
+  <footer>
+    Real completion times from benchmark run 2026-10-20, held-out replicate 2 of 3, 8 requests at a time per model.
+    dLLM: hosted qwen36-iter22000-blk16-arverify-best at temperature 0.6. Qwen: qwen/qwen3.6-35b-a3b via OpenRouter at 1.0, its best setting;
+    part of its time is OpenRouter queueing. Rejected: failed format checks or the judge (gemini-3.8-flash) found an error.
+    Repeat: cosine ≥ 0.97 or same complaint and diagnosis as a case already kept. Map: t-SNE of gemini-embedding-001 embeddings, shared by both models.
+  </footer>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+const DATA = __DATA__;
+const MODELS = [
+  { key: "dllm", name: "Diffusion LLM", color: "--dllm" },
+  { key: "qwen", name: "Qwen3.6-35B-A3B (AR)", color: "--qwen" },
+];
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const END = Math.max(...MODELS.map(m => DATA.cells[m.key].end));
+const fmt = s => s.toFixed(1);
+
+const panels = document.getElementById("panels");
+const state = MODELS.map(m => {
+  const cell = DATA.cells[m.key];
+  const el = document.createElement("div");
+  el.className = "panel";
+  el.innerHTML = `
+    <div class="ptop"><div class="name"><i style="background:var(${m.color})"></i>${m.name}</div>
+      <span class="temp">temperature ${cell.temp.toFixed(1)}</span><span class="done" id="done-${m.key}">running</span></div>
+    <div class="stats">
+      <div class="stat"><b id="dist-${m.key}">0</b><span>DISTINCT USABLE</span></div>
+      <div class="stat"><b id="clean-${m.key}">0</b><span>USABLE (INCL. REPEATS)</span></div>
+      <div class="stat"><b id="rej-${m.key}">0</b><span>REJECTED</span></div>
+    </div>
+    <canvas id="cv-${m.key}"></canvas>
+    <div class="rejects" id="rejects-${m.key}"></div>
+    <div class="bar"><div id="bar-${m.key}" style="background:var(${m.color})"></div></div>`;
+  panels.insertBefore(el, document.getElementById("endcard"));
+  const kept = cell.events.filter(e => e.kind === "new");
+  return { m, cell, kept, shown: 0 };
+});
+
+// Canvas drawing: department labels faintly, then dots as they arrive.
+function sizeCanvas(cv) {
+  const r = cv.getBoundingClientRect(), d = window.devicePixelRatio || 1;
+  cv.width = Math.round(r.width * d); cv.height = Math.round(r.height * d);
+  return d;
+}
+const PAD = 0.07;
+const place = (cv, x, y) => [cv.width * (PAD + x * (1 - 2 * PAD)), cv.height * (PAD + y * (1 - 2 * PAD))];
+
+function draw(s, t) {
+  const cv = document.getElementById(`cv-${s.m.key}`), ctx = cv.getContext("2d");
+  const d = window.devicePixelRatio || 1, color = css(s.m.color);
+  ctx.clearRect(0, 0, cv.width, cv.height);
+  ctx.font = `${11 * d}px "Noto Sans SC", sans-serif`;
+  ctx.fillStyle = css("--muted"); ctx.textAlign = "center";
+  for (const [dept, [x, y]] of Object.entries(DATA.departments)) {
+    const [px, py] = place(cv, x, y); ctx.fillText(dept, px, py);
+  }
+  let dist = 0, clean = 0, rej = 0;
+  for (const e of s.cell.events) {
+    if (e.t > t) break;
+    const age = t - e.t, pop = Math.min(1, age / 0.35);
+    if (e.kind === "failed") { rej++; continue; }
+    clean++;
+    if (e.kind === "new") {
+      dist++;
+      const [px, py] = place(cv, e.x, e.y);
+      ctx.beginPath(); ctx.arc(px, py, (3.2 + 3 * (1 - pop)) * d, 0, 7);
+      ctx.fillStyle = color; ctx.globalAlpha = 0.95; ctx.fill(); ctx.globalAlpha = 1;
+    } else {
+      const tw = e.twin != null ? s.kept[e.twin] : e;
+      const [px, py] = place(cv, tw.x, tw.y);
+      ctx.beginPath(); ctx.arc(px, py, (7 + 4 * (1 - pop)) * d, 0, 7);
+      ctx.strokeStyle = color; ctx.lineWidth = 1.5 * d; ctx.globalAlpha = 0.8; ctx.stroke(); ctx.globalAlpha = 1;
+    }
+  }
+  document.getElementById(`dist-${s.m.key}`).textContent = dist;
+  document.getElementById(`clean-${s.m.key}`).textContent = clean;
+  document.getElementById(`rej-${s.m.key}`).textContent = rej;
+  const rj = document.getElementById(`rejects-${s.m.key}`);
+  while (rj.children.length < rej) rj.appendChild(document.createElement("i"));
+  while (rj.children.length > rej) rj.lastChild.remove();
+  document.getElementById(`bar-${s.m.key}`).style.width = `${Math.min(100, 100 * t / s.cell.end)}%`;
+  const done = document.getElementById(`done-${s.m.key}`), fin = t >= s.cell.end;
+  done.textContent = fin ? `done at ${fmt(s.cell.end)} s` : "running";
+  done.classList.toggle("on", fin); done.style.background = fin ? `var(${s.m.color})` : "";
+  return { dist, clean, rej };
+}
+
+function endCard() {
+  const [a, b] = state;
+  document.getElementById("endtitle").textContent = `${(b.cell.end / a.cell.end).toFixed(1)}× faster, same distinct output`;
+}
+
+// Playback clock.
+let t = 0, speed = 2, playing = true, last = null, ended = false;
+const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function frame(now) {
+  if (last != null && playing) t = Math.min(END + 2, t + (now - last) / 1000 * speed);
+  last = now;
+  document.getElementById("clock").innerHTML = `${fmt(Math.min(t, END))}<small>s</small>`;
+  state.forEach(s => draw(s, t));
+  if (t >= END + 1 && !ended) { ended = true; endCard(); document.getElementById("endcard").classList.add("on"); }
+  requestAnimationFrame(frame);
+}
+function restart() {
+  t = 0; ended = false; document.getElementById("endcard").classList.remove("on");
+  document.querySelectorAll(".rejects").forEach(r => r.replaceChildren());
+}
+document.getElementById("play").onclick = e => {
+  playing = !playing; e.target.textContent = playing ? "Pause" : "Play"; e.target.setAttribute("aria-pressed", playing);
+};
+document.getElementById("restart").onclick = restart;
+document.querySelectorAll(".speed").forEach(b => b.onclick = () => {
+  speed = +b.dataset.s; document.querySelectorAll(".speed").forEach(o => o.setAttribute("aria-pressed", o === b));
+});
+const resize = () => state.forEach(s => sizeCanvas(document.getElementById(`cv-${s.m.key}`)));
+addEventListener("resize", resize); resize();
+if (reduce) { t = END + 2; }
+
+// Hover: show the case behind a dot, for tuning.
+const tip = document.getElementById("tip");
+state.forEach(s => {
+  const cv = document.getElementById(`cv-${s.m.key}`);
+  cv.addEventListener("pointermove", ev => {
+    const r = cv.getBoundingClientRect(), d = window.devicePixelRatio || 1;
+    const mx = (ev.clientX - r.left) * d, my = (ev.clientY - r.top) * d;
+    let best = null, bd = 12 * d;
+    for (const e of s.cell.events) {
+      if (e.kind !== "new" || e.t > t) continue;
+      const [px, py] = place(cv, e.x, e.y), dd = Math.hypot(px - mx, py - my);
+      if (dd < bd) { bd = dd; best = e; }
+    }
+    tip.hidden = !best;
+    if (best) { tip.textContent = `${best.dept} · ${best.cc} → ${best.dx}`; tip.style.left = ev.clientX + 12 + "px"; tip.style.top = ev.clientY + 12 + "px"; }
+  });
+  cv.addEventListener("pointerleave", () => tip.hidden = true);
+});
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>

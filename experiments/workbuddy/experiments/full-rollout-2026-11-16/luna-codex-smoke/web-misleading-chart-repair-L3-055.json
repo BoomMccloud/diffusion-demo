@@ -1,0 +1,40 @@
+{
+  "verdicts": [
+    {
+      "id": "axis_not_misleading",
+      "verdict": "pass",
+      "reason": "The provided desktop and mobile screenshots show a zero baseline with ticks from 0 to 120 and bars for monthly values 100–112."
+    },
+    {
+      "id": "aggregation_correct",
+      "verdict": "fail",
+      "reason": "The script calculates totals and month-over-month changes from embedded monthly data, but the workflow trace does not establish that this data matches the source CSV; the rule-judge log also reports aggregate metadata and runtime self-validation failures."
+    },
+    {
+      "id": "labels_units_clear",
+      "verdict": "pass",
+      "reason": "Screenshots show labeled month and revenue axes, point units, values above bars, and a source data table with monthly changes."
+    },
+    {
+      "id": "repair_note",
+      "verdict": "pass",
+      "reason": "The visible “What we fixed” note describes the axis baseline, monthly versus cumulative data, corrected 12% growth claim, and labels and units."
+    },
+    {
+      "id": "chart_has_accessible_text_alternative",
+      "verdict": "pass",
+      "reason": "The artifact includes an HTML table with numeric monthly revenue, month-over-month changes, and cumulative totals."
+    },
+    {
+      "id": "page_declares_unit_and_data_source",
+      "verdict": "pass",
+      "reason": "Visible page text identifies revenue in points and names revenue.csv as the source."
+    }
+  ],
+  "task": "misleading-chart-repair-L3-055",
+  "track": "web",
+  "model": "gpt-6-luna",
+  "harness": "Codex CLI",
+  "evidence_sha256": "3834ce998d67c110d496107f5c1c785f1a168f7942403bd298320270d27fbae2",
+  "rule_reward": {}
+}

@@ -1,0 +1,193 @@
+[
+  {
+    "task": "atmosphere-game-L4-035",
+    "id": "pause_resume_preserves_run_state_without_background_progress",
+    "score_relevant": false,
+    "previous_reason": "The screenshots show a paused overlay, and the targeted probe reports unchanged HUD values and canvas frames while paused. But the HUD remains at score 0, depth 0 m, and oxygen 100% throughout, the canvas checksum is always 0, and a page error reports an invalid '#NaNNaNNaN' canvas color. There is no visible evidence of an active, progressing run before pause or of progress continuing after resume, so the probe cannot establish that pause freezes and restores a live run.",
+    "verdict": "unverifiable",
+    "finding": "The task score is already fixed at zero by other rubric failures. This check was not scored again."
+  },
+  {
+    "task": "csv-import-mapping-wizard-L4-037",
+    "id": "invalid_mapping_blocks_export_then_recovery_exports_current_rows",
+    "score_relevant": true,
+    "previous_reason": "The live trace stopped at the upload screen and recorded no mapping or export interactions. The targeted probe reports blocking and recovery, but its export payload has an empty mapping and does not establish that it reflects the corrected mapping, so current-row export behavior is unverified.",
+    "verdict": "fail",
+    "probe": "csv-import/csv",
+    "finding": "Removing the required mapping blocks preview. After remapping Owner to fullName, the export still emits the previously unmapped Name values under an empty-string key."
+  },
+  {
+    "task": "dispatch-health-chart-extension-L3-069",
+    "id": "t69_data_and_interaction_17_export_payload_contains_disp",
+    "score_relevant": false,
+    "previous_reason": "The attached screenshots show the chart data failed to load, so no SVG payload could be generated or inspected. The separate targeted probe shows loaded chart content, but timed out before exercising or capturing export. The source-context and current-state export behavior is therefore unobserved.",
+    "verdict": "unverifiable",
+    "finding": "The task score is already fixed at zero by other rubric failures. This check was not scored again."
+  },
+  {
+    "task": "mobile-booking-flow-L4-036",
+    "id": "review_edit_updates_payload",
+    "score_relevant": true,
+    "previous_reason": "The replay never reached review or submission. The Next action timed out, so there is no live evidence about editing choices or the final payload.",
+    "verdict": "fail",
+    "probe": "mobile-booking/booking",
+    "finding": "After selecting enabled service haircut and available slot s1, both cards are selected, but Next is disabled. The review, edit, and submission path is unreachable through the saved UI."
+  },
+  {
+    "task": "mobile-booking-flow-L4-036",
+    "id": "post_submit_slot_reserved_state",
+    "score_relevant": true,
+    "previous_reason": "No confirmation was observed. The replay remained on the initial selection screen, so reserved-slot behavior after submission was not tested.",
+    "verdict": "fail",
+    "probe": "mobile-booking/booking",
+    "finding": "Valid selections leave Next disabled on step 1, so a user cannot complete a booking and reach the required reserved state."
+  },
+  {
+    "task": "mobile-booking-flow-L4-036",
+    "id": "reserved_slot_survives_review_restart_path",
+    "score_relevant": true,
+    "previous_reason": "The replay did not complete a booking or start a fresh booking. No evidence shows whether the slot remains reserved or contact fields reset afterward.",
+    "verdict": "fail",
+    "probe": "mobile-booking/booking",
+    "finding": "Valid selections leave Next disabled on step 1, so a user cannot confirm a booking and exercise the reserved-slot restart path."
+  },
+  {
+    "task": "observability-shareable-view-L4-068",
+    "id": "t68_task_functionality_07_confirm_each_change_updates",
+    "score_relevant": true,
+    "previous_reason": "The trace shows a combined selection of four options updating the URL, state, and displayed metric summary, but does not isolate each control or establish that each change updates chart marks and saved preferences. The targeted probe reached a 404, which is inconclusive.",
+    "verdict": "pass",
+    "probe": "observability-shareable/observability_edits",
+    "finding": "On the actual submission/chart.html page, each of five individual edits changed the SVG and exposed state, and persisted matching URL and localStorage values. Metric, service, region and time changes updated summary values. Switching off the overlay changed the SVG and the explicit overlay state while leaving the incident summary relevant to the same data window."
+  },
+  {
+    "task": "observability-shareable-view-L4-068",
+    "id": "t68_task_functionality_10_preload_conflicting_storage",
+    "score_relevant": true,
+    "previous_reason": "The trace records one localStorage key after selections, but does not show conflicting preferences preloaded before loading the canonical query or verify which state wins. The targeted probe reached a 404, which is inconclusive.",
+    "verdict": "pass",
+    "probe": "observability-shareable/observability_storage",
+    "finding": "Preloaded five conflicting preferences. Loading the canonical URL showed all five URL values, 13 visible points, peak 438, and incident INC-0514-INGEST-1."
+  },
+  {
+    "task": "particle-boundary-simulation-L3-029",
+    "id": "boundary_no_penetration",
+    "score_relevant": false,
+    "previous_reason": "The screenshots and runtime diagnostics show only `shipping_default` (FS-01). The targeted probe reports an attempted wall-stress selection, but diagnostics stayed on the default scenario, so no wall collision was observed.",
+    "verdict": "unverifiable",
+    "finding": "The task score is already fixed at zero by other rubric failures. This check was not scored again."
+  },
+  {
+    "task": "particle-boundary-simulation-L3-029",
+    "id": "corner_escape_behavior",
+    "score_relevant": false,
+    "previous_reason": "No live corner-stress particles were observed: dense-cluster selection left diagnostics at `shipping_default`/FS-01, and the probe supplied no particle sample. The corner-stuck count of 0 applies only to the default run.",
+    "verdict": "unverifiable",
+    "finding": "The task score is already fixed at zero by other rubric failures. This check was not scored again."
+  },
+  {
+    "task": "pwa-offline-checklist-L4-039",
+    "id": "online_sync_transition",
+    "score_relevant": true,
+    "previous_reason": "The replay timed out waiting for the online transition. The resulting page still showed offline and pending_sync for all rows, but no observed successful return to online or completed sync establishes whether the transition works.",
+    "verdict": "pass",
+    "probe": "pwa-offline/offline",
+    "finding": "The isolated browser initially stayed offline when automation lifted its network override. With a controlled offline/online event and a mocked successful local sync response, the app sent a POST, showed Synced, marked all items synced and saved a push timestamp. This verifies the app transition with a responding endpoint, not a deployed backend."
+  },
+  {
+    "task": "routing-console-L4-006",
+    "id": "rule_precedence_reorder",
+    "score_relevant": true,
+    "previous_reason": "The targeted observation records a changed visible row order after reorder, but no routing trace or decision was observed afterward to show that routing honors the new precedence. The native trace confirms reorder guidance, not routing behavior.",
+    "verdict": "fail",
+    "probe": "routing-console/routing_discover",
+    "finding": "With two enabled rules matching the same event, Enter reverses the simulated trace order but the visible rule order and precedence stay unchanged. The UI sorts by fixed priority while the simulator iterates the swapped array."
+  },
+  {
+    "task": "rule-builder-preview-L4-043",
+    "id": "operator_type_change_clears_stale_value_and_recomputes_matches",
+    "score_relevant": true,
+    "previous_reason": "The probe stopped when it tried to type CN into a number input. The trace shows field/operator selections and a blocked empty-array state, but no observed valid follow-up input or recomputed matches.",
+    "verdict": "fail",
+    "probe": "rule-builder/op",
+    "finding": "Changing amount > 100 to plan equals keeps 100 in a number input, reports a valid rule, and exports the stale numeric value. Switching to plan in correctly blocks an empty array and later matches e1, e4 and e7 for pro, but does not repair the earlier stale-value behavior."
+  },
+  {
+    "task": "rule-builder-preview-L4-043",
+    "id": "nested_group_delete_updates_preview_and_export_without_stale_clauses",
+    "score_relevant": true,
+    "previous_reason": "The probe stopped while trying to type CN into a number input. No trace shows creating and deleting a nested group or comparing the resulting preview with exported JSON.",
+    "verdict": "pass",
+    "probe": "rule-builder/group",
+    "finding": "A nested amount > 99999 group changes the match list to empty. Removing it restores e1 and e3 in both the preview and the export and drops the removed group from the exported tree."
+  },
+  {
+    "task": "schedule-reschedule-flow-L4-061",
+    "id": "t61_task_functionality_06_attempt_the_conflict_target",
+    "score_relevant": false,
+    "previous_reason": "The replay shows a static conflict summary for R-204 at 2026-04-17 19:00 CDT, but no attempt to enter that target or resulting confirmation block was observed. The probe timed out before interaction, and page errors report `getSelectedSession is not defined`.",
+    "verdict": "unverifiable",
+    "finding": "The task score is already fixed at zero by other rubric failures. This check was not scored again."
+  },
+  {
+    "task": "schedule-reschedule-flow-L4-061",
+    "id": "t61_task_functionality_10_confirm_the_reschedule_and_i",
+    "score_relevant": false,
+    "previous_reason": "No confirmation action or post-confirmation state was observed. The trace only shows filters changed and an attempted confirm click timing out; the page also reports `getSelectedSession is not defined`.",
+    "verdict": "unverifiable",
+    "finding": "The task score is already fixed at zero by other rubric failures. This check was not scored again."
+  },
+  {
+    "task": "schedule-reschedule-flow-L4-061",
+    "id": "t61_task_functionality_11_confirm_the_table_row_and_ch",
+    "score_relevant": false,
+    "previous_reason": "No confirmation was observed, so there is no evidence of an updated session row, change log entry, or unchanged unrelated sessions after rescheduling. The trace shows only the original schedule.",
+    "verdict": "unverifiable",
+    "finding": "The task score is already fixed at zero by other rubric failures. This check was not scored again."
+  },
+  {
+    "task": "support-flow-sankey-state-repair-L4-070",
+    "id": "t70_task_functionality_24_multi_selection_sequence_no_stale_state",
+    "score_relevant": true,
+    "previous_reason": "Replay evidence shows a working chart and correct node selections, but the multi-selection sequence did not complete: the attempted downstream link click timed out because the link was not visible. No complete cross-type sequence or reset state was observed.",
+    "verdict": "pass",
+    "probe": "support-flow-sankey/sankey",
+    "finding": "Using the SVG elements’ own keyboard handlers, link to node to another link replaces selection, details and highlights at each step; Reset clears all three."
+  },
+  {
+    "task": "support-flow-sankey-state-repair-L4-070",
+    "id": "t70_data_and_interaction_26_link_detail_source_data_consistency",
+    "score_relevant": true,
+    "previous_reason": "The link selection probe timed out on a hidden SVG path, so no live link detail was observed for comparison with the source records.",
+    "verdict": "pass",
+    "probe": "support-flow-sankey/sankey",
+    "finding": "The 214-volume and 29-volume links show different source, target, volume, resolution rate, owner team and explanation matching their respective source records."
+  },
+  {
+    "task": "support-inbox-triage-L3-040",
+    "id": "debounced_read_marking",
+    "score_relevant": true,
+    "previous_reason": "The targeted click probe recorded null row IDs and null unread values, so it did not establish whether pending/read state changes occur. Native trace shows no valid conversation selection.",
+    "verdict": "pass",
+    "probe": "support-inbox/debounce",
+    "finding": "Two unread fixture rows were clicked rapidly. Only the final row showed a pending marker and was marked read after the delay."
+  },
+  {
+    "task": "support-inbox-triage-L3-040",
+    "id": "shift_click_range_select",
+    "score_relevant": true,
+    "previous_reason": "The targeted shift-click probe errored before establishing selection or bulk assignment. Native trace records no keyboard/shift-click action; visible checkbox controls alone do not verify range behavior.",
+    "verdict": "pass",
+    "probe": "support-inbox/range",
+    "finding": "Shift-click selected three inclusive rows, and all three updated to Mia after bulk assign while the fourth row was unchanged."
+  },
+  {
+    "task": "support-inbox-triage-L3-040",
+    "id": "conversation_list_virtualized",
+    "score_relevant": true,
+    "previous_reason": "The probe counted 9 rows, but all row IDs were null and scrolling changed neither the ID set nor scroll position meaningfully (scrollTop 65, scrollHeight 480). Native trace has no valid scrolling observation; the implementation note's claim is not behavioral evidence.",
+    "verdict": "pass",
+    "probe": "support-inbox/virtual",
+    "finding": "The 200-record fixture loaded. Scrolling moved from IDs c-2000–c-2008 to c-2011–c-2019 with nine row nodes. This passes the recycling/count criterion; scrolling advanced slowly and the check does not establish efficient access to the last row."
+  }
+]

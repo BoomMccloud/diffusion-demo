@@ -1,0 +1,140 @@
+[
+  {
+    "requested_model": "deepseek/deepseek-v4.1-flash-1017",
+    "turns": [
+      {
+        "http": 200,
+        "stream": false,
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "provider": "Particle AI",
+        "usage": {
+          "prompt_tokens": 298,
+          "completion_tokens": 25,
+          "total_tokens": 323,
+          "cost": 3.163e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 3.163e-05,
+            "upstream_inference_prompt_cost": 1.788e-05,
+            "upstream_inference_completions_cost": 1.375e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 1,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "finish_reason": "tool_calls",
+        "seconds": 2.356
+      },
+      {
+        "http": 200,
+        "stream": true,
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "provider": "River",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 336,
+          "completion_tokens": 4,
+          "total_tokens": 340,
+          "cost": 4.224e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 4.224e-05,
+            "upstream_inference_prompt_cost": 4.032e-05,
+            "upstream_inference_completions_cost": 1.92e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "seconds": 0.981
+      }
+    ],
+    "reasoning_details_count": 0,
+    "passed": true
+  },
+  {
+    "requested_model": "z-ai/glm-5.3-flash",
+    "turns": [
+      {
+        "http": 200,
+        "stream": false,
+        "model": "z-ai/glm-5.3-flash",
+        "provider": "Reka",
+        "usage": {
+          "prompt_tokens": 165,
+          "completion_tokens": 34,
+          "total_tokens": 199,
+          "cost": 3e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 3e-05,
+            "upstream_inference_prompt_cost": 1.98e-05,
+            "upstream_inference_completions_cost": 1.02e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 26,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "finish_reason": "tool_calls",
+        "seconds": 3.172
+      },
+      {
+        "http": 200,
+        "stream": true,
+        "model": "z-ai/glm-5.3-flash",
+        "provider": "Wafer",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 206,
+          "completion_tokens": 5,
+          "total_tokens": 211,
+          "cost": 9.572e-06,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.572e-06,
+            "upstream_inference_prompt_cost": 8.652e-06,
+            "upstream_inference_completions_cost": 9.2e-07
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "seconds": 1.029
+      }
+    ],
+    "reasoning_details_count": 1,
+    "passed": true
+  }
+]

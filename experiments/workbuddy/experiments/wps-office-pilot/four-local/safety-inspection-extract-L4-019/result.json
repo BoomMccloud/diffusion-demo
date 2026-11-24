@@ -1,0 +1,9 @@
+{
+  "task": "safety-inspection-extract-L4-019",
+  "passed": 24,
+  "total": 27,
+  "baseline_passed": 25,
+  "baseline_total": 27,
+  "wps_output_matches_scored_output": true,
+  "judge": "original deterministic task checks, local path redirects"
+}

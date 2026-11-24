@@ -1,0 +1,36 @@
+{
+  "task": "ticket-weekly-L3-010",
+  "first_attempt": {
+    "passed": 11,
+    "total": 15,
+    "failure": "WPS adapter preserved old date formats in numeric cells; extra total row"
+  },
+  "repaired_retry": {
+    "wps_output": {
+      "passed": 14,
+      "total": 15
+    },
+    "agent_output": {
+      "passed": 14,
+      "total": 15
+    },
+    "baseline": {
+      "passed": 15,
+      "total": 15
+    },
+    "failed_check": "has_4_weeks: extra total row",
+    "actual_model_wps_tool_calls": [
+      "write_output",
+      "read_output"
+    ],
+    "agent_generated_separate_final_output": true
+  },
+  "environment": "Spark original task Docker image and CodeBuddy 2.109.3, network disabled except scoped SSH Unix sockets to Clover proxy and WPS output tool on Mac",
+  "limitations": [
+    "one attempt per setup, plus infrastructure-repair retry",
+    "WPS MCP tool and instructions added",
+    "WPS workbook not mounted directly in agent workspace",
+    "non-native agent launcher",
+    "different network and routing session"
+  ]
+}

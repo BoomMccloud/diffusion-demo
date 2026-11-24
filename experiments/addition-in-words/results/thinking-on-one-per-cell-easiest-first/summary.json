@@ -1,0 +1,38 @@
+{
+  "accuracy_by_longer_operand_pct": {
+    "1-3": 100.0,
+    "10-13": 97.73,
+    "4-6": 100.0,
+    "7-9": 100.0
+  },
+  "canonical_text_correct": 166,
+  "canonical_text_correct_pct": 98.22,
+  "completion_tokens": {
+    "median": 784,
+    "total": 192301
+  },
+  "config": "on",
+  "empty_answers": 0,
+  "expected_cases": 169,
+  "finish_reasons": {
+    "stop": 169
+  },
+  "first_attempt_successes": 169,
+  "graded_cases": 169,
+  "instruction_compliant": 169,
+  "instruction_compliant_pct": 100.0,
+  "latency_seconds": {
+    "mean": 2.0108293964497044,
+    "median": 1.562799,
+    "total": 339.830168
+  },
+  "numeric_correct": 167,
+  "numeric_correct_pct": 98.82,
+  "parse_errors": {},
+  "reasoning_tokens": {
+    "median": 764,
+    "total": 189461
+  },
+  "summarized_at": "2026-10-11T03:57:15.105658+00:00",
+  "think_tag_leaks": 0
+}

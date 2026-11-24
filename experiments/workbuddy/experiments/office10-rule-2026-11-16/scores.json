@@ -1,0 +1,137 @@
+{
+  "job": "clover-office10-rule",
+  "model": "Clover-35B-A3B-Preview",
+  "harness": "CodeBuddy Code 2.109.3",
+  "scoring": "deterministic rules only",
+  "max_turns": 22,
+  "max_output_tokens_per_request": 8192,
+  "rollout_timeout_seconds": 360,
+  "upstream_http_statuses": {
+    "200": 204,
+    "400": 1
+  },
+  "trials": [
+    {
+      "task": "analyst-forecast-extract-L3-018",
+      "tests_passed": 195,
+      "tests_total": 300,
+      "rule_score": 0.65,
+      "wall_seconds": 132.57,
+      "agent_stop": "error_during_execution",
+      "stop_detail": "max_turns",
+      "exception": null,
+      "input_tokens": 724932,
+      "output_tokens": 26413
+    },
+    {
+      "task": "board-material-update-timeline-excel",
+      "tests_passed": 292,
+      "tests_total": 379,
+      "rule_score": 0.7704,
+      "wall_seconds": 63.79,
+      "agent_stop": "error_during_execution",
+      "stop_detail": "max_turns",
+      "exception": null,
+      "input_tokens": 888903,
+      "output_tokens": 21338
+    },
+    {
+      "task": "channel-period-compare-L4-017",
+      "tests_passed": 14,
+      "tests_total": 22,
+      "rule_score": 0.6364,
+      "wall_seconds": 80.25,
+      "agent_stop": "success",
+      "stop_detail": null,
+      "exception": null,
+      "input_tokens": 127862,
+      "output_tokens": 4210
+    },
+    {
+      "task": "contract-extract-L3-014",
+      "tests_passed": 0,
+      "tests_total": 1,
+      "rule_score": 0,
+      "wall_seconds": 57.56,
+      "agent_stop": "error_during_execution",
+      "stop_detail": "max_turns",
+      "exception": null,
+      "input_tokens": 597145,
+      "output_tokens": 6395
+    },
+    {
+      "task": "fund-product-table-normalize-L3-017",
+      "tests_passed": 126,
+      "tests_total": 264,
+      "rule_score": 0.4773,
+      "wall_seconds": 133.94,
+      "agent_stop": "error_during_execution",
+      "stop_detail": "max_turns",
+      "exception": null,
+      "input_tokens": 543888,
+      "output_tokens": 26580
+    },
+    {
+      "task": "handbook-notice-insert-L3L4-030",
+      "tests_passed": 62,
+      "tests_total": 77,
+      "rule_score": 0.8052,
+      "wall_seconds": 48.78,
+      "agent_stop": "success",
+      "stop_detail": null,
+      "exception": null,
+      "input_tokens": 301318,
+      "output_tokens": 7348
+    },
+    {
+      "task": "invoice-email-archive-manifest",
+      "tests_passed": 20,
+      "tests_total": 197,
+      "rule_score": 0.1015,
+      "wall_seconds": 46.33,
+      "agent_stop": "error_during_execution",
+      "stop_detail": "max_turns",
+      "exception": null,
+      "input_tokens": 850506,
+      "output_tokens": 13891
+    },
+    {
+      "task": "procurement-reconcile-L3-015",
+      "tests_passed": 16,
+      "tests_total": 21,
+      "rule_score": 0.7619,
+      "wall_seconds": 129.34,
+      "agent_stop": "success",
+      "stop_detail": null,
+      "exception": null,
+      "input_tokens": 523296,
+      "output_tokens": 4899
+    },
+    {
+      "task": "service-channel-ticket-daily",
+      "tests_passed": 0,
+      "tests_total": 273,
+      "rule_score": 0,
+      "wall_seconds": 93,
+      "agent_stop": "error_during_execution",
+      "stop_detail": "max_turns",
+      "exception": null,
+      "input_tokens": 672621,
+      "output_tokens": 3947
+    },
+    {
+      "task": "ticket-weekly-L3-010",
+      "tests_passed": 15,
+      "tests_total": 15,
+      "rule_score": 1,
+      "wall_seconds": 96.87,
+      "agent_stop": "success",
+      "stop_detail": null,
+      "exception": null,
+      "input_tokens": 258382,
+      "output_tokens": 2789
+    }
+  ],
+  "wall_seconds": 890.12,
+  "mean_task_rule_score": 0.5202707322188189
+}

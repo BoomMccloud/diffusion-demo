@@ -1,0 +1,945 @@
+{
+  "csv-import/csv": {
+    "observation": {
+      "blocked": true,
+      "error": "⚠️ Missing mappings for required fields: fullName. Please map them before continuing.",
+      "current_mapping": {
+        "Name": "",
+        "Mobile": "phone",
+        "Signup Date": "signupDate",
+        "Plan": "plan",
+        "Owner": "fullName"
+      },
+      "recovered": {
+        "meta": {
+          "generatedAt": "2026-11-18T02:38:51.527Z",
+          "totalRows": 4,
+          "validCount": 2,
+          "errorCount": 2,
+          "dateFormat": "YYYY-MM-DD"
+        },
+        "mapping": {},
+        "validRows": [
+          {
+            "": "Alice Zhang",
+            "phone": "13800001111",
+            "signupDate": "2026-05-01",
+            "plan": "Pro",
+            "fullName": "Lina",
+            "_sourceRow": 1
+          },
+          {
+            "": "Dana Xu",
+            "phone": "13700003333",
+            "signupDate": "2026-05-04",
+            "plan": "Pro",
+            "fullName": "Mia",
+            "_sourceRow": 4
+          }
+        ],
+        "errorRows": [
+          {
+            "_sourceRow": 2,
+            "_reason": "Missing required field \"phone\"",
+            "_originalData": {
+              "Name": "Bob Li",
+              "Mobile": "",
+              "Signup Date": "2026/05/03",
+              "Plan": "Free",
+              "Owner": "Ken"
+            }
+          },
+          {
+            "_sourceRow": 3,
+            "_reason": "Unparseable signupDate: \"not-a-date\"",
+            "_originalData": {
+              "Name": "Chen Wei",
+              "Mobile": "13900002222",
+              "Signup Date": "not-a-date",
+              "Plan": "Team",
+              "Owner": "Lina"
+            }
+          }
+        ]
+      }
+    },
+    "url": "/www/index.html",
+    "page_errors": []
+  },
+  "mobile-booking/booking": {
+    "observation": {
+      "chosenService": "haircut",
+      "chosenSlot": "s1",
+      "step": 1,
+      "nextDisabled": true,
+      "selectedCards": 2
+    },
+    "url": "/www/index.html",
+    "page_errors": []
+  },
+  "observability-shareable/observability_edits": {
+    "observation": [
+      {
+        "state": {
+          "service": "ingest-api",
+          "region": "na-central",
+          "metric": "latency_p95_ms",
+          "window": "6h",
+          "overlay": "incidents",
+          "visiblePoints": 13,
+          "peakValue": 438,
+          "latestValue": 218,
+          "incidentIds": [
+            "INC-0514-INGEST-1"
+          ],
+          "startTs": "2026-05-14T05:30:00Z",
+          "endTs": "2026-05-14T11:30:00Z"
+        },
+        "saved": null,
+        "query": {},
+        "summary": "PEAK VALUE\n438\nLATEST VALUE\n218\nUNIT\n\"ms\"\nVISIBLE POINTS\n13\nWINDOW\nLast 6 hours\nINCIDENT(S)\nINC-0514-INGEST-1",
+        "svg": "3686d4a7f56e8d5f"
+      },
+      {
+        "state": {
+          "service": "profile-cache",
+          "region": "na-central",
+          "metric": "latency_p95_ms",
+          "window": "6h",
+          "overlay": "incidents",
+          "visiblePoints": 13,
+          "peakValue": 96,
+          "latestValue": 78,
+          "incidentIds": [],
+          "startTs": "2026-05-14T05:30:00Z",
+          "endTs": "2026-05-14T11:30:00Z"
+        },
+        "saved": {
+          "service": "profile-cache",
+          "region": "na-central",
+          "metric": "latency_p95_ms",
+          "window": "6h",
+          "overlay": "incidents"
+        },
+        "query": {
+          "service": "profile-cache",
+          "region": "na-central",
+          "metric": "latency_p95_ms",
+          "window": "6h",
+          "overlay": "incidents"
+        },
+        "summary": "PEAK VALUE\n96\nLATEST VALUE\n78\nUNIT\n\"ms\"\nVISIBLE POINTS\n13\nWINDOW\nLast 6 hours\nINCIDENT(S)\nNone",
+        "svg": "efdfb5632d87e3ac"
+      },
+      {
+        "state": {
+          "service": "profile-cache",
+          "region": "eu-west",
+          "metric": "latency_p95_ms",
+          "window": "6h",
+          "overlay": "incidents",
+          "visiblePoints": 13,
+          "peakValue": 91,
+          "latestValue": 82,
+          "incidentIds": [],
+          "startTs": "2026-05-14T05:30:00Z",
+          "endTs": "2026-05-14T11:30:00Z"
+        },
+        "saved": {
+          "service": "profile-cache",
+          "region": "eu-west",
+          "metric": "latency_p95_ms",
+          "window": "6h",
+          "overlay": "incidents"
+        },
+        "query": {
+          "service": "profile-cache",
+          "region": "eu-west",
+          "metric": "latency_p95_ms",
+          "window": "6h",
+          "overlay": "incidents"
+        },
+        "summary": "PEAK VALUE\n91\nLATEST VALUE\n82\nUNIT\n\"ms\"\nVISIBLE POINTS\n13\nWINDOW\nLast 6 hours\nINCIDENT(S)\nNone",
+        "svg": "621602381f262966"
+      },
+      {
+        "state": {
+          "service": "profile-cache",
+          "region": "eu-west",
+          "metric": "error_rate",
+          "window": "6h",
+          "overlay": "incidents",
+          "visiblePoints": 13,
+          "peakValue": 0.003,
+          "latestValue": 0.002,
+          "incidentIds": [],
+          "startTs": "2026-05-14T05:30:00Z",
+          "endTs": "2026-05-14T11:30:00Z"
+        },
+        "saved": {
+          "service": "profile-cache",
+          "region": "eu-west",
+          "metric": "error_rate",
+          "window": "6h",
+          "overlay": "incidents"
+        },
+        "query": {
+          "service": "profile-cache",
+          "region": "eu-west",
+          "metric": "error_rate",
+          "window": "6h",
+          "overlay": "incidents"
+        },
+        "summary": "PEAK VALUE\n0.00\nLATEST VALUE\n0.00\nUNIT\n\"ratio\"\nVISIBLE POINTS\n13\nWINDOW\nLast 6 hours\nINCIDENT(S)\nNone",
+        "svg": "600ec7173d91371b"
+      },
+      {
+        "state": {
+          "service": "profile-cache",
+          "region": "eu-west",
+          "metric": "error_rate",
+          "window": "12h",
+          "overlay": "incidents",
+          "visiblePoints": 24,
+          "peakValue": 0.008,
+          "latestValue": 0.002,
+          "incidentIds": [
+            "INC-0514-CACHE-1"
+          ],
+          "startTs": "2026-05-14T00:00:00Z",
+          "endTs": "2026-05-14T11:30:00Z"
+        },
+        "saved": {
+          "service": "profile-cache",
+          "region": "eu-west",
+          "metric": "error_rate",
+          "window": "12h",
+          "overlay": "incidents"
+        },
+        "query": {
+          "service": "profile-cache",
+          "region": "eu-west",
+          "metric": "error_rate",
+          "window": "12h",
+          "overlay": "incidents"
+        },
+        "summary": "PEAK VALUE\n0.01\nLATEST VALUE\n0.00\nUNIT\n\"ratio\"\nVISIBLE POINTS\n24\nWINDOW\nLast 12 hours\nINCIDENT(S)\nINC-0514-CACHE-1",
+        "svg": "f7d6daadc98c969f"
+      },
+      {
+        "state": {
+          "service": "profile-cache",
+          "region": "eu-west",
+          "metric": "error_rate",
+          "window": "12h",
+          "overlay": "none",
+          "visiblePoints": 24,
+          "peakValue": 0.008,
+          "latestValue": 0.002,
+          "incidentIds": [
+            "INC-0514-CACHE-1"
+          ],
+          "startTs": "2026-05-14T00:00:00Z",
+          "endTs": "2026-05-14T11:30:00Z"
+        },
+        "saved": {
+          "service": "profile-cache",
+          "region": "eu-west",
+          "metric": "error_rate",
+          "window": "12h",
+          "overlay": "none"
+        },
+        "query": {
+          "service": "profile-cache",
+          "region": "eu-west",
+          "metric": "error_rate",
+          "window": "12h",
+          "overlay": "none"
+        },
+        "summary": "PEAK VALUE\n0.01\nLATEST VALUE\n0.00\nUNIT\n\"ratio\"\nVISIBLE POINTS\n24\nWINDOW\nLast 12 hours\nINCIDENT(S)\nINC-0514-CACHE-1",
+        "svg": "5319a0fad5ee3907"
+      }
+    ],
+    "url": "/submission/chart.html?service=profile-cache&region=eu-west&metric=error_rate&window=12h&overlay=none",
+    "page_errors": []
+  },
+  "observability-shareable/observability_storage": {
+    "observation": {
+      "options": {
+        "service": [
+          "ingest-api",
+          "profile-cache",
+          "ledger-worker"
+        ],
+        "region": [
+          "na-central",
+          "eu-west"
+        ],
+        "metric": [
+          "latency_p95_ms",
+          "error_rate",
+          "throughput_rps",
+          "saturation_pct"
+        ],
+        "window": [
+          "6h",
+          "12h",
+          "24h"
+        ],
+        "overlay": [
+          "none",
+          "incidents"
+        ]
+      },
+      "query": {
+        "service": "ingest-api",
+        "region": "na-central",
+        "metric": "latency_p95_ms",
+        "window": "6h",
+        "overlay": "incidents"
+      },
+      "preloaded": {
+        "service": "profile-cache",
+        "region": "eu-west",
+        "metric": "error_rate",
+        "window": "12h",
+        "overlay": "none"
+      },
+      "shown": {
+        "service": "ingest-api",
+        "region": "na-central",
+        "metric": "latency_p95_ms",
+        "window": "6h",
+        "overlay": "incidents",
+        "visiblePoints": 13,
+        "peakValue": 438,
+        "latestValue": 218,
+        "incidentIds": [
+          "INC-0514-INGEST-1"
+        ],
+        "startTs": "2026-05-14T05:30:00Z",
+        "endTs": "2026-05-14T11:30:00Z"
+      }
+    },
+    "url": "/submission/chart.html?service=ingest-api&region=na-central&metric=latency_p95_ms&window=6h&overlay=incidents",
+    "page_errors": []
+  },
+  "pwa-offline/offline": {
+    "observation": {
+      "before": {
+        "online": false,
+        "saved": {
+          "items": [
+            {
+              "id": "fire",
+              "label": "Fire exit is unobstructed",
+              "checked": true,
+              "status": "pending_sync"
+            },
+            {
+              "id": "power",
+              "label": "Distribution box temperature is normal",
+              "status": "pending_sync"
+            },
+            {
+              "id": "signage",
+              "label": "Safety signage is complete",
+              "status": "pending_sync"
+            }
+          ],
+          "notes": "",
+          "lastPushTime": null
+        },
+        "body": "🔍 Field Inspection Checklist\noffline\nSync now\nFire exit is unobstructed\nPENDING_SYNC\nDistribution box temperature is normal\nPENDING_SYNC\nSafety signage is complete\nPENDING_SYNC\nNotes\nDEBUG ISLAND\nstorageKey: field_checklist_data\nlastPushTime: never\npendingRows: 3\ntotalRows: 3\npayload: {\n  \"siteId\": \"site-1794969462496\",\n  \"itemStates\": {\n    \"fire\": {\n      \"checked\": true,\n      \"status\": \"pending_sync\"\n    },\n    \"power\": {\n      \"checked\": false,\n      \"status\": \"pending_sync\"\n    },\n    \"signage\": {\n      \"checked\": false,\n      \"status\": \"pending_sync\"\n    }\n  },\n  \"notes\": \"\",\n  \"updatedAt\": \"2026-11-18T02:37:42.496Z\",\n  \"syncStatus\": \"pending_sync\"\n}"
+      },
+      "after": {
+        "online": true,
+        "saved": {
+          "items": [
+            {
+              "id": "fire",
+              "label": "Fire exit is unobstructed",
+              "checked": true,
+              "status": "synced"
+            },
+            {
+              "id": "power",
+              "label": "Distribution box temperature is normal",
+              "status": "synced"
+            },
+            {
+              "id": "signage",
+              "label": "Safety signage is complete",
+              "status": "synced"
+            }
+          ],
+          "notes": "",
+          "lastPushTime": "2026-11-18T02:37:43.008Z"
+        },
+        "body": "🔍 Field Inspection Checklist\nonline\n✓ Synced\nFire exit is unobstructed\nSYNCED\nDistribution box temperature is normal\nSYNCED\nSafety signage is complete\nSYNCED\nNotes\nDEBUG ISLAND\nstorageKey: field_checklist_data\nlastPushTime: 2026-11-18T02:37:43.008Z\npendingRows: 0\ntotalRows: 3\npayload: {\n  \"siteId\": \"site-1794969463008\",\n  \"itemStates\": {\n    \"fire\": {\n      \"checked\": true,\n      \"status\": \"synced\"\n    },\n    \"power\": {\n      \"checked\": false,\n      \"status\": \"synced\"\n    },\n    \"signage\": {\n      \"checked\": false,\n      \"status\": \"synced\"\n    }\n  },\n  \"notes\": \"\",\n  \"updatedAt\": \"2026-11-18T02:37:43.008Z\",\n  \"syncStatus\": \"synced\"\n}"
+      },
+      "posts": [
+        {
+          "method": "POST",
+          "payload": {
+            "siteId": "site-1794969463003",
+            "itemStates": {
+              "fire": {
+                "checked": true,
+                "status": "pending_sync"
+              },
+              "power": {
+                "checked": false,
+                "status": "pending_sync"
+              },
+              "signage": {
+                "checked": false,
+                "status": "pending_sync"
+              }
+            },
+            "notes": "",
+            "updatedAt": "2026-11-18T02:37:43.003Z",
+            "syncStatus": "synced"
+          }
+        }
+      ]
+    },
+    "url": "/www/index.html",
+    "page_errors": []
+  },
+  "routing-console/routing_discover": {
+    "observation": {
+      "before": [
+        "rule_critical_incident",
+        "rule_platform_p1_chatops",
+        "rule_platform_p1_webhook_conflict",
+        "rule_ops_digest",
+        "rule_finance_nightly"
+      ],
+      "after": [
+        "rule_critical_incident",
+        "rule_platform_p1_chatops",
+        "rule_platform_p1_webhook_conflict",
+        "rule_ops_digest",
+        "rule_finance_nightly"
+      ],
+      "initial": {
+        "matched": [
+          "rule_critical_incident",
+          "rule_platform_p1_chatops"
+        ],
+        "channels": [
+          "rule_critical_incident",
+          "rule_critical_incident",
+          "rule_critical_incident",
+          "rule_critical_incident",
+          "rule_critical_incident",
+          "rule_platform_p1_chatops",
+          "rule_platform_p1_chatops",
+          "rule_platform_p1_chatops",
+          "rule_platform_p1_chatops",
+          "rule_platform_p1_chatops"
+        ]
+      },
+      "rerun": {
+        "matched": [
+          "rule_platform_p1_chatops",
+          "rule_critical_incident"
+        ],
+        "channels": [
+          "rule_platform_p1_chatops",
+          "rule_platform_p1_chatops",
+          "rule_platform_p1_chatops",
+          "rule_platform_p1_chatops",
+          "rule_platform_p1_chatops",
+          "rule_critical_incident",
+          "rule_critical_incident",
+          "rule_critical_incident",
+          "rule_critical_incident",
+          "rule_critical_incident"
+        ]
+      }
+    },
+    "url": "/www/index.html",
+    "page_errors": []
+  },
+  "rule-builder/op": {
+    "observation": {
+      "before": {
+        "status": "✓ Valid rule — evaluating against 8 sample events.",
+        "matches": [
+          "e1",
+          "e3",
+          "e4",
+          "e6",
+          "e7"
+        ],
+        "export": {
+          "name": "Country + Spend Over 500",
+          "conditions": {
+            "type": "group",
+            "joiner": "all-of",
+            "children": [
+              {
+                "type": "condition",
+                "field": "amount",
+                "operator": "gt",
+                "value": 100
+              },
+              {
+                "type": "condition",
+                "field": "amount",
+                "operator": "gt",
+                "value": 500
+              }
+            ]
+          },
+          "actions": [
+            "show_coupon"
+          ],
+          "matchedIds": [
+            "e1",
+            "e3",
+            "e4",
+            "e6",
+            "e7"
+          ]
+        },
+        "visible": "e1\nCN, pro, $680, signup 12d\ne3\nCN, team, $1280, signup 45d\ne4\nJP, pro, $540, signup 8d\ne6\nDE, team, $920, signup 90d\ne7\nUS, pro, $610, signup 31d"
+      },
+      "after_field_change": {
+        "input": "100",
+        "status": "✓ Valid rule — evaluating against 8 sample events.",
+        "matches": [],
+        "export": {
+          "name": "Country + Spend Over 500",
+          "conditions": {
+            "type": "group",
+            "joiner": "all-of",
+            "children": [
+              {
+                "type": "condition",
+                "field": "plan",
+                "operator": "equals",
+                "value": 100
+              },
+              {
+                "type": "condition",
+                "field": "amount",
+                "operator": "gt",
+                "value": 500
+              }
+            ]
+          },
+          "actions": [
+            "show_coupon"
+          ],
+          "matchedIds": []
+        },
+        "visible": "No matching events found."
+      },
+      "text_equals_input_type": "number",
+      "after_operator_change": {
+        "status": "⚠ 1 invalid condition(s) — preview blocked.",
+        "matches": [],
+        "export": {
+          "name": "Country + Spend Over 500",
+          "conditions": {
+            "type": "group",
+            "joiner": "all-of",
+            "children": [
+              {
+                "type": "condition",
+                "field": "plan",
+                "operator": "in",
+                "value": []
+              },
+              {
+                "type": "condition",
+                "field": "amount",
+                "operator": "gt",
+                "value": 500
+              }
+            ]
+          },
+          "actions": [
+            "show_coupon"
+          ],
+          "matchedIds": []
+        },
+        "visible": "No matching events found."
+      },
+      "after": {
+        "status": "✓ Valid rule — evaluating against 8 sample events.",
+        "matches": [
+          "e1",
+          "e4",
+          "e7"
+        ],
+        "export": {
+          "name": "Country + Spend Over 500",
+          "conditions": {
+            "type": "group",
+            "joiner": "all-of",
+            "children": [
+              {
+                "type": "condition",
+                "field": "plan",
+                "operator": "in",
+                "value": [
+                  "pro"
+                ]
+              },
+              {
+                "type": "condition",
+                "field": "amount",
+                "operator": "gt",
+                "value": 500
+              }
+            ]
+          },
+          "actions": [
+            "show_coupon"
+          ],
+          "matchedIds": [
+            "e1",
+            "e4",
+            "e7"
+          ]
+        },
+        "visible": "e1\nCN, pro, $680, signup 12d\ne4\nJP, pro, $540, signup 8d\ne7\nUS, pro, $610, signup 31d"
+      }
+    },
+    "url": "/www/index.html#rule/eyJuYW1lIjoiQ291bnRyeSArIFNwZW5kIE92ZXIgNTAwIiwiY29uZGl0aW9ucyI6eyJ0eXBlIjoiZ3JvdXAiLCJqb2luZXIiOiJhbGwtb2YiLCJjaGlsZHJlbiI6W3sidHlwZSI6ImNvbmRpdGlvbiIsImZpZWxkIjoicGxhbiIsIm9wZXJhdG9yIjoiaW4iLCJ2YWx1ZSI6WyJwcm8iXX0seyJ0eXBlIjoiY29uZGl0aW9uIiwiZmllbGQiOiJhbW91bnQiLCJvcGVyYXRvciI6Imd0IiwidmFsdWUiOjUwMH1dfSwiYWN0aW9ucyI6WyJzaG93X2NvdXBvbiJdLCJtYXRjaGVkSWRzIjpbImUxIiwiZTQiLCJlNyJdfQ==",
+    "page_errors": []
+  },
+  "rule-builder/group": {
+    "observation": {
+      "before": {
+        "status": "✓ Valid rule — evaluating against 8 sample events.",
+        "matches": [],
+        "export": {
+          "name": "Country + Spend Over 500",
+          "conditions": {
+            "type": "group",
+            "joiner": "all-of",
+            "children": [
+              {
+                "type": "condition",
+                "field": "country",
+                "operator": "equals",
+                "value": "CN"
+              },
+              {
+                "type": "condition",
+                "field": "amount",
+                "operator": "gt",
+                "value": 500
+              },
+              {
+                "type": "group",
+                "joiner": "all-of",
+                "children": [
+                  "{'type': 'condition', 'field': 'amount', 'operator': 'gt', 'value': 99999}"
+                ]
+              }
+            ]
+          },
+          "actions": [
+            "show_coupon"
+          ],
+          "matchedIds": []
+        },
+        "visible": "No matching events found."
+      },
+      "after": {
+        "status": "✓ Valid rule — evaluating against 8 sample events.",
+        "matches": [
+          "e1",
+          "e3"
+        ],
+        "export": {
+          "name": "Country + Spend Over 500",
+          "conditions": {
+            "type": "group",
+            "joiner": "all-of",
+            "children": [
+              {
+                "type": "condition",
+                "field": "country",
+                "operator": "equals",
+                "value": "CN"
+              },
+              {
+                "type": "condition",
+                "field": "amount",
+                "operator": "gt",
+                "value": 500
+              }
+            ]
+          },
+          "actions": [
+            "show_coupon"
+          ],
+          "matchedIds": [
+            "e1",
+            "e3"
+          ]
+        },
+        "visible": "e1\nCN, pro, $680, signup 12d\ne3\nCN, team, $1280, signup 45d"
+      },
+      "fields": [
+        "country",
+        "plan",
+        "amount",
+        "daysSinceSignup"
+      ]
+    },
+    "url": "/www/index.html#rule/eyJuYW1lIjoiQ291bnRyeSArIFNwZW5kIE92ZXIgNTAwIiwiY29uZGl0aW9ucyI6eyJ0eXBlIjoiZ3JvdXAiLCJqb2luZXIiOiJhbGwtb2YiLCJjaGlsZHJlbiI6W3sidHlwZSI6ImNvbmRpdGlvbiIsImZpZWxkIjoiY291bnRyeSIsIm9wZXJhdG9yIjoiZXF1YWxzIiwidmFsdWUiOiJDTiJ9LHsidHlwZSI6ImNvbmRpdGlvbiIsImZpZWxkIjoiYW1vdW50Iiwib3BlcmF0b3IiOiJndCIsInZhbHVlIjo1MDB9XX0sImFjdGlvbnMiOlsic2hvd19jb3Vwb24iXSwibWF0Y2hlZElkcyI6WyJlMSIsImUzIl19",
+    "page_errors": []
+  },
+  "support-flow-sankey/sankey": {
+    "observation": {
+      "first": {
+        "state": {
+          "selectedType": "link",
+          "selectedId": "triage_review__agent_handoff",
+          "highlightedLinks": [
+            "triage_review__agent_handoff"
+          ],
+          "detailPanel": {
+            "empty": false,
+            "type": "link",
+            "title": "Triage review to Agent handoff",
+            "value": 214,
+            "rate": 0.31,
+            "source": "Triage review",
+            "target": "Agent handoff",
+            "ownerTeam": "Support Desk"
+          }
+        },
+        "detail": "Triage review to Agent handoff\n\nRequests with unclear impact are handed to support agents.\n\nVolume\n214\nResolution rate\n31%\nSource\nTriage review\nTarget\nAgent handoff\nOwner team\nSupport Desk",
+        "selected": [
+          "triage_review__agent_handoff"
+        ],
+        "related": [
+          "triage_review__agent_handoff"
+        ]
+      },
+      "middle": {
+        "state": {
+          "selectedType": "node",
+          "selectedId": "issue_opened",
+          "highlightedLinks": [
+            "issue_opened__triage_review"
+          ],
+          "detailPanel": {
+            "empty": false,
+            "type": "node",
+            "title": "Issue opened",
+            "value": 640,
+            "source": "related support paths",
+            "target": "intake",
+            "ownerTeam": "Intake Ops"
+          }
+        },
+        "detail": "Issue opened\n\nA support request enters the shared intake queue.\n\nInbound\n0\nOutbound\n640\nStage\nintake\nOwner team\nIntake Ops",
+        "selected": [
+          "issue_opened"
+        ],
+        "related": [
+          "issue_opened__triage_review"
+        ]
+      },
+      "last": {
+        "state": {
+          "selectedType": "link",
+          "selectedId": "specialist_queue__backlog_review",
+          "highlightedLinks": [
+            "specialist_queue__backlog_review"
+          ],
+          "detailPanel": {
+            "empty": false,
+            "type": "link",
+            "title": "Specialist queue to Backlog review",
+            "value": 29,
+            "rate": 0.22,
+            "source": "Specialist queue",
+            "target": "Backlog review",
+            "ownerTeam": "Backlog Ops"
+          }
+        },
+        "detail": "Specialist queue to Backlog review\n\nSpecialist requests that age out are moved into backlog review.\n\nVolume\n29\nResolution rate\n22%\nSource\nSpecialist queue\nTarget\nBacklog review\nOwner team\nBacklog Ops",
+        "selected": [
+          "specialist_queue__backlog_review"
+        ],
+        "related": [
+          "specialist_queue__backlog_review"
+        ]
+      },
+      "reset": {
+        "state": {
+          "selectedType": "none",
+          "selectedId": null,
+          "highlightedLinks": [],
+          "detailPanel": {
+            "empty": true
+          }
+        },
+        "detail": "Flow detail\n\nSelect a node or link to inspect support path volume and owner team.",
+        "selected": [],
+        "related": []
+      },
+      "source_records": [
+        {
+          "link": {
+            "id": "triage_review__agent_handoff",
+            "source": "triage_review",
+            "target": "agent_handoff",
+            "value": 214,
+            "resolutionRate": 0.31,
+            "ownerTeam": "Support Desk",
+            "explanation": "Requests with unclear impact are handed to support agents."
+          },
+          "source_label": "Triage review",
+          "target_label": "Agent handoff"
+        },
+        {
+          "link": {
+            "id": "specialist_queue__backlog_review",
+            "source": "specialist_queue",
+            "target": "backlog_review",
+            "value": 29,
+            "resolutionRate": 0.22,
+            "ownerTeam": "Backlog Ops",
+            "explanation": "Specialist requests that age out are moved into backlog review."
+          },
+          "source_label": "Specialist queue",
+          "target_label": "Backlog review"
+        }
+      ]
+    },
+    "url": "/www/index.html",
+    "page_errors": []
+  },
+  "support-inbox/debounce": {
+    "observation": {
+      "ids": [
+        "c-2000",
+        "c-2002"
+      ],
+      "before": [
+        [
+          true,
+          null
+        ],
+        [
+          true,
+          null
+        ]
+      ],
+      "during": [
+        [
+          true,
+          null
+        ],
+        [
+          true,
+          "true"
+        ]
+      ],
+      "after": [
+        [
+          true,
+          null
+        ],
+        [
+          false,
+          null
+        ]
+      ],
+      "fixture": 200
+    },
+    "url": "/www/index.html",
+    "page_errors": []
+  },
+  "support-inbox/range": {
+    "observation": {
+      "first_four": [
+        "c-2000",
+        "c-2001",
+        "c-2002",
+        "c-2003"
+      ],
+      "checked": [
+        "c-2000",
+        "c-2001",
+        "c-2002"
+      ],
+      "assigned": "Mia",
+      "owners": {
+        "c-2000": "Mia",
+        "c-2001": "Mia",
+        "c-2002": "Mia",
+        "c-2003": "Lina"
+      }
+    },
+    "url": "/www/index.html",
+    "page_errors": []
+  },
+  "support-inbox/virtual": {
+    "observation": {
+      "fixture": 200,
+      "before": {
+        "height": 367,
+        "scrollHeight": 432,
+        "top": 0,
+        "ids": [
+          "c-2000",
+          "c-2001",
+          "c-2002",
+          "c-2003",
+          "c-2004",
+          "c-2005",
+          "c-2006",
+          "c-2007",
+          "c-2008"
+        ]
+      },
+      "after": {
+        "height": 367,
+        "scrollHeight": 480,
+        "top": 65,
+        "ids": [
+          "c-2001",
+          "c-2002",
+          "c-2003",
+          "c-2004",
+          "c-2005",
+          "c-2006",
+          "c-2007",
+          "c-2008",
+          "c-2009"
+        ]
+      },
+      "after_eleven": {
+        "height": 367,
+        "scrollHeight": 960,
+        "top": 545,
+        "ids": [
+          "c-2011",
+          "c-2012",
+          "c-2013",
+          "c-2014",
+          "c-2015",
+          "c-2016",
+          "c-2017",
+          "c-2018",
+          "c-2019"
+        ]
+      }
+    },
+    "url": "/www/index.html",
+    "page_errors": []
+  }
+}

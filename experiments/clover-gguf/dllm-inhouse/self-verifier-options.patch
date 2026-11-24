@@ -1,0 +1,40 @@
+--- a/common/arg.cpp
++++ b/common/arg.cpp
+@@ -3720,6 +3720,26 @@
+         }
+     ).set_spec().set_examples({LLAMA_EXAMPLE_SPECULATIVE, LLAMA_EXAMPLE_SERVER, LLAMA_EXAMPLE_CLI}).set_env("LLAMA_ARG_SPEC_DRAFT_MODEL"));
+     add_opt(common_arg(
++        {"--spec-self-verify-experts"}, "N",
++        string_format("routed experts for self-speculative verification (default: %d)", params.speculative.self.verify_experts),
++        [](common_params & params, int value) {
++            if (value <= 0) {
++                throw std::invalid_argument("self verification expert count must be positive");
++            }
++            params.speculative.self.verify_experts = value;
++        }
++    ).set_spec().set_examples({LLAMA_EXAMPLE_SERVER}));
++    add_opt(common_arg(
++        {"--spec-self-acceptance"}, "threshold|exact",
++        "accept self-speculative proposals by entropy threshold or verifier argmax (default: threshold)",
++        [](common_params & params, const std::string & value) {
++            if (value != "threshold" && value != "exact") {
++                throw std::invalid_argument("self acceptance must be threshold or exact");
++            }
++            params.speculative.self.exact = value == "exact";
++        }
++    ).set_spec().set_examples({LLAMA_EXAMPLE_SERVER}));
++    add_opt(common_arg(
+         {"--spec-type"}, common_speculative_all_types_str(),
+         string_format("comma-separated list of types of speculative decoding to use (default: %s)\n",
+             common_speculative_type_name_str(params.speculative.types).c_str()),
+--- a/tools/server/server-context.cpp
++++ b/tools/server/server-context.cpp
+@@ -855,6 +855,8 @@
+                 SRV_ERR("%s", "--spec-type self requires one slot\n");
+                 return false;
+             }
++            const auto & self = params_base.speculative.self;
++            SRV_INF("self verifier: experts=%d acceptance=%s\n", self.verify_experts, self.exact ? "exact" : "threshold");
+             params_base.sampling.backend_sampling = false;
+         }
+         llama_init = common_init_from_params(params_base);

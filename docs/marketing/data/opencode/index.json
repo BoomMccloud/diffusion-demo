@@ -1,0 +1,6641 @@
+{
+  "page": "https://opencode.ai/data/",
+  "updatedAt": "2026-10-12T05:01:05.000Z",
+  "summary": "As of October 12, 2026, DeepSeek V4.1 Flash led OpenCode usage over the past 7 days with 39T tokens, followed by Muse Spark 1.3 Contributor (36T) and space-bunny (24T).",
+  "leaderboard": {
+    "pastWeek": [
+      {
+        "rank": 1,
+        "model": "deepseek-v4.1-flash",
+        "name": "DeepSeek V4.1 Flash",
+        "lab": "deepseek",
+        "page": "https://opencode.ai/data/deepseek/deepseek-v4-1-flash",
+        "tokens": 38802000000000,
+        "changePercent": 8
+      },
+      {
+        "rank": 2,
+        "model": "muse-spark-1.3-contributor",
+        "name": "Muse Spark 1.3 Contributor",
+        "lab": "meta",
+        "page": "https://opencode.ai/data/meta/muse-spark-1-3-contributor",
+        "tokens": 35500000000000,
+        "changePercent": 2
+      },
+      {
+        "rank": 3,
+        "model": "space-bunny",
+        "name": "space-bunny",
+        "lab": "unknown",
+        "page": "https://opencode.ai/data/unknown/space-bunny",
+        "tokens": 23720000000000,
+        "changePercent": -64
+      },
+      {
+        "rank": 4,
+        "model": "mimo-v2.6-flash",
+        "name": "MiMo-V2.6-Flash",
+        "lab": "xiaomi",
+        "page": "https://opencode.ai/data/xiaomi/mimo-v2-6-flash",
+        "tokens": 11795000000000,
+        "changePercent": 20
+      },
+      {
+        "rank": 5,
+        "model": "deepseek-v4-flash",
+        "name": "DeepSeek V4 Flash",
+        "lab": "deepseek",
+        "page": "https://opencode.ai/data/deepseek/deepseek-v4-flash",
+        "tokens": 4914000000000,
+        "changePercent": 5
+      },
+      {
+        "rank": 6,
+        "model": "step-5-preview",
+        "name": "Step 5 Preview",
+        "lab": "stepfun",
+        "page": "https://opencode.ai/data/stepfun/step-5-preview",
+        "tokens": 4288000000000,
+        "changePercent": null
+      },
+      {
+        "rank": 7,
+        "model": "nemotron-3-ultra",
+        "name": "nemotron-3-ultra",
+        "lab": "nvidia",
+        "page": "https://opencode.ai/data/nvidia/nemotron-3-ultra",
+        "tokens": 3882000000000,
+        "changePercent": 3
+      },
+      {
+        "rank": 8,
+        "model": "longcat-2.5-preview",
+        "name": "LongCat-2.5-Preview",
+        "lab": "meituan",
+        "page": "https://opencode.ai/data/meituan/longcat-2-5-preview",
+        "tokens": 2064000000000,
+        "changePercent": -23
+      },
+      {
+        "rank": 9,
+        "model": "glm-5.3-flash",
+        "name": "GLM-5.3-Flash",
+        "lab": "zhipu",
+        "page": "https://opencode.ai/data/zhipuai/glm-5-3-flash",
+        "tokens": 1968000000000,
+        "changePercent": -3
+      },
+      {
+        "rank": 10,
+        "model": "fledge-alpha",
+        "name": "fledge-alpha",
+        "lab": "unknown",
+        "page": "https://opencode.ai/data/unknown/fledge-alpha",
+        "tokens": 1052000000000,
+        "changePercent": -10
+      },
+      {
+        "rank": 11,
+        "model": "gpt-6-luna",
+        "name": "GPT-6 Luna",
+        "lab": "openai",
+        "page": "https://opencode.ai/data/openai/gpt-6-luna",
+        "tokens": 676000000000,
+        "changePercent": 18
+      },
+      {
+        "rank": 12,
+        "model": "nemotron-3.5-lightning",
+        "name": "Nemotron 3.5 Lightning 30B A3B",
+        "lab": "nvidia",
+        "page": "https://opencode.ai/data/nvidia/nemotron-3-5-lightning",
+        "tokens": 583000000000,
+        "changePercent": 56
+      },
+      {
+        "rank": 13,
+        "model": "deepseek-v4-flash-vision-exp",
+        "name": "DeepSeek V4 Flash Vision Exp",
+        "lab": "deepseek",
+        "page": "https://opencode.ai/data/deepseek/deepseek-v4-flash-vision-exp",
+        "tokens": 563000000000,
+        "changePercent": -17
+      },
+      {
+        "rank": 14,
+        "model": "deepseek-v4-1-flash-opencode-bo44an",
+        "name": "deepseek-v4-1-flash-opencode-bo44an",
+        "lab": "deepseek",
+        "page": "https://opencode.ai/data/deepseek/deepseek-v4-1-flash-opencode-bo44an",
+        "tokens": 556000000000,
+        "changePercent": null
+      },
+      {
+        "rank": 15,
+        "model": "mimo-v2.6-pro",
+        "name": "MiMo-V2.6-Pro",
+        "lab": "xiaomi",
+        "page": "https://opencode.ai/data/xiaomi/mimo-v2-6-pro",
+        "tokens": 411000000000,
+        "changePercent": -16
+      },
+      {
+        "rank": 16,
+        "model": "deepseek-v4-pro",
+        "name": "DeepSeek V4 Pro",
+        "lab": "deepseek",
+        "page": "https://opencode.ai/data/deepseek/deepseek-v4-pro",
+        "tokens": 411000000000,
+        "changePercent": -18
+      },
+      {
+        "rank": 17,
+        "model": "mimo-v2.5",
+        "name": "MiMo-V2.5",
+        "lab": "xiaomi",
+        "page": "https://opencode.ai/data/xiaomi/mimo-v2-5",
+        "tokens": 360000000000,
+        "changePercent": -54
+      },
+      {
+        "rank": 18,
+        "model": "muse-spark-1.2-contributor",
+        "name": "Muse Spark 1.2 Contributor",
+        "lab": "meta",
+        "page": "https://opencode.ai/data/meta/muse-spark-1-2-contributor",
+        "tokens": 353000000000,
+        "changePercent": -41
+      }
+    ],
+    "pastDay": [
+      {
+        "rank": 1,
+        "model": "deepseek-v4.1-flash",
+        "name": "DeepSeek V4.1 Flash",
+        "lab": "deepseek",
+        "page": "https://opencode.ai/data/deepseek/deepseek-v4-1-flash",
+        "tokens": 1392000000000
+      },
+      {
+        "rank": 2,
+        "model": "muse-spark-1.3-contributor",
+        "name": "Muse Spark 1.3 Contributor",
+        "lab": "meta",
+        "page": "https://opencode.ai/data/meta/muse-spark-1-3-contributor",
+        "tokens": 986000000000
+      },
+      {
+        "rank": 3,
+        "model": "space-bunny",
+        "name": "space-bunny",
+        "lab": "unknown",
+        "page": "https://opencode.ai/data/unknown/space-bunny",
+        "tokens": 533000000000
+      },
+      {
+        "rank": 4,
+        "model": "mimo-v2.6-flash",
+        "name": "MiMo-V2.6-Flash",
+        "lab": "xiaomi",
+        "page": "https://opencode.ai/data/xiaomi/mimo-v2-6-flash",
+        "tokens": 274000000000
+      },
+      {
+        "rank": 5,
+        "model": "nemotron-3-ultra",
+        "name": "nemotron-3-ultra",
+        "lab": "nvidia",
+        "page": "https://opencode.ai/data/nvidia/nemotron-3-ultra",
+        "tokens": 145000000000
+      },
+      {
+        "rank": 6,
+        "model": "step-5-preview",
+        "name": "Step 5 Preview",
+        "lab": "stepfun",
+        "page": "https://opencode.ai/data/stepfun/step-5-preview",
+        "tokens": 129000000000
+      },
+      {
+        "rank": 7,
+        "model": "deepseek-v4-flash",
+        "name": "DeepSeek V4 Flash",
+        "lab": "deepseek",
+        "page": "https://opencode.ai/data/deepseek/deepseek-v4-flash",
+        "tokens": 119000000000
+      },
+      {
+        "rank": 8,
+        "model": "glm-5.3-flash",
+        "name": "GLM-5.3-Flash",
+        "lab": "zhipu",
+        "page": "https://opencode.ai/data/zhipuai/glm-5-3-flash",
+        "tokens": 73000000000
+      },
+      {
+        "rank": 9,
+        "model": "longcat-2.5-preview",
+        "name": "LongCat-2.5-Preview",
+        "lab": "meituan",
+        "page": "https://opencode.ai/data/meituan/longcat-2-5-preview",
+        "tokens": 51000000000
+      },
+      {
+        "rank": 10,
+        "model": "deepseek-v4-1-flash-opencode-bo44an",
+        "name": "deepseek-v4-1-flash-opencode-bo44an",
+        "lab": "deepseek",
+        "page": "https://opencode.ai/data/deepseek/deepseek-v4-1-flash-opencode-bo44an",
+        "tokens": 49000000000
+      },
+      {
+        "rank": 11,
+        "model": "nemotron-3.5-lightning",
+        "name": "Nemotron 3.5 Lightning 30B A3B",
+        "lab": "nvidia",
+        "page": "https://opencode.ai/data/nvidia/nemotron-3-5-lightning",
+        "tokens": 23000000000
+      },
+      {
+        "rank": 12,
+        "model": "gpt-6-luna",
+        "name": "GPT-6 Luna",
+        "lab": "openai",
+        "page": "https://opencode.ai/data/openai/gpt-6-luna",
+        "tokens": 18000000000
+      },
+      {
+        "rank": 13,
+        "model": "deepseek-v4-flash-vision-exp",
+        "name": "DeepSeek V4 Flash Vision Exp",
+        "lab": "deepseek",
+        "page": "https://opencode.ai/data/deepseek/deepseek-v4-flash-vision-exp",
+        "tokens": 17000000000
+      },
+      {
+        "rank": 14,
+        "model": "deepseek-v4-pro",
+        "name": "DeepSeek V4 Pro",
+        "lab": "deepseek",
+        "page": "https://opencode.ai/data/deepseek/deepseek-v4-pro",
+        "tokens": 11000000000
+      },
+      {
+        "rank": 15,
+        "model": "mimo-v2.6-pro",
+        "name": "MiMo-V2.6-Pro",
+        "lab": "xiaomi",
+        "page": "https://opencode.ai/data/xiaomi/mimo-v2-6-pro",
+        "tokens": 11000000000
+      },
+      {
+        "rank": 16,
+        "model": "muse-spark-1.2-contributor",
+        "name": "Muse Spark 1.2 Contributor",
+        "lab": "meta",
+        "page": "https://opencode.ai/data/meta/muse-spark-1-2-contributor",
+        "tokens": 10000000000
+      },
+      {
+        "rank": 17,
+        "model": "claude-haiku-5-5",
+        "name": "Claude Haiku 5.5",
+        "lab": "anthropic",
+        "page": "https://opencode.ai/data/anthropic/claude-haiku-5-5",
+        "tokens": 10000000000
+      },
+      {
+        "rank": 18,
+        "model": "mimo-v2.5",
+        "name": "MiMo-V2.5",
+        "lab": "xiaomi",
+        "page": "https://opencode.ai/data/xiaomi/mimo-v2-5",
+        "tokens": 8000000000
+      }
+    ]
+  },
+  "dailyTokens": [
+    {
+      "date": "2026-08-18",
+      "total": 13271700000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 9027900000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 324300000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 0,
+        "Other": 3919500000000
+      }
+    },
+    {
+      "date": "2026-08-19",
+      "total": 11881700000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 7563300000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 482200000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 0,
+        "Other": 3836200000000
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "total": 11877000000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 6914800000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 495100000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 73700000000,
+        "Other": 4393400000000
+      }
+    },
+    {
+      "date": "2026-08-21",
+      "total": 12351800000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 2980700000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 491600000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 4099400000000,
+        "Other": 4780100000000
+      }
+    },
+    {
+      "date": "2026-08-22",
+      "total": 13123500000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 2241400000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 519800000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 6633000000000,
+        "Other": 3729300000000
+      }
+    },
+    {
+      "date": "2026-08-23",
+      "total": 15030700000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 2122900000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 643700000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 8446000000000,
+        "Other": 3818100000000
+      }
+    },
+    {
+      "date": "2026-08-24",
+      "total": 18544900000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 3197700000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 701300000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 9781100000000,
+        "Other": 4864800000000
+      }
+    },
+    {
+      "date": "2026-08-25",
+      "total": 18405400000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 3079400000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 615100000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 8970600000000,
+        "Other": 5740300000000
+      }
+    },
+    {
+      "date": "2026-08-26",
+      "total": 16363400000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 3012400000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 596200000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 6338400000000,
+        "Other": 6416400000000
+      }
+    },
+    {
+      "date": "2026-08-27",
+      "total": 11521600000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 3930300000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 642500000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 633500000000,
+        "Other": 6315300000000
+      }
+    },
+    {
+      "date": "2026-08-28",
+      "total": 10398100000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 4035100000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 608800000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 619700000000,
+        "Other": 5134500000000
+      }
+    },
+    {
+      "date": "2026-08-29",
+      "total": 9113800000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 3470500000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 627100000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 452900000000,
+        "Other": 4563300000000
+      }
+    },
+    {
+      "date": "2026-08-30",
+      "total": 8563400000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 3489600000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 423000000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 442200000000,
+        "Other": 4208600000000
+      }
+    },
+    {
+      "date": "2026-08-31",
+      "total": 10491500000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 4196700000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 377800000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 669300000000,
+        "Other": 5247700000000
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "total": 10523700000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 4154500000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 367700000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 695000000000,
+        "Other": 5306500000000
+      }
+    },
+    {
+      "date": "2026-09-02",
+      "total": 10364400000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 117400000000,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 3957600000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 412200000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 581200000000,
+        "Other": 5296000000000
+      }
+    },
+    {
+      "date": "2026-09-03",
+      "total": 12241900000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 3280200000000,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 3801700000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 388300000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 537700000000,
+        "Other": 4234000000000
+      }
+    },
+    {
+      "date": "2026-09-04",
+      "total": 12542900000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 4400200000000,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 3259000000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 397900000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 485100000000,
+        "Other": 4000700000000
+      }
+    },
+    {
+      "date": "2026-09-05",
+      "total": 11296800000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 4616900000000,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 3019600000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 413500000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 363700000000,
+        "Other": 2883100000000
+      }
+    },
+    {
+      "date": "2026-09-06",
+      "total": 11002700000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 4582900000000,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 2939500000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 389800000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 343100000000,
+        "Other": 2747400000000
+      }
+    },
+    {
+      "date": "2026-09-07",
+      "total": 12281500000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 4521800000000,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 3494900000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 425700000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 516200000000,
+        "Other": 3322900000000
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "total": 12409200000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 4552200000000,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 3636400000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 317900000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 506200000000,
+        "Other": 3396500000000
+      }
+    },
+    {
+      "date": "2026-09-09",
+      "total": 13254600000000,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 5659300000000,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 3413700000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 321700000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 545500000000,
+        "Other": 3314400000000
+      }
+    },
+    {
+      "date": "2026-09-10",
+      "total": 16340700000000,
+      "models": {
+        "deepseek-v4.1-flash": 3024200000000,
+        "muse-spark-1.3-contributor": 5859800000000,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 3197500000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 335900000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 602800000000,
+        "Other": 3320500000000
+      }
+    },
+    {
+      "date": "2026-09-11",
+      "total": 16062300000000,
+      "models": {
+        "deepseek-v4.1-flash": 4954300000000,
+        "muse-spark-1.3-contributor": 5234600000000,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 2650200000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 271600000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 467800000000,
+        "Other": 2483800000000
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "total": 16332400000000,
+      "models": {
+        "deepseek-v4.1-flash": 5363500000000,
+        "muse-spark-1.3-contributor": 5465100000000,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 2641500000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 409700000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 399500000000,
+        "Other": 2053100000000
+      }
+    },
+    {
+      "date": "2026-09-13",
+      "total": 15356100000000,
+      "models": {
+        "deepseek-v4.1-flash": 5591300000000,
+        "muse-spark-1.3-contributor": 4413500000000,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 2592000000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 310800000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 403300000000,
+        "Other": 2045200000000
+      }
+    },
+    {
+      "date": "2026-09-14",
+      "total": 18031800000000,
+      "models": {
+        "deepseek-v4.1-flash": 6535200000000,
+        "muse-spark-1.3-contributor": 5026900000000,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 2886600000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 307400000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 623900000000,
+        "Other": 2651800000000
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "total": 19167700000000,
+      "models": {
+        "deepseek-v4.1-flash": 7486600000000,
+        "muse-spark-1.3-contributor": 5123000000000,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 2911400000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 306200000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 635400000000,
+        "Other": 2705100000000
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "total": 20075300000000,
+      "models": {
+        "deepseek-v4.1-flash": 8216300000000,
+        "muse-spark-1.3-contributor": 5288100000000,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 2837000000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 390600000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 596300000000,
+        "Other": 2747000000000
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "total": 20778900000000,
+      "models": {
+        "deepseek-v4.1-flash": 8797600000000,
+        "muse-spark-1.3-contributor": 5860900000000,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 2454300000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 437700000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 566100000000,
+        "Other": 2662300000000
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "total": 19390800000000,
+      "models": {
+        "deepseek-v4.1-flash": 8184900000000,
+        "muse-spark-1.3-contributor": 5882700000000,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 2583600000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 541100000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 0,
+        "Other": 2198500000000
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "total": 16107600000000,
+      "models": {
+        "deepseek-v4.1-flash": 6481700000000,
+        "muse-spark-1.3-contributor": 4673500000000,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 2169800000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 514800000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 379700000000,
+        "Other": 1888100000000
+      }
+    },
+    {
+      "date": "2026-09-20",
+      "total": 16743800000000,
+      "models": {
+        "deepseek-v4.1-flash": 6896000000000,
+        "muse-spark-1.3-contributor": 4751800000000,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 0,
+        "deepseek-v4-flash": 2294500000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 503200000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 425700000000,
+        "Other": 1872600000000
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "total": 20292700000000,
+      "models": {
+        "deepseek-v4.1-flash": 8870900000000,
+        "muse-spark-1.3-contributor": 5448400000000,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 32000000000,
+        "deepseek-v4-flash": 2651600000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 489300000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 566000000000,
+        "Other": 2234500000000
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "total": 20455400000000,
+      "models": {
+        "deepseek-v4.1-flash": 8048400000000,
+        "muse-spark-1.3-contributor": 5655400000000,
+        "space-bunny": 0,
+        "mimo-v2.6-flash": 941000000000,
+        "deepseek-v4-flash": 2768300000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 506800000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 506000000000,
+        "Other": 2029500000000
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "total": 20532500000000,
+      "models": {
+        "deepseek-v4.1-flash": 6964900000000,
+        "muse-spark-1.3-contributor": 5848900000000,
+        "space-bunny": 1481000000000,
+        "mimo-v2.6-flash": 1183800000000,
+        "deepseek-v4-flash": 2737400000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 307300000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 445600000000,
+        "Other": 1563600000000
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "total": 24512700000000,
+      "models": {
+        "deepseek-v4.1-flash": 6235000000000,
+        "muse-spark-1.3-contributor": 5405600000000,
+        "space-bunny": 6822300000000,
+        "mimo-v2.6-flash": 1173100000000,
+        "deepseek-v4-flash": 2644400000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 397900000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 402300000000,
+        "Other": 1432100000000
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "total": 23792000000000,
+      "models": {
+        "deepseek-v4.1-flash": 4632000000000,
+        "muse-spark-1.3-contributor": 5109100000000,
+        "space-bunny": 8990700000000,
+        "mimo-v2.6-flash": 1319700000000,
+        "deepseek-v4-flash": 1609500000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 641900000000,
+        "longcat-2.5-preview": 0,
+        "glm-5.3-flash": 370300000000,
+        "Other": 1118800000000
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "total": 21316800000000,
+      "models": {
+        "deepseek-v4.1-flash": 4299300000000,
+        "muse-spark-1.3-contributor": 5086300000000,
+        "space-bunny": 7883700000000,
+        "mimo-v2.6-flash": 1199400000000,
+        "deepseek-v4-flash": 821900000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 730600000000,
+        "longcat-2.5-preview": 135900000000,
+        "glm-5.3-flash": 309200000000,
+        "Other": 850500000000
+      }
+    },
+    {
+      "date": "2026-09-27",
+      "total": 21855700000000,
+      "models": {
+        "deepseek-v4.1-flash": 4392500000000,
+        "muse-spark-1.3-contributor": 5077900000000,
+        "space-bunny": 8315900000000,
+        "mimo-v2.6-flash": 1246000000000,
+        "deepseek-v4-flash": 679300000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 662800000000,
+        "longcat-2.5-preview": 358900000000,
+        "glm-5.3-flash": 298600000000,
+        "Other": 823800000000
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "total": 25808200000000,
+      "models": {
+        "deepseek-v4.1-flash": 6249700000000,
+        "muse-spark-1.3-contributor": 5449200000000,
+        "space-bunny": 8711100000000,
+        "mimo-v2.6-flash": 1491400000000,
+        "deepseek-v4-flash": 1263600000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 634300000000,
+        "longcat-2.5-preview": 528700000000,
+        "glm-5.3-flash": 410300000000,
+        "Other": 1069900000000
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "total": 26262300000000,
+      "models": {
+        "deepseek-v4.1-flash": 6424900000000,
+        "muse-spark-1.3-contributor": 5253500000000,
+        "space-bunny": 9608100000000,
+        "mimo-v2.6-flash": 1507300000000,
+        "deepseek-v4-flash": 1122200000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 464800000000,
+        "longcat-2.5-preview": 543400000000,
+        "glm-5.3-flash": 392500000000,
+        "Other": 945600000000
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "total": 25220800000000,
+      "models": {
+        "deepseek-v4.1-flash": 5690300000000,
+        "muse-spark-1.3-contributor": 4759200000000,
+        "space-bunny": 10093900000000,
+        "mimo-v2.6-flash": 1492900000000,
+        "deepseek-v4-flash": 944800000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 458500000000,
+        "longcat-2.5-preview": 545500000000,
+        "glm-5.3-flash": 361700000000,
+        "Other": 874000000000
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "total": 23201700000000,
+      "models": {
+        "deepseek-v4.1-flash": 4883700000000,
+        "muse-spark-1.3-contributor": 4536900000000,
+        "space-bunny": 9749700000000,
+        "mimo-v2.6-flash": 1381900000000,
+        "deepseek-v4-flash": 642900000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 523800000000,
+        "longcat-2.5-preview": 427200000000,
+        "glm-5.3-flash": 276200000000,
+        "Other": 779400000000
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "total": 22068400000000,
+      "models": {
+        "deepseek-v4.1-flash": 4708900000000,
+        "muse-spark-1.3-contributor": 4357900000000,
+        "space-bunny": 8952800000000,
+        "mimo-v2.6-flash": 1381700000000,
+        "deepseek-v4-flash": 600400000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 536100000000,
+        "longcat-2.5-preview": 321000000000,
+        "glm-5.3-flash": 256100000000,
+        "Other": 953500000000
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "total": 21400600000000,
+      "models": {
+        "deepseek-v4.1-flash": 4356400000000,
+        "muse-spark-1.3-contributor": 4932500000000,
+        "space-bunny": 8333500000000,
+        "mimo-v2.6-flash": 1317300000000,
+        "deepseek-v4-flash": 470400000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 577100000000,
+        "longcat-2.5-preview": 292300000000,
+        "glm-5.3-flash": 226600000000,
+        "Other": 894500000000
+      }
+    },
+    {
+      "date": "2026-10-04",
+      "total": 22257400000000,
+      "models": {
+        "deepseek-v4.1-flash": 4383300000000,
+        "muse-spark-1.3-contributor": 5150700000000,
+        "space-bunny": 8877600000000,
+        "mimo-v2.6-flash": 1300800000000,
+        "deepseek-v4-flash": 442300000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 650000000000,
+        "longcat-2.5-preview": 278100000000,
+        "glm-5.3-flash": 230800000000,
+        "Other": 943800000000
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "total": 25156700000000,
+      "models": {
+        "deepseek-v4.1-flash": 5324600000000,
+        "muse-spark-1.3-contributor": 5721100000000,
+        "space-bunny": 9898000000000,
+        "mimo-v2.6-flash": 1464400000000,
+        "deepseek-v4-flash": 465000000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 564000000000,
+        "longcat-2.5-preview": 278200000000,
+        "glm-5.3-flash": 294000000000,
+        "Other": 1147400000000
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "total": 23007100000000,
+      "models": {
+        "deepseek-v4.1-flash": 5718400000000,
+        "muse-spark-1.3-contributor": 6019700000000,
+        "space-bunny": 5770400000000,
+        "mimo-v2.6-flash": 2223900000000,
+        "deepseek-v4-flash": 826600000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 516400000000,
+        "longcat-2.5-preview": 368500000000,
+        "glm-5.3-flash": 303300000000,
+        "Other": 1259900000000
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "total": 20954500000000,
+      "models": {
+        "deepseek-v4.1-flash": 5616400000000,
+        "muse-spark-1.3-contributor": 5720000000000,
+        "space-bunny": 3872900000000,
+        "mimo-v2.6-flash": 2358600000000,
+        "deepseek-v4-flash": 920000000000,
+        "step-5-preview": 0,
+        "nemotron-3-ultra": 578100000000,
+        "longcat-2.5-preview": 367600000000,
+        "glm-5.3-flash": 320400000000,
+        "Other": 1200500000000
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "total": 21840000000000,
+      "models": {
+        "deepseek-v4.1-flash": 6285900000000,
+        "muse-spark-1.3-contributor": 5843800000000,
+        "space-bunny": 3709000000000,
+        "mimo-v2.6-flash": 2409700000000,
+        "deepseek-v4-flash": 893900000000,
+        "step-5-preview": 354200000000,
+        "nemotron-3-ultra": 588300000000,
+        "longcat-2.5-preview": 348400000000,
+        "glm-5.3-flash": 340300000000,
+        "Other": 1066500000000
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "total": 21932000000000,
+      "models": {
+        "deepseek-v4.1-flash": 7054900000000,
+        "muse-spark-1.3-contributor": 5511600000000,
+        "space-bunny": 3510200000000,
+        "mimo-v2.6-flash": 1738700000000,
+        "deepseek-v4-flash": 826300000000,
+        "step-5-preview": 1164500000000,
+        "nemotron-3-ultra": 640400000000,
+        "longcat-2.5-preview": 360300000000,
+        "glm-5.3-flash": 342100000000,
+        "Other": 783000000000
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "total": 21648600000000,
+      "models": {
+        "deepseek-v4.1-flash": 6687300000000,
+        "muse-spark-1.3-contributor": 5697000000000,
+        "space-bunny": 3341200000000,
+        "mimo-v2.6-flash": 1497100000000,
+        "deepseek-v4-flash": 728100000000,
+        "step-5-preview": 1465400000000,
+        "nemotron-3-ultra": 681400000000,
+        "longcat-2.5-preview": 314600000000,
+        "glm-5.3-flash": 314000000000,
+        "Other": 922500000000
+      }
+    },
+    {
+      "date": "2026-10-11",
+      "total": 19999000000000,
+      "models": {
+        "deepseek-v4.1-flash": 6048000000000,
+        "muse-spark-1.3-contributor": 5721000000000,
+        "space-bunny": 2983000000000,
+        "mimo-v2.6-flash": 1292900000000,
+        "deepseek-v4-flash": 599800000000,
+        "step-5-preview": 1175000000000,
+        "nemotron-3-ultra": 732300000000,
+        "longcat-2.5-preview": 254400000000,
+        "glm-5.3-flash": 275500000000,
+        "Other": 917100000000
+      }
+    },
+    {
+      "date": "2026-10-12",
+      "total": 3894600000000,
+      "models": {
+        "deepseek-v4.1-flash": 1391600000000,
+        "muse-spark-1.3-contributor": 986400000000,
+        "space-bunny": 533400000000,
+        "mimo-v2.6-flash": 274000000000,
+        "deepseek-v4-flash": 119000000000,
+        "step-5-preview": 129200000000,
+        "nemotron-3-ultra": 145400000000,
+        "longcat-2.5-preview": 50600000000,
+        "glm-5.3-flash": 72600000000,
+        "Other": 192400000000
+      }
+    }
+  ],
+  "dailyUniqueUsers": [
+    {
+      "date": "2026-08-18",
+      "total": 427375,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 158416,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 0,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 268959
+      }
+    },
+    {
+      "date": "2026-08-19",
+      "total": 430957,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 159306,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 0,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 271651
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "total": 408276,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 147035,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 4083,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 257158
+      }
+    },
+    {
+      "date": "2026-08-21",
+      "total": 431902,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 85254,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 67007,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 279641
+      }
+    },
+    {
+      "date": "2026-08-22",
+      "total": 357276,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 65345,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 74781,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 217150
+      }
+    },
+    {
+      "date": "2026-08-23",
+      "total": 320410,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 53980,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 75939,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 190491
+      }
+    },
+    {
+      "date": "2026-08-24",
+      "total": 453225,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 86851,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 97972,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 268402
+      }
+    },
+    {
+      "date": "2026-08-25",
+      "total": 439682,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 82666,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 92068,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 264948
+      }
+    },
+    {
+      "date": "2026-08-26",
+      "total": 430255,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 78512,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 78192,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 273551
+      }
+    },
+    {
+      "date": "2026-08-27",
+      "total": 388173,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 92391,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 22117,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 273665
+      }
+    },
+    {
+      "date": "2026-08-28",
+      "total": 342609,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 89159,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 21858,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 231592
+      }
+    },
+    {
+      "date": "2026-08-29",
+      "total": 265673,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 69201,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 16773,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 179699
+      }
+    },
+    {
+      "date": "2026-08-30",
+      "total": 259512,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 66930,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 16481,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 176101
+      }
+    },
+    {
+      "date": "2026-08-31",
+      "total": 351877,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 88991,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 23670,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 239216
+      }
+    },
+    {
+      "date": "2026-09-01",
+      "total": 342757,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 0,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 88640,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 24186,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 229931
+      }
+    },
+    {
+      "date": "2026-09-02",
+      "total": 332037,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 2600,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 84464,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 23232,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 221741
+      }
+    },
+    {
+      "date": "2026-09-03",
+      "total": 351800,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 25256,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 82063,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 23868,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 220613
+      }
+    },
+    {
+      "date": "2026-09-04",
+      "total": 327526,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 29154,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 74358,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 22094,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 201920
+      }
+    },
+    {
+      "date": "2026-09-05",
+      "total": 254134,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 27047,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 59318,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 15528,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 152241
+      }
+    },
+    {
+      "date": "2026-09-06",
+      "total": 246372,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 28017,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 56760,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 15108,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 146487
+      }
+    },
+    {
+      "date": "2026-09-07",
+      "total": 308799,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 33483,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 72065,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 20780,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 182471
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "total": 298607,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 34799,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 70082,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 20600,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 173126
+      }
+    },
+    {
+      "date": "2026-09-09",
+      "total": 282607,
+      "models": {
+        "deepseek-v4.1-flash": 0,
+        "muse-spark-1.3-contributor": 34254,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 67465,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 19673,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 161215
+      }
+    },
+    {
+      "date": "2026-09-10",
+      "total": 319222,
+      "models": {
+        "deepseek-v4.1-flash": 31937,
+        "muse-spark-1.3-contributor": 34960,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 66540,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 20514,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 165271
+      }
+    },
+    {
+      "date": "2026-09-11",
+      "total": 293432,
+      "models": {
+        "deepseek-v4.1-flash": 42951,
+        "muse-spark-1.3-contributor": 33603,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 58651,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 17073,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 141154
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "total": 234593,
+      "models": {
+        "deepseek-v4.1-flash": 37750,
+        "muse-spark-1.3-contributor": 31028,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 44559,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 12821,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 108435
+      }
+    },
+    {
+      "date": "2026-09-13",
+      "total": 235104,
+      "models": {
+        "deepseek-v4.1-flash": 38771,
+        "muse-spark-1.3-contributor": 31387,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 42709,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 12427,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 109810
+      }
+    },
+    {
+      "date": "2026-09-14",
+      "total": 317106,
+      "models": {
+        "deepseek-v4.1-flash": 53890,
+        "muse-spark-1.3-contributor": 37603,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 56739,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 19897,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 148977
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "total": 316717,
+      "models": {
+        "deepseek-v4.1-flash": 55256,
+        "muse-spark-1.3-contributor": 37604,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 55007,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 19740,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 149110
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "total": 330711,
+      "models": {
+        "deepseek-v4.1-flash": 57926,
+        "muse-spark-1.3-contributor": 37799,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 53768,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 19227,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 161991
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "total": 333740,
+      "models": {
+        "deepseek-v4.1-flash": 67623,
+        "muse-spark-1.3-contributor": 33632,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 51480,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 19604,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 161401
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "total": 282361,
+      "models": {
+        "deepseek-v4.1-flash": 62512,
+        "muse-spark-1.3-contributor": 35995,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 47932,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 0,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 135922
+      }
+    },
+    {
+      "date": "2026-09-19",
+      "total": 257873,
+      "models": {
+        "deepseek-v4.1-flash": 53242,
+        "muse-spark-1.3-contributor": 34977,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 36050,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 15378,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 118226
+      }
+    },
+    {
+      "date": "2026-09-20",
+      "total": 241637,
+      "models": {
+        "deepseek-v4.1-flash": 54236,
+        "muse-spark-1.3-contributor": 29487,
+        "mimo-v2.6-flash": 0,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 34046,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 15885,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 107983
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "total": 320282,
+      "models": {
+        "deepseek-v4.1-flash": 80384,
+        "muse-spark-1.3-contributor": 37989,
+        "mimo-v2.6-flash": 2197,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 51829,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 21324,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 126559
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "total": 332835,
+      "models": {
+        "deepseek-v4.1-flash": 66335,
+        "muse-spark-1.3-contributor": 36494,
+        "mimo-v2.6-flash": 40771,
+        "space-bunny": 0,
+        "deepseek-v4-flash": 48161,
+        "gpt-6-luna": 0,
+        "glm-5.3-flash": 19103,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 121971
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "total": 308466,
+      "models": {
+        "deepseek-v4.1-flash": 61952,
+        "muse-spark-1.3-contributor": 34799,
+        "mimo-v2.6-flash": 39453,
+        "space-bunny": 6879,
+        "deepseek-v4-flash": 45415,
+        "gpt-6-luna": 2531,
+        "glm-5.3-flash": 17563,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 99874
+      }
+    },
+    {
+      "date": "2026-09-24",
+      "total": 306418,
+      "models": {
+        "deepseek-v4.1-flash": 60234,
+        "muse-spark-1.3-contributor": 33587,
+        "mimo-v2.6-flash": 37063,
+        "space-bunny": 20034,
+        "deepseek-v4-flash": 43751,
+        "gpt-6-luna": 12380,
+        "glm-5.3-flash": 16014,
+        "longcat-2.5-preview": 0,
+        "step-5-preview": 0,
+        "Other": 83355
+      }
+    },
+    {
+      "date": "2026-09-25",
+      "total": 259767,
+      "models": {
+        "deepseek-v4.1-flash": 49396,
+        "muse-spark-1.3-contributor": 31626,
+        "mimo-v2.6-flash": 21161,
+        "space-bunny": 34195,
+        "deepseek-v4-flash": 28747,
+        "gpt-6-luna": 11878,
+        "glm-5.3-flash": 13327,
+        "longcat-2.5-preview": 2,
+        "step-5-preview": 0,
+        "Other": 69435
+      }
+    },
+    {
+      "date": "2026-09-26",
+      "total": 230892,
+      "models": {
+        "deepseek-v4.1-flash": 44530,
+        "muse-spark-1.3-contributor": 28553,
+        "mimo-v2.6-flash": 18465,
+        "space-bunny": 35631,
+        "deepseek-v4-flash": 17971,
+        "gpt-6-luna": 10904,
+        "glm-5.3-flash": 11622,
+        "longcat-2.5-preview": 3379,
+        "step-5-preview": 0,
+        "Other": 59837
+      }
+    },
+    {
+      "date": "2026-09-27",
+      "total": 233131,
+      "models": {
+        "deepseek-v4.1-flash": 46120,
+        "muse-spark-1.3-contributor": 28369,
+        "mimo-v2.6-flash": 17318,
+        "space-bunny": 35357,
+        "deepseek-v4-flash": 16565,
+        "gpt-6-luna": 11646,
+        "glm-5.3-flash": 11516,
+        "longcat-2.5-preview": 6689,
+        "step-5-preview": 0,
+        "Other": 59551
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "total": 306496,
+      "models": {
+        "deepseek-v4.1-flash": 61533,
+        "muse-spark-1.3-contributor": 34396,
+        "mimo-v2.6-flash": 22039,
+        "space-bunny": 44658,
+        "deepseek-v4-flash": 26820,
+        "gpt-6-luna": 16116,
+        "glm-5.3-flash": 15333,
+        "longcat-2.5-preview": 8435,
+        "step-5-preview": 0,
+        "Other": 77166
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "total": 315018,
+      "models": {
+        "deepseek-v4.1-flash": 67494,
+        "muse-spark-1.3-contributor": 35809,
+        "mimo-v2.6-flash": 22622,
+        "space-bunny": 48546,
+        "deepseek-v4-flash": 24809,
+        "gpt-6-luna": 16757,
+        "glm-5.3-flash": 15308,
+        "longcat-2.5-preview": 8435,
+        "step-5-preview": 0,
+        "Other": 75238
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "total": 298029,
+      "models": {
+        "deepseek-v4.1-flash": 60793,
+        "muse-spark-1.3-contributor": 33909,
+        "mimo-v2.6-flash": 21958,
+        "space-bunny": 49858,
+        "deepseek-v4-flash": 23900,
+        "gpt-6-luna": 16163,
+        "glm-5.3-flash": 14412,
+        "longcat-2.5-preview": 8094,
+        "step-5-preview": 0,
+        "Other": 68942
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "total": 274496,
+      "models": {
+        "deepseek-v4.1-flash": 55317,
+        "muse-spark-1.3-contributor": 33187,
+        "mimo-v2.6-flash": 21927,
+        "space-bunny": 48971,
+        "deepseek-v4-flash": 16946,
+        "gpt-6-luna": 15043,
+        "glm-5.3-flash": 12741,
+        "longcat-2.5-preview": 7537,
+        "step-5-preview": 0,
+        "Other": 62827
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "total": 266945,
+      "models": {
+        "deepseek-v4.1-flash": 52896,
+        "muse-spark-1.3-contributor": 31572,
+        "mimo-v2.6-flash": 22195,
+        "space-bunny": 45883,
+        "deepseek-v4-flash": 15205,
+        "gpt-6-luna": 14432,
+        "glm-5.3-flash": 12195,
+        "longcat-2.5-preview": 7276,
+        "step-5-preview": 0,
+        "Other": 65291
+      }
+    },
+    {
+      "date": "2026-10-03",
+      "total": 232981,
+      "models": {
+        "deepseek-v4.1-flash": 45609,
+        "muse-spark-1.3-contributor": 28461,
+        "mimo-v2.6-flash": 17934,
+        "space-bunny": 40655,
+        "deepseek-v4-flash": 12098,
+        "gpt-6-luna": 12285,
+        "glm-5.3-flash": 10282,
+        "longcat-2.5-preview": 6886,
+        "step-5-preview": 0,
+        "Other": 58771
+      }
+    },
+    {
+      "date": "2026-10-04",
+      "total": 229887,
+      "models": {
+        "deepseek-v4.1-flash": 44667,
+        "muse-spark-1.3-contributor": 28402,
+        "mimo-v2.6-flash": 17232,
+        "space-bunny": 40835,
+        "deepseek-v4-flash": 11654,
+        "gpt-6-luna": 12343,
+        "glm-5.3-flash": 10145,
+        "longcat-2.5-preview": 6782,
+        "step-5-preview": 0,
+        "Other": 57827
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "total": 279403,
+      "models": {
+        "deepseek-v4.1-flash": 53048,
+        "muse-spark-1.3-contributor": 35004,
+        "mimo-v2.6-flash": 21033,
+        "space-bunny": 49602,
+        "deepseek-v4-flash": 13535,
+        "gpt-6-luna": 16018,
+        "glm-5.3-flash": 12450,
+        "longcat-2.5-preview": 7904,
+        "step-5-preview": 0,
+        "Other": 70809
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "total": 309071,
+      "models": {
+        "deepseek-v4.1-flash": 56926,
+        "muse-spark-1.3-contributor": 37813,
+        "mimo-v2.6-flash": 40876,
+        "space-bunny": 35209,
+        "deepseek-v4-flash": 21150,
+        "gpt-6-luna": 16601,
+        "glm-5.3-flash": 12923,
+        "longcat-2.5-preview": 12430,
+        "step-5-preview": 0,
+        "Other": 75143
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "total": 314875,
+      "models": {
+        "deepseek-v4.1-flash": 63205,
+        "muse-spark-1.3-contributor": 38635,
+        "mimo-v2.6-flash": 41743,
+        "space-bunny": 25063,
+        "deepseek-v4-flash": 22891,
+        "gpt-6-luna": 16962,
+        "glm-5.3-flash": 13085,
+        "longcat-2.5-preview": 12914,
+        "step-5-preview": 0,
+        "Other": 80377
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "total": 340362,
+      "models": {
+        "deepseek-v4.1-flash": 72692,
+        "muse-spark-1.3-contributor": 36410,
+        "mimo-v2.6-flash": 42268,
+        "space-bunny": 25034,
+        "deepseek-v4-flash": 24964,
+        "gpt-6-luna": 18810,
+        "glm-5.3-flash": 14321,
+        "longcat-2.5-preview": 13347,
+        "step-5-preview": 4810,
+        "Other": 87706
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "total": 334664,
+      "models": {
+        "deepseek-v4.1-flash": 86063,
+        "muse-spark-1.3-contributor": 34864,
+        "mimo-v2.6-flash": 30546,
+        "space-bunny": 23653,
+        "deepseek-v4-flash": 24097,
+        "gpt-6-luna": 18783,
+        "glm-5.3-flash": 14080,
+        "longcat-2.5-preview": 13107,
+        "step-5-preview": 12808,
+        "Other": 76663
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "total": 306838,
+      "models": {
+        "deepseek-v4.1-flash": 78310,
+        "muse-spark-1.3-contributor": 31014,
+        "mimo-v2.6-flash": 27587,
+        "space-bunny": 22060,
+        "deepseek-v4-flash": 23566,
+        "gpt-6-luna": 16100,
+        "glm-5.3-flash": 12235,
+        "longcat-2.5-preview": 12010,
+        "step-5-preview": 12645,
+        "Other": 71311
+      }
+    },
+    {
+      "date": "2026-10-11",
+      "total": 277133,
+      "models": {
+        "deepseek-v4.1-flash": 71524,
+        "muse-spark-1.3-contributor": 30474,
+        "mimo-v2.6-flash": 21675,
+        "space-bunny": 18754,
+        "deepseek-v4-flash": 19496,
+        "gpt-6-luna": 15363,
+        "glm-5.3-flash": 10682,
+        "longcat-2.5-preview": 11747,
+        "step-5-preview": 12539,
+        "Other": 64879
+      }
+    },
+    {
+      "date": "2026-10-12",
+      "total": 128806,
+      "models": {
+        "deepseek-v4.1-flash": 41873,
+        "muse-spark-1.3-contributor": 13818,
+        "mimo-v2.6-flash": 11335,
+        "space-bunny": 6345,
+        "deepseek-v4-flash": 8685,
+        "gpt-6-luna": 6205,
+        "glm-5.3-flash": 5432,
+        "longcat-2.5-preview": 5529,
+        "step-5-preview": 5143,
+        "Other": 24441
+      }
+    }
+  ],
+  "weeklyRetention": [
+    {
+      "rank": 1,
+      "model": "mimo-v2.6-flash",
+      "name": "MiMo-V2.6-Flash",
+      "page": "https://opencode.ai/data/xiaomi/mimo-v2-6-flash",
+      "retentionPercent": 80.3,
+      "eligibleUserWeeks": 2803,
+      "retainedUserWeeks": 2251
+    },
+    {
+      "rank": 2,
+      "model": "space-bunny",
+      "name": "space-bunny",
+      "page": "https://opencode.ai/data/unknown/space-bunny",
+      "retentionPercent": 80,
+      "eligibleUserWeeks": 8232,
+      "retainedUserWeeks": 6583
+    },
+    {
+      "rank": 3,
+      "model": "muse-spark-1.2-contributor",
+      "name": "Muse Spark 1.2 Contributor",
+      "page": "https://opencode.ai/data/meta/muse-spark-1-2-contributor",
+      "retentionPercent": 78.3,
+      "eligibleUserWeeks": 9072,
+      "retainedUserWeeks": 7102
+    },
+    {
+      "rank": 4,
+      "model": "kimi-k2.5",
+      "name": "Kimi K2.5",
+      "page": "https://opencode.ai/data/moonshotai/kimi-k2-5",
+      "retentionPercent": 77.1,
+      "eligibleUserWeeks": 214,
+      "retainedUserWeeks": 165
+    },
+    {
+      "rank": 5,
+      "model": "mimo-v2.5",
+      "name": "MiMo-V2.5",
+      "page": "https://opencode.ai/data/xiaomi/mimo-v2-5",
+      "retentionPercent": 72.1,
+      "eligibleUserWeeks": 26400,
+      "retainedUserWeeks": 19039
+    },
+    {
+      "rank": 6,
+      "model": "qwen3.5-plus",
+      "name": "Qwen3.5 Plus",
+      "page": "https://opencode.ai/data/alibaba/qwen3-5-plus",
+      "retentionPercent": 71.9,
+      "eligibleUserWeeks": 139,
+      "retainedUserWeeks": 100
+    },
+    {
+      "rank": 7,
+      "model": "hy3",
+      "name": "Hy3",
+      "page": "https://opencode.ai/data/tencent/hy3",
+      "retentionPercent": 71.5,
+      "eligibleUserWeeks": 3375,
+      "retainedUserWeeks": 2414
+    },
+    {
+      "rank": 8,
+      "model": "minimax-m2.5",
+      "name": "MiniMax-M2.5",
+      "page": "https://opencode.ai/data/minimax/minimax-m2-5",
+      "retentionPercent": 69.4,
+      "eligibleUserWeeks": 245,
+      "retainedUserWeeks": 170
+    },
+    {
+      "rank": 9,
+      "model": "deepseek-v4-flash",
+      "name": "DeepSeek V4 Flash",
+      "page": "https://opencode.ai/data/deepseek/deepseek-v4-flash",
+      "retentionPercent": 69.3,
+      "eligibleUserWeeks": 272483,
+      "retainedUserWeeks": 188732
+    },
+    {
+      "rank": 10,
+      "model": "qwen3.7-plus",
+      "name": "Qwen3.7 Plus",
+      "page": "https://opencode.ai/data/alibaba/qwen3-7-plus",
+      "retentionPercent": 67.1,
+      "eligibleUserWeeks": 8393,
+      "retainedUserWeeks": 5629
+    },
+    {
+      "rank": 11,
+      "model": "muse-spark-1.3-contributor",
+      "name": "Muse Spark 1.3 Contributor",
+      "page": "https://opencode.ai/data/meta/muse-spark-1-3-contributor",
+      "retentionPercent": 67,
+      "eligibleUserWeeks": 41215,
+      "retainedUserWeeks": 27615
+    },
+    {
+      "rank": 12,
+      "model": "glm-5",
+      "name": "GLM-5",
+      "page": "https://opencode.ai/data/zhipuai/glm-5",
+      "retentionPercent": 66.7,
+      "eligibleUserWeeks": 384,
+      "retainedUserWeeks": 256
+    },
+    {
+      "rank": 13,
+      "model": "minimax-m2.7",
+      "name": "MiniMax-M2.7",
+      "page": "https://opencode.ai/data/minimax/minimax-m2-7",
+      "retentionPercent": 66.1,
+      "eligibleUserWeeks": 2237,
+      "retainedUserWeeks": 1479
+    },
+    {
+      "rank": 14,
+      "model": "mimo-v2.5-pro",
+      "name": "MiMo-V2.5-Pro",
+      "page": "https://opencode.ai/data/xiaomi/mimo-v2-5-pro",
+      "retentionPercent": 65.7,
+      "eligibleUserWeeks": 5061,
+      "retainedUserWeeks": 3323
+    },
+    {
+      "rank": 15,
+      "model": "gpt-6-luna",
+      "name": "GPT-6 Luna",
+      "page": "https://opencode.ai/data/openai/gpt-6-luna",
+      "retentionPercent": 65.2,
+      "eligibleUserWeeks": 3454,
+      "retainedUserWeeks": 2251
+    }
+  ],
+  "sessionCost": [
+    {
+      "model": "space-bunny",
+      "costPerSessionUsd": 0.0003,
+      "tokensPerSession": 478125
+    },
+    {
+      "model": "mimo-v2.6-flash",
+      "costPerSessionUsd": 0.002,
+      "tokensPerSession": 1266383
+    },
+    {
+      "model": "muse-spark-1.3-contributor",
+      "costPerSessionUsd": 0.0031,
+      "tokensPerSession": 2130895
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "costPerSessionUsd": 0.026,
+      "tokensPerSession": 3557228
+    },
+    {
+      "model": "deepseek-v4.1-flash",
+      "costPerSessionUsd": 0.0559,
+      "tokensPerSession": 4156361
+    },
+    {
+      "model": "glm-5.3-flash",
+      "costPerSessionUsd": 0.0849,
+      "tokensPerSession": 2014343
+    }
+  ],
+  "tokenPricesUsdPer1M": [
+    {
+      "model": "muse-spark-1.3-contributor",
+      "input": 0.1,
+      "output": 0.2,
+      "cachedInput": 0.002
+    },
+    {
+      "model": "mimo-v2.6-flash",
+      "input": 0.16,
+      "output": 0.32,
+      "cachedInput": 0.004
+    },
+    {
+      "model": "glm-5.3-flash",
+      "input": 0.15,
+      "output": 0.5,
+      "cachedInput": 0.03
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "input": 0.3,
+      "output": 1.2,
+      "cachedInput": 0.006
+    },
+    {
+      "model": "deepseek-v4.1-flash",
+      "input": 0.3,
+      "output": 1.2,
+      "cachedInput": 0.006
+    },
+    {
+      "model": "longcat-2.5-preview",
+      "input": 0.3,
+      "output": 1.2,
+      "cachedInput": 0.006
+    },
+    {
+      "model": "step-5-preview",
+      "input": 0.959,
+      "output": 2.741,
+      "cachedInput": 0.048
+    }
+  ],
+  "cacheRatio": [
+    {
+      "model": "space-bunny",
+      "cachedInputPercent": 96.4,
+      "cachedInputTokens": 22750700000000,
+      "uncachedInputTokens": 855200000000
+    },
+    {
+      "model": "deepseek-v4.1-flash",
+      "cachedInputPercent": 96.1,
+      "cachedInputTokens": 37062000000000,
+      "uncachedInputTokens": 1503100000000
+    },
+    {
+      "model": "muse-spark-1.3-contributor",
+      "cachedInputPercent": 96,
+      "cachedInputTokens": 33949000000000,
+      "uncachedInputTokens": 1428900000000
+    },
+    {
+      "model": "step-5-preview",
+      "cachedInputPercent": 95.6,
+      "cachedInputTokens": 4073200000000,
+      "uncachedInputTokens": 188700000000
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "cachedInputPercent": 94.8,
+      "cachedInputTokens": 4620400000000,
+      "uncachedInputTokens": 252700000000
+    },
+    {
+      "model": "mimo-v2.6-flash",
+      "cachedInputPercent": 94.1,
+      "cachedInputTokens": 10986700000000,
+      "uncachedInputTokens": 683900000000
+    },
+    {
+      "model": "longcat-2.5-preview",
+      "cachedInputPercent": 92.5,
+      "cachedInputTokens": 1865500000000,
+      "uncachedInputTokens": 152200000000
+    },
+    {
+      "model": "fledge-alpha",
+      "cachedInputPercent": 91.9,
+      "cachedInputTokens": 962900000000,
+      "uncachedInputTokens": 85300000000
+    },
+    {
+      "model": "glm-5.3-flash",
+      "cachedInputPercent": 91.7,
+      "cachedInputTokens": 1796000000000,
+      "uncachedInputTokens": 162900000000
+    },
+    {
+      "model": "nemotron-3-ultra",
+      "cachedInputPercent": 89.9,
+      "cachedInputTokens": 3483000000000,
+      "uncachedInputTokens": 390800000000
+    }
+  ],
+  "marketShare": [
+    {
+      "date": "2026-08-18",
+      "tokens": 13271580000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 9620149000000,
+          "sharePercent": 72.5
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 2198038000000,
+          "sharePercent": 16.6
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 172676000000,
+          "sharePercent": 1.3
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 433693000000,
+          "sharePercent": 3.3
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 167042000000,
+          "sharePercent": 1.3
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 380020000000,
+          "sharePercent": 2.9
+        },
+        {
+          "lab": "Other",
+          "tokens": 299962000000,
+          "sharePercent": 2.3
+        }
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "tokens": 11881793000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 8049004000000,
+          "sharePercent": 67.7
+        },
+        {
+          "lab": "Meta",
+          "tokens": 213281000000,
+          "sharePercent": 1.8
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 2139459000000,
+          "sharePercent": 18
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 155455000000,
+          "sharePercent": 1.3
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 586945000000,
+          "sharePercent": 4.9
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 197189000000,
+          "sharePercent": 1.7
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 231260000000,
+          "sharePercent": 1.9
+        },
+        {
+          "lab": "Other",
+          "tokens": 309200000000,
+          "sharePercent": 2.6
+        }
+      ]
+    },
+    {
+      "date": "2026-08-20",
+      "tokens": 11877041000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 7315745000000,
+          "sharePercent": 61.6
+        },
+        {
+          "lab": "Meta",
+          "tokens": 925230000000,
+          "sharePercent": 7.8
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 2113189000000,
+          "sharePercent": 17.8
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 218493000000,
+          "sharePercent": 1.8
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 595692000000,
+          "sharePercent": 5
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 276298000000,
+          "sharePercent": 2.3
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 164770000000,
+          "sharePercent": 1.4
+        },
+        {
+          "lab": "Other",
+          "tokens": 267623000000,
+          "sharePercent": 2.3
+        }
+      ]
+    },
+    {
+      "date": "2026-08-21",
+      "tokens": 12351826000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 3396384000000,
+          "sharePercent": 27.5
+        },
+        {
+          "lab": "Meta",
+          "tokens": 1454885000000,
+          "sharePercent": 11.8
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1814127000000,
+          "sharePercent": 14.7
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 4224177000000,
+          "sharePercent": 34.2
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 627873000000,
+          "sharePercent": 5.1
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 445900000000,
+          "sharePercent": 3.6
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 145493000000,
+          "sharePercent": 1.2
+        },
+        {
+          "lab": "Other",
+          "tokens": 242987000000,
+          "sharePercent": 2
+        }
+      ]
+    },
+    {
+      "date": "2026-08-22",
+      "tokens": 13123414000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 2738723000000,
+          "sharePercent": 20.9
+        },
+        {
+          "lab": "Meta",
+          "tokens": 1165368000000,
+          "sharePercent": 8.9
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1218563000000,
+          "sharePercent": 9.3
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 6719753000000,
+          "sharePercent": 51.2
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 641049000000,
+          "sharePercent": 4.9
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 363708000000,
+          "sharePercent": 2.8
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 101014000000,
+          "sharePercent": 0.8
+        },
+        {
+          "lab": "Other",
+          "tokens": 175238000000,
+          "sharePercent": 1.3
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "tokens": 15030699000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 2647418000000,
+          "sharePercent": 17.6
+        },
+        {
+          "lab": "Meta",
+          "tokens": 1265600000000,
+          "sharePercent": 8.4
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1191103000000,
+          "sharePercent": 7.9
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 8524465000000,
+          "sharePercent": 56.7
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 777074000000,
+          "sharePercent": 5.2
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 373570000000,
+          "sharePercent": 2.5
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 94644000000,
+          "sharePercent": 0.6
+        },
+        {
+          "lab": "Other",
+          "tokens": 156826000000,
+          "sharePercent": 1
+        }
+      ]
+    },
+    {
+      "date": "2026-08-24",
+      "tokens": 18545019000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 4016576000000,
+          "sharePercent": 21.7
+        },
+        {
+          "lab": "Meta",
+          "tokens": 1372857000000,
+          "sharePercent": 7.4
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1498654000000,
+          "sharePercent": 8.1
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 9921957000000,
+          "sharePercent": 53.5
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 849755000000,
+          "sharePercent": 4.6
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 473429000000,
+          "sharePercent": 2.6
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 4296000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 144952000000,
+          "sharePercent": 0.8
+        },
+        {
+          "lab": "Other",
+          "tokens": 262543000000,
+          "sharePercent": 1.4
+        }
+      ]
+    },
+    {
+      "date": "2026-08-25",
+      "tokens": 18405343000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 3926316000000,
+          "sharePercent": 21.3
+        },
+        {
+          "lab": "Meta",
+          "tokens": 1430069000000,
+          "sharePercent": 7.8
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 2301214000000,
+          "sharePercent": 12.5
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 9089119000000,
+          "sharePercent": 49.4
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 759008000000,
+          "sharePercent": 4.1
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 496923000000,
+          "sharePercent": 2.7
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 15861000000,
+          "sharePercent": 0.1
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 126573000000,
+          "sharePercent": 0.7
+        },
+        {
+          "lab": "Other",
+          "tokens": 260261000000,
+          "sharePercent": 1.4
+        }
+      ]
+    },
+    {
+      "date": "2026-08-26",
+      "tokens": 16363492000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 3746293000000,
+          "sharePercent": 22.9
+        },
+        {
+          "lab": "Meta",
+          "tokens": 1675745000000,
+          "sharePercent": 10.2
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 2854611000000,
+          "sharePercent": 17.4
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 6435485000000,
+          "sharePercent": 39.3
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 705639000000,
+          "sharePercent": 4.3
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 579234000000,
+          "sharePercent": 3.5
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 19235000000,
+          "sharePercent": 0.1
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 118425000000,
+          "sharePercent": 0.7
+        },
+        {
+          "lab": "Other",
+          "tokens": 228823000000,
+          "sharePercent": 1.4
+        }
+      ]
+    },
+    {
+      "date": "2026-08-27",
+      "tokens": 11521627000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 4588427000000,
+          "sharePercent": 39.8
+        },
+        {
+          "lab": "Meta",
+          "tokens": 2272382000000,
+          "sharePercent": 19.7
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 2089550000000,
+          "sharePercent": 18.1
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 713684000000,
+          "sharePercent": 6.2
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 709821000000,
+          "sharePercent": 6.2
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 810116000000,
+          "sharePercent": 7
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 23025000000,
+          "sharePercent": 0.2
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 109011000000,
+          "sharePercent": 0.9
+        },
+        {
+          "lab": "Other",
+          "tokens": 205609000000,
+          "sharePercent": 1.8
+        }
+      ]
+    },
+    {
+      "date": "2026-08-28",
+      "tokens": 10398111000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 4566752000000,
+          "sharePercent": 43.9
+        },
+        {
+          "lab": "Meta",
+          "tokens": 2088059000000,
+          "sharePercent": 20.1
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1351847000000,
+          "sharePercent": 13
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 690482000000,
+          "sharePercent": 6.6
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 608846000000,
+          "sharePercent": 5.9
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 756507000000,
+          "sharePercent": 7.3
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 22902000000,
+          "sharePercent": 0.2
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 88554000000,
+          "sharePercent": 0.9
+        },
+        {
+          "lab": "Other",
+          "tokens": 224161000000,
+          "sharePercent": 2.2
+        }
+      ]
+    },
+    {
+      "date": "2026-08-29",
+      "tokens": 9113720000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 3911367000000,
+          "sharePercent": 42.9
+        },
+        {
+          "lab": "Meta",
+          "tokens": 1832205000000,
+          "sharePercent": 20.1
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1111067000000,
+          "sharePercent": 12.2
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 503746000000,
+          "sharePercent": 5.5
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 760426000000,
+          "sharePercent": 8.3
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 675966000000,
+          "sharePercent": 7.4
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 17388000000,
+          "sharePercent": 0.2
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 68438000000,
+          "sharePercent": 0.8
+        },
+        {
+          "lab": "Other",
+          "tokens": 233116000000,
+          "sharePercent": 2.6
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "tokens": 8563383000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 3904197000000,
+          "sharePercent": 45.6
+        },
+        {
+          "lab": "Meta",
+          "tokens": 1857208000000,
+          "sharePercent": 21.7
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1276062000000,
+          "sharePercent": 14.9
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 487816000000,
+          "sharePercent": 5.7
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 577623000000,
+          "sharePercent": 6.7
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 146558000000,
+          "sharePercent": 1.7
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 14593000000,
+          "sharePercent": 0.2
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 65539000000,
+          "sharePercent": 0.8
+        },
+        {
+          "lab": "Other",
+          "tokens": 233787000000,
+          "sharePercent": 2.7
+        }
+      ]
+    },
+    {
+      "date": "2026-08-31",
+      "tokens": 10491565000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 4780880000000,
+          "sharePercent": 45.6
+        },
+        {
+          "lab": "Meta",
+          "tokens": 2135551000000,
+          "sharePercent": 20.4
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1804874000000,
+          "sharePercent": 17.2
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 742536000000,
+          "sharePercent": 7.1
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 508027000000,
+          "sharePercent": 4.8
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 63647000000,
+          "sharePercent": 0.6
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 23219000000,
+          "sharePercent": 0.2
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 98006000000,
+          "sharePercent": 0.9
+        },
+        {
+          "lab": "Other",
+          "tokens": 334825000000,
+          "sharePercent": 3.2
+        }
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "tokens": 10523644000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 4718961000000,
+          "sharePercent": 44.8
+        },
+        {
+          "lab": "Meta",
+          "tokens": 2266119000000,
+          "sharePercent": 21.5
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1769861000000,
+          "sharePercent": 16.8
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 763316000000,
+          "sharePercent": 7.3
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 487072000000,
+          "sharePercent": 4.6
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 54064000000,
+          "sharePercent": 0.5
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 19592000000,
+          "sharePercent": 0.2
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 88857000000,
+          "sharePercent": 0.8
+        },
+        {
+          "lab": "Other",
+          "tokens": 355802000000,
+          "sharePercent": 3.4
+        }
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "tokens": 10364386000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 4466394000000,
+          "sharePercent": 43.1
+        },
+        {
+          "lab": "Meta",
+          "tokens": 2520648000000,
+          "sharePercent": 24.3
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1711362000000,
+          "sharePercent": 16.5
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 639597000000,
+          "sharePercent": 6.2
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 515798000000,
+          "sharePercent": 5
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 45979000000,
+          "sharePercent": 0.4
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 21887000000,
+          "sharePercent": 0.2
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 83038000000,
+          "sharePercent": 0.8
+        },
+        {
+          "lab": "Other",
+          "tokens": 359682000000,
+          "sharePercent": 3.5
+        }
+      ]
+    },
+    {
+      "date": "2026-09-03",
+      "tokens": 12241889000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 4254694000000,
+          "sharePercent": 34.8
+        },
+        {
+          "lab": "Meta",
+          "tokens": 4818945000000,
+          "sharePercent": 39.4
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1577689000000,
+          "sharePercent": 12.9
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 595470000000,
+          "sharePercent": 4.9
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 506377000000,
+          "sharePercent": 4.1
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 37331000000,
+          "sharePercent": 0.3
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 23538000000,
+          "sharePercent": 0.2
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 81042000000,
+          "sharePercent": 0.7
+        },
+        {
+          "lab": "Other",
+          "tokens": 346802000000,
+          "sharePercent": 2.8
+        }
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "tokens": 12543012000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 3590240000000,
+          "sharePercent": 28.6
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5466451000000,
+          "sharePercent": 43.6
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1741507000000,
+          "sharePercent": 13.9
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 530767000000,
+          "sharePercent": 4.2
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 531841000000,
+          "sharePercent": 4.2
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 30552000000,
+          "sharePercent": 0.2
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 19671000000,
+          "sharePercent": 0.2
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 69900000000,
+          "sharePercent": 0.6
+        },
+        {
+          "lab": "Other",
+          "tokens": 562083000000,
+          "sharePercent": 4.5
+        }
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "tokens": 11296833000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 3195377000000,
+          "sharePercent": 28.3
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5383410000000,
+          "sharePercent": 47.7
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1196956000000,
+          "sharePercent": 10.6
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 392978000000,
+          "sharePercent": 3.5
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 549888000000,
+          "sharePercent": 4.9
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 20393000000,
+          "sharePercent": 0.2
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 11011000000,
+          "sharePercent": 0.1
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 59248000000,
+          "sharePercent": 0.5
+        },
+        {
+          "lab": "Other",
+          "tokens": 487572000000,
+          "sharePercent": 4.3
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "tokens": 11002572000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 3116603000000,
+          "sharePercent": 28.3
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5275816000000,
+          "sharePercent": 48
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1182979000000,
+          "sharePercent": 10.8
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 373537000000,
+          "sharePercent": 3.4
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 511913000000,
+          "sharePercent": 4.7
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 20858000000,
+          "sharePercent": 0.2
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 11319000000,
+          "sharePercent": 0.1
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 63334000000,
+          "sharePercent": 0.6
+        },
+        {
+          "lab": "Other",
+          "tokens": 446213000000,
+          "sharePercent": 4.1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-07",
+      "tokens": 12281474000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 3736769000000,
+          "sharePercent": 30.4
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5283474000000,
+          "sharePercent": 43
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1430074000000,
+          "sharePercent": 11.6
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 567222000000,
+          "sharePercent": 4.6
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 521930000000,
+          "sharePercent": 4.2
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 25831000000,
+          "sharePercent": 0.2
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 15159000000,
+          "sharePercent": 0.1
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 93367000000,
+          "sharePercent": 0.8
+        },
+        {
+          "lab": "Other",
+          "tokens": 607648000000,
+          "sharePercent": 4.9
+        }
+      ]
+    },
+    {
+      "date": "2026-09-08",
+      "tokens": 12409122000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 3865558000000,
+          "sharePercent": 31.2
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5351983000000,
+          "sharePercent": 43.1
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1506332000000,
+          "sharePercent": 12.1
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 553795000000,
+          "sharePercent": 4.5
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 381965000000,
+          "sharePercent": 3.1
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 25139000000,
+          "sharePercent": 0.2
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 15765000000,
+          "sharePercent": 0.1
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 98467000000,
+          "sharePercent": 0.8
+        },
+        {
+          "lab": "Other",
+          "tokens": 610117000000,
+          "sharePercent": 4.9
+        }
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "tokens": 13254633000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 3680382000000,
+          "sharePercent": 27.8
+        },
+        {
+          "lab": "Meta",
+          "tokens": 6359108000000,
+          "sharePercent": 48
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1491934000000,
+          "sharePercent": 11.3
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 586763000000,
+          "sharePercent": 4.4
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 403346000000,
+          "sharePercent": 3
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 24221000000,
+          "sharePercent": 0.2
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 13362000000,
+          "sharePercent": 0.1
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 92586000000,
+          "sharePercent": 0.7
+        },
+        {
+          "lab": "Other",
+          "tokens": 602931000000,
+          "sharePercent": 4.5
+        }
+      ]
+    },
+    {
+      "date": "2026-09-10",
+      "tokens": 16340664000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 6551015000000,
+          "sharePercent": 40.1
+        },
+        {
+          "lab": "Meta",
+          "tokens": 6492593000000,
+          "sharePercent": 39.7
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1688366000000,
+          "sharePercent": 10.3
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 641615000000,
+          "sharePercent": 3.9
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 409881000000,
+          "sharePercent": 2.5
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 18484000000,
+          "sharePercent": 0.1
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 10790000000,
+          "sharePercent": 0.1
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 88222000000,
+          "sharePercent": 0.5
+        },
+        {
+          "lab": "Other",
+          "tokens": 439698000000,
+          "sharePercent": 2.7
+        }
+      ]
+    },
+    {
+      "date": "2026-09-11",
+      "tokens": 16062282000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 7856505000000,
+          "sharePercent": 48.9
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5728930000000,
+          "sharePercent": 35.7
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1305565000000,
+          "sharePercent": 8.1
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 500346000000,
+          "sharePercent": 3.1
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 315398000000,
+          "sharePercent": 2
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 12880000000,
+          "sharePercent": 0.1
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 8204000000,
+          "sharePercent": 0.1
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 70471000000,
+          "sharePercent": 0.4
+        },
+        {
+          "lab": "Other",
+          "tokens": 263984000000,
+          "sharePercent": 1.6
+        }
+      ]
+    },
+    {
+      "date": "2026-09-12",
+      "tokens": 16332274000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 8212489000000,
+          "sharePercent": 50.3
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5936788000000,
+          "sharePercent": 36.4
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 961137000000,
+          "sharePercent": 5.9
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 425089000000,
+          "sharePercent": 2.6
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 497924000000,
+          "sharePercent": 3
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 10445000000,
+          "sharePercent": 0.1
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 5877000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 61673000000,
+          "sharePercent": 0.4
+        },
+        {
+          "lab": "Other",
+          "tokens": 220852000000,
+          "sharePercent": 1.4
+        }
+      ]
+    },
+    {
+      "date": "2026-09-13",
+      "tokens": 15356152000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 8391671000000,
+          "sharePercent": 54.6
+        },
+        {
+          "lab": "Meta",
+          "tokens": 4900951000000,
+          "sharePercent": 31.9
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1001864000000,
+          "sharePercent": 6.5
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 429935000000,
+          "sharePercent": 2.8
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 350946000000,
+          "sharePercent": 2.3
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 9385000000,
+          "sharePercent": 0.1
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 6244000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 59639000000,
+          "sharePercent": 0.4
+        },
+        {
+          "lab": "Other",
+          "tokens": 205518000000,
+          "sharePercent": 1.3
+        }
+      ]
+    },
+    {
+      "date": "2026-09-14",
+      "tokens": 18031797000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 9681120000000,
+          "sharePercent": 53.7
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5533984000000,
+          "sharePercent": 30.7
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1370809000000,
+          "sharePercent": 7.6
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 668593000000,
+          "sharePercent": 3.7
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 346499000000,
+          "sharePercent": 1.9
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 15220000000,
+          "sharePercent": 0.1
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 7964000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 94483000000,
+          "sharePercent": 0.5
+        },
+        {
+          "lab": "Other",
+          "tokens": 313125000000,
+          "sharePercent": 1.7
+        }
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "tokens": 19167699000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 10670187000000,
+          "sharePercent": 55.7
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5625106000000,
+          "sharePercent": 29.3
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1357482000000,
+          "sharePercent": 7.1
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 673982000000,
+          "sharePercent": 3.5
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 394269000000,
+          "sharePercent": 2.1
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 14097000000,
+          "sharePercent": 0.1
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 7720000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 94184000000,
+          "sharePercent": 0.5
+        },
+        {
+          "lab": "Other",
+          "tokens": 330671000000,
+          "sharePercent": 1.7
+        }
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "tokens": 20075371000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 11358742000000,
+          "sharePercent": 56.6
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5780163000000,
+          "sharePercent": 28.8
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1307588000000,
+          "sharePercent": 6.5
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 636235000000,
+          "sharePercent": 3.2
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 463373000000,
+          "sharePercent": 2.3
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 11348000000,
+          "sharePercent": 0.1
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 5535000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 85869000000,
+          "sharePercent": 0.4
+        },
+        {
+          "lab": "Other",
+          "tokens": 426518000000,
+          "sharePercent": 2.1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "tokens": 20778984000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 11605867000000,
+          "sharePercent": 55.9
+        },
+        {
+          "lab": "Meta",
+          "tokens": 6267849000000,
+          "sharePercent": 30.2
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 989807000000,
+          "sharePercent": 4.8
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 606431000000,
+          "sharePercent": 2.9
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 516224000000,
+          "sharePercent": 2.5
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 12275000000,
+          "sharePercent": 0.1
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 6703000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 86005000000,
+          "sharePercent": 0.4
+        },
+        {
+          "lab": "Other",
+          "tokens": 687823000000,
+          "sharePercent": 3.3
+        }
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "tokens": 19390902000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 11098731000000,
+          "sharePercent": 57.2
+        },
+        {
+          "lab": "Meta",
+          "tokens": 6294581000000,
+          "sharePercent": 32.5
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 938436000000,
+          "sharePercent": 4.8
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 36761000000,
+          "sharePercent": 0.2
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 617524000000,
+          "sharePercent": 3.2
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 11545000000,
+          "sharePercent": 0.1
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 5300000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 86726000000,
+          "sharePercent": 0.4
+        },
+        {
+          "lab": "Other",
+          "tokens": 301297000000,
+          "sharePercent": 1.6
+        }
+      ]
+    },
+    {
+      "date": "2026-09-19",
+      "tokens": 16107643000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 8927850000000,
+          "sharePercent": 55.4
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5098635000000,
+          "sharePercent": 31.7
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 785989000000,
+          "sharePercent": 4.9
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 408127000000,
+          "sharePercent": 2.5
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 553431000000,
+          "sharePercent": 3.4
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 9211000000,
+          "sharePercent": 0.1
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 3947000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 67762000000,
+          "sharePercent": 0.4
+        },
+        {
+          "lab": "Other",
+          "tokens": 252690000000,
+          "sharePercent": 1.6
+        }
+      ]
+    },
+    {
+      "date": "2026-09-20",
+      "tokens": 16743746000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 9425264000000,
+          "sharePercent": 56.3
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5164146000000,
+          "sharePercent": 30.8
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 826247000000,
+          "sharePercent": 4.9
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 454618000000,
+          "sharePercent": 2.7
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 535027000000,
+          "sharePercent": 3.2
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 8914000000,
+          "sharePercent": 0.1
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 5340000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 69490000000,
+          "sharePercent": 0.4
+        },
+        {
+          "lab": "Other",
+          "tokens": 254699000000,
+          "sharePercent": 1.5
+        }
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "tokens": 20292737000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 11827797000000,
+          "sharePercent": 58.3
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5903166000000,
+          "sharePercent": 29.1
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 990237000000,
+          "sharePercent": 4.9
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 607691000000,
+          "sharePercent": 3
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 523655000000,
+          "sharePercent": 2.6
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 11408000000,
+          "sharePercent": 0.1
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 5853000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 100542000000,
+          "sharePercent": 0.5
+        },
+        {
+          "lab": "Other",
+          "tokens": 322390000000,
+          "sharePercent": 1.6
+        }
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "tokens": 20455319000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 11105884000000,
+          "sharePercent": 54.3
+        },
+        {
+          "lab": "Meta",
+          "tokens": 6126334000000,
+          "sharePercent": 29.9
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1732490000000,
+          "sharePercent": 8.5
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 543963000000,
+          "sharePercent": 2.7
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 542845000000,
+          "sharePercent": 2.7
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 10794000000,
+          "sharePercent": 0.1
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 6506000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 90005000000,
+          "sharePercent": 0.4
+        },
+        {
+          "lab": "Other",
+          "tokens": 296499000000,
+          "sharePercent": 1.4
+        }
+      ]
+    },
+    {
+      "date": "2026-09-23",
+      "tokens": 20532388000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 9942122000000,
+          "sharePercent": 48.4
+        },
+        {
+          "lab": "Meta",
+          "tokens": 6300512000000,
+          "sharePercent": 30.7
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1609979000000,
+          "sharePercent": 7.8
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 477012000000,
+          "sharePercent": 2.3
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 343602000000,
+          "sharePercent": 1.7
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 8968000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 4755000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 80301000000,
+          "sharePercent": 0.4
+        },
+        {
+          "lab": "Other",
+          "tokens": 1765137000000,
+          "sharePercent": 8.6
+        }
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "tokens": 24512760000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 9093354000000,
+          "sharePercent": 37.1
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5852475000000,
+          "sharePercent": 23.9
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1477219000000,
+          "sharePercent": 6
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 430218000000,
+          "sharePercent": 1.8
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 440065000000,
+          "sharePercent": 1.8
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 7485000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 4044000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 132866000000,
+          "sharePercent": 0.5
+        },
+        {
+          "lab": "Other",
+          "tokens": 7075034000000,
+          "sharePercent": 28.9
+        }
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "tokens": 23792087000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 6425391000000,
+          "sharePercent": 27
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5378093000000,
+          "sharePercent": 22.6
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1558660000000,
+          "sharePercent": 6.6
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 394141000000,
+          "sharePercent": 1.7
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 674156000000,
+          "sharePercent": 2.8
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 5057000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 5304000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 132332000000,
+          "sharePercent": 0.6
+        },
+        {
+          "lab": "Other",
+          "tokens": 9218951000000,
+          "sharePercent": 38.7
+        }
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "tokens": 21316899000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 5274348000000,
+          "sharePercent": 24.7
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5220573000000,
+          "sharePercent": 24.5
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1396907000000,
+          "sharePercent": 6.6
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 328095000000,
+          "sharePercent": 1.5
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 757423000000,
+          "sharePercent": 3.6
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 4083000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 139546000000,
+          "sharePercent": 0.7
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 113171000000,
+          "sharePercent": 0.5
+        },
+        {
+          "lab": "Other",
+          "tokens": 8082753000000,
+          "sharePercent": 37.9
+        }
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "tokens": 21855612000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 5222296000000,
+          "sharePercent": 23.9
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5198172000000,
+          "sharePercent": 23.8
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1429208000000,
+          "sharePercent": 6.5
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 321633000000,
+          "sharePercent": 1.5
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 702987000000,
+          "sharePercent": 3.2
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 3638000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 363518000000,
+          "sharePercent": 1.7
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 109640000000,
+          "sharePercent": 0.5
+        },
+        {
+          "lab": "Other",
+          "tokens": 8504521000000,
+          "sharePercent": 38.9
+        }
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "tokens": 25808162000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 7729472000000,
+          "sharePercent": 29.9
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5574296000000,
+          "sharePercent": 21.6
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1719259000000,
+          "sharePercent": 6.7
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 440433000000,
+          "sharePercent": 1.7
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 704768000000,
+          "sharePercent": 2.7
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 5534000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 533749000000,
+          "sharePercent": 2.1
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 169999000000,
+          "sharePercent": 0.7
+        },
+        {
+          "lab": "Other",
+          "tokens": 8930651000000,
+          "sharePercent": 34.6
+        }
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "tokens": 26262281000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 7768601000000,
+          "sharePercent": 29.6
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5359527000000,
+          "sharePercent": 20.4
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1727344000000,
+          "sharePercent": 6.6
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 421630000000,
+          "sharePercent": 1.6
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 506909000000,
+          "sharePercent": 1.9
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 5322000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 548197000000,
+          "sharePercent": 2.1
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 170401000000,
+          "sharePercent": 0.6
+        },
+        {
+          "lab": "Other",
+          "tokens": 9754349000000,
+          "sharePercent": 37.1
+        }
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "tokens": 25220602000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 6844864000000,
+          "sharePercent": 27.1
+        },
+        {
+          "lab": "Meta",
+          "tokens": 4866603000000,
+          "sharePercent": 19.3
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1701251000000,
+          "sharePercent": 6.7
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 389965000000,
+          "sharePercent": 1.5
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 496157000000,
+          "sharePercent": 2
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 5520000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 548622000000,
+          "sharePercent": 2.2
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 143180000000,
+          "sharePercent": 0.6
+        },
+        {
+          "lab": "Other",
+          "tokens": 10224439000000,
+          "sharePercent": 40.5
+        }
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "tokens": 23201840000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 5687330000000,
+          "sharePercent": 24.5
+        },
+        {
+          "lab": "Meta",
+          "tokens": 4639493000000,
+          "sharePercent": 20
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1584844000000,
+          "sharePercent": 6.8
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 299715000000,
+          "sharePercent": 1.3
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 557842000000,
+          "sharePercent": 2.4
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 4537000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 431111000000,
+          "sharePercent": 1.9
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 104066000000,
+          "sharePercent": 0.4
+        },
+        {
+          "lab": "Other",
+          "tokens": 9892903000000,
+          "sharePercent": 42.6
+        }
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "tokens": 22068380000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 5470899000000,
+          "sharePercent": 24.8
+        },
+        {
+          "lab": "Meta",
+          "tokens": 4465885000000,
+          "sharePercent": 20.2
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1576387000000,
+          "sharePercent": 7.1
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 278868000000,
+          "sharePercent": 1.3
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 590893000000,
+          "sharePercent": 2.7
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 4052000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 323909000000,
+          "sharePercent": 1.5
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 74373000000,
+          "sharePercent": 0.3
+        },
+        {
+          "lab": "Other",
+          "tokens": 9283113000000,
+          "sharePercent": 42.1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-03",
+      "tokens": 21400618000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 4955812000000,
+          "sharePercent": 23.2
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5000223000000,
+          "sharePercent": 23.4
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1471901000000,
+          "sharePercent": 6.9
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 244351000000,
+          "sharePercent": 1.1
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 625014000000,
+          "sharePercent": 2.9
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 3176000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 295440000000,
+          "sharePercent": 1.4
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 60916000000,
+          "sharePercent": 0.3
+        },
+        {
+          "lab": "Other",
+          "tokens": 8743783000000,
+          "sharePercent": 40.9
+        }
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "tokens": 22257449000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 4954204000000,
+          "sharePercent": 22.3
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5202451000000,
+          "sharePercent": 23.4
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1459454000000,
+          "sharePercent": 6.6
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 249309000000,
+          "sharePercent": 1.1
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 727834000000,
+          "sharePercent": 3.3
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 3310000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 281412000000,
+          "sharePercent": 1.3
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 81862000000,
+          "sharePercent": 0.4
+        },
+        {
+          "lab": "Other",
+          "tokens": 9297612000000,
+          "sharePercent": 41.8
+        }
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "tokens": 25156772000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 5963824000000,
+          "sharePercent": 23.7
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5773132000000,
+          "sharePercent": 22.9
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1654672000000,
+          "sharePercent": 6.6
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 320643000000,
+          "sharePercent": 1.3
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 642906000000,
+          "sharePercent": 2.6
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 4343000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 280811000000,
+          "sharePercent": 1.1
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 124397000000,
+          "sharePercent": 0.5
+        },
+        {
+          "lab": "Other",
+          "tokens": 10392045000000,
+          "sharePercent": 41.3
+        }
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "tokens": 23006945000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 6715051000000,
+          "sharePercent": 29.2
+        },
+        {
+          "lab": "Meta",
+          "tokens": 6075281000000,
+          "sharePercent": 26.4
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 2398016000000,
+          "sharePercent": 10.4
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 329756000000,
+          "sharePercent": 1.4
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 600339000000,
+          "sharePercent": 2.6
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 4695000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 372504000000,
+          "sharePercent": 1.6
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 155681000000,
+          "sharePercent": 0.7
+        },
+        {
+          "lab": "Other",
+          "tokens": 6355622000000,
+          "sharePercent": 27.6
+        }
+      ]
+    },
+    {
+      "date": "2026-10-07",
+      "tokens": 20954473000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 6700908000000,
+          "sharePercent": 32
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5780086000000,
+          "sharePercent": 27.6
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 2503616000000,
+          "sharePercent": 11.9
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 345357000000,
+          "sharePercent": 1.6
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 667205000000,
+          "sharePercent": 3.2
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 4827000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 371741000000,
+          "sharePercent": 1.8
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 148326000000,
+          "sharePercent": 0.7
+        },
+        {
+          "lab": "Other",
+          "tokens": 4432407000000,
+          "sharePercent": 21.2
+        }
+      ]
+    },
+    {
+      "date": "2026-10-08",
+      "tokens": 21840077000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 7357926000000,
+          "sharePercent": 33.7
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5898514000000,
+          "sharePercent": 27
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 2547949000000,
+          "sharePercent": 11.7
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 368044000000,
+          "sharePercent": 1.7
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 677180000000,
+          "sharePercent": 3.1
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 4412000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 352459000000,
+          "sharePercent": 1.6
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 134576000000,
+          "sharePercent": 0.6
+        },
+        {
+          "lab": "Other",
+          "tokens": 4499017000000,
+          "sharePercent": 20.6
+        }
+      ]
+    },
+    {
+      "date": "2026-10-09",
+      "tokens": 21931949000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 8048501000000,
+          "sharePercent": 36.7
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5571066000000,
+          "sharePercent": 25.4
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1869539000000,
+          "sharePercent": 8.5
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 366520000000,
+          "sharePercent": 1.7
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 732822000000,
+          "sharePercent": 3.3
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 4439000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 363051000000,
+          "sharePercent": 1.7
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 128564000000,
+          "sharePercent": 0.6
+        },
+        {
+          "lab": "Other",
+          "tokens": 4847446000000,
+          "sharePercent": 22.1
+        }
+      ]
+    },
+    {
+      "date": "2026-10-10",
+      "tokens": 21648714000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 7785414000000,
+          "sharePercent": 36
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5754762000000,
+          "sharePercent": 26.6
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1606117000000,
+          "sharePercent": 7.4
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 334429000000,
+          "sharePercent": 1.5
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 780205000000,
+          "sharePercent": 3.6
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 3542000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 318254000000,
+          "sharePercent": 1.5
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 108591000000,
+          "sharePercent": 0.5
+        },
+        {
+          "lab": "Other",
+          "tokens": 4957401000000,
+          "sharePercent": 22.9
+        }
+      ]
+    },
+    {
+      "date": "2026-10-11",
+      "tokens": 19999086000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 7050514000000,
+          "sharePercent": 35.3
+        },
+        {
+          "lab": "Meta",
+          "tokens": 5776783000000,
+          "sharePercent": 28.9
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 1387411000000,
+          "sharePercent": 6.9
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 292641000000,
+          "sharePercent": 1.5
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 838432000000,
+          "sharePercent": 4.2
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 3652000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 258296000000,
+          "sharePercent": 1.3
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 92988000000,
+          "sharePercent": 0.5
+        },
+        {
+          "lab": "Other",
+          "tokens": 4298369000000,
+          "sharePercent": 21.5
+        }
+      ]
+    },
+    {
+      "date": "2026-10-12",
+      "tokens": 3894686000000,
+      "labs": [
+        {
+          "lab": "DeepSeek",
+          "tokens": 1588410000000,
+          "sharePercent": 40.8
+        },
+        {
+          "lab": "Meta",
+          "tokens": 996364000000,
+          "sharePercent": 25.6
+        },
+        {
+          "lab": "Xiaomi",
+          "tokens": 294574000000,
+          "sharePercent": 7.6
+        },
+        {
+          "lab": "Zhipu",
+          "tokens": 76856000000,
+          "sharePercent": 2
+        },
+        {
+          "lab": "NVIDIA",
+          "tokens": 168836000000,
+          "sharePercent": 4.3
+        },
+        {
+          "lab": "Tencent",
+          "tokens": 657000000,
+          "sharePercent": 0
+        },
+        {
+          "lab": "Meituan",
+          "tokens": 51148000000,
+          "sharePercent": 1.3
+        },
+        {
+          "lab": "OpenAI",
+          "tokens": 21545000000,
+          "sharePercent": 0.6
+        },
+        {
+          "lab": "Other",
+          "tokens": 696296000000,
+          "sharePercent": 17.9
+        }
+      ]
+    }
+  ],
+  "countries": [
+    {
+      "rank": 1,
+      "country": "CN",
+      "tokens": 132427600000000,
+      "sharePercent": 13.8
+    },
+    {
+      "rank": 2,
+      "country": "US",
+      "tokens": 115692800000000,
+      "sharePercent": 12.1
+    },
+    {
+      "rank": 3,
+      "country": "IN",
+      "tokens": 63092200000000,
+      "sharePercent": 6.6
+    },
+    {
+      "rank": 4,
+      "country": "BR",
+      "tokens": 41494000000000,
+      "sharePercent": 4.3
+    },
+    {
+      "rank": 5,
+      "country": "DE",
+      "tokens": 40358300000000,
+      "sharePercent": 4.2
+    },
+    {
+      "rank": 6,
+      "country": "JP",
+      "tokens": 33624100000000,
+      "sharePercent": 3.5
+    },
+    {
+      "rank": 7,
+      "country": "ID",
+      "tokens": 31175200000000,
+      "sharePercent": 3.3
+    },
+    {
+      "rank": 8,
+      "country": "SG",
+      "tokens": 23499400000000,
+      "sharePercent": 2.5
+    },
+    {
+      "rank": 9,
+      "country": "FR",
+      "tokens": 22146600000000,
+      "sharePercent": 2.3
+    },
+    {
+      "rank": 10,
+      "country": "ES",
+      "tokens": 20412300000000,
+      "sharePercent": 2.1
+    },
+    {
+      "rank": 11,
+      "country": "VN",
+      "tokens": 19892100000000,
+      "sharePercent": 2.1
+    },
+    {
+      "rank": 12,
+      "country": "NL",
+      "tokens": 19492000000000,
+      "sharePercent": 2
+    },
+    {
+      "rank": 13,
+      "country": "RU",
+      "tokens": 19308300000000,
+      "sharePercent": 2
+    },
+    {
+      "rank": 14,
+      "country": "GB",
+      "tokens": 18729900000000,
+      "sharePercent": 2
+    },
+    {
+      "rank": 15,
+      "country": "TR",
+      "tokens": 17675400000000,
+      "sharePercent": 1.8
+    },
+    {
+      "rank": 16,
+      "country": "HK",
+      "tokens": 15931600000000,
+      "sharePercent": 1.7
+    },
+    {
+      "rank": 17,
+      "country": "EG",
+      "tokens": 14379700000000,
+      "sharePercent": 1.5
+    },
+    {
+      "rank": 18,
+      "country": "CA",
+      "tokens": 14366300000000,
+      "sharePercent": 1.5
+    },
+    {
+      "rank": 19,
+      "country": "KR",
+      "tokens": 12259300000000,
+      "sharePercent": 1.3
+    },
+    {
+      "rank": 20,
+      "country": "IT",
+      "tokens": 11906800000000,
+      "sharePercent": 1.2
+    },
+    {
+      "rank": 21,
+      "country": "AR",
+      "tokens": 11897400000000,
+      "sharePercent": 1.2
+    },
+    {
+      "rank": 22,
+      "country": "PL",
+      "tokens": 11805000000000,
+      "sharePercent": 1.2
+    },
+    {
+      "rank": 23,
+      "country": "CO",
+      "tokens": 10924200000000,
+      "sharePercent": 1.1
+    },
+    {
+      "rank": 24,
+      "country": "MX",
+      "tokens": 9880800000000,
+      "sharePercent": 1
+    },
+    {
+      "rank": 25,
+      "country": "PH",
+      "tokens": 9442800000000,
+      "sharePercent": 1
+    },
+    {
+      "rank": 26,
+      "country": "TW",
+      "tokens": 9047000000000,
+      "sharePercent": 0.9
+    },
+    {
+      "rank": 27,
+      "country": "AU",
+      "tokens": 8603200000000,
+      "sharePercent": 0.9
+    },
+    {
+      "rank": 28,
+      "country": "FI",
+      "tokens": 7258200000000,
+      "sharePercent": 0.8
+    },
+    {
+      "rank": 29,
+      "country": "NG",
+      "tokens": 7132300000000,
+      "sharePercent": 0.7
+    },
+    {
+      "rank": 30,
+      "country": "BD",
+      "tokens": 7071500000000,
+      "sharePercent": 0.7
+    },
+    {
+      "rank": 31,
+      "country": "PK",
+      "tokens": 6709600000000,
+      "sharePercent": 0.7
+    },
+    {
+      "rank": 32,
+      "country": "UA",
+      "tokens": 6263700000000,
+      "sharePercent": 0.7
+    },
+    {
+      "rank": 33,
+      "country": "SE",
+      "tokens": 5889900000000,
+      "sharePercent": 0.6
+    },
+    {
+      "rank": 34,
+      "country": "DZ",
+      "tokens": 5887700000000,
+      "sharePercent": 0.6
+    },
+    {
+      "rank": 35,
+      "country": "CL",
+      "tokens": 5877900000000,
+      "sharePercent": 0.6
+    },
+    {
+      "rank": 36,
+      "country": "PE",
+      "tokens": 5811200000000,
+      "sharePercent": 0.6
+    },
+    {
+      "rank": 37,
+      "country": "MA",
+      "tokens": 5778000000000,
+      "sharePercent": 0.6
+    },
+    {
+      "rank": 38,
+      "country": "MY",
+      "tokens": 5445900000000,
+      "sharePercent": 0.6
+    },
+    {
+      "rank": 39,
+      "country": "TH",
+      "tokens": 4912100000000,
+      "sharePercent": 0.5
+    },
+    {
+      "rank": 40,
+      "country": "SA",
+      "tokens": 4709100000000,
+      "sharePercent": 0.5
+    },
+    {
+      "rank": 41,
+      "country": "RO",
+      "tokens": 4691400000000,
+      "sharePercent": 0.5
+    },
+    {
+      "rank": 42,
+      "country": "PT",
+      "tokens": 4411800000000,
+      "sharePercent": 0.5
+    },
+    {
+      "rank": 43,
+      "country": "AZ",
+      "tokens": 4376100000000,
+      "sharePercent": 0.5
+    },
+    {
+      "rank": 44,
+      "country": "CH",
+      "tokens": 3955500000000,
+      "sharePercent": 0.4
+    },
+    {
+      "rank": 45,
+      "country": "NP",
+      "tokens": 3904500000000,
+      "sharePercent": 0.4
+    },
+    {
+      "rank": 46,
+      "country": "ZA",
+      "tokens": 3793900000000,
+      "sharePercent": 0.4
+    },
+    {
+      "rank": 47,
+      "country": "KE",
+      "tokens": 3318700000000,
+      "sharePercent": 0.3
+    },
+    {
+      "rank": 48,
+      "country": "VE",
+      "tokens": 3299500000000,
+      "sharePercent": 0.3
+    },
+    {
+      "rank": 49,
+      "country": "AT",
+      "tokens": 3036200000000,
+      "sharePercent": 0.3
+    },
+    {
+      "rank": 50,
+      "country": "BE",
+      "tokens": 3007400000000,
+      "sharePercent": 0.3
+    },
+    {
+      "rank": 51,
+      "country": "TN",
+      "tokens": 2889000000000,
+      "sharePercent": 0.3
+    },
+    {
+      "rank": 52,
+      "country": "CZ",
+      "tokens": 2666300000000,
+      "sharePercent": 0.3
+    },
+    {
+      "rank": 53,
+      "country": "AE",
+      "tokens": 2488600000000,
+      "sharePercent": 0.3
+    },
+    {
+      "rank": 54,
+      "country": "IL",
+      "tokens": 2441500000000,
+      "sharePercent": 0.3
+    },
+    {
+      "rank": 55,
+      "country": "BY",
+      "tokens": 2408500000000,
+      "sharePercent": 0.3
+    },
+    {
+      "rank": 56,
+      "country": "KZ",
+      "tokens": 2222000000000,
+      "sharePercent": 0.2
+    },
+    {
+      "rank": 57,
+      "country": "EC",
+      "tokens": 2185000000000,
+      "sharePercent": 0.2
+    },
+    {
+      "rank": 58,
+      "country": "HU",
+      "tokens": 2093700000000,
+      "sharePercent": 0.2
+    },
+    {
+      "rank": 59,
+      "country": "NO",
+      "tokens": 2026500000000,
+      "sharePercent": 0.2
+    },
+    {
+      "rank": 60,
+      "country": "DK",
+      "tokens": 1958100000000,
+      "sharePercent": 0.2
+    },
+    {
+      "rank": 61,
+      "country": "NZ",
+      "tokens": 1953700000000,
+      "sharePercent": 0.2
+    },
+    {
+      "rank": 62,
+      "country": "DO",
+      "tokens": 1884200000000,
+      "sharePercent": 0.2
+    },
+    {
+      "rank": 63,
+      "country": "GR",
+      "tokens": 1784400000000,
+      "sharePercent": 0.2
+    },
+    {
+      "rank": 64,
+      "country": "GH",
+      "tokens": 1768800000000,
+      "sharePercent": 0.2
+    },
+    {
+      "rank": 65,
+      "country": "YE",
+      "tokens": 1745300000000,
+      "sharePercent": 0.2
+    },
+    {
+      "rank": 66,
+      "country": "BG",
+      "tokens": 1709300000000,
+      "sharePercent": 0.2
+    },
+    {
+      "rank": 67,
+      "country": "IE",
+      "tokens": 1636700000000,
+      "sharePercent": 0.2
+    },
+    {
+      "rank": 68,
+      "country": "BO",
+      "tokens": 1598600000000,
+      "sharePercent": 0.2
+    },
+    {
+      "rank": 69,
+      "country": "LV",
+      "tokens": 1551200000000,
+      "sharePercent": 0.2
+    },
+    {
+      "rank": 70,
+      "country": "UY",
+      "tokens": 1542500000000,
+      "sharePercent": 0.2
+    },
+    {
+      "rank": 71,
+      "country": "JO",
+      "tokens": 1530500000000,
+      "sharePercent": 0.2
+    },
+    {
+      "rank": 72,
+      "country": "EE",
+      "tokens": 1517000000000,
+      "sharePercent": 0.2
+    },
+    {
+      "rank": 73,
+      "country": "IQ",
+      "tokens": 1469600000000,
+      "sharePercent": 0.2
+    },
+    {
+      "rank": 74,
+      "country": "LK",
+      "tokens": 1410700000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 75,
+      "country": "ET",
+      "tokens": 1362900000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 76,
+      "country": "RS",
+      "tokens": 1342200000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 77,
+      "country": "LT",
+      "tokens": 1301600000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 78,
+      "country": "UZ",
+      "tokens": 1271500000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 79,
+      "country": "CR",
+      "tokens": 1089100000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 80,
+      "country": "GE",
+      "tokens": 1029500000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 81,
+      "country": "TZ",
+      "tokens": 1000800000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 82,
+      "country": "PY",
+      "tokens": 925400000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 83,
+      "country": "SK",
+      "tokens": 909500000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 84,
+      "country": "UG",
+      "tokens": 874600000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 85,
+      "country": "HR",
+      "tokens": 835800000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 86,
+      "country": "MD",
+      "tokens": 817000000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 87,
+      "country": "KH",
+      "tokens": 793400000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 88,
+      "country": "GT",
+      "tokens": 792600000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 89,
+      "country": "CM",
+      "tokens": 770300000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 90,
+      "country": "MG",
+      "tokens": 740000000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 91,
+      "country": "PS",
+      "tokens": 688500000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 92,
+      "country": "PA",
+      "tokens": 651400000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 93,
+      "country": "SV",
+      "tokens": 636900000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 94,
+      "country": "BJ",
+      "tokens": 609100000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 95,
+      "country": "CI",
+      "tokens": 603700000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 96,
+      "country": "HN",
+      "tokens": 570400000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 97,
+      "country": "AO",
+      "tokens": 554500000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 98,
+      "country": "LB",
+      "tokens": 544400000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 99,
+      "country": "LY",
+      "tokens": 518300000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 100,
+      "country": "AM",
+      "tokens": 516700000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 101,
+      "country": "CY",
+      "tokens": 510200000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 102,
+      "country": "MM",
+      "tokens": 485200000000,
+      "sharePercent": 0.1
+    },
+    {
+      "rank": 103,
+      "country": "SI",
+      "tokens": 479500000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 104,
+      "country": "SN",
+      "tokens": 462500000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 105,
+      "country": "ZW",
+      "tokens": 457000000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 106,
+      "country": "OM",
+      "tokens": 455700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 107,
+      "country": "PR",
+      "tokens": 452300000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 108,
+      "country": "RW",
+      "tokens": 442400000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 109,
+      "country": "AL",
+      "tokens": 442100000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 110,
+      "country": "QA",
+      "tokens": 437200000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 111,
+      "country": "NI",
+      "tokens": 427400000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 112,
+      "country": "CU",
+      "tokens": 414600000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 113,
+      "country": "KW",
+      "tokens": 389000000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 114,
+      "country": "IR",
+      "tokens": 384400000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 115,
+      "country": "BA",
+      "tokens": 371400000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 116,
+      "country": "SY",
+      "tokens": 371200000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 117,
+      "country": "LU",
+      "tokens": 357400000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 118,
+      "country": "BH",
+      "tokens": 355900000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 119,
+      "country": "MW",
+      "tokens": 354600000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 120,
+      "country": "KG",
+      "tokens": 341700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 121,
+      "country": "MK",
+      "tokens": 341100000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 122,
+      "country": "TG",
+      "tokens": 334200000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 123,
+      "country": "MO",
+      "tokens": 300700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 124,
+      "country": "ZM",
+      "tokens": 270800000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 125,
+      "country": "CD",
+      "tokens": 258800000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 126,
+      "country": "MZ",
+      "tokens": 217200000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 127,
+      "country": "MN",
+      "tokens": 201700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 128,
+      "country": "SD",
+      "tokens": 197700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 129,
+      "country": "BF",
+      "tokens": 196800000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 130,
+      "country": "JM",
+      "tokens": 184700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 131,
+      "country": "TJ",
+      "tokens": 183100000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 132,
+      "country": "IS",
+      "tokens": 174800000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 133,
+      "country": "AF",
+      "tokens": 173800000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 134,
+      "country": "MU",
+      "tokens": 172300000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 135,
+      "country": "T1",
+      "tokens": 171500000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 136,
+      "country": "ML",
+      "tokens": 164100000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 137,
+      "country": "SO",
+      "tokens": 163500000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 138,
+      "country": "LA",
+      "tokens": 160200000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 139,
+      "country": "MV",
+      "tokens": 151100000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 140,
+      "country": "CG",
+      "tokens": 150200000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 141,
+      "country": "MT",
+      "tokens": 149700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 142,
+      "country": "TT",
+      "tokens": 143500000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 143,
+      "country": "ME",
+      "tokens": 127000000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 144,
+      "country": "BW",
+      "tokens": 117700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 145,
+      "country": "RE",
+      "tokens": 110900000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 146,
+      "country": "NA",
+      "tokens": 103700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 147,
+      "country": "MR",
+      "tokens": 96200000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 148,
+      "country": "AD",
+      "tokens": 79000000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 149,
+      "country": "BT",
+      "tokens": 75600000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 150,
+      "country": "BI",
+      "tokens": 72000000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 151,
+      "country": "SL",
+      "tokens": 69400000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 152,
+      "country": "BB",
+      "tokens": 63700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 153,
+      "country": "GN",
+      "tokens": 62300000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 154,
+      "country": "SZ",
+      "tokens": 57500000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 155,
+      "country": "GA",
+      "tokens": 55700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 156,
+      "country": "NE",
+      "tokens": 54300000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 157,
+      "country": "LS",
+      "tokens": 53700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 158,
+      "country": "BN",
+      "tokens": 52600000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 159,
+      "country": "CV",
+      "tokens": 49000000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 160,
+      "country": "LR",
+      "tokens": 47700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 161,
+      "country": "HT",
+      "tokens": 45900000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 162,
+      "country": "MQ",
+      "tokens": 38500000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 163,
+      "country": "PG",
+      "tokens": 37000000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 164,
+      "country": "SS",
+      "tokens": 32000000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 165,
+      "country": "FJ",
+      "tokens": 28300000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 166,
+      "country": "SR",
+      "tokens": 26100000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 167,
+      "country": "NC",
+      "tokens": 24400000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 168,
+      "country": "IM",
+      "tokens": 21600000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 169,
+      "country": "PF",
+      "tokens": 21500000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 170,
+      "country": "SC",
+      "tokens": 20700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 171,
+      "country": "GM",
+      "tokens": 20400000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 172,
+      "country": "BZ",
+      "tokens": 18600000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 173,
+      "country": "TM",
+      "tokens": 17600000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 174,
+      "country": "JE",
+      "tokens": 17100000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 175,
+      "country": "TD",
+      "tokens": 17100000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 176,
+      "country": "LI",
+      "tokens": 16100000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 177,
+      "country": "VI",
+      "tokens": 13700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 178,
+      "country": "GP",
+      "tokens": 13400000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 179,
+      "country": "TL",
+      "tokens": 13300000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 180,
+      "country": "GU",
+      "tokens": 13000000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 181,
+      "country": "GY",
+      "tokens": 12900000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 182,
+      "country": "LC",
+      "tokens": 12800000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 183,
+      "country": "AW",
+      "tokens": 12700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 184,
+      "country": "BS",
+      "tokens": 12600000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 185,
+      "country": "GQ",
+      "tokens": 12500000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 186,
+      "country": "GI",
+      "tokens": 10700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 187,
+      "country": "GW",
+      "tokens": 9700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 188,
+      "country": "GF",
+      "tokens": 9600000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 189,
+      "country": "CW",
+      "tokens": 8700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 190,
+      "country": "XK",
+      "tokens": 7200000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 191,
+      "country": "DM",
+      "tokens": 7100000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 192,
+      "country": "TC",
+      "tokens": 7100000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 193,
+      "country": "CF",
+      "tokens": 6700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 194,
+      "country": "KN",
+      "tokens": 6600000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 195,
+      "country": "DJ",
+      "tokens": 6300000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 196,
+      "country": "KM",
+      "tokens": 5800000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 197,
+      "country": "KY",
+      "tokens": 5700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 198,
+      "country": "AG",
+      "tokens": 5700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 199,
+      "country": "BM",
+      "tokens": 5600000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 200,
+      "country": "FO",
+      "tokens": 5500000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 201,
+      "country": "ST",
+      "tokens": 5300000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 202,
+      "country": "GL",
+      "tokens": 5200000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 203,
+      "country": "GD",
+      "tokens": 4800000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 204,
+      "country": "AX",
+      "tokens": 4700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 205,
+      "country": "MC",
+      "tokens": 4600000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 206,
+      "country": "ER",
+      "tokens": 4600000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 207,
+      "country": "VU",
+      "tokens": 4300000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 208,
+      "country": "PW",
+      "tokens": 4200000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 209,
+      "country": "SB",
+      "tokens": 3900000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 210,
+      "country": "YT",
+      "tokens": 3700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 211,
+      "country": "SM",
+      "tokens": 3500000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 212,
+      "country": "SX",
+      "tokens": 2700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 213,
+      "country": "MF",
+      "tokens": 2100000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 214,
+      "country": "VC",
+      "tokens": 1400000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 215,
+      "country": "KI",
+      "tokens": 1400000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 216,
+      "country": "GG",
+      "tokens": 800000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 217,
+      "country": "VG",
+      "tokens": 700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 218,
+      "country": "MH",
+      "tokens": 700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 219,
+      "country": "PM",
+      "tokens": 700000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 220,
+      "country": "WS",
+      "tokens": 500000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 221,
+      "country": "FM",
+      "tokens": 300000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 222,
+      "country": "BQ",
+      "tokens": 300000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 223,
+      "country": "AI",
+      "tokens": 200000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 224,
+      "country": "NU",
+      "tokens": 200000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 225,
+      "country": "ZZ",
+      "tokens": 200000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 226,
+      "country": "TO",
+      "tokens": 100000000,
+      "sharePercent": 0
+    },
+    {
+      "rank": 227,
+      "country": "NR",
+      "tokens": 0,
+      "sharePercent": 0
+    },
+    {
+      "rank": 228,
+      "country": "VA",
+      "tokens": 0,
+      "sharePercent": 0
+    },
+    {
+      "rank": 229,
+      "country": "AS",
+      "tokens": 0,
+      "sharePercent": 0
+    },
+    {
+      "rank": 230,
+      "country": "MS",
+      "tokens": 0,
+      "sharePercent": 0
+    },
+    {
+      "rank": 231,
+      "country": "MP",
+      "tokens": 0,
+      "sharePercent": 0
+    },
+    {
+      "rank": 232,
+      "country": "WF",
+      "tokens": 0,
+      "sharePercent": 0
+    },
+    {
+      "rank": 233,
+      "country": "CK",
+      "tokens": 0,
+      "sharePercent": 0
+    },
+    {
+      "rank": 234,
+      "country": "FK",
+      "tokens": 0,
+      "sharePercent": 0
+    },
+    {
+      "rank": 235,
+      "country": "BL",
+      "tokens": 0,
+      "sharePercent": 0
+    },
+    {
+      "rank": 236,
+      "country": "NF",
+      "tokens": 0,
+      "sharePercent": 0
+    },
+    {
+      "rank": 237,
+      "country": "IO",
+      "tokens": 0,
+      "sharePercent": 0
+    },
+    {
+      "rank": 238,
+      "country": "TV",
+      "tokens": 0,
+      "sharePercent": 0
+    }
+  ]
+}

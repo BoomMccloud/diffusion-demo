@@ -1,0 +1,20 @@
+# Agent runtime for WebArena on diffuspace. The host lacks Chromium's system
+# libraries and we have no sudo, so the browser and harness run here with
+# --network host, which keeps the localhost site URLs working.
+FROM mcr.microsoft.com/playwright/python:v1.44.0-jammy
+# The image's Python is 3.10 and AgentLab 0.4.2 needs 3.11+, so add a 3.12
+# venv. Its playwright matches the image's bundled Chromium in /ms-playwright.
+RUN pip install --no-cache-dir uv==0.4.30 \
+    && uv venv --python 3.12 /opt/venv \
+    && VIRTUAL_ENV=/opt/venv uv pip install --no-cache agentlab==0.4.2 \
+       browsergym==0.14.3 browsergym-webarena==0.14.3 playwright==1.44.0
+ENV PATH=/opt/venv/bin:$PATH
+# WebArena's fuzzy-match judge hardcodes gpt-4-1106-preview and 768 output
+# tokens. Read both from WA_JUDGE_MODEL and WA_JUDGE_MAX_TOKENS so a reasoning
+# model can judge without its thinking being cut off.
+RUN f=$(python -c "import importlib.util as u; print(u.find_spec('webarena').submodule_search_locations[0])")/evaluation_harness/helper_functions.py \
+    && sed -i 's/model="gpt-4-1106-preview"/model=__import__("os").environ.get("WA_JUDGE_MODEL", "gpt-4-1106-preview")/' "$f" \
+    && sed -i 's/max_tokens=768/max_tokens=int(__import__("os").environ.get("WA_JUDGE_MAX_TOKENS", "768"))/' "$f" \
+    && grep -c WA_JUDGE_MODEL "$f" && grep -c WA_JUDGE_MAX_TOKENS "$f"
+ENV NLTK_DATA=/opt/nltk_data
+RUN python -c "import nltk; [nltk.download(p, download_dir='/opt/nltk_data', quiet=True) for p in ('punkt', 'punkt_tab')]"

@@ -1,0 +1,94 @@
+--- a/common/arg.cpp
++++ b/common/arg.cpp
+@@ -3773,6 +3773,33 @@
+         }
+     ).set_spec().set_examples({LLAMA_EXAMPLE_SERVER, LLAMA_EXAMPLE_CLI}));
+     add_opt(common_arg(
++        {"--spec-self-width"}, "N", "pending token plus masked proposals (2-16)",
++        [](common_params & params, int value) {
++            if (value < 2 || value > 16) throw std::invalid_argument("self width must be 2-16");
++            params.speculative.self.width = value;
++        }
++    ).set_spec().set_examples({LLAMA_EXAMPLE_SERVER}));
++    add_opt(common_arg(
++        {"--spec-self-verify-experts"}, "N",
++        string_format("routed experts for self-speculative verification (default: %d)", params.speculative.self.verify_experts),
++        [](common_params & params, int value) {
++            if (value <= 0) {
++                throw std::invalid_argument("self verification expert count must be positive");
++            }
++            params.speculative.self.verify_experts = value;
++        }
++    ).set_spec().set_examples({LLAMA_EXAMPLE_SERVER}));
++    add_opt(common_arg(
++        {"--spec-self-acceptance"}, "threshold|exact",
++        "accept self-speculative proposals by entropy threshold or verifier argmax (default: threshold)",
++        [](common_params & params, const std::string & value) {
++            if (value != "threshold" && value != "exact") {
++                throw std::invalid_argument("self acceptance must be threshold or exact");
++            }
++            params.speculative.self.exact = value == "exact";
++        }
++    ).set_spec().set_examples({LLAMA_EXAMPLE_SERVER}));
++    add_opt(common_arg(
+         {"--spec-type"}, common_speculative_all_types_str(),
+         string_format("comma-separated list of types of speculative decoding to use (default: %s)\n",
+             common_speculative_type_name_str(params.speculative.types).c_str()),
+--- a/common/speculative-self.cpp
++++ b/common/speculative-self.cpp
+@@ -20,7 +20,7 @@
+ 
+ static bool self_decode(llama_context * ctx, const std::vector<llama_token> & tokens, int pos, bool all,
+                         ggml_logits_selection * selection, const llama_token * proposals,
+-                        const common_self_penalty * penalties, std::vector<ggml_logits_penalty_entry> * entries) {
++                        const common_self_penalty * penalties, std::vector<ggml_logits_penalty_entry> * entries, bool exact = false) {
+     auto b     = llama_batch_init(tokens.size(), 0, 1);
+     b.n_tokens = tokens.size();
+     for (int i = 0; i < b.n_tokens; ++i) {
+@@ -37,14 +37,14 @@
+             return false;
+         }
+         ggml_logits_candidates candidates{};
+-        if (proposals) {
++        if (proposals && !exact) {
+             // Causal row i predicts block[i + 1]. The last row supplies only the next argmax.
+             candidates.count = b.n_tokens - 1;
+             std::copy_n(proposals + 1, candidates.count, candidates.tokens);
+             candidates.ratio = self_spec_acceptance_ratio;
+             candidates.delta = self_spec_acceptance_delta;
+         }
+-        const auto * verify = proposals ? &candidates : nullptr;
++        const auto * verify = proposals && !exact ? &candidates : nullptr;
+         if (penalties) {
+             auto select = reinterpret_cast<ggml_select_penalized_logits_t>(
+                 ggml_backend_reg_get_proc_address(reg, "ggml_select_penalized_logits"));
+@@ -121,7 +121,7 @@
+     const int width = opt.width;
+     ggml_logits_selection selected{};
+     const bool penalized = penalties && penalties->active(width);
+-    auto * selection = !opt.exact && width == 16 ? &selected : nullptr;
++    auto * selection = width <= GGML_LOGITS_MAX_ROWS ? &selected : nullptr;
+     auto * backend_penalties = penalized ? penalties : nullptr;
+     std::vector<ggml_logits_penalty_entry> entries;
+     std::vector<float> adjusted;
+@@ -165,14 +165,18 @@
+     result.draft_s = seconds(t);
+     t = Clock::now();
+     llama_set_n_expert_used(ctx, opt.verify_experts);
+-    const bool device_selected = self_decode(ctx, block, pos, true, selection, block.data(), backend_penalties, &entries);
++    const bool device_selected = self_decode(ctx, block, pos, true, selection, block.data(), backend_penalties, &entries, opt.exact);
+     // Causal row n predicts block[n + 1]. Accept consecutive proposals from the left:
+     // after the first rejection, later rows were conditioned on a token we will discard.
+     // Row n also supplies the next pending token, including when every proposal passes.
+     int n = 0;
+     if (device_selected) {
+         result.gpu_verify = true;
+-        n = selected.accepted;
++        if (opt.exact) {
++            while (n < width - 1 && selected.best[n] == block[n + 1]) ++n;
++        } else {
++            n = selected.accepted;
++        }
+         pending = selected.best[n];
+     } else {
+         while (n < width - 1 && accept(logits(n, false), nv, block[n + 1], opt.exact)) {

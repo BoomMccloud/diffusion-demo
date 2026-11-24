@@ -1,0 +1,10 @@
+node_modules/
+*.tgz
+.env
+.env.*
+!.env.example
+credentials.json
+.codex/
+.config/
+*.log
+.DS_Store

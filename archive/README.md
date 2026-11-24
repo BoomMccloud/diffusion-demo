@@ -6,8 +6,7 @@ the current business dependency benchmark workflow.
 ## Contents
 
 - `legacy-demo/`: superseded schedule-puzzle cells, the optimization lab,
-  terminal runner, micro-benchmark, and their historical documentation. The
-  A100 runner and model staging helpers remain active under `cells/`.
+  terminal runner, micro-benchmark, and their historical documentation.
 - `artifact-bundles/`: compressed copies of already-extracted dependency-density
   evidence, plus the saved Linux `dependency-tokenizer` executable. Their
   original directory structure is preserved below this folder so provenance is
@@ -20,5 +19,4 @@ registrations, manifests, and summaries stay under `bench/results/` because they
 support the current 48-decision screen-size conclusion. Historical proposal
 ledgers retain their original path references and are not rewritten.
 
-Do not use archived scripts as current launch instructions. Use `bench/README.md`
-and the active staging helpers under `cells/`.
+Do not use archived scripts as current launch instructions. See `bench/README.md` for DGX Spark setup.

@@ -1,0 +1,17 @@
+model:
+  name: z-ai/glm-5.3-flash
+  protocols: [openai]
+  backend_url_env: OPENROUTER_BASE_URL
+  backend_key_env: OPENROUTER_API_KEY
+  backend_headers:
+    X-OpenRouter-Metadata: enabled
+  max_concurrent: 1
+  context_window: 131072
+  params:
+    temperature: 0.0
+    thinking_enabled: true
+    extra_body:
+      reasoning:
+        enabled: true
+      provider:
+        require_parameters: true

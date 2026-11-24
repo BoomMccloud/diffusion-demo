@@ -1,0 +1,68 @@
+{
+  "verdicts": [
+    {
+      "id": "expanded_duplicate_handling_is_visible",
+      "verdict": "fail",
+      "reason": "The weekly table gives aggregate counts only and has no record identifiers or explanation of duplicate handling."
+    },
+    {
+      "id": "all_week_buckets_are_visible",
+      "verdict": "pass",
+      "reason": "Four distinct weekly rows are shown, starting 2026-04-06, 2026-04-13, 2026-04-20, and 2026-04-27."
+    },
+    {
+      "id": "artifact_contains_task_specific_evidence_not_placeholders",
+      "verdict": "pass",
+      "reason": "The sheet contains dated weekly rows with populated planned, resolved, and completion-rate values."
+    },
+    {
+      "id": "deliverable_has_no_process_noise",
+      "verdict": "pass",
+      "reason": "The evidence shows a clean four-column weekly summary table without process notes or unrelated content."
+    },
+    {
+      "id": "week_and_metric_labels_are_clear",
+      "verdict": "pass",
+      "reason": "Headers identify Week_Start, Planned_Count, Resolved_Count, and Completion_Rate, with dated week starts."
+    },
+    {
+      "id": "weekly_rows_preserve_plan_actual_rate_alignment",
+      "verdict": "pass",
+      "reason": "Each dated weekly row aligns its planned count, resolved count, and completion rate, for example 2026-04-06 has 9420, 6852, and 0.7274."
+    },
+    {
+      "id": "weekly_summary_avoids_process_or_markdown_artifacts",
+      "verdict": "pass",
+      "reason": "The visible worksheet content consists of spreadsheet labels and metric values, with no markdown or assistant notes."
+    },
+    {
+      "id": "workbook_is_weekly_ticket_summary",
+      "verdict": "pass",
+      "reason": "The sheet is titled Weekly Summary and presents planned, resolved, and completion-rate metrics by week."
+    },
+    {
+      "id": "expanded_summary_is_reconcilable_to_details",
+      "verdict": "fail",
+      "reason": "Only weekly aggregates are shown; no detailed rows, source categories, or references support tracing the counts."
+    }
+  ],
+  "task": "ticket-weekly-L3-010",
+  "track": "office",
+  "model": "gpt-6-luna",
+  "harness": "Codex CLI",
+  "evidence_sha256": "2b651373a41c4f9bef64959c7ddef621eba07fd4f0250264ed24c8b289c45b8d",
+  "rule_reward": {
+    "test_pass_rate": 1.0,
+    "overall": 1.0,
+    "reward": 1.0,
+    "tests_passed": 15,
+    "tests_total": 15
+  },
+  "rubric_score": 0.7777777777777778,
+  "score_merge": {
+    "method": "weighted_sum",
+    "rule_weight": 0.85,
+    "llm_weight": 0.15
+  },
+  "combined_score": 0.9666666666666667
+}

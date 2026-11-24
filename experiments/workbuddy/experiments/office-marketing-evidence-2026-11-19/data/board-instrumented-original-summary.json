@@ -1,0 +1,58 @@
+[
+  {
+    "model": "Clover",
+    "run": "experiments/workbuddy/experiments/wps-office-pilot/board-video/runs/20261118-231505",
+    "checks_passed": 300,
+    "checks_total": 379,
+    "wps_output": true,
+    "http_requests": 32,
+    "unmatched_starts": 0,
+    "missing_usage": 0,
+    "missing_output_timing": 0,
+    "unclean_streams": 0,
+    "http_failures": 0,
+    "parse_errors": 0,
+    "prompt_tokens_provider": 1956721,
+    "completion_tokens_provider": 52850,
+    "agent_usage": {
+      "input_tokens": 1956721,
+      "output_tokens": 52850,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 1887424,
+      "cache_creation": null,
+      "server_tool_use": null,
+      "service_tier": null
+    },
+    "agent_duration_ms": 162996,
+    "output_delta_interval_sum_seconds": 43.441889707,
+    "provider_tokens_per_proxy_output_interval": 1216.5677035795252
+  },
+  {
+    "model": "Qwen3.6-Flash",
+    "run": "experiments/workbuddy/experiments/wps-office-pilot/board-video-qwen/runs/20261118-231817",
+    "checks_passed": 305,
+    "checks_total": 379,
+    "wps_output": false,
+    "http_requests": 46,
+    "unmatched_starts": 0,
+    "missing_usage": 0,
+    "missing_output_timing": 0,
+    "unclean_streams": 0,
+    "http_failures": 0,
+    "parse_errors": 0,
+    "prompt_tokens_provider": 2659846,
+    "completion_tokens_provider": 66508,
+    "agent_usage": {
+      "input_tokens": 2659846,
+      "output_tokens": 66508,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": null,
+      "server_tool_use": null,
+      "service_tier": null
+    },
+    "agent_duration_ms": 403306,
+    "output_delta_interval_sum_seconds": 334.649818708,
+    "provider_tokens_per_proxy_output_interval": 198.73908868909865
+  }
+]

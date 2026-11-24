@@ -1,0 +1,21 @@
+{
+  "task": "ticket-weekly-L3-010",
+  "run_type": "WPS proof of concept, repaired tool replay",
+  "passed": 2,
+  "total": 15,
+  "score": 0.13333333333333333,
+  "baseline_passed": 15,
+  "baseline_total": 15,
+  "baseline_score": 1.0,
+  "output_replayed_after_wrapper_fix": true,
+  "input_source": "openpyxl extraction of original workbook",
+  "output_writer": "WPS MCP",
+  "native_verifier": "original task pytest in baseline task Docker image",
+  "caveats": [
+    "one attempt per arm",
+    "CodeBuddy built-in tools restricted",
+    "Clover output replayed unchanged after wrapper bug",
+    "input not read through WPS",
+    "task executed on Mac not original Docker environment"
+  ]
+}
