@@ -69,8 +69,9 @@ limit had $0 remaining and no automatic reset. After the user updated the
 key, verified $5 of key budget and resumed in
 `workbuddy-openrouter-office-funded-20261124`. Task 18 attempt 4 passed
 351/355 checks, and task 19 attempt 2 passed 12/15. The runner advanced to
-task 20. DeepSeek has 19/50 valid batch scores and GLM has 0/50 at this
-checkpoint.
+task 20. At the 2026-11-24 checkpoint with 34 GLM scores, DeepSeek had
+completed all 50 tasks with an 82.33% deterministic mean. GLM averaged
+81.43% on the 34 scored tasks, versus DeepSeek's 81.72% on the same tasks.
 
 On 2026-11-23, recorded Clover completing the fictional supplier onboarding
 demo through native WPS spreadsheet edits on the Mac. A scoped writer applied

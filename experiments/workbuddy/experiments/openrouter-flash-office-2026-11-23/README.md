@@ -75,7 +75,11 @@ On 2026-11-24, the user supplied a key with $5 of available key budget.
 The container `workbuddy-openrouter-office-funded-20261124` resumed at
 DeepSeek task 18, attempt 4. The native verifier scored 351/355. Task 19
 attempt 2 scored 12/15, and task 20 started. At this checkpoint, DeepSeek has
-19/50 valid batch scores and GLM has 0/50. The queue continues serially.
+19/50 valid batch scores and GLM has 0/50. At the 2026-11-24 checkpoint
+with 34 GLM scores, DeepSeek had completed all 50 tasks with an 82.33% deterministic
+mean, versus Clover's 74.44% and Qwen3.6-Flash's 72.14% on the same tasks.
+GLM averaged 81.43% on the 34 scored tasks, versus DeepSeek's 81.72% on
+the same tasks.
 
 The queue validates the native verifier score before checkpointing each
 completed trial. Its ledger is
