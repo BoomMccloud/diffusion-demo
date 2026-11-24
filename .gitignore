@@ -70,6 +70,9 @@ archive/artifact-bundles/
 .~*.docx
 ~$*.docx
 
+# Local Feishu document drafts
+/draft_*_folder/
+
 # Local benchmark outputs
 /bench/results/
 /bench/**/results/
